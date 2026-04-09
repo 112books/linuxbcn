@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+<header class="projects-header">
+  <h1>{{ .Title }}</h1>
+
+  <div class="intro">
+    {{ with .Content }}
+      {{ . }}
+    {{ else }}
+      <p>Una selecció de treballs, processos i fragments visuals.</p>
+    {{ end }}
+  </div>
+</header>
+
+<section class="projects-grid">
+
+  {{ range .Pages.ByWeight }}
+
+    <a href="{{ .RelPermalink }}" class="project-card">
+
+      <div class="image-wrapper">
+        {{ if .Params.image }}
+          <div class="hero-image">
+            <img src="/images/{{ .Params.image }}" alt="{{ .Title }}">
+          </div>
+        {{ end }} 
+      </div>
+
+      <div class="meta">
+        <h2>{{ .Title }}</h2>
+      </div>
+
+    </a>
+
+  {{ end }}
+
+</section>
+
+{{ end }}

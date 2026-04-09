@@ -1,0 +1,9 @@
+<div class="lang-switcher">
+
+  {{ range .AllTranslations }}
+    <a href="{{ .RelPermalink }}">
+      {{ .Lang | upper }}
+    </a>
+  {{ end }}
+
+</div>

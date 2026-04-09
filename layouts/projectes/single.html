@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<article class="project">
+
+  <!-- HERO -->
+  <header class="project-hero">
+
+    <h1>{{ .Title }}</h1>
+
+    {{ if .Params.year }}
+      <div class="meta">
+        {{ .Params.year }} · {{ .Params.client }}
+      </div>
+    {{ end }}
+
+    {{ if .Params.image }}
+      <div class="hero-image">
+        <img src="/images/{{ .Params.image }}" alt="{{ .Title }}">
+      </div>
+    {{ end }}
+
+  </header>
+
+  <!-- TEXT -->
+  {{ if .Params.description }}
+    <section class="project-intro">
+      <p>{{ .Params.description }}</p>
+    </section>
+  {{ end }}
+
+  <!-- CONTINGUT -->
+  <section class="project-content">
+    {{ .Content }}
+  </section>
+
+</article>
+
+{{ end }}

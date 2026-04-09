@@ -1,0 +1,36 @@
+baseURL = "http://localhost:1313/"
+title = "LinuxBCN"
+defaultContentLanguage = "ca"
+defaultContentLanguageInSubdir = true
+
+[languages]
+
+  [languages.ca]
+    languageName = "Català"
+    weight = 1
+
+  [languages.en]
+    languageName = "English"
+    weight = 2
+
+[menu]
+
+  [[menu.main]]
+    name = "Com treballem"
+    url = "/com-treballem/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Solucions"
+    url = "/solucions/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Projectes"
+    url = "/projectes/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Contacte"
+    url = "/contacte/"
+    weight = 4

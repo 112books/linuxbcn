@@ -1,0 +1,11 @@
+<header>
+  <nav>
+    <a href="{{ "/" | relLangURL }}">LinuxBCN</a>
+
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+    {{ end }}
+
+    {{ partial "lang-switcher.html" . }}
+  </nav>
+</header>
