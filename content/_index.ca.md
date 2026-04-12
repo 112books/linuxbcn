@@ -41,17 +41,17 @@ Dissenyem i acompanyem la construcció de sistemes digitals:
 
 - arquitectura web
 - presència digital coherent
-- WordPress i entorns flexibles
-- fluxos de treball sostenibles
+- entorns sostenibles i mantenibles
+- fluxos de treball
 
 ---
 
 ## Per a qui
 
-- persones creatives que volen autonomia real
+- persones creatives
 - col·lectius culturals
 - microempreses amb criteri
-- projectes que no volen dependre d’agències contínues
+- projectes que busquen autonomia
 
 ---
 
