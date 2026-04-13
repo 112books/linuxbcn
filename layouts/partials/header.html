@@ -1,6 +1,6 @@
 <header>
   <nav>
-    <a href="{{ "/" | relLangURL }}" class="nav-brand">Linux<span class="bcn">BCN</span></a>
+    <a href="{{ printf "%s%s/" $.Site.BaseURL $.Site.Language.Lang }}" class="nav-brand">Linux<span class="bcn">BCN</span></a>
     <div class="nav-links">
       {{ range .Site.Menus.main }}
         <a href="{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang .URL }}">{{ .Name }}</a>
