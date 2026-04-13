@@ -11,7 +11,7 @@ BRANCH="main"
 REMOTE="origin"
 BUILD_DIR="public"
 SSH_USER="linuxbcn0"
-SSH_HOST="vl28359.dinahost.com"
+SSH_HOST="vl28359.dinaserver.com"
 SSH_PATH="/home/linuxbcn0/www/"
 
 print() { echo -e "${BLUE}[linuxbcn]${NC} $1"; }
