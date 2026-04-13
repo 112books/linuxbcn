@@ -1,68 +1,115 @@
 ---
-title: "Identitat digital amb criteri"
-subtitle: "Consultoria d’acompanyament en sistemes digitals coherents"
+title: "Com treballem"
+subtitle: "Procés de decisió i construcció de sistemes digitals"
+draft: false
 ---
 
+## No comencem per la tecnologia
 
-Hi ha webs que expliquen coses.  
-I hi ha webs que s’aguanten soles.
+Comencem per entendre el sistema.
 
-Aquesta neix de la segona categoria.
-
-No venem paquets.  
-No encadenem serveis.  
-No afegim cap capa que no sigui necessària.
-
-Treballem amb una idea simple:  
-una presència digital ha de poder respirar sense dependre d’una agència.
+Què existeix, què s’està fent servir i què realment té sentit mantenir.
 
 ---
 
-## Hi ha massa soroll
+## 1. Lectura del sistema
 
-Webs que es construeixen per impressió.  
-Xarxes que substitueixen estratègia.  
-Eines que prometen autonomia i generen dependència.
+Analitzem la situació actual:
 
-El resultat és conegut:  
-presència sense criteri.
+- estructura web existent  
+- eines utilitzades  
+- fluxos de contingut  
+- punts de fricció  
+- dependències externes  
 
----
+No busquem errors.
 
-## El que fem
-
-Acompanyem processos.
-
-Entenem què necessites, què ja tens i què no cal tocar.
-
-Després decidim què construir i, sobretot, què no construir.
+Busquem com està organitzat el sistema.
 
 ---
 
-## Per a qui
+## 2. Decisió estructural
 
-Per a qui no vol delegar la seva veu.
+Definim tres capes:
 
-Per a qui prefereix estructura abans que aparador.
+- què ha de ser central  
+- què es pot automatitzar  
+- què s’ha d’eliminar o simplificar  
 
-Per a qui entén que el digital no és decoració, sinó sistema.
-
----
-
-## Treball
-
-Sense paquets tancats.  
-Sense solucions prefabricades.  
-Sense pressa artificial.
-
-Només decisions que aguanten el temps.
+A partir d’aquí es pren qualsevol decisió tècnica.
 
 ---
 
-## I després
+## 3. Disseny del sistema
 
-Si vols veure com treballem, ho expliquem aquí:  
-[Veure com treballem](/com-treballem/)
+No es dissenya una web.
 
-Si vols casos reals, també hi són:  
-[Veure projectes](/projectes/)
+Es dissenya una arquitectura:
+
+- com circula la informació  
+- on es genera el contingut  
+- com s’actualitza  
+- quines parts són fixes i quines són dinàmiques  
+
+La forma és conseqüència d’això.
+
+---
+
+## 4. Implementació
+
+Quan el sistema està clar:
+
+- es construeix amb tecnologies lleugeres (com Hugo)  
+- s’integren automatitzacions quan té sentit  
+- es connecten fonts externes en lloc de duplicar contingut  
+- es redueix tot el que no és necessari  
+
+---
+
+## 5. Optimització
+
+Un cop en funcionament:
+
+- simplifiquem processos  
+- reduïm manteniment manual  
+- ajustem rendiment i estructura  
+- eliminem dependències innecessàries  
+
+El sistema ha de ser estable, no complex.
+
+---
+
+## Principi base
+
+La tecnologia no és el punt de partida.
+
+És la conseqüència.
+
+---
+
+## El que evitem
+
+- solucions genèriques  
+- plantilles que no responen al projecte  
+- sistemes dependents de manteniment constant  
+- acumulació d’eines innecessàries  
+
+---
+
+## El resultat
+
+Sistemes digitals:
+
+- més simples  
+- més clars  
+- més ràpids  
+- més sostenibles  
+- amb més autonomia real  
+
+---
+
+## Projectes
+
+Exemples de sistemes aplicats:
+
+→ [Veure projectes](/projectes/)

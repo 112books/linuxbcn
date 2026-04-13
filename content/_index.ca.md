@@ -1,69 +1,92 @@
 ---
 title: "Identitat digital amb criteri"
-subtitle: "Consultoria d’acompanyament en sistemes digitals coherents"
+subtitle: "Sistemes digitals coherents, lleugers i sostenibles"
 draft: false
 ---
 
-## Hi ha massa presència digital buida
+## Sistemes digitals amb criteri
 
-Webs que existeixen però no comuniquen.  
-Serveis desconnectats.  
-Eines que depenen massa d’altres.
+No totes les webs fallen per tecnologia.
 
-La majoria de projectes digitals no fallen per tecnologia.  
-Fallen per criteri.
+Quan fallen, gairebé sempre és per estructura.
 
 ---
 
-## No som una agència
+## El problema
 
-No venem paquets.  
-No fem “solucions ràpides”.  
-No creem dependències noves.
+Fallen per estructura:
 
-Treballem des de la comprensió del sistema, no des de la peça.
+- informació dispersa  
+- eines desconnectades  
+- dependència de plataformes externes  
 
----
-
-## El problema no és tècnic
-
-És estructural.
-
-Com s’organitza la informació.  
-Com es prenen decisions digitals.  
-Com es manté autonomia a llarg termini.
+El resultat és més complexitat de la necessària.
 
 ---
 
-## Què fem
+## El que fem
 
-Dissenyem i acompanyem la construcció de sistemes digitals:
 
-- arquitectura web
-- presència digital coherent
-- entorns sostenibles i mantenibles
-- fluxos de treball
+Dissenyem i construïm sistemes digitals coherents i sostenibles.
+
+Treballem sobre estructura, no només sobre eines.
+
+Acompanyem decisions d’arquitectura, implementació i evolució.
+
+---
+
+## En què treballem
+
+Àrees on intervenim:
+
+→ [Veure solucions](/solucions/)
+
+Arquitectura web, sistemes lleugers i automatització de processos.
+
+---
+
+## Com ho enfoquem
+
+Cada projecte parteix de tres decisions:
+
+- què ha de ser central  
+- què es pot automatitzar  
+- què no cal construir  
+
+La tecnologia s’adapta al projecte — no al revés.
 
 ---
 
 ## Per a qui
 
-- persones creatives
-- col·lectius culturals
-- microempreses amb criteri
-- projectes que busquen autonomia
+Projectes que necessiten criteri i autonomia:
+
+- cultura i creació  
+- músics i col·lectius  
+- microempreses  
+- organitzacions amb estructura pròpia  
 
 ---
 
-## Com treballem
+## Resultat
 
-No hi ha tickets.  
-No hi ha “feina tancada i entregada”.
+Sistemes més simples, ràpids i sostenibles.
 
-Hi ha procés, criteri i decisions compartides.
+Menys manteniment.  
+Més coherència.  
+Més control.
 
 ---
 
-## Si té sentit, en parlem
+## Projectes
 
-[Veure com treballem](/com-treballem/)
+Exemples reals del sistema en funcionament:
+
+→ [Veure projectes](/projectes/)
+
+
+## Parlem
+
+Si tens un projecte o una estructura que no acaba de funcionar:
+
+→ [Contacte](/contacte/)
