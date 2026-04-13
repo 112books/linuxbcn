@@ -10,9 +10,9 @@ NC='\033[0m'
 BRANCH="main"
 REMOTE="origin"
 BUILD_DIR="public"
-SSH_USER="USUARI"
-SSH_HOST="SERVIDOR.dinahost.com"
-SSH_PATH="/path/public_html/linuxbcn/"
+SSH_USER="linuxbcn0"
+SSH_HOST="vl28359.dinahost.com"
+SSH_PATH="/home/linuxbcn0/www/"
 
 print() { echo -e "${BLUE}[linuxbcn]${NC} $1"; }
 ok()    { echo -e "${GREEN}[✓]${NC} $1"; }
@@ -77,7 +77,7 @@ deploy_prod() {
     --exclude='.well-known' \
     --exclude='ssl' \
     --exclude='.php.ini' \
-    $BUILD_DIR/ $SSH_USER@$SSH_HOST:/www/ || exit 1
+    $BUILD_DIR/ $SSH_USER@$SSH_HOST:$SSH_PATH || exit 1
   ok "Deploy producció fet → https://linuxbcn.com/"
 }
 
