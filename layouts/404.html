@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — {{ if eq .Lang "ca" }}Pàgina no trobada{{ else }}Page not found{{ end }} · LinuxBCN</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --lbcn-green:        #00ff41;
+      --lbcn-green-mid:    #00cc33;
+      --lbcn-green-dark:   #003d10;
+      --lbcn-accent:       #d4600a;
+      --lbcn-accent-glow:  rgba(212, 96, 10, 0.5);
+      --lbcn-green-glow:   rgba(0, 255, 65, 0.35);
+      --lbcn-bg:           #000000;
+      --lbcn-font-mono:    'Courier New', 'Lucida Console', monospace;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: var(--lbcn-bg);
+      overflow: hidden;
+    }
+
+    #lbcn-404 {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 480px;
+      overflow: hidden;
+      background: var(--lbcn-bg);
+      font-family: var(--lbcn-font-mono);
+    }
+
+    /* ── Canvas pluja ── */
+    #lbcn-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* ── Glitch flash ── */
+    #lbcn-glitch {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 15;
+    }
+
+    /* ── Foto susto ── */
+    #lbcn-scare {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.85);
+      opacity: 0;
+      z-index: 20;
+      text-align: center;
+      pointer-events: none;
+      transition: transform 0.08s ease, opacity 0.08s ease;
+    }
+    #lbcn-scare.lbcn-visible {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    #lbcn-scare.lbcn-exit {
+      transform: translate(-50%, -50%) scale(1.08);
+      opacity: 0;
+      transition: transform 0.55s ease, opacity 0.55s ease;
+    }
+    #lbcn-scare img {
+      width: 260px;
+      max-width: 55vw;
+      display: block;
+      margin: 0 auto 10px;
+      border: 2px solid var(--lbcn-accent);
+      border-radius: 2px;
+      filter: contrast(1.4) brightness(0.82) sepia(0.1);
+      box-shadow:
+        0 0 30px var(--lbcn-accent-glow),
+        0 0 70px rgba(212, 96, 10, 0.18),
+        inset 0 0 20px rgba(0,0,0,0.4);
+    }
+    #lbcn-scare-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--lbcn-accent);
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+
+    /* ── Contingut 404 ── */
+    #lbcn-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 25;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.7s ease;
+      width: 90%;
+      max-width: 520px;
+    }
+    #lbcn-content.lbcn-visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    #lbcn-error-code {
+      font-size: clamp(88px, 20vw, 148px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--lbcn-green);
+      text-shadow: 0 0 18px var(--lbcn-green-glow);
+      user-select: none;
+    }
+    #lbcn-error-code .lbcn-zero {
+      color: var(--lbcn-accent);
+      text-shadow: 0 0 18px var(--lbcn-accent-glow);
+    }
+
+    #lbcn-error-msg {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--lbcn-green-mid);
+      opacity: 0.65;
+      margin: 6px 0 2px;
+    }
+    #lbcn-error-detail {
+      font-size: 11px;
+      color: #3a3a3a;
+      letter-spacing: 0.08em;
+      margin-bottom: 28px;
+    }
+    #lbcn-error-detail .lbcn-prompt {
+      color: var(--lbcn-accent);
+      opacity: 0.6;
+    }
+
+    #lbcn-typing-line {
+      font-size: 13px;
+      color: var(--lbcn-green-mid);
+      min-height: 20px;
+      margin-bottom: 30px;
+      letter-spacing: 0.05em;
+    }
+    .lbcn-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: var(--lbcn-green);
+      vertical-align: middle;
+      margin-left: 1px;
+      animation: lbcn-blink 1s step-end infinite;
+    }
+    @keyframes lbcn-blink { 50% { opacity: 0; } }
+
+    /* ── Botons ── */
+    .lbcn-btn {
+      display: inline-block;
+      padding: 9px 24px;
+      font-family: var(--lbcn-font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+      margin: 4px 5px;
+    }
+    .lbcn-btn-primary {
+      color: var(--lbcn-accent);
+      border-color: var(--lbcn-accent);
+    }
+    .lbcn-btn-primary:hover {
+      background: var(--lbcn-accent);
+      color: #000;
+      box-shadow: 0 0 18px var(--lbcn-accent-glow);
+    }
+    .lbcn-btn-secondary {
+      color: #2a5c1a;
+      border-color: #1a3d0f;
+    }
+    .lbcn-btn-secondary:hover {
+      background: var(--lbcn-green);
+      color: #000;
+    }
+
+    /* ── Toggle idioma ── */
+    #lbcn-lang {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      z-index: 30;
+      display: flex;
+      gap: 6px;
+    }
+    .lbcn-lang-btn {
+      font-family: var(--lbcn-font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: #2a2a2a;
+      cursor: pointer;
+      padding: 3px 7px;
+      border: 1px solid #1a1a1a;
+      background: transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .lbcn-lang-btn.lbcn-active {
+      color: var(--lbcn-green);
+      border-color: var(--lbcn-green-dark);
+    }
+    .lbcn-lang-btn:hover { color: var(--lbcn-green-mid); }
+
+    /* ── Logo discret ── */
+    #lbcn-logo {
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+      z-index: 30;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: #1c1c1c;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    #lbcn-logo:hover { color: var(--lbcn-green-dark); }
+
+    @media (max-width: 480px) {
+      #lbcn-scare img { width: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="lbcn-404" role="main" aria-label="{{ if eq .Lang "ca" }}Error 404 — Pàgina no trobada{{ else }}Error 404 — Page not found{{ end }}">
+
+  <canvas id="lbcn-canvas" aria-hidden="true"></canvas>
+  <div id="lbcn-glitch" aria-hidden="true"></div>
+
+  <div id="lbcn-lang" role="navigation" aria-label="Selector d'idioma">
+    {{ range .Site.Languages }}
+    <button
+      class="lbcn-lang-btn{{ if eq . $.Site.Language }} lbcn-active{{ end }}"
+      onclick="lbcnSetLang('{{ .Lang }}')"
+      aria-label="Canvia a {{ .Lang }}"
+    >{{ .Lang | upper }}</button>
+    {{ end }}
+  </div>
+
+  <div id="lbcn-scare" aria-hidden="true">
+    <img src="{{ "img/joan-linux-404.jpg" | relURL }}" alt="" />
+    <div id="lbcn-scare-label">root@linuxbcn</div>
+  </div>
+
+  <div id="lbcn-content">
+    <div id="lbcn-error-code" aria-label="Error 404">
+      4<span class="lbcn-zero">0</span>4
+    </div>
+    <div id="lbcn-error-msg" role="alert"></div>
+    <div id="lbcn-error-detail">
+      <span class="lbcn-prompt">$</span>
+      <span id="lbcn-detail-text"></span>
+    </div>
+    <div id="lbcn-typing-line" aria-hidden="true">
+      <span id="lbcn-typed"></span><span class="lbcn-cursor"></span>
+    </div>
+    <a id="lbcn-btn-home" class="lbcn-btn lbcn-btn-primary" href="{{ "/" | relLangURL }}"></a>
+    <button id="lbcn-btn-back" class="lbcn-btn lbcn-btn-secondary" onclick="history.back()"></button>
+  </div>
+
+  <a id="lbcn-logo" href="{{ "/" | relLangURL }}" aria-label="LinuxBCN — inici">LinuxBCN</a>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var LANG = document.documentElement.lang || 'ca';
+
+  var i18n = {
+    ca: {
+      msg:    'Pàgina no trobada',
+      detail: 'error: aquesta ruta no existeix al sistema',
+      typing: 'cd / && ls -la',
+      home:   '← inici',
+      back:   '↩ tornar',
+      scare:  'root@linuxbcn'
+    },
+    en: {
+      msg:    'Page not found',
+      detail: 'error: this path does not exist on the system',
+      typing: 'cd / && ls -la',
+      home:   '← home',
+      back:   '↩ back',
+      scare:  'root@linuxbcn'
+    }
+  };
+
+  var typingTimer = null;
+
+  function applyLang(lang) {
+    var t = i18n[lang] || i18n['ca'];
+    document.getElementById('lbcn-error-msg').textContent      = t.msg;
+    document.getElementById('lbcn-detail-text').textContent    = t.detail;
+    document.getElementById('lbcn-btn-home').textContent       = t.home;
+    document.getElementById('lbcn-btn-back').textContent       = t.back;
+    document.getElementById('lbcn-scare-label').textContent    = t.scare;
+    startTyping(t.typing);
+  }
+
+  function startTyping(str) {
+    clearInterval(typingTimer);
+    var el = document.getElementById('lbcn-typed');
+    el.textContent = '';
+    var i = 0;
+    typingTimer = setInterval(function () {
+      if (i < str.length) { el.textContent += str[i++]; }
+      else { clearInterval(typingTimer); }
+    }, 75);
+  }
+
+  window.lbcnSetLang = function (lang) {
+    LANG = lang;
+    document.querySelectorAll('.lbcn-lang-btn').forEach(function (b) {
+      b.classList.toggle('lbcn-active', b.textContent.toLowerCase() === lang);
+    });
+    applyLang(lang);
+  };
+
+  /* ── Matrix canvas ── */
+  var canvas  = document.getElementById('lbcn-canvas');
+  var ctx     = canvas.getContext('2d');
+  var fontSize = 13;
+  var cols, drops;
+
+  var chars = ('$ ls -la grep sudo chmod apt git commit push pull' +
+    ' init bash ./run make kernel panic EOF NULL >> | & # ! 0 1' +
+    ' ~ / \\ {} [] <> root dev null tmp var etc usr bin').split('');
+
+  function resizeCanvas() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    cols  = Math.floor(canvas.width / fontSize);
+    drops = Array.from({ length: cols }, function () {
+      return Math.random() * -60;
+    });
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  function drawMatrix() {
+    ctx.fillStyle = 'rgba(0,0,0,0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.font = fontSize + 'px Courier New';
+    drops.forEach(function (y, i) {
+      var ch  = chars[Math.floor(Math.random() * chars.length)];
+      var x   = i * fontSize;
+      var pct = (y * fontSize) / canvas.height;
+      if (pct > 0.82) {
+        ctx.fillStyle = '#d4600a';
+      } else if (Math.random() > 0.97) {
+        ctx.fillStyle = '#cccccc';
+      } else {
+        var g = Math.floor(70 + Math.random() * 185);
+        ctx.fillStyle = 'rgb(0,' + g + ',18)';
+      }
+      ctx.fillText(ch, x, y * fontSize);
+      if (y * fontSize > canvas.height && Math.random() > 0.974) drops[i] = 0;
+      else drops[i] += 0.45;
+    });
+  }
+
+  /* ── Seqüència d'entrada ── */
+  applyLang(LANG);
+  setInterval(drawMatrix, 38);
+
+  var scare   = document.getElementById('lbcn-scare');
+  var glitch  = document.getElementById('lbcn-glitch');
+  var content = document.getElementById('lbcn-content');
+
+  setTimeout(function () {
+    /* glitch flash */
+    glitch.style.opacity = '0.65';
+    setTimeout(function () { glitch.style.opacity = '0'; }, 55);
+    setTimeout(function () { glitch.style.opacity = '0.35'; }, 95);
+    setTimeout(function () {
+      glitch.style.opacity = '0';
+      /* apareix la foto */
+      scare.classList.add('lbcn-visible');
+      setTimeout(function () {
+        /* exit susto → entra contingut */
+        scare.classList.remove('lbcn-visible');
+        scare.classList.add('lbcn-exit');
+        setTimeout(function () {
+          scare.style.display = 'none';
+          content.classList.add('lbcn-visible');
+        }, 580);
+      }, 1900);
+    }, 130);
+  }, 2500);
+
+}());
+</script>
+
+</body>
+</html>
