@@ -4,70 +4,49 @@ slug: "solucions"
 draft: false
 ---
 
-## Sistemes digitals segons el problema
-
-No oferim un catàleg de serveis.
-
-Oferim formes d’ordenar sistemes digitals segons el que no funciona.
-
----
-
 ## No totes les situacions són iguals
 
-El punt de partida mai és la tecnologia.
+Un músic no té les mateixes necessitats que un col·lectiu cultural.
+Un negoci de barri no funciona igual que una associació.
 
-És l’estructura.
-
----
-
-## Àrees de treball
-
-Tria segons el tipus de problema:
+Per això no oferim un catàleg de serveis.
+Oferim solucions pensades per a situacions concretes.
 
 ---
 
-### Arquitectura web i presència digital  
-Quan el sistema existeix però no té coherència.
+## Troba la teva situació
 
-→ [Veure solució](/solucions/arquitectura-web/)
+### Ets artista o músic
 
----
+Tens presència digital dispersa, agenda difícil de mantenir,
+continguts repartits entre plataformes que no controles.
 
-### Automatització de continguts i processos  
-Quan tot depèn d’intervenció manual constant.
-
-→ [Veure solució](/solucions/automatitzacio/)
+→ [Solucions per a artistes i músics](/solucions/musics/)
 
 ---
 
-### Sistemes lleugers i manteniment sostenible  
-Quan el sistema funciona però és massa pesat.
+### Formes part d'una entitat o col·lectiu cultural
 
-→ [Veure solució](/solucions/sistemes-lleugers/)
+Useu eines de Google sense voler-ho, la comunicació
+no és clara i la infraestructura digital no és vostra.
 
----
-
-### Intervenció sobre sistemes existents  
-Quan ja hi ha una web però és difícil de gestionar.
-
-→ [Veure solució](/solucions/intervencio-sistemes-existents/)
+→ [Solucions per a entitats i col·lectius](/solucions/collectius/)
 
 ---
 
-## Com treballem
+### Tens un negoci amb valors
 
-Cada solució parteix del mateix criteri:
+Vols una presència digital coherent amb el que fas,
+sense dependre de plataformes externes ni pagar
+per eines que no necessites.
 
-- què ha de ser central  
-- què es pot simplificar  
-- què no cal construir  
-
-→ [Veure com treballem](/com-treballem/)
+→ [Solucions per a negocis amb valors](/solucions/microempreses/)
 
 ---
 
-## Parlem
+## El teu projecte no encaixa aquí?
 
-Si no saps on encaixes exactament:
+Treballem també a mida per a situacions que no entren
+en cap d'aquests perfils.
 
-→ [Contacte](/contacte/)
+→ [Parlem](/contacte/)

@@ -4,33 +4,67 @@ defaultContentLanguage = "ca"
 defaultContentLanguageInSubdir = true
 
 [languages]
-
   [languages.ca]
     languageName = "Català"
     weight = 1
+
+    [[languages.ca.menu.main]]
+      name = "Solucions"
+      url = "solucions/"
+      weight = 1
+
+    [[languages.ca.menu.main]]
+      name = "Projectes"
+      url = "projectes/"
+      weight = 2
+
+    [[languages.ca.menu.main]]
+      name = "Com treballem"
+      url = "com-treballem/"
+      weight = 3
+
+    [[languages.ca.menu.main]]
+      name = "Qui som"
+      url = "qui-som/"
+      weight = 4
+
+    [[languages.ca.menu.main]]
+      name = "Contacte"
+      url = "contacte/"
+      weight = 5
 
   [languages.en]
     languageName = "English"
     weight = 2
 
-[menu]
+    [[languages.en.menu.main]]
+      name = "Solutions"
+      url = "solucions/"
+      weight = 1
 
-  [[menu.main]]
-    name = "Com treballem"
-    url = "/com-treballem/"
-    weight = 1
+    [[languages.en.menu.main]]
+      name = "Projects"
+      url = "projectes/"
+      weight = 2
 
-  [[menu.main]]
-    name = "Solucions"
-    url = "/solucions/"
-    weight = 2
+    [[languages.en.menu.main]]
+      name = "How we work"
+      url = "com-treballem/"
+      weight = 3
 
-  [[menu.main]]
-    name = "Projectes"
-    url = "/projectes/"
-    weight = 3
+    [[languages.en.menu.main]]
+      name = "About"
+      url = "qui-som/"
+      weight = 4
 
-  [[menu.main]]
-    name = "Contacte"
-    url = "/contacte/"
-    weight = 4
+    [[languages.en.menu.main]]
+      name = "Contact"
+      url = "contacte/"
+      weight = 5
+
+
+[params]
+  tagline = "Solucions digitals a mida. Programari lliure, sense complicacions."
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

@@ -1,115 +1,78 @@
 ---
 title: "Com treballem"
-subtitle: "Procés de decisió i construcció de sistemes digitals"
+subtitle: "Acompanyament, no intervenció"
 draft: false
 ---
 
-## No comencem per la tecnologia
+## Primer, escoltem
 
-Comencem per entendre el sistema.
+Abans de proposar res, entenem el que ja existeix.
 
-Què existeix, què s’està fent servir i què realment té sentit mantenir.
+Com us moveu digitalment, quines eines feu servir,
+on perdeu temps i energia, i on voleu arribar.
 
----
-
-## 1. Lectura del sistema
-
-Analitzem la situació actual:
-
-- estructura web existent  
-- eines utilitzades  
-- fluxos de contingut  
-- punts de fricció  
-- dependències externes  
-
-No busquem errors.
-
-Busquem com està organitzat el sistema.
+No hi ha diagnòstic estàndard.  
+Cada projecte comença des de zero perquè cada situació és diferent.
 
 ---
 
-## 2. Decisió estructural
+## Després, decidim junts
 
-Definim tres capes:
+No apliquem solucions prefabricades.
 
-- què ha de ser central  
-- què es pot automatitzar  
-- què s’ha d’eliminar o simplificar  
+Definim el que té sentit per al vostre cas:
+què cal construir, què es pot simplificar,
+i què és millor deixar de fer.
 
-A partir d’aquí es pren qualsevol decisió tècnica.
-
----
-
-## 3. Disseny del sistema
-
-No es dissenya una web.
-
-Es dissenya una arquitectura:
-
-- com circula la informació  
-- on es genera el contingut  
-- com s’actualitza  
-- quines parts són fixes i quines són dinàmiques  
-
-La forma és conseqüència d’això.
+La tecnologia ve al final d'aquesta conversa,  
+no al principi.
 
 ---
 
-## 4. Implementació
+## Construïm per durar
 
-Quan el sistema està clar:
+Treballem amb tecnologia lliure i lleugera.
 
-- es construeix amb tecnologies lleugeres (com Hugo)  
-- s’integren automatitzacions quan té sentit  
-- es connecten fonts externes en lloc de duplicar contingut  
-- es redueix tot el que no és necessari  
+Sistemes que no depenen de plataformes externes.  
+Que podeu entendre, modificar i controlar.  
+Que no us facin mal quan deixeu de pagar una subscripció.
 
----
-
-## 5. Optimització
-
-Un cop en funcionament:
-
-- simplifiquem processos  
-- reduïm manteniment manual  
-- ajustem rendiment i estructura  
-- eliminem dependències innecessàries  
-
-El sistema ha de ser estable, no complex.
+El resultat ha de ser vostre de debò.
 
 ---
 
-## Principi base
+## La relació és continuada
 
-La tecnologia no és el punt de partida.
+No fem webs i desapareixem.
 
-És la conseqüència.
+Oferim una **bossa d'hores** per a clients que volen
+suport real sense contractes complexos:
+consultes, ajustos, evolució del sistema, formació.
 
----
-
-## El que evitem
-
-- solucions genèriques  
-- plantilles que no responen al projecte  
-- sistemes dependents de manteniment constant  
-- acumulació d’eines innecessàries  
+Pagueu les hores que necessiteu, quan les necessiteu.
 
 ---
 
-## El resultat
+## El que no fem
 
-Sistemes digitals:
-
-- més simples  
-- més clars  
-- més ràpids  
-- més sostenibles  
-- amb més autonomia real  
+- Plantilles genèriques
+- Sistemes que requereixen manteniment constant
+- Solucions que us fan dependents de nosaltres
+- Pressa quan el projecte no ho demana
 
 ---
 
-## Projectes
+## Treballem amb qui comparteix els valors
 
-Exemples de sistemes aplicats:
+Programari lliure. Privacitat. Sobirania digital.
 
-→ [Veure projectes](/projectes/)
+No és màrqueting: és com triem les eines
+i com assessorem cada projecte.
+
+Si el Kit Digital és la vostra referència,
+probablement no som el que busqueu.
+
+---
+
+→ [Veure solucions](/solucions/)  
+→ [Parlem](/contacte/)

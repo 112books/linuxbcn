@@ -1,17 +1,17 @@
+{{ define "main" }}
 
+<article>
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}
+      <p class="subtitle">{{ . }}</p>
+    {{ end }}
+  </header>
 
-
-<!-- layouts/_default/single.html -->
-
-<h1>{{ .Title }}</h1>
-
-{{ if .Content }}
   <div class="content">
     {{ .Content }}
   </div>
-{{ end }}
 
-.project-content img {
-  width: 100%;
-  margin: 30px 0;
-}
+</article>
+
+{{ end }}

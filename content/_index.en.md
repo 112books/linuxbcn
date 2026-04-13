@@ -1,34 +1,63 @@
 ---
 title: "Digital identity with criteria"
+subtitle: "Custom digital solutions. Free software, no complications."
 draft: false
 ---
 
-Digital consultancy focused on identity systems.
+## Most digital problems aren't technical
 
-We help people and organizations build coherent, autonomous and noise-free digital presence.
+They're about structure.
 
-We are not an agency. We don’t sell isolated services. We work with you to understand what you need and build it properly.
+Tools that accumulate without order.
+Websites that exist but don't communicate.
+External platforms controlling what should be yours.
 
-## Who we work with
+The result is always the same: more work, less control.
 
-- Artists and musicians
-- Cultural collectives
-- Value-driven small businesses
+---
 
 ## What we do
 
-We design and implement working digital structures.
+We accompany people and organisations in building
+a coherent, free and sustainable digital presence.
 
-No unnecessary dependencies. No noise.
+We don't make catalogue websites.
+We don't apply templates.
+We don't recommend trendy technology.
 
-## How we work
+We listen, understand the situation, and design
+the system that makes sense for each project.
 
-Support. Not tickets. Not patches.
+---
 
-[See how we work](/com-treballem/)
+## How we do it
 
-## Projects
+With over 25 years of experience in technology,
+culture and digital communication.
 
-Real cases, real decisions, measurable outcomes.
+We work with free software and open tools.
+We build lightweight, secure and easy-to-maintain systems.
+We put technology at the service of the project — not the other way around.
 
-[See projects](/projectes/)
+---
+
+## Who we work with
+
+We have concrete experience with:
+
+{{< perfils-en >}}
+
+If your project doesn't fit exactly into any of these,
+let's talk anyway. Every situation is different.
+
+---
+
+## Real projects
+
+The best we can show is what we've done:
+
+→ [See projects](/projectes/)
+
+---
+
+→ [See solutions by profile](/solucions/)

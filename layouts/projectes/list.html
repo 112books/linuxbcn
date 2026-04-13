@@ -1,39 +1,38 @@
 {{ define "main" }}
 
-<header class="projects-header">
+<header class="page-header">
   <h1>{{ .Title }}</h1>
-
-  <div class="intro">
-    {{ with .Content }}
-      {{ . }}
-    {{ else }}
-      <p>Una selecció de treballs, processos i fragments visuals.</p>
-    {{ end }}
-  </div>
+  {{ with .Params.subtitle }}
+    <p class="subtitle">{{ . }}</p>
+  {{ end }}
+  <div class="content">{{ .Content }}</div>
 </header>
 
-<section class="projects-grid">
-
-  {{ range .Pages.ByWeight }}
-
-    <a href="{{ .RelPermalink }}" class="project-card">
-
-      <div class="image-wrapper">
-        {{ if .Params.image }}
-          <div class="hero-image">
-            <img src="/images/{{ .Params.image }}" alt="{{ .Title }}">
-          </div>
-        {{ end }} 
+<div class="projects-grid">
+  {{ range .Pages }}
+  <a href="{{ .RelPermalink }}" class="project-card">
+    <div class="card-thumb">
+      {{ if .Params.image }}
+        <img src="{{ .RelPermalink }}{{ .Params.image }}" alt="{{ .Title }}">
+      {{ else }}
+        <div class="card-thumb-placeholder">
+          {{ with .Params.client }}<span>{{ . }}</span>{{ end }}
+        </div>
+      {{ end }}
+    </div>
+    <div class="card-body">
+      {{ with .Params.sector }}
+        <div class="card-sector">{{ . }}</div>
+      {{ end }}
+      <div class="card-title">{{ .Title }}</div>
+      <div class="card-meta">
+        {{ with .Params.client }}{{ . }}{{ end }}
+        {{ with .Params.year }} · {{ . }}{{ end }}
       </div>
-
-      <div class="meta">
-        <h2>{{ .Title }}</h2>
-      </div>
-
-    </a>
-
+      <div class="card-arrow">→ Veure projecte</div>
+    </div>
+  </a>
   {{ end }}
-
-</section>
+</div>
 
 {{ end }}

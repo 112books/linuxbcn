@@ -1,15 +1,29 @@
 ---
 title: "Contacte"
-slug: "contacte"
+subtitle: "Parlem"
 draft: false
 ---
 
-Si creus que podem treballar junts, explica breument la teva situació.
+## Escriu-nos
 
-## Punts útils
+→ hola@linuxbcn.com
 
-- Quin projecte tens  
-- Què et preocupa  
-- Què t’agradaria millorar  
+Explica'ns breument la teva situació:
+quin és el teu projecte, què no acaba de funcionar,
+i què t'agradaria millorar.
 
-Correu: hola@linuxbcn.com
+Treballem per correu. És asíncron, queda registre
+i ens permet respondre amb criteri.
+
+---
+
+## Com gestionem la comunicació
+
+Amb els clients actius treballem per correu i Telegram —
+àgil, privat i amb historial de tot el que s'ha parlat.
+
+Les reunions les fem en remot quan cal.  
+Les presencials, només si el projecte realment ho demana.
+
+No donem telèfon. No fem reunions exploratòries en persona.  
+Si això és un problema, probablement no encaixem.

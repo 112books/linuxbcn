@@ -1,64 +1,51 @@
 ---
 title: "Projectes"
-slug: "projectes"
+subtitle: "Feina real per a projectes reals"
 draft: false
 ---
 
-## Sistemes en funcionament
+## El millor que podem explicar és el que hem fet
 
-Els projectes no són casos d’estudi.
+No partim de zero amb cap client.
 
-Són proves reals de com s’aplica el sistema.
-
----
-
-## Cada projecte respon a una decisió
-
-No a una tecnologia.
-
-Sinó a una estructura.
+Portem més de 25 anys treballant amb projectes
+culturals, artístics i socials a Barcelona i més enllà.
+Aquí en podeu veure alguns.
 
 ---
 
-## Casos
+## Projectes destacats
 
-→ Arquitectura web i presència digital  
-→ Automatització de processos  
-→ Sistemes lleugers  
-→ Intervenció sobre sistemes existents  
+Casos complets amb narrativa pròpia:
 
----
-
-## Projectes
-
-A continuació, alguns exemples reals:
+→ [Bratia](/projectes/bratia/) — banda de Balkan Gypsy Jazz
+→ [Machiroku](/projectes/machiroku/) — restaurant japonès al centre de Barcelona
+→ [Nau Bostik](/projectes/nau-bostik/) — espai cultural autogestionat
 
 ---
 
-### Nom del projecte 1
-Breu descripció d’un sistema resolt amb arquitectura o intervenció.
+## Projectes de referència
 
-→ Veure projecte
+Organitzacions amb les quals hem treballat
+en diferents moments i capacitats:
 
----
-
-### Nom del projecte 2
-Breu descripció d’automatització o sistema lleuger.
-
-→ Veure projecte
+→ [Carrer.cat](/projectes/carrer/) — publicació del moviment veïnal català
+→ [FAVB](/projectes/favb/) — Federació d'Associacions de Veïns de Barcelona
+→ [Pocallum](/projectes/pocallum/) — agència fotogràfica
 
 ---
 
-## Com treballem
+## Projectes propis
 
-Per entendre el criteri darrere dels projectes:
+Eines i sistemes que hem construït per a nosaltres
+i que apliquem als projectes dels clients:
 
-→ [Veure com treballem](/com-treballem/)
+→ [LinuxBCN.com](/projectes/linuxbcn/) — aquest mateix web
+→ [MalditasMaquinas](/projectes/malditasmaquinas/) — servei tècnic especialitzat
+→ [112Books](/projectes/112books/) — editorial de fotografia
 
 ---
 
-## Contacte
+## Tens un projecte?
 
-Si vols aplicar aquest tipus de sistema:
-
-→ [Contacte](/contacte/)
+→ [Parlem](/contacte/)

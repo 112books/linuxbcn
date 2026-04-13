@@ -1,32 +1,78 @@
 ---
 title: "How we work"
-slug: "com-treballem"
+subtitle: "Accompaniment, not intervention"
 draft: false
 ---
 
-We don’t work on isolated tasks.
+## First, we listen
 
-We work through guidance.
+Before proposing anything, we understand what already exists.
 
-## Process
+How you move digitally, which tools you use,
+where you lose time and energy, and where you want to go.
 
-1. Understand the real situation  
-2. Identify dependencies and weak points  
-3. Define a viable strategy  
-4. Implement using free technologies  
-5. Transfer knowledge  
+There's no standard diagnosis.
+Every project starts from scratch because every situation is different.
 
-## What this means
+---
 
-We don’t create dependency. The goal is that you understand and sustain your own infrastructure.
+## Then, we decide together
 
-## Values
+We don't apply prefabricated solutions.
 
-- Free software  
-- Digital sovereignty  
-- Simplicity  
-- Sustainability  
+We define what makes sense for your case:
+what needs to be built, what can be simplified,
+and what's better left undone.
 
-## Technical support
+Technology comes at the end of this conversation,
+not at the beginning.
 
-For specific technical needs, we also operate through MalditasMaquinas.
+---
+
+## We build to last
+
+We work with free and lightweight technology.
+
+Systems that don't depend on external platforms.
+That you can understand, modify and control.
+That won't hurt you when you stop paying a subscription.
+
+The result must be genuinely yours.
+
+---
+
+## The relationship is ongoing
+
+We don't build websites and disappear.
+
+We offer an **hours package** for clients who want
+real support without complex contracts:
+consultations, adjustments, system evolution, training.
+
+You pay for the hours you need, when you need them.
+
+---
+
+## What we don't do
+
+- Generic templates
+- Systems that require constant maintenance
+- Solutions that make you dependent on us
+- Rush when the project doesn't call for it
+
+---
+
+## We work with those who share the values
+
+Free software. Privacy. Digital sovereignty.
+
+This isn't marketing: it's how we choose tools
+and how we advise each project.
+
+If the Kit Digital is your reference,
+we're probably not what you're looking for.
+
+---
+
+→ [See solutions](/solucions/)
+→ [Let's talk](/contacte/)

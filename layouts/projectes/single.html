@@ -2,37 +2,60 @@
 
 <article class="project">
 
-  <!-- HERO -->
   <header class="project-hero">
-
     <h1>{{ .Title }}</h1>
-
     {{ if .Params.year }}
       <div class="meta">
-        {{ .Params.year }} · {{ .Params.client }}
+        {{ .Params.year }}{{ with .Params.client }} · {{ . }}{{ end }}
       </div>
     {{ end }}
-
     {{ if .Params.image }}
       <div class="hero-image">
-        <img src="/images/{{ .Params.image }}" alt="{{ .Title }}">
+        {{ $img := .Page.Resources.GetMatch .Params.image }}
+          {{ if $img }}
+            <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="lightbox-trigger">
+        {{ end }}
       </div>
     {{ end }}
-
   </header>
 
-  <!-- TEXT -->
-  {{ if .Params.description }}
+  {{ with .Params.description }}
     <section class="project-intro">
-      <p>{{ .Params.description }}</p>
+      <p>{{ . }}</p>
     </section>
   {{ end }}
 
-  <!-- CONTINGUT -->
   <section class="project-content">
     {{ .Content }}
   </section>
 
 </article>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">ESC · tancar</span>
+  <img src="" alt="" id="lightbox-img">
+</div>
+
+<script>
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightbox-img');
+
+document.querySelectorAll('.project-content img, .lightbox-trigger').forEach(img => {
+  img.addEventListener('click', () => {
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lightbox.classList.add('active');
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') lightbox.classList.remove('active');
+});
+</script>
 
 {{ end }}

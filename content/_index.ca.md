@@ -1,92 +1,63 @@
 ---
 title: "Identitat digital amb criteri"
-subtitle: "Sistemes digitals coherents, lleugers i sostenibles"
+subtitle: "Solucions digitals a mida. Programari lliure, sense complicacions."
 draft: false
 ---
 
-## Sistemes digitals amb criteri
+## La majoria de problemes digitals no són tècnics
 
-No totes les webs fallen per tecnologia.
+Són de criteri.
 
-Quan fallen, gairebé sempre és per estructura.
+Eines que s'acumulen sense ordre.
+Webs que existeixen però no comuniquen.
+Plataformes externes que controlen el que hauria de ser teu.
 
----
-
-## El problema
-
-Fallen per estructura:
-
-- informació dispersa  
-- eines desconnectades  
-- dependència de plataformes externes  
-
-El resultat és més complexitat de la necessària.
+El resultat és sempre el mateix: més feina, menys control.
 
 ---
 
 ## El que fem
 
+Acompanyem persones i organitzacions a construir
+una presència digital coherent, lliure i sostenible.
 
-Dissenyem i construïm sistemes digitals coherents i sostenibles.
+No fem webs de catàleg.
+No apliquem plantilles.
+No recomanem tecnologia de moda.
 
-Treballem sobre estructura, no només sobre eines.
-
-Acompanyem decisions d’arquitectura, implementació i evolució.
-
----
-
-## En què treballem
-
-Àrees on intervenim:
-
-→ [Veure solucions](/solucions/)
-
-Arquitectura web, sistemes lleugers i automatització de processos.
+Escoltem, entenem la situació, i dissenyem
+el sistema que té sentit per a cada projecte.
 
 ---
 
-## Com ho enfoquem
+## Com ho fem
 
-Cada projecte parteix de tres decisions:
+Amb més de 25 anys d'experiència en tecnologia,
+cultura i comunicació digital.
 
-- què ha de ser central  
-- què es pot automatitzar  
-- què no cal construir  
-
-La tecnologia s’adapta al projecte — no al revés.
-
----
-
-## Per a qui
-
-Projectes que necessiten criteri i autonomia:
-
-- cultura i creació  
-- músics i col·lectius  
-- microempreses  
-- organitzacions amb estructura pròpia  
+Treballem amb programari lliure i eines obertes.
+Construïm sistemes lleugers, segurs i fàcils de mantenir.
+Posem la tecnologia al servei del projecte — no al revés.
 
 ---
 
-## Resultat
+## Per a qui treballem
 
-Sistemes més simples, ràpids i sostenibles.
+Tenim experiència concreta amb:
 
-Menys manteniment.  
-Més coherència.  
-Més control.
+{{< perfils >}}
+
+Si el teu projecte no encaixa exactament en cap d'aquests,
+parlem igualment. Cada situació és diferent.
 
 ---
 
-## Projectes
+## Projectes reals
 
-Exemples reals del sistema en funcionament:
+El millor que podem mostrar és el que hem fet:
 
 → [Veure projectes](/projectes/)
 
+---
 
-## Parlem
-
-Si tens un projecte o una estructura que no acaba de funcionar:
-
-→ [Contacte](/contacte/)
+→ [Veure solucions per perfil](/solucions/)
