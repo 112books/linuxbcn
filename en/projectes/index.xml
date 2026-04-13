@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on LinuxBCN</title><link>https://112books.github.io/linuxbcn/en/projectes/</link><description>Recent content in Projects on LinuxBCN</description><generator>Hugo</generator><language>en</language><atom:link href="https://112books.github.io/linuxbcn/en/projectes/index.xml" rel="self" type="application/rss+xml"/><item><title>Bratia</title><link>https://112books.github.io/linuxbcn/en/projectes/bratia/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/bratia/</guid><description>&lt;h2 id="balkan-gypsy-jazz-from-barcelona"&gt;Balkan Gypsy Jazz from Barcelona&lt;/h2&gt;
+&lt;p&gt;Bratia is a Barcelona band formed by musicians
+with international careers — Ivan Kovačević, Pere Nolasc
+Plana, Victor Paradis, Julien Chanal and Stelios Togias —
+specialising in the fusion of manouche jazz, Balkan music
+and gypsy jazz.&lt;/p&gt;
+&lt;p&gt;The previous website was a heavy, hard-to-maintain WordPress
+that required technical intervention for any change.
+The real problem: touring musicians don&amp;rsquo;t have time
+to manage websites.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-problem"&gt;The problem&lt;/h2&gt;
+&lt;p&gt;An active band needs the website to update itself.&lt;/p&gt;</description></item><item><title>Machiroku</title><link>https://112books.github.io/linuxbcn/en/projectes/machiroku/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/machiroku/</guid><description>&lt;h2 id="a-japanese-restaurant-in-the-heart-of-barcelona"&gt;A Japanese restaurant in the heart of Barcelona&lt;/h2&gt;
+&lt;p&gt;Machiroku is a small family restaurant specialising
+in authentic Japanese cuisine in the heart of Barcelona.&lt;/p&gt;
+&lt;p&gt;The previous website was a conventional WordPress: functional,
+but heavy, hard to maintain and with no adaptation
+to the restaurant&amp;rsquo;s real needs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-problem"&gt;The problem&lt;/h2&gt;
+&lt;p&gt;A restaurant needs to update its menu, opening hours
+and notices frequently. With WordPress, every change
+required accessing a complex manager or depending
+on someone external.&lt;/p&gt;</description></item><item><title>Nau Bostik</title><link>https://112books.github.io/linuxbcn/en/projectes/nau-bostik/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/nau-bostik/</guid><description>&lt;h2 id="a-cultural-space-that-deserves-a-tool-built-for-it"&gt;A cultural space that deserves a tool built for it&lt;/h2&gt;
+&lt;p&gt;Nau Bostik is a self-managed sociocultural space
+in the Sagrera neighbourhood, Barcelona. Intense activity,
+diverse community, constant agenda and completely
+horizontal management.&lt;/p&gt;
+&lt;p&gt;The current website works, but it doesn&amp;rsquo;t accompany.
+It&amp;rsquo;s a showcase, not a tool.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-vision"&gt;The vision&lt;/h2&gt;
+&lt;p&gt;We are developing a proposal to turn
+Nau Bostik&amp;rsquo;s website into a real tool for management,
+communication and governance of the organisation.&lt;/p&gt;</description></item><item><title>112Books</title><link>https://112books.github.io/linuxbcn/en/projectes/112books/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/112books/</guid><description>&lt;h2 id="an-independent-photography-publisher"&gt;An independent photography publisher&lt;/h2&gt;
+&lt;p&gt;112Books is an independent publisher focused on
+photobooks and photographic projects.&lt;/p&gt;
+&lt;p&gt;The challenge was not just publishing content.
+It was structuring a coherent and sustainable
+digital editorial system.&lt;/p&gt;
+&lt;p&gt;Website currently under renovation — the new version
+will include a news blog and an integrated shop,
+built with Hugo to reduce weight and improve performance.&lt;/p&gt;
+&lt;p&gt;→ &lt;a href="https://112books.eu"&gt;112books.eu&lt;/a&gt;&lt;/p&gt;</description></item><item><title>112Revelats</title><link>https://112books.github.io/linuxbcn/en/projectes/112revelats/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/112revelats/</guid><description>&lt;h2 id="a-platform-for-new-voices-in-photography"&gt;A platform for new voices in photography&lt;/h2&gt;
+&lt;p&gt;112Revelats is a project by publisher 112Books
+to give visibility to emerging photographers.&lt;/p&gt;
+&lt;p&gt;Two annual open calls where new authors can publish
+a digital photobook in a collective format. If the project
+grows, also in print.&lt;/p&gt;
+&lt;p&gt;Current website in WordPress, in the process of migration
+to Hugo now that the editorial model is well defined.&lt;/p&gt;
+&lt;p&gt;→ &lt;a href="https://112revelats.112books.eu"&gt;112revelats.112books.eu&lt;/a&gt;&lt;/p&gt;</description></item><item><title>MalditasMaquinas</title><link>https://112books.github.io/linuxbcn/en/projectes/malditasmaquinas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/malditasmaquinas/</guid><description>&lt;h2 id="technology-consultancy-by-the-hour"&gt;Technology consultancy by the hour&lt;/h2&gt;
+&lt;p&gt;MalditasMaquinas is a technology consultancy service
+designed for those who need occasional advice
+without long contracts or commitments.&lt;/p&gt;
+&lt;p&gt;The model is simple: buy consultancy hours
+and ask questions by email. The status of remaining hours
+and the full consultation history always accessible
+from a private area within the website.&lt;/p&gt;
+&lt;p&gt;A way to give professional responses to the regular
+queries that arrive by phone and are hard to invoice.&lt;/p&gt;</description></item><item><title>Carrer.cat</title><link>https://112books.github.io/linuxbcn/en/projectes/carrer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/carrer/</guid><description>&lt;h2 id="the-catalan-neighbourhood-movements-magazine-online"&gt;The Catalan neighbourhood movement&amp;rsquo;s magazine online&lt;/h2&gt;
+&lt;p&gt;Carrer is the publication of FAVB — the Federation
+of Neighbourhood Associations of Barcelona —
+with decades of experience defending neighbourhood rights.&lt;/p&gt;
+&lt;p&gt;The challenge was to bring a consolidated print publication
+to the internet without losing its editorial essence.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-solution"&gt;The solution&lt;/h2&gt;
+&lt;p&gt;We built the project from scratch with two clear axes:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Complete digital archive&lt;/strong&gt;
+All magazine issues in PDF, accessible,
+organised and searchable. Decades of neighbourhood
+journalism, available online.&lt;/p&gt;</description></item><item><title>Pocallum</title><link>https://112books.github.io/linuxbcn/en/projectes/pocallum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/pocallum/</guid><description>&lt;h2 id="a-photography-agency-with-its-own-character"&gt;A photography agency with its own character&lt;/h2&gt;
+&lt;p&gt;Pocallum is a Barcelona photography agency
+with a very defined identity and an unconventional
+way of working.&lt;/p&gt;
+&lt;p&gt;Current website in WordPress, under review.
+A close project where technology and photographic vision
+must go completely hand in hand.&lt;/p&gt;
+&lt;p&gt;→ &lt;a href="https://pocallum.cat"&gt;pocallum.cat&lt;/a&gt;&lt;/p&gt;</description></item><item><title>LinuxBCN</title><link>https://112books.github.io/linuxbcn/en/projectes/linuxbcn-arquitectura-sistema-digital/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/linuxbcn-arquitectura-sistema-digital/</guid><description>&lt;h2 id="this-very-website"&gt;This very website&lt;/h2&gt;
+&lt;p&gt;LinuxBCN.com is itself an example of the system
+we propose to our clients.&lt;/p&gt;
+&lt;p&gt;Built with Hugo, lightweight, fast and maintainable.
+Trilingual from day one.
+No unnecessary plugins, no external dependencies.&lt;/p&gt;
+&lt;p&gt;The methodology we apply to every project
+applied first to ourselves.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="before-and-after"&gt;Before and after&lt;/h2&gt;
+&lt;p&gt;The previous website: accumulative WordPress, hard to maintain.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://112books.github.io/linuxbcn/ca/projectes/linuxbcn-arquitectura-sistema-digital/01-linuxbcn-portada.png" alt="Previous website"&gt;&lt;/p&gt;
+&lt;p&gt;The new system: lightweight, structured and coherent.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://112books.github.io/linuxbcn/ca/projectes/linuxbcn-arquitectura-sistema-digital/00-linuxbcn-nova-portada.png" alt="New homepage"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;→ &lt;a href="https://linuxbcn.com"&gt;linuxbcn.com&lt;/a&gt;
+→ &lt;a href="https://112books.github.io/linuxbcn/en/com-treballem/"&gt;How we work&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://112books.github.io/linuxbcn/en/projectes/favb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/en/projectes/favb/</guid><description/></item></channel></rss>

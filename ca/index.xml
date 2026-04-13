@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Identitat digital amb criteri on LinuxBCN</title><link>https://112books.github.io/linuxbcn/ca/</link><description>Recent content in Identitat digital amb criteri on LinuxBCN</description><generator>Hugo</generator><language>ca</language><atom:link href="https://112books.github.io/linuxbcn/ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Bratia</title><link>https://112books.github.io/linuxbcn/ca/projectes/bratia/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/bratia/</guid><description>&lt;h2 id="balkan-gypsy-jazz-des-de-barcelona"&gt;Balkan Gypsy Jazz des de Barcelona&lt;/h2&gt;
+&lt;p&gt;Bratia és una banda de Barcelona formada per músics
+de trajectòria internacional — Ivan Kovačević, Pere Nolasc
+Plana, Victor Paradis, Julien Chanal i Stelios Togias —
+especialitzats en la fusió de jazz manouche, música
+balcànica i gypsy jazz.&lt;/p&gt;
+&lt;p&gt;El web anterior era un WordPress pesat, difícil de mantenir
+i que requeria intervenció tècnica per a qualsevol canvi.
+El problema real: músics en gira no tenen temps
+per gestionar webs.&lt;/p&gt;</description></item><item><title>Machiroku</title><link>https://112books.github.io/linuxbcn/ca/projectes/machiroku/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/machiroku/</guid><description>&lt;h2 id="un-restaurant-japonès-al-centre-de-barcelona"&gt;Un restaurant japonès al centre de Barcelona&lt;/h2&gt;
+&lt;p&gt;Machiroku és un petit restaurant familiar especialitzat
+en cuina japonesa autèntica al cor de Barcelona.&lt;/p&gt;
+&lt;p&gt;El web anterior era un WordPress convencional: funcional,
+però pesat, difícil de mantenir i sense cap adaptació
+a les necessitats reals del negoci.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="el-problema"&gt;El problema&lt;/h2&gt;
+&lt;p&gt;Un restaurant necessita actualitzar carta, horaris
+i avisos amb freqüència. Amb WordPress, cada canvi
+requeria accedir a un gestor complex o dependre
+d&amp;rsquo;algú extern.&lt;/p&gt;</description></item><item><title>Nau Bostik</title><link>https://112books.github.io/linuxbcn/ca/projectes/nau-bostik/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/nau-bostik/</guid><description>&lt;h2 id="un-espai-cultural-que-mereix-una-eina-a-la-seva-mida"&gt;Un espai cultural que mereix una eina a la seva mida&lt;/h2&gt;
+&lt;p&gt;Nau Bostik és un espai sociocultural autogestionat
+al barri de la Sagrera, Barcelona. Activitat intensa,
+comunitat diversa, agenda constant i una gestió
+completament horitzontal.&lt;/p&gt;
+&lt;p&gt;El web actual compleix, però no acompanya.
+És un aparador, no una eina.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="la-visió"&gt;La visió&lt;/h2&gt;
+&lt;p&gt;Estem desenvolupant una proposta per convertir
+el web de Nau Bostik en una eina real de gestió,
+comunicació i governança de l&amp;rsquo;entitat.&lt;/p&gt;</description></item><item><title>112Books</title><link>https://112books.github.io/linuxbcn/ca/projectes/112books/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/112books/</guid><description>&lt;h2 id="una-editorial-independent-de-fotografia"&gt;Una editorial independent de fotografia&lt;/h2&gt;
+&lt;p&gt;112Books és una editorial independent centrada en
+fotollibres i projectes fotogràfics.&lt;/p&gt;
+&lt;p&gt;El repte no era només publicar continguts.
+Era estructurar un sistema editorial digital
+coherent i sostenible.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="el-sistema-actual"&gt;El sistema actual&lt;/h2&gt;
+&lt;p&gt;Web construïda amb WordPress, en procés de renovació.&lt;/p&gt;
+&lt;p&gt;La nova versió inclourà un blog de notícies
+i una botiga integrada, construïda amb Hugo
+per reduir el pes i millorar el rendiment.&lt;/p&gt;
+&lt;p&gt;Un projecte propi que aplica la mateixa metodologia
+que oferim als nostres clients: menys dependències,
+més control, més sostenibilitat.&lt;/p&gt;</description></item><item><title>112Revelats</title><link>https://112books.github.io/linuxbcn/ca/projectes/112revelats/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/112revelats/</guid><description>&lt;h2 id="una-plataforma-per-a-noves-veus-de-la-fotografia"&gt;Una plataforma per a noves veus de la fotografia&lt;/h2&gt;
+&lt;p&gt;112Revelats és un projecte de l&amp;rsquo;editorial 112Books
+per donar visibilitat a fotògrafs emergents.&lt;/p&gt;
+&lt;p&gt;Dues convocatòries anuals on nous autors poden publicar
+un fotollibre digital en format col·lectiu. Si el projecte
+creix, també en paper.&lt;/p&gt;
+&lt;p&gt;Web actual en WordPress, en procés de migració a Hugo
+ara que el model editorial està ben definit i consolidat.&lt;/p&gt;
+&lt;p&gt;→ &lt;a href="https://112revelats.112books.eu"&gt;112revelats.112books.eu&lt;/a&gt;&lt;/p&gt;</description></item><item><title>MalditasMaquinas</title><link>https://112books.github.io/linuxbcn/ca/projectes/malditasmaquinas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/malditasmaquinas/</guid><description>&lt;h2 id="consultoria-tecnològica-per-hores"&gt;Consultoria tecnològica per hores&lt;/h2&gt;
+&lt;p&gt;MalditasMaquinas és un servei de consultoria tecnològica
+pensat per a qui necessita assessorament puntual
+sense contractes ni compromisos llargs.&lt;/p&gt;
+&lt;p&gt;El model és senzill: es compren hores de consultoria
+i es fan les consultes per correu. L&amp;rsquo;estat de les hores
+restants i l&amp;rsquo;historial de consultes sempre accessibles
+des d&amp;rsquo;un espai privat dins el web.&lt;/p&gt;
+&lt;p&gt;Una manera de donar resposta professional a les consultes
+habituals que arriben per telèfon i són difícils de facturar.&lt;/p&gt;</description></item><item><title>Carrer.cat</title><link>https://112books.github.io/linuxbcn/ca/projectes/carrer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/carrer/</guid><description>&lt;h2 id="la-revista-del-moviment-veïnal-català-en-digital"&gt;La revista del moviment veïnal català en digital&lt;/h2&gt;
+&lt;p&gt;Carrer és la publicació de la FAVB — Federació
+d&amp;rsquo;Associacions de Veïns i Veïnes de Barcelona —
+amb decades de trajectòria en la defensa dels drets veïnals.&lt;/p&gt;
+&lt;p&gt;El repte era traslladar una publicació impresa consolidada
+a internet sense perdre la seva essència editorial.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="la-solució"&gt;La solució&lt;/h2&gt;
+&lt;p&gt;Hem construït el projecte de zero amb dos eixos clars:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Arxiu digital complet&lt;/strong&gt;
+Tots els números de la revista en PDF accessibles,
+organitzats i consultables. La memòria de decades
+de periodisme veïnal, disponible en línia.&lt;/p&gt;</description></item><item><title>FAVB</title><link>https://112books.github.io/linuxbcn/ca/projectes/favb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/favb/</guid><description>&lt;h2 id="la-federació-dassociacions-de-veïns-i-veïnes-de-barcelona"&gt;La Federació d&amp;rsquo;Associacions de Veïns i Veïnes de Barcelona&lt;/h2&gt;
+&lt;p&gt;La FAVB és una de les organitzacions veïnals
+més antigues i representatives de Barcelona.&lt;/p&gt;
+&lt;p&gt;Presència digital consolidada, gestió de continguts
+complexa i un ecosistema digital que cal mantenir
+amb criteri i sense trencar el que funciona.&lt;/p&gt;
+&lt;p&gt;→ &lt;a href="https://favb.cat"&gt;favb.cat&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Pocallum</title><link>https://112books.github.io/linuxbcn/ca/projectes/pocallum/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/pocallum/</guid><description>&lt;h2 id="agència-de-fotografia-amb-caràcter-propi"&gt;Agència de fotografia amb caràcter propi&lt;/h2&gt;
+&lt;p&gt;Pocallum és una agència fotogràfica barcelonina
+amb una identitat molt definida i una manera
+de treballar poc convencional.&lt;/p&gt;
+&lt;p&gt;Web actual en WordPress, en procés de revisió.
+Un projecte proper on tecnologia i mirada fotogràfica
+han d&amp;rsquo;anar completament de la mà.&lt;/p&gt;
+&lt;p&gt;→ &lt;a href="https://pocallum.cat"&gt;pocallum.cat&lt;/a&gt;&lt;/p&gt;</description></item><item><title>LinuxBCN</title><link>https://112books.github.io/linuxbcn/ca/projectes/linuxbcn-arquitectura-sistema-digital/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/projectes/linuxbcn-arquitectura-sistema-digital/</guid><description>&lt;h2 id="aquest-mateix-web"&gt;Aquest mateix web&lt;/h2&gt;
+&lt;p&gt;LinuxBCN.com és en si mateix un exemple del sistema
+que proposem als nostres clients.&lt;/p&gt;
+&lt;p&gt;Construït amb Hugo, lleuger, ràpid i mantenible.
+Trilingüe des del primer dia.
+Sense plugins innecessaris, sense dependències externes.&lt;/p&gt;
+&lt;p&gt;La metodologia que apliquem a cada projecte,
+aplicada primer a nosaltres mateixos.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="abans-i-després"&gt;Abans i després&lt;/h2&gt;
+&lt;p&gt;La web anterior: WordPress acumulatiu, difícil de mantenir.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://112books.github.io/linuxbcn/ca/projectes/linuxbcn-arquitectura-sistema-digital/01-linuxbcn-portada.png" alt="Web anterior"&gt;&lt;/p&gt;
+&lt;p&gt;El nou sistema: lleuger, estructurat i coherent.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://112books.github.io/linuxbcn/ca/projectes/linuxbcn-arquitectura-sistema-digital/00-linuxbcn-nova-portada.png" alt="Nova portada"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;→ &lt;a href="https://linuxbcn.com"&gt;linuxbcn.com&lt;/a&gt;
+→ &lt;a href="https://112books.github.io/linuxbcn/ca/com-treballem/"&gt;Com treballem&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Solucions per a artistes i músics</title><link>https://112books.github.io/linuxbcn/ca/solucions/musics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/solucions/musics/</guid><description>&lt;h2 id="la-situació-habitual"&gt;La situació habitual&lt;/h2&gt;
+&lt;p&gt;Tens web, xarxes, continguts — però no tens sistema.&lt;/p&gt;
+&lt;p&gt;Els concerts no estan actualitzats.&lt;br&gt;
+La biografia és diferent a cada plataforma.&lt;br&gt;
+Els vídeos viuen a YouTube, les fotos a Instagram,&lt;br&gt;
+la música a Spotify, i el web no connecta res d&amp;rsquo;això.&lt;/p&gt;
+&lt;p&gt;Qualsevol canvi requereix tocar cinc llocs diferents.&lt;br&gt;
+O dependre d&amp;rsquo;algú que ho faci per tu.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="el-que-proposem"&gt;El que proposem&lt;/h2&gt;
+&lt;p&gt;Una presència digital pensada com a sistema.&lt;/p&gt;
+&lt;p&gt;Un web que connecta el que ja existeix — concerts,
+música, vídeos, fotografies — sense duplicar continguts
+ni crear dependències noves.&lt;/p&gt;</description></item><item><title>Solucions per a entitats i col·lectius culturals</title><link>https://112books.github.io/linuxbcn/ca/solucions/collectius/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/solucions/collectius/</guid><description>&lt;h2 id="la-situació-habitual"&gt;La situació habitual&lt;/h2&gt;
+&lt;p&gt;El col·lectiu funciona. La comunicació digital, no.&lt;/p&gt;
+&lt;p&gt;El web és difícil d&amp;rsquo;actualitzar — sempre depèn d&amp;rsquo;algú.&lt;br&gt;
+Les reunions es convoquen per WhatsApp.&lt;br&gt;
+Els documents viuen a Google Drive sense que ningú ho hagi decidit.&lt;br&gt;
+Les fotos estan a Instagram d&amp;rsquo;algú que potser ja no és al col·lectiu.&lt;/p&gt;
+&lt;p&gt;No és mala voluntat. És que ningú va dissenyar el sistema.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="el-que-proposem"&gt;El que proposem&lt;/h2&gt;
+&lt;p&gt;Ordenar l&amp;rsquo;ecosistema digital del col·lectiu amb criteri.&lt;/p&gt;</description></item><item><title>Solucions per a negocis amb valors</title><link>https://112books.github.io/linuxbcn/ca/solucions/microempreses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://112books.github.io/linuxbcn/ca/solucions/microempreses/</guid><description>&lt;h2 id="la-situació-habitual"&gt;La situació habitual&lt;/h2&gt;
+&lt;p&gt;El negoci funciona. La presència digital, no acaba de funcionar.&lt;/p&gt;
+&lt;p&gt;El web el va fer algú fa anys i ningú sap com tocar-lo.&lt;br&gt;
+Esteu a Instagram perquè &amp;ldquo;cal ser-hi&amp;rdquo; però no genera res.&lt;br&gt;
+Pagueu subscripcions a eines que no recordeu per què vau contractar.&lt;br&gt;
+Cada actualització requereix trucar a algú o esperar que tingui temps.&lt;/p&gt;
+&lt;p&gt;El problema no és la tecnologia.&lt;br&gt;
+És que ningú va pensar el sistema des del principi.&lt;/p&gt;</description></item></channel></rss>

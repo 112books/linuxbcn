@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Editorial on LinuxBCN</title>
+    <link>http://localhost:1313/ca/tags/editorial/</link>
+    <description>Recent content in Editorial on LinuxBCN</description>
+    <generator>Hugo</generator>
+    <language>ca</language>
+    <lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/ca/tags/editorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>112Books — sistema editorial i arquitectura digital</title>
+      <link>http://localhost:1313/ca/projectes/112books-sistema-editorial/</link>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ca/projectes/112books-sistema-editorial/</guid>
+      <description>&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;112Books és una iniciativa editorial centrada en fotollibres i projectes fotogràfics.&lt;/p&gt;&#xA;&lt;p&gt;El repte no era només publicar continguts.&lt;/p&gt;&#xA;&lt;p&gt;Era estructurar un sistema editorial digital coherent i sostenible.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;problema&#34;&gt;Problema&lt;/h2&gt;&#xA;&lt;p&gt;Els processos editorials digitals tendeixen a fragmentar-se:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;gestió de continguts dispersa&lt;/li&gt;&#xA;&lt;li&gt;fluxos de publicació manuals&lt;/li&gt;&#xA;&lt;li&gt;dependència d’eines no connectades&lt;/li&gt;&#xA;&lt;li&gt;dificultat per escalar projectes col·lectius&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;El problema no era la producció.&lt;/p&gt;&#xA;&lt;p&gt;Era la coordinació del sistema.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;intervenció&#34;&gt;Intervenció&lt;/h2&gt;&#xA;&lt;p&gt;Es defineix una estructura basada en criteri de sistema:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
