@@ -404,8 +404,7 @@
 //  CONFIGURACIÓ  — canvia aquí el token quan el tinguis
 // ═══════════════════════════════════════════════════════════════════════════
 const PASSWORD  = 'linuxbcn';
-const API_TOKEN = 'NVLNYV5JIVPOIHZHE57TVCDBPV7UPKFL';   // https://linuxbcn.goatcounter.com/user/api
-const GC_BASE   = 'https://linuxbcn.goatcounter.com/api/v0';
+const GC_BASE   = '/admin/gc-proxy.php';
 // ═══════════════════════════════════════════════════════════════════════════
 
 // ── Auth ──────────────────────────────────────────────────────────────────
@@ -444,11 +443,10 @@ if (sessionStorage.getItem('gc_ok')) showDashboard();
 
 // ── API ───────────────────────────────────────────────────────────────────
 async function gc(path, params = {}) {
-  const url = new URL(GC_BASE + path);
+  const url = new URL(GC_BASE, location.href);
+  url.searchParams.set('path', path);
   Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
-  const r = await fetch(url, {
-    headers: { 'Authorization': `Bearer ${API_TOKEN}` }
-  });
+  const r = await fetch(url);
   if (!r.ok) {
     const text = await r.text();
     throw new Error(`${r.status} ${r.statusText}: ${text.slice(0, 200)}`);
@@ -570,11 +568,6 @@ function renderLang(hits) {
 
 // ── Main ──────────────────────────────────────────────────────────────────
 async function loadStats() {
-  if (API_TOKEN === 'POSAR_TOKEN_AQUÍ') {
-    showError('Token de l\'API no configurat. Genera\'l a <a href="https://linuxbcn.goatcounter.com/user/api" target="_blank">GoatCounter → Configuració → API tokens</a> i posa\'l a <code>static/admin/index.html</code>.');
-    return;
-  }
-
   const T   = today();
   const D7  = daysAgo(7);
   const D30 = daysAgo(30);
