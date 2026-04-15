@@ -30,3 +30,9 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="{{ "img/favicon.svg" | relURL }}">
+
+<!-- Analítica: GoatCounter (sense cookies, GDPR) -->
+{{ if not .Site.Params.noindex }}
+<script data-goatcounter="https://linuxbcn.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+{{ end }}

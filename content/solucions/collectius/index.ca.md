@@ -1,6 +1,6 @@
 ---
 title: "Solucions per a entitats i col·lectius culturals"
-subtitle: "Eines lliures, sobirania digital i comunicació coherent"
+subtitle: "Una plataforma de gestió, no només un web informatiu"
 slug: "collectius"
 draft: false
 ---
@@ -9,46 +9,54 @@ draft: false
 
 El col·lectiu funciona. La comunicació digital, no.
 
-El web és difícil d'actualitzar — sempre depèn d'algú.  
-Les reunions es convoquen per WhatsApp.  
-Els documents viuen a Google Drive sense que ningú ho hagi decidit.  
+El web és difícil d'actualitzar — sempre depèn d'algú.
+Les reunions es convoquen per WhatsApp.
+Els documents viuen a Google Drive sense que ningú ho hagi decidit.
 Les fotos estan a Instagram d'algú que potser ja no és al col·lectiu.
 
-No és mala voluntat. És que ningú va dissenyar el sistema.
+I al fons, una qüestió de sobirania: **tota la informació important de l'entitat viu en plataformes corporatives** que tracten les dades com a negoci propi.
 
 ---
 
 ## El que proposem
 
-Ordenar l'ecosistema digital del col·lectiu amb criteri.
+Webs que, a més d'informar, **esdevenen eines de gestió**. Una plataforma digital que:
 
-Eines que siguin vostres de debò.  
-Comunicació que no depengui d'una plataforma externa.  
-Un web que reflecteixi el que feu i que pugueu gestionar vosaltres.
+- Centralitza la comunicació sense dependre de tercers
+- Garanteix la privacitat dels documents i dades dels membres
+- Permet que qualsevol persona del col·lectiu pugui gestionar-la
+- Reflecteix realment el que sou i el que feu
 
 ---
 
 ## Què inclou
 
 **Presència i identitat**
-- Web propi, clar i accessible
-- Disseny coherent amb la identitat del col·lectiu
+- Web clar, accessible i coherent amb la identitat del col·lectiu
 - Multiidioma si el projecte ho necessita
+- Disseny adaptat al perfil i als valors
 
 **Gestió de continguts**
 - Sistema d'edició sense codi per a l'equip
 - Estructura pensada per a diverses persones editant
 - Agenda d'activitats fàcil de mantenir
 
-**Eines lliures i sobirania digital**
+**Sobirania digital i privacitat**
 - Alternatives a Google Workspace i eines corporatives
 - Allotjament en servidors propis o ètics
-- Dades que es queden on han de quedar
+- Documents i dades importants sota el vostre control — no als servidors de les grans corporacions
+- Gestió de membres i zones privades si cal
 
 **Comunicació interna i externa**
-- Canals de comunicació propis
+- Canals de comunicació propis, sense intermediaris
 - Butlletí per mantenir el contacte amb el públic
-- Formularis i contacte sense intermediaris
+- Formularis i contacte directes
+
+**Legalitat**
+- Compliment de la LOPDGDD i el RGPD
+- Accessibilitat web (WCAG 2.1)
+- Continguts legals: imatges pròpies o amb llicència correcta
+- Política de privacitat i avís legal actualitzats
 
 ---
 
@@ -65,7 +73,6 @@ Per a col·lectius, associacions i espais autogestionats que:
 
 ## Parlem
 
-Expliqueu-nos la vostra situació.  
-Trobarem el sistema que té sentit per al vostre projecte.
+Expliqueu-nos la vostra situació. Trobarem el sistema que té sentit per al vostre projecte.
 
 → [Contacte](/contacte/)

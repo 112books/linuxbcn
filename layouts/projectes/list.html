@@ -12,8 +12,16 @@
   {{ range .Pages }}
   <a href="{{ .RelPermalink }}" class="project-card">
     <div class="card-thumb">
-      {{ if .Params.image }}
-        <img src="{{ .RelPermalink }}{{ .Params.image }}" alt="{{ .Title }}">
+      {{ $proj := . }}
+      {{ with .Params.image }}
+        {{ $img := $proj.Resources.GetMatch . }}
+        {{ if $img }}
+          <img src="{{ $img.RelPermalink }}" alt="{{ $proj.Title }}" loading="lazy">
+        {{ else }}
+          {{ $slug := path.Base (path.Dir $proj.File.Path) }}
+          {{ $caPath := printf "/ca/projectes/%s/%s" $slug . }}
+          <img src="{{ $caPath | absURL }}" alt="{{ $proj.Title }}" loading="lazy">
+        {{ end }}
       {{ else }}
         <div class="card-thumb-placeholder">
           {{ with .Params.client }}<span>{{ . }}</span>{{ end }}

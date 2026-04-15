@@ -1,6 +1,6 @@
 ---
 title: "Solucions per a negocis amb valors"
-subtitle: "Presència digital pròpia, coherent i sense dependències innecessàries"
+subtitle: "Presència digital coherent amb el que sou, sense complicacions innecessàries"
 slug: "microempreses"
 draft: false
 ---
@@ -9,47 +9,54 @@ draft: false
 
 El negoci funciona. La presència digital, no acaba de funcionar.
 
-El web el va fer algú fa anys i ningú sap com tocar-lo.  
-Esteu a Instagram perquè "cal ser-hi" però no genera res.  
-Pagueu subscripcions a eines que no recordeu per què vau contractar.  
+El web el va fer algú fa anys i ningú sap com tocar-lo.
+Esteu a Instagram perquè "cal ser-hi" però no genera res.
+Pagueu subscripcions a eines que no recordeu per què vau contractar.
 Cada actualització requereix trucar a algú o esperar que tingui temps.
 
-El problema no és la tecnologia.  
-És que ningú va pensar el sistema des del principi.
+El problema no és la tecnologia. És que ningú va pensar el sistema des del principi.
 
 ---
 
 ## El que proposem
 
-Una presència digital que reflecteixi el que sou.
+**Muntar la vostra presència digital completa** — coherent amb els valors del projecte, amb la identitat visual, amb el discurs.
 
-Coherent amb els valors del projecte.  
-Fàcil de gestionar sense dependre de tercers.  
-Construïda amb eines lliures i sostenibles.
+**Unificar la comunicació de forma responsable**: un sol punt de contacte amb el públic, sense dispersió per plataformes que no controleu.
+
+**Implementar un comerç fàcil de gestionar**: si veneu productes o serveis, el comerç ha de ser una extensió natural del web, no una capa afegida que complica tot.
+
+**Fer-ho amb les eines justes**: res que no tingui sentit per al vostre cas concret. Ni subscripcions innecessàries, ni eines de moda.
 
 ---
 
 ## Què inclou
 
 **Presència i identitat**
-- Web propi, dissenyat a mida del negoci
-- Disseny coherent amb la identitat visual
+- Web propi, dissenyat a mida del negoci i la seva identitat
+- Disseny coherent: colors, tipografia, fotografia, discurs
 - Optimitzat per a mòbil i càrrega ràpida
 
-**Gestió de continguts**
-- Sistema d'edició sense codi
-- Estructura pensada per gestionar-la vosaltres
-- Actualitzacions sense dependre de ningú extern
+**Comerç i serveis**
+- Botiga integrada al web, fàcil de gestionar sense codi
+- Gestió de reserves, serveis o productes des del panell
+- Passerela de pagament directa, sense comissions externes
+
+**Comunicació unificada**
+- Correu professional amb domini propi
+- Butlletí per mantenir el contacte amb els clients
+- Xarxes socials integrades amb criteri — no per estar-hi, sinó quan té sentit
 
 **Infraestructura pròpia**
-- Allotjament en servidors ètics
-- Domini i correu professional
+- Domini i allotjament en servidors ètics
 - Sense eines invasives ni seguiment innecessari
+- El sistema és vostre: res que us faci dependents del proveïdor
 
-**Eines adaptades**
-- Alternatives a Google i plataformes corporatives
-- Integració amb les eines que ja feu servir
-- Res que no tingui sentit per al vostre cas concret
+**Legalitat**
+- Compliment del RGPD i la LOPDGDD
+- Accessibilitat web
+- Imatge corporativa amb continguts autoproduits i llicenciats correctament
+- Política de privacitat i avís legal actualitzats
 
 ---
 
@@ -59,14 +66,13 @@ Per a autònoms, comerços locals i microempreses que:
 
 - volen una presència digital coherent amb els seus valors
 - necessiten autonomia real, no dependència de proveïdors
-- busquen un sistema senzill de mantenir
+- volen vendre o gestionar reserves directament des del web
 - prefereixen pagar per feina feta, no per subscripcions eternes
 
 ---
 
 ## Parlem
 
-Expliqueu-nos la vostra situació.  
-Sense compromís, sense formularis llargs.
+Expliqueu-nos la vostra situació. Sense compromís, sense formularis llargs.
 
 → [Contacte](/contacte/)

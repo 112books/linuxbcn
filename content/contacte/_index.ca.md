@@ -1,29 +1,7 @@
 ---
-title: "Contacte"
-subtitle: "Parlem"
+title: "Parlem"
+subtitle: "Explica'ns on ets i on voldries arribar"
 draft: false
 ---
 
-## Escriu-nos
-
-→ hola@linuxbcn.com
-
-Explica'ns breument la teva situació:
-quin és el teu projecte, què no acaba de funcionar,
-i què t'agradaria millorar.
-
-Treballem per correu. És asíncron, queda registre
-i ens permet respondre amb criteri.
-
----
-
-## Com gestionem la comunicació
-
-Amb els clients actius treballem per correu i Telegram —
-àgil, privat i amb historial de tot el que s'ha parlat.
-
-Les reunions les fem en remot quan cal.  
-Les presencials, només si el projecte realment ho demana.
-
-No donem telèfon. No fem reunions exploratòries en persona.  
-Si això és un problema, probablement no encaixem.
+**Protecció de dades**: les dades que facilitis s'usaran exclusivament per respondre a la teva consulta. No les cedim a tercers ni les usem per cap altra finalitat. Pots exercir els teus drets d'accés, rectificació i supressió escrivint a hola@linuxbcn.com. Responsable: LinuxBCN. Base legal: consentiment (art. 6.1.a RGPD).

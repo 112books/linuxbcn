@@ -27,16 +27,14 @@ No perquè ho haguem llegit — perquè en formem part.
 
 Hem treballat amb i per a projectes com
 Nau Bostik, 9barrisimatge, Llumàtics, 112Books,
-el Festival de Blues de Barcelona, Casalprospe
-i molts altres al llarg de 25 anys.
+el Festival de Blues de Barcelona, el Casal de barri de Prosperitat,
+9 Barris Acull i molts altres al llarg de 25 anys.
 
 ---
 
 ## Un equip, no un freelance
 
-LinuxBCN és un equip heterogeni coordinat des de
-**Nau Bostik**, l'espai sociocultural autogestionat
-del barri de la Sagrera a Barcelona.
+LinuxBCN és un equip heterogeni coordinat des de les seves oficines a la **Nau Bostik**, un espai sociocultural autogestionat del barri de la Sagrera a Barcelona.
 
 Treballem amb col·laboradors especialitzats:
 periodistes, estrategues de continguts, dissenyadors,
@@ -48,17 +46,17 @@ Una xarxa construïda amb anys de projectes compartits.
 
 ## Els nostres principis
 
-Programari lliure.  
-Privacitat i sobirania de les dades.  
-Tecnologia al servei del projecte, no al revés.  
+Programari lliure.
+Privacitat i sobirania de les dades.
+Tecnologia al servei del projecte, no al revés.
 Sistemes sostenibles, accessibles i segurs.
 
-No seguim modes. No apliquem plantilles.  
+No seguim modes. No apliquem plantilles.
 No recomanem el que no usaríem nosaltres mateixos.
 
 ---
 
 ## Parlem
 
-→ [Veure solucions](/solucions/)  
+→ [Veure solucions](/solucions/)
 → [Contacte](/contacte/)

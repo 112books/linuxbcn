@@ -1,83 +1,77 @@
 ---
 title: "Solucions per a artistes i músics"
-subtitle: "Presència digital autònoma, clara i sostenible"
+subtitle: "Una web que és teva de debò, dissenyada des de zero"
 slug: "musics"
 draft: false
 ---
 
 ## La situació habitual
 
-Tens web, xarxes, continguts — però no tens sistema.
+La majoria de músics i bandes tenen webs amb un **look de plantilla** — més o menys encertada, però al final ells que s'adapten a un disseny que no és seu. La personalitat, l'estètica, el discurs: tot queda sacrificat al que permet la plantilla.
 
-Els concerts no estan actualitzats.  
-La biografia és diferent a cada plataforma.  
-Els vídeos viuen a YouTube, les fotos a Instagram,  
-la música a Spotify, i el web no connecta res d'això.
+A sobre: els concerts desactualitzats, la biografia diferent a cada plataforma, els vídeos a YouTube, les fotos a Instagram, la música a Spotify — i la web no connecta res d'això.
 
-Qualsevol canvi requereix tocar cinc llocs diferents.  
-O dependre d'algú que ho faci per tu.
+Qualsevol canvi requereix tocar cinc llocs o dependre d'algú extern.
 
 ---
 
 ## El que proposem
 
-Una presència digital pensada com a sistema.
+Una presència digital pensada des de zero per al teu projecte. No per a "un músic genèric".
 
-Un web que connecta el que ja existeix — concerts,
-música, vídeos, fotografies — sense duplicar continguts
-ni crear dependències noves.
-
-Tu gestiones el que vols gestionar.  
-La resta funciona sola.
+Partim d'una base que hem consolidat amb anys d'experiència — i la personalitzem a fons: estètica, estructura, continguts, integracions. El resultat ha de semblar que l'has fet tu.
 
 ---
 
-## Què inclou
+## Les eines que sabem que funcionen
 
 **Presència i identitat**
-- Web propi, dissenyat a mida del projecte
+- Web de qualitat professional, dissenyada a mida
 - Multiidioma si el projecte ho necessita
-- Disseny coherent amb la identitat visual de la banda o artista
+- Disseny coherent amb la identitat visual del projecte
+
+**Membres i equip**
+- Fitxes de cada membre amb biografia, foto i links a xarxes socials
+- Gestió fàcil des del panell d'edició
+
+**Trajectòria i historia**
+- Línia del temps amb els esdeveniments i fites importants de la banda
+- Context per als nous seguidors, memòria per als veterans
+
+**Discografia i música**
+- Discografia estructurada connectada a plataformes d'streaming
+- Integració amb Bandcamp per a venda directa
+- Reproductor integrat sense duplicar arxius
 
 **Agenda i concerts**
-- Sincronització amb calendaris externs
-- Integració amb Bandsintown per ampliar difusió
-- Gestió manual quan es necessita més control
+- Sincronització automàtica amb Google Calendar o Bandsintown
+- Sempre actualitzada sense haver de tocar el web
 
-**Música i vídeo**
-- Reproductor de Spotify integrat
-- Vídeos de YouTube sense duplicar arxius
-- Discografia estructurada i fàcil de mantenir
-
-**Fotografies**
-- Galeries vinculades a àlbums externs
+**Fotografies i vídeo**
+- Àlbums fotogràfics directament de Google Fotos
+- Integració amb canal de YouTube o Vimeo
 - Sense allotjar ni gestionar arxius pesants
 
-**Contacte i comunicació**
+**Comunicació amb els fans**
+- Butlletí per tenir el públic informat sense dependre de les xarxes
 - Formulari de contacte directe per a promotors i mitjans
-- Sense intermediaris ni eines innecessàries
 
----
+**Seccions tècniques**
+- Press Kit descarregable per a periodistes i programadors
+- Rider tècnic per a sales i equips de so (públic o privat)
+- Materials de promoció centralitzats
 
-## Una segona fase possible
-
-Quan el projecte creix, el sistema pot créixer amb ell:
-
-- Press kit descarregable per a mitjans i programadors
-- Rider tècnic per a sales i equips de so
-- Secció de premsa amb mencions i entrevistes
-- Butlletí per mantenir el contacte amb el públic
-- Materials centralitzats de promoció
-
-Sempre amb el mateix criteri: menys dispersió, més control.
+**I el que et puguis imaginar**
+- Marxandatge integrat
+- Mapa interactiu de gires
+- Zona per a membres o fans registrats
+- Qualsevol necessitat específica del teu projecte
 
 ---
 
 ## Un exemple real
 
-Amb **Bratia** hem evolucionat d'una web WordPress
-pesada i difícil de mantenir cap a un sistema lleuger,
-autònom i coherent.
+Amb **Bratia** hem evolucionat d'una web WordPress pesada i difícil de mantenir cap a un sistema lleuger, autònom i coherent.
 
 → [Veure el projecte Bratia](/projectes/bratia/)
 
@@ -87,16 +81,15 @@ autònom i coherent.
 
 Per a músics, solistes i bandes que:
 
-- volen autonomia digital real
-- no tenen temps per gestionar webs complexes
-- necessiten ordre, no més eines
-- busquen un sistema que creixi amb ells
+- volen una web que sembli seva, no una plantilla
+- necessiten que tot estigui connectat i actualitzat automàticament
+- no volen dependre de ningú per als canvis habituals
+- busquen un sistema que creixi amb el projecte
 
 ---
 
 ## Parlem
 
-No per vendre un web.  
-Per entendre com hauria de funcionar el teu.
+No per vendre una web. Per entendre com hauria de funcionar la teva.
 
 → [Contacte](/contacte/)

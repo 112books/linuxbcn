@@ -28,7 +28,7 @@
 <div id="results"></div>
 
 <script>
-fetch('{{ "/" | relLangURL }}index.json')
+fetch('{{ .Site.Home.RelPermalink }}index.json')
   .then(r => r.json())
   .then(data => {
     const input = document.getElementById('search-input');

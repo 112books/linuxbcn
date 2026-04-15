@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Stats · LinuxBCN</title>
+  <style>
+    @font-face {
+      font-family: 'IBM Plex Mono';
+      font-weight: 400;
+      font-display: swap;
+      src: url('/fonts/ibm-plex-mono-v20-latin-regular.woff2') format('woff2');
+    }
+
+    :root {
+      --bg:      #f5f4f0;
+      --ink:     #111110;
+      --ink2:    #555550;
+      --ink3:    #999990;
+      --accent:  #d4600a;
+      --border:  #ddddd8;
+      --surface: #eeede9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'IBM Plex Mono', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── LOGIN ─────────────────────────────────────────────── */
+    #login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .login-box {
+      width: 300px;
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .login-logo {
+      color: var(--ink3);
+      letter-spacing: .15em;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .login-logo em { color: var(--accent); font-style: normal; }
+
+    #pwd {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      padding: .5rem 0;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--ink);
+      outline: none;
+      margin-bottom: 1.5rem;
+      letter-spacing: .1em;
+    }
+
+    #pwd:focus { border-bottom-color: var(--accent); }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: .55rem 1.25rem;
+      font-family: inherit;
+      font-size: 12px;
+      letter-spacing: .08em;
+      cursor: pointer;
+    }
+
+    .btn:hover { opacity: .85; }
+
+    #login-err {
+      display: none;
+      color: #b00;
+      font-size: 11px;
+      margin-top: .75rem;
+    }
+
+    /* ── DASHBOARD ─────────────────────────────────────────── */
+    #dashboard { display: none; }
+
+    .dash-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .9rem 2rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+
+    .dash-logo {
+      color: var(--ink3);
+      letter-spacing: .12em;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .dash-logo em { color: var(--accent); font-style: normal; }
+
+    .dash-date { color: var(--ink3); font-size: 11px; }
+
+    .btn-out {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--ink3);
+      padding: .3rem .75rem;
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: .06em;
+      cursor: pointer;
+    }
+
+    .btn-out:hover { border-color: var(--ink3); color: var(--ink); }
+
+    .dash-body {
+      padding: 2rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* ── ERROR BANNER ──────────────────────────────────────── */
+    .error-banner {
+      background: #fef0ec;
+      border: 1px solid #f4b49a;
+      color: #8b2500;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* ── KPIs ──────────────────────────────────────────────── */
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .kpi {
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .kpi-label {
+      color: var(--ink3);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+
+    .kpi-value {
+      font-size: 2.2rem;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: .3rem;
+    }
+
+    .kpi-sub { color: var(--ink3); font-size: 11px; }
+
+    /* ── CHART ─────────────────────────────────────────────── */
+    .chart-section { margin-bottom: 2rem; }
+
+    .section-title {
+      color: var(--ink3);
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chart-wrap {
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1rem;
+    }
+
+    #chart-svg { width: 100%; display: block; }
+
+    .chart-legend {
+      display: flex;
+      justify-content: space-between;
+      margin-top: .5rem;
+      color: var(--ink3);
+      font-size: 10px;
+    }
+
+    /* ── GRID 2 ────────────────────────────────────────────── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── STAT LIST ─────────────────────────────────────────── */
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-row:last-child { border-bottom: none; }
+
+    .stat-name {
+      flex: 1;
+      color: var(--ink2);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    .stat-bar-wrap {
+      width: 70px;
+      height: 5px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    .stat-bar { height: 100%; background: var(--accent); }
+
+    .stat-count {
+      width: 44px;
+      text-align: right;
+      color: var(--ink);
+      flex-shrink: 0;
+      font-size: 12px;
+    }
+
+    /* ── LANGUAGE BAR ──────────────────────────────────────── */
+    .lang-section { margin-bottom: 2rem; }
+
+    .lang-bar {
+      display: flex;
+      height: 28px;
+      margin-bottom: .75rem;
+      overflow: hidden;
+    }
+
+    .lang-ca {
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: .06em;
+      transition: width .4s ease;
+    }
+
+    .lang-en {
+      background: var(--ink3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: .06em;
+      transition: width .4s ease;
+    }
+
+    .lang-detail {
+      display: flex;
+      gap: 2rem;
+      color: var(--ink2);
+      font-size: 12px;
+    }
+
+    /* ── LOADING / EMPTY ───────────────────────────────────── */
+    .loading { color: var(--ink3); font-size: 11px; letter-spacing: .06em; }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 720px) {
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+      .dash-body { padding: 1rem; }
+      .dash-date { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ LOGIN ═══════════════════════════════════════════════════════════════ -->
+<div id="login">
+  <div class="login-box">
+    <div class="login-logo">LINUX<em>BCN</em> / STATS</div>
+    <input id="pwd" type="password" placeholder="·····" autocomplete="current-password" autofocus>
+    <button class="btn" id="btn-login">→ entrar</button>
+    <div id="login-err">contrasenya incorrecta</div>
+  </div>
+</div>
+
+<!-- ═══ DASHBOARD ════════════════════════════════════════════════════════════ -->
+<div id="dashboard">
+
+  <header class="dash-header">
+    <div class="dash-logo">LINUX<em>BCN</em> / STATS</div>
+    <div class="dash-date" id="dash-date"></div>
+    <button class="btn-out" onclick="logout()">sortir ×</button>
+  </header>
+
+  <main class="dash-body">
+
+    <!-- KPIs -->
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-label">avui</div>
+        <div class="kpi-value" id="kpi-avui">—</div>
+        <div class="kpi-sub" id="sub-avui"></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">7 dies</div>
+        <div class="kpi-value" id="kpi-setmana">—</div>
+        <div class="kpi-sub" id="sub-setmana"></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">30 dies</div>
+        <div class="kpi-value" id="kpi-mes">—</div>
+        <div class="kpi-sub" id="sub-mes"></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">total</div>
+        <div class="kpi-value" id="kpi-total">—</div>
+        <div class="kpi-sub" id="sub-total"></div>
+      </div>
+    </div>
+
+    <!-- Gràfic 7 dies -->
+    <div class="chart-section">
+      <div class="section-title">visites · últims 7 dies</div>
+      <div class="chart-wrap">
+        <svg id="chart-svg" height="72" viewBox="0 0 700 72"></svg>
+        <div class="chart-legend" id="chart-legend"></div>
+      </div>
+    </div>
+
+    <!-- Pàgines + Referrers -->
+    <div class="grid-2">
+      <div>
+        <div class="section-title">pàgines més visitades · 30 dies</div>
+        <div id="top-pages"><span class="loading">carregant...</span></div>
+      </div>
+      <div>
+        <div class="section-title">d'on venen · 30 dies</div>
+        <div id="top-refs"><span class="loading">carregant...</span></div>
+      </div>
+    </div>
+
+    <!-- Idioma -->
+    <div class="lang-section">
+      <div class="section-title">per idioma · 30 dies</div>
+      <div id="lang-section"><span class="loading">carregant...</span></div>
+    </div>
+
+    <!-- Navegadors + SO -->
+    <div class="grid-2">
+      <div>
+        <div class="section-title">navegadors · 30 dies</div>
+        <div id="top-browsers"><span class="loading">carregant...</span></div>
+      </div>
+      <div>
+        <div class="section-title">sistema operatiu · 30 dies</div>
+        <div id="top-systems"><span class="loading">carregant...</span></div>
+      </div>
+    </div>
+
+    <!-- Mides pantalla -->
+    <div>
+      <div class="section-title">mida de pantalla · 30 dies</div>
+      <div id="top-sizes"><span class="loading">carregant...</span></div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════════
+//  CONFIGURACIÓ  — canvia aquí el token quan el tinguis
+// ═══════════════════════════════════════════════════════════════════════════
+const PASSWORD  = 'linuxbcn';
+const API_TOKEN = 'POSAR_TOKEN_AQUÍ';   // https://linuxbcn.goatcounter.com/user/api
+const GC_BASE   = 'https://linuxbcn.goatcounter.com/api/v0';
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ── Auth ──────────────────────────────────────────────────────────────────
+function checkLogin() {
+  const v = document.getElementById('pwd').value;
+  if (v === PASSWORD) {
+    sessionStorage.setItem('gc_ok', '1');
+    showDashboard();
+  } else {
+    document.getElementById('login-err').style.display = 'block';
+    document.getElementById('pwd').value = '';
+    document.getElementById('pwd').focus();
+  }
+}
+
+function logout() {
+  sessionStorage.removeItem('gc_ok');
+  location.reload();
+}
+
+document.getElementById('btn-login').addEventListener('click', checkLogin);
+document.getElementById('pwd').addEventListener('keydown', e => {
+  if (e.key === 'Enter') checkLogin();
+});
+
+function showDashboard() {
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'block';
+  document.getElementById('dash-date').textContent = new Date().toLocaleDateString('ca-ES', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+  });
+  loadStats();
+}
+
+if (sessionStorage.getItem('gc_ok')) showDashboard();
+
+// ── API ───────────────────────────────────────────────────────────────────
+async function gc(path, params = {}) {
+  const url = new URL(GC_BASE + path);
+  Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
+  const r = await fetch(url, {
+    headers: { 'Authorization': `Bearer ${API_TOKEN}` }
+  });
+  if (!r.ok) {
+    const text = await r.text();
+    throw new Error(`${r.status} ${r.statusText}: ${text.slice(0, 200)}`);
+  }
+  return r.json();
+}
+
+// ── Utils ─────────────────────────────────────────────────────────────────
+function fmt(n) {
+  if (n == null || isNaN(n)) return '—';
+  return Number(n).toLocaleString('ca-ES');
+}
+
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function daysAgo(n) {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return d.toISOString().slice(0, 10);
+}
+
+function showError(msg) {
+  const body = document.querySelector('.dash-body');
+  const existing = body.querySelector('.error-banner');
+  if (existing) existing.remove();
+  body.insertAdjacentHTML('afterbegin', `
+    <div class="error-banner">
+      <strong>Error carregant dades:</strong> ${msg}<br>
+      <small>Comprova que el token de l'API és correcte a GoatCounter → Configuració → API tokens.</small>
+    </div>
+  `);
+}
+
+// ── Render: llista amb barres ──────────────────────────────────────────────
+function renderList(id, items, nameKey, countKey, linkFn) {
+  const el = document.getElementById(id);
+  if (!items || !items.length) {
+    el.innerHTML = '<span class="loading">sense dades</span>';
+    return;
+  }
+  const max = items[0][countKey] || 1;
+  el.innerHTML = items.slice(0, 10).map(item => {
+    const name = item[nameKey] || '(directe / desconegut)';
+    const pct  = Math.round((item[countKey] / max) * 100);
+    const display = linkFn ? `<a href="${linkFn(item)}" target="_blank" style="color:inherit;text-decoration:none;">${name}</a>` : name;
+    return `
+      <div class="stat-row">
+        <span class="stat-name" title="${name}">${display}</span>
+        <div class="stat-bar-wrap"><div class="stat-bar" style="width:${pct}%"></div></div>
+        <span class="stat-count">${fmt(item[countKey])}</span>
+      </div>`;
+  }).join('');
+}
+
+// ── Render: gràfic de barres 7 dies ───────────────────────────────────────
+function renderChart(days) {
+  const svg    = document.getElementById('chart-svg');
+  const legend = document.getElementById('chart-legend');
+
+  if (!days.length) {
+    svg.innerHTML = '<text x="350" y="36" fill="#999" font-size="12" text-anchor="middle">sense dades</text>';
+    return;
+  }
+
+  const W = 700, H = 72;
+  const gap = 8;
+  const barW = Math.floor((W - gap * (days.length - 1)) / days.length);
+  const max = Math.max(...days.map(d => d.count), 1);
+
+  svg.innerHTML = days.map((d, i) => {
+    const x    = i * (barW + gap);
+    const barH = Math.max(3, Math.round((d.count / max) * H));
+    const y    = H - barH;
+    const fill = d.count > 0 ? 'var(--accent)' : 'var(--border)';
+    return `<rect x="${x}" y="${y}" width="${barW}" height="${barH}" fill="${fill}">
+      <title>${d.date}: ${d.count} visites</title>
+    </rect>`;
+  }).join('');
+
+  // Legend: first, middle, last
+  const indices = [0, Math.floor(days.length / 2), days.length - 1];
+  legend.innerHTML = days.map((d, i) => {
+    if (!indices.includes(i)) return '<span></span>';
+    const [, m, day] = d.date.split('-');
+    return `<span>${parseInt(day)}/${parseInt(m)}</span>`;
+  }).join('');
+}
+
+// ── Render: per idioma ────────────────────────────────────────────────────
+function renderLang(hits) {
+  const el = document.getElementById('lang-section');
+  if (!hits || !hits.length) {
+    el.innerHTML = '<span class="loading">sense dades</span>';
+    return;
+  }
+
+  let ca = 0, en = 0;
+  hits.forEach(h => {
+    if (h.path && h.path.startsWith('/en')) en += (h.count || 0);
+    else ca += (h.count || 0);
+  });
+
+  const total = ca + en || 1;
+  const caPct = Math.round(ca / total * 100);
+  const enPct = 100 - caPct;
+
+  el.innerHTML = `
+    <div class="lang-bar">
+      <div class="lang-ca" style="width:${caPct}%">${caPct > 8 ? `CA ${caPct}%` : ''}</div>
+      <div class="lang-en" style="width:${enPct}%">${enPct > 8 ? `EN ${enPct}%` : ''}</div>
+    </div>
+    <div class="lang-detail">
+      <span>Català: ${fmt(ca)} visites</span>
+      <span>English: ${fmt(en)} visites</span>
+    </div>`;
+}
+
+// ── Main ──────────────────────────────────────────────────────────────────
+async function loadStats() {
+  if (API_TOKEN === 'POSAR_TOKEN_AQUÍ') {
+    showError('Token de l\'API no configurat. Genera\'l a <a href="https://linuxbcn.goatcounter.com/user/api" target="_blank">GoatCounter → Configuració → API tokens</a> i posa\'l a <code>static/admin/index.html</code>.');
+    return;
+  }
+
+  const T   = today();
+  const D7  = daysAgo(7);
+  const D30 = daysAgo(30);
+  const D0  = '2020-01-01';
+
+  try {
+    // Totes les crides en paral·lel
+    const [totAvui, totSetmana, totMes, totTotal, hits30, refs, browsers, systems, sizes] =
+      await Promise.all([
+        gc('/stats/total',    { start: T,   end: T   }),
+        gc('/stats/total',    { start: D7,  end: T   }),
+        gc('/stats/total',    { start: D30, end: T   }),
+        gc('/stats/total',    { start: D0,  end: T   }),
+        gc('/stats/hits',     { start: D30, end: T, limit: 20 }),
+        gc('/stats/refs',     { start: D30, end: T, limit: 10 }),
+        gc('/stats/browsers', { start: D30, end: T, limit: 10 }),
+        gc('/stats/systems',  { start: D30, end: T, limit: 10 }),
+        gc('/stats/sizes',    { start: D30, end: T, limit: 10 }),
+      ]);
+
+    // KPIs
+    const setKpi = (id, subId, data) => {
+      document.getElementById(id).textContent    = fmt(data.total);
+      document.getElementById(subId).textContent = `${fmt(data.total_unique)} únics`;
+    };
+    setKpi('kpi-avui',    'sub-avui',    totAvui);
+    setKpi('kpi-setmana', 'sub-setmana', totSetmana);
+    setKpi('kpi-mes',     'sub-mes',     totMes);
+    setKpi('kpi-total',   'sub-total',   totTotal);
+
+    // Gràfic 7 dies (7 crides per tenir dades per dia)
+    loadChart(T, D7);
+
+    // Pàgines
+    renderList('top-pages', hits30.hits, 'path', 'count', item => item.path);
+
+    // Idioma
+    renderLang(hits30.hits);
+
+    // Referrers
+    renderList('top-refs', refs.refs, 'name', 'count');
+
+    // Navegadors
+    renderList('top-browsers', browsers.browsers, 'name', 'count');
+
+    // SO
+    renderList('top-systems', systems.systems, 'name', 'count');
+
+    // Mides
+    renderList('top-sizes', sizes.sizes, 'name', 'count');
+
+  } catch (err) {
+    console.error('GoatCounter error:', err);
+    showError(err.message);
+  }
+}
+
+async function loadChart(endDate, startDate) {
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    days.push({ date: d.toISOString().slice(0, 10), count: 0 });
+  }
+
+  try {
+    const results = await Promise.all(
+      days.map(d => gc('/stats/total', { start: d.date, end: d.date }))
+    );
+    results.forEach((r, i) => { days[i].count = r.total || 0; });
+    renderChart(days);
+  } catch (e) {
+    console.warn('Chart failed:', e);
+    document.getElementById('chart-svg').innerHTML =
+      '<text x="350" y="36" fill="#999" font-size="12" text-anchor="middle">error carregant el gràfic</text>';
+  }
+}
+</script>
+</body>
+</html>
