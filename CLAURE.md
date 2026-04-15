@@ -15,7 +15,7 @@ sobirania de dades i independència tecnològica.
 - **Domini de producció:** linuxbcn.com
 - **Responsable:** Joan Martínez Serres (Joan Linux)
 - **Idioma principal de treball (copy i contingut):** Català
-- **Idiomes del lloc:** Català (ca) · Castellà (es) · Anglès (en)
+- **Idiomes del lloc:** Català (ca) · Anglès (en) *(Castellà descartat explícitament)*
 - **Kit Digital:** Rebutjat explícitament per raons ètiques. No esmentar mai com a opció.
 
 ---
@@ -41,7 +41,8 @@ sobirania de dades i independència tecnològica.
 - Útil per a edició no-tècnica de continguts per part del client/joan
 
 ### Analítica
-- **Umami** o **Plausible** self-hosted (mateixa instància que el projecte Bratia)
+- **GoatCounter** — `https://linuxbcn.goatcounter.com` (compte: hola@linuxbcn.com)
+- Dashboard privat a `/admin/` (proxy PHP a `static/admin/gc-proxy.php`)
 - Zero Google Analytics, zero Meta Pixel, zero scripts de tercers no auditables
 
 ### Formularis
@@ -243,6 +244,7 @@ Exemple: "content: afegeix projecte bratia a portfolio"
 - Sistema de **paquets d'hores** prepagades
 
 ### Xarxes socials
+- **Instagram:** `@linuxbcn_oficial` → `https://www.instagram.com/linuxbcn_oficial/` (al footer)
 - Presència mínima, si escau: Mastodon (Fediverse), no Meta/Twitter/X
 
 ---
@@ -337,10 +339,14 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 | 2025-04 | Decap CMS + Git Gateway | Edició accessible sense infraestructura pròpia per a CMS |
 | 2025-04 | VPS Dinahosting per a prod | Sobirania de dades, proveïdor local |
 | 2025-04 | GitHub Pages per a staging | Pràctic, gratuït, aïllat de producció |
-| 2025-04-13 |La 404 animada Matrix/Dodi com a decisió de disseny
-| 2025-04-13 |Relació LinuxBCN ↔ MalditasMaquinas → pendent de resolució (cal documentar que existeix la tensió, no que s'ha resolt)
+| 2025-04-13 | La 404 animada Matrix/Dodi com a decisió de disseny | Personalitat del projecte |
+| 2025-04-13 | Relació LinuxBCN ↔ MalditasMaquinas → pendent de resolució | Tensió estratègica documentada, no resolta |
+| 2026-04-16 | GoatCounter en lloc d'Umami/Plausible | Compte creat a linuxbcn.goatcounter.com; proxy PHP per evitar CORS |
+| 2026-04-16 | Instagram @linuxbcn_oficial al footer | A l'esquerra del dimoni MalditasMaquinas |
+| 2026-04-16 | Admin dashboard a `/admin/` (WCAG 2.2 AA) | Accessibilitat completa, sense innerHTML amb dades externes |
+| 2026-04-16 | Castellà descartat com a idioma del lloc | Decisió estratègica de posicionament |
 
 ---
 
-*Última actualització: abril 2025*
+*Última actualització: 2026-04-16*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*

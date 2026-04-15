@@ -17,7 +17,7 @@
       --bg:      #f5f4f0;
       --ink:     #111110;
       --ink2:    #555550;
-      --ink3:    #999990;
+      --ink3:    #6b6b66;
       --accent:  #d4600a;
       --border:  #ddddd8;
       --surface: #eeede9;
@@ -32,6 +32,19 @@
       font-size: 13px;
       line-height: 1.6;
       min-height: 100vh;
+    }
+
+    /* Classe d'utilitat per a contingut visible només per AT */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     /* ── LOGIN ─────────────────────────────────────────────── */
@@ -72,7 +85,8 @@
       letter-spacing: .1em;
     }
 
-    #pwd:focus { border-bottom-color: var(--accent); }
+    #pwd:focus,
+    #pwd:focus-visible { border-bottom-color: var(--accent); }
 
     .btn {
       background: var(--accent);
@@ -86,10 +100,11 @@
     }
 
     .btn:hover { opacity: .85; }
+    .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
     #login-err {
-      display: none;
-      color: #b00;
+      min-height: 1.4em;
+      color: #8b2500;
       font-size: 11px;
       margin-top: .75rem;
     }
@@ -132,6 +147,7 @@
     }
 
     .btn-out:hover { border-color: var(--ink3); color: var(--ink); }
+    .btn-out:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
     .dash-body {
       padding: 2rem;
@@ -156,6 +172,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
       margin-bottom: 2rem;
+      list-style: none;
     }
 
     .kpi {
@@ -163,12 +180,13 @@
       padding: 1.25rem 1.5rem;
     }
 
-    .kpi-label {
+    .kpi dt {
       color: var(--ink3);
       font-size: 10px;
       letter-spacing: .14em;
       text-transform: uppercase;
       margin-bottom: .5rem;
+      font-weight: 400;
     }
 
     .kpi-value {
@@ -180,18 +198,20 @@
 
     .kpi-sub { color: var(--ink3); font-size: 11px; }
 
-    /* ── CHART ─────────────────────────────────────────────── */
-    .chart-section { margin-bottom: 2rem; }
-
+    /* ── HEADINGS DE SECCIÓ ────────────────────────────────── */
     .section-title {
       color: var(--ink3);
       font-size: 10px;
+      font-weight: 400;
       letter-spacing: .15em;
       text-transform: uppercase;
       margin-bottom: 1rem;
       padding-bottom: .5rem;
       border-bottom: 1px solid var(--border);
     }
+
+    /* ── CHART ─────────────────────────────────────────────── */
+    .chart-section { margin-bottom: 2rem; }
 
     .chart-wrap {
       border: 1px solid var(--border);
@@ -217,6 +237,8 @@
     }
 
     /* ── STAT LIST ─────────────────────────────────────────── */
+    .stat-list { list-style: none; }
+
     .stat-row {
       display: flex;
       align-items: center;
@@ -307,135 +329,175 @@
 <body>
 
 <!-- ═══ LOGIN ═══════════════════════════════════════════════════════════════ -->
-<div id="login">
-  <div class="login-box">
-    <div class="login-logo">LINUX<em>BCN</em> / STATS</div>
+<div id="login" role="main" aria-label="Accés a les estadístiques">
+  <form id="login-form" class="login-box" novalidate>
+    <div class="login-logo" aria-hidden="true">LINUX<em>BCN</em> / STATS</div>
+    <label for="pwd" class="visually-hidden">Contrasenya d'accés</label>
     <input id="pwd" type="password" placeholder="·····" autocomplete="current-password" autofocus>
-    <button class="btn" id="btn-login">→ entrar</button>
-    <div id="login-err">contrasenya incorrecta</div>
-  </div>
+    <button type="submit" class="btn">→ entrar</button>
+    <div id="login-err" role="alert" aria-live="assertive" aria-atomic="true"></div>
+  </form>
 </div>
 
 <!-- ═══ DASHBOARD ════════════════════════════════════════════════════════════ -->
 <div id="dashboard">
 
   <header class="dash-header">
-    <div class="dash-logo">LINUX<em>BCN</em> / STATS</div>
+    <div class="dash-logo" aria-hidden="true">LINUX<em>BCN</em> / STATS</div>
     <div class="dash-date" id="dash-date"></div>
-    <button class="btn-out" onclick="logout()">sortir ×</button>
+    <button type="button" class="btn-out" id="btn-logout">sortir ×</button>
   </header>
 
-  <main class="dash-body">
+  <main class="dash-body" id="dash-main" tabindex="-1">
 
     <!-- KPIs -->
-    <div class="kpis">
+    <dl class="kpis" aria-label="Resum de visites">
       <div class="kpi">
-        <div class="kpi-label">avui</div>
-        <div class="kpi-value" id="kpi-avui">—</div>
-        <div class="kpi-sub" id="sub-avui"></div>
+        <dt>avui</dt>
+        <dd>
+          <div class="kpi-value" id="kpi-avui">—</div>
+          <div class="kpi-sub" id="sub-avui"></div>
+        </dd>
       </div>
       <div class="kpi">
-        <div class="kpi-label">7 dies</div>
-        <div class="kpi-value" id="kpi-setmana">—</div>
-        <div class="kpi-sub" id="sub-setmana"></div>
+        <dt>7 dies</dt>
+        <dd>
+          <div class="kpi-value" id="kpi-setmana">—</div>
+          <div class="kpi-sub" id="sub-setmana"></div>
+        </dd>
       </div>
       <div class="kpi">
-        <div class="kpi-label">30 dies</div>
-        <div class="kpi-value" id="kpi-mes">—</div>
-        <div class="kpi-sub" id="sub-mes"></div>
+        <dt>30 dies</dt>
+        <dd>
+          <div class="kpi-value" id="kpi-mes">—</div>
+          <div class="kpi-sub" id="sub-mes"></div>
+        </dd>
       </div>
       <div class="kpi">
-        <div class="kpi-label">total</div>
-        <div class="kpi-value" id="kpi-total">—</div>
-        <div class="kpi-sub" id="sub-total"></div>
+        <dt>total</dt>
+        <dd>
+          <div class="kpi-value" id="kpi-total">—</div>
+          <div class="kpi-sub" id="sub-total"></div>
+        </dd>
       </div>
-    </div>
+    </dl>
 
     <!-- Gràfic 7 dies -->
     <div class="chart-section">
-      <div class="section-title">visites · últims 7 dies</div>
+      <h2 class="section-title">visites · últims 7 dies</h2>
       <div class="chart-wrap">
-        <svg id="chart-svg" height="72" viewBox="0 0 700 72"></svg>
-        <div class="chart-legend" id="chart-legend"></div>
+        <svg id="chart-svg" role="img" aria-labelledby="chart-title" height="72" viewBox="0 0 700 72">
+          <title id="chart-title">Gràfic de barres de visites dels últims 7 dies</title>
+        </svg>
+        <div class="chart-legend" id="chart-legend" aria-hidden="true"></div>
       </div>
     </div>
 
     <!-- Pàgines + Referrers -->
     <div class="grid-2">
       <div>
-        <div class="section-title">pàgines més visitades · 30 dies</div>
-        <div id="top-pages"><span class="loading">carregant...</span></div>
+        <h2 class="section-title">pàgines més visitades · 30 dies</h2>
+        <ul id="top-pages" class="stat-list" aria-label="Pàgines més visitades els últims 30 dies">
+          <li class="loading" role="status">carregant...</li>
+        </ul>
       </div>
       <div>
-        <div class="section-title">d'on venen · 30 dies</div>
-        <div id="top-refs"><span class="loading">carregant...</span></div>
+        <h2 class="section-title">d'on venen · 30 dies</h2>
+        <ul id="top-refs" class="stat-list" aria-label="Orígens del trànsit els últims 30 dies">
+          <li class="loading" role="status">carregant...</li>
+        </ul>
       </div>
     </div>
 
     <!-- Idioma -->
     <div class="lang-section">
-      <div class="section-title">per idioma · 30 dies</div>
-      <div id="lang-section"><span class="loading">carregant...</span></div>
+      <h2 class="section-title">per idioma · 30 dies</h2>
+      <div id="lang-section">
+        <span class="loading" role="status">carregant...</span>
+      </div>
     </div>
 
     <!-- Navegadors + SO -->
     <div class="grid-2">
       <div>
-        <div class="section-title">navegadors · 30 dies</div>
-        <div id="top-browsers"><span class="loading">carregant...</span></div>
+        <h2 class="section-title">navegadors · 30 dies</h2>
+        <ul id="top-browsers" class="stat-list" aria-label="Navegadors dels últims 30 dies">
+          <li class="loading" role="status">carregant...</li>
+        </ul>
       </div>
       <div>
-        <div class="section-title">sistema operatiu · 30 dies</div>
-        <div id="top-systems"><span class="loading">carregant...</span></div>
+        <h2 class="section-title">sistema operatiu · 30 dies</h2>
+        <ul id="top-systems" class="stat-list" aria-label="Sistemes operatius dels últims 30 dies">
+          <li class="loading" role="status">carregant...</li>
+        </ul>
       </div>
     </div>
 
     <!-- Mides pantalla -->
     <div>
-      <div class="section-title">mida de pantalla · 30 dies</div>
-      <div id="top-sizes"><span class="loading">carregant...</span></div>
+      <h2 class="section-title">mida de pantalla · 30 dies</h2>
+      <ul id="top-sizes" class="stat-list" aria-label="Mides de pantalla dels últims 30 dies">
+        <li class="loading" role="status">carregant...</li>
+      </ul>
     </div>
 
   </main>
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════════════════════════
-//  CONFIGURACIÓ  — canvia aquí el token quan el tinguis
-// ═══════════════════════════════════════════════════════════════════════════
-const PASSWORD  = 'linuxbcn';
-const GC_BASE   = '/admin/gc-proxy.php';
-// ═══════════════════════════════════════════════════════════════════════════
+const PASSWORD = 'linuxbcn';
+const GC_BASE  = '/admin/gc-proxy.php';
+
+// ── Helpers ───────────────────────────────────────────────────────────────
+function fmt(n) {
+  if (n == null || isNaN(n)) return '—';
+  return Number(n).toLocaleString('ca-ES');
+}
+
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function daysAgo(n) {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return d.toISOString().slice(0, 10);
+}
 
 // ── Auth ──────────────────────────────────────────────────────────────────
-function checkLogin() {
-  const v = document.getElementById('pwd').value;
+document.getElementById('login-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const v   = document.getElementById('pwd').value;
+  const err = document.getElementById('login-err');
   if (v === PASSWORD) {
+    err.textContent = '';
     sessionStorage.setItem('gc_ok', '1');
     showDashboard();
   } else {
-    document.getElementById('login-err').style.display = 'block';
+    err.textContent = 'contrasenya incorrecta';
     document.getElementById('pwd').value = '';
     document.getElementById('pwd').focus();
   }
-}
+});
+
+document.getElementById('btn-logout').addEventListener('click', logout);
 
 function logout() {
   sessionStorage.removeItem('gc_ok');
-  location.reload();
+  document.getElementById('dashboard').style.display = 'none';
+  document.getElementById('login').style.display     = 'flex';
+  const pwd = document.getElementById('pwd');
+  pwd.value = '';
+  pwd.focus();
 }
 
-document.getElementById('btn-login').addEventListener('click', checkLogin);
-document.getElementById('pwd').addEventListener('keydown', e => {
-  if (e.key === 'Enter') checkLogin();
-});
-
 function showDashboard() {
-  document.getElementById('login').style.display = 'none';
+  document.getElementById('login').style.display     = 'none';
   document.getElementById('dashboard').style.display = 'block';
-  document.getElementById('dash-date').textContent = new Date().toLocaleDateString('ca-ES', {
+  document.getElementById('dash-date').textContent   = new Date().toLocaleDateString('ca-ES', {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
   });
+  document.getElementById('dash-main').focus();
   loadStats();
 }
 
@@ -454,94 +516,141 @@ async function gc(path, params = {}) {
   return r.json();
 }
 
-// ── Utils ─────────────────────────────────────────────────────────────────
-function fmt(n) {
-  if (n == null || isNaN(n)) return '—';
-  return Number(n).toLocaleString('ca-ES');
-}
-
-function today() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function daysAgo(n) {
-  const d = new Date();
-  d.setDate(d.getDate() - n);
-  return d.toISOString().slice(0, 10);
-}
-
+// ── Error banner ──────────────────────────────────────────────────────────
 function showError(msg) {
-  const body = document.querySelector('.dash-body');
+  const body     = document.getElementById('dash-main');
   const existing = body.querySelector('.error-banner');
   if (existing) existing.remove();
-  body.insertAdjacentHTML('afterbegin', `
-    <div class="error-banner">
-      <strong>Error carregant dades:</strong> ${msg}<br>
-      <small>Comprova que el token de l'API és correcte a GoatCounter → Configuració → API tokens.</small>
-    </div>
-  `);
+  const div    = document.createElement('div');
+  div.className = 'error-banner';
+  div.setAttribute('role', 'alert');
+  const strong = document.createElement('strong');
+  strong.textContent = 'Error carregant dades: ';
+  div.appendChild(strong);
+  div.appendChild(document.createTextNode(msg));
+  body.insertBefore(div, body.firstChild);
 }
 
-// ── Render: llista amb barres ──────────────────────────────────────────────
+// ── Render: llista amb barres ─────────────────────────────────────────────
 function renderList(id, items, nameKey, countKey, linkFn) {
-  const el = document.getElementById(id);
+  const el  = document.getElementById(id);
+  el.innerHTML = '';
   if (!items || !items.length) {
-    el.innerHTML = '<span class="loading">sense dades</span>';
+    const li = document.createElement('li');
+    li.className   = 'loading';
+    li.textContent = 'sense dades';
+    el.appendChild(li);
     return;
   }
   const max = items[0][countKey] || 1;
-  el.innerHTML = items.slice(0, 10).map(item => {
-    const name = item[nameKey] || '(directe / desconegut)';
-    const pct  = Math.round((item[countKey] / max) * 100);
-    const display = linkFn ? `<a href="${linkFn(item)}" target="_blank" style="color:inherit;text-decoration:none;">${name}</a>` : name;
-    return `
-      <div class="stat-row">
-        <span class="stat-name" title="${name}">${display}</span>
-        <div class="stat-bar-wrap"><div class="stat-bar" style="width:${pct}%"></div></div>
-        <span class="stat-count">${fmt(item[countKey])}</span>
-      </div>`;
-  }).join('');
+  items.slice(0, 10).forEach(item => {
+    const name  = String(item[nameKey] || '(directe / desconegut)');
+    const count = item[countKey];
+    const pct   = Math.round((count / max) * 100);
+
+    const li       = document.createElement('li');
+    li.className   = 'stat-row';
+
+    const nameSpan       = document.createElement('span');
+    nameSpan.className   = 'stat-name';
+    nameSpan.title       = name;
+
+    if (linkFn) {
+      const a   = document.createElement('a');
+      a.href    = linkFn(item);
+      a.target  = '_blank';
+      a.rel     = 'noopener noreferrer';
+      a.style.cssText = 'color:inherit;text-decoration:none;';
+      a.textContent   = name;
+      nameSpan.appendChild(a);
+    } else {
+      nameSpan.textContent = name;
+    }
+
+    const barWrap     = document.createElement('div');
+    barWrap.className = 'stat-bar-wrap';
+    barWrap.setAttribute('aria-hidden', 'true');
+    const bar     = document.createElement('div');
+    bar.className = 'stat-bar';
+    bar.style.width = pct + '%';
+    barWrap.appendChild(bar);
+
+    const countSpan       = document.createElement('span');
+    countSpan.className   = 'stat-count';
+    countSpan.textContent = fmt(count);
+
+    li.appendChild(nameSpan);
+    li.appendChild(barWrap);
+    li.appendChild(countSpan);
+    el.appendChild(li);
+  });
 }
 
-// ── Render: gràfic de barres 7 dies ───────────────────────────────────────
+// ── Render: gràfic de barres 7 dies ──────────────────────────────────────
 function renderChart(days) {
   const svg    = document.getElementById('chart-svg');
   const legend = document.getElementById('chart-legend');
+  const titleEl = svg.querySelector('title');
+
+  // Netejar mantenint el <title>
+  svg.innerHTML = '';
+  if (titleEl) svg.appendChild(titleEl);
 
   if (!days.length) {
-    svg.innerHTML = '<text x="350" y="36" fill="#999" font-size="12" text-anchor="middle">sense dades</text>';
+    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('x', '350');
+    text.setAttribute('y', '36');
+    text.setAttribute('fill', '#999');
+    text.setAttribute('font-size', '12');
+    text.setAttribute('text-anchor', 'middle');
+    text.textContent = 'sense dades';
+    svg.appendChild(text);
     return;
   }
 
-  const W = 700, H = 72;
-  const gap = 8;
+  const W    = 700, H = 72;
+  const gap  = 8;
   const barW = Math.floor((W - gap * (days.length - 1)) / days.length);
-  const max = Math.max(...days.map(d => d.count), 1);
+  const max  = Math.max(...days.map(d => d.count), 1);
 
-  svg.innerHTML = days.map((d, i) => {
+  days.forEach((d, i) => {
     const x    = i * (barW + gap);
     const barH = Math.max(3, Math.round((d.count / max) * H));
     const y    = H - barH;
     const fill = d.count > 0 ? 'var(--accent)' : 'var(--border)';
-    return `<rect x="${x}" y="${y}" width="${barW}" height="${barH}" fill="${fill}">
-      <title>${d.date}: ${d.count} visites</title>
-    </rect>`;
-  }).join('');
+    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('x', x);
+    rect.setAttribute('y', y);
+    rect.setAttribute('width', barW);
+    rect.setAttribute('height', barH);
+    rect.setAttribute('fill', fill);
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+    t.textContent = `${d.date}: ${d.count} visites`;
+    rect.appendChild(t);
+    svg.appendChild(rect);
+  });
 
-  // Legend: first, middle, last
   const indices = [0, Math.floor(days.length / 2), days.length - 1];
-  legend.innerHTML = days.map((d, i) => {
-    if (!indices.includes(i)) return '<span></span>';
-    const [, m, day] = d.date.split('-');
-    return `<span>${parseInt(day)}/${parseInt(m)}</span>`;
-  }).join('');
+  legend.innerHTML = '';
+  days.forEach((d, i) => {
+    const span = document.createElement('span');
+    if (indices.includes(i)) {
+      const [, m, day] = d.date.split('-');
+      span.textContent = `${parseInt(day)}/${parseInt(m)}`;
+    }
+    legend.appendChild(span);
+  });
 }
 
 // ── Render: per idioma ────────────────────────────────────────────────────
 function renderLang(hits) {
   const el = document.getElementById('lang-section');
+  el.innerHTML = '';
   if (!hits || !hits.length) {
-    el.innerHTML = '<span class="loading">sense dades</span>';
+    const span       = document.createElement('span');
+    span.className   = 'loading';
+    span.textContent = 'sense dades';
+    el.appendChild(span);
     return;
   }
 
@@ -555,40 +664,55 @@ function renderLang(hits) {
   const caPct = Math.round(ca / total * 100);
   const enPct = 100 - caPct;
 
-  el.innerHTML = `
-    <div class="lang-bar">
-      <div class="lang-ca" style="width:${caPct}%">${caPct > 8 ? `CA ${caPct}%` : ''}</div>
-      <div class="lang-en" style="width:${enPct}%">${enPct > 8 ? `EN ${enPct}%` : ''}</div>
-    </div>
-    <div class="lang-detail">
-      <span>Català: ${fmt(ca)} visites</span>
-      <span>English: ${fmt(en)} visites</span>
-    </div>`;
+  const bar     = document.createElement('div');
+  bar.className = 'lang-bar';
+  bar.setAttribute('aria-hidden', 'true');
+
+  const caDiv       = document.createElement('div');
+  caDiv.className   = 'lang-ca';
+  caDiv.style.width = caPct + '%';
+  caDiv.textContent = caPct > 8 ? `CA ${caPct}%` : '';
+
+  const enDiv       = document.createElement('div');
+  enDiv.className   = 'lang-en';
+  enDiv.style.width = enPct + '%';
+  enDiv.textContent = enPct > 8 ? `EN ${enPct}%` : '';
+
+  bar.appendChild(caDiv);
+  bar.appendChild(enDiv);
+
+  const detail     = document.createElement('div');
+  detail.className = 'lang-detail';
+
+  const caSpan       = document.createElement('span');
+  caSpan.textContent = `Català: ${fmt(ca)} visites`;
+  const enSpan       = document.createElement('span');
+  enSpan.textContent = `English: ${fmt(en)} visites`;
+
+  detail.appendChild(caSpan);
+  detail.appendChild(enSpan);
+
+  el.appendChild(bar);
+  el.appendChild(detail);
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────
+const delay = ms => new Promise(r => setTimeout(r, ms));
+
 async function loadStats() {
   const T   = today();
   const D7  = daysAgo(7);
   const D30 = daysAgo(30);
-  const D0  = '2020-01-01';
+  const D0  = '2025-01-01'; // data d'inici del compte
 
+  // ── Fase 1: KPIs (4 crides) ──────────────────────────────────────────────
   try {
-    // Totes les crides en paral·lel
-    const [totAvui, totSetmana, totMes, totTotal, hits30, refs, browsers, systems, sizes] =
-      await Promise.all([
-        gc('/stats/total',    { start: T,   end: T   }),
-        gc('/stats/total',    { start: D7,  end: T   }),
-        gc('/stats/total',    { start: D30, end: T   }),
-        gc('/stats/total',    { start: D0,  end: T   }),
-        gc('/stats/hits',     { start: D30, end: T, limit: 20 }),
-        gc('/stats/refs',     { start: D30, end: T, limit: 10 }),
-        gc('/stats/browsers', { start: D30, end: T, limit: 10 }),
-        gc('/stats/systems',  { start: D30, end: T, limit: 10 }),
-        gc('/stats/sizes',    { start: D30, end: T, limit: 10 }),
-      ]);
-
-    // KPIs
+    const [totAvui, totSetmana, totMes, totTotal] = await Promise.all([
+      gc('/stats/total', { start: T,   end: T  }),
+      gc('/stats/total', { start: D7,  end: T  }),
+      gc('/stats/total', { start: D30, end: T  }),
+      gc('/stats/total', { start: D0,  end: T  }),
+    ]);
     const setKpi = (id, subId, data) => {
       document.getElementById(id).textContent    = fmt(data.total);
       document.getElementById(subId).textContent = `${fmt(data.total_unique)} únics`;
@@ -597,35 +721,39 @@ async function loadStats() {
     setKpi('kpi-setmana', 'sub-setmana', totSetmana);
     setKpi('kpi-mes',     'sub-mes',     totMes);
     setKpi('kpi-total',   'sub-total',   totTotal);
-
-    // Gràfic 7 dies (7 crides per tenir dades per dia)
-    loadChart(T, D7);
-
-    // Pàgines
-    renderList('top-pages', hits30.hits, 'path', 'count', item => item.path);
-
-    // Idioma
-    renderLang(hits30.hits);
-
-    // Referrers
-    renderList('top-refs', refs.refs, 'name', 'count');
-
-    // Navegadors
-    renderList('top-browsers', browsers.browsers, 'name', 'count');
-
-    // SO
-    renderList('top-systems', systems.systems, 'name', 'count');
-
-    // Mides
-    renderList('top-sizes', sizes.sizes, 'name', 'count');
-
   } catch (err) {
-    console.error('GoatCounter error:', err);
+    console.error('GoatCounter KPIs error:', err);
+    showError(err.message);
+    return;
+  }
+
+  await delay(600);
+
+  // ── Fase 2: llistes + gràfic (5 crides) ──────────────────────────────────
+  try {
+    const [hits30, refs, browsers, systems, sizes] = await Promise.all([
+      gc('/stats/hits',     { start: D30, end: T, limit: 20 }),
+      gc('/stats/refs',     { start: D30, end: T, limit: 10 }),
+      gc('/stats/browsers', { start: D30, end: T, limit: 10 }),
+      gc('/stats/systems',  { start: D30, end: T, limit: 10 }),
+      gc('/stats/sizes',    { start: D30, end: T, limit: 10 }),
+    ]);
+    renderList('top-pages',    hits30.hits,      'path', 'count', item => item.path);
+    renderLang(hits30.hits);
+    renderList('top-refs',     refs.refs,         'name', 'count');
+    renderList('top-browsers', browsers.browsers, 'name', 'count');
+    renderList('top-systems',  systems.systems,   'name', 'count');
+    renderList('top-sizes',    sizes.sizes,       'name', 'count');
+  } catch (err) {
+    console.error('GoatCounter llistes error:', err);
     showError(err.message);
   }
+
+  await delay(600);
+  loadChart();
 }
 
-async function loadChart(endDate, startDate) {
+async function loadChart() {
   const days = [];
   for (let i = 6; i >= 0; i--) {
     const d = new Date();
@@ -634,15 +762,25 @@ async function loadChart(endDate, startDate) {
   }
 
   try {
-    const results = await Promise.all(
-      days.map(d => gc('/stats/total', { start: d.date, end: d.date }))
-    );
-    results.forEach((r, i) => { days[i].count = r.total || 0; });
+    // Seqüencial per evitar rate limiting (7 crides)
+    for (let i = 0; i < days.length; i++) {
+      const r = await gc('/stats/total', { start: days[i].date, end: days[i].date });
+      days[i].count = r.total || 0;
+      if (i < days.length - 1) await delay(200);
+    }
     renderChart(days);
   } catch (e) {
     console.warn('Chart failed:', e);
-    document.getElementById('chart-svg').innerHTML =
-      '<text x="350" y="36" fill="#999" font-size="12" text-anchor="middle">error carregant el gràfic</text>';
+    const svg  = document.getElementById('chart-svg');
+    svg.innerHTML = '';
+    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('x', '350');
+    text.setAttribute('y', '36');
+    text.setAttribute('fill', '#999');
+    text.setAttribute('font-size', '12');
+    text.setAttribute('text-anchor', 'middle');
+    text.textContent = 'error carregant el gràfic';
+    svg.appendChild(text);
   }
 }
 </script>
