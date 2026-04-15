@@ -3,7 +3,6 @@ define('GC_TOKEN', 'NVLNYV5JIVPOIHZHE57TVCDBPV7UPKFL');
 define('GC_BASE',  'https://linuxbcn.goatcounter.com/api/v0');
 
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
 
 $path   = isset($_GET['path']) ? '/' . ltrim($_GET['path'], '/') : '/';
 $params = $_GET;
@@ -12,19 +11,26 @@ unset($params['path']);
 $url = GC_BASE . $path;
 if ($params) $url .= '?' . http_build_query($params);
 
-$ctx = stream_context_create(['http' => [
-  'header'  => "Authorization: Bearer " . GC_TOKEN . "\r\nAccept: application/json\r\n",
-  'timeout' => 10,
-]]);
+$ch = curl_init($url);
+curl_setopt_array($ch, [
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_TIMEOUT        => 10,
+  CURLOPT_HTTPHEADER     => [
+    'Authorization: Bearer ' . GC_TOKEN,
+    'Accept: application/json',
+  ],
+]);
 
-$body = @file_get_contents($url, false, $ctx);
+$body   = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$err    = curl_error($ch);
+curl_close($ch);
 
-if ($body === false) {
+if ($body === false || $err) {
   http_response_code(502);
-  echo json_encode(['error' => 'No s\'ha pogut connectar amb GoatCounter']);
+  echo json_encode(['error' => 'cURL: ' . $err]);
   exit;
 }
 
-preg_match('/HTTP\/\d\.\d (\d+)/', $http_response_header[0], $m);
-http_response_code((int)($m[1] ?? 200));
+http_response_code($status);
 echo $body;
