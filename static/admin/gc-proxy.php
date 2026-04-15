@@ -1,5 +1,5 @@
 <?php
-define('GC_TOKEN', 'NVLNYV5JIVPOIHZHE57TVCDBPV7UPKFL');
+define('GC_TOKEN', '1lo7hszjcgc71hw45idc5dg1qb4i9wpdcp182xo2lhy50x1xj');
 define('GC_BASE',  'https://linuxbcn.goatcounter.com/api/v0');
 
 header('Content-Type: application/json');
