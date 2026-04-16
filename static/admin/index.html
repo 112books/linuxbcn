@@ -729,19 +729,21 @@ async function loadStats() {
 
   await delay(600);
 
-  // ── Fase 2: llistes (crides independents per identificar errors) ──────────
+  // ── Fase 2: llistes (seqüencial per evitar rate limiting) ───────────────
   async function safeGc(path, params) {
     try { return await gc(path, params); }
-    catch (e) { console.error('GC error:', e.message); showError(e.message); return null; }
+    catch (e) { console.warn('GC error:', e.message); return null; }
   }
 
-  const [hits30, refs, browsers, systems, sizes] = await Promise.all([
-    safeGc('/stats/hits',     { start: D30, end: T, limit: 20 }),
-    safeGc('/stats/refs',     { start: D30, end: T, limit: 10 }),
-    safeGc('/stats/browsers', { start: D30, end: T, limit: 10 }),
-    safeGc('/stats/systems',  { start: D30, end: T, limit: 10 }),
-    safeGc('/stats/sizes',    { start: D30, end: T, limit: 10 }),
-  ]);
+  const hits30    = await safeGc('/stats/hits',     { start: D30, end: T, limit: 20 });
+  await delay(350);
+  const refs      = await safeGc('/stats/refs',     { start: D30, end: T, limit: 10 });
+  await delay(350);
+  const browsers  = await safeGc('/stats/browsers', { start: D30, end: T, limit: 10 });
+  await delay(350);
+  const systems   = await safeGc('/stats/systems',  { start: D30, end: T, limit: 10 });
+  await delay(350);
+  const sizes     = await safeGc('/stats/sizes',    { start: D30, end: T, limit: 10 });
 
   renderList('top-pages',    hits30?.hits,       'path', 'count', item => item.path);
   renderLang(hits30?.hits || []);
