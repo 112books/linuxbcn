@@ -511,7 +511,7 @@ async function gc(path, params = {}) {
   const r = await fetch(url);
   if (!r.ok) {
     const text = await r.text();
-    throw new Error(`${r.status} ${r.statusText}: ${text.slice(0, 200)}`);
+    throw new Error(`[${path}] ${r.status}: ${text.slice(0, 150)}`);
   }
   return r.json();
 }
@@ -729,25 +729,26 @@ async function loadStats() {
 
   await delay(600);
 
-  // ── Fase 2: llistes + gràfic (5 crides) ──────────────────────────────────
-  try {
-    const [hits30, refs, browsers, systems, sizes] = await Promise.all([
-      gc('/stats/hits',     { start: D30, end: T, limit: 20 }),
-      gc('/stats/refs',     { start: D30, end: T, limit: 10 }),
-      gc('/stats/browsers', { start: D30, end: T, limit: 10 }),
-      gc('/stats/systems',  { start: D30, end: T, limit: 10 }),
-      gc('/stats/sizes',    { start: D30, end: T, limit: 10 }),
-    ]);
-    renderList('top-pages',    hits30.hits,      'path', 'count', item => item.path);
-    renderLang(hits30.hits);
-    renderList('top-refs',     refs.refs,         'name', 'count');
-    renderList('top-browsers', browsers.browsers, 'name', 'count');
-    renderList('top-systems',  systems.systems,   'name', 'count');
-    renderList('top-sizes',    sizes.sizes,       'name', 'count');
-  } catch (err) {
-    console.error('GoatCounter llistes error:', err);
-    showError(err.message);
+  // ── Fase 2: llistes (crides independents per identificar errors) ──────────
+  async function safeGc(path, params) {
+    try { return await gc(path, params); }
+    catch (e) { console.error('GC error:', e.message); showError(e.message); return null; }
   }
+
+  const [hits30, refs, browsers, systems, sizes] = await Promise.all([
+    safeGc('/stats/hits',     { start: D30, end: T, limit: 20 }),
+    safeGc('/stats/refs',     { start: D30, end: T, limit: 10 }),
+    safeGc('/stats/browsers', { start: D30, end: T, limit: 10 }),
+    safeGc('/stats/systems',  { start: D30, end: T, limit: 10 }),
+    safeGc('/stats/sizes',    { start: D30, end: T, limit: 10 }),
+  ]);
+
+  renderList('top-pages',    hits30?.hits,       'path', 'count', item => item.path);
+  renderLang(hits30?.hits || []);
+  renderList('top-refs',     refs?.refs,         'name', 'count');
+  renderList('top-browsers', browsers?.browsers, 'name', 'count');
+  renderList('top-systems',  systems?.systems,   'name', 'count');
+  renderList('top-sizes',    sizes?.sizes,       'name', 'count');
 
   await delay(600);
   loadChart();
