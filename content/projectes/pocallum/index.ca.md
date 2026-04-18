@@ -6,6 +6,7 @@ year: 2025
 client: "agència fotogràfica"
 sector: "fotografia"
 draft: false
+image: "pocallum.cat.png"
 ---
 
 ## Agència de fotografia amb caràcter propi

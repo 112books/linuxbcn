@@ -6,6 +6,7 @@ year: 2024
 client: "neighbourhood publication"
 sector: "communication"
 draft: false
+image: "01-carrer.png"
 ---
 
 ## The Catalan neighbourhood movement's magazine online

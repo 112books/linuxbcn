@@ -6,6 +6,7 @@ year: 2024
 client: "federació veïnal"
 sector: "associatiu"
 draft: false
+image: "01-favb.cat.png"
 ---
 
 ## La Federació d'Associacions de Veïns i Veïnes de Barcelona

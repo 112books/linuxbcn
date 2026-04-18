@@ -43,6 +43,9 @@ sobirania de dades i independència tecnològica.
 ### Analítica
 - **GoatCounter** — `https://linuxbcn.goatcounter.com` (compte: hola@linuxbcn.com)
 - Dashboard privat a `/admin/` (proxy PHP a `static/admin/gc-proxy.php`)
+- Token de la API a `gc-proxy.php` línia 2 — regenerar-lo a goatcounter.com/settings/api si dona error 400 amb HTML
+- GoatCounter té **rate limiting** agressiu: les crides a `/api/v0/stats/*` han de ser **seqüencials amb ~350ms de delay** entre elles (429 si es fan en paral·lel)
+- Endpoints vàlids confirmats: `/stats/total`, `/stats/hits`, `/stats/refs`, `/stats/browsers`, `/stats/systems`, `/stats/sizes`
 - Zero Google Analytics, zero Meta Pixel, zero scripts de tercers no auditables
 
 ### Formularis
@@ -344,6 +347,7 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 | 2026-04-16 | GoatCounter en lloc d'Umami/Plausible | Compte creat a linuxbcn.goatcounter.com; proxy PHP per evitar CORS |
 | 2026-04-16 | Instagram @linuxbcn_oficial al footer | A l'esquerra del dimoni MalditasMaquinas |
 | 2026-04-16 | Admin dashboard a `/admin/` (WCAG 2.2 AA) | Accessibilitat completa, sense innerHTML amb dades externes |
+| 2026-04-16 | GoatCounter API: crides seqüencials 350ms | Rate limiting (429) si es fan en paral·lel; token a gc-proxy.php |
 | 2026-04-16 | Castellà descartat com a idioma del lloc | Decisió estratègica de posicionament |
 
 ---

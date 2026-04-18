@@ -6,6 +6,7 @@ year: 2025
 client: "projecte propi"
 sector: "editorial"
 draft: false
+image: "112books.eu.png"
 ---
 
 ## Una editorial independent de fotografia

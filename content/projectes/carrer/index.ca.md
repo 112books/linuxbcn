@@ -6,6 +6,7 @@ year: 2024
 client: "publicació veïnal"
 sector: "comunicació"
 draft: false
+image: "01-carrer.png"
 ---
 
 ## La revista del moviment veïnal català en digital

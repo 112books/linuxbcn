@@ -6,6 +6,7 @@ year: 2020
 client: "projecte propi"
 sector: "educació / fotografia"
 draft: false
+image: "01-llumatics.png"
 ---
 
 ## Formació en fotografia analògica i experimental

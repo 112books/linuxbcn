@@ -6,6 +6,7 @@ year: 2025
 client: "photography agency"
 sector: "photography"
 draft: false
+image: "pocallum.cat.png"
 ---
 
 ## A photography agency with its own character

@@ -6,6 +6,7 @@ year: 2025
 client: "editorial"
 sector: "fotografia"
 draft: false
+image: "01-112revelats.png"
 ---
 
 ## Una plataforma per a noves veus de la fotografia
