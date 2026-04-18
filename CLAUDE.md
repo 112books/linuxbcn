@@ -1,3 +1,9 @@
+# Claude Context
+
+Todo el contexto del agente de IA se ha centralizado en: **[AGENTS.md](AGENTS.md)**.
+
+---
+
 # CLAUDE.md — linuxbcn.com
 
 > Fitxer de context per a Claude (i qualsevol assistent IA o col·laborador humà).
@@ -352,5 +358,5 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-04-16*
+*Última actualització: 2026-04-18*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
