@@ -358,5 +358,31 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 15. Historial de tasques — 2026-04-18
+
+**Projecte MalditasMaquinas — text i imatge**
+- `index.ca.md` i `index.en.md`: text complet reescrit (backend distribuït, Stripe, Telegram, SPA vanilla, Hugo, multidioma, WCAG AA)
+- Eliminades totes les referències a costos d'infraestructura — norma aplicable a tot el portfolio
+- Camp `image: "01-malditasmaquinas.png"` afegit al frontmatter
+
+**Imatges a tots els projectes del portfolio**
+- Camp `image:` afegit al frontmatter de: malditasmaquinas, carrer, favb, pocallum, llumatics, 112books, 112revelats
+- Imatges inline eliminades del body (la plantilla `single.html` ja les mostra al hero via frontmatter)
+- Norma establerta: imatge principal sempre via `image:` al frontmatter; inline només per a imatges addicionals (ex. abans/després)
+
+**Documentació del projecte**
+- `CLAURE.md` (typo) renomenat i fusionat a `CLAUDE.md`
+- `CLAUDE.md`: encapçalament `# Claude Context` afegit amb referència a `AGENTS.md`
+- `AGENTS.md`: creat des de zero en català — propòsit, objectius, audiència (artistes, autònoms, startups, microempreses, petites empreses), principis editorials, ètica tecnològica, accessibilitat, comportaments requerits i prohibits
+- `AGENTS.en.md`: versió anglesa completa i sincronitzada amb `AGENTS.md`
+
+**Normes editorials establertes (aplicables a tot el portfolio)**
+- Mai mencionar costos d'infraestructura en textos de venda
+- Emfatitzar seguretat, descentralització i robustesa en lloc de cost zero
+- Demostrar experiència i criteri sense autobombo explícit
+- Objectiu de cada text: que el client potencial vulgui contractar LinuxBCN per al seu projecte web o de presència digital
+
+---
+
 *Última actualització: 2026-04-18*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
