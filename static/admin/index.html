@@ -314,8 +314,55 @@
       font-size: 12px;
     }
 
+    /* ── PERIOD SELECTOR ──────────────────────────────────── */
+    .period-bar {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+
+    .period-label {
+      color: var(--ink3);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-right: .5rem;
+    }
+
+    .period-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--ink3);
+      padding: .25rem .65rem;
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: .06em;
+      cursor: pointer;
+    }
+
+    .period-btn:hover { border-color: var(--ink3); color: var(--ink); }
+    .period-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    .period-btn.active { border-color: var(--accent); color: var(--accent); }
+
+    .btn-refresh {
+      margin-left: auto;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--ink3);
+      padding: .25rem .65rem;
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: .06em;
+      cursor: pointer;
+    }
+    .btn-refresh:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-refresh:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    .btn-refresh.spinning { opacity: .5; pointer-events: none; }
+
     /* ── LOADING / EMPTY ───────────────────────────────────── */
     .loading { color: var(--ink3); font-size: 11px; letter-spacing: .06em; }
+    .empty   { color: var(--ink3); font-size: 11px; font-style: italic; }
 
     /* ── RESPONSIVE ────────────────────────────────────────── */
     @media (max-width: 720px) {
@@ -350,6 +397,16 @@
 
   <main class="dash-body" id="dash-main" tabindex="-1">
 
+    <!-- Selector de període -->
+    <div class="period-bar" role="group" aria-label="Selecciona el període d'anàlisi">
+      <span class="period-label" aria-hidden="true">Període:</span>
+      <button class="period-btn active" data-days="7"  type="button">7d</button>
+      <button class="period-btn"        data-days="30" type="button">30d</button>
+      <button class="period-btn"        data-days="90" type="button">3m</button>
+      <button class="period-btn"        data-days="365" type="button">1a</button>
+      <button class="btn-refresh" type="button" id="btn-refresh" aria-label="Actualitzar dades">↻ refrescar</button>
+    </div>
+
     <!-- KPIs -->
     <dl class="kpis" aria-label="Resum de visites">
       <div class="kpi">
@@ -360,10 +417,10 @@
         </dd>
       </div>
       <div class="kpi">
-        <dt>7 dies</dt>
+        <dt id="kpi-label-period">període</dt>
         <dd>
-          <div class="kpi-value" id="kpi-setmana">—</div>
-          <div class="kpi-sub" id="sub-setmana"></div>
+          <div class="kpi-value" id="kpi-period">—</div>
+          <div class="kpi-sub" id="sub-period"></div>
         </dd>
       </div>
       <div class="kpi">
@@ -382,9 +439,9 @@
       </div>
     </dl>
 
-    <!-- Gràfic 7 dies -->
+    <!-- Gràfic -->
     <div class="chart-section">
-      <h2 class="section-title">visites · últims 7 dies</h2>
+      <h2 class="section-title" id="chart-heading">visites · últims 7 dies</h2>
       <div class="chart-wrap">
         <svg id="chart-svg" role="img" aria-labelledby="chart-title" height="72" viewBox="0 0 700 72">
           <title id="chart-title">Gràfic de barres de visites dels últims 7 dies</title>
@@ -396,14 +453,14 @@
     <!-- Pàgines + Referrers -->
     <div class="grid-2">
       <div>
-        <h2 class="section-title">pàgines més visitades · 30 dies</h2>
-        <ul id="top-pages" class="stat-list" aria-label="Pàgines més visitades els últims 30 dies">
+        <h2 class="section-title" id="label-pages">pàgines més visitades · 7 dies</h2>
+        <ul id="top-pages" class="stat-list" aria-labelledby="label-pages">
           <li class="loading" role="status">carregant...</li>
         </ul>
       </div>
       <div>
-        <h2 class="section-title">d'on venen · 30 dies</h2>
-        <ul id="top-refs" class="stat-list" aria-label="Orígens del trànsit els últims 30 dies">
+        <h2 class="section-title" id="label-refs">d'on venen · 7 dies</h2>
+        <ul id="top-refs" class="stat-list" aria-labelledby="label-refs">
           <li class="loading" role="status">carregant...</li>
         </ul>
       </div>
@@ -411,8 +468,8 @@
 
     <!-- Idioma -->
     <div class="lang-section">
-      <h2 class="section-title">per idioma · 30 dies</h2>
-      <div id="lang-section">
+      <h2 class="section-title" id="label-lang">per idioma · 7 dies</h2>
+      <div id="lang-section" aria-labelledby="label-lang">
         <span class="loading" role="status">carregant...</span>
       </div>
     </div>
@@ -420,14 +477,14 @@
     <!-- Navegadors + SO -->
     <div class="grid-2">
       <div>
-        <h2 class="section-title">navegadors · 30 dies</h2>
-        <ul id="top-browsers" class="stat-list" aria-label="Navegadors dels últims 30 dies">
+        <h2 class="section-title" id="label-browsers">navegadors · 7 dies</h2>
+        <ul id="top-browsers" class="stat-list" aria-labelledby="label-browsers">
           <li class="loading" role="status">carregant...</li>
         </ul>
       </div>
       <div>
-        <h2 class="section-title">sistema operatiu · 30 dies</h2>
-        <ul id="top-systems" class="stat-list" aria-label="Sistemes operatius dels últims 30 dies">
+        <h2 class="section-title" id="label-systems">sistema operatiu · 7 dies</h2>
+        <ul id="top-systems" class="stat-list" aria-labelledby="label-systems">
           <li class="loading" role="status">carregant...</li>
         </ul>
       </div>
@@ -435,8 +492,8 @@
 
     <!-- Mides pantalla -->
     <div>
-      <h2 class="section-title">mida de pantalla · 30 dies</h2>
-      <ul id="top-sizes" class="stat-list" aria-label="Mides de pantalla dels últims 30 dies">
+      <h2 class="section-title" id="label-sizes">mida de pantalla · 7 dies</h2>
+      <ul id="top-sizes" class="stat-list" aria-labelledby="label-sizes">
         <li class="loading" role="status">carregant...</li>
       </ul>
     </div>
