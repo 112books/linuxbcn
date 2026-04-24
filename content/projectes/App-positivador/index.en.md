@@ -1,6 +1,6 @@
 ---
 title: "Positivitzador WebApp"
-slug: "positivitzador-webapp"
+slug: "app-positivador"
 weight: 1
 year: 2026
 client: "Llumatics"
@@ -33,4 +33,5 @@ The base version allows you to easily interpret a negative image (both on paper 
 
 If you find the tool useful, you can also purchase a license —with a modest one-time payment— to support this handcrafted software and unlock advanced features: saving images to your device, adding notes, using a curtain mode to compare positive and negative, adjusting exposure in steps, and fine-tuning gamma.
 
-Vols que soni més “producte digital internacional” o mantenim aquest punt més autoral i artesanal?
+→ [positivador.linuxbcn.com](https://positivador.linuxbcn.com)
+→ [Llumàtics](/projectes/llumatics/)

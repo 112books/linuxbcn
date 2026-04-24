@@ -6,7 +6,7 @@ year: 2025
 client: "own project"
 sector: "editorial"
 draft: false
-image: "112books.eu.png"
+image: "112books.png"
 ---
 
 ## An independent photography publisher

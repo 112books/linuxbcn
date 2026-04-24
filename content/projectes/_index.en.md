@@ -1,51 +1,36 @@
 ---
 title: "Projects"
 subtitle: "Real work for real projects"
+intro: "The best we can show is what we've done. We have over 25 years of experience working with cultural, artistic and social projects in Barcelona and beyond."
+cta_url: "/contacte/"
+cta_label: "Let's talk"
 draft: false
----
-
-## The best we can show is what we've done
-
-We don't start from scratch with any client.
-
-We have over 25 years of experience working with cultural,
-artistic and social projects in Barcelona and beyond.
-Here are some of them.
-
 ---
 
 ## Featured projects
 
-Complete cases with their own narrative:
-
 → [Bratia](/projectes/bratia/) — Balkan Gypsy Jazz band
 → [Machiroku](/projectes/machiroku/) — Japanese restaurant in central Barcelona
 → [Nau Bostik](/projectes/nau-bostik/) — self-managed cultural space
-
----
-
-## Reference projects
-
-Organisations we have worked with
-at different times and in different capacities:
-
-→ [Carrer.cat](/projectes/carrer/) — publication of the Catalan neighbourhood movement
-→ [FAVB](/projectes/favb/) — Federation of Neighbourhood Associations of Barcelona
-→ [Pocallum](/projectes/pocallum/) — photography agency
+→ [MalditasMaquinas.com](/projectes/malditasmaquinas/) — on-demand technical consultancy
+→ [LinuxBCN.com](/projectes/linuxbcn/) — this very website
 
 ---
 
 ## Own projects
 
-Tools and systems we have built for ourselves
-and apply to client projects:
-
-→ [LinuxBCN.com](/projectes/linuxbcn/) — this very website
+→ [Positivador WebApp](/projectes/app-positivador/) — tool for analogue photography
+→ [Machiroku](/projectes/machiroku/) — Japanese restaurant in central Barcelona
 → [MalditasMaquinas](/projectes/malditasmaquinas/) — specialised technical service
+→ [LinuxBCN.com](/projectes/linuxbcn/) — digital consultancy with principles
 → [112Books](/projectes/112books/) — photography publisher
+→ [Pocallum](/projectes/pocallum/) — photography agency
+→ [Llumàtics](/projectes/llumatics/) — analogue and experimental photography
 
 ---
 
-## Got a project?
+## Reference projects
 
-→ [Let's talk](/contacte/)
+Organisations we have worked with at different times and in different capacities:
+
+{{< clients >}}

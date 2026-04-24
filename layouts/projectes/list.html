@@ -5,7 +5,9 @@
   {{ with .Params.subtitle }}
     <p class="subtitle">{{ . }}</p>
   {{ end }}
-  <div class="content">{{ .Content }}</div>
+  {{ with .Params.intro }}
+    <p class="page-intro">{{ . }}</p>
+  {{ end }}
 </header>
 
 <div class="projects-grid">
@@ -37,10 +39,18 @@
         {{ with .Params.client }}{{ . }}{{ end }}
         {{ with .Params.year }} · {{ . }}{{ end }}
       </div>
-      <div class="card-arrow">→ Veure projecte</div>
+      <div class="card-arrow">→ {{ with .Params.card_cta }}{{ . }}{{ else }}Veure projecte{{ end }}</div>
     </div>
   </a>
   {{ end }}
 </div>
+
+{{ with .Params.cta_url }}
+<div class="projects-cta">
+  <a href="{{ . }}">→ {{ $.Params.cta_label | default "Parlem" }}</a>
+</div>
+{{ end }}
+
+<div class="content">{{ .Content }}</div>
 
 {{ end }}

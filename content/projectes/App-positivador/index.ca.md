@@ -1,36 +1,37 @@
 ---
-title: "112Books"
-slug: "112books"
-weight: 7
-year: 2025
-client: "projecte propi"
-sector: "editorial"
+title: "Positivador WebApp"
+slug: "app-positivador"
+weight: 1
+year: 2026
+client: "Llumàtics"
+sector: "fotografia"
 draft: false
-image: "112books.eu.png"
+image: "positivitzador.png"
 ---
 
-## Una editorial independent de fotografia
+## Eines que simplement funcionen
 
-112Books és una editorial independent centrada en
-fotollibres i projectes fotogràfics.
+Algunes eines fan soroll. D'altres simplement resolen.
 
-El repte no era només publicar continguts.
-Era estructurar un sistema editorial digital
-coherent i sostenible.
+El Positivador va néixer d'una necessitat molt concreta: entendre el que estàs mirant quan treballes amb negatius. Sense filtres innecessaris ni funcions de reclam. Obre la càmera, mira… i veu la imatge com un positiu.
+
+Dissenyat per a cuartos foscos, tallers i processos fotoquímics, aquesta petita aplicació web fa una sola cosa —i la fa bé—: invertir la imatge en temps real perquè puguis llegir la llum, el contrast i la composició amb claredat.
+
+Sense distraccions. En blanc i negre. O amb un toc de vermell, com ha de ser.
+
+Prova-la aquí: https://positivador.linuxbcn.com/
 
 ---
 
-## El sistema actual
+## Versió PRO
 
-Web construïda amb WordPress, en procés de renovació.
+Estem redissenyant tot el lloc web de Llumàtics.com per ampliar la seva oferta de cursos i tallers. Durant el procés d'auditoria i reestructuració, vam identificar necessitats que es poden resoldre de manera senzilla mitjançant petites aplicacions web enfocades.
 
-La nova versió inclourà un blog de notícies
-i una botiga integrada, construïda amb Hugo
-per reduir el pes i millorar el rendiment.
+Aquesta és la primera d'una sèrie de WebApps (o PWAs) que desenvolupem a LinuxBCN per a Llumàtics.
 
-Un projecte propi que aplica la mateixa metodologia
-que oferim als nostres clients: menys dependències,
-més control, més sostenibilitat.
+La versió base permet interpretar fàcilment una imatge negativa (tant en paper com en pel·lícula), invertir-la en temps real, girar-la i congelar-la per inspeccionar-la amb detall.
 
-→ [112books.eu](https://112books.eu)
-→ [Solucions](/solucions/)
+Si trobes l'eina útil, també pots adquirir una llicència —amb un pagament únic modest— per donar suport a aquest programari artesanal i desbloquejar funcions avançades: desar imatges al dispositiu, afegir notes, usar un mode cortina per comparar positiu i negatiu, ajustar l'exposició per passos i afinar el gamma.
+
+→ [positivador.linuxbcn.com](https://positivador.linuxbcn.com)
+→ [Llumàtics](/projectes/llumatics/)
