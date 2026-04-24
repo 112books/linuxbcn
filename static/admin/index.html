@@ -19,8 +19,11 @@
       --ink2:    #555550;
       --ink3:    #6b6b66;
       --accent:  #d4600a;
+      --green:   #2d7a2d;
+      --blue:    #1a5c9a;
       --border:  #ddddd8;
       --surface: #eeede9;
+      --warn:    #8b2500;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,340 +37,205 @@
       min-height: 100vh;
     }
 
-    /* Classe d'utilitat per a contingut visible només per AT */
     .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
 
-    /* ── LOGIN ─────────────────────────────────────────────── */
+    /* ── LOGIN ─────────────────────────────────────── */
     #login {
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
     }
-
-    .login-box {
-      width: 300px;
-      padding: 2.5rem;
-      border: 1px solid var(--border);
-    }
-
-    .login-logo {
-      color: var(--ink3);
-      letter-spacing: .15em;
-      font-size: 11px;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-    }
-
+    .login-box { width: 300px; padding: 2.5rem; border: 1px solid var(--border); }
+    .login-logo { color: var(--ink3); letter-spacing: .15em; font-size: 11px; text-transform: uppercase; margin-bottom: 2rem; }
     .login-logo em { color: var(--accent); font-style: normal; }
-
     #pwd {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--border);
-      padding: .5rem 0;
-      font-family: inherit;
-      font-size: 15px;
-      color: var(--ink);
-      outline: none;
-      margin-bottom: 1.5rem;
-      letter-spacing: .1em;
+      width: 100%; background: transparent; border: none;
+      border-bottom: 1px solid var(--border); padding: .5rem 0;
+      font-family: inherit; font-size: 15px; color: var(--ink);
+      outline: none; margin-bottom: 1.5rem; letter-spacing: .1em;
     }
-
-    #pwd:focus,
-    #pwd:focus-visible { border-bottom-color: var(--accent); }
-
+    #pwd:focus { border-bottom-color: var(--accent); }
     .btn {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: .55rem 1.25rem;
-      font-family: inherit;
-      font-size: 12px;
-      letter-spacing: .08em;
-      cursor: pointer;
+      background: var(--accent); color: #fff; border: none;
+      padding: .55rem 1.25rem; font-family: inherit;
+      font-size: 12px; letter-spacing: .08em; cursor: pointer;
     }
-
     .btn:hover { opacity: .85; }
     .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    #login-err { min-height: 1.4em; color: var(--warn); font-size: 11px; margin-top: .75rem; }
 
-    #login-err {
-      min-height: 1.4em;
-      color: #8b2500;
-      font-size: 11px;
-      margin-top: .75rem;
-    }
-
-    /* ── DASHBOARD ─────────────────────────────────────────── */
+    /* ── DASHBOARD ─────────────────────────────────── */
     #dashboard { display: none; }
 
     .dash-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: .9rem 2rem;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 10;
-    }
-
-    .dash-logo {
-      color: var(--ink3);
-      letter-spacing: .12em;
-      font-size: 11px;
-      text-transform: uppercase;
-    }
-
-    .dash-logo em { color: var(--accent); font-style: normal; }
-
-    .dash-date { color: var(--ink3); font-size: 11px; }
-
-    .btn-out {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--ink3);
-      padding: .3rem .75rem;
-      font-family: inherit;
-      font-size: 11px;
-      letter-spacing: .06em;
-      cursor: pointer;
-    }
-
-    .btn-out:hover { border-color: var(--ink3); color: var(--ink); }
-    .btn-out:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-
-    .dash-body {
-      padding: 2rem;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    /* ── ERROR BANNER ──────────────────────────────────────── */
-    .error-banner {
-      background: #fef0ec;
-      border: 1px solid #f4b49a;
-      color: #8b2500;
-      padding: 1rem 1.25rem;
-      margin-bottom: 1.5rem;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    /* ── KPIs ──────────────────────────────────────────────── */
-    .kpis {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2rem; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; background: var(--bg); z-index: 10;
       gap: 1rem;
-      margin-bottom: 2rem;
-      list-style: none;
+    }
+    .dash-logo { color: var(--ink3); letter-spacing: .12em; font-size: 11px; text-transform: uppercase; }
+    .dash-logo em { color: var(--accent); font-style: normal; }
+    .dash-date { color: var(--ink3); font-size: 11px; flex: 1; }
+    .dash-actions { display: flex; gap: .75rem; align-items: center; }
+    .btn-gc {
+      color: var(--ink3); font-size: 11px; letter-spacing: .05em;
+      text-decoration: none; border: 1px solid var(--border);
+      padding: .3rem .75rem;
+    }
+    .btn-gc:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-out {
+      background: transparent; border: 1px solid var(--border); color: var(--ink3);
+      padding: .3rem .75rem; font-family: inherit; font-size: 11px;
+      letter-spacing: .06em; cursor: pointer;
+    }
+    .btn-out:hover { border-color: var(--ink3); color: var(--ink); }
+    .btn-out:focus-visible, .btn-gc:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+    .dash-body { padding: 2rem; max-width: 1080px; margin: 0 auto; }
+
+    /* ── ERROR BANNER ──────────────────────────────── */
+    .error-banner {
+      background: #fef0ec; border: 1px solid #f4b49a;
+      color: var(--warn); padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem; font-size: 12px; line-height: 1.5;
     }
 
-    .kpi {
-      border: 1px solid var(--border);
-      padding: 1.25rem 1.5rem;
-    }
-
-    .kpi dt {
-      color: var(--ink3);
-      font-size: 10px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-bottom: .5rem;
-      font-weight: 400;
-    }
-
-    .kpi-value {
-      font-size: 2.2rem;
-      color: var(--ink);
-      line-height: 1;
-      margin-bottom: .3rem;
-    }
-
-    .kpi-sub { color: var(--ink3); font-size: 11px; }
-
-    /* ── HEADINGS DE SECCIÓ ────────────────────────────────── */
-    .section-title {
-      color: var(--ink3);
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      padding-bottom: .5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* ── CHART ─────────────────────────────────────────────── */
-    .chart-section { margin-bottom: 2rem; }
-
-    .chart-wrap {
-      border: 1px solid var(--border);
-      padding: 1.5rem 1.5rem 1rem;
-    }
-
-    #chart-svg { width: 100%; display: block; }
-
-    .chart-legend {
-      display: flex;
-      justify-content: space-between;
-      margin-top: .5rem;
-      color: var(--ink3);
-      font-size: 10px;
-    }
-
-    /* ── GRID 2 ────────────────────────────────────────────── */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    /* ── STAT LIST ─────────────────────────────────────────── */
-    .stat-list { list-style: none; }
-
-    .stat-row {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      padding: .4rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .stat-row:last-child { border-bottom: none; }
-
-    .stat-name {
-      flex: 1;
-      color: var(--ink2);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      font-size: 12px;
-    }
-
-    .stat-bar-wrap {
-      width: 70px;
-      height: 5px;
-      background: var(--border);
-      flex-shrink: 0;
-    }
-
-    .stat-bar { height: 100%; background: var(--accent); }
-
-    .stat-count {
-      width: 44px;
-      text-align: right;
-      color: var(--ink);
-      flex-shrink: 0;
-      font-size: 12px;
-    }
-
-    /* ── LANGUAGE BAR ──────────────────────────────────────── */
-    .lang-section { margin-bottom: 2rem; }
-
-    .lang-bar {
-      display: flex;
-      height: 28px;
-      margin-bottom: .75rem;
-      overflow: hidden;
-    }
-
-    .lang-ca {
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 11px;
-      letter-spacing: .06em;
-      transition: width .4s ease;
-    }
-
-    .lang-en {
-      background: var(--ink3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 11px;
-      letter-spacing: .06em;
-      transition: width .4s ease;
-    }
-
-    .lang-detail {
-      display: flex;
-      gap: 2rem;
-      color: var(--ink2);
-      font-size: 12px;
-    }
-
-    /* ── PERIOD SELECTOR ──────────────────────────────────── */
+    /* ── PERIOD SELECTOR ───────────────────────────── */
     .period-bar {
-      display: flex;
-      gap: .5rem;
-      margin-bottom: 2rem;
-      align-items: center;
+      display: flex; gap: .5rem; margin-bottom: 2rem; align-items: center;
     }
-
-    .period-label {
-      color: var(--ink3);
-      font-size: 10px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-right: .5rem;
-    }
-
+    .period-label { color: var(--ink3); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-right: .5rem; }
     .period-btn {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--ink3);
-      padding: .25rem .65rem;
-      font-family: inherit;
-      font-size: 11px;
-      letter-spacing: .06em;
-      cursor: pointer;
+      background: transparent; border: 1px solid var(--border); color: var(--ink3);
+      padding: .25rem .65rem; font-family: inherit; font-size: 11px;
+      letter-spacing: .06em; cursor: pointer;
     }
-
     .period-btn:hover { border-color: var(--ink3); color: var(--ink); }
     .period-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     .period-btn.active { border-color: var(--accent); color: var(--accent); }
-
     .btn-refresh {
-      margin-left: auto;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--ink3);
-      padding: .25rem .65rem;
-      font-family: inherit;
-      font-size: 11px;
-      letter-spacing: .06em;
-      cursor: pointer;
+      margin-left: auto; background: transparent; border: 1px solid var(--border);
+      color: var(--ink3); padding: .25rem .65rem; font-family: inherit;
+      font-size: 11px; letter-spacing: .06em; cursor: pointer;
     }
     .btn-refresh:hover { border-color: var(--accent); color: var(--accent); }
     .btn-refresh:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-    .btn-refresh.spinning { opacity: .5; pointer-events: none; }
+    .btn-refresh.spinning { opacity: .4; pointer-events: none; }
 
-    /* ── LOADING / EMPTY ───────────────────────────────────── */
+    /* ── KPIs ──────────────────────────────────────── */
+    .kpis {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; margin-bottom: 2rem; list-style: none;
+    }
+    .kpi { border: 1px solid var(--border); padding: 1.25rem 1.5rem; }
+    .kpi dt {
+      color: var(--ink3); font-size: 10px; letter-spacing: .14em;
+      text-transform: uppercase; margin-bottom: .5rem; font-weight: 400;
+    }
+    .kpi-value { font-size: 2.2rem; color: var(--ink); line-height: 1; margin-bottom: .3rem; }
+    .kpi-sub { color: var(--ink3); font-size: 11px; }
+
+    /* ── SECTION TITLE ─────────────────────────────── */
+    .section-title {
+      color: var(--ink3); font-size: 10px; font-weight: 400;
+      letter-spacing: .15em; text-transform: uppercase;
+      margin-bottom: 1rem; padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── CHART ─────────────────────────────────────── */
+    .chart-section { margin-bottom: 2rem; }
+    .chart-wrap { border: 1px solid var(--border); padding: 1.5rem 1.5rem 1rem; }
+    #chart-svg { width: 100%; display: block; }
+    .chart-legend {
+      display: flex; justify-content: space-between;
+      margin-top: .5rem; color: var(--ink3); font-size: 10px;
+    }
+
+    /* ── GRIDS ─────────────────────────────────────── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+
+    /* ── STAT LIST ─────────────────────────────────── */
+    .stat-list { list-style: none; }
+    .stat-row {
+      display: flex; align-items: center; gap: .75rem;
+      padding: .4rem 0; border-bottom: 1px solid var(--border);
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-icon { font-size: 14px; flex-shrink: 0; width: 20px; text-align: center; }
+    .stat-name {
+      flex: 1; color: var(--ink2); overflow: hidden;
+      text-overflow: ellipsis; white-space: nowrap; font-size: 12px;
+    }
+    .stat-bar-wrap { width: 70px; height: 5px; background: var(--border); flex-shrink: 0; }
+    .stat-bar { height: 100%; background: var(--accent); }
+    .stat-count { width: 44px; text-align: right; color: var(--ink); flex-shrink: 0; font-size: 12px; }
+
+    /* ── DEVICE GRID ───────────────────────────────── */
+    .device-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .device-card { border: 1px solid var(--border); padding: 1rem; text-align: center; }
+    .device-icon { font-size: 2rem; margin-bottom: .5rem; display: block; }
+    .device-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink3); margin-bottom: .25rem; }
+    .device-count { font-size: 1.6rem; color: var(--ink); }
+    .device-pct { font-size: 11px; color: var(--ink3); }
+
+    /* ── LANG BAR ──────────────────────────────────── */
+    .lang-section { margin-bottom: 2rem; }
+    .lang-bar { display: flex; height: 28px; margin-bottom: .75rem; overflow: hidden; }
+    .lang-ca {
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-size: 11px;
+      letter-spacing: .06em; transition: width .4s ease;
+    }
+    .lang-en {
+      background: var(--ink3); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-size: 11px;
+      letter-spacing: .06em; transition: width .4s ease;
+    }
+    .lang-detail { display: flex; gap: 2rem; color: var(--ink2); font-size: 12px; }
+
+    /* ── REFERRERS INFO ────────────────────────────── */
+    .refs-info {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: .85rem 1rem; font-size: 11px; color: var(--ink3);
+      line-height: 1.6; margin-top: .75rem;
+    }
+    .refs-info strong { color: var(--ink2); }
+
+    /* ── ACCIONS SEO ───────────────────────────────── */
+    .actions-section { margin-bottom: 2rem; }
+    .action-list { list-style: none; }
+    .action-item {
+      display: flex; align-items: flex-start; gap: .75rem;
+      padding: .6rem 0; border-bottom: 1px solid var(--border);
+      font-size: 12px;
+    }
+    .action-item:last-child { border-bottom: none; }
+    .action-priority {
+      font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+      flex-shrink: 0; width: 50px;
+    }
+    .priority-high   { color: var(--warn); }
+    .priority-mid    { color: var(--accent); }
+    .priority-low    { color: var(--green); }
+    .action-text { color: var(--ink2); flex: 1; }
+    .action-text a { color: var(--accent); }
+
+    /* ── LOADING / EMPTY ───────────────────────────── */
     .loading { color: var(--ink3); font-size: 11px; letter-spacing: .06em; }
-    .empty   { color: var(--ink3); font-size: 11px; font-style: italic; }
+    .empty   { color: var(--ink3); font-size: 11px; font-style: italic; padding: .5rem 0; display: block; }
 
-    /* ── RESPONSIVE ────────────────────────────────────────── */
-    @media (max-width: 720px) {
+    /* ── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 860px) {
       .kpis { grid-template-columns: repeat(2, 1fr); }
-      .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 1.5rem; }
+      .device-grid { grid-template-columns: repeat(3, 1fr); }
       .dash-body { padding: 1rem; }
       .dash-date { display: none; }
     }
@@ -375,7 +243,7 @@
 </head>
 <body>
 
-<!-- ═══ LOGIN ═══════════════════════════════════════════════════════════════ -->
+<!-- ═══ LOGIN ════════════════════════════════════════ -->
 <div id="login" role="main" aria-label="Accés a les estadístiques">
   <form id="login-form" class="login-box" novalidate>
     <div class="login-logo" aria-hidden="true">LINUX<em>BCN</em> / STATS</div>
@@ -386,23 +254,26 @@
   </form>
 </div>
 
-<!-- ═══ DASHBOARD ════════════════════════════════════════════════════════════ -->
+<!-- ═══ DASHBOARD ════════════════════════════════════ -->
 <div id="dashboard">
 
   <header class="dash-header">
     <div class="dash-logo" aria-hidden="true">LINUX<em>BCN</em> / STATS</div>
     <div class="dash-date" id="dash-date"></div>
-    <button type="button" class="btn-out" id="btn-logout">sortir ×</button>
+    <div class="dash-actions">
+      <a href="https://linuxbcn.goatcounter.com" class="btn-gc" target="_blank" rel="noopener noreferrer" title="GoatCounter — dades originals">↗ dades originals</a>
+      <button type="button" class="btn-out" id="btn-logout">sortir ×</button>
+    </div>
   </header>
 
   <main class="dash-body" id="dash-main" tabindex="-1">
 
     <!-- Selector de període -->
-    <div class="period-bar" role="group" aria-label="Selecciona el període d'anàlisi">
+    <div class="period-bar" role="group" aria-label="Selecciona el període">
       <span class="period-label" aria-hidden="true">Període:</span>
-      <button class="period-btn active" data-days="7"  type="button">7d</button>
-      <button class="period-btn"        data-days="30" type="button">30d</button>
-      <button class="period-btn"        data-days="90" type="button">3m</button>
+      <button class="period-btn active" data-days="7"   type="button">7d</button>
+      <button class="period-btn"        data-days="30"  type="button">30d</button>
+      <button class="period-btn"        data-days="90"  type="button">3m</button>
       <button class="period-btn"        data-days="365" type="button">1a</button>
       <button class="btn-refresh" type="button" id="btn-refresh" aria-label="Actualitzar dades">↻ refrescar</button>
     </div>
@@ -411,31 +282,19 @@
     <dl class="kpis" aria-label="Resum de visites">
       <div class="kpi">
         <dt>avui</dt>
-        <dd>
-          <div class="kpi-value" id="kpi-avui">—</div>
-          <div class="kpi-sub" id="sub-avui"></div>
-        </dd>
+        <dd><div class="kpi-value" id="kpi-avui">—</div><div class="kpi-sub" id="sub-avui"></div></dd>
       </div>
       <div class="kpi">
         <dt id="kpi-label-period">període</dt>
-        <dd>
-          <div class="kpi-value" id="kpi-period">—</div>
-          <div class="kpi-sub" id="sub-period"></div>
-        </dd>
+        <dd><div class="kpi-value" id="kpi-period">—</div><div class="kpi-sub" id="sub-period"></div></dd>
       </div>
       <div class="kpi">
         <dt>30 dies</dt>
-        <dd>
-          <div class="kpi-value" id="kpi-mes">—</div>
-          <div class="kpi-sub" id="sub-mes"></div>
-        </dd>
+        <dd><div class="kpi-value" id="kpi-mes">—</div><div class="kpi-sub" id="sub-mes"></div></dd>
       </div>
       <div class="kpi">
-        <dt>total</dt>
-        <dd>
-          <div class="kpi-value" id="kpi-total">—</div>
-          <div class="kpi-sub" id="sub-total"></div>
-        </dd>
+        <dt>total acumulat</dt>
+        <dd><div class="kpi-value" id="kpi-total">—</div><div class="kpi-sub" id="sub-total"></div></dd>
       </div>
     </dl>
 
@@ -443,14 +302,12 @@
     <div class="chart-section">
       <h2 class="section-title" id="chart-heading">visites · últims 7 dies</h2>
       <div class="chart-wrap">
-        <svg id="chart-svg" role="img" aria-labelledby="chart-title" height="72" viewBox="0 0 700 72">
-          <title id="chart-title">Gràfic de barres de visites dels últims 7 dies</title>
-        </svg>
+        <svg id="chart-svg" role="img" aria-label="Gràfic de visites" height="72" viewBox="0 0 700 72"></svg>
         <div class="chart-legend" id="chart-legend" aria-hidden="true"></div>
       </div>
     </div>
 
-    <!-- Pàgines + Referrers -->
+    <!-- Pàgines + Projectes -->
     <div class="grid-2">
       <div>
         <h2 class="section-title" id="label-pages">pàgines més visitades · 7 dies</h2>
@@ -459,10 +316,21 @@
         </ul>
       </div>
       <div>
-        <h2 class="section-title" id="label-refs">d'on venen · 7 dies</h2>
-        <ul id="top-refs" class="stat-list" aria-labelledby="label-refs">
+        <h2 class="section-title" id="label-projects">projectes amb més interès · 7 dies</h2>
+        <ul id="top-projects" class="stat-list" aria-labelledby="label-projects">
           <li class="loading" role="status">carregant...</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- D'on venen -->
+    <div style="margin-bottom:2rem">
+      <h2 class="section-title" id="label-refs">d'on venen les visites · 7 dies</h2>
+      <ul id="top-refs" class="stat-list" aria-labelledby="label-refs">
+        <li class="loading" role="status">carregant...</li>
+      </ul>
+      <div class="refs-info" id="refs-info" style="display:none">
+        <strong>Per què pot estar buit?</strong> El trànsit directe (URL escrita, marcadors), els cerca amb HTTPS i els visitants amb navegació privada no generen referrer. És normal en un lloc web nou. A mesura que arribin enllaços externs i indexació de Google, aquí apareixeran els orígens.
       </div>
     </div>
 
@@ -471,6 +339,31 @@
       <h2 class="section-title" id="label-lang">per idioma · 7 dies</h2>
       <div id="lang-section" aria-labelledby="label-lang">
         <span class="loading" role="status">carregant...</span>
+      </div>
+    </div>
+
+    <!-- Dispositius -->
+    <div style="margin-bottom:2rem">
+      <h2 class="section-title" id="label-devices">dispositius · 7 dies</h2>
+      <div class="device-grid" id="device-grid">
+        <div class="device-card">
+          <span class="device-icon">📱</span>
+          <div class="device-label">Mòbil</div>
+          <div class="device-count" id="dev-mobile">—</div>
+          <div class="device-pct" id="dev-mobile-pct"></div>
+        </div>
+        <div class="device-card">
+          <span class="device-icon">⬜</span>
+          <div class="device-label">Tauleta</div>
+          <div class="device-count" id="dev-tablet">—</div>
+          <div class="device-pct" id="dev-tablet-pct"></div>
+        </div>
+        <div class="device-card">
+          <span class="device-icon">🖥</span>
+          <div class="device-label">Escriptori</div>
+          <div class="device-count" id="dev-desktop">—</div>
+          <div class="device-pct" id="dev-desktop-pct"></div>
+        </div>
       </div>
     </div>
 
@@ -490,11 +383,38 @@
       </div>
     </div>
 
-    <!-- Mides pantalla -->
-    <div>
-      <h2 class="section-title" id="label-sizes">mida de pantalla · 7 dies</h2>
-      <ul id="top-sizes" class="stat-list" aria-labelledby="label-sizes">
-        <li class="loading" role="status">carregant...</li>
+    <!-- Accions per créixer -->
+    <div class="actions-section">
+      <h2 class="section-title">accions per augmentar visites</h2>
+      <ul class="action-list">
+        <li class="action-item">
+          <span class="action-priority priority-high">urgent</span>
+          <span class="action-text">Afegir el lloc a <a href="https://search.google.com/search-console" target="_blank" rel="noopener">Google Search Console</a> i enviar el sitemap: <code>https://linuxbcn.com/sitemap.xml</code></span>
+        </li>
+        <li class="action-item">
+          <span class="action-priority priority-high">urgent</span>
+          <span class="action-text">Demanar a cada client (Bratia, Machiroku, FAVB…) que afegeixi un link al seu web apuntant a linuxbcn.com — cada link és un vot de confiança per a Google.</span>
+        </li>
+        <li class="action-item">
+          <span class="action-priority priority-mid">pròxim</span>
+          <span class="action-text">Publicar 1-2 posts a Instagram <code>@linuxbcn_oficial</code> explicant el nou web — genera trànsit directe i possibles comparticions.</span>
+        </li>
+        <li class="action-item">
+          <span class="action-priority priority-mid">pròxim</span>
+          <span class="action-text">Afegir linuxbcn.com al perfil de Mastodon / Fediverse i a directoris de programari lliure (FSF, softcatalà, guifi…).</span>
+        </li>
+        <li class="action-item">
+          <span class="action-priority priority-mid">pròxim</span>
+          <span class="action-text">Completar el perfil de Google My Business (ara Perfil d'Empresa de Google) amb adreça, horari i link al web.</span>
+        </li>
+        <li class="action-item">
+          <span class="action-priority priority-low">futur</span>
+          <span class="action-text">Publicar un article tècnic (blog) sobre algun projecte real — genera trànsit orgànic i posiciona per a cerques de clients potencials.</span>
+        </li>
+        <li class="action-item">
+          <span class="action-priority priority-low">futur</span>
+          <span class="action-text">Proposar una xerrada / taula rodona a espais culturals (Nau Bostik, FAD…) i mencionar el web a la comunicació de l'acte.</span>
+        </li>
       </ul>
     </div>
 
@@ -504,31 +424,47 @@
 <script>
 const PASSWORD = 'linuxbcn';
 const GC_BASE  = '/admin/gc-proxy.php';
-const D0       = '2025-01-01'; // data d'inici del compte
+const D0       = '2025-01-01';
+let   currentDays = 7;
 
-let currentDays = 7; // període actiu
-
-// ── Helpers ───────────────────────────────────────────────────────────────
-const delay = ms => new Promise(r => setTimeout(r, ms));
-
-function fmt(n) {
-  if (n == null || isNaN(n)) return '—';
-  return Number(n).toLocaleString('ca-ES');
-}
-
-function isoDate(d) { return d.toISOString().slice(0, 10); }
-function today()    { return isoDate(new Date()); }
+// ── Helpers ──────────────────────────────────────────────────────────────
+const delay   = ms => new Promise(r => setTimeout(r, ms));
+const fmt     = n  => (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString('ca-ES');
+const isoDate = d  => d.toISOString().slice(0, 10);
+const today   = () => isoDate(new Date());
 function daysAgo(n) { const d = new Date(); d.setDate(d.getDate() - n); return isoDate(d); }
 
-function periodLabel(days) {
-  if (days === 7)   return '7 dies';
-  if (days === 30)  return '30 dies';
-  if (days === 90)  return '3 mesos';
-  if (days === 365) return '1 any';
-  return `${days} dies`;
+function periodLabel(d) {
+  return d === 7 ? '7 dies' : d === 30 ? '30 dies' : d === 90 ? '3 mesos' : d === 365 ? '1 any' : `${d} dies`;
 }
 
-// ── Auth ──────────────────────────────────────────────────────────────────
+const BROWSER_ICON = {
+  chrome: '🟡', chromium: '🟡', firefox: '🦊', safari: '🔵',
+  edge: '🔷', opera: '🔴', samsung: '📱', brave: '🦁',
+  vivaldi: '🔴', ie: '🔵', other: '·'
+};
+const OS_ICON = {
+  windows: '🪟', macos: '🍎', mac: '🍎', linux: '🐧',
+  android: '🤖', ios: '📱', iphone: '📱', ipad: '📱',
+  chromeos: '🟡', ubuntu: '🐧', debian: '🐧', other: '·'
+};
+
+function getBrowserIcon(name) {
+  const n = (name || '').toLowerCase();
+  for (const key of Object.keys(BROWSER_ICON)) {
+    if (n.includes(key)) return BROWSER_ICON[key];
+  }
+  return '·';
+}
+function getOsIcon(name) {
+  const n = (name || '').toLowerCase();
+  for (const key of Object.keys(OS_ICON)) {
+    if (n.includes(key)) return OS_ICON[key];
+  }
+  return '·';
+}
+
+// ── Auth ─────────────────────────────────────────────────────────────────
 document.getElementById('login-form').addEventListener('submit', e => {
   e.preventDefault();
   const v   = document.getElementById('pwd').value;
@@ -544,16 +480,13 @@ document.getElementById('login-form').addEventListener('submit', e => {
   }
 });
 
-document.getElementById('btn-logout').addEventListener('click', logout);
-
-function logout() {
+document.getElementById('btn-logout').addEventListener('click', () => {
   sessionStorage.removeItem('gc_ok');
   document.getElementById('dashboard').style.display = 'none';
   document.getElementById('login').style.display     = 'flex';
-  const pwd = document.getElementById('pwd');
-  pwd.value = '';
-  pwd.focus();
-}
+  document.getElementById('pwd').value = '';
+  document.getElementById('pwd').focus();
+});
 
 function showDashboard() {
   document.getElementById('login').style.display     = 'none';
@@ -586,14 +519,15 @@ document.getElementById('btn-refresh').addEventListener('click', () => {
 
 function updateLabels() {
   const lbl = periodLabel(currentDays);
-  document.getElementById('kpi-label-period').textContent = lbl;
-  document.getElementById('chart-heading').textContent    = `visites · últims ${lbl}`;
-  document.getElementById('label-pages').textContent     = `pàgines més visitades · ${lbl}`;
-  document.getElementById('label-refs').textContent      = `d'on venen · ${lbl}`;
-  document.getElementById('label-lang').textContent      = `per idioma · ${lbl}`;
-  document.getElementById('label-browsers').textContent  = `navegadors · ${lbl}`;
-  document.getElementById('label-systems').textContent   = `sistema operatiu · ${lbl}`;
-  document.getElementById('label-sizes').textContent     = `mida de pantalla · ${lbl}`;
+  document.getElementById('kpi-label-period').textContent  = lbl;
+  document.getElementById('chart-heading').textContent     = `visites · últims ${lbl}`;
+  document.getElementById('label-pages').textContent      = `pàgines més visitades · ${lbl}`;
+  document.getElementById('label-projects').textContent   = `projectes amb més interès · ${lbl}`;
+  document.getElementById('label-refs').textContent       = `d'on venen les visites · ${lbl}`;
+  document.getElementById('label-lang').textContent       = `per idioma · ${lbl}`;
+  document.getElementById('label-devices').textContent    = `dispositius · ${lbl}`;
+  document.getElementById('label-browsers').textContent   = `navegadors · ${lbl}`;
+  document.getElementById('label-systems').textContent    = `sistema operatiu · ${lbl}`;
 }
 
 // ── API ───────────────────────────────────────────────────────────────────
@@ -604,60 +538,67 @@ async function gc(path, params = {}) {
   const r = await fetch(url);
   if (!r.ok) {
     const text = await r.text();
-    throw new Error(`[${path}] ${r.status}: ${text.slice(0, 150)}`);
+    throw new Error(`[${path}] ${r.status}: ${text.slice(0, 200)}`);
   }
   return r.json();
 }
 
 async function safeGc(path, params) {
   try { return await gc(path, params); }
-  catch (e) { console.warn('GC error:', e.message); return null; }
+  catch (e) { console.warn('GC error:', path, e.message); return null; }
 }
 
 // ── Error banner ──────────────────────────────────────────────────────────
 function showError(msg) {
-  const body     = document.getElementById('dash-main');
-  const existing = body.querySelector('.error-banner');
-  if (existing) existing.remove();
-  const div    = document.createElement('div');
-  div.className = 'error-banner';
-  div.setAttribute('role', 'alert');
-  const strong = document.createElement('strong');
-  strong.textContent = 'Error carregant dades: ';
-  div.appendChild(strong);
+  const body = document.getElementById('dash-main');
+  let div = body.querySelector('.error-banner');
+  if (!div) {
+    div = document.createElement('div');
+    div.className = 'error-banner';
+    div.setAttribute('role', 'alert');
+    body.insertBefore(div, body.querySelector('.period-bar').nextSibling);
+  }
+  div.innerHTML = '';
+  const s = document.createElement('strong');
+  s.textContent = 'Error carregant dades: ';
+  div.appendChild(s);
   div.appendChild(document.createTextNode(msg));
-  body.insertBefore(div, body.querySelector('.period-bar').nextSibling);
 }
-
 function clearError() {
-  const existing = document.getElementById('dash-main').querySelector('.error-banner');
-  if (existing) existing.remove();
+  const e = document.getElementById('dash-main').querySelector('.error-banner');
+  if (e) e.remove();
 }
 
 // ── Render: llista amb barres ─────────────────────────────────────────────
-function renderList(id, items, nameKey, countKey, linkFn) {
+function renderList(id, items, nameKey, countKey, { linkFn, iconFn, emptyMsg } = {}) {
   const el = document.getElementById(id);
   el.innerHTML = '';
   if (!items || !items.length) {
     const li = document.createElement('li');
     li.className   = 'empty';
-    li.textContent = 'sense dades per a aquest període';
+    li.textContent = emptyMsg || 'sense dades per a aquest període';
     el.appendChild(li);
-    return;
+    return false;
   }
   const max = items[0][countKey] || 1;
   items.slice(0, 10).forEach(item => {
     const name  = String(item[nameKey] || '(directe)');
     const count = item[countKey];
     const pct   = Math.round((count / max) * 100);
+    const li    = document.createElement('li');
+    li.className = 'stat-row';
 
-    const li       = document.createElement('li');
-    li.className   = 'stat-row';
+    if (iconFn) {
+      const ico = document.createElement('span');
+      ico.className     = 'stat-icon';
+      ico.setAttribute('aria-hidden', 'true');
+      ico.textContent   = iconFn(name);
+      li.appendChild(ico);
+    }
 
     const nameSpan     = document.createElement('span');
     nameSpan.className = 'stat-name';
     nameSpan.title     = name;
-
     if (linkFn) {
       const a   = document.createElement('a');
       a.href    = linkFn(item);
@@ -687,9 +628,101 @@ function renderList(id, items, nameKey, countKey, linkFn) {
     li.appendChild(countSpan);
     el.appendChild(li);
   });
+  return true;
 }
 
-// ── Render: gràfic de barres ──────────────────────────────────────────────
+// ── Render: projectes ─────────────────────────────────────────────────────
+function renderProjects(hits) {
+  const projects = (hits || [])
+    .filter(h => h.path && h.path.includes('/projectes/') && !h.path.endsWith('/projectes/'))
+    .map(h => ({ ...h, name: h.path.replace(/\/(ca|en)\/projectes\//, '').replace(/\/$/, '') }))
+    .sort((a, b) => b.count - a.count);
+
+  const grouped = {};
+  projects.forEach(h => {
+    const key = h.name;
+    grouped[key] = (grouped[key] || 0) + h.count;
+  });
+  const items = Object.entries(grouped).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
+
+  renderList('top-projects', items, 'name', 'count', {
+    emptyMsg: 'cap visita a projectes en aquest període'
+  });
+}
+
+// ── Render: dispositius ───────────────────────────────────────────────────
+function renderDevices(sizes) {
+  const items = sizes || [];
+  let mobile = 0, tablet = 0, desktop = 0;
+  items.forEach(s => {
+    const w = parseInt(s.name, 10);
+    const c = s.count || 0;
+    if (isNaN(w) || w === 0) return;
+    if (w < 768)        mobile  += c;
+    else if (w < 1200)  tablet  += c;
+    else                desktop += c;
+  });
+  const total = mobile + tablet + desktop || 1;
+  const pct = n => total > 1 ? ` (${Math.round(n / total * 100)}%)` : '';
+
+  document.getElementById('dev-mobile').textContent      = mobile  > 0 ? fmt(mobile)  : '—';
+  document.getElementById('dev-mobile-pct').textContent  = mobile  > 0 ? pct(mobile)  : '';
+  document.getElementById('dev-tablet').textContent      = tablet  > 0 ? fmt(tablet)  : '—';
+  document.getElementById('dev-tablet-pct').textContent  = tablet  > 0 ? pct(tablet)  : '';
+  document.getElementById('dev-desktop').textContent     = desktop > 0 ? fmt(desktop) : '—';
+  document.getElementById('dev-desktop-pct').textContent = desktop > 0 ? pct(desktop) : '';
+}
+
+// ── Render: idioma ────────────────────────────────────────────────────────
+function renderLang(hits) {
+  const el = document.getElementById('lang-section');
+  el.innerHTML = '';
+  if (!hits || !hits.length) {
+    const span = document.createElement('span');
+    span.className   = 'empty';
+    span.textContent = 'sense dades per a aquest període';
+    el.appendChild(span);
+    return;
+  }
+  let ca = 0, en = 0;
+  hits.forEach(h => {
+    if (h.path && h.path.startsWith('/en')) en += (h.count || 0);
+    else ca += (h.count || 0);
+  });
+  const total = ca + en || 1;
+  const caPct = Math.round(ca / total * 100);
+  const enPct = 100 - caPct;
+
+  const bar   = document.createElement('div');
+  bar.className = 'lang-bar';
+  bar.setAttribute('aria-hidden', 'true');
+
+  const caDiv = document.createElement('div');
+  caDiv.className   = 'lang-ca';
+  caDiv.style.width = caPct + '%';
+  caDiv.textContent = caPct > 8 ? `CA ${caPct}%` : '';
+
+  const enDiv = document.createElement('div');
+  enDiv.className   = 'lang-en';
+  enDiv.style.width = enPct + '%';
+  enDiv.textContent = enPct > 8 ? `EN ${enPct}%` : '';
+
+  bar.appendChild(caDiv);
+  bar.appendChild(enDiv);
+
+  const detail = document.createElement('div');
+  detail.className = 'lang-detail';
+  ['Català', 'English'].forEach((lbl, i) => {
+    const s = document.createElement('span');
+    s.textContent = `${lbl}: ${fmt(i === 0 ? ca : en)} visites`;
+    detail.appendChild(s);
+  });
+
+  el.appendChild(bar);
+  el.appendChild(detail);
+}
+
+// ── Render: gràfic ────────────────────────────────────────────────────────
 function renderChart(days) {
   const svg    = document.getElementById('chart-svg');
   const legend = document.getElementById('chart-legend');
@@ -711,12 +744,12 @@ function renderChart(days) {
   const max  = Math.max(...days.map(d => d.count), 1);
 
   days.forEach((d, i) => {
-    const x    = i * (barW + gap);
     const barH = Math.max(3, Math.round((d.count / max) * H));
-    const y    = H - barH;
     const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    rect.setAttribute('x', x); rect.setAttribute('y', y);
-    rect.setAttribute('width', barW); rect.setAttribute('height', barH);
+    rect.setAttribute('x', i * (barW + gap));
+    rect.setAttribute('y', H - barH);
+    rect.setAttribute('width', barW);
+    rect.setAttribute('height', barH);
     rect.setAttribute('fill', d.count > 0 ? 'var(--accent)' : 'var(--border)');
     const t = document.createElementNS('http://www.w3.org/2000/svg', 'title');
     t.textContent = `${d.date}: ${d.count} visites`;
@@ -724,7 +757,6 @@ function renderChart(days) {
     svg.appendChild(rect);
   });
 
-  // Llegenda: mostra primera, central i última data
   const indices = new Set([0, Math.floor(days.length / 2), days.length - 1]);
   legend.innerHTML = '';
   days.forEach((d, i) => {
@@ -737,71 +769,17 @@ function renderChart(days) {
   });
 }
 
-// ── Render: per idioma ────────────────────────────────────────────────────
-function renderLang(hits) {
-  const el = document.getElementById('lang-section');
-  el.innerHTML = '';
-  if (!hits || !hits.length) {
-    const span = document.createElement('span');
-    span.className   = 'empty';
-    span.textContent = 'sense dades per a aquest període';
-    el.appendChild(span);
-    return;
-  }
-
-  let ca = 0, en = 0;
-  hits.forEach(h => {
-    if (h.path && h.path.startsWith('/en')) en += (h.count || 0);
-    else ca += (h.count || 0);
-  });
-
-  const total = ca + en || 1;
-  const caPct = Math.round(ca / total * 100);
-  const enPct = 100 - caPct;
-
-  const bar = document.createElement('div');
-  bar.className = 'lang-bar';
-  bar.setAttribute('aria-hidden', 'true');
-
-  const caDiv = document.createElement('div');
-  caDiv.className   = 'lang-ca';
-  caDiv.style.width = caPct + '%';
-  caDiv.textContent = caPct > 8 ? `CA ${caPct}%` : '';
-
-  const enDiv = document.createElement('div');
-  enDiv.className   = 'lang-en';
-  enDiv.style.width = enPct + '%';
-  enDiv.textContent = enPct > 8 ? `EN ${enPct}%` : '';
-
-  bar.appendChild(caDiv);
-  bar.appendChild(enDiv);
-
-  const detail = document.createElement('div');
-  detail.className = 'lang-detail';
-  const caSpan = document.createElement('span');
-  caSpan.textContent = `Català: ${fmt(ca)} visites`;
-  const enSpan = document.createElement('span');
-  enSpan.textContent = `English: ${fmt(en)} visites`;
-  detail.appendChild(caSpan);
-  detail.appendChild(enSpan);
-
-  el.appendChild(bar);
-  el.appendChild(detail);
-}
-
 // ── Main ──────────────────────────────────────────────────────────────────
 async function loadStats() {
   clearError();
-  const T      = today();
-  const DSTART = daysAgo(currentDays);
+  const T = today(), DSTART = daysAgo(currentDays);
 
-  // Fase 1: KPIs — seqüencial per evitar rate limiting (429)
+  // KPIs — seqüencial obligatori (rate limiting GoatCounter)
   try {
     const setKpi = (id, subId, data) => {
       document.getElementById(id).textContent    = fmt(data?.total);
       document.getElementById(subId).textContent = data ? `${fmt(data.total_unique)} únics` : '';
     };
-
     const totAvui = await gc('/stats/total', { start: T, end: T });
     setKpi('kpi-avui', 'sub-avui', totAvui);
     await delay(350);
@@ -817,30 +795,40 @@ async function loadStats() {
     const totTotal = await gc('/stats/total', { start: D0, end: T });
     setKpi('kpi-total', 'sub-total', totTotal);
   } catch (err) {
-    console.error('GoatCounter KPIs error:', err);
+    console.error('KPIs:', err);
     showError(err.message);
     return;
   }
 
   await delay(400);
 
-  // Fase 2: llistes — seqüencial obligatori (rate limiting)
-  const hits = await safeGc('/stats/hits',     { start: DSTART, end: T, limit: 20 });
+  // Llistes — seqüencial obligatori
+  const hits     = await safeGc('/stats/hits',     { start: DSTART, end: T, limit: 50 });
   await delay(350);
-  const refs = await safeGc('/stats/refs',     { start: DSTART, end: T, limit: 10 });
+  const refs     = await safeGc('/stats/refs',     { start: DSTART, end: T, limit: 10 });
   await delay(350);
   const browsers = await safeGc('/stats/browsers', { start: DSTART, end: T, limit: 10 });
   await delay(350);
   const systems  = await safeGc('/stats/systems',  { start: DSTART, end: T, limit: 10 });
   await delay(350);
-  const sizes    = await safeGc('/stats/sizes',    { start: DSTART, end: T, limit: 10 });
+  const sizes    = await safeGc('/stats/sizes',    { start: DSTART, end: T, limit: 20 });
 
-  renderList('top-pages',    hits?.hits,        'path', 'count', item => item.path);
+  renderList('top-pages', hits?.hits?.slice(0, 10), 'path', 'count', {
+    linkFn: item => item.path
+  });
+  renderProjects(hits?.hits);
   renderLang(hits?.hits || []);
-  renderList('top-refs',     refs?.refs,        'name', 'count');
-  renderList('top-browsers', browsers?.browsers,'name', 'count');
-  renderList('top-systems',  systems?.systems,  'name', 'count');
-  renderList('top-sizes',    sizes?.sizes,      'name', 'count');
+
+  const hasRefs = renderList('top-refs', refs?.refs, 'name', 'count');
+  document.getElementById('refs-info').style.display = hasRefs ? 'none' : 'block';
+
+  renderList('top-browsers', browsers?.browsers, 'name', 'count', {
+    iconFn: getBrowserIcon
+  });
+  renderList('top-systems', systems?.systems, 'name', 'count', {
+    iconFn: getOsIcon
+  });
+  renderDevices(sizes?.sizes);
 
   await delay(400);
   await loadChart();
@@ -848,14 +836,12 @@ async function loadStats() {
 
 async function loadChart() {
   const T = today();
-  const n = Math.min(currentDays, 30); // màxim 30 punts al gràfic
+  const n = Math.min(currentDays, 30);
   const days = [];
   for (let i = n - 1; i >= 0; i--) {
-    const d = new Date();
-    d.setDate(d.getDate() - i);
+    const d = new Date(); d.setDate(d.getDate() - i);
     days.push({ date: isoDate(d), count: 0 });
   }
-
   try {
     for (let i = 0; i < days.length; i++) {
       const r = await gc('/stats/total', { start: days[i].date, end: days[i].date });
@@ -864,7 +850,7 @@ async function loadChart() {
     }
     renderChart(days);
   } catch (e) {
-    console.warn('Chart failed:', e);
+    console.warn('Chart:', e);
     renderChart([]);
   }
 }
