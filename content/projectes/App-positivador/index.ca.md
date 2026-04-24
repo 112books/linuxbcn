@@ -33,7 +33,7 @@ La versió base permet interpretar fàcilment una imatge negativa (tant en paper
 
 Si trobes l'eina útil, també pots adquirir una llicència —amb un pagament únic modest— per donar suport a aquest programari artesanal i desbloquejar funcions avançades: desar imatges al dispositiu, afegir notes, usar un mode cortina per comparar positiu i negatiu, ajustar l'exposició per passos i afinar el gamma.
 
-{{< gallery "positivitzador-screenshot-01.PNG" "positivitzador-screenshot-02.PNG" "positivitzador-screenshot-03.PNG" >}}
+{{< gallery "positivitzador-screenshot-01.png" "positivitzador-screenshot-02.png" "positivitzador-screenshot-03.png" >}}
 
 → [positivador.linuxbcn.com](https://positivador.linuxbcn.com)
 → [Llumàtics](/projectes/llumatics/)

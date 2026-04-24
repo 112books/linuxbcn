@@ -504,21 +504,28 @@
 <script>
 const PASSWORD = 'linuxbcn';
 const GC_BASE  = '/admin/gc-proxy.php';
+const D0       = '2025-01-01'; // data d'inici del compte
+
+let currentDays = 7; // període actiu
 
 // ── Helpers ───────────────────────────────────────────────────────────────
+const delay = ms => new Promise(r => setTimeout(r, ms));
+
 function fmt(n) {
   if (n == null || isNaN(n)) return '—';
   return Number(n).toLocaleString('ca-ES');
 }
 
-function today() {
-  return new Date().toISOString().slice(0, 10);
-}
+function isoDate(d) { return d.toISOString().slice(0, 10); }
+function today()    { return isoDate(new Date()); }
+function daysAgo(n) { const d = new Date(); d.setDate(d.getDate() - n); return isoDate(d); }
 
-function daysAgo(n) {
-  const d = new Date();
-  d.setDate(d.getDate() - n);
-  return d.toISOString().slice(0, 10);
+function periodLabel(days) {
+  if (days === 7)   return '7 dies';
+  if (days === 30)  return '30 dies';
+  if (days === 90)  return '3 mesos';
+  if (days === 365) return '1 any';
+  return `${days} dies`;
 }
 
 // ── Auth ──────────────────────────────────────────────────────────────────
@@ -560,6 +567,35 @@ function showDashboard() {
 
 if (sessionStorage.getItem('gc_ok')) showDashboard();
 
+// ── Period selector ───────────────────────────────────────────────────────
+document.querySelectorAll('.period-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentDays = parseInt(btn.dataset.days, 10);
+    document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    updateLabels();
+    loadStats();
+  });
+});
+
+document.getElementById('btn-refresh').addEventListener('click', () => {
+  const btn = document.getElementById('btn-refresh');
+  btn.classList.add('spinning');
+  loadStats().finally(() => btn.classList.remove('spinning'));
+});
+
+function updateLabels() {
+  const lbl = periodLabel(currentDays);
+  document.getElementById('kpi-label-period').textContent = lbl;
+  document.getElementById('chart-heading').textContent    = `visites · últims ${lbl}`;
+  document.getElementById('label-pages').textContent     = `pàgines més visitades · ${lbl}`;
+  document.getElementById('label-refs').textContent      = `d'on venen · ${lbl}`;
+  document.getElementById('label-lang').textContent      = `per idioma · ${lbl}`;
+  document.getElementById('label-browsers').textContent  = `navegadors · ${lbl}`;
+  document.getElementById('label-systems').textContent   = `sistema operatiu · ${lbl}`;
+  document.getElementById('label-sizes').textContent     = `mida de pantalla · ${lbl}`;
+}
+
 // ── API ───────────────────────────────────────────────────────────────────
 async function gc(path, params = {}) {
   const url = new URL(GC_BASE, location.href);
@@ -571,6 +607,11 @@ async function gc(path, params = {}) {
     throw new Error(`[${path}] ${r.status}: ${text.slice(0, 150)}`);
   }
   return r.json();
+}
+
+async function safeGc(path, params) {
+  try { return await gc(path, params); }
+  catch (e) { console.warn('GC error:', e.message); return null; }
 }
 
 // ── Error banner ──────────────────────────────────────────────────────────
@@ -585,32 +626,37 @@ function showError(msg) {
   strong.textContent = 'Error carregant dades: ';
   div.appendChild(strong);
   div.appendChild(document.createTextNode(msg));
-  body.insertBefore(div, body.firstChild);
+  body.insertBefore(div, body.querySelector('.period-bar').nextSibling);
+}
+
+function clearError() {
+  const existing = document.getElementById('dash-main').querySelector('.error-banner');
+  if (existing) existing.remove();
 }
 
 // ── Render: llista amb barres ─────────────────────────────────────────────
 function renderList(id, items, nameKey, countKey, linkFn) {
-  const el  = document.getElementById(id);
+  const el = document.getElementById(id);
   el.innerHTML = '';
   if (!items || !items.length) {
     const li = document.createElement('li');
-    li.className   = 'loading';
-    li.textContent = 'sense dades';
+    li.className   = 'empty';
+    li.textContent = 'sense dades per a aquest període';
     el.appendChild(li);
     return;
   }
   const max = items[0][countKey] || 1;
   items.slice(0, 10).forEach(item => {
-    const name  = String(item[nameKey] || '(directe / desconegut)');
+    const name  = String(item[nameKey] || '(directe)');
     const count = item[countKey];
     const pct   = Math.round((count / max) * 100);
 
     const li       = document.createElement('li');
     li.className   = 'stat-row';
 
-    const nameSpan       = document.createElement('span');
-    nameSpan.className   = 'stat-name';
-    nameSpan.title       = name;
+    const nameSpan     = document.createElement('span');
+    nameSpan.className = 'stat-name';
+    nameSpan.title     = name;
 
     if (linkFn) {
       const a   = document.createElement('a');
@@ -624,16 +670,16 @@ function renderList(id, items, nameKey, countKey, linkFn) {
       nameSpan.textContent = name;
     }
 
-    const barWrap     = document.createElement('div');
+    const barWrap = document.createElement('div');
     barWrap.className = 'stat-bar-wrap';
     barWrap.setAttribute('aria-hidden', 'true');
-    const bar     = document.createElement('div');
-    bar.className = 'stat-bar';
+    const bar = document.createElement('div');
+    bar.className   = 'stat-bar';
     bar.style.width = pct + '%';
     barWrap.appendChild(bar);
 
-    const countSpan       = document.createElement('span');
-    countSpan.className   = 'stat-count';
+    const countSpan     = document.createElement('span');
+    countSpan.className = 'stat-count';
     countSpan.textContent = fmt(count);
 
     li.appendChild(nameSpan);
@@ -643,30 +689,24 @@ function renderList(id, items, nameKey, countKey, linkFn) {
   });
 }
 
-// ── Render: gràfic de barres 7 dies ──────────────────────────────────────
+// ── Render: gràfic de barres ──────────────────────────────────────────────
 function renderChart(days) {
   const svg    = document.getElementById('chart-svg');
   const legend = document.getElementById('chart-legend');
-  const titleEl = svg.querySelector('title');
-
-  // Netejar mantenint el <title>
   svg.innerHTML = '';
-  if (titleEl) svg.appendChild(titleEl);
 
-  if (!days.length) {
+  if (!days.length || days.every(d => d.count === 0)) {
     const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    text.setAttribute('x', '350');
-    text.setAttribute('y', '36');
-    text.setAttribute('fill', '#999');
-    text.setAttribute('font-size', '12');
+    text.setAttribute('x', '350'); text.setAttribute('y', '36');
+    text.setAttribute('fill', '#999'); text.setAttribute('font-size', '12');
     text.setAttribute('text-anchor', 'middle');
-    text.textContent = 'sense dades';
+    text.textContent = 'sense dades per a aquest període';
     svg.appendChild(text);
+    legend.innerHTML = '';
     return;
   }
 
-  const W    = 700, H = 72;
-  const gap  = 8;
+  const W = 700, H = 72, gap = 6;
   const barW = Math.floor((W - gap * (days.length - 1)) / days.length);
   const max  = Math.max(...days.map(d => d.count), 1);
 
@@ -674,24 +714,22 @@ function renderChart(days) {
     const x    = i * (barW + gap);
     const barH = Math.max(3, Math.round((d.count / max) * H));
     const y    = H - barH;
-    const fill = d.count > 0 ? 'var(--accent)' : 'var(--border)';
     const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    rect.setAttribute('x', x);
-    rect.setAttribute('y', y);
-    rect.setAttribute('width', barW);
-    rect.setAttribute('height', barH);
-    rect.setAttribute('fill', fill);
+    rect.setAttribute('x', x); rect.setAttribute('y', y);
+    rect.setAttribute('width', barW); rect.setAttribute('height', barH);
+    rect.setAttribute('fill', d.count > 0 ? 'var(--accent)' : 'var(--border)');
     const t = document.createElementNS('http://www.w3.org/2000/svg', 'title');
     t.textContent = `${d.date}: ${d.count} visites`;
     rect.appendChild(t);
     svg.appendChild(rect);
   });
 
-  const indices = [0, Math.floor(days.length / 2), days.length - 1];
+  // Llegenda: mostra primera, central i última data
+  const indices = new Set([0, Math.floor(days.length / 2), days.length - 1]);
   legend.innerHTML = '';
   days.forEach((d, i) => {
     const span = document.createElement('span');
-    if (indices.includes(i)) {
+    if (indices.has(i)) {
       const [, m, day] = d.date.split('-');
       span.textContent = `${parseInt(day)}/${parseInt(m)}`;
     }
@@ -704,9 +742,9 @@ function renderLang(hits) {
   const el = document.getElementById('lang-section');
   el.innerHTML = '';
   if (!hits || !hits.length) {
-    const span       = document.createElement('span');
-    span.className   = 'loading';
-    span.textContent = 'sense dades';
+    const span = document.createElement('span');
+    span.className   = 'empty';
+    span.textContent = 'sense dades per a aquest període';
     el.appendChild(span);
     return;
   }
@@ -721,16 +759,16 @@ function renderLang(hits) {
   const caPct = Math.round(ca / total * 100);
   const enPct = 100 - caPct;
 
-  const bar     = document.createElement('div');
+  const bar = document.createElement('div');
   bar.className = 'lang-bar';
   bar.setAttribute('aria-hidden', 'true');
 
-  const caDiv       = document.createElement('div');
+  const caDiv = document.createElement('div');
   caDiv.className   = 'lang-ca';
   caDiv.style.width = caPct + '%';
   caDiv.textContent = caPct > 8 ? `CA ${caPct}%` : '';
 
-  const enDiv       = document.createElement('div');
+  const enDiv = document.createElement('div');
   enDiv.className   = 'lang-en';
   enDiv.style.width = enPct + '%';
   enDiv.textContent = enPct > 8 ? `EN ${enPct}%` : '';
@@ -738,14 +776,12 @@ function renderLang(hits) {
   bar.appendChild(caDiv);
   bar.appendChild(enDiv);
 
-  const detail     = document.createElement('div');
+  const detail = document.createElement('div');
   detail.className = 'lang-detail';
-
-  const caSpan       = document.createElement('span');
+  const caSpan = document.createElement('span');
   caSpan.textContent = `Català: ${fmt(ca)} visites`;
-  const enSpan       = document.createElement('span');
+  const enSpan = document.createElement('span');
   enSpan.textContent = `English: ${fmt(en)} visites`;
-
   detail.appendChild(caSpan);
   detail.appendChild(enSpan);
 
@@ -754,93 +790,82 @@ function renderLang(hits) {
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────
-const delay = ms => new Promise(r => setTimeout(r, ms));
-
 async function loadStats() {
-  const T   = today();
-  const D7  = daysAgo(7);
-  const D30 = daysAgo(30);
-  const D0  = '2025-01-01'; // data d'inici del compte
+  clearError();
+  const T      = today();
+  const DSTART = daysAgo(currentDays);
 
-  // ── Fase 1: KPIs (4 crides) ──────────────────────────────────────────────
+  // Fase 1: KPIs — seqüencial per evitar rate limiting (429)
   try {
-    const [totAvui, totSetmana, totMes, totTotal] = await Promise.all([
-      gc('/stats/total', { start: T,   end: T  }),
-      gc('/stats/total', { start: D7,  end: T  }),
-      gc('/stats/total', { start: D30, end: T  }),
-      gc('/stats/total', { start: D0,  end: T  }),
-    ]);
     const setKpi = (id, subId, data) => {
-      document.getElementById(id).textContent    = fmt(data.total);
-      document.getElementById(subId).textContent = `${fmt(data.total_unique)} únics`;
+      document.getElementById(id).textContent    = fmt(data?.total);
+      document.getElementById(subId).textContent = data ? `${fmt(data.total_unique)} únics` : '';
     };
-    setKpi('kpi-avui',    'sub-avui',    totAvui);
-    setKpi('kpi-setmana', 'sub-setmana', totSetmana);
-    setKpi('kpi-mes',     'sub-mes',     totMes);
-    setKpi('kpi-total',   'sub-total',   totTotal);
+
+    const totAvui = await gc('/stats/total', { start: T, end: T });
+    setKpi('kpi-avui', 'sub-avui', totAvui);
+    await delay(350);
+
+    const totPeriod = await gc('/stats/total', { start: DSTART, end: T });
+    setKpi('kpi-period', 'sub-period', totPeriod);
+    await delay(350);
+
+    const totMes = await gc('/stats/total', { start: daysAgo(30), end: T });
+    setKpi('kpi-mes', 'sub-mes', totMes);
+    await delay(350);
+
+    const totTotal = await gc('/stats/total', { start: D0, end: T });
+    setKpi('kpi-total', 'sub-total', totTotal);
   } catch (err) {
     console.error('GoatCounter KPIs error:', err);
     showError(err.message);
     return;
   }
 
-  await delay(600);
+  await delay(400);
 
-  // ── Fase 2: llistes (seqüencial per evitar rate limiting) ───────────────
-  async function safeGc(path, params) {
-    try { return await gc(path, params); }
-    catch (e) { console.warn('GC error:', e.message); return null; }
-  }
+  // Fase 2: llistes — seqüencial obligatori (rate limiting)
+  const hits = await safeGc('/stats/hits',     { start: DSTART, end: T, limit: 20 });
+  await delay(350);
+  const refs = await safeGc('/stats/refs',     { start: DSTART, end: T, limit: 10 });
+  await delay(350);
+  const browsers = await safeGc('/stats/browsers', { start: DSTART, end: T, limit: 10 });
+  await delay(350);
+  const systems  = await safeGc('/stats/systems',  { start: DSTART, end: T, limit: 10 });
+  await delay(350);
+  const sizes    = await safeGc('/stats/sizes',    { start: DSTART, end: T, limit: 10 });
 
-  const hits30    = await safeGc('/stats/hits',     { start: D30, end: T, limit: 20 });
-  await delay(350);
-  const refs      = await safeGc('/stats/refs',     { start: D30, end: T, limit: 10 });
-  await delay(350);
-  const browsers  = await safeGc('/stats/browsers', { start: D30, end: T, limit: 10 });
-  await delay(350);
-  const systems   = await safeGc('/stats/systems',  { start: D30, end: T, limit: 10 });
-  await delay(350);
-  const sizes     = await safeGc('/stats/sizes',    { start: D30, end: T, limit: 10 });
+  renderList('top-pages',    hits?.hits,        'path', 'count', item => item.path);
+  renderLang(hits?.hits || []);
+  renderList('top-refs',     refs?.refs,        'name', 'count');
+  renderList('top-browsers', browsers?.browsers,'name', 'count');
+  renderList('top-systems',  systems?.systems,  'name', 'count');
+  renderList('top-sizes',    sizes?.sizes,      'name', 'count');
 
-  renderList('top-pages',    hits30?.hits,       'path', 'count', item => item.path);
-  renderLang(hits30?.hits || []);
-  renderList('top-refs',     refs?.refs,         'name', 'count');
-  renderList('top-browsers', browsers?.browsers, 'name', 'count');
-  renderList('top-systems',  systems?.systems,   'name', 'count');
-  renderList('top-sizes',    sizes?.sizes,       'name', 'count');
-
-  await delay(600);
-  loadChart();
+  await delay(400);
+  await loadChart();
 }
 
 async function loadChart() {
+  const T = today();
+  const n = Math.min(currentDays, 30); // màxim 30 punts al gràfic
   const days = [];
-  for (let i = 6; i >= 0; i--) {
+  for (let i = n - 1; i >= 0; i--) {
     const d = new Date();
     d.setDate(d.getDate() - i);
-    days.push({ date: d.toISOString().slice(0, 10), count: 0 });
+    days.push({ date: isoDate(d), count: 0 });
   }
 
   try {
-    // Seqüencial per evitar rate limiting (7 crides)
     for (let i = 0; i < days.length; i++) {
       const r = await gc('/stats/total', { start: days[i].date, end: days[i].date });
       days[i].count = r.total || 0;
-      if (i < days.length - 1) await delay(200);
+      if (i < days.length - 1) await delay(350);
     }
     renderChart(days);
   } catch (e) {
     console.warn('Chart failed:', e);
-    const svg  = document.getElementById('chart-svg');
-    svg.innerHTML = '';
-    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    text.setAttribute('x', '350');
-    text.setAttribute('y', '36');
-    text.setAttribute('fill', '#999');
-    text.setAttribute('font-size', '12');
-    text.setAttribute('text-anchor', 'middle');
-    text.textContent = 'error carregant el gràfic';
-    svg.appendChild(text);
+    renderChart([]);
   }
 }
 </script>
