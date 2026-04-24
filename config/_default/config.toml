@@ -65,6 +65,14 @@ defaultContentLanguageInSubdir = true
 
 [params]
   tagline = "Solucions digitals a mida. Programari lliure, sense complicacions."
+  description = "Consultoria d'identitat digital per a artistes, col·lectius culturals i microempreses amb valors. Programari lliure, privacitat i sobirania de dades."
+  og_image = ""
+
+[languages.ca.params]
+  description = "Consultoria d'identitat digital per a artistes, col·lectius culturals i microempreses amb valors. Programari lliure, privacitat i sobirania de dades."
+
+[languages.en.params]
+  description = "Digital identity consultancy for artists, cultural collectives and values-driven micro-businesses. Free software, privacy and data sovereignty."
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

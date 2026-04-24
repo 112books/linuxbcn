@@ -5,8 +5,9 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">{{ i18n "skip_to_content" }}</a>
   {{ partial "header.html" . }}
-  <main>
+  <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}

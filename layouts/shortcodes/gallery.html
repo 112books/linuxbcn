@@ -1,0 +1,13 @@
+{{ $images := .Params }}
+{{ if $images }}
+<div class="project-gallery">
+  {{ range $images }}
+    {{ $img := $.Page.Resources.GetMatch . }}
+    {{ if $img }}
+    <figure class="gallery-item">
+      <img src="{{ $img.RelPermalink }}" alt="{{ $img.Title }}" class="lightbox-trigger" loading="lazy">
+    </figure>
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}

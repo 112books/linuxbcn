@@ -33,5 +33,7 @@ The base version allows you to easily interpret a negative image (both on paper 
 
 If you find the tool useful, you can also purchase a license —with a modest one-time payment— to support this handcrafted software and unlock advanced features: saving images to your device, adding notes, using a curtain mode to compare positive and negative, adjusting exposure in steps, and fine-tuning gamma.
 
+{{< gallery "positivitzador-screenshot-01.PNG" "positivitzador-screenshot-02.PNG" "positivitzador-screenshot-03.PNG" >}}
+
 → [positivador.linuxbcn.com](https://positivador.linuxbcn.com)
 → [Llumàtics](/projectes/llumatics/)

@@ -1,14 +1,14 @@
 <footer>
   <div class="footer-left">
-    <span>LinuxBCN · Solucions digitals a mida. Programari lliure, sense complicacions.</span>
+    <span>LinuxBCN · {{ i18n "footer_tagline" }}</span>
     <div class="footer-links">
       {{ $base := printf "%s%s" $.Site.BaseURL $.Site.Language.Lang }}
-      <a href="{{ printf "%s/qui-som/" $base }}">Qui som</a> ·
-      <a href="{{ printf "%s/contacte/" $base }}">Contacte</a>
+      <a href="{{ printf "%s/qui-som/" $base }}">{{ i18n "footer_link_about" }}</a> ·
+      <a href="{{ printf "%s/contacte/" $base }}">{{ i18n "footer_link_contact" }}</a>
       <span class="footer-sep">|</span>
-      <a href="{{ printf "%s/privacitat/" $base }}">Política de privacitat</a> ·
-      <a href="{{ printf "%s/avis-legal/" $base }}">Avís legal</a> ·
-      <a href="{{ printf "%s/cookies/" $base }}">Cookies</a>
+      <a href="{{ printf "%s/privacitat/" $base }}">{{ i18n "footer_link_privacy" }}</a> ·
+      <a href="{{ printf "%s/avis-legal/" $base }}">{{ i18n "footer_link_legal" }}</a> ·
+      <a href="{{ printf "%s/cookies/" $base }}">{{ i18n "footer_link_cookies" }}</a>
     </div>
   </div>
   <div class="footer-right">

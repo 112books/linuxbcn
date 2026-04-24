@@ -384,5 +384,41 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-04-18*
+## 16. Historial de tasques — 2026-04-25
+
+**SEO, accessibilitat i seguretat — millores globals**
+
+*SEO*
+- `head.html`: Open Graph image ara usa `Resources.GetMatch` (corregit bug de URL trencada)
+- `head.html`: Twitter Card afegit (`summary_large_image`)
+- `head.html`: Schema.org JSON-LD `LocalBusiness` afegit (homepage only)
+- `head.html`: `x-default` hreflang corregit → apunta a `/ca/` (no a `/`)
+- `head.html`: `<link rel="manifest">` i `<meta name="theme-color">` afegits
+- `config.toml`: `description` per idioma (CA + EN) afegit als `[languages.XX.params]`
+- `static/robots.txt`: creat — permet tot excepte `/admin/`, declara sitemap
+- `static/humans.txt`: creat amb equip, tecnologia i estàndards
+- `static/site.webmanifest`: creat per a PWA/web app metadata
+
+*Accessibilitat (WCAG 2.1 AA)*
+- `baseof.html`: skip-to-content link afegit (`<a class="skip-link" href="#main-content">`)
+- `baseof.html`: `id="main-content"` afegit a `<main>`
+- `header.html`: `aria-hidden="true"` a tots els SVGs del nav mòbil
+- `header.html` + `footer.html`: text hardcoded CA substituït per `{{ i18n "..." }}`
+- `i18n/ca.toml` + `i18n/en.toml`: creats amb strings de nav i footer
+- `main.css`: estils `.skip-link` / `.skip-link:focus` afegits
+
+*Seguretat*
+- `static/.htaccess`: security headers complets — CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy
+- `.htaccess`: compressió Deflate i caché d'assets estàtics afegits
+- `static/js/lightbox.js`: script del lightbox extret d'inline → fitxer extern (permet CSP sense `unsafe-inline`)
+- `layouts/projectes/single.html`: inline script substituït per `<script src defer>`
+
+**Galeria d'imatges — projecte positivador**
+- `layouts/shortcodes/gallery.html`: shortcode creat — grid de 3 columnes, integrat amb lightbox existent
+- `content/projectes/app-positivador/index.ca.md` + `index.en.md`: galeria afegida amb les 3 captures de pantalla
+- `main.css`: estils `.project-gallery` i `.gallery-item` afegits
+
+---
+
+*Última actualització: 2026-04-25*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*

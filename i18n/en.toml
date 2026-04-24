@@ -1,0 +1,38 @@
+[skip_to_content]
+other = "Skip to main content"
+
+[nav_home]
+other = "Home"
+
+[nav_solutions]
+other = "Solutions"
+
+[nav_projects]
+other = "Projects"
+
+[nav_about]
+other = "About"
+
+[nav_search]
+other = "Search"
+
+[nav_contact]
+other = "Contact"
+
+[footer_tagline]
+other = "Tailored digital solutions. Free software, no complications."
+
+[footer_link_about]
+other = "About"
+
+[footer_link_contact]
+other = "Contact"
+
+[footer_link_privacy]
+other = "Privacy policy"
+
+[footer_link_legal]
+other = "Legal notice"
+
+[footer_link_cookies]
+other = "Cookies"

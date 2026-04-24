@@ -1,0 +1,38 @@
+[skip_to_content]
+other = "Salta al contingut principal"
+
+[nav_home]
+other = "Inici"
+
+[nav_solutions]
+other = "Solucions"
+
+[nav_projects]
+other = "Projectes"
+
+[nav_about]
+other = "Qui som"
+
+[nav_search]
+other = "Cerca"
+
+[nav_contact]
+other = "Contacte"
+
+[footer_tagline]
+other = "Solucions digitals a mida. Programari lliure, sense complicacions."
+
+[footer_link_about]
+other = "Qui som"
+
+[footer_link_contact]
+other = "Contacte"
+
+[footer_link_privacy]
+other = "Política de privacitat"
+
+[footer_link_legal]
+other = "Avís legal"
+
+[footer_link_cookies]
+other = "Cookies"

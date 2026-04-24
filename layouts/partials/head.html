@@ -12,24 +12,63 @@
 {{ end }}
 
 <!-- Open Graph -->
+{{ $ogDesc := .Description | default .Site.Params.description }}
+{{ $ogImage := "" }}
+{{ with .Params.image }}
+  {{ $img := $.Resources.GetMatch . }}
+  {{ if $img }}{{ $ogImage = $img.Permalink }}{{ end }}
+{{ end }}
+{{ if not $ogImage }}{{ with .Site.Params.og_image }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
 <meta property="og:title" content="{{ .Title }}">
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:description" content="{{ $ogDesc }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-{{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ if $ogImage }}<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:alt" content="{{ .Title }}">{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ $ogDesc }}">
+{{ if $ogImage }}<meta name="twitter:image" content="{{ $ogImage }}">{{ end }}
 
 <!-- Hreflang per a multilingüe -->
 {{ range .AllTranslations }}
 <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
 {{ end }}
-<link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}">
+<link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}ca/">
+
+<!-- Schema.org LocalBusiness (homepage only) -->
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "LinuxBCN",
+  "description": {{ .Site.Params.description | jsonify }},
+  "url": {{ .Site.BaseURL | jsonify }},
+  "email": "joan@linuxbcn.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Joan Martínez Serres",
+    "alternateName": "Joan Linux",
+    "jobTitle": "Consultor d'identitat digital"
+  },
+  "areaServed": { "@type": "City", "name": "Barcelona" },
+  "knowsLanguage": ["ca", "es", "en"],
+  "sameAs": ["https://www.instagram.com/linuxbcn_oficial/"]
+}
+</script>
+{{ end }}
 
 <!-- CSS -->
 <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 
-<!-- Favicon -->
+<!-- Favicon + Manifest -->
 <link rel="icon" type="image/svg+xml" href="{{ "img/favicon.svg" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+<meta name="theme-color" content="#0d0d0d">
 
 <!-- Analítica: GoatCounter (sense cookies, GDPR) -->
 {{ if not .Site.Params.noindex }}

@@ -1,0 +1,17 @@
+{
+  "name": "LinuxBCN",
+  "short_name": "LinuxBCN",
+  "description": "Solucions digitals a mida. Programari lliure, sense complicacions.",
+  "start_url": "/ca/",
+  "display": "browser",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "icons": [
+    {
+      "src": "/img/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

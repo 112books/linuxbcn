@@ -2,6 +2,24 @@
    LinuxBCN — main.css
    ===================== */
 
+/* Skip to content (accessibilitat) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--accent, #e63946);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-family: var(--mono, monospace);
+  font-size: 0.875rem;
+  z-index: 9999;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 @font-face {
   font-family: 'IBM Plex Mono';
   font-style: normal;
@@ -680,6 +698,26 @@ li:has(> a:only-child) a:hover {
   opacity: 0.6;
   cursor: pointer;
   letter-spacing: 0.05em;
+}
+
+/* Gallery shortcode */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
 }
 
 /* =====================
