@@ -418,6 +418,32 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 - `content/projectes/app-positivador/index.ca.md` + `index.en.md`: galeria afegida amb les 3 captures de pantalla
 - `main.css`: estils `.project-gallery` i `.gallery-item` afegits
 
+**Fixes de producció — galeria, CSP, admin dashboard**
+- `content/projectes/app-positivador/`: `.PNG` → `.png` (Linux és case-sensitive, fallava en producció)
+- `static/.htaccess`: CSP afegit `unsafe-inline` per scripts inline (404 animada i admin dashboard)
+- `static/admin/index.html`: JS complet reescrit — KPIs seqüencials 350ms (fix rate limiting 429), selector de període 7d/30d/3m/1a, botó refresc, labels dinàmics
+
+**Dashboard d'estadístiques — redisseny complet**
+- Nova secció "projectes amb més interès" (filtra `/projectes/` de les hits)
+- Targetes dispositiu: mobile / tauleta / escriptori amb percentatges (agrupa mides GoatCounter)
+- Icones per a navegadors (🦊🟡🔵…) i sistemes operatius (🐧🍎🪟…)
+- Explicació contextual quan referrers és buit (normal en site nou)
+- Link directe a GoatCounter natiu al header (`↗ dades originals`)
+- Secció "accions per augmentar visites" amb prioritats (GSC, backlinks, Instagram, GMB…)
+
+**Indexació a motors de cerca i IA**
+- `static/llms.txt`: creat — guia estructurada per a ChatGPT, Perplexity, Claude, Copilot
+- `static/robots.txt`: actualitzat — autoritza explícitament GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, anthropic-ai, cohere-ai; declara 3 sitemaps
+- `static/ae5b2e9e405343b5b21fa81ad8b4b547.txt`: clau IndexNow
+- `static/.htaccess`: redirects 301 des de URLs antigues de WordPress (wp-admin, category, tag, paginació, feeds, pàgines conegudes)
+- **Google Search Console**: sitemaps CA (28 pàgines) + EN enviats i verificats
+- **IndexNow**: 48 URLs enviades a Bing, Yandex, DuckDuckGo, Seznam, Naver (HTTP 202)
+
+**Norma IndexNow**
+- Clau: `ae5b2e9e405343b5b21fa81ad8b4b547`
+- Fitxer de clau: `static/ae5b2e9e405343b5b21fa81ad8b4b547.txt`
+- Per a nous deploys importants: `curl -X POST https://api.indexnow.org/indexnow` amb JSON `{host, key, keyLocation, urlList}`
+
 ---
 
 *Última actualització: 2026-04-25*
