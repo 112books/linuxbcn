@@ -2,4 +2,32 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
+# Crawlers d'IA — autoritzats explícitament
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# IndexNow
+User-agent: bingbot
+Allow: /
+
 Sitemap: https://linuxbcn.com/sitemap.xml
+Sitemap: https://linuxbcn.com/ca/sitemap.xml
+Sitemap: https://linuxbcn.com/en/sitemap.xml
