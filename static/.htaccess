@@ -1,5 +1,45 @@
 ErrorDocument 404 /ca/404.html
 
+# ─── Redirects des de WordPress (301 per preservar SEO) ──────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Arrel → versió catalana (Hugo genera alias però per si de cas)
+  RewriteRule ^$ /ca/ [R=301,L]
+
+  # Bloqueig i redirect d'URLs de WordPress
+  RewriteRule ^wp-admin(.*)$        /ca/ [R=301,L]
+  RewriteRule ^wp-login\.php$       /ca/ [R=301,L]
+  RewriteRule ^wp-cron\.php$        - [F,L]
+  RewriteRule ^xmlrpc\.php$         - [F,L]
+  RewriteRule ^wp-content/(.*)$     /ca/ [R=301,L]
+  RewriteRule ^wp-includes/(.*)$    - [F,L]
+
+  # Pàgines WordPress genèriques → seccions equivalents Hugo
+  RewriteRule ^category/projectes(/.*)?$  /ca/projectes/ [R=301,L]
+  RewriteRule ^category/(.*)$             /ca/ [R=301,L]
+  RewriteRule ^tag/(.*)$                  /ca/ [R=301,L]
+  RewriteRule ^page/[0-9]+/?$             /ca/ [R=301,L]
+  RewriteRule ^\?p=[0-9]+$               /ca/ [R=301,L]
+  RewriteRule ^feed(/.*)?$                /ca/index.xml [R=301,L]
+
+  # Pàgines antigues conegudes de WordPress → equivalents Hugo
+  RewriteRule ^qui-som/?$           /ca/qui-som/ [R=301,L]
+  RewriteRule ^about/?$             /en/qui-som/ [R=301,L]
+  RewriteRule ^contacte/?$          /ca/contacte/ [R=301,L]
+  RewriteRule ^contact/?$           /en/contacte/ [R=301,L]
+  RewriteRule ^projectes/?$         /ca/projectes/ [R=301,L]
+  RewriteRule ^projects/?$          /en/projectes/ [R=301,L]
+  RewriteRule ^serveis/?$           /ca/solucions/ [R=301,L]
+  RewriteRule ^services/?$          /en/solucions/ [R=301,L]
+
+  # Projectes antics → nous (afegir aquí si es coneixen URLs velles específiques)
+  RewriteRule ^bratia/?$            /ca/projectes/bratia/ [R=301,L]
+  RewriteRule ^machiroku/?$         /ca/projectes/machiroku/ [R=301,L]
+  RewriteRule ^favb/?$              /ca/projectes/favb/ [R=301,L]
+  RewriteRule ^malditasmaquinas/?$  /ca/malditasmaquinas/ [R=301,L]
+</IfModule>
+
 # ─── Security Headers ────────────────────────────────────────────────────────
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
