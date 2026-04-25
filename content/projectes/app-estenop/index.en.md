@@ -44,5 +44,4 @@ For those who want more: spot metering mode, personal camera and aperture librar
 
 It's handcrafted software. If it's useful to you, Pro is the way to say so — and to make sure it keeps growing.
 
-→ [estenop.vercel.app](https://estenop.linuxbcn.com/)
-→ [Source code on GitHub](https://github.com/112books/estenop)
+→ [estenop.vercel.app](https://estenop.vercel.app/)
