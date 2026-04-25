@@ -446,5 +446,29 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 17. Historial de tasques — 2026-04-25 (sessió 2)
+
+**Nou projecte: Estenop**
+- `content/projectes/app-estenop/index.ca.md`: creat — títol "Estenop — Calculadora pinhole", text complet en català (descripció, funcionament pas a pas, versions gratuïta i Pro)
+- `content/projectes/app-estenop/index.en.md`: creat — versió anglesa completa i sincronitzada
+- URL definitiva: `https://estenop.linuxbcn.com/`
+- Client: LinuxBCN (eina pròpia), sector: fotografia
+- Pendent: afegir imatge `estenop.png` al page bundle
+
+**Estenop — descripció del producte**
+- Calculadora d'exposició per a càmeres estenopeiques (pinhole)
+- Usa la càmera del mòbil com a fotòmetre
+- Correcció de reciprocitat per a més de 20 emulsions (HP5, T-Max, FP4, Pan F, Fomapan…)
+- Temporitzador integrat
+- Offline, sense compte, sense dades que surtin del dispositiu
+- Versions: gratuïta (càlcul complet) / Pro 10 € pagament únic (mode spot, historial, biblioteca càmeres)
+- Codi font: `https://github.com/112books/estenop`
+
+**Ordre del portfolio actualitzat**
+- Pesos reordenats (CA i EN) per reflectir: Estenop (1) → Positivador (2) → Bratia (3) → Machiroku (4) → Nau Bostik (5) → resta sense canvi
+- Corregit conflicte de weight: Nau Bostik era 3 (igual que Bratia) → passat a 5
+
+---
+
 *Última actualització: 2026-04-25*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
