@@ -44,4 +44,4 @@ Per als qui volen anar més lluny: mode spot per mesurar zones concretes, biblio
 
 És programari artesanal. Si t'és útil, el Pro és la manera de dir-ho i de garantir que continuï creixent.
 
-→ [estenop.vercel.app](https://estenop.vercel.app/)
+→ [estenop.linuxbcn.com](https://estenop.linuxbcn.com/)
