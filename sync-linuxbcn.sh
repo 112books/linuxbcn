@@ -72,7 +72,7 @@ deploy_prod() {
   sync
   build_prod
   print "Pujant a Dinahost via SSH..."
-  rsync -avz --delete --no-times --ignore-errors \
+  rsync -avz --delete --no-times --no-perms --ignore-errors \
     --exclude='cuinetes' \
     --exclude='.well-known' \
     --exclude='ssl' \
