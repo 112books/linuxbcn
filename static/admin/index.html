@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Stats · LinuxBCN</title>
+  <script src="/js/chart.umd.min.js" defer></script>
   <style>
     @font-face {
       font-family: 'IBM Plex Mono';
@@ -16,9 +17,10 @@
     :root {
       --bg:      #f5f4f0;
       --ink:     #111110;
-      --ink2:    #555550;
+      --ink2:    #444440;
       --ink3:    #6b6b66;
       --accent:  #d4600a;
+      --accent2: #b04d06;
       --green:   #2d7a2d;
       --blue:    #1a5c9a;
       --border:  #ddddd8;
@@ -43,207 +45,344 @@
       clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
 
-    /* ── LOGIN ─────────────────────────────────────── */
+    /* ── LOGIN ──────────────────────────────────────── */
     #login {
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
     }
-    .login-box { width: 300px; padding: 2.5rem; border: 1px solid var(--border); }
-    .login-logo { color: var(--ink3); letter-spacing: .15em; font-size: 11px; text-transform: uppercase; margin-bottom: 2rem; }
+    .login-box {
+      width: 300px;
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+    }
+    .login-logo {
+      color: var(--ink3);
+      letter-spacing: .15em;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
     .login-logo em { color: var(--accent); font-style: normal; }
     #pwd {
-      width: 100%; background: transparent; border: none;
-      border-bottom: 1px solid var(--border); padding: .5rem 0;
-      font-family: inherit; font-size: 15px; color: var(--ink);
-      outline: none; margin-bottom: 1.5rem; letter-spacing: .1em;
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      padding: .5rem 0;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--ink);
+      outline: none;
+      margin-bottom: 1.5rem;
+      letter-spacing: .1em;
     }
     #pwd:focus { border-bottom-color: var(--accent); }
     .btn {
-      background: var(--accent); color: #fff; border: none;
-      padding: .55rem 1.25rem; font-family: inherit;
-      font-size: 12px; letter-spacing: .08em; cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: .55rem 1.25rem;
+      font-family: inherit;
+      font-size: 12px;
+      letter-spacing: .08em;
+      cursor: pointer;
     }
-    .btn:hover { opacity: .85; }
+    .btn:hover { background: var(--accent2); }
     .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-    #login-err { min-height: 1.4em; color: var(--warn); font-size: 11px; margin-top: .75rem; }
+    #login-err {
+      min-height: 1.4em;
+      color: var(--warn);
+      font-size: 11px;
+      margin-top: .75rem;
+    }
 
-    /* ── DASHBOARD ─────────────────────────────────── */
+    /* ── TOPBAR ─────────────────────────────────────── */
     #dashboard { display: none; }
-
-    .dash-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: .9rem 2rem; border-bottom: 1px solid var(--border);
-      position: sticky; top: 0; background: var(--bg); z-index: 10;
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .75rem 2rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 20;
       gap: 1rem;
+      flex-wrap: wrap;
     }
-    .dash-logo { color: var(--ink3); letter-spacing: .12em; font-size: 11px; text-transform: uppercase; }
-    .dash-logo em { color: var(--accent); font-style: normal; }
-    .dash-date { color: var(--ink3); font-size: 11px; flex: 1; }
-    .dash-actions { display: flex; gap: .75rem; align-items: center; }
-    .btn-gc {
-      color: var(--ink3); font-size: 11px; letter-spacing: .05em;
-      text-decoration: none; border: 1px solid var(--border);
-      padding: .3rem .75rem;
+    .topbar-logo { color: var(--ink3); letter-spacing: .12em; font-size: 11px; text-transform: uppercase; }
+    .topbar-logo em { color: var(--accent); font-style: normal; }
+    .topbar-meta { flex: 1; min-width: 0; }
+    .topbar-gen {
+      font-size: 10px;
+      color: var(--ink3);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .btn-gc:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-out {
-      background: transparent; border: 1px solid var(--border); color: var(--ink3);
-      padding: .3rem .75rem; font-family: inherit; font-size: 11px;
-      letter-spacing: .06em; cursor: pointer;
+    .topbar-gen strong { color: var(--ink2); }
+    .topbar-actions { display: flex; gap: .6rem; align-items: center; flex-shrink: 0; }
+    .btn-sm {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--ink3);
+      padding: .28rem .65rem;
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: .06em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      white-space: nowrap;
     }
-    .btn-out:hover { border-color: var(--ink3); color: var(--ink); }
-    .btn-out:focus-visible, .btn-gc:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    .btn-sm:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-sm:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    .btn-refresh-top { min-width: 90px; }
+    .btn-refresh-top.loading { opacity: .45; pointer-events: none; }
 
+    /* ── BODY ───────────────────────────────────────── */
     .dash-body { padding: 2rem; max-width: 1080px; margin: 0 auto; }
 
-    /* ── ERROR BANNER ──────────────────────────────── */
-    .error-banner {
-      background: #fef0ec; border: 1px solid #f4b49a;
-      color: var(--warn); padding: 1rem 1.25rem;
-      margin-bottom: 1.5rem; font-size: 12px; line-height: 1.5;
+    /* ── STATE BANNERS ──────────────────────────────── */
+    .banner {
+      padding: .85rem 1.1rem;
+      margin-bottom: 1.5rem;
+      font-size: 12px;
+      line-height: 1.5;
     }
+    .banner-error   { background: #fef0ec; border: 1px solid #f4b49a; color: var(--warn); }
+    .banner-empty   { background: var(--surface); border: 1px solid var(--border); color: var(--ink3); }
+    .banner-loading { color: var(--ink3); font-size: 12px; letter-spacing: .05em; }
 
-    /* ── PERIOD SELECTOR ───────────────────────────── */
-    .period-bar {
-      display: flex; gap: .5rem; margin-bottom: 2rem; align-items: center;
-    }
-    .period-label { color: var(--ink3); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-right: .5rem; }
-    .period-btn {
-      background: transparent; border: 1px solid var(--border); color: var(--ink3);
-      padding: .25rem .65rem; font-family: inherit; font-size: 11px;
-      letter-spacing: .06em; cursor: pointer;
-    }
-    .period-btn:hover { border-color: var(--ink3); color: var(--ink); }
-    .period-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-    .period-btn.active { border-color: var(--accent); color: var(--accent); }
-    .btn-refresh {
-      margin-left: auto; background: transparent; border: 1px solid var(--border);
-      color: var(--ink3); padding: .25rem .65rem; font-family: inherit;
-      font-size: 11px; letter-spacing: .06em; cursor: pointer;
-    }
-    .btn-refresh:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-refresh:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-    .btn-refresh.spinning { opacity: .4; pointer-events: none; }
-
-    /* ── KPIs ──────────────────────────────────────── */
+    /* ── KPIs ───────────────────────────────────────── */
     .kpis {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1rem; margin-bottom: 2rem; list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+      list-style: none;
     }
-    .kpi { border: 1px solid var(--border); padding: 1.25rem 1.5rem; }
-    .kpi dt {
-      color: var(--ink3); font-size: 10px; letter-spacing: .14em;
-      text-transform: uppercase; margin-bottom: .5rem; font-weight: 400;
-    }
-    .kpi-value { font-size: 2.2rem; color: var(--ink); line-height: 1; margin-bottom: .3rem; }
-    .kpi-sub { color: var(--ink3); font-size: 11px; }
+    .kpi { border: 1px solid var(--border); padding: 1.2rem 1.5rem; }
+    .kpi dt { color: var(--ink3); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .4rem; font-weight: 400; }
+    .kpi-value { font-size: 2.4rem; color: var(--ink); line-height: 1; margin-bottom: .25rem; letter-spacing: -.01em; }
+    .kpi-value.accent { color: var(--accent); }
+    .kpi-sub { color: var(--ink3); font-size: 10px; letter-spacing: .04em; }
 
-    /* ── SECTION TITLE ─────────────────────────────── */
+    /* ── TABS ───────────────────────────────────────── */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+      gap: 0;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--ink3);
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: .65rem 1.2rem;
+      cursor: pointer;
+      position: relative;
+      bottom: -1px;
+      transition: color .15s;
+    }
+    .tab-btn:hover { color: var(--ink); }
+    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .tab-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── SECTION TITLE ──────────────────────────────── */
     .section-title {
-      color: var(--ink3); font-size: 10px; font-weight: 400;
-      letter-spacing: .15em; text-transform: uppercase;
-      margin-bottom: 1rem; padding-bottom: .5rem;
+      color: var(--ink3);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+      padding-bottom: .4rem;
       border-bottom: 1px solid var(--border);
     }
+    .section-title:first-child { margin-top: 0; }
 
-    /* ── CHART ─────────────────────────────────────── */
-    .chart-section { margin-bottom: 2rem; }
-    .chart-wrap { border: 1px solid var(--border); padding: 1.5rem 1.5rem 1rem; }
-    #chart-svg { width: 100%; display: block; }
-    .chart-legend {
-      display: flex; justify-content: space-between;
-      margin-top: .5rem; color: var(--ink3); font-size: 10px;
+    /* ── CHART ──────────────────────────────────────── */
+    .chart-controls {
+      display: flex;
+      gap: .4rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .chart-sep { width: 1px; height: 24px; background: var(--border); margin: 0 .2rem; }
+    .period-btn, .group-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--ink3);
+      padding: .22rem .6rem;
+      font-family: inherit;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .12s;
+    }
+    .period-btn:hover, .group-btn:hover { border-color: var(--ink3); color: var(--ink); }
+    .period-btn.active, .group-btn.active { border-color: var(--accent); color: var(--accent); }
+    .period-btn:focus-visible, .group-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+    .chart-wrap {
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.25rem .75rem;
+      height: 220px;
+      position: relative;
+    }
+    .chart-wrap canvas { position: absolute; top: 1.25rem; left: 1.25rem; right: 1.25rem; bottom: .75rem; }
+    .chart-summary {
+      font-size: 11px;
+      color: var(--ink3);
+      margin-top: .6rem;
+      letter-spacing: .02em;
+    }
+    .chart-summary strong { color: var(--ink2); }
+    .chart-summary .accent { color: var(--accent); }
+
+    /* ── BARS ───────────────────────────────────────── */
+    .bars { display: flex; flex-direction: column; gap: .55rem; }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 48px;
+      align-items: center;
+      gap: .75rem;
+    }
+    .bar-label {
+      font-size: 11px;
+      color: var(--ink2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: right;
+    }
+    .bar-label a { color: inherit; text-decoration: none; }
+    .bar-label a:hover { color: var(--accent); }
+    .bar-track {
+      background: var(--surface);
+      height: 22px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background: var(--accent);
+      transition: width 1s cubic-bezier(.4,0,.2,1);
+      display: flex;
+      align-items: center;
+    }
+    .bar-pct {
+      font-size: 10px;
+      color: #fff;
+      position: absolute;
+      right: 5px;
+      letter-spacing: .04em;
+      font-weight: 400;
+    }
+    .bar-count {
+      font-size: 11px;
+      color: var(--ink);
+      text-align: right;
+      font-weight: 400;
     }
 
-    /* ── GRIDS ─────────────────────────────────────── */
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
-    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
-
-    /* ── STAT LIST ─────────────────────────────────── */
-    .stat-list { list-style: none; }
-    .stat-row {
-      display: flex; align-items: center; gap: .75rem;
-      padding: .4rem 0; border-bottom: 1px solid var(--border);
+    /* ── LANG BAR ───────────────────────────────────── */
+    .lang-bar { display: flex; height: 26px; margin-bottom: .6rem; overflow: hidden; }
+    .lang-seg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: width .8s ease;
     }
-    .stat-row:last-child { border-bottom: none; }
-    .stat-icon { font-size: 14px; flex-shrink: 0; width: 20px; text-align: center; }
-    .stat-name {
-      flex: 1; color: var(--ink2); overflow: hidden;
-      text-overflow: ellipsis; white-space: nowrap; font-size: 12px;
-    }
-    .stat-bar-wrap { width: 70px; height: 5px; background: var(--border); flex-shrink: 0; }
-    .stat-bar { height: 100%; background: var(--accent); }
-    .stat-count { width: 44px; text-align: right; color: var(--ink); flex-shrink: 0; font-size: 12px; }
+    .lang-ca { background: var(--accent); }
+    .lang-en { background: var(--ink3); }
+    .lang-es { background: var(--ink2); }
+    .lang-detail { display: flex; gap: 1.5rem; color: var(--ink3); font-size: 11px; flex-wrap: wrap; }
 
-    /* ── DEVICE GRID ───────────────────────────────── */
-    .device-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    /* ── DEVICES ────────────────────────────────────── */
+    .device-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem; }
     .device-card { border: 1px solid var(--border); padding: 1rem; text-align: center; }
-    .device-icon { font-size: 2rem; margin-bottom: .5rem; display: block; }
-    .device-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink3); margin-bottom: .25rem; }
-    .device-count { font-size: 1.6rem; color: var(--ink); }
-    .device-pct { font-size: 11px; color: var(--ink3); }
+    .device-icon { font-size: 1.8rem; margin-bottom: .4rem; display: block; }
+    .device-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink3); margin-bottom: .2rem; }
+    .device-count { font-size: 1.5rem; color: var(--ink); line-height: 1; }
+    .device-pct { font-size: 10px; color: var(--ink3); margin-top: .2rem; }
 
-    /* ── LANG BAR ──────────────────────────────────── */
-    .lang-section { margin-bottom: 2rem; }
-    .lang-bar { display: flex; height: 28px; margin-bottom: .75rem; overflow: hidden; }
-    .lang-ca {
-      background: var(--accent); display: flex; align-items: center;
-      justify-content: center; color: #fff; font-size: 11px;
-      letter-spacing: .06em; transition: width .4s ease;
+    /* ── INSIGHT ────────────────────────────────────── */
+    .insight {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 11px;
+      color: var(--ink2);
+      line-height: 1.9;
     }
-    .lang-en {
-      background: var(--ink3); display: flex; align-items: center;
-      justify-content: center; color: #fff; font-size: 11px;
-      letter-spacing: .06em; transition: width .4s ease;
+    .insight .label {
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .4rem;
+      display: block;
     }
-    .lang-detail { display: flex; gap: 2rem; color: var(--ink2); font-size: 12px; }
+    .insight em { color: var(--ink); font-style: normal; font-weight: 400; }
 
-    /* ── REFERRERS INFO ────────────────────────────── */
+    /* ── GRID ───────────────────────────────────────── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    /* ── REFS INFO ──────────────────────────────────── */
     .refs-info {
-      background: var(--surface); border: 1px solid var(--border);
-      padding: .85rem 1rem; font-size: 11px; color: var(--ink3);
-      line-height: 1.6; margin-top: .75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: .75rem 1rem;
+      font-size: 11px;
+      color: var(--ink3);
+      line-height: 1.6;
+      margin-top: .5rem;
     }
-    .refs-info strong { color: var(--ink2); }
 
-    /* ── ACCIONS SEO ───────────────────────────────── */
-    .actions-section { margin-bottom: 2rem; }
-    .action-list { list-style: none; }
-    .action-item {
-      display: flex; align-items: flex-start; gap: .75rem;
-      padding: .6rem 0; border-bottom: 1px solid var(--border);
-      font-size: 12px;
-    }
-    .action-item:last-child { border-bottom: none; }
-    .action-priority {
-      font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
-      flex-shrink: 0; width: 50px;
-    }
-    .priority-high   { color: var(--warn); }
-    .priority-mid    { color: var(--accent); }
-    .priority-low    { color: var(--green); }
-    .action-text { color: var(--ink2); flex: 1; }
-    .action-text a { color: var(--accent); }
+    /* ── EMPTY ──────────────────────────────────────── */
+    .empty { color: var(--ink3); font-size: 11px; font-style: italic; padding: .4rem 0; display: block; }
 
-    /* ── LOADING / EMPTY ───────────────────────────── */
-    .loading { color: var(--ink3); font-size: 11px; letter-spacing: .06em; }
-    .empty   { color: var(--ink3); font-size: 11px; font-style: italic; padding: .5rem 0; display: block; }
-
-    /* ── RESPONSIVE ────────────────────────────────── */
+    /* ── RESPONSIVE ─────────────────────────────────── */
     @media (max-width: 860px) {
       .kpis { grid-template-columns: repeat(2, 1fr); }
-      .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 1.5rem; }
-      .device-grid { grid-template-columns: repeat(3, 1fr); }
+      .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
       .dash-body { padding: 1rem; }
-      .dash-date { display: none; }
+      .topbar { padding: .6rem 1rem; }
+      .bar-row { grid-template-columns: 90px 1fr 40px; gap: .5rem; }
+      .bar-label { font-size: 10px; }
+    }
+    @media (max-width: 480px) {
+      .tabs { overflow-x: auto; }
+      .tab-btn { padding: .6rem .9rem; white-space: nowrap; }
+      .device-grid { grid-template-columns: repeat(3, 1fr); gap: .6rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══ LOGIN ════════════════════════════════════════ -->
+<!-- ═══ LOGIN ════════════════════════════════════════════ -->
 <div id="login" role="main" aria-label="Accés a les estadístiques">
   <form id="login-form" class="login-box" novalidate>
     <div class="login-logo" aria-hidden="true">LINUX<em>BCN</em> / STATS</div>
@@ -254,226 +393,178 @@
   </form>
 </div>
 
-<!-- ═══ DASHBOARD ════════════════════════════════════ -->
+<!-- ═══ DASHBOARD ════════════════════════════════════════ -->
 <div id="dashboard">
 
-  <header class="dash-header">
-    <div class="dash-logo" aria-hidden="true">LINUX<em>BCN</em> / STATS</div>
-    <div class="dash-date" id="dash-date"></div>
-    <div class="dash-actions">
-      <a href="https://linuxbcn.goatcounter.com" class="btn-gc" target="_blank" rel="noopener noreferrer" title="GoatCounter — dades originals">↗ dades originals</a>
-      <button type="button" class="btn-out" id="btn-logout">sortir ×</button>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-logo" aria-hidden="true">LINUX<em>BCN</em> / STATS</div>
+    <div class="topbar-meta">
+      <div class="topbar-gen" id="topbar-gen">carregant…</div>
     </div>
-  </header>
+    <div class="topbar-actions">
+      <a href="https://linuxbcn.goatcounter.com" class="btn-sm" target="_blank" rel="noopener noreferrer">↗ GoatCounter</a>
+      <button type="button" class="btn-sm btn-refresh-top" id="btn-refresh">↻ actualitzar</button>
+      <button type="button" class="btn-sm" id="btn-logout">sortir ×</button>
+    </div>
+  </div>
 
   <main class="dash-body" id="dash-main" tabindex="-1">
 
-    <!-- Selector de període -->
-    <div class="period-bar" role="group" aria-label="Selecciona el període">
-      <span class="period-label" aria-hidden="true">Període:</span>
-      <button class="period-btn active" data-days="7"   type="button">7d</button>
-      <button class="period-btn"        data-days="30"  type="button">30d</button>
-      <button class="period-btn"        data-days="90"  type="button">3m</button>
-      <button class="period-btn"        data-days="365" type="button">1a</button>
-      <button class="btn-refresh" type="button" id="btn-refresh" aria-label="Actualitzar dades">↻ refrescar</button>
-    </div>
+    <div id="state-banner"></div>
 
     <!-- KPIs -->
     <dl class="kpis" aria-label="Resum de visites">
       <div class="kpi">
         <dt>avui</dt>
-        <dd><div class="kpi-value" id="kpi-avui">—</div><div class="kpi-sub" id="sub-avui"></div></dd>
+        <dd><div class="kpi-value accent" id="kpi-avui">—</div><div class="kpi-sub" id="sub-avui"></div></dd>
       </div>
       <div class="kpi">
-        <dt id="kpi-label-period">període</dt>
-        <dd><div class="kpi-value" id="kpi-period">—</div><div class="kpi-sub" id="sub-period"></div></dd>
+        <dt>7 dies</dt>
+        <dd><div class="kpi-value" id="kpi-7d">—</div><div class="kpi-sub">últims 7 dies</div></dd>
       </div>
       <div class="kpi">
         <dt>30 dies</dt>
-        <dd><div class="kpi-value" id="kpi-mes">—</div><div class="kpi-sub" id="sub-mes"></div></dd>
+        <dd><div class="kpi-value" id="kpi-30d">—</div><div class="kpi-sub">últims 30 dies</div></dd>
       </div>
       <div class="kpi">
-        <dt>total acumulat</dt>
+        <dt>total any</dt>
         <dd><div class="kpi-value" id="kpi-total">—</div><div class="kpi-sub" id="sub-total"></div></dd>
       </div>
     </dl>
 
-    <!-- Gràfic -->
-    <div class="chart-section">
-      <h2 class="section-title" id="chart-heading">visites · últims 7 dies</h2>
+    <!-- Tabs -->
+    <div class="tabs" role="tablist" aria-label="Seccions">
+      <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-temporal"    id="tbtn-temporal"    onclick="showTab('temporal',this)">Temporal</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-pagines"     id="tbtn-pagines"     onclick="showTab('pagines',this)">Pàgines</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-dispositius" id="tbtn-dispositius" onclick="showTab('dispositius',this)">Dispositius</button>
+    </div>
+
+    <!-- TAB: Temporal -->
+    <div id="tab-temporal" class="tab-panel active" role="tabpanel" aria-labelledby="tbtn-temporal">
+      <div class="chart-controls" aria-label="Selecciona el període i agrupació">
+        <button class="period-btn active" data-days="7"   type="button">7d</button>
+        <button class="period-btn"        data-days="30"  type="button">30d</button>
+        <button class="period-btn"        data-days="90"  type="button">3m</button>
+        <button class="period-btn"        data-days="365" type="button">1a</button>
+        <div class="chart-sep" aria-hidden="true"></div>
+        <button class="group-btn active" data-group="day"   type="button">dia</button>
+        <button class="group-btn"        data-group="week"  type="button">setm.</button>
+        <button class="group-btn"        data-group="month" type="button">mes</button>
+      </div>
       <div class="chart-wrap">
-        <svg id="chart-svg" role="img" aria-label="Gràfic de visites" height="72" viewBox="0 0 700 72"></svg>
-        <div class="chart-legend" id="chart-legend" aria-hidden="true"></div>
+        <canvas id="chart-canvas" aria-label="Gràfic de visites per dia"></canvas>
+      </div>
+      <div class="chart-summary" id="chart-summary"></div>
+    </div>
+
+    <!-- TAB: Pàgines -->
+    <div id="tab-pagines" class="tab-panel" role="tabpanel" aria-labelledby="tbtn-pagines">
+
+      <h2 class="section-title">visites per idioma</h2>
+      <div id="lang-wrap"></div>
+
+      <h2 class="section-title">seccions més visitades</h2>
+      <div id="sections-wrap" class="bars"></div>
+
+      <h2 class="section-title">pàgines més visitades</h2>
+      <div id="pages-wrap" class="bars"></div>
+
+      <h2 class="section-title">projectes amb més interès</h2>
+      <div id="projects-wrap" class="bars"></div>
+
+      <h2 class="section-title">d'on venen les visites</h2>
+      <div id="refs-wrap"></div>
+
+      <div class="refs-info" id="refs-empty" style="display:none">
+        El trànsit directe (URL escrita, marcadors, navegació privada) no genera referrer. Normal en un lloc web nou.
+        A mesura que creixin els links externs i la indexació orgànica, apareixeran aquí els orígens.
       </div>
     </div>
 
-    <!-- Pàgines + Projectes -->
-    <div class="grid-2">
-      <div>
-        <h2 class="section-title" id="label-pages">pàgines més visitades · 7 dies</h2>
-        <ul id="top-pages" class="stat-list" aria-labelledby="label-pages">
-          <li class="loading" role="status">carregant...</li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="section-title" id="label-projects">projectes amb més interès · 7 dies</h2>
-        <ul id="top-projects" class="stat-list" aria-labelledby="label-projects">
-          <li class="loading" role="status">carregant...</li>
-        </ul>
-      </div>
-    </div>
+    <!-- TAB: Dispositius -->
+    <div id="tab-dispositius" class="tab-panel" role="tabpanel" aria-labelledby="tbtn-dispositius">
 
-    <!-- D'on venen -->
-    <div style="margin-bottom:2rem">
-      <h2 class="section-title" id="label-refs">d'on venen les visites · 7 dies</h2>
-      <ul id="top-refs" class="stat-list" aria-labelledby="label-refs">
-        <li class="loading" role="status">carregant...</li>
-      </ul>
-      <div class="refs-info" id="refs-info" style="display:none">
-        <strong>Per què pot estar buit?</strong> El trànsit directe (URL escrita, marcadors), els cerca amb HTTPS i els visitants amb navegació privada no generen referrer. És normal en un lloc web nou. A mesura que arribin enllaços externs i indexació de Google, aquí apareixeran els orígens.
-      </div>
-    </div>
-
-    <!-- Idioma -->
-    <div class="lang-section">
-      <h2 class="section-title" id="label-lang">per idioma · 7 dies</h2>
-      <div id="lang-section" aria-labelledby="label-lang">
-        <span class="loading" role="status">carregant...</span>
-      </div>
-    </div>
-
-    <!-- Dispositius -->
-    <div style="margin-bottom:2rem">
-      <h2 class="section-title" id="label-devices">dispositius · 7 dies</h2>
+      <h2 class="section-title">tipus de dispositiu</h2>
       <div class="device-grid" id="device-grid">
         <div class="device-card">
-          <span class="device-icon">📱</span>
+          <span class="device-icon" aria-hidden="true">📱</span>
           <div class="device-label">Mòbil</div>
           <div class="device-count" id="dev-mobile">—</div>
           <div class="device-pct" id="dev-mobile-pct"></div>
         </div>
         <div class="device-card">
-          <span class="device-icon">⬜</span>
+          <span class="device-icon" aria-hidden="true">⬜</span>
           <div class="device-label">Tauleta</div>
           <div class="device-count" id="dev-tablet">—</div>
           <div class="device-pct" id="dev-tablet-pct"></div>
         </div>
         <div class="device-card">
-          <span class="device-icon">🖥</span>
+          <span class="device-icon" aria-hidden="true">🖥</span>
           <div class="device-label">Escriptori</div>
           <div class="device-count" id="dev-desktop">—</div>
           <div class="device-pct" id="dev-desktop-pct"></div>
         </div>
       </div>
-    </div>
 
-    <!-- Navegadors + SO -->
-    <div class="grid-2">
-      <div>
-        <h2 class="section-title" id="label-browsers">navegadors · 7 dies</h2>
-        <ul id="top-browsers" class="stat-list" aria-labelledby="label-browsers">
-          <li class="loading" role="status">carregant...</li>
-        </ul>
+      <div class="grid-2">
+        <div>
+          <h2 class="section-title">navegadors</h2>
+          <div id="browsers-wrap" class="bars"></div>
+        </div>
+        <div>
+          <h2 class="section-title">sistemes operatius</h2>
+          <div id="systems-wrap" class="bars"></div>
+        </div>
       </div>
-      <div>
-        <h2 class="section-title" id="label-systems">sistema operatiu · 7 dies</h2>
-        <ul id="top-systems" class="stat-list" aria-labelledby="label-systems">
-          <li class="loading" role="status">carregant...</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Accions per créixer -->
-    <div class="actions-section">
-      <h2 class="section-title">accions per augmentar visites</h2>
-      <ul class="action-list">
-        <li class="action-item">
-          <span class="action-priority priority-high">urgent</span>
-          <span class="action-text">Afegir el lloc a <a href="https://search.google.com/search-console" target="_blank" rel="noopener">Google Search Console</a> i enviar el sitemap: <code>https://linuxbcn.com/sitemap.xml</code></span>
-        </li>
-        <li class="action-item">
-          <span class="action-priority priority-high">urgent</span>
-          <span class="action-text">Demanar a cada client (Bratia, Machiroku, FAVB…) que afegeixi un link al seu web apuntant a linuxbcn.com — cada link és un vot de confiança per a Google.</span>
-        </li>
-        <li class="action-item">
-          <span class="action-priority priority-mid">pròxim</span>
-          <span class="action-text">Publicar 1-2 posts a Instagram <code>@linuxbcn_oficial</code> explicant el nou web — genera trànsit directe i possibles comparticions.</span>
-        </li>
-        <li class="action-item">
-          <span class="action-priority priority-mid">pròxim</span>
-          <span class="action-text">Afegir linuxbcn.com al perfil de Mastodon / Fediverse i a directoris de programari lliure (FSF, softcatalà, guifi…).</span>
-        </li>
-        <li class="action-item">
-          <span class="action-priority priority-mid">pròxim</span>
-          <span class="action-text">Completar el perfil de Google My Business (ara Perfil d'Empresa de Google) amb adreça, horari i link al web.</span>
-        </li>
-        <li class="action-item">
-          <span class="action-priority priority-low">futur</span>
-          <span class="action-text">Publicar un article tècnic (blog) sobre algun projecte real — genera trànsit orgànic i posiciona per a cerques de clients potencials.</span>
-        </li>
-        <li class="action-item">
-          <span class="action-priority priority-low">futur</span>
-          <span class="action-text">Proposar una xerrada / taula rodona a espais culturals (Nau Bostik, FAD…) i mencionar el web a la comunicació de l'acte.</span>
-        </li>
-      </ul>
+      <div id="dispositius-insight" class="insight" style="display:none">
+        <span class="label">// resum</span>
+        <div id="dispositius-insight-body"></div>
+      </div>
     </div>
 
   </main>
 </div>
 
 <script>
-const PASSWORD = 'linuxbcn';
-const GC_BASE  = '/admin/gc-proxy.php';
-const D0       = '2025-01-01';
-let   currentDays = 7;
-
-// ── Helpers ──────────────────────────────────────────────────────────────
-const delay   = ms => new Promise(r => setTimeout(r, ms));
-const fmt     = n  => (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString('ca-ES');
-const isoDate = d  => d.toISOString().slice(0, 10);
-const today   = () => isoDate(new Date());
-function daysAgo(n) { const d = new Date(); d.setDate(d.getDate() - n); return isoDate(d); }
-
-function periodLabel(d) {
-  return d === 7 ? '7 dies' : d === 30 ? '30 dies' : d === 90 ? '3 mesos' : d === 365 ? '1 any' : `${d} dies`;
-}
-
+/* ═══════════════════════════════════════════════════════════
+   CONFIG
+═══════════════════════════════════════════════════════════ */
+const PASSWORD    = 'linuxbcn';
+const CACHE_URL   = 'analytics-cache.json';
+const FETCH_URL   = 'fetch-analytics.php';
+const SECTION_NAMES = {
+  inici: 'Inici', projectes: 'Projectes', solucions: 'Solucions',
+  'com-treballem': 'Com treballem', 'qui-som': 'Qui som',
+  contacte: 'Contacte', serveis: 'Serveis', admin: '(admin)',
+};
 const BROWSER_ICON = {
-  chrome: '🟡', chromium: '🟡', firefox: '🦊', safari: '🔵',
-  edge: '🔷', opera: '🔴', samsung: '📱', brave: '🦁',
-  vivaldi: '🔴', ie: '🔵', other: '·'
+  chrome:'🟡', chromium:'🟡', firefox:'🦊', safari:'🔵',
+  edge:'🔷', opera:'🔴', samsung:'📱', brave:'🦁', vivaldi:'🔴', ie:'🔵',
 };
 const OS_ICON = {
-  windows: '🪟', macos: '🍎', mac: '🍎', linux: '🐧',
-  android: '🤖', ios: '📱', iphone: '📱', ipad: '📱',
-  chromeos: '🟡', ubuntu: '🐧', debian: '🐧', other: '·'
+  windows:'🪟', macos:'🍎', mac:'🍎', linux:'🐧',
+  android:'🤖', ios:'📱', iphone:'📱', ipad:'📱',
+  chromeos:'🟡', ubuntu:'🐧', debian:'🐧',
 };
 
-function getBrowserIcon(name) {
-  const n = (name || '').toLowerCase();
-  for (const key of Object.keys(BROWSER_ICON)) {
-    if (n.includes(key)) return BROWSER_ICON[key];
-  }
-  return '·';
-}
-function getOsIcon(name) {
-  const n = (name || '').toLowerCase();
-  for (const key of Object.keys(OS_ICON)) {
-    if (n.includes(key)) return OS_ICON[key];
-  }
-  return '·';
-}
+let globalData = null;
+let visitsChart = null;
+let chartPeriodDays = 7;
+let chartGroup = 'day';
 
-// ── Auth ─────────────────────────────────────────────────────────────────
+/* ═══════════════════════════════════════════════════════════
+   AUTH
+═══════════════════════════════════════════════════════════ */
 document.getElementById('login-form').addEventListener('submit', e => {
   e.preventDefault();
-  const v   = document.getElementById('pwd').value;
-  const err = document.getElementById('login-err');
+  const v = document.getElementById('pwd').value;
   if (v === PASSWORD) {
-    err.textContent = '';
     sessionStorage.setItem('gc_ok', '1');
     showDashboard();
   } else {
+    const err = document.getElementById('login-err');
     err.textContent = 'contrasenya incorrecta';
     document.getElementById('pwd').value = '';
     document.getElementById('pwd').focus();
@@ -482,377 +573,537 @@ document.getElementById('login-form').addEventListener('submit', e => {
 
 document.getElementById('btn-logout').addEventListener('click', () => {
   sessionStorage.removeItem('gc_ok');
+  if (visitsChart) { visitsChart.destroy(); visitsChart = null; }
+  globalData = null;
   document.getElementById('dashboard').style.display = 'none';
-  document.getElementById('login').style.display     = 'flex';
+  document.getElementById('login').style.display = 'flex';
   document.getElementById('pwd').value = '';
   document.getElementById('pwd').focus();
 });
 
+if (sessionStorage.getItem('gc_ok')) showDashboard();
+
 function showDashboard() {
   document.getElementById('login').style.display     = 'none';
   document.getElementById('dashboard').style.display = 'block';
-  document.getElementById('dash-date').textContent   = new Date().toLocaleDateString('ca-ES', {
-    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
-  });
   document.getElementById('dash-main').focus();
-  loadStats();
+  loadCache();
 }
 
-if (sessionStorage.getItem('gc_ok')) showDashboard();
+/* ═══════════════════════════════════════════════════════════
+   TABS
+═══════════════════════════════════════════════════════════ */
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+}
 
-// ── Period selector ───────────────────────────────────────────────────────
+/* ═══════════════════════════════════════════════════════════
+   CHART CONTROLS
+═══════════════════════════════════════════════════════════ */
 document.querySelectorAll('.period-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    currentDays = parseInt(btn.dataset.days, 10);
+    chartPeriodDays = parseInt(btn.dataset.days, 10);
     document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    updateLabels();
-    loadStats();
+    if (globalData) renderChart(globalData);
+  });
+});
+document.querySelectorAll('.group-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    chartGroup = btn.dataset.group;
+    document.querySelectorAll('.group-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (globalData) renderChart(globalData);
   });
 });
 
-document.getElementById('btn-refresh').addEventListener('click', () => {
-  const btn = document.getElementById('btn-refresh');
-  btn.classList.add('spinning');
-  loadStats().finally(() => btn.classList.remove('spinning'));
-});
-
-function updateLabels() {
-  const lbl = periodLabel(currentDays);
-  document.getElementById('kpi-label-period').textContent  = lbl;
-  document.getElementById('chart-heading').textContent     = `visites · últims ${lbl}`;
-  document.getElementById('label-pages').textContent      = `pàgines més visitades · ${lbl}`;
-  document.getElementById('label-projects').textContent   = `projectes amb més interès · ${lbl}`;
-  document.getElementById('label-refs').textContent       = `d'on venen les visites · ${lbl}`;
-  document.getElementById('label-lang').textContent       = `per idioma · ${lbl}`;
-  document.getElementById('label-devices').textContent    = `dispositius · ${lbl}`;
-  document.getElementById('label-browsers').textContent   = `navegadors · ${lbl}`;
-  document.getElementById('label-systems').textContent    = `sistema operatiu · ${lbl}`;
-}
-
-// ── API ───────────────────────────────────────────────────────────────────
-async function gc(path, params = {}) {
-  const url = new URL(GC_BASE, location.href);
-  url.searchParams.set('path', path);
-  Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
-  const r = await fetch(url);
-  if (!r.ok) {
-    const text = await r.text();
-    throw new Error(`[${path}] ${r.status}: ${text.slice(0, 200)}`);
-  }
-  return r.json();
-}
-
-async function safeGc(path, params) {
-  try { return await gc(path, params); }
-  catch (e) { console.warn('GC error:', path, e.message); return null; }
-}
-
-// ── Error banner ──────────────────────────────────────────────────────────
-function showError(msg) {
-  const body = document.getElementById('dash-main');
-  let div = body.querySelector('.error-banner');
-  if (!div) {
-    div = document.createElement('div');
-    div.className = 'error-banner';
-    div.setAttribute('role', 'alert');
-    body.insertBefore(div, body.querySelector('.period-bar').nextSibling);
-  }
-  div.innerHTML = '';
-  const s = document.createElement('strong');
-  s.textContent = 'Error carregant dades: ';
-  div.appendChild(s);
-  div.appendChild(document.createTextNode(msg));
-}
-function clearError() {
-  const e = document.getElementById('dash-main').querySelector('.error-banner');
-  if (e) e.remove();
-}
-
-// ── Render: llista amb barres ─────────────────────────────────────────────
-function renderList(id, items, nameKey, countKey, { linkFn, iconFn, emptyMsg } = {}) {
-  const el = document.getElementById(id);
-  el.innerHTML = '';
-  if (!items || !items.length) {
-    const li = document.createElement('li');
-    li.className   = 'empty';
-    li.textContent = emptyMsg || 'sense dades per a aquest període';
-    el.appendChild(li);
-    return false;
-  }
-  const max = items[0][countKey] || 1;
-  items.slice(0, 10).forEach(item => {
-    const name  = String(item[nameKey] || '(directe)');
-    const count = item[countKey];
-    const pct   = Math.round((count / max) * 100);
-    const li    = document.createElement('li');
-    li.className = 'stat-row';
-
-    if (iconFn) {
-      const ico = document.createElement('span');
-      ico.className     = 'stat-icon';
-      ico.setAttribute('aria-hidden', 'true');
-      ico.textContent   = iconFn(name);
-      li.appendChild(ico);
-    }
-
-    const nameSpan     = document.createElement('span');
-    nameSpan.className = 'stat-name';
-    nameSpan.title     = name;
-    if (linkFn) {
-      const a   = document.createElement('a');
-      a.href    = linkFn(item);
-      a.target  = '_blank';
-      a.rel     = 'noopener noreferrer';
-      a.style.cssText = 'color:inherit;text-decoration:none;';
-      a.textContent   = name;
-      nameSpan.appendChild(a);
+/* ═══════════════════════════════════════════════════════════
+   DADES: CARREGA CACHE
+═══════════════════════════════════════════════════════════ */
+async function loadCache() {
+  setBanner('loading', 'carregant estadístiques…');
+  try {
+    const r = await fetch(CACHE_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error('cache_missing');
+    const data = await r.json();
+    globalData = data;
+    clearBanner();
+    renderAll(data);
+  } catch (e) {
+    if (e.message === 'cache_missing') {
+      setBanner('empty',
+        'Encara no hi ha dades en caché. ' +
+        'Fes clic a <strong>"↻ actualitzar"</strong> per generar les estadístiques per primera vegada.'
+      );
     } else {
-      nameSpan.textContent = name;
+      setBanner('error', 'Error carregant les dades: ' + e.message);
     }
-
-    const barWrap = document.createElement('div');
-    barWrap.className = 'stat-bar-wrap';
-    barWrap.setAttribute('aria-hidden', 'true');
-    const bar = document.createElement('div');
-    bar.className   = 'stat-bar';
-    bar.style.width = pct + '%';
-    barWrap.appendChild(bar);
-
-    const countSpan     = document.createElement('span');
-    countSpan.className = 'stat-count';
-    countSpan.textContent = fmt(count);
-
-    li.appendChild(nameSpan);
-    li.appendChild(barWrap);
-    li.appendChild(countSpan);
-    el.appendChild(li);
-  });
-  return true;
+    setTopbarGen(null);
+  }
 }
 
-// ── Render: projectes ─────────────────────────────────────────────────────
-function renderProjects(hits) {
-  const projects = (hits || [])
-    .filter(h => h.path && h.path.includes('/projectes/') && !h.path.endsWith('/projectes/'))
-    .map(h => ({ ...h, name: h.path.replace(/\/(ca|en)\/projectes\//, '').replace(/\/$/, '') }))
+/* ═══════════════════════════════════════════════════════════
+   REFRESH: crida PHP → genera cache → recarrega
+═══════════════════════════════════════════════════════════ */
+document.getElementById('btn-refresh').addEventListener('click', async () => {
+  const btn = document.getElementById('btn-refresh');
+  btn.textContent = '↻ actualitzant…';
+  btn.classList.add('loading');
+  clearBanner();
+  setBanner('loading', 'Obtenint dades de GoatCounter… (~5 segons)');
+  try {
+    const r = await fetch(FETCH_URL + '?token=' + PASSWORD + '&t=' + Date.now());
+    const result = await r.json();
+    if (!r.ok || result.error) throw new Error(result.error || 'Error al servidor');
+    clearBanner();
+    await loadCache();
+  } catch (e) {
+    setBanner('error',
+      'Error actualitzant les dades: ' + e.message +
+      '. Comprova que el servidor té PHP i permisos d\'escriptura a /admin/.'
+    );
+  } finally {
+    btn.textContent = '↻ actualitzar';
+    btn.classList.remove('loading');
+  }
+});
+
+/* ═══════════════════════════════════════════════════════════
+   RENDERITZACIÓ PRINCIPAL
+═══════════════════════════════════════════════════════════ */
+function renderAll(data) {
+  const today   = isoToday();
+  const hbd     = data.hits_by_day || [];
+
+  // KPIs calculats a client des de hits_by_day
+  const avui  = sumDays(hbd, today, today);
+  const set7  = sumDays(hbd, daysAgo(7), today);
+  const mes30 = sumDays(hbd, daysAgo(30), today);
+  const total = data.total || 0;
+  const p     = data.period || {};
+
+  setText('kpi-avui',  fmt(avui));
+  setText('sub-avui',  avui === 1 ? '1 visita' : fmt(avui) + ' visites');
+  setText('kpi-7d',    fmt(set7));
+  setText('kpi-30d',   fmt(mes30));
+  setText('kpi-total', fmt(total));
+  setText('sub-total', p.start && p.end ? fmtPeriod(p.start, p.end) : '');
+
+  setTopbarGen(data.generated);
+
+  renderChart(data);
+  renderLang(data);
+  renderSections(data);
+  renderPages(data);
+  renderProjects(data);
+  renderRefs(data);
+  renderDevices(data);
+  renderBrowsersSystems(data);
+  renderDispositiusInsight(data);
+
+  // Animació de les barres (amb un tick de retard per al transition CSS)
+  requestAnimationFrame(() => {
+    document.querySelectorAll('[data-bar-w]').forEach(el => {
+      el.style.width = el.dataset.barW + '%';
+    });
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CHART.JS
+═══════════════════════════════════════════════════════════ */
+function renderChart(data) {
+  if (typeof Chart === 'undefined') return;
+
+  const hbd    = data.hits_by_day || [];
+  const cutoff = daysAgo(chartPeriodDays);
+  const filtered = hbd.filter(d => d.date >= cutoff);
+  const grouped  = groupHits(filtered, chartGroup);
+  const labels   = grouped.map(g => g.label);
+  const values   = grouped.map(g => g.count);
+
+  if (visitsChart) {
+    visitsChart.data.labels = labels;
+    visitsChart.data.datasets[0].data = values;
+    visitsChart.update();
+  } else {
+    const ctx = document.getElementById('chart-canvas').getContext('2d');
+    Chart.defaults.color = '#6b6b66';
+    Chart.defaults.font.family = "'IBM Plex Mono', 'Courier New', monospace";
+    Chart.defaults.font.size = 10;
+
+    visitsChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Visites',
+          data: values,
+          borderColor: '#d4600a',
+          backgroundColor: ctx2 => {
+            const g = ctx2.chart.ctx.createLinearGradient(0, 0, 0, ctx2.chart.height);
+            g.addColorStop(0, 'rgba(212,96,10,0.18)');
+            g.addColorStop(1, 'rgba(212,96,10,0.01)');
+            return g;
+          },
+          fill: true,
+          tension: 0.3,
+          pointRadius: values.length > 60 ? 0 : 3,
+          pointHoverRadius: 5,
+          pointBackgroundColor: '#d4600a',
+          borderWidth: 1.5,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: {
+            grid: { color: 'rgba(17,17,16,0.05)' },
+            ticks: { color: '#6b6b66', maxTicksLimit: 10, font: { size: 10 } },
+            border: { color: 'rgba(17,17,16,0.12)' },
+          },
+          y: {
+            grid: { color: 'rgba(17,17,16,0.05)' },
+            ticks: { color: '#6b6b66', font: { size: 10 } },
+            border: { color: 'rgba(17,17,16,0.12)' },
+            beginAtZero: true,
+          },
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#f5f4f0',
+            borderColor: '#ddddd8',
+            borderWidth: 1,
+            titleColor: '#111110',
+            bodyColor: '#6b6b66',
+            padding: 10,
+            callbacks: {
+              label: ctx3 => ' ' + ctx3.parsed.y.toLocaleString('ca') + ' visites',
+            },
+          },
+        },
+      },
+    });
+  }
+
+  updateChartSummary(grouped);
+}
+
+function updateChartSummary(grouped) {
+  if (!grouped || !grouped.length) { setText('chart-summary', ''); return; }
+  const total = grouped.reduce((s, g) => s + g.count, 0);
+  const max   = grouped.reduce((a, b) => a.count > b.count ? a : b);
+  const avg   = Math.round(total / grouped.length);
+  const lbl   = chartGroup === 'day' ? 'dia' : chartGroup === 'week' ? 'setmana' : 'mes';
+  document.getElementById('chart-summary').innerHTML =
+    `Total: <strong>${fmt(total)}</strong> · ` +
+    `Mitjana/${lbl}: <strong>${fmt(avg)}</strong> · ` +
+    `Pic: <span class="accent">${fmt(max.count)}</span> (${max.label})`;
+}
+
+function groupHits(days, groupBy) {
+  if (groupBy === 'day') {
+    return days.map(d => ({ label: fmtDateShort(d.date), count: d.count }));
+  }
+  const buckets = {};
+  days.forEach(d => {
+    let key;
+    if (groupBy === 'week') {
+      const dt  = new Date(d.date + 'T12:00:00');
+      const mon = new Date(dt);
+      mon.setDate(dt.getDate() - ((dt.getDay() + 6) % 7));
+      key = mon.toISOString().slice(0, 10);
+    } else {
+      key = d.date.slice(0, 7);
+    }
+    buckets[key] = (buckets[key] || 0) + d.count;
+  });
+  return Object.keys(buckets).sort().map(k => ({
+    label: groupBy === 'week' ? 'S. ' + fmtDateShort(k) : fmtMonth(k),
+    count: buckets[k],
+  }));
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDERS: PÀGINES TAB
+═══════════════════════════════════════════════════════════ */
+function renderLang(data) {
+  const el = document.getElementById('lang-wrap');
+  const by_lang = data.by_lang || {};
+  const total = Object.values(by_lang).reduce((s, v) => s + v, 0);
+  if (!total) { el.innerHTML = '<span class="empty">sense dades</span>'; return; }
+
+  const ca = by_lang.ca || 0;
+  const en = by_lang.en || 0;
+  const es = by_lang.es || 0;
+  const caPct = Math.round(ca / total * 100);
+  const enPct = Math.round(en / total * 100);
+  const esPct = 100 - caPct - enPct;
+
+  el.innerHTML = `
+    <div class="lang-bar" aria-hidden="true">
+      ${caPct > 0 ? `<div class="lang-seg lang-ca" style="width:${caPct}%">${caPct > 8 ? 'CA ' + caPct + '%' : ''}</div>` : ''}
+      ${enPct > 0 ? `<div class="lang-seg lang-en" style="width:${enPct}%">${enPct > 8 ? 'EN ' + enPct + '%' : ''}</div>` : ''}
+      ${esPct > 0 ? `<div class="lang-seg lang-es" style="width:${esPct}%">${esPct > 8 ? 'ES ' + esPct + '%' : ''}</div>` : ''}
+    </div>
+    <div class="lang-detail">
+      ${ca > 0 ? `<span>Català: ${fmt(ca)}</span>` : ''}
+      ${en > 0 ? `<span>Anglès: ${fmt(en)}</span>` : ''}
+      ${es > 0 ? `<span>Castellà: ${fmt(es)}</span>` : ''}
+    </div>`;
+}
+
+function renderSections(data) {
+  const sections = data.by_section || {};
+  const items = Object.entries(sections)
+    .filter(([k]) => k !== 'admin')
+    .map(([k, v]) => ({ name: SECTION_NAMES[k] || k, count: v }))
     .sort((a, b) => b.count - a.count);
-
-  const grouped = {};
-  projects.forEach(h => {
-    const key = h.name;
-    grouped[key] = (grouped[key] || 0) + h.count;
-  });
-  const items = Object.entries(grouped).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
-
-  renderList('top-projects', items, 'name', 'count', {
-    emptyMsg: 'cap visita a projectes en aquest període'
-  });
+  renderBars('sections-wrap', items, 'name');
 }
 
-// ── Render: dispositius ───────────────────────────────────────────────────
-function renderDevices(sizes) {
-  const items = sizes || [];
+function renderPages(data) {
+  const hits = (data.hits || []).slice(0, 10);
+  const items = hits.map(h => ({
+    name: h.path,
+    count: h.count,
+    href: h.path,
+  }));
+  renderBars('pages-wrap', items, 'name', true);
+}
+
+function renderProjects(data) {
+  const hits = data.hits || [];
+  const grouped = {};
+  hits.forEach(h => {
+    if (!h.path || !h.path.includes('/projectes/') || h.path.endsWith('/projectes/')) return;
+    const name = h.path.replace(/\/(ca|en)\/projectes\//, '').replace(/\/$/, '') || h.path;
+    grouped[name] = (grouped[name] || 0) + h.count;
+  });
+  const items = Object.entries(grouped)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
+  renderBars('projects-wrap', items, 'name');
+}
+
+function renderRefs(data) {
+  const refs = data.refs || [];
+  const el = document.getElementById('refs-wrap');
+  const emptyEl = document.getElementById('refs-empty');
+  if (!refs.length) {
+    el.innerHTML = '';
+    emptyEl.style.display = 'block';
+    return;
+  }
+  emptyEl.style.display = 'none';
+  const wrap = document.createElement('div');
+  wrap.className = 'bars';
+  el.replaceChildren(wrap);
+  renderBars('refs-wrap', refs.slice(0, 10), 'name');
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDERS: DISPOSITIUS TAB
+═══════════════════════════════════════════════════════════ */
+function renderDevices(data) {
+  const sizes = data.sizes || [];
   let mobile = 0, tablet = 0, desktop = 0;
-  items.forEach(s => {
-    const w = parseInt(s.name, 10);
-    const c = s.count || 0;
-    if (isNaN(w) || w === 0) return;
-    if (w < 768)        mobile  += c;
-    else if (w < 1200)  tablet  += c;
-    else                desktop += c;
+  sizes.forEach(s => {
+    const id = (s.id || s.name || '').toLowerCase();
+    const c  = s.count || 0;
+    if (id === 'phone')                       mobile  += c;
+    else if (id === 'tablet')                 tablet  += c;
+    else if (id === 'desktop' || id === 'desktophd' || id === 'larger') desktop += c;
+    else {
+      // Fallback: size numeric
+      const w = parseInt(id, 10);
+      if (!isNaN(w)) {
+        if (w < 768) mobile += c;
+        else if (w < 1200) tablet += c;
+        else desktop += c;
+      }
+    }
   });
   const total = mobile + tablet + desktop || 1;
-  const pct = n => total > 1 ? ` (${Math.round(n / total * 100)}%)` : '';
+  const pct = n => total > 1 ? `(${Math.round(n / total * 100)}%)` : '';
 
-  document.getElementById('dev-mobile').textContent      = mobile  > 0 ? fmt(mobile)  : '—';
-  document.getElementById('dev-mobile-pct').textContent  = mobile  > 0 ? pct(mobile)  : '';
-  document.getElementById('dev-tablet').textContent      = tablet  > 0 ? fmt(tablet)  : '—';
-  document.getElementById('dev-tablet-pct').textContent  = tablet  > 0 ? pct(tablet)  : '';
-  document.getElementById('dev-desktop').textContent     = desktop > 0 ? fmt(desktop) : '—';
-  document.getElementById('dev-desktop-pct').textContent = desktop > 0 ? pct(desktop) : '';
+  setText('dev-mobile',     mobile  > 0 ? fmt(mobile)  : '—');
+  setText('dev-mobile-pct', mobile  > 0 ? pct(mobile)  : '');
+  setText('dev-tablet',     tablet  > 0 ? fmt(tablet)  : '—');
+  setText('dev-tablet-pct', tablet  > 0 ? pct(tablet)  : '');
+  setText('dev-desktop',    desktop > 0 ? fmt(desktop) : '—');
+  setText('dev-desktop-pct',desktop > 0 ? pct(desktop) : '');
 }
 
-// ── Render: idioma ────────────────────────────────────────────────────────
-function renderLang(hits) {
-  const el = document.getElementById('lang-section');
+function renderBrowsersSystems(data) {
+  const browsers = (data.browsers || []).map(b => ({
+    name: getIcon(b.name || '', BROWSER_ICON) + ' ' + (b.name || '?'),
+    count: b.count,
+  }));
+  const systems = (data.systems || []).map(s => ({
+    name: getIcon(s.name || '', OS_ICON) + ' ' + (s.name || '?'),
+    count: s.count,
+  }));
+  renderBars('browsers-wrap', browsers, 'name');
+  renderBars('systems-wrap',  systems,  'name');
+}
+
+function renderDispositiusInsight(data) {
+  const ins = document.getElementById('dispositius-insight');
+  const body = document.getElementById('dispositius-insight-body');
+  const lines = [];
+  const browsers = data.browsers || [];
+  const systems  = data.systems  || [];
+  const sizes    = data.sizes    || [];
+
+  if (browsers.length) {
+    const tot = browsers.reduce((s, b) => s + b.count, 0) || 1;
+    const top = browsers[0];
+    lines.push(`<strong>${top.name}</strong> és el navegador principal (${Math.round(top.count / tot * 100)}% dels usuaris).`);
+  }
+  if (systems.length) {
+    const tot = systems.reduce((s, b) => s + b.count, 0) || 1;
+    const top = systems[0];
+    lines.push(`<strong>${top.name}</strong> és el sistema operatiu principal (${Math.round(top.count / tot * 100)}%).`);
+  }
+
+  if (!lines.length) { ins.style.display = 'none'; return; }
+  ins.style.display = 'block';
+  body.innerHTML = lines.map(l => `<div>— ${l}</div>`).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITAT: renderBars
+═══════════════════════════════════════════════════════════ */
+function renderBars(containerId, items, nameKey, withLinks = false) {
+  const el = document.getElementById(containerId);
+  if (!items || !items.length) {
+    el.innerHTML = '<span class="empty">sense dades per a aquest període</span>';
+    return;
+  }
+  const max = items[0].count || 1;
+  const total = items.reduce((s, i) => s + i.count, 0) || 1;
+
+  el.className = 'bars';
   el.innerHTML = '';
-  if (!hits || !hits.length) {
-    const span = document.createElement('span');
-    span.className   = 'empty';
-    span.textContent = 'sense dades per a aquest període';
-    el.appendChild(span);
-    return;
-  }
-  let ca = 0, en = 0;
-  hits.forEach(h => {
-    if (h.path && h.path.startsWith('/en')) en += (h.count || 0);
-    else ca += (h.count || 0);
-  });
-  const total = ca + en || 1;
-  const caPct = Math.round(ca / total * 100);
-  const enPct = 100 - caPct;
+  items.forEach(item => {
+    const pct  = Math.round(item.count / max * 100);
+    const gpct = Math.round(item.count / total * 100);
+    const name = String(item[nameKey] || '?');
 
-  const bar   = document.createElement('div');
-  bar.className = 'lang-bar';
-  bar.setAttribute('aria-hidden', 'true');
+    const row = document.createElement('div');
+    row.className = 'bar-row';
 
-  const caDiv = document.createElement('div');
-  caDiv.className   = 'lang-ca';
-  caDiv.style.width = caPct + '%';
-  caDiv.textContent = caPct > 8 ? `CA ${caPct}%` : '';
-
-  const enDiv = document.createElement('div');
-  enDiv.className   = 'lang-en';
-  enDiv.style.width = enPct + '%';
-  enDiv.textContent = enPct > 8 ? `EN ${enPct}%` : '';
-
-  bar.appendChild(caDiv);
-  bar.appendChild(enDiv);
-
-  const detail = document.createElement('div');
-  detail.className = 'lang-detail';
-  ['Català', 'English'].forEach((lbl, i) => {
-    const s = document.createElement('span');
-    s.textContent = `${lbl}: ${fmt(i === 0 ? ca : en)} visites`;
-    detail.appendChild(s);
-  });
-
-  el.appendChild(bar);
-  el.appendChild(detail);
-}
-
-// ── Render: gràfic ────────────────────────────────────────────────────────
-function renderChart(days) {
-  const svg    = document.getElementById('chart-svg');
-  const legend = document.getElementById('chart-legend');
-  svg.innerHTML = '';
-
-  if (!days.length || days.every(d => d.count === 0)) {
-    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    text.setAttribute('x', '350'); text.setAttribute('y', '36');
-    text.setAttribute('fill', '#999'); text.setAttribute('font-size', '12');
-    text.setAttribute('text-anchor', 'middle');
-    text.textContent = 'sense dades per a aquest període';
-    svg.appendChild(text);
-    legend.innerHTML = '';
-    return;
-  }
-
-  const W = 700, H = 72, gap = 6;
-  const barW = Math.floor((W - gap * (days.length - 1)) / days.length);
-  const max  = Math.max(...days.map(d => d.count), 1);
-
-  days.forEach((d, i) => {
-    const barH = Math.max(3, Math.round((d.count / max) * H));
-    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    rect.setAttribute('x', i * (barW + gap));
-    rect.setAttribute('y', H - barH);
-    rect.setAttribute('width', barW);
-    rect.setAttribute('height', barH);
-    rect.setAttribute('fill', d.count > 0 ? 'var(--accent)' : 'var(--border)');
-    const t = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-    t.textContent = `${d.date}: ${d.count} visites`;
-    rect.appendChild(t);
-    svg.appendChild(rect);
-  });
-
-  const indices = new Set([0, Math.floor(days.length / 2), days.length - 1]);
-  legend.innerHTML = '';
-  days.forEach((d, i) => {
-    const span = document.createElement('span');
-    if (indices.has(i)) {
-      const [, m, day] = d.date.split('-');
-      span.textContent = `${parseInt(day)}/${parseInt(m)}`;
+    const label = document.createElement('div');
+    label.className = 'bar-label';
+    label.title = name;
+    if (withLinks && item.href) {
+      const a = document.createElement('a');
+      a.href = item.href;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = name;
+      label.appendChild(a);
+    } else {
+      label.textContent = name;
     }
-    legend.appendChild(span);
+
+    const track = document.createElement('div');
+    track.className = 'bar-track';
+    track.setAttribute('aria-hidden', 'true');
+
+    const fill = document.createElement('div');
+    fill.className = 'bar-fill';
+    fill.style.width = '0%';
+    fill.dataset.barW = pct;
+    if (gpct > 12) {
+      const pctSpan = document.createElement('span');
+      pctSpan.className = 'bar-pct';
+      pctSpan.textContent = gpct + '%';
+      fill.appendChild(pctSpan);
+    }
+    track.appendChild(fill);
+
+    const count = document.createElement('div');
+    count.className = 'bar-count';
+    count.textContent = fmt(item.count);
+
+    row.appendChild(label);
+    row.appendChild(track);
+    row.appendChild(count);
+    el.appendChild(row);
   });
 }
 
-// ── Main ──────────────────────────────────────────────────────────────────
-async function loadStats() {
-  clearError();
-  const T = today(), DSTART = daysAgo(currentDays);
+/* ═══════════════════════════════════════════════════════════
+   UTILITATS
+═══════════════════════════════════════════════════════════ */
+const fmt       = n  => (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString('ca-ES');
+const isoToday  = () => new Date().toISOString().slice(0, 10);
+const setText   = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
 
-  // KPIs — seqüencial obligatori (rate limiting GoatCounter)
-  try {
-    const setKpi = (id, subId, data) => {
-      document.getElementById(id).textContent    = fmt(data?.total);
-      document.getElementById(subId).textContent = data ? `${fmt(data.total_unique)} únics` : '';
-    };
-    const totAvui = await gc('/stats/total', { start: T, end: T });
-    setKpi('kpi-avui', 'sub-avui', totAvui);
-    await delay(350);
+function daysAgo(n) {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return d.toISOString().slice(0, 10);
+}
 
-    const totPeriod = await gc('/stats/total', { start: DSTART, end: T });
-    setKpi('kpi-period', 'sub-period', totPeriod);
-    await delay(350);
+function sumDays(hbd, from, to) {
+  return (hbd || []).filter(d => d.date >= from && d.date <= to).reduce((s, d) => s + (d.count || 0), 0);
+}
 
-    const totMes = await gc('/stats/total', { start: daysAgo(30), end: T });
-    setKpi('kpi-mes', 'sub-mes', totMes);
-    await delay(350);
+function getIcon(name, map) {
+  const n = name.toLowerCase();
+  for (const key of Object.keys(map)) {
+    if (n.includes(key)) return map[key];
+  }
+  return '·';
+}
 
-    const totTotal = await gc('/stats/total', { start: D0, end: T });
-    setKpi('kpi-total', 'sub-total', totTotal);
-  } catch (err) {
-    console.error('KPIs:', err);
-    showError(err.message);
+function setTopbarGen(isoStr) {
+  const el = document.getElementById('topbar-gen');
+  if (!isoStr) {
+    el.textContent = 'sense caché — fes clic a ↻ actualitzar';
     return;
   }
-
-  await delay(400);
-
-  // Llistes — seqüencial obligatori
-  const hits     = await safeGc('/stats/hits',     { start: DSTART, end: T, limit: 50 });
-  await delay(350);
-  const refs     = await safeGc('/stats/refs',     { start: DSTART, end: T, limit: 10 });
-  await delay(350);
-  const browsers = await safeGc('/stats/browsers', { start: DSTART, end: T, limit: 10 });
-  await delay(350);
-  const systems  = await safeGc('/stats/systems',  { start: DSTART, end: T, limit: 10 });
-  await delay(350);
-  const sizes    = await safeGc('/stats/sizes',    { start: DSTART, end: T, limit: 20 });
-
-  renderList('top-pages', hits?.hits?.slice(0, 10), 'path', 'count', {
-    linkFn: item => item.path
-  });
-  renderProjects(hits?.hits);
-  renderLang(hits?.hits || []);
-
-  const hasRefs = renderList('top-refs', refs?.refs, 'name', 'count');
-  document.getElementById('refs-info').style.display = hasRefs ? 'none' : 'block';
-
-  renderList('top-browsers', browsers?.browsers, 'name', 'count', {
-    iconFn: getBrowserIcon
-  });
-  renderList('top-systems', systems?.systems, 'name', 'count', {
-    iconFn: getOsIcon
-  });
-  renderDevices(sizes?.sizes);
-
-  await delay(400);
-  await loadChart();
+  const d = new Date(isoStr);
+  const fmt2 = d.toLocaleString('ca-ES', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  el.innerHTML = `Actualitzat: <strong>${fmt2}</strong>`;
 }
 
-async function loadChart() {
-  const T = today();
-  const n = Math.min(currentDays, 30);
-  const days = [];
-  for (let i = n - 1; i >= 0; i--) {
-    const d = new Date(); d.setDate(d.getDate() - i);
-    days.push({ date: isoDate(d), count: 0 });
-  }
-  try {
-    for (let i = 0; i < days.length; i++) {
-      const r = await gc('/stats/total', { start: days[i].date, end: days[i].date });
-      days[i].count = r.total || 0;
-      if (i < days.length - 1) await delay(350);
-    }
-    renderChart(days);
-  } catch (e) {
-    console.warn('Chart:', e);
-    renderChart([]);
-  }
+function setBanner(type, msg) {
+  const el = document.getElementById('state-banner');
+  const cls = type === 'error' ? 'banner banner-error' : type === 'empty' ? 'banner banner-empty' : 'banner banner-loading';
+  el.className = cls;
+  el.setAttribute('role', type === 'error' ? 'alert' : 'status');
+  el.innerHTML = msg;
+}
+function clearBanner() {
+  const el = document.getElementById('state-banner');
+  el.className = '';
+  el.textContent = '';
+  el.removeAttribute('role');
+}
+
+function fmtDateShort(str) {
+  if (!str) return '';
+  const d = new Date(str + 'T12:00:00');
+  return d.toLocaleDateString('ca-ES', { day: 'numeric', month: 'short' });
+}
+function fmtMonth(ym) {
+  const [y, m] = ym.split('-');
+  return new Date(+y, +m - 1, 1).toLocaleDateString('ca-ES', { month: 'short', year: '2-digit' });
+}
+function fmtPeriod(start, end) {
+  const f = s => new Date(s + 'T12:00:00').toLocaleDateString('ca-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+  return f(start) + ' – ' + f(end);
 }
 </script>
 </body>
