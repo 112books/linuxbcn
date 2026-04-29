@@ -470,5 +470,34 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-04-25*
+## 18. Historial de tasques — 2026-04-29
+
+**Dashboard /admin/ reescrit — arquitectura cache JSON + Chart.js**
+
+*Problema resolt*
+- El dashboard anterior feia 1 crida API per dia del gràfic (7 dies = 7 crides × 350ms ≈ 2.5s mínims; 30 dies ≈ 11s). Les dades dels KPIs eren inconsistents per rate limiting de GoatCounter.
+
+*Arquitectura nova (igual que Machiroku)*
+- `static/admin/fetch-analytics.php`: script PHP que fa **5 crides API seqüencials** a GoatCounter (~5s) i escriu `analytics-cache.json` al directori `/admin/`. S'activa manualment amb el botó "↻ actualitzar" del dashboard.
+- `static/admin/analytics-cache.json`: cache JSON amb totes les dades (hits per dia, pàgines, idiomes, seccions, projectes, referrers, navegadors, SO, dispositius). Carregat en una sola petició HTTP instantània. Inclou fitxer de mostra per preview local.
+- `static/admin/index.html`: dashboard completament reescrit:
+  - KPIs calculats al client des del JSON (avui / 7d / 30d / total any)
+  - Gràfic Chart.js (self-hosted) — línia amb àrea de fill, hover tooltips, selector dia/setmana/mes
+  - Tabs: Temporal / Pàgines / Dispositius
+  - Barres animades amb CSS transition
+  - "Darrera actualització" al topbar
+  - Eliminada la secció "Accions per augmentar visites"
+- `static/js/chart.umd.min.js`: Chart.js 4.4.0 self-hosted (no CDN extern, compleix política JS del projecte)
+
+*Deploy i rsync*
+- `sync-linuxbcn.sh`: afegits `--no-times --ignore-errors` al rsync i excludes per a dirs legacy del VPS (`wptest`, `linuxbcn`, `favb`) — evita exit code 23 i warnings en futurs deploys
+
+*Flux d'ús al VPS*
+1. Primer accés: prémer "↻ actualitzar" per generar la caché (~5s)
+2. Accessos posteriors: carrega instantània des de `analytics-cache.json`
+3. Requerit: PHP + permisos d'escriptura al directori `/admin/` (ja existents si `gc-proxy.php` funcionava)
+
+---
+
+*Última actualització: 2026-04-29*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
