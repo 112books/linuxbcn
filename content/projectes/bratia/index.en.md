@@ -1,7 +1,7 @@
 ---
 title: "Bratia"
 slug: "bratia"
-weight: 3
+weight: 4
 year: 2025
 client: "music band"
 sector: "music"

@@ -1,7 +1,7 @@
 ---
 title: "Machiroku"
 slug: "machiroku"
-weight: 4
+weight: 5
 year: 2025
 client: "restaurant"
 sector: "local-business"
