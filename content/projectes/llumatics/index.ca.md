@@ -31,6 +31,12 @@ La fitxa de cada taller inclou objectiu, metodologia, continguts clau, material 
 
 ---
 
+## Agenda: tallers propis i col·laboracions externes
+
+L'agenda recull tota l'activitat formativa en un sol lloc: els tallers regulars al laboratori propi i els que Llumàtics imparteix per a centres culturals, escoles, festivals i altres organitzacions. Cadascun amb informació completa, dates, preus i formulari de pre-reserva integrat.
+
+---
+
 ## Pre-reserva i llista d'espera
 
 Quan un taller s'omple, el lloc no talla el procés: ofereix unir-se a la llista d'espera. Si s'aconsegueix completar el grup des d'aquesta llista, el preu per als participants és millor. Un incentiu per a qui confia en el projecte abans que el taller estigui confirmat.
@@ -45,9 +51,17 @@ Un formulari orientat per regalar tallers a algú: guia la persona que regala pe
 
 ---
 
-## Documentació online per a alumnes
+## Documentació online per a alumnes *(en desenvolupament)*
 
-Cada taller té associada documentació personalitzada: teoria del procés, passos de laboratori, referències visuals i fitxes tècniques. Accessible en línia per als alumnes inscrits, sense necessitat de descarregar PDFs als grups de WhatsApp.
+Cada alumne tindrà accés a un espai personalitzat amb la documentació del taller cursat: teoria del procés, passos de laboratori, referències visuals i fitxes tècniques. I un petit diploma nominatiu que acredita la realització del taller.
+
+Sense grups de WhatsApp, sense PDFs perduts. La documentació on cal, quan cal.
+
+---
+
+## Butlletí des del laboratori
+
+Una llista de correu per als qui volen saber quan s'obre un nou taller, quan hi ha dates especials o quan passa alguna cosa interessant des del laboratori. Sense algoritmes intermediaris: el correu arriba directament.
 
 ---
 
@@ -56,3 +70,9 @@ Cada taller té associada documentació personalitzada: teoria del procés, pass
 El lloc incorpora cerca nativa entre tallers, agenda i blog. Sense JavaScript extern, sense dependències de tercers, sense Google Fonts ni scripts de tercers.
 
 La migració de WordPress a Hugo va reduir dràsticament els temps de càrrega. Cap base de dades, cap plugin, cap superfície d'atac innecessària.
+
+---
+
+## Un model per a qualsevol organització formativa
+
+Llumàtics és un exemple concret del que LinuxBCN pot construir per a qui es dedica a la formació — sigui fotografia analògica, ceràmica, música, cuina o qualsevol altra disciplina. Un lloc web que no és un catàleg passiu, sinó una eina activa: gestiona l'agenda, facilita les reserves, fidelitza l'alumnat i comunica sense dependre de plataformes externes.
