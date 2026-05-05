@@ -160,7 +160,7 @@
     /* ── KPIs ───────────────────────────────────────── */
     .kpis {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
       margin-bottom: 2rem;
       list-style: none;
@@ -365,6 +365,9 @@
     .empty { color: var(--ink3); font-size: 11px; font-style: italic; padding: .4rem 0; display: block; }
 
     /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 1080px) {
+      .kpis { grid-template-columns: repeat(3, 1fr); }
+    }
     @media (max-width: 860px) {
       .kpis { grid-template-columns: repeat(2, 1fr); }
       .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -431,6 +434,10 @@
         <dt>total any</dt>
         <dd><div class="kpi-value" id="kpi-total">—</div><div class="kpi-sub" id="sub-total"></div></dd>
       </div>
+      <div class="kpi">
+        <dt>pàg./sessió</dt>
+        <dd><div class="kpi-value" id="kpi-pps">—</div><div class="kpi-sub">pàgines per visita única</div></dd>
+      </div>
     </dl>
 
     <!-- Tabs -->
@@ -480,6 +487,9 @@
         El trànsit directe (URL escrita, marcadors, navegació privada) no genera referrer. Normal en un lloc web nou.
         A mesura que creixin els links externs i la indexació orgànica, apareixeran aquí els orígens.
       </div>
+
+      <h2 class="section-title">localització de les visites</h2>
+      <div id="locations-wrap" class="bars"></div>
     </div>
 
     <!-- TAB: Dispositius -->
@@ -693,6 +703,9 @@ function renderAll(data) {
   setText('kpi-total', fmt(total));
   setText('sub-total', p.start && p.end ? fmtPeriod(p.start, p.end) : '');
 
+  const unique = data.total_unique || 0;
+  setText('kpi-pps', unique > 0 ? (total / unique).toFixed(1) : '—');
+
   setTopbarGen(data.generated);
 
   renderChart(data);
@@ -701,6 +714,7 @@ function renderAll(data) {
   renderPages(data);
   renderProjects(data);
   renderRefs(data);
+  renderLocations(data);
   renderDevices(data);
   renderBrowsersSystems(data);
   renderDispositiusInsight(data);
@@ -891,6 +905,10 @@ function renderProjects(data) {
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count);
   renderBars('projects-wrap', items, 'name');
+}
+
+function renderLocations(data) {
+  renderBars('locations-wrap', (data.locations || []).slice(0, 15), 'name');
 }
 
 function renderRefs(data) {

@@ -94,36 +94,29 @@ $end   = date('Y-m-d');
 $start = date('Y-m-d', strtotime('-365 days'));
 $base_params = ['start' => $start, 'end' => $end, 'limit' => 200];
 
-$hits_raw = gc_fetch('/stats/hits', $base_params);
-usleep(400000); // 400ms
-
-$refs_raw = gc_fetch('/stats/refs', array_merge($base_params, ['limit' => 20]));
-usleep(400000);
-
-$brow_raw = gc_fetch('/stats/browsers', $base_params);
-usleep(400000);
-
-$sys_raw = gc_fetch('/stats/systems', $base_params);
-usleep(400000);
-
-$size_raw = gc_fetch('/stats/sizes', $base_params);
+$hits_raw = gc_fetch('/stats/hits',      $base_params); usleep(400000);
+$refs_raw = gc_fetch('/stats/refs',      array_merge($base_params, ['limit' => 20])); usleep(400000);
+$brow_raw = gc_fetch('/stats/browsers',  $base_params); usleep(400000);
+$sys_raw  = gc_fetch('/stats/systems',   $base_params); usleep(400000);
+$size_raw = gc_fetch('/stats/sizes',     $base_params); usleep(400000);
+$loc_raw  = gc_fetch('/stats/locations', array_merge($base_params, ['limit' => 20]));
 
 // ── Processa hits ─────────────────────────────────────────────────────────────
 
 $hits_by_day = [];
 $by_lang     = [];
 $by_section  = [];
-$hits_list   = [];
-$total       = 0;
+$hits_list    = [];
+$total        = 0;
+$total_unique = 0;
 
 foreach (($hits_raw['hits'] ?? []) as $path_item) {
     $path = (string)($path_item['path'] ?? '');
-    // Exclou pàgines admin i assets
     if (str_starts_with($path, '/admin') || str_ends_with($path, '.php')) continue;
 
-    $lang    = extract_lang($path);
-    $section = extract_section($path);
-    $path_total = 0;
+    $lang        = extract_lang($path);
+    $section     = extract_section($path);
+    $path_total  = 0;
     $path_unique = (int)($path_item['total_unique'] ?? 0);
 
     foreach (($path_item['stats'] ?? []) as $stat) {
@@ -136,6 +129,7 @@ foreach (($hits_raw['hits'] ?? []) as $path_item) {
         $by_section[$section] = ($by_section[$section] ?? 0) + $count;
         $hits_by_day[$date]   = ($hits_by_day[$date] ?? 0) + $count;
     }
+    $total_unique += $path_unique;
     if ($path_total > 0) {
         $hits_list[] = ['path' => $path, 'count' => $path_total, 'count_unique' => $path_unique];
     }
@@ -164,7 +158,9 @@ foreach (($refs_raw['refs'] ?? []) as $ref) {
 $output = [
     'generated'   => gmdate('Y-m-d\TH:i:s\Z'),
     'period'      => ['start' => $start, 'end' => $end],
-    'total'       => $total,
+    'total'        => $total,
+    'total_unique' => $total_unique,
+    'locations'    => norm_items($loc_raw['locations'] ?? [], 'location'),
     'hits_by_day' => $hbd_arr,
     'hits'        => array_slice($hits_list, 0, 50),
     'by_lang'     => $by_lang,
