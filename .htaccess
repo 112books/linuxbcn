@@ -1,0 +1,81 @@
+ErrorDocument 404 /ca/404.html
+
+# ─── Redirects des de WordPress (301 per preservar SEO) ──────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Arrel → versió catalana (Hugo genera alias però per si de cas)
+  RewriteRule ^$ /ca/ [R=301,L]
+
+  # Bloqueig i redirect d'URLs de WordPress
+  RewriteRule ^wp-admin(.*)$        /ca/ [R=301,L]
+  RewriteRule ^wp-login\.php$       /ca/ [R=301,L]
+  RewriteRule ^wp-cron\.php$        - [F,L]
+  RewriteRule ^xmlrpc\.php$         - [F,L]
+  RewriteRule ^wp-content/(.*)$     /ca/ [R=301,L]
+  RewriteRule ^wp-includes/(.*)$    - [F,L]
+
+  # Pàgines WordPress genèriques → seccions equivalents Hugo
+  RewriteRule ^category/projectes(/.*)?$  /ca/projectes/ [R=301,L]
+  RewriteRule ^category/(.*)$             /ca/ [R=301,L]
+  RewriteRule ^tag/(.*)$                  /ca/ [R=301,L]
+  RewriteRule ^page/[0-9]+/?$             /ca/ [R=301,L]
+  RewriteRule ^\?p=[0-9]+$               /ca/ [R=301,L]
+  RewriteRule ^feed(/.*)?$                /ca/index.xml [R=301,L]
+
+  # Pàgines antigues conegudes de WordPress → equivalents Hugo
+  RewriteRule ^qui-som/?$           /ca/qui-som/ [R=301,L]
+  RewriteRule ^about/?$             /en/qui-som/ [R=301,L]
+  RewriteRule ^contacte/?$          /ca/contacte/ [R=301,L]
+  RewriteRule ^contact/?$           /en/contacte/ [R=301,L]
+  RewriteRule ^projectes/?$         /ca/projectes/ [R=301,L]
+  RewriteRule ^projects/?$          /en/projectes/ [R=301,L]
+  RewriteRule ^serveis/?$           /ca/solucions/ [R=301,L]
+  RewriteRule ^services/?$          /en/solucions/ [R=301,L]
+
+  # Projectes antics → nous (afegir aquí si es coneixen URLs velles específiques)
+  RewriteRule ^bratia/?$            /ca/projectes/bratia/ [R=301,L]
+  RewriteRule ^machiroku/?$         /ca/projectes/machiroku/ [R=301,L]
+  RewriteRule ^favb/?$              /ca/projectes/favb/ [R=301,L]
+  RewriteRule ^malditasmaquinas/?$  /ca/malditasmaquinas/ [R=301,L]
+</IfModule>
+
+# ─── Security Headers ────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # CSP: self + GoatCounter + unsafe-inline (necessari per 404 animada i admin dashboard)
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' gc.zgo.at 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' linuxbcn.goatcounter.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+  Header always unset X-Powered-By
+  Header always unset Server
+</IfModule>
+
+# ─── Desactiva llistat de directoris ─────────────────────────────────────────
+Options -Indexes
+
+# ─── Protegeix fitxers sensibles ─────────────────────────────────────────────
+<FilesMatch "(^\.htaccess|CLAUDE\.md|AGENTS\.md|\.toml|\.env)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# ─── Compressió ──────────────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# ─── Caché d'assets estàtics ─────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

@@ -1,0 +1,91 @@
+{
+  "generated": "2026-04-29T10:00:00Z",
+  "period": {
+    "start": "2025-04-29",
+    "end": "2026-04-29"
+  },
+  "total": 312,
+  "hits_by_day": [
+    {"date": "2026-03-30", "count": 4},
+    {"date": "2026-03-31", "count": 7},
+    {"date": "2026-04-01", "count": 5},
+    {"date": "2026-04-02", "count": 3},
+    {"date": "2026-04-03", "count": 2},
+    {"date": "2026-04-04", "count": 6},
+    {"date": "2026-04-05", "count": 8},
+    {"date": "2026-04-06", "count": 11},
+    {"date": "2026-04-07", "count": 9},
+    {"date": "2026-04-08", "count": 14},
+    {"date": "2026-04-09", "count": 7},
+    {"date": "2026-04-10", "count": 5},
+    {"date": "2026-04-11", "count": 3},
+    {"date": "2026-04-12", "count": 8},
+    {"date": "2026-04-13", "count": 12},
+    {"date": "2026-04-14", "count": 18},
+    {"date": "2026-04-15", "count": 22},
+    {"date": "2026-04-16", "count": 16},
+    {"date": "2026-04-17", "count": 9},
+    {"date": "2026-04-18", "count": 7},
+    {"date": "2026-04-19", "count": 5},
+    {"date": "2026-04-20", "count": 11},
+    {"date": "2026-04-21", "count": 14},
+    {"date": "2026-04-22", "count": 19},
+    {"date": "2026-04-23", "count": 13},
+    {"date": "2026-04-24", "count": 8},
+    {"date": "2026-04-25", "count": 6},
+    {"date": "2026-04-26", "count": 4},
+    {"date": "2026-04-27", "count": 9},
+    {"date": "2026-04-28", "count": 7},
+    {"date": "2026-04-29", "count": 3}
+  ],
+  "hits": [
+    {"path": "/ca/", "count": 88, "count_unique": 71},
+    {"path": "/en/", "count": 22, "count_unique": 18},
+    {"path": "/ca/projectes/", "count": 41, "count_unique": 35},
+    {"path": "/ca/projectes/app-positivador/", "count": 28, "count_unique": 23},
+    {"path": "/ca/projectes/bratia/", "count": 19, "count_unique": 16},
+    {"path": "/ca/projectes/app-estenop/", "count": 17, "count_unique": 14},
+    {"path": "/ca/qui-som/", "count": 24, "count_unique": 20},
+    {"path": "/ca/solucions/", "count": 21, "count_unique": 18},
+    {"path": "/ca/contacte/", "count": 18, "count_unique": 15},
+    {"path": "/ca/com-treballem/", "count": 14, "count_unique": 12},
+    {"path": "/en/projectes/", "count": 12, "count_unique": 10},
+    {"path": "/ca/projectes/machiroku/", "count": 8, "count_unique": 7}
+  ],
+  "by_lang": {
+    "ca": 262,
+    "en": 50
+  },
+  "by_section": {
+    "inici": 110,
+    "projectes": 125,
+    "qui-som": 24,
+    "solucions": 21,
+    "contacte": 18,
+    "com-treballem": 14
+  },
+  "refs": [
+    {"name": "github.com", "count": 14},
+    {"name": "instagram.com", "count": 9},
+    {"name": "mastodon.social", "count": 5}
+  ],
+  "browsers": [
+    {"name": "Firefox", "id": "firefox", "count": 128},
+    {"name": "Chrome", "id": "chrome", "count": 97},
+    {"name": "Safari", "id": "safari", "count": 54},
+    {"name": "Brave", "id": "brave", "count": 23},
+    {"name": "Edge", "id": "edge", "count": 10}
+  ],
+  "systems": [
+    {"name": "Linux", "id": "linux", "count": 141},
+    {"name": "macOS", "id": "macos", "count": 88},
+    {"name": "Android", "id": "android", "count": 52},
+    {"name": "iOS", "id": "ios", "count": 21},
+    {"name": "Windows", "id": "windows", "count": 10}
+  ],
+  "sizes": [
+    {"name": "phone", "id": "phone", "count": 104},
+    {"name": "desktop", "id": "desktop", "count": 158},
+    {"name": "tablet", "id": "tablet", "count": 50}
+  ]
+}

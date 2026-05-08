@@ -1,0 +1,38 @@
+# LinuxBCN
+
+> Consultoria d'identitat digital per a artistes, col·lectius culturals i microempreses amb valors. Especialitzats en programari lliure, privacitat i sobirania de dades. Amb seu a Barcelona, Catalunya.
+
+Responsable: Joan Martínez Serres (Joan Linux) — joan@linuxbcn.com
+Web: https://linuxbcn.com
+Idiomes: Català (principal), Anglès
+
+## Sobre LinuxBCN
+
+- [Qui som](https://linuxbcn.com/ca/qui-som/): Joan Martínez Serres (Joan Linux), consultor d'identitat digital amb més de 25 anys d'experiència treballant amb projectes culturals, artístics i socials a Barcelona.
+- [Com treballem](https://linuxbcn.com/ca/com-treballem/): Metodologia basada en paquets d'hores, transparència i tecnologia lliure. Sense complicacions ni dependències de tercers.
+
+## Serveis
+
+- [Solucions per a músics i artistes](https://linuxbcn.com/ca/solucions/musics/): Presència digital, web, portfolio i distribució musical amb programari lliure.
+- [Solucions per a col·lectius culturals](https://linuxbcn.com/ca/solucions/collectius/): Webs per a espais culturals, associacions i federacions veïnals.
+- [Solucions per a microempreses](https://linuxbcn.com/ca/solucions/microempreses/): Web professional, manteniment i identitat digital per a petits negocis amb valors.
+
+## Projectes destacats
+
+- [Bratia](https://linuxbcn.com/ca/projectes/bratia/): Web per a la banda de Balkan Gypsy Jazz Bratia. Hugo, multilingüe, portfolio musical.
+- [FAVB](https://linuxbcn.com/ca/projectes/favb/): Federació d'Associacions de Veïns i Veïnes de Barcelona. Web i comunicació.
+- [Carrer.cat](https://linuxbcn.com/ca/projectes/carrer/): Publicació de referència del moviment veïnal barceloní.
+- [Machiroku](https://linuxbcn.com/ca/projectes/machiroku/): Restaurant japonès al centre de Barcelona. Redisseny web complet.
+- [MalditasMaquinas](https://linuxbcn.com/ca/projectes/malditasmaquinas/): Consultoria tecnològica especialitzada. WebApp SPA vanilla JS + backend distribuït.
+- [112Books](https://linuxbcn.com/ca/projectes/112books/): Editorial independent de fotografia.
+- [Positivador WebApp](https://linuxbcn.com/ca/projectes/app-positivador/): Eina web per a fotografia analògica (invertir negatius en temps real).
+
+## Principis tecnològics
+
+LinuxBCN treballa exclusivament amb programari lliure i auditables. Cap dependència de Google Analytics, Meta Pixel, CDNs externs no auditats. Analítica amb GoatCounter (privacitat per disseny). Fonts self-hosted. Allotjament en VPS propi.
+
+## Contacte
+
+- [Contacte i diagnosi inicial](https://linuxbcn.com/ca/contacte/)
+- Email: joan@linuxbcn.com
+- Instagram: https://www.instagram.com/linuxbcn_oficial/
