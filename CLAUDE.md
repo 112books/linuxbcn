@@ -499,5 +499,23 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-04-29*
+## 19. Historial de tasques — 2026-05-09
+
+**Fix analytics dashboard — GoatCounter API v0**
+
+- `fetch-analytics.php`: fix parsing resposta API
+  - `/stats/refs` → `/stats/toprefs`
+  - `$raw['browsers']` → `$raw['stats']` (ídem systems, sizes, locations, refs)
+  - `norm_items`: llegir `item['count']` directament (no `stats[].daily`)
+  - **Resultat:** navegadors, SO i dispositius ja apareixen al dashboard
+- `index.html`: KPI "pàg./sessió" → "mitjana/dia"
+  - GoatCounter API v0 no retorna `total_unique` → impossible calcular pàg./sessió
+  - Substituït per `total / dies_amb_dades` (mitjana diària)
+- **Deploy admin a linuxbcn.com:** SSH clau no configurada al compte Dinahosting
+  - Solució: pujar `fetch-analytics.php` i `index.html` manualment via gestor de fitxers web Dinahosting → `www/admin/`
+  - ⚠️ Per configurar SSH: Dinahosting panell → "Claves SSH" → afegir `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE6DQIGshYP8gth7ZHyG+r/cegO+oe9LSBPOqhBIYO8Q hola@112books.eu`
+
+---
+
+*Última actualització: 2026-05-09*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
