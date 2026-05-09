@@ -5,6 +5,7 @@ weight: 3
 year: 2026
 client: "Llumàtics"
 sector: "fotografia"
+featured: true
 draft: false
 image: "positivitzador.png"
 ---

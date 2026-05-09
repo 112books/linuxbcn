@@ -5,6 +5,7 @@ weight: 10
 year: 2024
 client: "publicació veïnal"
 sector: "comunicació"
+featured: true
 draft: false
 image: "01-carrer.png"
 ---

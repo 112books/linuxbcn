@@ -5,6 +5,7 @@ weight: 9
 year: 2025
 client: "projecte propi"
 sector: "serveis"
+featured: true
 draft: false
 image: "01-malditasmaquinas.png"
 ---

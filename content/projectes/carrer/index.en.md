@@ -5,6 +5,7 @@ weight: 10
 year: 2024
 client: "neighbourhood publication"
 sector: "communication"
+featured: true
 draft: false
 image: "01-carrer.png"
 ---

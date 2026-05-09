@@ -1,7 +1,7 @@
 ---
 title: "GoatCounter Dashboard"
 slug: "goatcounter-dashboard"
-weight: 1
+weight: 14
 year: 2026
 client: "LinuxBCN"
 sector: "eines-digitals"

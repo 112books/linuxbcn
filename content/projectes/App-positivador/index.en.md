@@ -5,6 +5,7 @@ weight: 3
 year: 2026
 client: "Llumatics"
 sector: "photographic training"
+featured: true
 draft: false
 image: "positivitzador.png"
 ---

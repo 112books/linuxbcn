@@ -12,7 +12,7 @@
 
 <div class="projects-grid">
   {{ range .Pages }}
-  <a href="{{ .RelPermalink }}" class="project-card">
+  <a href="{{ .RelPermalink }}" class="project-card{{ if .Params.featured }} project-card--featured{{ end }}">
     <div class="card-thumb">
       {{ $proj := . }}
       {{ with .Params.image }}

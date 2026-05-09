@@ -1,7 +1,7 @@
 ---
 title: "Llumàtics"
 slug: "llumatics"
-weight: 1
+weight: 7
 year: 2026
 client: "own project"
 sector: "education / photography"

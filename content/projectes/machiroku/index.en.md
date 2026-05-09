@@ -5,6 +5,7 @@ weight: 5
 year: 2025
 client: "restaurant"
 sector: "local-business"
+featured: true
 draft: false
 image: "02-machiroku-nova.png"
 ---

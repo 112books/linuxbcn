@@ -5,6 +5,7 @@ weight: 9
 year: 2025
 client: "own project"
 sector: "services"
+featured: true
 draft: false
 image: "01-malditasmaquinas.png"
 ---
