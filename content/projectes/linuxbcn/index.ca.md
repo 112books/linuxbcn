@@ -1,7 +1,7 @@
 ---
 title: "LinuxBCN"
 slug: "linuxbcn-arquitectura-sistema-digital"
-weight: 13
+weight: 14
 year: 2026
 client: "projecte propi"
 sector: "serveis"

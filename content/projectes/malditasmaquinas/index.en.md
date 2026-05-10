@@ -1,7 +1,7 @@
 ---
 title: "MalditasMaquinas"
 slug: "malditasmaquinas"
-weight: 9
+weight: 10
 year: 2025
 client: "own project"
 sector: "services"

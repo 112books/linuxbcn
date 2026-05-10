@@ -1,7 +1,7 @@
 ---
 title: "112Books"
 slug: "112books"
-weight: 7
+weight: 8
 year: 2025
 client: "projecte propi"
 sector: "editorial"

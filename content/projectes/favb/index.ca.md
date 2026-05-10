@@ -1,7 +1,7 @@
 ---
 title: "FAVB"
 slug: "favb"
-weight: 11
+weight: 12
 year: 2024
 client: "federació veïnal"
 sector: "associatiu"

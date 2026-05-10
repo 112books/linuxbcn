@@ -1,7 +1,7 @@
 ---
 title: "112Revelats"
 slug: "112revelats"
-weight: 8
+weight: 9
 year: 2025
 client: "publisher"
 sector: "photography"

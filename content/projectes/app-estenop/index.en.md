@@ -1,7 +1,7 @@
 ---
 title: "Estenop — Pinhole calculator"
 slug: "app-estenop"
-weight: 2
+weight: 3
 year: 2026
 client: "LinuxBCN"
 sector: "fotografia"
