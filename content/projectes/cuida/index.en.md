@@ -8,7 +8,7 @@ client: "LinuxBCN"
 draft: false
 image: "cures-01.png"
 aliases:
-  - /en/cuida/
+  - /cuida/
 ---
 
 **Cuida** is a free, open-source web app built for families caring for a sick relative at home. It brings together everything you need to know: medical contacts, medication, emergency protocols and caregiver schedules — accessible from everyone's phone.

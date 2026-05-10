@@ -8,7 +8,7 @@ client: "LinuxBCN"
 draft: false
 image: "cures-01.png"
 aliases:
-  - /ca/cuida/
+  - /cuida/
 ---
 
 **Cuida** és una aplicació web gratuïta i de codi obert pensada per a famílies que cuiden d'un familiar malalt a casa. Centralitza tot el que cal saber: contactes mèdics, medicació, protocols d'urgències i horaris de cuidadors, accessible des del mòbil de tothom qui en forma part.
