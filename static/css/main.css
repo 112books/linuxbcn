@@ -118,6 +118,9 @@ a:hover {
 .site-header {
   background: var(--header-bg);
   border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
 }
 
 .header-top {
@@ -127,6 +130,18 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
+  max-height: 120px;
+  transition: max-height 0.3s ease, padding 0.3s ease, visibility 0s linear 0s;
+  visibility: visible;
+}
+
+.site-header.is-scrolled .header-top {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  visibility: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease, visibility 0s linear 0.3s;
 }
 
 .nav-brand {
@@ -201,15 +216,45 @@ a:hover {
 
 .header-nav {
   border-top: 1px solid var(--border);
+  background: var(--header-bg);
 }
 
 .header-nav-inner {
-  max-width: 1100px;
+  max-width: var(--max);
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
   align-items: stretch;
   gap: 0;
+}
+
+.nav-brand-compact {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding-right: 1.4rem;
+  margin-right: auto;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: max-width 0.3s ease, opacity 0.25s ease;
+}
+
+.nav-brand-compact .bcn {
+  color: var(--accent);
+}
+
+.site-header.is-scrolled .nav-brand-compact {
+  max-width: 160px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .nav-link {
@@ -491,27 +536,30 @@ li:has(> a:only-child) a:hover {
 }
 
 /* =====================
-   PROJECTES grid
+   PROJECTES llista
    ===================== */
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  overflow: hidden;
-  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
   margin-top: 2rem;
 }
 
 .project-card {
-  background: var(--bg);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  min-height: 180px;
   text-decoration: none;
   color: inherit;
-  box-shadow: 1px 1px 0 0 var(--accent);
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
   transition: background 0.2s;
+}
+
+.project-card--featured {
+  grid-column: unset;
 }
 
 .project-card:hover {
@@ -536,10 +584,7 @@ li:has(> a:only-child) a:hover {
 }
 
 .card-thumb {
-  width: 100%;
-  aspect-ratio: 16/9;
   overflow: hidden;
-  background: var(--border);
 }
 
 .card-thumb img {
@@ -548,6 +593,7 @@ li:has(> a:only-child) a:hover {
   object-fit: cover;
   object-position: top center;
   transition: transform 0.4s ease;
+  display: block;
 }
 
 .project-card:hover .card-thumb img {
@@ -560,7 +606,7 @@ li:has(> a:only-child) a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e8e6e0;
+  background: var(--accent-faint);
 }
 
 .card-thumb-placeholder span {
@@ -571,11 +617,11 @@ li:has(> a:only-child) a:hover {
 }
 
 .card-body {
-  padding: 1rem;
-  flex: 1;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  justify-content: center;
 }
 
 .card-sector {
@@ -600,8 +646,7 @@ li:has(> a:only-child) a:hover {
   font-family: var(--mono);
   font-size: 0.7rem;
   color: var(--ink3);
-  margin-top: auto;
-  padding-top: 0.5rem;
+  margin-top: 0.5rem;
   transition: color 0.2s;
 }
 
@@ -615,31 +660,22 @@ li:has(> a:only-child) a:hover {
   margin-top: 0.3rem;
 }
 
-.project-card--featured {
-  grid-column: span 2;
-}
-
 .project-card--featured .card-thumb {
-  aspect-ratio: 21/9;
+  aspect-ratio: unset;
 }
 
-@media (max-width: 900px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .project-card--featured {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .projects-grid {
+@media (max-width: 540px) {
+  .project-card {
     grid-template-columns: 1fr;
+    min-height: unset;
   }
 
-  .project-card--featured {
-    grid-column: span 1;
+  .card-thumb {
+    aspect-ratio: 16/9;
+  }
+
+  .card-body {
+    padding: 1rem;
   }
 }
 

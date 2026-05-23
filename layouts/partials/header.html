@@ -15,6 +15,7 @@
   </div>
   <nav class="header-nav" aria-label="Menú principal">
     <div class="header-nav-inner">
+      <a href="{{ printf "%s%s/" $.Site.BaseURL $.Site.Language.Lang }}" class="nav-brand-compact">Linux<span class="bcn">BCN</span></a>
       {{ range .Site.Menus.main }}
         <a href="{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang .URL }}" class="nav-link">{{ .Name }}</a>
       {{ end }}
