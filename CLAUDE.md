@@ -517,5 +517,43 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-05-09*
+## 20. Historial de tasques — 2026-05-23
+
+**Disseny i maquetació — millores globals**
+
+*Header sticky col·lapsable*
+- `static/js/header.js`: creat — detecta scroll (>20px) i afegeix/treu classe `.is-scrolled` al `.site-header`
+- `layouts/_default/baseof.html`: afegit `<script src="js/header.js" defer>` just abans de `</body>`
+- `layouts/partials/header.html`: afegit `.nav-brand-compact` (logo petit) com a primer fill de `.header-nav-inner`
+- `static/css/main.css`:
+  - `.site-header`: ara és `position: sticky; top: 0; z-index: 200`
+  - `.header-top`: col·lapsa en scroll amb `max-height` + `visibility` transition (0.3s)
+  - `.header-nav`: eliminat sticky (ara el porta el site-header)
+  - `.nav-brand-compact`: ocult per defecte (`max-width: 0; min-width: 0; overflow: hidden; opacity: 0`); apareix en scroll amb `max-width: 160px; opacity: 1; margin-right: auto`
+  - **Clau:** `min-width: 0` necessari per evitar que flexbox ignori el `max-width: 0`
+
+*Alineació menú ↔ contingut principal*
+- Problema: `.header-nav-inner` tenia `padding-left: 1.5rem` i `.nav-link` afegeix `padding-left: 1.1rem` → el text dels links quedava a 2.6rem, no alineat amb el contingut (1.5rem)
+- Solució: `padding-left: 0.4rem` al nav-inner (0.4 + 1.1 = 1.5rem = alineat)
+- En estat scrolled: `.site-header.is-scrolled .header-nav-inner { padding-left: 1.5rem }` per mantenir el logo alineat amb el contingut
+- En estat no-scrolled: `margin-right: 0` al logo compacte (no consumeix espai i no desplaça els links)
+
+*Graella de projectes → llista horitzontal*
+- `.projects-grid`: de `grid 2 columnes` a `flex column` amb `gap: 2rem; border-top; padding-top: 2rem`
+- `.project-card`: de flex-column a `grid 2fr 3fr` (imatge esq, text dreta), `min-height: 180px`
+- Eliminada la distinció visual de `project-card--featured` (tots iguals)
+- Imatge: omple l'alçada de la targeta (`height: 100%; object-fit: cover`)
+- Placeholder: usa `--accent-faint` (eliminat `#e8e6e0` hardcoded)
+- Mòbil (<540px): torna a layout vertical (imatge 16:9 a dalt, text a sota)
+
+*Footer*
+- Tagline "LinuxBCN · ..." ara amb `color: var(--accent)` (inline style al partial)
+
+*GitHub Actions — fix deploy staging*
+- Error 401 Bad credentials al deploy de GitHub Pages
+- Solució: Settings → Pages → Source canviat a "GitHub Actions" (estava en "Deploy from a branch")
+
+---
+
+*Última actualització: 2026-05-23*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
