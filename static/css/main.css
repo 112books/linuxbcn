@@ -222,7 +222,7 @@ a:hover {
 .header-nav-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 0 0.4rem;
   display: flex;
   align-items: stretch;
   gap: 0;
@@ -238,7 +238,7 @@ a:hover {
   display: flex;
   align-items: center;
   padding-right: 1.4rem;
-  margin-right: auto;
+  margin-right: 0;
   max-width: 0;
   min-width: 0;
   overflow: hidden;
@@ -256,6 +256,11 @@ a:hover {
   max-width: 160px;
   opacity: 1;
   pointer-events: auto;
+  margin-right: auto;
+}
+
+.site-header.is-scrolled .header-nav-inner {
+  padding-left: 1.5rem;
 }
 
 .nav-link {

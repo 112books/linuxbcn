@@ -1,6 +1,6 @@
 <footer>
   <div class="footer-left">
-    <span>LinuxBCN · {{ i18n "footer_tagline" }}</span>
+    <span style="color: var(--accent)">LinuxBCN · {{ i18n "footer_tagline" }}</span>
     <div class="footer-links">
       {{ $base := printf "%s%s" $.Site.BaseURL $.Site.Language.Lang }}
       <a href="{{ printf "%s/qui-som/" $base }}">{{ i18n "footer_link_about" }}</a> ·
