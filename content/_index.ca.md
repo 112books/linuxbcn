@@ -41,7 +41,7 @@ Posem la tecnologia al servei del projecte — no al revés.
 
 ---
 
-## Per a qui treballem
+## Per a qui treballem a Barcelona i Catalunya
 
 Tenim experiència concreta amb:
 

@@ -2,6 +2,8 @@
 title: "MalditasMaquinas"
 subtitle: "Consultoria tecnològica per a qui no sap per on començar"
 draft: false
+sitemap:
+  disable: true
 ---
 
 ## Què és MalditasMaquinas

@@ -39,24 +39,103 @@
 {{ end }}
 <link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}ca/">
 
-<!-- Schema.org LocalBusiness (homepage only) -->
+<!-- Schema.org structured data -->
 {{ if .IsHome }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "LinuxBCN",
-  "description": {{ .Site.Params.description | jsonify }},
-  "url": {{ .Site.BaseURL | jsonify }},
-  "email": "joan@linuxbcn.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Joan Martínez Serres",
-    "alternateName": "Joan Linux",
-    "jobTitle": "Consultor d'identitat digital"
-  },
-  "areaServed": { "@type": "City", "name": "Barcelona" },
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://linuxbcn.com/#organization",
+      "name": "LinuxBCN",
+      "description": "{{ .Site.Params.description }}",
+      "url": "https://linuxbcn.com/ca/",
+      "email": "joan@linuxbcn.com",
+      "foundingDate": "1999",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nau Bostik, Carrer de Ferran Turné, 16",
+        "addressLocality": "Barcelona",
+        "postalCode": "08027",
+        "addressRegion": "Catalunya",
+        "addressCountry": "ES"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Barcelona" },
+        { "@type": "AdministrativeArea", "name": "Catalunya" }
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://linuxbcn.com/#joan-linux",
+        "name": "Joan Martínez Serres",
+        "alternateName": "Joan Linux",
+        "jobTitle": "Consultor d'identitat digital",
+        "knowsLanguage": ["ca", "es", "en"],
+        "url": "https://linuxbcn.com/ca/qui-som/"
+      },
+      "sameAs": ["https://www.instagram.com/linuxbcn_oficial/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://linuxbcn.com/#website",
+      "name": "LinuxBCN",
+      "url": "https://linuxbcn.com/ca/",
+      "inLanguage": ["ca", "en"],
+      "publisher": { "@id": "https://linuxbcn.com/#organization" }
+    }
+  ]
+}
+</script>
+{{ end }}
+{{ if and (not .IsHome) (not (eq .Kind "taxonomy")) (not (eq .Kind "term")) }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ .Site.Title }}",
+      "item": "https://linuxbcn.com/{{ .Site.Language.Lang }}/"
+    }{{ if and .Parent (not .Parent.IsHome) }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Parent.Title }}",
+      "item": "{{ .Parent.Permalink }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }{{ else }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
+{{ if eq .Params.slug "qui-som" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://linuxbcn.com/#joan-linux",
+  "name": "Joan Martínez Serres",
+  "alternateName": "Joan Linux",
+  "jobTitle": "Consultor d'identitat digital",
+  "description": "Consultor d'identitat digital amb més de 25 anys d'experiència en tecnologia, cultura i comunicació digital a Barcelona.",
+  "url": "https://linuxbcn.com/ca/qui-som/",
+  "worksFor": { "@id": "https://linuxbcn.com/#organization" },
   "knowsLanguage": ["ca", "es", "en"],
+  "knowsAbout": ["Identitat digital", "Programari lliure", "Disseny web", "Privacitat i dades", "Hugo", "Linux"],
   "sameAs": ["https://www.instagram.com/linuxbcn_oficial/"]
 }
 </script>

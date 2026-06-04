@@ -10,7 +10,7 @@ Fonts: IBM Plex Mono, IBM Plex Sans — self-hosted
 Hosting: VPS Dinahosting (Barcelona)
 
 /* LLOC */
-Última actualització: 2026-04-25
+Última actualització: 2026-06-04
 Estàndards: HTML5, CSS3, WCAG 2.1 AA
 Idiomes: Català (principal), Anglès
 Llicència de contingut: CC BY-SA 4.0
