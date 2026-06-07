@@ -47,7 +47,21 @@ Cap base de dades. Cap plugin. Cap superfície d'atac servidor.
 
 ---
 
-![112 Revelats — portada](112revelats-screenshot.png)
+## Portada
+
+{{< gallery "112revelats-portada-desktop.png" "112revelats-portada-tablet.png" "112revelats-portada-mobil.png" >}}
+
+---
+
+## Convocatòria
+
+{{< gallery "112revelats-convocatoria-desktop.png" "112revelats-convocatoria-tablet.png" "112revelats-convocatoria-mobil.png" >}}
+
+---
+
+## Inscripció
+
+{{< gallery "112revelats-inscripcio-desktop.png" "112revelats-inscripcio-tablet.png" "112revelats-inscripcio-mobil.png" >}}
 
 ---
 

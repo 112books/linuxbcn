@@ -74,7 +74,21 @@ Twitter Cards, `sitemap.xml`, `robots.txt`, `noindex` a la 404.
 
 ---
 
-![A.W.P.C.P. — Edició 2026](awpcp.png)
+## Portada
+
+{{< gallery "awpcp-portada-desktop.png" "awpcp-portada-tablet.png" "awpcp-portada-mobil.png" >}}
+
+---
+
+## Edició 2026
+
+{{< gallery "awpcp-edicio-2026-desktop.png" "awpcp-edicio-2026-tablet.png" "awpcp-edicio-2026-mobil.png" >}}
+
+---
+
+## About
+
+{{< gallery "awpcp-about-desktop.png" "awpcp-about-tablet.png" "awpcp-about-mobil.png" >}}
 
 ---
 

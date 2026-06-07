@@ -47,7 +47,21 @@ No database. No plugins. No server-side attack surface.
 
 ---
 
-![112 Revelats — homepage](112revelats-screenshot.png)
+## Homepage
+
+{{< gallery "112revelats-portada-desktop.png" "112revelats-portada-tablet.png" "112revelats-portada-mobil.png" >}}
+
+---
+
+## Open call
+
+{{< gallery "112revelats-convocatoria-desktop.png" "112revelats-convocatoria-tablet.png" "112revelats-convocatoria-mobil.png" >}}
+
+---
+
+## Registration
+
+{{< gallery "112revelats-inscripcio-desktop.png" "112revelats-inscripcio-tablet.png" "112revelats-inscripcio-mobil.png" >}}
 
 ---
 
