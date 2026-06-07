@@ -49,19 +49,19 @@ No database. No plugins. No server-side attack surface.
 
 ## Homepage
 
-{{< gallery "112revelats-portada-desktop.png" "112revelats-portada-tablet.png" "112revelats-portada-mobil.png" >}}
+{{< gallery "112revelats-portada-desktop.png" "112revelats-portada-mobil.png" >}}
 
 ---
 
-## Open call
+## Challenges
 
-{{< gallery "112revelats-convocatoria-desktop.png" "112revelats-convocatoria-tablet.png" "112revelats-convocatoria-mobil.png" >}}
+{{< gallery "112revelats-reptes-desktop.png" "112revelats-reptes-mobil.png" >}}
 
 ---
 
-## Registration
+## FAQ
 
-{{< gallery "112revelats-inscripcio-desktop.png" "112revelats-inscripcio-tablet.png" "112revelats-inscripcio-mobil.png" >}}
+{{< gallery "112revelats-faq-desktop.png" "112revelats-faq-mobil.png" >}}
 
 ---
 
