@@ -25,7 +25,7 @@ sense base de dades, amb tot el contingut versionat a Git.
 ## Stack tècnic
 
 **Hugo 0.159** — 229 pàgines generades en menys de 5 segons.  
-**GitHub Pages** — CDN global, deploy automàtic, 0€/mes.  
+**GitHub Pages** — CDN global, deploy automàtic.  
 **GitHub Actions** — build i deploy en ~30 segons per push.  
 **GoatCounter** — analítica lleugera (3 KB), sense cookies, amb [dashboard propi](/projectes/goatcounter-dashboard/).
 

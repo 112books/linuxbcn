@@ -27,7 +27,7 @@ lighter, faster and fully self-managed via Git.
 ## Tech stack
 
 **Hugo extended** — native Sass processing, no runtime dependencies.  
-**GitHub Pages** — global CDN, 0€/month.  
+**GitHub Pages** — global CDN, automatic deploy.  
 **GitHub Actions** — automated build and deploy in ~20 seconds.  
 **GoatCounter** — cookieless analytics, GDPR-compliant, with [custom dashboard](/en/projectes/goatcounter-dashboard/).  
 **Formspree** — submission forms without proprietary backend.

@@ -25,7 +25,7 @@ GitHub Pages: no server, no database, all content versioned in Git.
 ## Tech stack
 
 **Hugo 0.159** — 229 pages generated in under 5 seconds.  
-**GitHub Pages** — global CDN, automatic deploy, 0€/month.  
+**GitHub Pages** — global CDN, automatic deploy.  
 **GitHub Actions** — build and deploy in ~30 seconds per push.  
 **GoatCounter** — lightweight analytics (3 KB), cookieless, with [custom dashboard](/en/projectes/goatcounter-dashboard/).
 
