@@ -5,6 +5,7 @@ slug: "cuida"
 weight: 1
 year: 2026
 client: "LinuxBCN"
+featured: true
 draft: false
 image: "cures-01.png"
 aliases:

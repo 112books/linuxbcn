@@ -1,23 +1,54 @@
 ---
-title: "112Revelats"
+title: "112 Revelats"
 slug: "112revelats"
 weight: 9
 year: 2025
-client: "publisher"
+client: "112Books"
 sector: "photography"
 draft: false
+image: "112revelats-screenshot.png"
 ---
 
 ## A platform for new voices in photography
 
-112Revelats is a project by publisher 112Books
-to give visibility to emerging photographers.
+112 Revelats is a project by publisher 112Books
+to give visibility to emerging photographers through
+the collective photobook format.
 
-Two annual open calls where new authors can publish
-a digital photobook in a collective format. If the project
-grows, also in print.
+Two open calls per year. Each edition, a group of authors
+publishes a digital photobook together. If the project
+takes root, also in print.
 
-Current website in WordPress, in the process of migration
-to Hugo now that the editorial model is well defined.
+The website has migrated from WordPress to Hugo —
+lighter, faster and fully self-managed via Git.
+
+---
+
+## Tech stack
+
+**Hugo extended** — native Sass processing, no runtime dependencies.  
+**GitHub Pages** — global CDN, 0€/month.  
+**GitHub Actions** — automated build and deploy in ~20 seconds.  
+**GoatCounter** — cookieless analytics, GDPR-compliant, with [custom dashboard](/en/projectes/goatcounter-dashboard/).  
+**Formspree** — submission forms without proprietary backend.
+
+3 languages · Catalan default · Spanish · English
+
+---
+
+## Architecture
+
+Flat structure with no taxonomies: each open call is a standalone page
+with its own content and registration form.
+The press kit is archived as a PDF accessible directly from
+the main menu.
+
+No database. No plugins. No server-side attack surface.
+
+---
+
+![112 Revelats — homepage](112revelats-screenshot.png)
+
+---
 
 → [112revelats.112books.eu](https://112revelats.112books.eu)
