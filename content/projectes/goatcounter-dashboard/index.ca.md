@@ -101,9 +101,31 @@ qualsevol persona del negoci pugui llegir i entendre.
 
 ---
 
+## Agent d'intel·ligència setmanal
+
+El dashboard és el punt de partida. L'agent automatitza el seguiment.
+
+Cada dilluns, un workflow de GitHub Actions executa quatre detectors
+sobre les dades de GoatCounter i Google Search Console:
+
+- **URLs mortes amb tràfic** — pàgines que reben visites però retornen 404
+- **Oportunitats de keyword** — termes on el lloc apareix entre les posicions 4–20
+- **Caigudes de secció** — seccions amb caiguda de tràfic superior al 30%
+- **Conversió baixa** — pàgines de contacte o serveis amb poc tràfic relatiu
+
+Els resultats s'empaqueten en un informe HTML i s'envien per correu.
+Cada finding inclou evidència, acció recomanada i estimació d'esforç.
+Quan l'acció és clara, l'agent obre un GitHub Issue directament al repositori.
+
+![Informe setmanal HTML amb KPIs i findings accionables](goatcounter-dashboard-informe-setmanal.png)
+
+Cap manual de revisió. Cap panel obert. L'informe arriba, es llegeix, i es decideix.
+
+---
+
 ## Tecnologia
 
-Hugo · GoatCounter · PHP · GitHub Actions · Chart.js · IBM Plex Mono
+Hugo · GoatCounter · PHP · GitHub Actions · Chart.js · IBM Plex Mono · Google Search Console · Python
 
 ---
 

@@ -101,9 +101,31 @@ anyone in the business can read and understand it.
 
 ---
 
+## Weekly intelligence agent
+
+The dashboard is the starting point. The agent automates the follow-up.
+
+Every Monday, a GitHub Actions workflow runs four detectors
+against GoatCounter and Google Search Console data:
+
+- **Dead URLs with traffic** — pages receiving visits that return 404
+- **Keyword opportunities** — terms where the site ranks between positions 4–20
+- **Section drops** — sections with a traffic drop above 30%
+- **Low conversion** — contact or service pages with low relative traffic
+
+The results are packaged into an HTML report and sent by email.
+Each finding includes evidence, a recommended action, and an effort estimate.
+When the action is clear, the agent opens a GitHub Issue directly in the repository.
+
+![Weekly HTML report with KPIs and actionable findings](goatcounter-dashboard-informe-setmanal.png)
+
+No manual reviews. No open dashboards. The report arrives, you read it, you decide.
+
+---
+
 ## Technology
 
-Hugo · GoatCounter · PHP · GitHub Actions · Chart.js · IBM Plex Mono
+Hugo · GoatCounter · PHP · GitHub Actions · Chart.js · IBM Plex Mono · Google Search Console · Python
 
 ---
 
