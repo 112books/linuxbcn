@@ -15,11 +15,13 @@ La càmera estenopeica no té lent. Té un forat. I aquest forat dicta tot: la l
 
 El problema és que la física de la pinhole no perdona els errors de càlcul. Un diafragma efectiu de f/128 o f/180, combinat amb la reciprocitat de cada emulsió, dona números que no és fàcil fer de cap. Fins ara.
 
-**Estenop** converteix el teu mòbil en el fotòmetre que necessitaves: llegeix la llum ambient directament des de la càmera, selecciones el teu diafragma i la teva pel·lícula, i obté el temps d'exposició corregit —reciprocitat inclosa— en qüestió de segons.
+**Estenop V2** converteix el teu mòbil en el fotòmetre que necessitaves: llegeix la llum ambient directament des de la càmera, selecciones el teu diafragma i la teva pel·lícula, i obté el temps d'exposició corregit —reciprocitat inclosa— en qüestió de segons.
 
 Sense taules. Sense calculadora. Sense errors.
 
-Prova-la aquí: [estenop.vercel.app](https://estenop.linuxbcn.com/)
+(La V2 corregeix un error important a la fórmula d'exposició i afegeix detecció d'EV per anàlisi de soroll del fotograma, que fa que funcioni a tots els navegadors, inclòs Safari a iOS.)
+
+Prova-la aquí: [estenop.linuxbcn.com](https://estenop.linuxbcn.com/)
 
 ---
 

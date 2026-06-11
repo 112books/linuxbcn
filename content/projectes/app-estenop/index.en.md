@@ -15,11 +15,13 @@ A pinhole camera has no lens. Just a hole. And that hole dictates everything: th
 
 The problem is that pinhole physics leaves no room for calculation errors. An effective aperture of f/128 or f/180, combined with the reciprocity characteristics of each emulsion, produces numbers that are hard to work out in your head. Until now.
 
-**Estenop** turns your phone into the light meter you needed: it reads ambient light directly from the camera, you select your aperture and film stock, and it gives you the corrected exposure time —reciprocity included— in seconds.
+**Estenop V2** turns your phone into the light meter you needed: it reads ambient light directly from the camera, you select your aperture and film stock, and it gives you the corrected exposure time —reciprocity included— in seconds.
 
 No charts. No calculator. No mistakes.
 
-Try it here: [estenop.vercel.app](https://estenop.linuxbcn.com/)
+(V2 fixes a critical bug in the exposure formula and adds EV detection via frame noise analysis, making it work on all browsers including Safari on iOS.)
+
+Try it here: [estenop.linuxbcn.com](https://estenop.linuxbcn.com/)
 
 ---
 
