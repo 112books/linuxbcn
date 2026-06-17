@@ -9,6 +9,7 @@ featured: true
 draft: false
 card_image: "ressona.png"
 card_image_contain: true
+image: "ressona.eu-01.png"
 ---
 
 ## Quan la imatge i la tecnologia parlen el mateix idioma
@@ -57,6 +58,6 @@ Músics en actiu que necessiten un lloc on enviar promotors i programadors. Actr
 
 No cal saber res de tecnologia. El dashboard d'administració és tan senzill com una pàgina de resultats d'una xarxa social — però privat, sense algoritmes, sense dades que surtin del servidor.
 
-{{< gallery "ressona.eu-01.png" "ressona.eu-02.png" "ressona.eu-03.png" "ressona.eu-04.png" "ressona.eu-05.png" "ressona.eu-06.png" "ressona.eu-07.png" >}}
+{{< gallery "ressona.eu-02.png" "ressona.eu-03.png" "ressona.eu-04.png" "ressona.eu-05.png" "ressona.eu-06.png" "ressona.eu-07.png" >}}
 
 → [ressona.eu](https://ressona.eu)
