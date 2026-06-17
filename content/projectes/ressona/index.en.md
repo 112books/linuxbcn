@@ -7,7 +7,7 @@ client: "own project"
 sector: "services"
 featured: true
 draft: false
-image: "ressona.png"
+image: "ressona-logo.svg"
 ---
 
 ## When image and technology speak the same language
