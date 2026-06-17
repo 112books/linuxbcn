@@ -13,9 +13,10 @@
 <div class="projects-grid">
   {{ range .Pages }}
   <a href="{{ .RelPermalink }}" class="project-card{{ if .Params.featured }} project-card--featured{{ end }}">
-    <div class="card-thumb">
-      {{ $proj := . }}
-      {{ with .Params.image }}
+    {{ $proj := . }}
+    {{ $cardImgName := or .Params.card_image .Params.image }}
+    <div class="card-thumb{{ if .Params.card_image_contain }} card-thumb--contain{{ end }}">
+      {{ with $cardImgName }}
         {{ $img := $proj.Resources.GetMatch . }}
         {{ if $img }}
           <img src="{{ $img.RelPermalink }}" alt="{{ $proj.Title }}" loading="lazy">
@@ -26,7 +27,7 @@
         {{ end }}
       {{ else }}
         <div class="card-thumb-placeholder">
-          {{ with .Params.client }}<span>{{ . }}</span>{{ end }}
+          {{ with $proj.Params.client }}<span>{{ . }}</span>{{ end }}
         </div>
       {{ end }}
     </div>

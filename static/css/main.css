@@ -606,6 +606,13 @@ li:has(> a:only-child) a:hover {
   transform: scale(1.04);
 }
 
+.card-thumb--contain img,
+.project-card:hover .card-thumb--contain img {
+  object-fit: contain;
+  padding: 25%;
+  transform: none;
+}
+
 .card-thumb-placeholder {
   width: 100%;
   height: 100%;
