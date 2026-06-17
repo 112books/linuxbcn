@@ -7,7 +7,6 @@ client: "projecte propi"
 sector: "serveis"
 featured: true
 draft: false
-image: "ressona-logo.svg"
 card_image: "ressona.png"
 card_image_contain: true
 ---
