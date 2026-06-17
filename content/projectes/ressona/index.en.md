@@ -56,4 +56,6 @@ Active musicians who need somewhere to send promoters and programmers. Actresses
 
 No technical knowledge required. The admin dashboard is as simple as a social media results page — but private, no algorithms, no data leaving the server.
 
+{{< gallery "ressona.eu-01.png" "ressona.eu-02.png" "ressona.eu-03.png" "ressona.eu-04.png" "ressona.eu-05.png" "ressona.eu-06.png" "ressona.eu-07.png" >}}
+
 → [ressona.eu](https://ressona.eu)
