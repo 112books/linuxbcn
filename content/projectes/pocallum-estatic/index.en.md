@@ -1,7 +1,7 @@
 ---
 title: "Pocallum — Cultural Photography with a Renewed Digital Presence"
 slug: "pocallum-estatic"
-weight: 2
+weight: 3
 year: 2026
 client: "Pocallum / Joan Linux Martínez"
 sector: "photography"
