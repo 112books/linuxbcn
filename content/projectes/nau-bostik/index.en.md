@@ -5,6 +5,8 @@ weight: 7
 year: 2025
 client: "self-managed cultural space"
 sector: "culture"
+description: "Website for Nau Bostik, self-managed sociocultural space in Barcelona's Sagrera neighbourhood. Digital presence for grassroots culture. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 ---
 

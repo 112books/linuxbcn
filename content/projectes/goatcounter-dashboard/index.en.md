@@ -5,6 +5,8 @@ weight: 15
 year: 2026
 client: "LinuxBCN"
 sector: "digital-tools"
+description: "Cookie-free self-hosted web analytics dashboard built on the GoatCounter API. LinuxBCN's own tool for clients who want privacy by design."
+lastmod: "2026-06-24"
 draft: false
 image: "goatcounter-dashboard-kpis.png"
 ---

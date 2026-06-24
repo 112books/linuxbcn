@@ -6,6 +6,8 @@ year: 2025
 client: "restaurant"
 sector: "negoci-local"
 featured: true
+description: "Redisseny web per a Machiroku, restaurant japonès al centre de Barcelona. Web ràpid, mòbil i fàcil de gestionar, sense dependències externes. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 image: "02-machiroku-nova.png"
 ---

@@ -5,6 +5,8 @@ weight: 9
 year: 2025
 client: "112Books"
 sector: "photography"
+description: "112 Revelats — analogue photography project. Lightweight website hosted on GitHub Pages, no dependencies. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 image: "112revelats-screenshot.png"
 ---

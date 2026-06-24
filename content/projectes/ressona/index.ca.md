@@ -6,6 +6,8 @@ year: 2026
 client: "projecte propi"
 sector: "serveis"
 featured: true
+description: "Ressona — identitat digital per a l'escola de música Ressona. Web multilingüe amb Hugo, galeria integrada i disseny propi. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 card_image: "ressona.png"
 card_image_contain: true

@@ -1,6 +1,7 @@
 ---
 title: "Cuida — App de coordinació familiar"
 description: "Aplicació web gratuïta i de codi obert per a famílies que cuiden d'un familiar malalt a casa. Contactes mèdics, medicació, protocols d'urgències i horaris de cuidadors, a un toc."
+lastmod: "2026-06-24"
 slug: "cuida"
 weight: 1
 year: 2026

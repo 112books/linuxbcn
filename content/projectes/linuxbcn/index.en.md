@@ -5,6 +5,8 @@ weight: 14
 year: 2026
 client: "own project"
 sector: "services"
+description: "LinuxBCN website as a technical project: Hugo architecture, custom theme, GoatCounter, Decap CMS and SEO optimisation. Digital system documentation."
+lastmod: "2026-06-24"
 draft: false
 image: "00-linuxbcn-nova-portada.png"
 ---

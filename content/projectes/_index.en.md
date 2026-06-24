@@ -4,6 +4,8 @@ subtitle: "Real work for real projects"
 intro: "The best we can show is what we've done. We have over 25 years of experience working with cultural, artistic and social projects in Barcelona and beyond."
 cta_url: "/contacte/"
 cta_label: "Let's talk"
+description: "LinuxBCN project portfolio: websites for musicians, cultural collectives, publishers and businesses in Barcelona. Free software, custom design."
+lastmod: "2026-06-24"
 draft: false
 ---
 

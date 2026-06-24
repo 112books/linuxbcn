@@ -6,6 +6,8 @@ year: 2025
 client: "own project"
 sector: "services"
 featured: true
+description: "MalditasMaquinas — technology consultancy platform. Vanilla JS SPA, distributed backend, Stripe, Telegram, multilingual, WCAG AA. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 image: "01-malditasmaquinas.png"
 ---

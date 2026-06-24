@@ -5,6 +5,8 @@ weight: 15
 year: 2026
 client: "LinuxBCN"
 sector: "eines-digitals"
+description: "Dashboard d'analítica web self-hosted sense cookies, construït sobre l'API de GoatCounter. Eina pròpia de LinuxBCN per a clients que volen privacitat per disseny."
+lastmod: "2026-06-24"
 draft: false
 image: "goatcounter-dashboard-kpis.png"
 ---

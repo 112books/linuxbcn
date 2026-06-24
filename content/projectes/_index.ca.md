@@ -4,6 +4,8 @@ subtitle: "Feina real per a projectes reals"
 intro: "El millor que podem explicar és el que hem fet. Portem més de 25 anys treballant amb projectes culturals, artístics i socials a Barcelona i més enllà."
 cta_url: "/contacte/"
 cta_label: "Parlem"
+description: "Portfolio de projectes de LinuxBCN: webs per a músics, col·lectius culturals, editorials i negocis a Barcelona. Programari lliure, disseny a mida."
+lastmod: "2026-06-24"
 draft: false
 ---
 

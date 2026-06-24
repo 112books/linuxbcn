@@ -5,6 +5,8 @@ weight: 10
 year: 2024
 client: "Around World Pinhole Crazy People"
 sector: "photography"
+description: "A.W.P.C.P. — website for Around World Pinhole Crazy People. International pinhole photography community. Hosted on GitHub Pages. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 image: "awpcp.png"
 ---

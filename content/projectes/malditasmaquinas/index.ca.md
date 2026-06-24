@@ -6,6 +6,8 @@ year: 2025
 client: "projecte propi"
 sector: "serveis"
 featured: true
+description: "MalditasMaquinas — plataforma de consultoria tecnològica. SPA vanilla JS, backend distribuït, Stripe, Telegram, multidioma, WCAG AA. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 image: "01-malditasmaquinas.png"
 ---

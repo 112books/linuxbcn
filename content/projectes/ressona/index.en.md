@@ -6,6 +6,8 @@ year: 2026
 client: "own project"
 sector: "services"
 featured: true
+description: "Ressona — digital identity for Ressona music school. Multilingual Hugo website with integrated gallery and custom design. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 card_image: "ressona.png"
 card_image_contain: true

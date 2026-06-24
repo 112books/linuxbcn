@@ -5,6 +5,8 @@ weight: 7
 year: 2025
 client: "espai cultural autogestionat"
 sector: "cultura"
+description: "Web per a la Nau Bostik, espai sociocultural autogestionat del barri de la Sagrera a Barcelona. Presència digital per a la cultura autogestionada. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 ---
 

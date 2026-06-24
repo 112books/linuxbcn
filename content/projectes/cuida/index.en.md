@@ -1,6 +1,7 @@
 ---
 title: "Cuida — Family care coordination app"
 description: "Free, open-source web app for families caring for a sick relative at home. Medical contacts, medication, emergency protocols and caregiver schedules, one tap away."
+lastmod: "2026-06-24"
 slug: "cuida"
 weight: 1
 year: 2026

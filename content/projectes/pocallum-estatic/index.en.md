@@ -6,6 +6,8 @@ year: 2026
 client: "Pocallum / Joan Linux Martínez"
 sector: "photography"
 featured: true
+description: "Pocallum — migration from WordPress to Hugo. Lightweight cultural photography website, no dependencies, instant loading. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 image: "pocallum-home-04.png"
 ---

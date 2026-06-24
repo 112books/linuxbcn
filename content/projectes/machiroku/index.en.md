@@ -6,6 +6,8 @@ year: 2025
 client: "restaurant"
 sector: "local-business"
 featured: true
+description: "Website redesign for Machiroku, Japanese restaurant in central Barcelona. Fast, mobile-friendly and easy to manage, no external dependencies. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 image: "02-machiroku-nova.png"
 ---

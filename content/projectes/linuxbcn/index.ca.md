@@ -5,6 +5,8 @@ weight: 14
 year: 2026
 client: "projecte propi"
 sector: "serveis"
+description: "El lloc web de LinuxBCN com a projecte tècnic: arquitectura Hugo, tema propi, GoatCounter, Decap CMS i optimització SEO. Documentació del sistema digital."
+lastmod: "2026-06-24"
 draft: false
 image: "00-linuxbcn-nova-portada.png"
 ---
