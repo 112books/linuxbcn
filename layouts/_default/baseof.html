@@ -5,12 +5,15 @@
 </head>
 
 <body>
+  <div id="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main-content">{{ i18n "skip_to_content" }}</a>
   {{ partial "header.html" . }}
   <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
+  <button id="back-to-top" aria-label="{{ i18n "back_to_top" | default "Tornar al capdamunt" }}">↑</button>
   <script src="{{ "js/header.js" | relURL }}" defer></script>
+  <script src="{{ "js/scroll-progress.js" | relURL }}" defer></script>
 </body>
 </html>
