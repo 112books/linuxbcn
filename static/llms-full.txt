@@ -1,0 +1,133 @@
+# LinuxBCN — Contingut complet per a models de llenguatge
+
+> Aquesta pàgina conté el contingut narratiu complet del lloc web linuxbcn.com,
+> estructurat per facilitar la comprensió i citació per part de models de llenguatge,
+> cercadors d'IA i agents automatitzats.
+> Índex breu: https://linuxbcn.com/llms.txt
+> Updated: 2026-06-24
+
+---
+
+## Qui és LinuxBCN
+
+LinuxBCN és una consultoria d'identitat digital fundada el 1999 a Barcelona, especialitzada en acompanyar artistes, músics, col·lectius culturals i microempreses amb valors en la construcció d'una presència digital coherent, lliure i sostenible.
+
+El responsable és Joan Martínez Serres, conegut professionalment com a Joan Linux. Amb més de 25 anys d'experiència en tecnologia, cultura i comunicació digital, ha acompanyat projectes com Nau Bostik, la Federació d'Associacions de Veïns i Veïnes de Barcelona (FAVB), 112Books, el Festival de Blues de Barcelona, el Casal de barri de Prosperitat i molts altres.
+
+LinuxBCN opera des de la Nau Bostik, un espai sociocultural autogestionat del barri de la Sagrera a Barcelona. Treballa amb una xarxa de col·laboradors especialitzats: periodistes, estrategues de continguts, dissenyadors, fotògrafs, correctors i traductors.
+
+L'idioma principal de treball és el català. El lloc web és disponible en català i anglès.
+
+---
+
+## Proposta de valor
+
+LinuxBCN no ven webs de catàleg ni aplica plantilles. La proposta és una presència digital pensada des de zero per a cada projecte concret: les eines adequades per a cada situació, sense dependències innecessàries, sense subscripcions eternes, sense plataformes corporatives que tractin les dades del client com a negoci propi.
+
+El problema que resol LinuxBCN no és tècnic, sinó d'estructura: eines que s'acumulen sense ordre, webs que existeixen però no comuniquen res, plataformes externes que controlen el que hauria de ser propi. El resultat habitual és més feina i menys control. LinuxBCN reverteix aquesta dinàmica.
+
+---
+
+## Metodologia de treball
+
+Abans de proposar res, LinuxBCN escolta i entén el que ja existeix: com es mou el client digitalment, quines eines fa servir, on perd temps i energia, i on vol arribar. No hi ha diagnòstic estàndard perquè cada situació és diferent.
+
+A partir d'aquesta conversa, es defineix conjuntament el que té sentit per al cas concret: què cal construir, què es pot simplificar i què és millor deixar de fer. La tecnologia ve al final d'aquesta conversa, no al principi.
+
+La base tècnica és sòlida i depurada al llarg dels anys. Es personalitza a fons per a cada projecte. S'encarrega de tot el que envolta un projecte digital: selecció i gestió del domini, allotjament en el servidor més adient, correu electrònic professional, integració amb xarxes socials i plataformes externes, còpies de seguretat, monitorització i certificats SSL.
+
+La relació no acaba amb el lliurament. LinuxBCN ofereix una bossa d'hores per a clients que volen suport real sense contractes complexos: consultes, ajustos, evolució del sistema, formació. Es paga per les hores que es necessiten, quan es necessiten.
+
+---
+
+## Principis tecnològics i ètics
+
+LinuxBCN treballa exclusivament amb programari lliure i auditable. No utilitza Google Analytics, Meta Pixel ni CDNs externs no auditats. L'analítica es fa amb GoatCounter, una eina de codi obert respectuosa amb la privacitat. Les fonts tipogràfiques s'allotgen al servidor propi (no a Google Fonts). El servidor de producció és un VPS propi a Dinahosting, proveïdor local barceloní.
+
+Els formularis de contacte no depenen de backends propietaris de tercers. El compliment del RGPD i la LOPDGDD és per disseny, no com a pegat posterior. L'accessibilitat web (WCAG 2.1 AA com a mínim) és un requisit en tots els projectes, no una opció.
+
+LinuxBCN rebutja explícitament el programa Kit Digital per raons ètiques: condiciona la llibertat tecnològica dels clients i genera dependències que van en contra dels principis del projecte.
+
+---
+
+## Solucions per a músics i artistes
+
+La majoria de músics i bandes tenen webs amb look de plantilla: ells s'adapten al disseny en lloc de partir de zero. La personalitat, l'estètica, el discurs queden sacrificats al que permet la plantilla.
+
+LinuxBCN proposa una presència digital pensada des de zero per a cada projecte musical concret. Una web de qualitat professional, dissenyada a mida, amb discografia estructurada connectada a plataformes d'streaming, integració amb Bandcamp per a venda directa, agenda sincronitzada automàticament amb Google Calendar o Bandsintown, àlbums fotogràfics directament de Google Fotos, integració amb YouTube o Vimeo sense allotjar arxius pesants, fitxes de cada membre, línia del temps de la banda, press kit descarregable, rider tècnic, butlletí per mantenir el públic informat i formulari de contacte directe per a promotors i mitjans.
+
+El resultat ha de semblar que l'ha fet l'artista, no una agència genèrica.
+
+---
+
+## Solucions per a entitats i col·lectius culturals
+
+La situació habitual d'un col·lectiu cultural: el web és difícil d'actualitzar i sempre depèn d'algú, les reunions es convoquen per WhatsApp, els documents viuen a Google Drive sense que ningú ho hagi decidit i les fotos estan a l'Instagram d'algú que potser ja no és al col·lectiu. Al fons, una qüestió de sobirania: tota la informació important de l'entitat viu en plataformes corporatives que tracten les dades com a negoci propi.
+
+LinuxBCN proposa webs que, a més d'informar, esdevenen eines de gestió: una plataforma digital que centralitza la comunicació sense dependre de tercers, garanteix la privacitat dels documents i dades dels membres, permet que qualsevol persona del col·lectiu pugui gestionar-la i reflecteix realment el que són i el que fan. Inclou alternatives a Google Workspace i eines corporatives, allotjament en servidors propis o ètics, gestió de membres i zones privades si cal, butlletí, formularis i compliment de la LOPDGDD i el RGPD.
+
+---
+
+## Solucions per a microempreses i negocis amb valors
+
+El negoci funciona; la presència digital no acaba de funcionar. El web el va fer algú fa anys i ningú sap com tocar-lo. S'és a Instagram perquè "cal ser-hi" però no genera res. Es paguen subscripcions a eines que no es recorden per què es van contractar.
+
+LinuxBCN munta la presència digital completa, coherent amb els valors del projecte: web propi dissenyat a mida, botiga integrada fàcil de gestionar sense codi, gestió de reserves o serveis, passerela de pagament directa sense comissions externes, correu professional amb domini propi, butlletí, domini i allotjament en servidors ètics. Res que no tingui sentit per al cas concret. Ni subscripcions innecessàries, ni eines de moda.
+
+---
+
+## Projectes realitzats
+
+**Bratia** — Web per a la banda barcelonina de Balkan Gypsy Jazz. Migrada d'un WordPress pesat i difícil de mantenir cap a un sistema lleuger basat en Hugo. Web multilingüe, portfolio musical, discografia, agenda de concerts.
+
+**Cuida** — Aplicació de coordinació familiar per a malalts a casa. Backend distribuït, React al frontend, compliment WCAG AA. Eina pensada per a famílies que gestionen cures mèdiques en domicili.
+
+**FAVB** — Federació d'Associacions de Veïns i Veïnes de Barcelona. Web i comunicació digital per a l'organització veïnal de referència de la ciutat.
+
+**Carrer.cat** — Publicació de referència del moviment veïnal barceloní. Presència digital i comunicació.
+
+**Machiroku** — Restaurant japonès al centre de Barcelona. Redisseny web complet.
+
+**MalditasMaquinas** — Consultoria tecnològica. WebApp SPA en vanilla JS amb backend distribuït, Stripe per a pagaments, Telegram per a notificacions, multidioma, WCAG AA.
+
+**Ressona** — Plataforma web per a l'escola de música Ressona. Construïda amb Hugo, multilingüe, galeria integrada, disseny propi.
+
+**112Books** — Editorial independent de fotografia. Web i identitat digital.
+
+**Nau Bostik** — Espai sociocultural autogestionat del barri de la Sagrera a Barcelona.
+
+**Llumàtics** — Projecte de llums i instal·lacions artístiques.
+
+**9barrisimatge** — Col·lectiu de fotografia del districte de Nou Barris, Barcelona.
+
+**Family Art Tattoo** — Estudi de tatuatge a Barcelona.
+
+**Estenop** — Calculadora d'exposició per a càmeres estenopeiques (pinhole). App mòbil offline amb correccions de reciprocitat per a més de 20 emulsions fotogràfiques (HP5, T-Max, FP4, Pan F, Fomapan i altres). Usa la càmera del mòbil com a fotòmetre. Temporitzador integrat. Sense compte, sense dades que surtin del dispositiu. Versió gratuïta i versió Pro (10 € pagament únic). Codi font obert.
+
+**Positivador WebApp** — Eina web per a fotografia analògica: inverteix negatius en temps real usant la càmera del dispositiu. Eina pròpia de LinuxBCN.
+
+**Pocallum Estàtic** — Migració de WordPress a Hugo. Resultat: zero dependències, càrrega instantània.
+
+**GoatCounter Dashboard** — Dashboard d'analítica self-hosted sense cookies, construït sobre l'API de GoatCounter. Eina pròpia de LinuxBCN.
+
+**A.W.P.C.P.** — Projecte web amb allotjament a GitHub Pages.
+
+**112 Revelats** — Projecte de fotografia analògica. Web amb allotjament a GitHub Pages.
+
+---
+
+## Contacte
+
+Web: https://linuxbcn.com
+Email: joan@linuxbcn.com
+Instagram: https://www.instagram.com/linuxbcn_oficial/
+GitHub: https://github.com/112books
+Seu: Nau Bostik, barri de la Sagrera, Barcelona, Catalunya, Espanya
+Coordenades: 41.41600, 2.18700
+
+Formulari de contacte i diagnosi inicial: https://linuxbcn.com/ca/contacte/
+
+---
+
+Llicència de contingut: CC BY-SA 4.0
+Updated: 2026-06-24

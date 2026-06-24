@@ -1,4 +1,5 @@
 # LinuxBCN
+# Contingut complet en prosa: https://linuxbcn.com/llms-full.txt
 
 > Consultoria d'identitat digital a Barcelona per a artistes, col·lectius culturals i microempreses amb valors. Especialitzats en programari lliure, privacitat i sobirania de dades.
 
