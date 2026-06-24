@@ -613,6 +613,13 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 - Nau Bostik: aclarir si és projecte lliurat o proposta i actualitzar el text
 - Testimonials: una o dues cites reals de clients
 
+**Incidència oberta — blog.pocallum.cat SSL caducat**
+- Certificat Let's Encrypt de `blog.pocallum.cat` va caducar el 2026-06-24 a les 10:07h
+- El subdomini apunta correctament a Dinahosting (`82.98.166.123`) però el domini arrel `pocallum.cat` apunta a GitHub Pages (`185.199.x.x`) i la renovació automàtica falla
+- Cas escalatat a suport de Dinahosting — estan estudiant com renovar sense tocar el domini principal
+- Alternativa si Dinahosting no pot: afegir registre TXT `_acme-challenge.blog.pocallum.cat` a la zona DNS per a validació DNS challenge
+- Altra alternativa: apuntar temporalment `pocallum.cat` a `82.98.166.123`, renovar, i tornar a GitHub Pages
+
 **Accions externes (fora del codi)**
 - **Google Business Profile (GBP)**: crear fitxa — és el pas amb més impacte SEO local pendent
 - Unificar email: `joan@linuxbcn.com` i `hola@linuxbcn.com` apareixen barrejats al lloc
