@@ -555,5 +555,71 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-05-23*
+## 21. Historial de tasques — 2026-06-24
+
+**SEO, rendiment i cercabilitat per robots/IA — audit complet**
+
+*SEO tècnic*
+- `head.html`: description via `jsonify` (fix escapes), url org → arrel, geo coords, serviceType, logo schema, sameAs expandit
+- `head.html`: hreflang x-default page-relative (range loop, no where filter), guard `{{ if .File }}` per taxonomies
+- `head.html`: font preload (IBM Plex Sans 300 + Mono), dns-prefetch gc.zgo.at, GoatCounter src HTTPS explícit
+- `head.html`: CSS via Hugo Pipes — `resources.Get | minify | fingerprint` (assets/css/main.css creat)
+- `assets/css/main.css`: còpia de static/css/main.css per a Hugo Pipes; fonts `url('../fonts/...')` correctes
+- `description` i `lastmod: "2026-06-24"` afegits a **totes** les pàgines: homepage CA+EN, solucions CA+EN, musics CA+EN, collectius CA+EN, microempreses CA+EN, qui-som CA+EN, contacte CA+EN, com-treballem CA+EN, tots els projectes CA+EN (38 fitxers)
+- Fix "Casalprospe" → "Casal de barri de Prosperitat" al text anglès de qui-som
+
+*Imatges i rendiment*
+- `projectes/single.html`: WebP via `.Process "webp"`, dimensions explícites, `fetchpriority="high"` al hero, CreativeWork/SoftwareApplication schema, bloc CTA "Parlem"
+- `projectes/list.html`: WebP resize 600px amb dimensions explícites a les cards
+- Fix: imatges amb `.cat.` al nom (01-favb.cat.png, pocallum.cat.png) no trobades per `Resources.GetMatch` — Hugo les tracta com a fitxers d'idioma. Solució: renomenar a `01-favb.png` i `pocallum.png`
+- Fix: `sync-linuxbcn.sh` tenia `--exclude='favb'` (qualsevol nivell) → canviat a `--exclude='/favb'` (només arrel del servidor, directori legacy WordPress)
+
+*Robots i IA*
+- `robots.txt`: afegit Google-Extended, Applebot-Extended, Amazonbot, meta-externalagent (Allow: /)
+- `llms.txt`: Ressona afegit, data actualitzada; apunta a llms-full.txt
+- `llms-full.txt`: creat — contingut complet en prosa per a models de llenguatge (descripció, metodologia, serveis, tots els projectes, principis, contacte)
+- `static/cerca/_index.ca.md` i `_index.en.md`: `sitemap: disable: true` (pàgines JS sense contingut indexable)
+
+*Seguretat i infraestructura*
+- `.htaccess`: redirect HTTP→HTTPS afegit, CSP amb gc.zgo.at a connect-src i web3forms a form-action
+- `.htaccess`: posteriorment eliminat el redirect HTTPS — Dinahosting fa terminació SSL al proxy sense passar X-Forwarded-Proto, causava bucle infinit (ERR_TOO_MANY_REDIRECTS)
+
+*Analytics dashboard fix*
+- `fetch-analytics.php`: GoatCounter v0 `/stats/hits` retorna `daily` com a array de 24 ints horaris (no escalar). Fix: `array_sum($stat['daily'])` en lloc de `(int)$stat['daily']`
+- `index.html`: `isoToday()` i `daysAgo()` reescrits per usar hora local (no UTC)
+
+*Portfolio i contingut*
+- Ressona afegit com a primer de "Projectes propis" a `_index.ca.md` i `_index.en.md`
+- 112 Revelats afegit a "Projectes propis" (CA+EN)
+- Fix: Ressona descrita com "escola de música" (incorrecte) → corregit a "plataforma d'identitat digital per a artistes" a: _index CA+EN, ressona/index CA+EN, llms-full.txt
+
+*UX — scroll progress i back-to-top*
+- `static/js/scroll-progress.js`: nou — barra de 2px a la part superior + botó circular SVG
+- Botó: cercle SVG amb anell de progrés (`stroke-dashoffset` actualitzat per JS), colors corporatius (accent `#d4600a`, fons `#fdf6ef`), fletxa ↑ centrada, apareix als 300px de scroll
+- `baseof.html`: `#scroll-progress` i `#back-to-top` (SVG) afegits; script `defer` al final del body
+
+---
+
+## 22. Pendent — 2026-06-24
+
+**Tècnic (proper sessió)**
+- Corregir deprecation warnings de Hugo: `_build` → `build` al frontmatter, `.Site.Languages` al template
+- Nau Bostik: no té imatge a la llista de projectes — afegir-ne una o aclarir si és projecte lliurat o proposta
+
+**Contingut (requereix Joan)**
+- Homepage: 172 paraules actuals → 500+ per tenir pes SEO (desenvolupar "el que fem" i "com ho fem")
+- Qui som: biografia de Joan Linux amb nom real, trajectòria concreta i veu pròpia
+- Contacte: ampliar el text per sobre del formulari
+- Nau Bostik: aclarir si és projecte lliurat o proposta i actualitzar el text
+- Testimonials: una o dues cites reals de clients
+
+**Accions externes (fora del codi)**
+- **Google Business Profile (GBP)**: crear fitxa — és el pas amb més impacte SEO local pendent
+- Unificar email: `joan@linuxbcn.com` i `hola@linuxbcn.com` apareixen barrejats al lloc
+- Demanar backlink des dels webs de Bratia, 112Books, Nau Bostik, Machiroku, FAVB, Carrer.cat, MalditasMaquinas cap a linuxbcn.com
+- Enviar Estenop a softcatalà.org (backlink de qualitat, directori de programari en català)
+
+---
+
+*Última actualització: 2026-06-24*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
