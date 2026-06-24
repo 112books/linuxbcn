@@ -1,6 +1,8 @@
 ---
 title: "Identitat digital amb criteri"
 subtitle: "Solucions digitals a mida. Programari lliure, sense complicacions."
+description: "LinuxBCN — consultoria d'identitat digital a Barcelona per a artistes, col·lectius culturals i microempreses. Programari lliure, sense complicacions. Més de 25 anys d'experiència."
+lastmod: "2026-06-24"
 draft: false
 ---
 

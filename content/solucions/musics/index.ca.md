@@ -2,6 +2,8 @@
 title: "Solucions per a artistes i músics"
 subtitle: "Una web que és teva de debò, dissenyada des de zero"
 slug: "musics"
+description: "Web per a músics i bandes a Barcelona: agenda automàtica, discografia, portfolio a mida. Sense plantilles. LinuxBCN, més de 25 anys d'experiència."
+lastmod: "2026-06-24"
 draft: false
 ---
 
@@ -79,7 +81,7 @@ Amb **Bratia** hem evolucionat d'una web WordPress pesada i difícil de mantenir
 
 ## Per a qui és això
 
-Per a músics, solistes i bandes que:
+Per a músics, solistes i bandes a Barcelona i Catalunya que:
 
 - volen una web que sembli seva, no una plantilla
 - necessiten que tot estigui connectat i actualitzat automàticament

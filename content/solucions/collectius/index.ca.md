@@ -2,6 +2,8 @@
 title: "Solucions per a entitats i col·lectius culturals"
 subtitle: "Una plataforma de gestió, no només un web informatiu"
 slug: "collectius"
+description: "Plataformes digitals per a entitats culturals i associacions a Barcelona. Sobirania digital, gestió de continguts, privacitat per disseny. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 ---
 
@@ -62,7 +64,7 @@ Webs que, a més d'informar, **esdevenen eines de gestió**. Una plataforma digi
 
 ## Per a qui és això
 
-Per a col·lectius, associacions i espais autogestionats que:
+Per a col·lectius, associacions i espais autogestionats a Barcelona i Catalunya que:
 
 - volen deixar de dependre de plataformes que no controlen
 - necessiten que més d'una persona pugui gestionar la comunicació

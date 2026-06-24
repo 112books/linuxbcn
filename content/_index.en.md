@@ -1,6 +1,8 @@
 ---
 title: "Digital identity with criteria"
 subtitle: "Custom digital solutions. Free software, no complications."
+description: "LinuxBCN — digital identity consultancy in Barcelona for artists, cultural collectives and businesses. Free software, no complications. Over 25 years of experience."
+lastmod: "2026-06-24"
 draft: false
 ---
 

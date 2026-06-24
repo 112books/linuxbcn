@@ -1,6 +1,8 @@
 ---
 title: "Solutions"
 slug: "solucions"
+description: "Custom digital solutions for musicians, cultural collectives and values-driven businesses in Barcelona. Free software, no unnecessary dependencies."
+lastmod: "2026-06-24"
 draft: false
 ---
 
