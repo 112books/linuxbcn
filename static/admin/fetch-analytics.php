@@ -124,8 +124,15 @@ foreach (($hits_raw['hits'] ?? []) as $path_item) {
     $path_unique = (int)($path_item['total_unique'] ?? 0);
 
     foreach (($path_item['stats'] ?? []) as $stat) {
-        $date  = substr((string)($stat['day'] ?? ''), 0, 10);
-        $count = (int)($stat['daily'] ?? 0);
+        $date      = substr((string)($stat['day'] ?? ''), 0, 10);
+        $daily_raw = $stat['daily'] ?? null;
+        if (is_array($daily_raw)) {
+            $count = (int)array_sum($daily_raw);
+        } elseif ($daily_raw !== null) {
+            $count = (int)$daily_raw;
+        } else {
+            $count = (int)($stat['count'] ?? $stat['total'] ?? 0);
+        }
         if (!$count || strlen($date) !== 10) continue;
         $total               += $count;
         $path_total          += $count;

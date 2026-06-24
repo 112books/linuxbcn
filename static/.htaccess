@@ -4,6 +4,10 @@ ErrorDocument 404 /ca/404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # HTTP → HTTPS (garantia a nivell de repositori)
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
   # Arrel → versió catalana (Hugo genera alias però per si de cas)
   RewriteRule ^$ /ca/ [R=301,L]
 
@@ -49,7 +53,7 @@ ErrorDocument 404 /ca/404.html
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
   # CSP: self + GoatCounter + unsafe-inline (necessari per 404 animada i admin dashboard)
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' gc.zgo.at 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' linuxbcn.goatcounter.com https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' gc.zgo.at 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' gc.zgo.at linuxbcn.goatcounter.com https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com"
 
   Header always unset X-Powered-By
   Header always unset Server
@@ -76,6 +80,8 @@ Options -Indexes
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 month"
   ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
   ExpiresByType image/webp "access plus 1 month"
   ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>

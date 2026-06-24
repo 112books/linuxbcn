@@ -19,7 +19,8 @@
       {{ with $cardImgName }}
         {{ $img := $proj.Resources.GetMatch . }}
         {{ if $img }}
-          <img src="{{ $img.RelPermalink }}" alt="{{ $proj.Title }}" loading="lazy">
+          {{ $thumb := $img.Resize "600x webp" }}
+          <img src="{{ $thumb.RelPermalink }}" alt="{{ $proj.Title }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy">
         {{ else }}
           {{ $slug := path.Base (path.Dir $proj.File.Path) }}
           {{ $caPath := printf "/ca/projectes/%s/%s" $slug . }}

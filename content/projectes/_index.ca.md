@@ -20,6 +20,7 @@ draft: false
 
 ## Projectes propis
 
+→ [Ressona](/projectes/ressona/) — escola de música, web multilingüe amb Hugo
 → [Positivador WebApp](/projectes/app-positivador/) — eina per a fotografia analògica
 → [Machiroku](/projectes/machiroku/) — restaurant japonès al centre de Barcelona
 → [MalditasMaquinas.com](/projectes/malditasmaquinas/) — consultoria tecnològica per hores

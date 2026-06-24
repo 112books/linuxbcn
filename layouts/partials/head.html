@@ -37,7 +37,9 @@
 {{ range .AllTranslations }}
 <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
 {{ end }}
-<link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}ca/">
+{{ $xdefault := printf "%sca/" .Site.BaseURL }}
+{{ range .AllTranslations }}{{ if eq .Lang "ca" }}{{ $xdefault = .Permalink }}{{ end }}{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ $xdefault }}">
 
 <!-- Schema.org structured data -->
 {{ if .IsHome }}
@@ -49,8 +51,8 @@
       "@type": "ProfessionalService",
       "@id": "https://linuxbcn.com/#organization",
       "name": "LinuxBCN",
-      "description": "{{ .Site.Params.description }}",
-      "url": "https://linuxbcn.com/ca/",
+      "description": {{ .Site.Params.description | jsonify }},
+      "url": "https://linuxbcn.com/",
       "email": "joan@linuxbcn.com",
       "foundingDate": "1999",
       "address": {
@@ -61,10 +63,20 @@
         "addressRegion": "Catalunya",
         "addressCountry": "ES"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.41600,
+        "longitude": 2.18700
+      },
       "areaServed": [
         { "@type": "City", "name": "Barcelona" },
         { "@type": "AdministrativeArea", "name": "Catalunya" }
       ],
+      "serviceType": ["Disseny web", "Identitat digital", "Programari lliure", "Consultoria tecnològica", "Hugo", "Privacitat i dades"],
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://linuxbcn.com/img/logo.svg"
+      },
       "founder": {
         "@type": "Person",
         "@id": "https://linuxbcn.com/#joan-linux",
@@ -74,13 +86,16 @@
         "knowsLanguage": ["ca", "es", "en"],
         "url": "https://linuxbcn.com/ca/qui-som/"
       },
-      "sameAs": ["https://www.instagram.com/linuxbcn_oficial/"]
+      "sameAs": [
+        "https://www.instagram.com/linuxbcn_oficial/",
+        "https://github.com/112books"
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://linuxbcn.com/#website",
       "name": "LinuxBCN",
-      "url": "https://linuxbcn.com/ca/",
+      "url": "https://linuxbcn.com/",
       "inLanguage": ["ca", "en"],
       "publisher": { "@id": "https://linuxbcn.com/#organization" }
     }
@@ -122,7 +137,7 @@
 }
 </script>
 {{ end }}
-{{ if eq .Params.slug "qui-som" }}
+{{ if and .File (eq .File.TranslationBaseName "qui-som") }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -136,13 +151,22 @@
   "worksFor": { "@id": "https://linuxbcn.com/#organization" },
   "knowsLanguage": ["ca", "es", "en"],
   "knowsAbout": ["Identitat digital", "Programari lliure", "Disseny web", "Privacitat i dades", "Hugo", "Linux"],
-  "sameAs": ["https://www.instagram.com/linuxbcn_oficial/"]
+  "sameAs": [
+    "https://www.instagram.com/linuxbcn_oficial/",
+    "https://github.com/112books"
+  ]
 }
 </script>
 {{ end }}
 
+<!-- Preload fonts above-the-fold -->
+<link rel="preload" href="{{ "fonts/ibm-plex-sans-v23-latin-300.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/ibm-plex-mono-v20-latin-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="dns-prefetch" href="//gc.zgo.at">
+
 <!-- CSS -->
-<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
 <!-- Favicon + Manifest -->
 <link rel="icon" type="image/svg+xml" href="{{ "img/favicon.svg" | relURL }}">
@@ -152,5 +176,5 @@
 <!-- Analítica: GoatCounter (sense cookies, GDPR) -->
 {{ if not .Site.Params.noindex }}
 <script data-goatcounter="https://linuxbcn.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+        async src="https://gc.zgo.at/count.js"></script>
 {{ end }}

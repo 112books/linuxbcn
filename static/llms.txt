@@ -28,6 +28,7 @@ Idiomes: Català (principal), Anglès
 - [Carrer.cat](https://linuxbcn.com/ca/projectes/carrer/): Publicació de referència del moviment veïnal barceloní.
 - [Machiroku](https://linuxbcn.com/ca/projectes/machiroku/): Restaurant japonès al centre de Barcelona. Redisseny web complet.
 - [MalditasMaquinas](https://linuxbcn.com/ca/projectes/malditasmaquinas/): Consultoria tecnològica. WebApp SPA vanilla JS + backend distribuït.
+- [Ressona](https://linuxbcn.com/ca/projectes/ressona/): Plataforma web per a l'escola de música Ressona. Hugo, multilingüe, galeria integrada. — [EN](https://linuxbcn.com/en/projectes/ressona/)
 - [112Books](https://linuxbcn.com/ca/projectes/112books/): Editorial independent de fotografia.
 - [Estenop](https://linuxbcn.com/ca/projectes/app-estenop/): Calculadora d'exposició per a càmeres estenopeiques (pinhole). App mòbil offline, 20+ emulsions.
 - [Positivador WebApp](https://linuxbcn.com/ca/projectes/app-positivador/): Eina web per a fotografia analògica (invertir negatius en temps real).
@@ -50,5 +51,5 @@ Idiomes: Català (principal), Anglès
 - Email: joan@linuxbcn.com
 - Instagram: https://www.instagram.com/linuxbcn_oficial/
 
-Updated: 2026-06-04
+Updated: 2026-06-24
 Llicència de contingut: CC BY-SA 4.0

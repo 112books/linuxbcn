@@ -19,6 +19,7 @@ draft: false
 
 ## Own projects
 
+→ [Ressona](/projectes/ressona/) — music school, multilingual Hugo website
 → [Positivador WebApp](/projectes/app-positivador/) — tool for analogue photography
 → [Machiroku](/projectes/machiroku/) — Japanese restaurant in central Barcelona
 → [MalditasMaquinas](/projectes/malditasmaquinas/) — specialised technical service

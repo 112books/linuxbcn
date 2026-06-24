@@ -13,7 +13,8 @@
       <div class="hero-image">
         {{ $img := .Page.Resources.GetMatch .Params.image }}
           {{ if $img }}
-            <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="lightbox-trigger">
+            {{ $webp := $img.Process "webp" }}
+            <img src="{{ $webp.RelPermalink }}" alt="{{ .Title }}" width="{{ $webp.Width }}" height="{{ $webp.Height }}" fetchpriority="high" class="lightbox-trigger">
         {{ end }}
       </div>
     {{ end }}
@@ -38,5 +39,31 @@
 </div>
 
 <script src="{{ "js/lightbox.js" | relURL }}" defer></script>
+
+<!-- CTA -->
+<div class="project-cta">
+  <a href="{{ "contacte/" | relLangURL }}">→ {{ i18n "project_cta" | default "Parlem del teu projecte" }}</a>
+</div>
+
+<!-- Schema: CreativeWork -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ if or (eq .Params.schema_type "software") (in .Params.sector "app") }}SoftwareApplication{{ else }}CreativeWork{{ end }}",
+  "@id": "{{ .Permalink }}#project",
+  "name": {{ .Title | jsonify }},
+  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Summary | jsonify }}{{ end }},
+  "url": "{{ .Permalink }}",
+  "creator": { "@id": "https://linuxbcn.com/#organization" },
+  "dateCreated": "{{ .Params.year }}"{{ if eq .Params.schema_type "software" }},
+  "applicationCategory": "WebApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }{{ end }}
+}
+</script>
 
 {{ end }}
