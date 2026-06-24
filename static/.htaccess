@@ -4,8 +4,9 @@ ErrorDocument 404 /ca/404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # HTTP → HTTPS (garantia a nivell de repositori)
+  # HTTP → HTTPS (terminació SSL al proxy de Dinahosting via X-Forwarded-Proto)
   RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
   # Arrel → versió catalana (Hugo genera alias però per si de cas)
