@@ -8,7 +8,7 @@ sector: "fotografia"
 description: "Web per a Pocallum, agència fotogràfica cultural. Portfolio i presència digital amb programari lliure. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
-image: "pocallum.cat.png"
+image: "pocallum.png"
 ---
 
 ## Agència de fotografia amb caràcter propi
