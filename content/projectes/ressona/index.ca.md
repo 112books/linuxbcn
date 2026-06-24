@@ -6,7 +6,7 @@ year: 2026
 client: "projecte propi"
 sector: "serveis"
 featured: true
-description: "Ressona — identitat digital per a l'escola de música Ressona. Web multilingüe amb Hugo, galeria integrada i disseny propi. LinuxBCN."
+description: "Ressona — plataforma d'identitat digital per a artistes. Fusió de Pocallum i LinuxBCN: identitat visual, press kit, web i comunicació. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
 card_image: "ressona.png"

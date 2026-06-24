@@ -90,7 +90,7 @@ LinuxBCN munta la presència digital completa, coherent amb els valors del proje
 
 **MalditasMaquinas** — Consultoria tecnològica. WebApp SPA en vanilla JS amb backend distribuït, Stripe per a pagaments, Telegram per a notificacions, multidioma, WCAG AA.
 
-**Ressona** — Plataforma web per a l'escola de música Ressona. Construïda amb Hugo, multilingüe, galeria integrada, disseny propi.
+**Ressona** — Plataforma d'identitat digital per a artistes (músics, actors, ballarins, creadors). Fusió de Pocallum (identitat visual) i LinuxBCN (infraestructura web). Ofereix identitat visual, press kit, web, comunicació i tots els elements que un artista necessita per a la seva presència digital. Construïda amb Hugo, multilingüe, galeria integrada, disseny propi.
 
 **112Books** — Editorial independent de fotografia. Web i identitat digital.
 

@@ -22,7 +22,8 @@ draft: false
 
 ## Projectes propis
 
-→ [Ressona](/projectes/ressona/) — escola de música, web multilingüe amb Hugo
+→ [Ressona](/projectes/ressona/) — plataforma d'identitat digital per a artistes
+→ [112 Revelats](/projectes/112revelats/) — fotografia analògica, web lleuger a GitHub Pages
 → [Positivador WebApp](/projectes/app-positivador/) — eina per a fotografia analògica
 → [Machiroku](/projectes/machiroku/) — restaurant japonès al centre de Barcelona
 → [MalditasMaquinas.com](/projectes/malditasmaquinas/) — consultoria tecnològica per hores
