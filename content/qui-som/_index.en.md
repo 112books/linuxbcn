@@ -1,6 +1,8 @@
 ---
 title: "Who we are"
 slug: "qui-som"
+description: "LinuxBCN — digital identity consultancy in Barcelona since 1999. Free software, privacy and data sovereignty. Over 25 years accompanying cultural, artistic and social projects."
+lastmod: "2026-06-24"
 draft: false
 ---
 
@@ -27,7 +29,7 @@ Not because we've read about it — because we're part of it.
 
 We have worked with and for projects such as
 Nau Bostik, 9barrisimatge, Llumàtics, 112Books,
-the Barcelona Blues Festival, Casalprospe
+the Barcelona Blues Festival, Casal de barri de Prosperitat
 and many others over 25 years.
 
 ---

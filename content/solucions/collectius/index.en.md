@@ -2,6 +2,8 @@
 title: "Solutions for cultural entities and collectives"
 subtitle: "Free tools, digital sovereignty and coherent communication"
 slug: "collectius"
+description: "Digital platforms for cultural entities and associations in Barcelona. Digital sovereignty, content management, privacy by design. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 ---
 

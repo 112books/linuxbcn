@@ -2,6 +2,8 @@
 title: "Solutions for values-driven businesses"
 subtitle: "Your own digital presence, coherent and with fewer unnecessary dependencies"
 slug: "microempreses"
+description: "Custom digital presence for freelancers, local businesses and micro-enterprises in Barcelona. Free software, no unnecessary subscriptions. LinuxBCN."
+lastmod: "2026-06-24"
 draft: false
 ---
 

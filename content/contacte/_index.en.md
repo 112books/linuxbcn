@@ -1,6 +1,8 @@
 ---
 title: "Let's talk"
 subtitle: "Tell us where you are and where you'd like to go"
+description: "Contact LinuxBCN to talk about your digital project. Digital identity consultancy in Barcelona. Response within 24 hours."
+lastmod: "2026-06-24"
 draft: false
 ---
 

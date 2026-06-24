@@ -2,6 +2,8 @@
 title: "Solutions for artists and musicians"
 subtitle: "Autonomous, clear and sustainable digital presence"
 slug: "musics"
+description: "Web design for musicians and bands in Barcelona: automated agenda, discography, custom portfolio. No templates. LinuxBCN, over 25 years of experience."
+lastmod: "2026-06-24"
 draft: false
 ---
 

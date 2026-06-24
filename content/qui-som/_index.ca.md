@@ -1,6 +1,8 @@
 ---
 title: "Qui som"
 slug: "qui-som"
+description: "LinuxBCN — consultoria d'identitat digital a Barcelona des del 1999. Programari lliure, privacitat i sobirania de dades. Més de 25 anys acompanyant projectes culturals, artístics i socials."
+lastmod: "2026-06-24"
 draft: false
 ---
 

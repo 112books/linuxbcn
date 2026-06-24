@@ -1,6 +1,8 @@
 ---
 title: "How we work"
 subtitle: "Accompaniment, not intervention"
+description: "LinuxBCN methodology: listening, diagnosis and custom-built systems. Hours packages, free software and technological independence. Barcelona."
+lastmod: "2026-06-24"
 draft: false
 ---
 
