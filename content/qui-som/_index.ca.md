@@ -1,64 +1,105 @@
 ---
 title: "Qui som"
 slug: "qui-som"
-description: "LinuxBCN — consultoria d'identitat digital a Barcelona des del 1999. Programari lliure, privacitat i sobirania de dades. Més de 25 anys acompanyant projectes culturals, artístics i socials."
+description: "Joan Linux Martínez — fotògraf, editor gràfic, activista cultural i consultor tecnològic barceloní. Més de 30 anys de tecnologia lliure al servei de la cultura i els projectes amb valors."
 lastmod: "2026-06-24"
 draft: false
 ---
 
-## Tecnologia i cultura, de la mà
+## Joan Linux Martínez i Serres
 
-LinuxBCN neix el 1999, quan internet era una promesa
-i Linux, una aposta de futur.
+Nascut el 1972 a Barcelona, crescut a Subirats (Alt Penedès).
+Als 15 anys vaig estudiar Arts Gràfiques.
+Poc després: fanzines, revistes, fotografia.
 
-Des d'aleshores hem acompanyat projectes culturals,
-artístics i socials a construir la seva presència digital.
-No com a proveïdors tècnics — com a aliats estratègics.
-
----
-
-## El que ens fa diferents
-
-Estem especialitzats en l'entorn cultural i artístic.
-
-Coneixem les necessitats reals d'una banda de música,
-d'un espai autogestionat, d'un col·lectiu de fotografia
-o d'un negoci de barri amb valors.
-
-No perquè ho haguem llegit — perquè en formem part.
-
-Hem treballat amb i per a projectes com
-Nau Bostik, 9barrisimatge, Llumàtics, 112Books,
-el Festival de Blues de Barcelona, el Casal de barri de Prosperitat,
-9 Barris Acull i molts altres al llarg de 25 anys.
+Fotògraf, editor gràfic, activista cultural.
+Trenta anys llargs a Nou Barris.
+Ara resident a la **Nau Bostik**, des del setembre de 2020.
 
 ---
 
-## Un equip, no un freelance
+## La tecnologia com a eina, no com a fi
 
-LinuxBCN és un equip heterogeni coordinat des de les seves oficines a la **Nau Bostik**, un espai sociocultural autogestionat del barri de la Sagrera a Barcelona.
+LinuxBCN existeix des del 2001.
 
-Treballem amb col·laboradors especialitzats:
-periodistes, estrategues de continguts, dissenyadors,
-fotògrafs, correctors i traductors.
+No vaig néixer consultor tecnològic. Vaig néixer fotògraf i editor.
+La tecnologia va arribar perquè necessitava eines que no depenien de ningú,
+que no em tancaven dades en armaris corporatius,
+que no m'obligaven a pagar llicències per continuar tenint accès al meu propi treball.
 
-Una xarxa construïda amb anys de projectes compartits.
+Linux era la resposta. Continua sent-ho.
 
----
-
-## Els nostres principis
-
-Programari lliure.
-Privacitat i sobirania de les dades.
-Tecnologia al servei del projecte, no al revés.
-Sistemes sostenibles, accessibles i segurs.
-
-No seguim modes. No apliquem plantilles.
-No recomanem el que no usaríem nosaltres mateixos.
+Avui acompanyo projectes culturals, artístics i socials
+a construir la seva presència digital de la mateixa manera
+que jo vaig construir la meva:
+amb eines lliures, amb criteris clars, sense deures a cap plataforma.
 
 ---
 
-## Parlem
+## Trajectòria
 
-→ [Veure solucions](/solucions/)
+**Fotografia i cultura**
+
+Fotògraf del **Barcelona Blues Festival** des del 2002.
+Col·laborador de la **FAVB** i la **Revista Carrer** des del 2007.
+Membre de **9 Barris Imatge** des del 2002.
+Professor a **Cameras & Films** des del 2011.
+Professor a **Llumàtics** des del 2017.
+Fundador de **112 Books** el 2020.
+
+Treballo amb fotografia analògica.
+Tinc un laboratori de revelat a la Nau Bostik.
+
+**Tecnologia i identitat digital**
+
+LinuxBCN des del 2001.
+Webs, servidors, dominis, correu, formularis, anàlisi i privacitat.
+Tot amb programari lliure, allotjament propi i zero dependències de Big Tech.
+
+He construït i mantingut la presència digital de:
+Bratia, Nau Bostik, Llumàtics, 112Books, FAVB, Revista Carrer,
+Casal de barri de Prosperitat, 9 Barris Acull, Machiroku Studio,
+Family Art Tattoo, Ressona, i una dotzena de músics, artistes i col·lectius més.
+
+---
+
+## El que no fem
+
+No usem Google Analytics. No usem Meta Pixel.
+No instal·lem Fonts de Google. No recomanem el Kit Digital.
+No acceptem projectes que necessitin el que nosaltres no farem.
+
+Això no és intransigència —
+és honestedat sobre qui som i com treballem.
+
+---
+
+## Per què importa
+
+La fotografia no és innocent. Per això importa.
+
+La tecnologia tampoc.
+
+Cada vegada que acceptes que una plataforma tingui les teves dades,
+cada vegada que publiques en un espai que no controles,
+cada vegada que uses eines que no entens —
+estàs cedint sobirania.
+
+LinuxBCN existeix per ajudar-te a no haver-ho de fer.
+O, si ja ho has fet, per ajudar-te a recuperar el terreny perdut.
+
+---
+
+## On som
+
+**Nau Bostik** — Carrer de Ferran Turné, 10 · La Sagrera, Barcelona.
+
+Un espai sociocultural autogestionat on coincidim
+artistes, artesans, fotògrafs, músics, activistes i veïns.
+El millor context possible per a la feina que fem.
+
+---
+
+→ [El que oferim](/solucions/)
+→ [Com treballem](/com-treballem/)
 → [Contacte](/contacte/)
