@@ -5,7 +5,7 @@ defaultContentLanguageInSubdir = true
 
 [languages]
   [languages.ca]
-    languageName = "Català"
+    label = "Català"
     weight = 1
 
     [[languages.ca.menu.main]]
@@ -34,7 +34,7 @@ defaultContentLanguageInSubdir = true
       weight = 5
 
   [languages.en]
-    languageName = "English"
+    label = "English"
     weight = 2
 
     [[languages.en.menu.main]]

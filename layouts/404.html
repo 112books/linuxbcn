@@ -254,12 +254,12 @@
   <div id="lbcn-glitch" aria-hidden="true"></div>
 
   <div id="lbcn-lang" role="navigation" aria-label="Selector d'idioma">
-    {{ range .Site.Languages }}
+    {{ range hugo.Sites }}
     <button
-      class="lbcn-lang-btn{{ if eq . $.Site.Language }} lbcn-active{{ end }}"
-      onclick="lbcnSetLang('{{ .Lang }}')"
-      aria-label="Canvia a {{ .Lang }}"
-    >{{ .Lang | upper }}</button>
+      class="lbcn-lang-btn{{ if eq .Language.Lang $.Site.Language.Lang }} lbcn-active{{ end }}"
+      onclick="lbcnSetLang('{{ .Language.Lang }}')"
+      aria-label="Canvia a {{ .Language.Lang }}"
+    >{{ .Language.Lang | upper }}</button>
     {{ end }}
   </div>
 
