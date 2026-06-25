@@ -28,7 +28,7 @@ if (!function_exists('curl_init')) {
     exit;
 }
 
-define('GC_TOKEN',  'j4gyp56beiqn5ppcfx9ep5e6km2uc7zpzh4513ykzx871m08e');
+define('GC_TOKEN', '1lo7hszjcgc71hw45idc5dg1qb4i9wpdcp182xo2lhy50x1xj');
 define('GC_BASE',   'https://linuxbcn.goatcounter.com/api/v0');
 define('CACHE_FILE', __DIR__ . '/analytics-cache.json');
 
@@ -99,6 +99,14 @@ $start = date('Y-m-d', strtotime('-365 days'));
 $base_params = ['start' => $start, 'end' => $end, 'limit' => 200];
 
 $hits_raw = gc_fetch('/stats/hits',     $base_params); usleep(400000);
+
+// Si la crida principal falla, l'API no funciona (token expirat o error de xarxa)
+if ($hits_raw === null) {
+    http_response_code(502);
+    echo json_encode(['error' => 'L\'API de GoatCounter ha retornat un error. Comprova que el token és vàlid a goatcounter.com/settings/api i actualitza\'l a fetch-analytics.php.']);
+    exit;
+}
+
 $refs_raw = gc_fetch('/stats/toprefs', array_merge($base_params, ['limit' => 20])); usleep(400000);
 $brow_raw = gc_fetch('/stats/browsers', array_merge($base_params, ['limit' => 10])); usleep(400000);
 $sys_raw  = gc_fetch('/stats/systems',  array_merge($base_params, ['limit' => 10])); usleep(400000);
