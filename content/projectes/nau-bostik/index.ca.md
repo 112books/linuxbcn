@@ -5,57 +5,44 @@ weight: 7
 year: 2025
 client: "espai cultural autogestionat"
 sector: "cultura"
-description: "Web per a la Nau Bostik, espai sociocultural autogestionat del barri de la Sagrera a Barcelona. Presència digital per a la cultura autogestionada. LinuxBCN."
-lastmod: "2026-06-24"
+description: "Sistema digital integral per a la Nau Bostik, espai sociocultural autogestionat de La Sagrera. Agenda col·lectiva, gestió d'espais i eines d'autogestió amb programari lliure. LinuxBCN."
+lastmod: "2026-06-25"
 draft: false
 ---
 
-## Un espai cultural que mereix una eina a la seva mida
+## Un replantejament de fons, no un redisseny
 
-Nau Bostik és un espai sociocultural autogestionat
-al barri de la Sagrera, Barcelona. Activitat intensa,
-comunitat diversa, agenda constant i una gestió
-completament horitzontal.
+Nau Bostik és un espai sociocultural autogestionat al barri de la Sagrera, Barcelona. Activitat intensa, comunitat diversa, agenda constant i gestió completament horitzontal.
 
-El web actual compleix, però no acompanya.
-És un aparador, no una eina.
+El repte no és fer un web nou. És construir una eina digital que estigui a l'alçada de l'ambició de l'espai: un sistema que reflecteixi i reforci com l'organització funciona per dins.
 
 ---
 
-## La visió
+## La proposta
 
-Estem desenvolupant una proposta per convertir
-el web de Nau Bostik en una eina real de gestió,
-comunicació i governança de l'entitat.
+Un sistema on el web deixa de ser un tauler d'anuncis i es converteix en el centre digital de l'espai:
 
-No un redisseny. Una transformació de fons.
+- Agenda col·lectiva gestionada des de dins, sense intermediaris
+- Gestió d'espais i recursos compartits entre col·lectius
+- Comunicació transparent amb el barri i les entitats membres
+- Eines d'autogestió per als grups que hi conviuen
+- Infraestructura 100% programari lliure, allotjada a proveïdors europeus
 
-Un sistema on el web deixa de ser un tauler d'anuncis
-i es converteix en el centre digital de l'espai:
-agenda col·lectiva, gestió d'espais i recursos,
-comunicació amb el barri, transparència interna
-i eines d'autogestió per a les entitats que hi conviuen.
+El web no és el producte final. És la llavor d'un canvi estructural en com l'espai es relaciona digitalment amb el seu entorn.
 
 ---
 
 ## Per què és rellevant
 
-Nau Bostik no és un client convencional.
+Nau Bostik no és un client convencional. És un projecte complex, amb múltiples actors, necessitats diverses i valors molt definits. Resoldre-ho bé requereix entendre l'organització tant com la tecnologia.
 
-És un projecte complex, amb múltiples actors,
-necessitats diverses i valors molt definits.
-Resoldre-ho bé requereix entendre l'organització
-tant com la tecnologia.
-
-És exactament el tipus de projecte
-per al qual LinuxBCN existeix.
+És exactament el tipus de projecte per al qual LinuxBCN existeix.
 
 ---
 
 ## Estat
 
-Proposta en fase de desenvolupament.  
-Pendent de finançament per a la implementació completa.
+**Pre-aprovat.** Proposta validada internament. En procés de concreció per iniciar la implementació.
 
 ---
 

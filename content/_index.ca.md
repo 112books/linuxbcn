@@ -1,8 +1,8 @@
 ---
 title: "Identitat digital amb criteri"
-subtitle: "Solucions digitals a mida. Programari lliure, sense complicacions."
-description: "LinuxBCN — consultoria d'identitat digital a Barcelona per a artistes, col·lectius culturals i microempreses. Programari lliure, sense complicacions. Més de 25 anys d'experiència."
-lastmod: "2026-06-24"
+subtitle: "Desenvolupament web, aplicacions a mida i infraestructura digital. Programari lliure, sense complicacions."
+description: "LinuxBCN — assessoria tecnològica a Barcelona per a artistes, col·lectius culturals i microempreses. Programari lliure, sobirania de dades, 25 anys d'experiència."
+lastmod: "2026-06-25"
 draft: false
 ---
 
@@ -26,29 +26,15 @@ Sovint, el problema no és que et falti tecnologia.
 Acompanyem artistes, col·lectius culturals i microempreses a construir
 una presència digital coherent, lliure i sostenible.
 
-Això vol dir, concretament:
+Concretament:
 
-**Webs** que pots editar tu, que no depenen de cap plataforma,
-que no exposen les dades dels teus visitants a tercers.
-
-**Dominis i correu** propis, ben configurats, amb control total.
-Sense intermediaris que un dia poden desaparèixer o canviar les condicions.
-
-**Servidors i allotjament** a proveïdors europeus, preferentment catalans,
-amb dades al nostre continent i lleis que et protegeixen.
-
-**Eines de comunicació** — formularis, newsletters, analítica —
-sense Google, sense Meta, sense rastrejadors ocults.
-
-**Formació i acompanyament** perquè puguis mantenir el sistema tu sol,
-sense dependre de nosaltres permanentment.
+{{< serveis >}}
 
 No fem webs de catàleg.
 No apliquem plantilles.
 No recomanem tecnologia de moda.
 
-Escoltem, entenem la situació, i dissenyem
-el sistema que té sentit per a cada projecte.
+Escoltem, entenem la situació, i dissenyem el sistema que té sentit per a cada projecte.
 
 ---
 
@@ -75,30 +61,19 @@ La sobirania digital no és un luxe. És higiene bàsica.
 
 ## Com ho fem
 
-LinuxBCN existeix des del 2001.
+LinuxBCN existeix des del 2001. Vint-i-cinc anys acompanyant músics, espais culturals, editores independents, col·lectius veïnals i petites empreses amb valors. Cada projecte és diferent. L'aproximació és la mateixa:
 
-Hem acompanyat músics, espais culturals, editores independents,
-col·lectius veïnals i petites empreses amb valors.
-Cada projecte és diferent. L'aproximació és la mateixa:
+{{< proces >}}
 
-Primer, escoltem. Entenem d'on véns i on vols anar.
-Després, fem un diagnosi: el que tens, el que necessites, el que sobra.
-Finalment, construïm — o reconstruïm — amb eines que tu mateixa puguis mantenir.
-
-Treballem des de la **Nau Bostik**, La Sagrera,
-un espai sociocultural autogestionat que és també el millor context
-per entendre els projectes que ens confien la seva presència digital.
+Treballem des de la **Nau Bostik**, La Sagrera — un espai sociocultural autogestionat que és també el millor context per entendre els projectes que ens confien la seva presència digital.
 
 ---
 
 ## Per a qui treballem a Barcelona i Catalunya
 
-Tenim experiència concreta amb:
-
 {{< perfils >}}
 
-Si el teu projecte no encaixa exactament en cap d'aquests,
-parlem igualment. Cada situació és diferent.
+Si el teu projecte no encaixa exactament en cap d'aquests, parlem igualment. Cada situació és diferent.
 
 ---
 

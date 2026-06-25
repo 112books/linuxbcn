@@ -1604,3 +1604,190 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── Scroll progress + back to top ─────────────────────────────────────── */
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+  z-index: 500;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  transform: translateY(-2px);
+}
+
+.btt-track {
+  fill: var(--header-bg);
+  stroke: var(--border);
+  stroke-width: 2;
+}
+
+.btt-ring {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.btt-arrow {
+  fill: var(--ink);
+  font-size: 14px;
+  font-family: var(--sans);
+  font-weight: 500;
+  text-anchor: middle;
+  dominant-baseline: auto;
+  pointer-events: none;
+}
+
+@media (max-width: 540px) {
+  #back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* =====================
+   SERVEIS (home)
+   ===================== */
+
+.lbcn-serveis {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.lbcn-servei {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.lbcn-servei-ico {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.1rem;
+  color: var(--ink3);
+  flex-shrink: 0;
+}
+
+.lbcn-servei-ico svg {
+  width: 36px;
+  height: 36px;
+}
+
+.lbcn-servei-title {
+  display: block;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.lbcn-servei-desc {
+  font-size: 0.88rem;
+  color: var(--ink2);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =====================
+   PROCÉS (home)
+   ===================== */
+
+.lbcn-proces {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.lbcn-pas {
+  background: var(--bg);
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.lbcn-pas-num {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.lbcn-pas-title {
+  display: block;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.lbcn-pas-desc {
+  font-size: 0.82rem;
+  color: var(--ink2);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .lbcn-proces {
+    grid-template-columns: 1fr 1fr;
+  }
+  .lbcn-servei {
+    grid-template-columns: 48px 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .lbcn-proces {
+    grid-template-columns: 1fr;
+  }
+}

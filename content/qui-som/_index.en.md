@@ -1,100 +1,74 @@
 ---
 title: "Who we are"
 slug: "qui-som"
-description: "Joan Linux Martínez — photographer, graphic editor, cultural activist and technology consultant from Barcelona. Over 30 years of free software at the service of culture and values-driven projects."
-lastmod: "2026-06-24"
+description: "LinuxBCN — technology consultancy in Barcelona since 2001. Web development, custom applications and digital infrastructure with free software. Data sovereignty for artists, collectives and values-driven businesses."
+lastmod: "2026-06-25"
 draft: false
 ---
 
-## Joan Linux Martínez i Serres
+## LinuxBCN
 
-Born in 1972 in Barcelona, raised in Subirats (Alt Penedès).
-At 15 I studied Graphic Arts.
-Shortly after: fanzines, magazines, photography.
+Technology consultancy specialising in digital identity, web development and custom applications.
 
-Photographer, graphic editor, cultural activist.
-Thirty-odd years in Nou Barris.
-Now based at **Nau Bostik**, since September 2020.
+We work with free software. We host data with European providers, preferably Catalan ones. We design systems that clients can understand, maintain and control.
+
+Since 2001, with no dependency on Google, Meta or the major technology platforms.
 
 ---
 
-## Technology as a tool, not an end
+## Track record
 
-LinuxBCN has existed since 2001.
+Twenty-five years supporting cultural, artistic and social projects in building coherent, sustainable digital presences.
 
-I wasn't born a technology consultant. I was born a photographer and editor.
-Technology arrived because I needed tools that depended on no one,
-that didn't lock my data in corporate vaults,
-that didn't force me to keep paying licences just to access my own work.
+We have developed and maintain websites and applications for:
 
-Linux was the answer. It still is.
+- **Bratia** — independent rock band website
+- **Nau Bostik** — self-managed sociocultural space, La Sagrera
+- **Llumàtics** — analogue photography school
+- **112 Books** — independent photobook publisher
+- **FAVB** — Federation of Barcelona Neighbourhood Associations
+- **Revista Carrer** — FAVB's publication
+- **9 Barris Acull** — support organisation for migrants
+- **Restaurant Machiroku** — artisan Japanese cuisine
+- **Family Art Tattoo** — tattoo studio
+- **Ressona.eu** — digital identity platform for emerging artists
+- **Estenop** — mobile application for analogue photographers
+- And a dozen more musicians, artists and collectives.
 
-Today I help cultural, artistic and social projects
-build their digital presence the same way I built mine:
-with free tools, with clear criteria, with no debts to any platform.
-
----
-
-## Timeline
-
-**Photography and culture**
-
-Photographer at the **Barcelona Blues Festival** since 2002.
-Collaborator with **FAVB** and **Revista Carrer** since 2007.
-Member of **9 Barris Imatge** since 2002.
-Teacher at **Cameras & Films** since 2011 (Lomography Embassy Barcelona).
-Teacher at **Llumàtics** since 2017.
-Founder of the publishing house **112 Books** in 2020.
-
-I work with analogue photography.
-I have a darkroom at Nau Bostik.
-
-Currently also immersed in new projects such as **Ressona.eu** (digital identity for artists)
-and the production of more than one book in parallel.
-
-**Technology and digital identity**
-
-LinuxBCN since 2001.
-Websites, servers, domains, email, forms, analytics and privacy.
-All with free software, self-hosted infrastructure and zero Big Tech dependencies.
-
-I have built and maintained the digital presence of:
-Bratia, Nau Bostik, Llumàtics, 112Books, FAVB, Revista Carrer,
-Casal de barri de Prosperitat (until 2024), 9 Barris Acull, Restaurant Machiroku,
-Family Art Tattoo, Ressona.eu, and a dozen more musicians, artists and collectives.
+Every site we build carries **Powered by LinuxBCN** in the footer. Not for branding — because we stand behind what we make.
 
 ---
 
-## What we don't do
+## How we work
 
-We avoid Google tools. All of them. Not out of stubbornness —
-but because Google is the business model that normalised mass surveillance as a service.
-No Analytics, no Fonts, no Maps, no Tag Manager.
+Every project starts with the same question: *What is the minimum system that will solve the real problem?*
 
-We don't recommend Kit Digital (Spain's digital subsidy scheme). We consider it a scam:
-public money that ends up in the hands of large tech integrators
-without the beneficiary gaining any real sovereignty or capability.
+We don't sell templates. We don't recommend fashionable technology. We don't generate artificial dependencies.
 
-No projects that require what we won't do.
-
-This isn't stubbornness —
-it's honesty about who we are and how we work.
+**We listen** — We understand where the project comes from and where it wants to go.
+**Diagnosis** — We assess what exists, what is needed and what is surplus.
+**Build** — We design and implement with tools the client can maintain.
+**Support** — Training and assistance to keep dependence on us to a minimum.
 
 ---
 
-## Why it matters
+## Convictions we don't negotiate
 
-Photography is not innocent. That's why it matters.
+We avoid all Google tools. It's not a whim: Google is the business model that normalised mass surveillance as a service. No Analytics, no Fonts, no Maps, no Tag Manager.
 
-Neither is technology.
+We don't recommend the Kit Digital (Spain's digital subsidy scheme). We consider it an instrument that concentrates public resources in the hands of large technology integrators without the beneficiary gaining any real sovereignty.
 
-Every time you let a platform hold your data,
-every time you publish in a space you don't control,
-every time you use tools you don't understand —
-you are ceding sovereignty.
+We don't take on projects that require what we won't do.
 
-LinuxBCN exists to help you not have to.
-Or, if you already have, to help you take back the lost ground.
+Our clients' data stays on European soil, under legislation that protects them.
+
+---
+
+## Who we work with
+
+{{< perfils-en >}}
+
+If your project doesn't fit neatly into any of these profiles, get in touch anyway. Every situation is different.
 
 ---
 
@@ -102,9 +76,7 @@ Or, if you already have, to help you take back the lost ground.
 
 **Nau Bostik** — Carrer de Ferran Turné, 10 · La Sagrera, Barcelona.
 
-A self-managed sociocultural space where artists, craftspeople,
-photographers, musicians, activists and neighbours converge.
-The best possible context for the work we do.
+A self-managed sociocultural space where artists, craftspeople, musicians, activists and neighbours converge. The best possible context for the work we do.
 
 ---
 

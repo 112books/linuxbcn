@@ -1,8 +1,8 @@
 ---
 title: "Digital identity with criteria"
-subtitle: "Custom digital solutions. Free software, no complications."
-description: "LinuxBCN — digital identity consultancy in Barcelona for artists, cultural collectives and businesses. Free software, no complications. Over 25 years of experience."
-lastmod: "2026-06-24"
+subtitle: "Web development, custom applications and digital infrastructure. Free software, no complications."
+description: "LinuxBCN — technology consultancy in Barcelona for artists, cultural collectives and small businesses. Free software, data sovereignty, 25 years of experience."
+lastmod: "2026-06-25"
 draft: false
 ---
 
@@ -27,29 +27,15 @@ don't control, and couldn't change even if you wanted to.
 We accompany artists, cultural collectives and small businesses
 in building a coherent, free and sustainable digital presence.
 
-Concretely, that means:
+Concretely:
 
-**Websites** you can edit yourself, that don't depend on any platform,
-that don't expose your visitors' data to third parties.
-
-**Domains and email** of your own, properly configured, with full control.
-No intermediaries who might one day disappear or change the terms.
-
-**Servers and hosting** with European providers, preferably Catalan,
-with data on our continent and laws that protect you.
-
-**Communication tools** — forms, newsletters, analytics —
-without Google, without Meta, without hidden trackers.
-
-**Training and support** so you can maintain the system yourself,
-without depending on us indefinitely.
+{{< serveis-en >}}
 
 We don't make catalogue websites.
 We don't apply templates.
 We don't recommend trendy technology.
 
-We listen, understand the situation, and design
-the system that makes sense for each project.
+We listen, understand the situation, and design the system that makes sense for each project.
 
 ---
 
@@ -76,30 +62,19 @@ Digital sovereignty isn't a luxury. It's basic hygiene.
 
 ## How we do it
 
-LinuxBCN has existed since 2001.
+LinuxBCN has existed since 2001. Twenty-five years accompanying musicians, cultural spaces, independent publishers, neighbourhood collectives and values-driven small businesses. Each project is different. The approach is the same:
 
-We have accompanied musicians, cultural spaces, independent publishers,
-neighbourhood collectives and values-driven small businesses.
-Each project is different. The approach is the same:
+{{< proces-en >}}
 
-First, we listen. We understand where you come from and where you want to go.
-Then we diagnose: what you have, what you need, what's surplus.
-Finally, we build — or rebuild — with tools you can maintain yourself.
-
-We work from **Nau Bostik**, La Sagrera,
-a self-managed sociocultural space that is also the best context
-for understanding the projects that trust us with their digital presence.
+We work from **Nau Bostik**, La Sagrera — a self-managed sociocultural space that is also the best context for understanding the projects that trust us with their digital presence.
 
 ---
 
 ## Who we work with in Barcelona and Catalonia
 
-We have concrete experience with:
-
 {{< perfils-en >}}
 
-If your project doesn't fit exactly into any of these,
-let's talk anyway. Every situation is different.
+If your project doesn't fit exactly into any of these, let's talk anyway. Every situation is different.
 
 ---
 
