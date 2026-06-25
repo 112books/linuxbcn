@@ -43,12 +43,15 @@ amb eines lliures, amb criteris clars, sense deures a cap plataforma.
 Fotògraf del **Barcelona Blues Festival** des del 2002.
 Col·laborador de la **FAVB** i la **Revista Carrer** des del 2007.
 Membre de **9 Barris Imatge** des del 2002.
-Professor a **Cameras & Films** des del 2011.
+Professor a **Cameras & Films** des del 2011 (Lomography Embassy Barcelona).
 Professor a **Llumàtics** des del 2017.
-Fundador de **112 Books** el 2020.
+Fundador de l'editorial **112 Books** el 2020.
 
 Treballo amb fotografia analògica.
 Tinc un laboratori de revelat a la Nau Bostik.
+
+Actualment també immers en nous projectes com **Ressona.eu** (identitat digital per a artistes)
+i en la producció de més d'un llibre en paral·lel.
 
 **Tecnologia i identitat digital**
 
@@ -58,15 +61,21 @@ Tot amb programari lliure, allotjament propi i zero dependències de Big Tech.
 
 He construït i mantingut la presència digital de:
 Bratia, Nau Bostik, Llumàtics, 112Books, FAVB, Revista Carrer,
-Casal de barri de Prosperitat, 9 Barris Acull, Machiroku Studio,
-Family Art Tattoo, Ressona, i una dotzena de músics, artistes i col·lectius més.
+Casal de barri de Prosperitat (fins a 2024), 9 Barris Acull, Restaurant Machiroku,
+Family Art Tattoo, Ressona.eu, i una dotzena de músics, artistes i col·lectius més.
 
 ---
 
 ## El que no fem
 
-No usem Google Analytics. No usem Meta Pixel.
-No instal·lem Fonts de Google. No recomanem el Kit Digital.
+Evitem les eines de Google. Totes. No és un capritx —
+és que Google és el model de negoci que ha normalitzat la vigilància massiva com a servei.
+No usem Analytics, no instal·lem Fonts, no posem Maps, no toquem Tag Manager.
+
+No recomanem el Kit Digital. El considerem una estafa:
+diners públics que acaben en mans de grans integradors tecnològics
+sense que el beneficiari adquireixi cap sobirania ni capacitat real.
+
 No acceptem projectes que necessitin el que nosaltres no farem.
 
 Això no és intransigència —
