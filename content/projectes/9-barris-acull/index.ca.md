@@ -59,6 +59,6 @@ Drupal · WordPress · Gestió d'expedients · RGPD · Estadístiques socials
 
 ---
 
-{{< testimoni "Trigàvem hores a processar les dades per als informes anuals de subvencions. Joan ens va proposar una solució a mida i vam passar a fer-ho en minuts, exactament com necessitàvem." "Andrea, directora de 9 Barris Acull" >}}
+{{< testimoni "Teníem una eina feta a Access per un voluntari. Trigàvem hores a processar les dades per als informes anuals de subvencions. Joan ens va desenvolupar una solució a mida amb Drupal i vam passar a fer-ho en minuts, exactament com necessitàvem." "Andrea, directora de 9 Barris Acull" >}}
 
 → [9bacull.org](https://9bacull.org)
