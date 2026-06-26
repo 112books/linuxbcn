@@ -1,20 +1,16 @@
 <?php
 /**
  * Genera analytics-cache.json a partir de la API de GoatCounter.
- * Fa 5 crides seqüencials amb delays per evitar rate limiting (429).
- * S'executa des del botó "Actualitzar" del dashboard /admin/.
+ * Lògica portada de fetch_goatcounter_analytics.py (goatcounter-dashboard).
  *
  * Ús: GET /admin/fetch-analytics.php?token=<PASSWORD>
  *     → escriu analytics-cache.json al mateix directori
  *     → retorna JSON {status, total, generated} o {error}
- *
- * Requereix: PHP + cURL + permisos d'escriptura al directori /admin/
  */
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 set_time_limit(90);
 
-// Token de protecció (ha de coincidir amb PASSWORD al index.html)
 $token = trim($_GET['token'] ?? '');
 if ($token !== 'linuxbcn') {
     http_response_code(403);
@@ -32,7 +28,7 @@ define('GC_TOKEN', '1lo7hszjcgc71hw45idc5dg1qb4i9wpdcp182xo2lhy50x1xj');
 define('GC_BASE',   'https://linuxbcn.goatcounter.com/api/v0');
 define('CACHE_FILE', __DIR__ . '/analytics-cache.json');
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// ── gc_fetch: retorna array de dades o ['__error' => $codi] ──────────────────
 
 function gc_fetch(string $path, array $params = []): array {
     $url = GC_BASE . $path;
@@ -56,159 +52,139 @@ function gc_fetch(string $path, array $params = []): array {
     return is_array($decoded) ? $decoded : ['__error' => $status, '__msg' => 'Resposta invàlida'];
 }
 
-function extract_lang(string $path): string {
-    $parts = array_values(array_filter(explode('/', $path)));
-    foreach ($parts as $p) {
-        if (in_array($p, ['ca', 'en', 'es'], true)) return $p;
-    }
-    return 'ca';
-}
+// ── _norm_stats: equivalent de Python _norm_stats ────────────────────────────
+// Llegeix directament {name, id, count} de cada element — sense fallbacks
 
-function extract_section(string $path): string {
-    $parts = array_values(array_filter(explode('/', $path)));
-    $lang_idx = -1;
-    foreach ($parts as $i => $p) {
-        if (in_array($p, ['ca', 'en', 'es'], true)) { $lang_idx = $i; break; }
-    }
-    $after = $lang_idx >= 0 ? array_slice($parts, $lang_idx + 1) : $parts;
-    return $after[0] ?? 'inici';
-}
-
-function norm_items(array $items, string $name_field): array {
+function norm_stats(array $items): array {
     $out = [];
     foreach ($items as $item) {
-        // GoatCounter API v0 stats/{page} retorna {name, id, count} directament
-        $name  = $item['name'] ?? $item[$name_field] ?? $item['id'] ?? 'Desconegut';
+        $name  = $item['name'] ?? $item['id'] ?? 'Desconegut';
         $count = (int)($item['count'] ?? 0);
-        if (!$count) {
-            // Fallback: format antic amb stats[].daily
-            if (isset($item['stats']) && is_array($item['stats'])) {
-                foreach ($item['stats'] as $s) $count += (int)($s['daily'] ?? $s['count'] ?? 0);
-            }
+        if ($count > 0) {
+            $out[] = ['name' => $name, 'id' => $item['id'] ?? $name, 'count' => $count];
         }
-        if (!$count) $count = (int)($item['total'] ?? 0);
-        if ($count > 0) $out[] = ['name' => $name, 'id' => $item['id'] ?? $name, 'count' => $count];
     }
     usort($out, fn($a, $b) => $b['count'] - $a['count']);
     return $out;
 }
 
-// ── Fetch seqüencial ──────────────────────────────────────────────────────────
+// ── extract_section: equivalent de Python _extract_section ───────────────────
 
-$end   = date('Y-m-d');
+function extract_section(string $path): string {
+    $langs = ['ca', 'en', 'es', 'fr', 'de', 'it', 'pt'];
+    $parts = array_values(array_filter(explode('/', $path)));
+    if (!$parts) return 'inici';
+    $idx = in_array($parts[0], $langs, true) ? 1 : 0;
+    return $parts[$idx] ?? 'inici';
+}
+
+// ── Paràmetres de cerca ───────────────────────────────────────────────────────
+
+$end   = date('Y-m-d', strtotime('-1 day'));
 $start = date('Y-m-d', strtotime('-365 days'));
-$base_params = ['start' => $start, 'end' => $end, 'limit' => 200];
+$params = ['start' => $start, 'end' => $end, 'limit' => 50];
 
-$hits_raw = gc_fetch('/stats/hits', $base_params); usleep(400000);
+// ── Crida principal: hits per pàgina ─────────────────────────────────────────
 
-// Si la crida principal falla, identifica el motiu real
+$hits_raw = gc_fetch('/stats/hits', $params);
+usleep(400000);
+
 if (isset($hits_raw['__error'])) {
     $code = (int)$hits_raw['__error'];
     if ($code === 429) {
-        $msg = 'GoatCounter ha limitat les crides (429 Too Many Requests). Espera 1-2 minuts i torna a prémer Actualitzar.';
+        $msg = 'GoatCounter ha limitat les crides (429). Espera 1-2 minuts i torna a prémer Actualitzar.';
     } elseif ($code === 401 || $code === 403) {
-        $msg = 'Token de GoatCounter invàlid o caducat ('. $code .'). Regenera\'l a goatcounter.com/settings/api i actualitza\'l a fetch-analytics.php línia 31.';
+        $msg = 'Token de GoatCounter invàlid o caducat (' . $code . '). Regenera\'l a goatcounter.com/settings/api i actualitza\'l a fetch-analytics.php línia 14.';
     } elseif ($code >= 500) {
-        $msg = 'GoatCounter té una incidència als seus servidors ('. $code .'). No és un problema del teu token. Torna-ho a provar en uns minuts.';
-    } elseif ($code === 0) {
-        $msg = $hits_raw['__msg'] ?? 'Error de connexió amb GoatCounter. Comprova la connexió del servidor.';
+        $msg = 'GoatCounter té una incidència als seus servidors (' . $code . '). No és un problema del teu token. Torna-ho a provar en uns minuts.';
     } else {
-        $msg = 'Error inesperat de l\'API de GoatCounter (HTTP '. $code .'). Torna-ho a provar.';
+        $msg = $hits_raw['__msg'] ?? 'Error de connexió (HTTP ' . $code . '). Torna-ho a provar.';
     }
     http_response_code(502);
     echo json_encode(['error' => $msg, 'http_status' => $code]);
     exit;
 }
 
-$refs_raw = gc_fetch('/stats/toprefs',   array_merge($base_params, ['limit' => 20])); usleep(400000);
-$brow_raw = gc_fetch('/stats/browsers',  array_merge($base_params, ['limit' => 10])); usleep(400000);
-$sys_raw  = gc_fetch('/stats/systems',   array_merge($base_params, ['limit' => 10])); usleep(400000);
-$size_raw = gc_fetch('/stats/sizes',     array_merge($base_params, ['limit' => 10])); usleep(400000);
-$loc_raw  = gc_fetch('/stats/locations', array_merge($base_params, ['limit' => 20]));
-
-// Les crides secundàries poden fallar parcialment — continuem amb el que tenim
-$refs_raw = isset($refs_raw['__error']) ? [] : $refs_raw;
-$brow_raw = isset($brow_raw['__error']) ? [] : $brow_raw;
-$sys_raw  = isset($sys_raw['__error'])  ? [] : $sys_raw;
-$size_raw = isset($size_raw['__error']) ? [] : $size_raw;
-$loc_raw  = isset($loc_raw['__error'])  ? [] : $loc_raw;
-
-// ── Processa hits ─────────────────────────────────────────────────────────────
+// ── Processa hits (lògica equivalent al Python) ───────────────────────────────
 
 $hits_by_day = [];
-$by_lang     = [];
 $by_section  = [];
-$hits_list    = [];
-$total        = 0;
-$total_unique = 0;
+$hits_pages  = [];
+$total       = 0;
 
 foreach (($hits_raw['hits'] ?? []) as $path_item) {
     $path = (string)($path_item['path'] ?? '');
     if (str_starts_with($path, '/admin') || str_ends_with($path, '.php')) continue;
 
-    $lang        = extract_lang($path);
-    $section     = extract_section($path);
-    $path_total  = 0;
-    $path_unique = (int)($path_item['total_unique'] ?? 0);
+    $section    = extract_section($path);
+    $path_total = 0;
 
     foreach (($path_item['stats'] ?? []) as $stat) {
-        $date      = substr((string)($stat['day'] ?? ''), 0, 10);
-        $daily_raw = $stat['daily'] ?? null;
-        if (is_array($daily_raw)) {
-            $count = (int)array_sum($daily_raw);
-        } elseif ($daily_raw !== null) {
-            $count = (int)$daily_raw;
-        } else {
-            $count = (int)($stat['count'] ?? $stat['total'] ?? 0);
+        $date  = substr((string)($stat['day'] ?? ''), 0, 10);
+        $count = (int)($stat['daily'] ?? 0);  // escalar, com al Python
+        if (!$count) continue;
+        $total                  += $count;
+        $path_total             += $count;
+        $by_section[$section]    = ($by_section[$section] ?? 0) + $count;
+        if (strlen($date) === 10) {
+            $hits_by_day[$date] = ($hits_by_day[$date] ?? 0) + $count;
         }
-        if (!$count || strlen($date) !== 10) continue;
-        $total               += $count;
-        $path_total          += $count;
-        $by_lang[$lang]       = ($by_lang[$lang] ?? 0) + $count;
-        $by_section[$section] = ($by_section[$section] ?? 0) + $count;
-        $hits_by_day[$date]   = ($hits_by_day[$date] ?? 0) + $count;
     }
-    $total_unique += $path_unique;
+
     if ($path_total > 0) {
-        $hits_list[] = ['path' => $path, 'count' => $path_total, 'count_unique' => $path_unique];
+        $hits_pages[$path] = ($hits_pages[$path] ?? 0) + $path_total;
     }
 }
 
 ksort($hits_by_day);
-arsort($by_lang);
 arsort($by_section);
-usort($hits_list, fn($a, $b) => $b['count'] - $a['count']);
+arsort($hits_pages);
 
-$hbd_arr = [];
-foreach ($hits_by_day as $date => $count) {
-    $hbd_arr[] = ['date' => $date, 'count' => $count];
+$hbd_arr   = array_map(fn($d, $c) => ['date' => $d, 'count' => $c], array_keys($hits_by_day), array_values($hits_by_day));
+$hits_list = [];
+foreach (array_slice($hits_pages, 0, 30, true) as $path => $count) {
+    $hits_list[] = ['path' => $path, 'count' => $count];
 }
 
-// ── Processa refs ─────────────────────────────────────────────────────────────
-// GoatCounter API v0: GET /stats/toprefs → {"stats": [{id, name, count}]}
+// ── Crides secundàries (fallen en silenci, com al Python safe_fetch_stats) ───
+
+function safe_stats(string $endpoint, array $params): array {
+    usleep(400000);
+    $raw = gc_fetch($endpoint, $params);
+    if (isset($raw['__error'])) return [];
+    return norm_stats($raw['stats'] ?? []);
+}
 
 $refs_list = [];
-foreach (($refs_raw['stats'] ?? []) as $ref) {
-    $count = (int)($ref['count'] ?? 0);
-    if ($count > 0) $refs_list[] = ['name' => $ref['name'] ?? $ref['id'] ?? '(directe)', 'count' => $count, 'id' => $ref['id'] ?? ''];
+usleep(400000);
+$refs_raw = gc_fetch('/stats/toprefs', array_merge($params, ['limit' => 20]));
+if (!isset($refs_raw['__error'])) {
+    foreach (($refs_raw['stats'] ?? []) as $ref) {
+        $count = (int)($ref['count'] ?? 0);
+        if ($count > 0) $refs_list[] = ['name' => $ref['name'] ?? $ref['id'] ?? '(directe)', 'count' => $count, 'id' => $ref['id'] ?? ''];
+    }
 }
 
-// ── Construeix sortida ────────────────────────────────────────────────────────
+$browsers  = safe_stats('/stats/browsers',  array_merge($params, ['limit' => 10]));
+$systems   = safe_stats('/stats/systems',   array_merge($params, ['limit' => 10]));
+$sizes     = safe_stats('/stats/sizes',     array_merge($params, ['limit' => 10]));
+$locations = safe_stats('/stats/locations', array_merge($params, ['limit' => 20]));
+
+// ── Escriu cache ──────────────────────────────────────────────────────────────
 
 $output = [
     'generated'   => gmdate('Y-m-d\TH:i:s\Z'),
     'period'      => ['start' => $start, 'end' => $end],
-    'total'        => $total,
-    'total_unique' => $total_unique,
-    'locations'    => norm_items($loc_raw['stats'] ?? [], 'location'),
+    'total'       => $total,
+    'total_unique'=> 0,
     'hits_by_day' => $hbd_arr,
-    'hits'        => array_slice($hits_list, 0, 50),
-    'by_lang'     => $by_lang,
+    'hits'        => $hits_list,
     'by_section'  => $by_section,
     'refs'        => $refs_list,
-    'browsers'    => norm_items($brow_raw['stats'] ?? [], 'browser'),
-    'systems'     => norm_items($sys_raw['stats']  ?? [], 'system'),
-    'sizes'       => norm_items($size_raw['stats'] ?? [], 'size'),
+    'browsers'    => $browsers,
+    'systems'     => $systems,
+    'sizes'       => $sizes,
+    'locations'   => $locations,
 ];
 
 $json = json_encode($output, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
