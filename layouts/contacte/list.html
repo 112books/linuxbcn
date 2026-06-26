@@ -15,10 +15,15 @@
   <div class="contacte-wrap">
 
     <div class="contacte-form-bloc">
-      <p class="contacte-intro">
-        {{ if $ca }}Explica'ns la teva situació en dos passos. Respondrem per correu, amb criteri i sense pressa.
-        {{ else }}Tell us about your situation in two steps. We'll get back to you by email, with care and without rushing.{{ end }}
-      </p>
+      <div class="contacte-intro">
+        {{ if $ca }}
+        <p>Explica'ns la teva situació. No cal que tinguis clar el que necessites — sovint la conversa inicial és la part més útil.</p>
+        <p>Responem per correu, amb criteri i sense pressa. Si el que descrips no és el que fem, t'ho diem amb honestedat.</p>
+        {{ else }}
+        <p>Tell us about your situation. You don't need to have everything figured out — the initial conversation is often the most useful part.</p>
+        <p>We reply by email, with care and without rushing. If what you describe isn't what we do, we'll tell you honestly.</p>
+        {{ end }}
+      </div>
 
       <form id="contacte-form" class="contacte-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
 
