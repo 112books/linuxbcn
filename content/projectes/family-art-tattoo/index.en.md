@@ -3,6 +3,7 @@ title: "Family Art Tattoo"
 slug: "family-art-tattoo"
 weight: 20
 year: 2022
+image: "familyarttatto-01.png"
 client: "tattoo studio"
 sector: "negoci-local"
 description: "Custom WordPress theme, content creation, SEO and Instagram integration for Family Art Tattoo, a tattoo studio in Barcelona. LinuxBCN."

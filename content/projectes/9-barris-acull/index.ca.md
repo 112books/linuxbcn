@@ -3,6 +3,7 @@ title: "9 Barris Acull"
 slug: "9-barris-acull"
 weight: 21
 year: 2019
+image: "9barrisacull.png"
 client: "entitat social"
 sector: "cultura"
 description: "Aplicació web amb Drupal per a la gestió de tràmits d'usuaris, compliment RGPD i estadístiques sobre immigració per a 9 Barris Acull, Barcelona. LinuxBCN."
