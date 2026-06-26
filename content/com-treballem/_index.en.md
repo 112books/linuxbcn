@@ -6,28 +6,10 @@ lastmod: "2026-06-24"
 draft: false
 ---
 
-## First, we listen
+{{< proces-en >}}
 
-Before proposing anything, we understand what already exists.
-
-How you move digitally, which tools you use,
-where you lose time and energy, and where you want to go.
-
-There's no standard diagnosis.
 Every project starts from scratch because every situation is different.
-
----
-
-## Then, we decide together
-
-We don't apply prefabricated solutions.
-
-We define what makes sense for your case:
-what needs to be built, what can be simplified,
-and what's better left undone.
-
-Technology comes at the end of this conversation,
-not at the beginning.
+Technology comes at the end of this conversation, not at the beginning.
 
 ---
 

@@ -6,27 +6,10 @@ lastmod: "2026-06-24"
 draft: false
 ---
 
-## Primer, escoltem
+{{< proces >}}
 
-Abans de proposar res, entenem el que ja existeix.
-
-Com us moveu digitalment, quines eines feu servir,
-on perdeu temps i energia, i on voleu arribar.
-
-No hi ha diagnòstic estàndard.
 Cada projecte comença des de zero perquè cada situació és diferent.
-
----
-
-## Després, decidim junts
-
-No apliquem solucions prefabricades.
-
-Definim el que té sentit per al vostre cas:
-què cal construir, què es pot simplificar,
-i què és millor deixar de fer.
-
-La tecnologia ve al final d'aquesta conversa, no al principi.
+La tecnologia ve al final de la conversa, no al principi.
 
 ---
 

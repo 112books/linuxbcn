@@ -1760,6 +1760,12 @@ footer a:hover {
   display: block;
 }
 
+.lbcn-pas-ico {
+  display: block;
+  color: var(--ink3);
+  margin: 0.25rem 0;
+}
+
 .lbcn-pas-title {
   display: block;
   font-family: var(--display);
