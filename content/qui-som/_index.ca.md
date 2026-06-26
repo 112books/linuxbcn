@@ -30,7 +30,7 @@ Hem desenvolupat i mantenim webs i aplicacions per a:
 - [**112 Books**](/projectes/112books/) — editorial independent de fotobooks
 - [**FAVB**](/projectes/favb/) — Federació d'Associacions de Veïns de Barcelona
 - [**Revista Carrer**](/projectes/carrer/) — publicació de la FAVB
-- [**9 Barris Acull**](https://9bacull.org) — entitat de suport a persones migrades
+- [**9 Barris Acull**](/projectes/9-barris-acull/) — entitat de suport a persones migrades
 - [**Restaurant Machiroku**](/projectes/machiroku/) — cuina japonesa artesanal
 - [**Family Art Tattoo**](/projectes/family-art-tattoo/) — estudi de tatuatge
 - [**Ressona.eu**](/projectes/ressona/) — plataforma d'identitat digital per a artistes emergents
