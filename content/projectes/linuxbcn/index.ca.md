@@ -93,5 +93,17 @@ El nou sistema: lleuger, estructurat i coherent amb els valors que defensem.
 
 ---
 
+## Dashboard d'analítica propi
+
+Dashboard privat a `/admin/` construït a mida: KPIs, gràfic de visites i interpretació automàtica de dades. Sense Google Analytics, sense dades a servidors de tercers.
+
+![Dashboard d'estadístiques — KPIs i gràfic de visites](linuxbcn-estadistiques-01.png)
+
+![Dashboard — detall de pàgines i orígens de trànsit](linuxbcn-estadistiques-02.png)
+
+![Dashboard — dispositius, navegadors i interpretació automàtica](linuxbcn-estadistiques-03.png)
+
+---
+
 → [linuxbcn.com](https://linuxbcn.com)
 → [Com treballem](/com-treballem/)

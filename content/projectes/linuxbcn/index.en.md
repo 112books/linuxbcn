@@ -93,5 +93,17 @@ The new system: lightweight, structured and coherent with the values we defend.
 
 ---
 
+## Custom analytics dashboard
+
+Private dashboard at `/admin/` built in-house: KPIs, visits chart and automatic data interpretation. No Google Analytics, no data sent to third-party servers.
+
+![Analytics dashboard — KPIs and visits chart](linuxbcn-estadistiques-01.png)
+
+![Dashboard — page detail and traffic sources](linuxbcn-estadistiques-02.png)
+
+![Dashboard — devices, browsers and automatic interpretation](linuxbcn-estadistiques-03.png)
+
+---
+
 → [linuxbcn.com](https://linuxbcn.com)
 → [How we work](/com-treballem/)
