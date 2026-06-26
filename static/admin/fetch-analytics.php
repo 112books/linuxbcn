@@ -34,7 +34,7 @@ define('CACHE_FILE', __DIR__ . '/analytics-cache.json');
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-function gc_fetch(string $path, array $params = []): ?array {
+function gc_fetch(string $path, array $params = []): array {
     $url = GC_BASE . $path;
     if ($params) $url .= '?' . http_build_query($params);
     $ch = curl_init($url);
@@ -50,9 +50,10 @@ function gc_fetch(string $path, array $params = []): ?array {
     $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $err    = curl_error($ch);
     curl_close($ch);
-    if ($body === false || $err || $status >= 400) return null;
+    if ($body === false || $err) return ['__error' => 0, '__msg' => 'Error de xarxa: ' . $err];
+    if ($status >= 400)         return ['__error' => $status];
     $decoded = json_decode($body, true);
-    return is_array($decoded) ? $decoded : null;
+    return is_array($decoded) ? $decoded : ['__error' => $status, '__msg' => 'Resposta invàlida'];
 }
 
 function extract_lang(string $path): string {
@@ -98,20 +99,39 @@ $end   = date('Y-m-d');
 $start = date('Y-m-d', strtotime('-365 days'));
 $base_params = ['start' => $start, 'end' => $end, 'limit' => 200];
 
-$hits_raw = gc_fetch('/stats/hits',     $base_params); usleep(400000);
+$hits_raw = gc_fetch('/stats/hits', $base_params); usleep(400000);
 
-// Si la crida principal falla, l'API no funciona (token expirat o error de xarxa)
-if ($hits_raw === null) {
+// Si la crida principal falla, identifica el motiu real
+if (isset($hits_raw['__error'])) {
+    $code = (int)$hits_raw['__error'];
+    if ($code === 429) {
+        $msg = 'GoatCounter ha limitat les crides (429 Too Many Requests). Espera 1-2 minuts i torna a prémer Actualitzar.';
+    } elseif ($code === 401 || $code === 403) {
+        $msg = 'Token de GoatCounter invàlid o caducat ('. $code .'). Regenera\'l a goatcounter.com/settings/api i actualitza\'l a fetch-analytics.php línia 31.';
+    } elseif ($code >= 500) {
+        $msg = 'GoatCounter té una incidència als seus servidors ('. $code .'). No és un problema del teu token. Torna-ho a provar en uns minuts.';
+    } elseif ($code === 0) {
+        $msg = $hits_raw['__msg'] ?? 'Error de connexió amb GoatCounter. Comprova la connexió del servidor.';
+    } else {
+        $msg = 'Error inesperat de l\'API de GoatCounter (HTTP '. $code .'). Torna-ho a provar.';
+    }
     http_response_code(502);
-    echo json_encode(['error' => 'L\'API de GoatCounter ha retornat un error. Comprova que el token és vàlid a goatcounter.com/settings/api i actualitza\'l a fetch-analytics.php.']);
+    echo json_encode(['error' => $msg, 'http_status' => $code]);
     exit;
 }
 
-$refs_raw = gc_fetch('/stats/toprefs', array_merge($base_params, ['limit' => 20])); usleep(400000);
-$brow_raw = gc_fetch('/stats/browsers', array_merge($base_params, ['limit' => 10])); usleep(400000);
-$sys_raw  = gc_fetch('/stats/systems',  array_merge($base_params, ['limit' => 10])); usleep(400000);
-$size_raw = gc_fetch('/stats/sizes',    array_merge($base_params, ['limit' => 10])); usleep(400000);
+$refs_raw = gc_fetch('/stats/toprefs',   array_merge($base_params, ['limit' => 20])); usleep(400000);
+$brow_raw = gc_fetch('/stats/browsers',  array_merge($base_params, ['limit' => 10])); usleep(400000);
+$sys_raw  = gc_fetch('/stats/systems',   array_merge($base_params, ['limit' => 10])); usleep(400000);
+$size_raw = gc_fetch('/stats/sizes',     array_merge($base_params, ['limit' => 10])); usleep(400000);
 $loc_raw  = gc_fetch('/stats/locations', array_merge($base_params, ['limit' => 20]));
+
+// Les crides secundàries poden fallar parcialment — continuem amb el que tenim
+$refs_raw = isset($refs_raw['__error']) ? [] : $refs_raw;
+$brow_raw = isset($brow_raw['__error']) ? [] : $brow_raw;
+$sys_raw  = isset($sys_raw['__error'])  ? [] : $sys_raw;
+$size_raw = isset($size_raw['__error']) ? [] : $size_raw;
+$loc_raw  = isset($loc_raw['__error'])  ? [] : $loc_raw;
 
 // ── Processa hits ─────────────────────────────────────────────────────────────
 
