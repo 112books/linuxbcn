@@ -24,17 +24,17 @@ Vint-i-cinc anys acompanyant projectes culturals, artístics i socials a constru
 
 Hem desenvolupat i mantenim webs i aplicacions per a:
 
-- **Bratia** — web de banda de rock independent
-- **Nau Bostik** — espai sociocultural autogestionat, La Sagrera
-- **Llumàtics** — escola de fotografia analògica
-- **112 Books** — editorial independent de fotobooks
-- **FAVB** — Federació d'Associacions de Veïns de Barcelona
-- **Revista Carrer** — publicació de la FAVB
+- [**Bratia**](/projectes/bratia/) — web de banda de rock independent
+- [**Nau Bostik**](/projectes/nau-bostik/) — espai sociocultural autogestionat, La Sagrera
+- [**Llumàtics**](/projectes/llumatics/) — escola de fotografia analògica
+- [**112 Books**](/projectes/112books/) — editorial independent de fotobooks
+- [**FAVB**](/projectes/favb/) — Federació d'Associacions de Veïns de Barcelona
+- [**Revista Carrer**](/projectes/carrer/) — publicació de la FAVB
 - **9 Barris Acull** — entitat de suport a persones migrades
-- **Restaurant Machiroku** — cuina japonesa artesanal
+- [**Restaurant Machiroku**](/projectes/machiroku/) — cuina japonesa artesanal
 - **Family Art Tattoo** — estudi de tatuatge
-- **Ressona.eu** — plataforma d'identitat digital per a artistes emergents
-- **Estenop** — aplicació mòbil per a fotògrafs analògics
+- [**Ressona.eu**](/projectes/ressona/) — plataforma d'identitat digital per a artistes emergents
+- [**App Positivador**](/projectes/app-positivador/) — aplicació web de revelat fotogràfic
 - I una dotzena de músics, artistes i col·lectius més.
 
 Tots els llocs que construïm porten **Powered by LinuxBCN** al peu. No per marca, sinó perquè responem del que fem.
@@ -45,24 +45,13 @@ Tots els llocs que construïm porten **Powered by LinuxBCN** al peu. No per marc
 
 Cada projecte comença per la mateixa pregunta: *Quin és el sistema mínim que resoldrà el problema real?*
 
-No venem plantilles. No recomanem tecnologia de moda. No generem dependències artificials.
-
-**Escoltem** — Entenem d'on ve el projecte i on vol arribar.
-**Diagnosi** — Avaluem el que hi ha, el que cal i el que sobra.
-**Construcció** — Dissenyem i implementem amb eines que el client pot mantenir.
-**Acompanyament** — Formació i suport perquè la dependència de nosaltres sigui mínima.
+{{< proces >}}
 
 ---
 
 ## Conviccions que no negociem
 
-Evitem totes les eines de Google. No és un capritx: Google és el model de negoci que ha normalitzat la vigilància massiva com a servei. Cap Analytics, cap Fonts, cap Maps, cap Tag Manager.
-
-No recomanem el Kit Digital. Considerem que és un instrument que concentra recursos públics en grans integradors tecnològics sense que el beneficiari guanyi sobirania real.
-
-No acceptem projectes que exigeixin el que no farem.
-
-Les dades dels nostres clients resten al continent europeu, sota legislació que els protegeix.
+{{< conviccions >}}
 
 ---
 

@@ -24,17 +24,17 @@ Twenty-five years supporting cultural, artistic and social projects in building 
 
 We have developed and maintain websites and applications for:
 
-- **Bratia** — independent rock band website
-- **Nau Bostik** — self-managed sociocultural space, La Sagrera
-- **Llumàtics** — analogue photography school
-- **112 Books** — independent photobook publisher
-- **FAVB** — Federation of Barcelona Neighbourhood Associations
-- **Revista Carrer** — FAVB's publication
+- [**Bratia**](/projectes/bratia/) — independent rock band website
+- [**Nau Bostik**](/projectes/nau-bostik/) — self-managed sociocultural space, La Sagrera
+- [**Llumàtics**](/projectes/llumatics/) — analogue photography school
+- [**112 Books**](/projectes/112books/) — independent photobook publisher
+- [**FAVB**](/projectes/favb/) — Federation of Barcelona Neighbourhood Associations
+- [**Revista Carrer**](/projectes/carrer/) — FAVB's publication
 - **9 Barris Acull** — support organisation for migrants
-- **Restaurant Machiroku** — artisan Japanese cuisine
+- [**Restaurant Machiroku**](/projectes/machiroku/) — artisan Japanese cuisine
 - **Family Art Tattoo** — tattoo studio
-- **Ressona.eu** — digital identity platform for emerging artists
-- **Estenop** — mobile application for analogue photographers
+- [**Ressona.eu**](/projectes/ressona/) — digital identity platform for emerging artists
+- [**App Positivador**](/projectes/app-positivador/) — analogue darkroom web application
 - And a dozen more musicians, artists and collectives.
 
 Every site we build carries **Powered by LinuxBCN** in the footer. Not for branding — because we stand behind what we make.
@@ -45,24 +45,13 @@ Every site we build carries **Powered by LinuxBCN** in the footer. Not for brand
 
 Every project starts with the same question: *What is the minimum system that will solve the real problem?*
 
-We don't sell templates. We don't recommend fashionable technology. We don't generate artificial dependencies.
-
-**We listen** — We understand where the project comes from and where it wants to go.
-**Diagnosis** — We assess what exists, what is needed and what is surplus.
-**Build** — We design and implement with tools the client can maintain.
-**Support** — Training and assistance to keep dependence on us to a minimum.
+{{< proces-en >}}
 
 ---
 
 ## Convictions we don't negotiate
 
-We avoid all Google tools. It's not a whim: Google is the business model that normalised mass surveillance as a service. No Analytics, no Fonts, no Maps, no Tag Manager.
-
-We don't recommend the Kit Digital (Spain's digital subsidy scheme). We consider it an instrument that concentrates public resources in the hands of large technology integrators without the beneficiary gaining any real sovereignty.
-
-We don't take on projects that require what we won't do.
-
-Our clients' data stays on European soil, under legislation that protects them.
+{{< conviccions-en >}}
 
 ---
 
