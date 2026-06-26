@@ -3,24 +3,35 @@ title: "Nau Bostik"
 slug: "nau-bostik"
 weight: 7
 year: 2025
+image: "naubostik-actual.png"
 client: "espai cultural autogestionat"
 sector: "cultura"
-description: "Sistema digital integral per a la Nau Bostik, espai sociocultural autogestionat de La Sagrera. Agenda col·lectiva, gestió d'espais i eines d'autogestió amb programari lliure. LinuxBCN."
-lastmod: "2026-06-25"
+description: "Recuperació d'urgència i replantejament digital per a Nau Bostik, espai sociocultural autogestionat de La Sagrera, Barcelona. LinuxBCN."
+lastmod: "2026-06-26"
 draft: false
 ---
 
-## Un replantejament de fons, no un redisseny
+## Un projecte en dues fases
 
 Nau Bostik és un espai sociocultural autogestionat al barri de la Sagrera, Barcelona. Activitat intensa, comunitat diversa, agenda constant i gestió completament horitzontal.
 
-El repte no és fer un web nou. És construir una eina digital que estigui a l'alçada de l'ambició de l'espai: un sistema que reflecteixi i reforci com l'organització funciona per dins.
+La nostra relació amb el projecte ha tingut dues etapes molt concretes.
 
 ---
 
-## La proposta
+## Fase 1 — Recuperació d'urgència
 
-Un sistema on el web deixa de ser un tauler d'anuncis i es converteix en el centre digital de l'espai:
+Quan el web antic va deixar de funcionar, calia resoldre-ho de manera immediata. Vam construir un lloc funcional, estable i net en el mínim temps possible: suficient per mantenir la presència digital de l'espai mentre es preparava la solució de fons.
+
+El web actual és el resultat d'aquest treball d'urgència.
+
+---
+
+## Fase 2 — Replantejament estructural (en curs)
+
+El repte real no és tenir un web nou. És construir una eina digital que estigui a l'alçada de l'ambició de l'espai: un sistema que reflecteixi i reforci com l'organització funciona per dins.
+
+La proposta que treballem contempla:
 
 - Agenda col·lectiva gestionada des de dins, sense intermediaris
 - Gestió d'espais i recursos compartits entre col·lectius
@@ -32,17 +43,17 @@ El web no és el producte final. És la llavor d'un canvi estructural en com l'e
 
 ---
 
-## Per què és rellevant
+## Estat actual
 
-Nau Bostik no és un client convencional. És un projecte complex, amb múltiples actors, necessitats diverses i valors molt definits. Resoldre-ho bé requereix entendre l'organització tant com la tecnologia.
-
-És exactament el tipus de projecte per al qual LinuxBCN existeix.
+**En fase de replantejament.** La proposta tècnica i conceptual està elaborada i ha rebut validació interna. Pendent d'aprovació final i de trobar el finançament per al desenvolupament complet.
 
 ---
 
-## Estat
+## Captures
 
-**Pre-aprovat.** Proposta validada internament. En procés de concreció per iniciar la implementació.
+![Nau Bostik — web actual](naubostik-actual.png)
+
+![Nau Bostik — proposta nou projecte](naubostik-nouprojecte.png)
 
 ---
 
