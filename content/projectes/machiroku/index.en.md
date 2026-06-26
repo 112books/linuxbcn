@@ -118,5 +118,7 @@ The new system: mobile-first, lightweight and self-manageable.
 
 ---
 
+{{< testimoni "The website is better than the restaurant." "Sachie, Machiroku" >}}
+
 → [Visit the website](https://machiroku.com)
 → [Solutions for values-driven businesses](/solucions/microempreses/)

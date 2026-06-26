@@ -119,5 +119,7 @@ El nou sistema: mobile-first, lleuger i autogestionable.
 
 ---
 
+{{< testimoni "El web és millor que el restaurant." "Sachie, Machiroku" >}}
+
 → [Veure el web](https://machiroku.com)
 → [Solucions per a negocis amb valors](/solucions/microempreses/)

@@ -89,6 +89,8 @@ El millor que podem mostrar és el que hem fet:
 
 {{< testimoni "Trigàvem hores a processar les dades per als informes anuals de subvencions. Joan ens va proposar una solució a mida i vam passar a fer-ho en minuts, exactament com necessitàvem." "Andrea, directora de 9 Barris Acull" >}}
 
+{{< testimoni "El web és millor que el restaurant." "Sachie, Machiroku" >}}
+
 ---
 
 → [Veure solucions per perfil](/solucions/)
