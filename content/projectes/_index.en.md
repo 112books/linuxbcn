@@ -38,3 +38,7 @@ draft: false
 Organisations we have worked with at different times and in different capacities:
 
 {{< clients >}}
+
+---
+
+Every site we build carries **Powered by LinuxBCN** in the footer — not for branding, but because we stand behind what we make. Searching the phrase will show you a track record longer than what appears here.

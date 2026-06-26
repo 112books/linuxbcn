@@ -39,3 +39,7 @@ draft: false
 Organitzacions i projectes amb els quals hem treballat al llarg dels anys, en diferent grau i capacitat:
 
 {{< clients >}}
+
+---
+
+Tots els llocs que construïm porten **Powered by LinuxBCN** al peu — no per marca, sinó perquè responem del que fem. Cercar la frase us mostrarà una trajectòria més llarga que la que apareix aquí.
