@@ -1799,6 +1799,31 @@ footer a:hover {
 }
 
 /* =====================
+   TESTIMONIS
+   ===================== */
+
+.testimoni {
+  border-left: 3px solid var(--accent);
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background: var(--accent-faint, #fdf6ef);
+}
+
+.testimoni p {
+  font-style: italic;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+  line-height: 1.6;
+}
+
+.testimoni cite {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--ink2);
+  font-family: var(--mono, monospace);
+}
+
+/* =====================
    CONVICCIONS (qui-som)
    ===================== */
 

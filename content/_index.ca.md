@@ -85,4 +85,10 @@ El millor que podem mostrar és el que hem fet:
 
 ---
 
+{{< testimoni "M'encanta que el web de Bratia vagi pràcticament sol." "Ivan Kovačević, Bratia" >}}
+
+{{< testimoni "Trigàvem hores a processar les dades per als informes anuals de subvencions. Joan ens va proposar una solució a mida i vam passar a fer-ho en minuts, exactament com necessitàvem." "Andrea, directora de 9 Barris Acull" >}}
+
+---
+
 → [Veure solucions per perfil](/solucions/)

@@ -123,5 +123,7 @@ El nou sistema: lleuger, autònom i coherent.
 
 ---
 
+{{< testimoni "M'encanta que el web de Bratia vagi pràcticament sol." "Ivan Kovačević, Bratia" >}}
+
 → [Veure el web](https://bratiamusic.com)
 → [Solucions per a artistes i músics](/solucions/musics/)

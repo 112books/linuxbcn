@@ -86,4 +86,10 @@ The best we can show is what we've done:
 
 ---
 
+{{< testimoni "I love that the Bratia website practically runs itself." "Ivan Kovačević, Bratia" >}}
+
+{{< testimoni "We used to spend hours processing data for our annual grant reports. Joan proposed a tailored solution and we went from hours to minutes — exactly what we needed." "Andrea, director of 9 Barris Acull" >}}
+
+---
+
 → [See solutions by profile](/solucions/)

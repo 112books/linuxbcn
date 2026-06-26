@@ -122,5 +122,7 @@ The new system: lightweight, autonomous and coherent.
 
 ---
 
+{{< testimoni "I love that the Bratia website practically runs itself." "Ivan Kovačević, Bratia" >}}
+
 → [Visit the website](https://bratiamusic.com)
 → [Solutions for artists and musicians](/solucions/musics/)
