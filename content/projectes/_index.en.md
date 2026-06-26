@@ -14,7 +14,7 @@ draft: false
 → [Bratia](/projectes/bratia/) — Balkan Gypsy Jazz band
 → [Machiroku](/projectes/machiroku/) — Japanese restaurant in central Barcelona
 → [Nau Bostik](/projectes/nau-bostik/) — self-managed cultural space
-→ [MalditasMaquinas.com](/projectes/malditasmaquinas/) — on-demand technical consultancy
+→ [FAVB](/projectes/favb/) — Federation of Barcelona Neighbourhood Associations
 → [LinuxBCN.com](/projectes/linuxbcn/) — this very website
 
 ---
@@ -22,11 +22,9 @@ draft: false
 ## Own projects
 
 → [Ressona](/projectes/ressona/) — digital identity platform for artists
+→ [MalditasMaquinas.com](/projectes/malditasmaquinas/) — on-demand technical consultancy
 → [112 Revelats](/projectes/112revelats/) — analogue photography, lightweight site on GitHub Pages
 → [Positivador WebApp](/projectes/app-positivador/) — tool for analogue photography
-→ [Machiroku](/projectes/machiroku/) — Japanese restaurant in central Barcelona
-→ [MalditasMaquinas](/projectes/malditasmaquinas/) — specialised technical service
-→ [LinuxBCN.com](/projectes/linuxbcn/) — digital consultancy with principles
 → [112Books](/projectes/112books/) — photography publisher
 → [Pocallum](/projectes/pocallum/) — photography agency
 → [Llumàtics](/projectes/llumatics/) — analogue and experimental photography

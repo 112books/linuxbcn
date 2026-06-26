@@ -15,7 +15,6 @@ draft: false
 → [Machiroku](/projectes/machiroku/) — restaurant japonès al centre de Barcelona
 → [FAVB](/projectes/favb/) — Federació d'Associacions de Veïns i Veïnes de Barcelona
 → [Carrer.cat](/projectes/carrer/) — publicació de referència del moviment veïnal
-→ [MalditasMaquinas.com](/projectes/malditasmaquinas/) — consultoria tecnològica per hores
 → [LinuxBCN.com](/projectes/linuxbcn/) — consultoria digital amb criteri
 
 ---
@@ -23,11 +22,9 @@ draft: false
 ## Projectes propis
 
 → [Ressona](/projectes/ressona/) — plataforma d'identitat digital per a artistes
+→ [MalditasMaquinas.com](/projectes/malditasmaquinas/) — consultoria tecnològica per hores
 → [112 Revelats](/projectes/112revelats/) — fotografia analògica, web lleuger a GitHub Pages
 → [Positivador WebApp](/projectes/app-positivador/) — eina per a fotografia analògica
-→ [Machiroku](/projectes/machiroku/) — restaurant japonès al centre de Barcelona
-→ [MalditasMaquinas.com](/projectes/malditasmaquinas/) — consultoria tecnològica per hores
-→ [LinuxBCN.com](/projectes/linuxbcn/) — consultoria digital amb criteri
 → [112Books.eu](/projectes/112books/) — editorial independent de fotografia
 → [Pocallum.cat](/projectes/pocallum/) — serveis fotogràfics
 → [Llumàtics](/projectes/llumatics/) — fotografia analògica i experimental
