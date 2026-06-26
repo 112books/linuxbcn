@@ -34,14 +34,9 @@ La tecnologia ve al final d'aquesta conversa, no al principi.
 
 Tenim una base sòlida construïda i depurada al llarg dels anys. La personalitzem a fons per a cada projecte: no sou vosaltres els que us adapteu al sistema — és el sistema que s'adapta a les vostres necessitats.
 
-**Ens encarreguem de tot el que envolta un projecte digital:**
+Ens encarreguem de tot el que envolta un projecte digital:
 
-- Selecció i gestió del **domini** adequat per al projecte
-- **Allotjament** en el servidor més adient: rendiment, ubicació, valors del proveïdor
-- **Correu electrònic professional** amb el vostre domini
-- **Xarxes socials i plataformes** externes: si cal, les configurem, les integrem i us assessorem sobre quines té sentit usar i quines no
-- **Còpies de seguretat** i monitorització del sistema
-- **Certificats SSL** i seguretat bàsica
+{{< base-tecnica >}}
 
 ---
 

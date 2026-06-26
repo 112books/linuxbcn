@@ -44,6 +44,16 @@ The communication tools and functionalities we developed are still in use. The s
 
 ---
 
+## Screenshots
+
+![Family Art Tattoo — home](familyarttatto-01.png)
+
+![Family Art Tattoo — interior](familyarttatto-02.png)
+
+![Family Art Tattoo — blog and content](familyarttatto-03.png)
+
+---
+
 ## Technology
 
 WordPress · Custom theme · SEO · Instagram integration · Content creation

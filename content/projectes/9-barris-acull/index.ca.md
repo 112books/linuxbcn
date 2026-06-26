@@ -46,6 +46,12 @@ El web queda. La feina feta, també.
 
 ---
 
+## Captura
+
+![9 Barris Acull — web](9barrisacull.png)
+
+---
+
 ## Tecnologia
 
 Drupal · WordPress · Gestió d'expedients · RGPD · Estadístiques socials

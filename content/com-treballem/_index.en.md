@@ -31,6 +31,14 @@ not at the beginning.
 
 ---
 
+## The technical foundation
+
+We handle everything surrounding a digital project:
+
+{{< base-tecnica-en >}}
+
+---
+
 ## We build to last
 
 We work with free and lightweight technology.

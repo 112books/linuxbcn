@@ -18,31 +18,7 @@ We offer solutions designed for concrete situations.
 
 ## Find your situation
 
-### You're an artist or musician
-
-You have a scattered digital presence, a hard-to-maintain agenda,
-content spread across platforms you don't control.
-
-→ [Solutions for artists and musicians](/solucions/musics/)
-
----
-
-### You're part of a cultural entity or collective
-
-You use Google tools without really wanting to, your communication
-isn't clear and your digital infrastructure isn't really yours.
-
-→ [Solutions for entities and collectives](/solucions/collectius/)
-
----
-
-### You run a values-driven business
-
-You want a digital presence coherent with what you do,
-without depending on external platforms or paying
-for tools you don't need.
-
-→ [Solutions for values-driven businesses](/solucions/microempreses/)
+{{< perfils-en >}}
 
 ---
 

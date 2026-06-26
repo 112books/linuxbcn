@@ -44,6 +44,16 @@ Les eines comunicatives i les funcionalitats que vam desenvolupar continuen en �
 
 ---
 
+## Captures
+
+![Family Art Tattoo — portada](familyarttatto-01.png)
+
+![Family Art Tattoo — interior](familyarttatto-02.png)
+
+![Family Art Tattoo — blog i continguts](familyarttatto-03.png)
+
+---
+
 ## Tecnologia
 
 WordPress · Tema a mida · SEO · Integració Instagram · Creació de continguts
