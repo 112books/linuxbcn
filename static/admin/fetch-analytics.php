@@ -68,7 +68,16 @@ function norm_stats(array $items): array {
     return $out;
 }
 
-// ── extract_section: equivalent de Python _extract_section ───────────────────
+// ── extract_lang i extract_section ───────────────────────────────────────────
+
+function extract_lang(string $path): string {
+    $langs = ['ca', 'en', 'es'];
+    $parts = array_values(array_filter(explode('/', $path)));
+    foreach ($parts as $p) {
+        if (in_array($p, $langs, true)) return $p;
+    }
+    return 'ca';
+}
 
 function extract_section(string $path): string {
     $langs = ['ca', 'en', 'es', 'fr', 'de', 'it', 'pt'];
@@ -109,6 +118,7 @@ if (isset($hits_raw['__error'])) {
 
 $hits_by_day = [];
 $by_section  = [];
+$by_lang     = [];
 $hits_pages  = [];
 $total       = 0;
 
@@ -117,15 +127,17 @@ foreach (($hits_raw['hits'] ?? []) as $path_item) {
     if (str_starts_with($path, '/admin') || str_ends_with($path, '.php')) continue;
 
     $section    = extract_section($path);
+    $lang       = extract_lang($path);
     $path_total = 0;
 
     foreach (($path_item['stats'] ?? []) as $stat) {
         $date  = substr((string)($stat['day'] ?? ''), 0, 10);
-        $count = (int)($stat['daily'] ?? 0);  // escalar, com al Python
+        $count = (int)($stat['daily'] ?? 0);
         if (!$count) continue;
-        $total                  += $count;
-        $path_total             += $count;
-        $by_section[$section]    = ($by_section[$section] ?? 0) + $count;
+        $total                += $count;
+        $path_total           += $count;
+        $by_section[$section]  = ($by_section[$section] ?? 0) + $count;
+        $by_lang[$lang]        = ($by_lang[$lang] ?? 0) + $count;
         if (strlen($date) === 10) {
             $hits_by_day[$date] = ($hits_by_day[$date] ?? 0) + $count;
         }
@@ -179,6 +191,7 @@ $output = [
     'total_unique'=> 0,
     'hits_by_day' => $hbd_arr,
     'hits'        => $hits_list,
+    'by_lang'     => $by_lang,
     'by_section'  => $by_section,
     'refs'        => $refs_list,
     'browsers'    => $browsers,
