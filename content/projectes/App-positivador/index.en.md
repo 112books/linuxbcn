@@ -39,4 +39,5 @@ If you find the tool useful, you can also purchase a license —with a modest on
 {{< gallery "positivitzador-screenshot-01.png" "positivitzador-screenshot-02.png" "positivitzador-screenshot-03.png" >}}
 
 → [positivador.linuxbcn.com](https://positivador.linuxbcn.com)
+→ [Public repository](https://github.com/112books/positivitzat) — MIT licence (base version)
 → [Llumàtics](/projectes/llumatics/)

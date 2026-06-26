@@ -39,4 +39,5 @@ Si trobes l'eina útil, també pots adquirir una llicència —amb un pagament �
 {{< gallery "positivitzador-screenshot-01.png" "positivitzador-screenshot-02.png" "positivitzador-screenshot-03.png" >}}
 
 → [positivador.linuxbcn.com](https://positivador.linuxbcn.com)
+→ [Repositori públic](https://github.com/112books/positivitzat) — llicència MIT (versió base)
 → [Llumàtics](/projectes/llumatics/)
