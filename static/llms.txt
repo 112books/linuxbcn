@@ -3,7 +3,7 @@
 
 > Consultoria d'identitat digital a Barcelona per a artistes, col·lectius culturals i microempreses amb valors. Especialitzats en programari lliure, privacitat i sobirania de dades.
 
-Responsable: Joan Martínez Serres (Joan Linux) — joan@linuxbcn.com
+Responsable: Joan Martínez Serres (Joan Linux) — hola@linuxbcn.com
 Web: https://linuxbcn.com
 Seu: Nau Bostik, barri de la Sagrera, Barcelona, Catalunya
 Fundada: 1999
@@ -49,7 +49,7 @@ Idiomes: Català (principal), Anglès
 ## Contacte
 
 - [Contacte i diagnosi inicial](https://linuxbcn.com/ca/contacte/) — [EN](https://linuxbcn.com/en/contacte/)
-- Email: joan@linuxbcn.com
+- Email: hola@linuxbcn.com
 - Instagram: https://www.instagram.com/linuxbcn_oficial/
 
 Updated: 2026-06-24

@@ -119,7 +119,7 @@ LinuxBCN munta la presència digital completa, coherent amb els valors del proje
 ## Contacte
 
 Web: https://linuxbcn.com
-Email: joan@linuxbcn.com
+Email: hola@linuxbcn.com
 Instagram: https://www.instagram.com/linuxbcn_oficial/
 GitHub: https://github.com/112books
 Seu: Nau Bostik, barri de la Sagrera, Barcelona, Catalunya, Espanya
