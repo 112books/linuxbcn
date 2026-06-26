@@ -14,6 +14,8 @@ We work with free software. We host data with European providers, preferably Cat
 
 Since 2001, with no dependency on Google, Meta or the major technology platforms.
 
+Behind LinuxBCN is Joan «Linux» Martínez, founder and project coordinator, working with a team of specialist collaborators in design, content, infrastructure and digital communication.
+
 ---
 
 ## Track record

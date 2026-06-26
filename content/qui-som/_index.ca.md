@@ -14,6 +14,8 @@ Treballem amb programari lliure. Allotgem dades a proveïdors europeus, preferen
 
 Des del 2001, sense cap dependència de Google, Meta ni de les grans plataformes tecnològiques.
 
+Darrere de LinuxBCN hi ha Joan «Linux» Martínez, fundador i coordinador del projecte, que treballa amb un equip de col·laboradores i col·laboradors especialitzats en disseny, contingut, infraestructura i comunicació digital.
+
 ---
 
 ## Trajectòria
