@@ -708,6 +708,17 @@ function renderAll(data) {
 
   setTopbarGen(data.generated);
 
+  // Advertència si el cache té més de 24 hores
+  if (data.generated) {
+    const age = (Date.now() - new Date(data.generated).getTime()) / 3600000;
+    if (age > 24) {
+      setBanner('error',
+        `⚠ Les dades tenen ${Math.round(age)} hores d'antiguitat (cache del ${new Date(data.generated).toLocaleDateString('ca-ES')}). ` +
+        `Prem <strong>↻ actualitzar</strong> per obtenir dades actuals.`
+      );
+    }
+  }
+
   renderChart(data);
   renderLang(data);
   renderSections(data);
