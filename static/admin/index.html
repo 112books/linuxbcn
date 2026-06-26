@@ -463,6 +463,10 @@
         <canvas id="chart-canvas" aria-label="Gràfic de visites per dia"></canvas>
       </div>
       <div class="chart-summary" id="chart-summary"></div>
+      <div class="insight" id="temporal-insight" style="display:none">
+        <span class="label">// observació</span>
+        <div id="temporal-insight-body"></div>
+      </div>
     </div>
 
     <!-- TAB: Pàgines -->
@@ -490,6 +494,11 @@
 
       <h2 class="section-title">localització de les visites</h2>
       <div id="locations-wrap" class="bars"></div>
+
+      <div class="insight" id="pagines-insight" style="display:none">
+        <span class="label">// observació</span>
+        <div id="pagines-insight-body"></div>
+      </div>
     </div>
 
     <!-- TAB: Dispositius -->
@@ -685,7 +694,7 @@ document.getElementById('btn-refresh').addEventListener('click', async () => {
 /* ═══════════════════════════════════════════════════════════
    RENDERITZACIÓ PRINCIPAL
 ═══════════════════════════════════════════════════════════ */
-function renderAll(data) {
+function _renderAllBase(data) {
   const today   = isoToday();
   const hbd     = data.hits_by_day || [];
 
@@ -728,7 +737,6 @@ function renderAll(data) {
   renderLocations(data);
   renderDevices(data);
   renderBrowsersSystems(data);
-  renderDispositiusInsight(data);
 
   // Animació de les barres (amb un tick de retard per al transition CSS)
   requestAnimationFrame(() => {
@@ -984,30 +992,6 @@ function renderBrowsersSystems(data) {
   renderBars('systems-wrap',  systems,  'name');
 }
 
-function renderDispositiusInsight(data) {
-  const ins = document.getElementById('dispositius-insight');
-  const body = document.getElementById('dispositius-insight-body');
-  const lines = [];
-  const browsers = data.browsers || [];
-  const systems  = data.systems  || [];
-  const sizes    = data.sizes    || [];
-
-  if (browsers.length) {
-    const tot = browsers.reduce((s, b) => s + b.count, 0) || 1;
-    const top = browsers[0];
-    lines.push(`<strong>${top.name}</strong> és el navegador principal (${Math.round(top.count / tot * 100)}% dels usuaris).`);
-  }
-  if (systems.length) {
-    const tot = systems.reduce((s, b) => s + b.count, 0) || 1;
-    const top = systems[0];
-    lines.push(`<strong>${top.name}</strong> és el sistema operatiu principal (${Math.round(top.count / tot * 100)}%).`);
-  }
-
-  if (!lines.length) { ins.style.display = 'none'; return; }
-  ins.style.display = 'block';
-  body.innerHTML = lines.map(l => `<div>— ${l}</div>`).join('');
-}
-
 /* ═══════════════════════════════════════════════════════════
    UTILITAT: renderBars
 ═══════════════════════════════════════════════════════════ */
@@ -1133,6 +1117,174 @@ function fmtMonth(ym) {
 function fmtPeriod(start, end) {
   const f = s => new Date(s + 'T12:00:00').toLocaleDateString('ca-ES', { day: 'numeric', month: 'short', year: 'numeric' });
   return f(start) + ' – ' + f(end);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INTERPRETACIÓ AUTOMÀTICA
+═══════════════════════════════════════════════════════════ */
+function renderAll(data) {
+  // Sobreescriu renderAll per afegir insights al final
+  _renderAllBase(data);
+  renderTemporalInsight(data);
+  renderPaginesInsight(data);
+  renderDispositiusInsight(data);
+}
+
+function renderTemporalInsight(data) {
+  const ins  = document.getElementById('temporal-insight');
+  const body = document.getElementById('temporal-insight-body');
+  const hbd  = data.hits_by_day || [];
+  if (!hbd.length) { ins.style.display = 'none'; return; }
+
+  const lines = [];
+  const today = isoToday();
+
+  // Tendència: últimes 2 setmanes vs les 2 anteriors
+  const s14 = sumDays(hbd, daysAgo(14), today);
+  const s28  = sumDays(hbd, daysAgo(28), daysAgo(15));
+  if (s28 > 0) {
+    const delta = Math.round((s14 - s28) / s28 * 100);
+    if (delta > 10)       lines.push(`Les visites han <em>crescut un ${delta}%</em> en les últimes 2 setmanes respecte a les anteriors.`);
+    else if (delta < -10) lines.push(`Les visites han <em>baixat un ${Math.abs(delta)}%</em> en les últimes 2 setmanes respecte a les anteriors.`);
+    else                  lines.push(`El trànsit s'ha mantingut estable (±${Math.abs(delta)}%) en les últimes 4 setmanes.`);
+  }
+
+  // Pic de visites
+  const max = hbd.reduce((a, b) => a.count > b.count ? a : b, { count: 0 });
+  if (max.count > 0) {
+    lines.push(`El pic va ser <em>${fmtDateShort(max.date)}</em> amb <em>${fmt(max.count)} visites</em>.`);
+  }
+
+  // Dia de la setmana més actiu
+  const byDow = [0,0,0,0,0,0,0];
+  hbd.forEach(d => { byDow[new Date(d.date + 'T12:00:00').getDay()] += d.count; });
+  const dowNames = ['diumenge','dilluns','dimarts','dimecres','dijous','divendres','dissabte'];
+  const maxDow = byDow.indexOf(Math.max(...byDow));
+  if (byDow[maxDow] > 0) lines.push(`El <em>${dowNames[maxDow]}</em> és el dia amb més trànsit habitualment.`);
+
+  // Dies sense visites
+  const daysNoVisit = hbd.filter(d => d.count === 0).length;
+  if (daysNoVisit > 0) lines.push(`${daysNoVisit} dies sense cap visita registrada — normal en un lloc en creixement.`);
+
+  ins.style.display = lines.length ? 'block' : 'none';
+  body.innerHTML = lines.map(l => `<div>— ${l}</div>`).join('');
+}
+
+function renderPaginesInsight(data) {
+  const ins  = document.getElementById('pagines-insight');
+  const body = document.getElementById('pagines-insight-body');
+  const lines = [];
+
+  // Idioma
+  const by_lang = data.by_lang || {};
+  const langTotal = Object.values(by_lang).reduce((s, v) => s + v, 0);
+  if (langTotal > 0) {
+    const ca = by_lang.ca || 0;
+    const en = by_lang.en || 0;
+    const caPct = Math.round(ca / langTotal * 100);
+    const enPct = Math.round(en / langTotal * 100);
+    if (caPct >= enPct) lines.push(`L'idioma principal és el <em>Català</em> (${caPct}% del trànsit).`);
+    else                lines.push(`L'idioma principal és l'<em>Anglès</em> (${enPct}% del trànsit).`);
+    if (enPct >= 5 && caPct > enPct) lines.push(`L'Anglès representa el <em>${enPct}%</em> — audiència internacional present.`);
+    if (caPct >= 5 && enPct > caPct) lines.push(`El Català representa el <em>${caPct}%</em>.`);
+  }
+
+  // Secció més visitada
+  const sections = data.by_section || {};
+  const secEntries = Object.entries(sections).filter(([k]) => k !== 'admin').sort((a,b) => b[1]-a[1]);
+  const secTotal = secEntries.reduce((s, [,v]) => s + v, 0);
+  if (secEntries.length) {
+    const [topSec, topCount] = secEntries[0];
+    const topName = { inici:'Inici', projectes:'Projectes', solucions:'Solucions', 'com-treballem':'Com treballem', 'qui-som':'Qui som', contacte:'Contacte', serveis:'Serveis' }[topSec] || topSec;
+    const topPct = secTotal > 0 ? Math.round(topCount / secTotal * 100) : 0;
+    lines.push(`La secció més visitada és <em>${topName}</em> amb <em>${fmt(topCount)} visites</em> (${topPct}% del total).`);
+  }
+
+  // Contacte
+  const hits = data.hits || [];
+  const contacteHits = hits.filter(h => h.path && h.path.includes('/contacte')).reduce((s, h) => s + h.count, 0);
+  if (contacteHits > 0) lines.push(`<em>${fmt(contacteHits)} visites</em> al formulari de contacte.`);
+
+  // Projecte amb més interès
+  const projectHits = hits.filter(h => h.path && h.path.includes('/projectes/') && !h.path.endsWith('/projectes/'));
+  if (projectHits.length) {
+    const top = projectHits.reduce((a, b) => a.count > b.count ? a : b);
+    const name = top.path.replace(/\/(ca|en)\/projectes\//, '').replace(/\/$/, '');
+    lines.push(`El projecte amb més interès és <em>${name}</em> (${fmt(top.count)} visites).`);
+  }
+
+  // Refs: cercadors vs social vs directe
+  const refs = data.refs || [];
+  const searchEngines = ['google','bing','duckduckgo','yahoo','ecosia','startpage','qwant','baidu','yandex'];
+  const socialNets    = ['instagram','facebook','twitter','linkedin','mastodon','tiktok','youtube'];
+  let fromSearch = 0, fromSocial = 0;
+  refs.forEach(r => {
+    const id = (r.id || r.name || '').toLowerCase();
+    if (searchEngines.some(s => id.includes(s)))  fromSearch += r.count;
+    else if (socialNets.some(s => id.includes(s))) fromSocial += r.count;
+  });
+  if (fromSearch > 0) lines.push(`<em>${fmt(fromSearch)} visites</em> des de cercadors — el SEO comença a funcionar.`);
+  if (fromSocial > 0) lines.push(`<em>${fmt(fromSocial)} visites</em> des de xarxes socials.`);
+
+  // País principal
+  const locs = data.locations || [];
+  if (locs.length) {
+    const locTotal = locs.reduce((s, l) => s + l.count, 0) || 1;
+    const top = locs[0];
+    const topPct = Math.round(top.count / locTotal * 100);
+    lines.push(`<em>${topPct}%</em> del trànsit ve de <em>${top.name}</em>.${locs[1] ? ` Seguit de ${locs[1].name} (${Math.round(locs[1].count/locTotal*100)}%).` : ''}`);
+  }
+
+  ins.style.display = lines.length ? 'block' : 'none';
+  body.innerHTML = lines.map(l => `<div>— ${l}</div>`).join('');
+}
+
+function renderDispositiusInsight(data) {
+  const ins  = document.getElementById('dispositius-insight');
+  const body = document.getElementById('dispositius-insight-body');
+  const lines = [];
+
+  // Dispositiu
+  const sizes = data.sizes || [];
+  let mobile = 0, tablet = 0, desktop = 0;
+  sizes.forEach(s => {
+    const id = (s.id || s.name || '').toLowerCase();
+    const c  = s.count || 0;
+    if (id === 'phone')                                      mobile  += c;
+    else if (id === 'tablet')                                tablet  += c;
+    else if (id === 'desktop' || id === 'desktophd' || id === 'larger') desktop += c;
+    else { const w = parseInt(id,10); if (!isNaN(w)) { if (w<768) mobile+=c; else if (w<1200) tablet+=c; else desktop+=c; } }
+  });
+  const devTotal = mobile + tablet + desktop || 1;
+  if (devTotal > 1) {
+    const mobilePct  = Math.round(mobile  / devTotal * 100);
+    const desktopPct = Math.round(desktop / devTotal * 100);
+    if (mobilePct >= desktopPct) {
+      lines.push(`El <em>mòbil</em> és el dispositiu principal (${mobilePct}%).${mobilePct > 50 ? ' El disseny mobile-first és la decisió correcta.' : ''}`);
+    } else {
+      lines.push(`L'<em>escriptori</em> és el dispositiu principal (${desktopPct}%).`);
+    }
+    if (tablet > 0) lines.push(`La tauleta representa el ${Math.round(tablet/devTotal*100)}% del trànsit.`);
+  }
+
+  // Navegador
+  const browsers = data.browsers || [];
+  if (browsers.length) {
+    const bTotal = browsers.reduce((s, b) => s + b.count, 0) || 1;
+    const top = browsers[0];
+    lines.push(`<em>${top.name}</em> és el navegador majoritari (${Math.round(top.count/bTotal*100)}% dels usuaris).`);
+  }
+
+  // SO
+  const systems = data.systems || [];
+  if (systems.length) {
+    const sTotal = systems.reduce((s, b) => s + b.count, 0) || 1;
+    const top = systems[0];
+    lines.push(`<em>${top.name}</em> és el sistema operatiu principal (${Math.round(top.count/sTotal*100)}%).`);
+  }
+
+  ins.style.display = lines.length ? 'block' : 'none';
+  body.innerHTML = lines.map(l => `<div>— ${l}</div>`).join('');
 }
 </script>
 </body>
