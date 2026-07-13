@@ -1,7 +1,7 @@
 ---
 title: "Ressona — Digital Identity for Artists"
 slug: "ressona"
-weight: 2
+weight: 3
 year: 2026
 client: "own project"
 sector: "services"
