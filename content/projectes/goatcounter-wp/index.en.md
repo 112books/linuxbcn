@@ -8,6 +8,7 @@ sector: "tools"
 description: "Open-source WordPress plugin to integrate GoatCounter: cookie-free, GDPR-free analytics with a full stats dashboard directly in the WordPress admin."
 lastmod: "2026-07-13"
 draft: false
+serveis: ["tema-wordpress", "cas-propi"]
 image: "goatcounter-wp-temporal.png"
 ---
 

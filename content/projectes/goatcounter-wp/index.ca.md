@@ -8,6 +8,7 @@ sector: "eines"
 description: "Plugin de WordPress de codi obert per integrar GoatCounter: analítica sense cookies, sense GDPR, amb panell complet d'estadístiques directament al tauler d'administració."
 lastmod: "2026-07-13"
 draft: false
+serveis: ["tema-wordpress", "cas-propi"]
 image: "goatcounter-wp-temporal.png"
 ---
 
