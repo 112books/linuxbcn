@@ -12,7 +12,7 @@ header('Cache-Control: no-store');
 set_time_limit(90);
 
 $token = trim($_GET['token'] ?? '');
-if ($token !== 'linuxbcn') {
+if ($token !== 'LinuxBCN2026') {
     http_response_code(403);
     echo json_encode(['error' => 'Accés denegat']);
     exit;
