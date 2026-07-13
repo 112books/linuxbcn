@@ -8,6 +8,7 @@ sector: "serveis"
 description: "De WordPress acumulatiu a Hugo fet a mida: arquitectura lleugera, bilingüe, sense dependències externes. El sistema que apliquem als clients, aplicat primer a nosaltres."
 lastmod: "2026-06-26"
 draft: false
+serveis: ["cas-propi"]
 image: "00-linuxbcn-nova-portada.png"
 ---
 

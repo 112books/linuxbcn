@@ -9,6 +9,7 @@ sector: "cultura"
 description: "Recuperació d'urgència i replantejament digital per a Nau Bostik, espai sociocultural autogestionat de La Sagrera, Barcelona. LinuxBCN."
 lastmod: "2026-06-26"
 draft: false
+serveis: ["web-a-mida"]
 ---
 
 ## Un projecte en dues fases

@@ -9,6 +9,7 @@ featured: true
 description: "Web per a Carrer.cat, publicació de referència del moviment veïnal barceloní. Comunicació digital per a la revista del moviment associatiu. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "plataforma-editorial"]
 image: "01-carrer.png"
 ---
 

@@ -545,6 +545,35 @@ li:has(> a:only-child) a:hover {
    PROJECTES llista
    ===================== */
 
+.projects-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.filter-btn {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--lbcn-font-mono, monospace);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
 .projects-grid {
   display: flex;
   flex-direction: column;

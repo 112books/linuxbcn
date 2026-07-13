@@ -7,6 +7,7 @@ weight: 1
 year: 2026
 client: "LinuxBCN"
 draft: false
+serveis: ["aplicacio-web", "cas-propi"]
 image: "cures-01.png"
 aliases:
   - /cuida/

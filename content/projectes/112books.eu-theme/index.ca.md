@@ -8,6 +8,7 @@ sector: "editorial"
 description: "Redisseny complet de 112books.eu: nova arquitectura d'informació que clarifica els tres pilars de l'editorial, i tema bloc WordPress FSE construït des de zero amb GitHub i Claude."
 lastmod: "2026-07-13"
 draft: false
+serveis: ["tema-wordpress"]
 image: "112bools-portada-01.png"
 ---
 

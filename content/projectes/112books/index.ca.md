@@ -8,6 +8,7 @@ sector: "editorial"
 description: "Web per a 112Books, editorial independent de fotografia analògica. Identitat digital i presència online amb programari lliure. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["plataforma-editorial"]
 image: "112books.png"
 ---
 

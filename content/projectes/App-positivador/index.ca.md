@@ -9,6 +9,7 @@ featured: true
 description: "Positivador WebApp — eina web per invertir negatius fotogràfics en temps real usant la càmera del dispositiu. Per a fotografia analògica. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["aplicacio-web", "cas-propi"]
 image: "positivitzador.png"
 ---
 

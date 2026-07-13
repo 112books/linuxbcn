@@ -8,6 +8,7 @@ sector: "fotografia"
 description: "A.W.P.C.P. — web per a Around World Pinhole Crazy People. Comunitat internacional de fotografia estenopeica. Allotjat a GitHub Pages. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "migracio-wordpress"]
 image: "awpcp.png"
 ---
 

@@ -9,6 +9,7 @@ featured: true
 description: "MalditasMaquinas — technology consultancy platform. Vanilla JS SPA, distributed backend, Stripe, Telegram, multilingual, WCAG AA. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "migracio-wordpress", "cas-propi"]
 image: "01-malditasmaquinas.png"
 ---
 

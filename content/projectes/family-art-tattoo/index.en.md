@@ -9,6 +9,7 @@ sector: "negoci-local"
 description: "Custom WordPress theme, content creation, SEO and Instagram integration for Family Art Tattoo, a tattoo studio in Barcelona. LinuxBCN."
 lastmod: "2026-06-25"
 draft: false
+serveis: ["web-a-mida"]
 ---
 
 ## A tattoo studio with a different way of communicating

@@ -9,6 +9,7 @@ featured: true
 description: "Ressona — digital identity platform for artists. Fusion of Pocallum and LinuxBCN: visual identity, press kit, website and communication. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida"]
 card_image: "ressona.png"
 card_image_contain: true
 image: "ressona.eu-01.png"

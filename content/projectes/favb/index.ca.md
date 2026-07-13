@@ -8,6 +8,7 @@ sector: "associatiu"
 description: "Web per a la FAVB, Federació d'Associacions de Veïns i Veïnes de Barcelona. Presència digital per a l'organització veïnal de referència de la ciutat. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "plataforma-editorial"]
 image: "01-favb.png"
 ---
 

@@ -8,6 +8,7 @@ sector: "editorial"
 description: "Website for 112Books, independent analogue photography publisher. Digital identity and online presence with free software. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["plataforma-editorial"]
 image: "112books.png"
 ---
 

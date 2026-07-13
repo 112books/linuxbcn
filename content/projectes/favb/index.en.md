@@ -8,6 +8,7 @@ sector: "associatiu"
 description: "Website for FAVB, the Federation of Neighbourhood Associations of Barcelona. Digital presence for the city's reference residents' organisation. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "plataforma-editorial"]
 image: "01-favb.png"
 ---
 

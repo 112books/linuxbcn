@@ -8,6 +8,7 @@ sector: "digital-tools"
 description: "Cookie-free self-hosted web analytics dashboard built on the GoatCounter API. LinuxBCN's own tool for clients who want privacy by design."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["cas-propi", "tema-wordpress"]
 image: "goatcounter-dashboard-kpis.png"
 ---
 

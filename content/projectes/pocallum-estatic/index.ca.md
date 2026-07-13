@@ -9,6 +9,7 @@ featured: true
 description: "Pocallum — migració de WordPress a Hugo. Web de fotografia cultural lleuger, sense dependències, càrrega instantània. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "migracio-wordpress"]
 image: "pocallum-home-04.png"
 ---
 

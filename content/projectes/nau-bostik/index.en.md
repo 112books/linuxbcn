@@ -9,6 +9,7 @@ sector: "culture"
 description: "Emergency recovery and digital replanning for Nau Bostik, self-managed sociocultural space in La Sagrera, Barcelona. LinuxBCN."
 lastmod: "2026-06-26"
 draft: false
+serveis: ["web-a-mida"]
 ---
 
 ## A project in two phases

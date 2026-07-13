@@ -8,6 +8,7 @@ sector: "fotografia"
 description: "Web per a Pocallum, agència fotogràfica cultural. Portfolio i presència digital amb programari lliure. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "migracio-wordpress"]
 image: "pocallum.png"
 ---
 

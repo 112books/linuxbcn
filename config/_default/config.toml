@@ -74,5 +74,9 @@ defaultContentLanguageInSubdir = true
 [languages.en.params]
   description = "Digital identity consultancy for artists, cultural collectives and values-driven micro-businesses. Free software, privacy and data sovereignty."
 
+[taxonomies]
+  sector = "sectors"
+  servei = "serveis"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]

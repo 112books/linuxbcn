@@ -9,6 +9,7 @@ featured: true
 description: "Positivador WebApp — browser tool to invert photographic negatives in real time using the device camera. For analogue photography. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["aplicacio-web", "cas-propi"]
 image: "positivitzador.png"
 ---
 

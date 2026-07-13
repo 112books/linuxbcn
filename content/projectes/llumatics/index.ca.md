@@ -8,6 +8,7 @@ sector: "educació / fotografia"
 description: "Web per a Llumàtics, projecte d'educació i fotografia. Presència digital amb programari lliure. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "migracio-wordpress"]
 image: "01-llumatics.png"
 ---
 

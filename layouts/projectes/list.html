@@ -10,9 +10,22 @@
   {{ end }}
 </header>
 
-<div class="projects-grid">
+<nav class="projects-filter" aria-label="{{ i18n "filter_by_service" | default "Filtra per servei" }}">
+  <button class="filter-btn active" data-filter="*">{{ i18n "filter_all" | default "Tots" }}</button>
+  <button class="filter-btn" data-filter="web-a-mida">{{ i18n "servei_web_a_mida" | default "Web nova i redisseny" }}</button>
+  <button class="filter-btn" data-filter="migracio-wordpress">{{ i18n "servei_migracio" | default "Migració WP → estàtic" }}</button>
+  <button class="filter-btn" data-filter="plataforma-editorial">{{ i18n "servei_editorial" | default "Plataforma editorial" }}</button>
+  <button class="filter-btn" data-filter="aplicacio-web">{{ i18n "servei_aplicacio" | default "Aplicació web" }}</button>
+  <button class="filter-btn" data-filter="tema-wordpress">{{ i18n "servei_tema" | default "Tema WordPress" }}</button>
+  <button class="filter-btn" data-filter="cas-propi">{{ i18n "servei_cas_propi" | default "Laboratori propi" }}</button>
+</nav>
+
+<div class="projects-grid" id="projects-grid">
   {{ range .Pages }}
-  <a href="{{ .RelPermalink }}" class="project-card{{ if .Params.featured }} project-card--featured{{ end }}">
+  {{ $serveis := .Params.serveis | default (slice) }}
+  <a href="{{ .RelPermalink }}"
+     class="project-card{{ if .Params.featured }} project-card--featured{{ end }}"
+     data-serveis="{{ delimit $serveis " " }}">
     {{ $proj := . }}
     {{ $cardImgName := or .Params.card_image .Params.image }}
     <div class="card-thumb{{ if .Params.card_image_contain }} card-thumb--contain{{ end }}">
@@ -41,7 +54,7 @@
         {{ with .Params.client }}{{ . }}{{ end }}
         {{ with .Params.year }} · {{ . }}{{ end }}
       </div>
-      <div class="card-arrow">→ {{ with .Params.card_cta }}{{ . }}{{ else }}Veure projecte{{ end }}</div>
+      <div class="card-arrow">→ {{ with .Params.card_cta }}{{ . }}{{ else }}{{ i18n "see_project" | default "Veure projecte" }}{{ end }}</div>
     </div>
   </a>
   {{ end }}
@@ -54,5 +67,27 @@
 {{ end }}
 
 <div class="content">{{ .Content }}</div>
+
+<script>
+(function () {
+  var btns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('#projects-grid .project-card');
+
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = this.dataset.filter;
+
+      btns.forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+
+      cards.forEach(function (card) {
+        var serveis = card.dataset.serveis || '';
+        var show = filter === '*' || serveis.split(' ').indexOf(filter) !== -1;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+}());
+</script>
 
 {{ end }}

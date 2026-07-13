@@ -8,6 +8,7 @@ sector: "fotografia"
 description: "112 Revelats — projecte de fotografia analògica. Web lleuger allotjat a GitHub Pages, sense dependències. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["plataforma-editorial", "migracio-wordpress"]
 image: "112revelats-screenshot.png"
 ---
 

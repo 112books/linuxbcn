@@ -8,6 +8,7 @@ year: 2026
 client: "LinuxBCN"
 featured: true
 draft: false
+serveis: ["aplicacio-web", "cas-propi"]
 image: "cures-01.png"
 aliases:
   - /cuida/

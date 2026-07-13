@@ -8,6 +8,7 @@ sector: "fotografia"
 description: "Estenop — offline mobile app for pinhole cameras. Exposure calculation, reciprocity corrections for 20+ emulsions, built-in timer. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["aplicacio-web", "cas-propi"]
 image: "estenop.png"
 ---
 

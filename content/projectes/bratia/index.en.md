@@ -8,6 +8,7 @@ sector: "music"
 description: "Website for Bratia, Barcelona's Balkan Gypsy Jazz band. Migrated from WordPress to Hugo: lightweight, multilingual and autonomous system. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "migracio-wordpress"]
 image: "01-bratia-new-portada.png"
 ---
 

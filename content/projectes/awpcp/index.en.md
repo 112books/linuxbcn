@@ -8,6 +8,7 @@ sector: "photography"
 description: "A.W.P.C.P. — website for Around World Pinhole Crazy People. International pinhole photography community. Hosted on GitHub Pages. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
+serveis: ["web-a-mida", "migracio-wordpress"]
 image: "awpcp.png"
 ---
 

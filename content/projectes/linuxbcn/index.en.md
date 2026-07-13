@@ -8,6 +8,7 @@ sector: "services"
 description: "From accumulated WordPress to custom-built Hugo: lightweight, multilingual, no external dependencies. The system we apply to clients, applied first to ourselves."
 lastmod: "2026-06-26"
 draft: false
+serveis: ["cas-propi"]
 image: "00-linuxbcn-nova-portada.png"
 ---
 
