@@ -1,6 +1,6 @@
 ---
-title: "GoatCounter Analytics per a WordPress"
-slug: "goatcounter-wp"
+title: "LinuxBCN Analytics for GoatCounter"
+slug: "LinuxBCN-Analytics-for-GoatCounter"
 weight: 3
 year: 2026
 client: "LinuxBCN"
