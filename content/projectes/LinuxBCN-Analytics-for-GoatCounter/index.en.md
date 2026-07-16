@@ -87,7 +87,7 @@ Data stays on GoatCounter's servers (or your own if you self-host). Nothing goes
 
 ## Open source · Approved by WordPress.org
 
-![LinuxBCN Analytics for GoatCounter plugin icon](icon-linuxbcn-analytics.png)
+<img src="icon-linuxbcn-analytics.png" alt="LinuxBCN Analytics for GoatCounter plugin icon" width="256" height="256" style="border-radius:18px">
 
 The plugin is **GPL-2.0**, approved and published by [linuxbcn](https://profiles.wordpress.org/linuxbcn/) in the official WordPress.org plugin directory:
 
