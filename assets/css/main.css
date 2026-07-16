@@ -755,6 +755,11 @@ li:has(> a:only-child) a:hover {
   display: block;
   cursor: zoom-in;
 }
+.project-content img.plugin-icon {
+  width: 256px !important;
+  height: 256px !important;
+  border-radius: 18px;
+}
 
 .project-content img:nth-of-type(even) {
   width: 88%;

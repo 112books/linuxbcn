@@ -87,7 +87,7 @@ Les dades queden als servidors de GoatCounter (o als teus propis si el fas servi
 
 ## Codi obert · Aprovat per WordPress.org
 
-<img src="icon-linuxbcn-analytics.png" alt="Icona del plugin LinuxBCN Analytics for GoatCounter" style="width:256px;height:256px;border-radius:18px;display:block">
+<img src="icon-linuxbcn-analytics.png" alt="Icona del plugin LinuxBCN Analytics for GoatCounter" class="plugin-icon">
 
 El plugin és **GPL-2.0**, aprovat i publicat per [linuxbcn](https://profiles.wordpress.org/linuxbcn/) al directori oficial de WordPress.org:
 
