@@ -6,7 +6,7 @@ year: 2026
 client: "LinuxBCN"
 sector: "tools"
 description: "Open-source WordPress plugin to integrate GoatCounter: cookie-free, GDPR-free analytics with a full stats dashboard directly in the WordPress admin."
-lastmod: "2026-07-13"
+lastmod: "2026-07-16"
 draft: false
 serveis: ["tema-wordpress", "cas-propi"]
 image: "goatcounter-wp-temporal.png"
@@ -85,13 +85,17 @@ Data stays on GoatCounter's servers (or your own if you self-host). Nothing goes
 
 ---
 
-## Open source
+## Open source · Approved by WordPress.org
 
-The plugin is **GPL-2.0** and available on GitHub:
+The plugin is **GPL-2.0**, approved and published by [linuxbcn](https://profiles.wordpress.org/linuxbcn/) in the official WordPress.org plugin directory:
+
+→ [wordpress.org/plugins/linuxbcn-analytics-for-goatcounter](https://wordpress.org/plugins/linuxbcn-analytics-for-goatcounter/)
+
+You can install it directly from your WordPress dashboard: **Plugins → Add New** → search for "LinuxBCN Analytics".
+
+The full source code is also available on GitHub:
 
 → [github.com/112books/goatcounter-wp](https://github.com/112books/goatcounter-wp)
-
-The repository includes the full source code, the `readme.txt` for WordPress.org, and a GitHub Action that will automatically sync each new release to the WordPress.org SVN directory once the plugin is approved.
 
 ---
 
@@ -101,5 +105,6 @@ PHP · WordPress Plugin API · GoatCounter API v0 · SVG · CSS Grid · JavaScri
 
 ---
 
+→ [wordpress.org/plugins/linuxbcn-analytics-for-goatcounter](https://wordpress.org/plugins/linuxbcn-analytics-for-goatcounter/)
 → [github.com/112books/goatcounter-wp](https://github.com/112books/goatcounter-wp)
 → [112books.eu website — related project](/en/projectes/112books-theme/)

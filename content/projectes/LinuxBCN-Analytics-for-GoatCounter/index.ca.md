@@ -6,7 +6,7 @@ year: 2026
 client: "LinuxBCN"
 sector: "eines"
 description: "Plugin de WordPress de codi obert per integrar GoatCounter: analítica sense cookies, sense GDPR, amb panell complet d'estadístiques directament al tauler d'administració."
-lastmod: "2026-07-13"
+lastmod: "2026-07-16"
 draft: false
 serveis: ["tema-wordpress", "cas-propi"]
 image: "goatcounter-wp-temporal.png"
@@ -85,13 +85,17 @@ Les dades queden als servidors de GoatCounter (o als teus propis si el fas servi
 
 ---
 
-## Codi obert
+## Codi obert · Aprovat per WordPress.org
 
-El plugin és **GPL-2.0** i està disponible a GitHub:
+El plugin és **GPL-2.0**, aprovat i publicat per [linuxbcn](https://profiles.wordpress.org/linuxbcn/) al directori oficial de WordPress.org:
+
+→ [wordpress.org/plugins/linuxbcn-analytics-for-goatcounter](https://wordpress.org/plugins/linuxbcn-analytics-for-goatcounter/)
+
+Pots instal·lar-lo directament des del teu WordPress: **Plugins → Afegir nou** → cerca "LinuxBCN Analytics".
+
+El codi font és també accessible a GitHub:
 
 → [github.com/112books/goatcounter-wp](https://github.com/112books/goatcounter-wp)
-
-El repositori inclui el codi complet, el `readme.txt` per a WordPress.org i un GitHub Action que sincronitzarà automàticament cada nova versió amb el directori SVN de WordPress.org quan el plugin sigui aprovat.
 
 ---
 
@@ -101,5 +105,6 @@ PHP · WordPress Plugin API · GoatCounter API v0 · SVG · CSS Grid · JavaScri
 
 ---
 
+→ [wordpress.org/plugins/linuxbcn-analytics-for-goatcounter](https://wordpress.org/plugins/linuxbcn-analytics-for-goatcounter/)
 → [github.com/112books/goatcounter-wp](https://github.com/112books/goatcounter-wp)
 → [Web de 112books.eu — projecte relacionat](/ca/projectes/112books-theme/)
