@@ -600,7 +600,20 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-## 22. Pendent — 2026-06-24
+## 22. Historial de tasques — 2026-07-22
+
+**Deploy producció — SSH key fix definitiu**
+- Problema: `rsync` a `deploy_prod` demanava password SSH cada cop (clau no autoritzada al servidor Dinahosting)
+- Clau pública afegida manualment a `~/.ssh/authorized_keys` al servidor via terminal SSH del panell Dinahosting:
+  ```
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDDOn0RBfzX823gi5KvGWmacdaQpI8vHi0esUTn7a1EN joan@Mac-mini-M1-112Bookseu
+  ```
+- Confirmat: `ssh linuxbcn0@vl28359.dinaserver.com` ja no demana password
+- **Nota:** aquesta clau és diferent de la documentada a la sessió 2026-05-09 (`hola@112books.eu`) — cada màquina genera la seva pròpia clau; cal afegir-les totes si es fa deploy des de més d'un ordinador
+
+---
+
+## 23. Pendent — 2026-06-24
 
 **Tècnic (proper sessió)**
 - Corregir deprecation warnings de Hugo: `_build` → `build` al frontmatter, `.Site.Languages` al template
@@ -626,5 +639,5 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-06-24*
+*Última actualització: 2026-07-22*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
