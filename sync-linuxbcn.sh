@@ -80,6 +80,7 @@ deploy_prod() {
     --exclude='wptest' \
     --exclude='linuxbcn' \
     --exclude='/favb' \
+    --exclude='admin/analytics-cache.json' \
     $BUILD_DIR/ $SSH_USER@$SSH_HOST:$SSH_PATH
   ok "Deploy producció fet → https://linuxbcn.com/"
 }
