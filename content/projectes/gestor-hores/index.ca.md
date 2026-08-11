@@ -80,7 +80,7 @@ El script fa tres coses: commit dels canvis locals, pull amb rebase (els fitxers
 
 ## Disponibilitat
 
-El codi és obert i disponible a Codeberg. Per instal·lar-lo en un projecte existent de Claude Code:
+El codi és obert i disponible a [Codeberg](https://codeberg.org/linuxbcn/gestor-hores). Per instal·lar-lo en un projecte existent de Claude Code:
 
 ```bash
 # Còpia el skill al directori de skills de Claude
