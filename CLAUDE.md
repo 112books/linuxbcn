@@ -613,7 +613,27 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-## 23. Pendent — 2026-06-24
+## 23. Historial de tasques — 2026-07-23
+
+**Fix dashboard admin — analytics-cache.json sobreescrit pel rsync**
+
+*Problema resolt*
+- Cada `deploy_prod` sobreescriia `analytics-cache.json` del servidor amb la versió local antiga (del 29 d'abril), perdent les dades generades pel PHP
+- Resultat: el dashboard mostrava dades desactualitzades o buides
+
+*Canvis*
+- `sync-linuxbcn.sh`: afegit `--exclude='admin/analytics-cache.json'` al rsync per preservar les dades del servidor
+- `static/.htaccess`: headers `Cache-Control: no-store` per a `analytics-cache.json` per evitar cache del navegador/CDN
+- Confirmat: el PHP `fetch-analytics.php` funciona correctament al servidor (GoatCounter API v0)
+
+*Flux corregit*
+1. Premes "↻ actualitzar" → PHP genera dades fresques al servidor
+2. Les dades romanen al servidor independentment dels deploys
+3. El navegador no cacheja el JSON gràcies a `no-store`
+
+---
+
+## 24. Pendent — 2026-07-23
 
 **Tècnic (proper sessió)**
 - Corregir deprecation warnings de Hugo: `_build` → `build` al frontmatter, `.Site.Languages` al template
