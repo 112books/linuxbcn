@@ -4,6 +4,10 @@ ErrorDocument 404 /ca/404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # www → sense www (canonical)
+  RewriteCond %{HTTP_HOST} ^www\.linuxbcn\.com [NC]
+  RewriteRule ^(.*)$ https://linuxbcn.com/$1 [R=301,L]
+
   # Arrel → versió catalana (Hugo genera alias però per si de cas)
   RewriteRule ^$ /ca/ [R=301,L]
 
