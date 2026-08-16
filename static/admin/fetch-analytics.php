@@ -93,6 +93,12 @@ $end   = date('Y-m-d', strtotime('-1 day'));
 $start = date('Y-m-d', strtotime('-365 days'));
 $params = ['start' => $start, 'end' => $end, 'limit' => 50];
 
+// ── Total real (evita el cap de limit:50 pàgines) ────────────────────────────
+
+$total_raw = gc_fetch('/stats/total', $params);
+usleep(400000);
+$total_real = isset($total_raw['total']) ? (int)$total_raw['total'] : null;
+
 // ── Crida principal: hits per pàgina ─────────────────────────────────────────
 
 $hits_raw = gc_fetch('/stats/hits', $params);
@@ -188,7 +194,7 @@ $locations = safe_stats('/stats/locations', array_merge($params, ['limit' => 20]
 $output = [
     'generated'   => gmdate('Y-m-d\TH:i:s\Z'),
     'period'      => ['start' => $start, 'end' => $end],
-    'total'       => $total,
+    'total'       => $total_real ?? $total,
     'total_unique'=> 0,
     'hits_by_day' => $hbd_arr,
     'hits'        => $hits_list,
@@ -211,7 +217,7 @@ if (file_put_contents(CACHE_FILE, $json) === false) {
 
 echo json_encode([
     'status'    => 'ok',
-    'total'     => $total,
+    'total'     => $output['total'],
     'generated' => $output['generated'],
     'period'    => $output['period'],
 ]);
