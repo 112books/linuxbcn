@@ -46,7 +46,6 @@ Les funcions actuals cobren les necessitats immediates d'una entitat real:
 - **Tauler pràctic** — informació operativa del dia a dia sempre accessible
 - **Protocols i documents** — normativa interna, estatuts i FAQ integrats
 
-*****
 {{< gallery 
 "konsentor-screen-01.png"
 "konsentor-screen-02.png"
@@ -86,7 +85,9 @@ Konsento és una aplicació web estàndard construïda amb tecnologia provada i 
 
 Funciona en un **VPS bàsic de 2 GB de RAM**. No necessita Kubernetes, ni microserveis, ni cap infraestructura especial. El disseny és responsiu, accessible (WCAG 2.1 AA) i funciona sense JavaScript per a les funcions principals.
 
-[CAPTURA: Vista en mòbil — fitxa de comissió]
+{{< gallery 
+"konsentor-screen-07.png"
+ >}}
 
 ---
 
@@ -102,7 +103,10 @@ Konsento és adequat per a qualsevol entitat que necessiti:
 
 Exemples d'ús: centres culturals autogestionats, cooperatives de treball, ateneus, associacions de veïns, espais de coworking comunitari.
 
-[CAPTURA: Formulari de proposta pública]
+{{< gallery 
+"konsentor-screen-tel-01.png"
+ >}}
+
 
 ---
 
