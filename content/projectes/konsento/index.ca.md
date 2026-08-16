@@ -9,7 +9,7 @@ client: "LinuxBCN"
 featured: true
 draft: false
 serveis: ["aplicacio-web", "cas-propi"]
-image: "konsento-logo.svg"
+image: "konsento-v1-retall.png"
 aliases:
   - /konsento/
 ---
@@ -87,16 +87,6 @@ Konsento és una aplicació web estàndard construïda amb tecnologia provada i 
 Funciona en un **VPS bàsic de 2 GB de RAM**. No necessita Kubernetes, ni microserveis, ni cap infraestructura especial. El disseny és responsiu, accessible (WCAG 2.1 AA) i funciona sense JavaScript per a les funcions principals.
 
 [CAPTURA: Vista en mòbil — fitxa de comissió]
-
----
-
-## Accés sense fricció per a Google Workspace
-
-Si la teva entitat usa Google Workspace (com la Nau Bostik, amb `@naubostik.com`), l'accés és immediat: **cap contrasenya nova que recordar**.
-
-L'administrador dona d'alta el compte amb l'email corporatiu. La primera vegada que l'usuari clica "Entrar amb Google", Konsento reconeix l'email i connecta el compte automàticament. A partir d'aquell moment, un clic al logo gran de la portada porta al panell d'administració.
-
-[CAPTURA: Pantalla de login amb botó "Entrar amb Google"]
 
 ---
 
