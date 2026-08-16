@@ -9,7 +9,7 @@ client: "LinuxBCN"
 featured: true
 draft: false
 serveis: ["aplicacio-web", "cas-propi"]
-image: "konsento-animacio.gif"
+image: "konsento-logo.svg"
 aliases:
   - /konsento/
 ---
