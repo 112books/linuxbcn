@@ -756,6 +756,33 @@ li:has(> a:only-child) a:hover {
   cursor: zoom-in;
 }
 
+.project-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+}
+
+.project-content table th,
+.project-content table td {
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-content table thead th {
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  border-bottom: 2px solid var(--border);
+}
+
+.project-content table tbody tr:last-child td {
+  border-bottom: none;
+}
+
 .project-content img:nth-of-type(even) {
   width: 88%;
   margin-left: auto;
