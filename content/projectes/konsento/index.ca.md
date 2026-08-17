@@ -48,7 +48,7 @@ Les funcionalitats principals:
 "konsento-screen-backend-02.png"
  >}}
 
-{{< gallery 
+{{< gallery-portrait 
 "konsento-screen-mobile.png"
  >}}
 

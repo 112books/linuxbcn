@@ -788,6 +788,52 @@ li:has(> a:only-child) a:hover {
   margin-left: auto;
 }
 
+.project-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 2rem 0;
+}
+
+.project-content table thead th {
+  background: var(--accent-faint);
+  text-align: left;
+  padding: 0.7rem 1rem;
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--ink-head);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.project-content table tbody tr {
+  border: 1px solid var(--border);
+}
+
+.project-content table tbody tr:nth-child(even) {
+  background: var(--header-bg);
+}
+
+.project-content table tbody td,
+.project-content table tbody th {
+  padding: 0.65rem 1rem;
+  color: var(--ink2);
+  vertical-align: top;
+  border: 1px solid var(--border);
+}
+
+.project-content table tbody th {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  white-space: nowrap;
+  background: var(--bg);
+}
+
 /* Lightbox */
 .lightbox {
   display: none;
@@ -842,6 +888,21 @@ li:has(> a:only-child) a:hover {
   object-fit: cover;
   display: block;
   cursor: zoom-in;
+}
+
+.project-gallery--portrait {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.project-gallery--portrait .gallery-item img {
+  width: auto;
+  height: 380px;
+  max-width: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 /* =====================
