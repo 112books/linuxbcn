@@ -1,7 +1,7 @@
 ---
-title: "Konsento — Eina de governança lliure per a espais comunitaris"
-description: "Konsento és una eina de governança lliure per a espais comunitaris, cooperatives, ateneus i entitats sense ànim de lucre. Simplifica la gestió de les assemblees, les comissions, els acords i els encàrrecs, i facilita que la informació i les decisions de l’entitat quedin organitzades, accessibles i traçables."
-lastmod: "2026-08-15"
+title: "Konsento — Governança assembleària per a espais comunitaris"
+description: "Konsento és una aplicació web de programari lliure que ajuda col·lectius, cooperatives i espais autogestionats a prendre decisions de forma transparent, estructurada i accessible."
+lastmod: "2026-08-17"
 slug: "konsento"
 weight: 1
 year: 2026
@@ -14,126 +14,77 @@ aliases:
   - /konsento/
 ---
 
-## El repte
+Konsento és una aplicació web de programari lliure que ajuda col·lectius, cooperatives i espais autogestionats a prendre decisions de forma transparent, estructurada i accessible.
 
-Els espais culturals autogestionats, les cooperatives, els ateneus i les entitats sense ànim de lucre comparteixen un problema comú: la gestió democràtica és lenta, dispersa i difícil de traçar. Les decisions es prenen per WhatsApp, els acords es perden, les comissions no saben qui fa què, i les assemblees es converteixen en maratons sense memòria.
+Neix d'una necessitat real: la Nau Bostik, centre cultural autogestionat del barri de la Sagrera a Barcelona, gestionava les seves assemblees, comissions i acords a través de missatgeria instantània, correus dispersos i documents compartits sense ordre. Les decisions es perdien, les responsabilitats quedaven difuminades i la memòria institucional desapareixia amb cada relleu de persones.
 
-La necessitat és clara. Però quan cerques eines per cobrir-la, el panorama és decebedor.
-
----
-
-## El problema de les eines existents
-
-Hem explorat les opcions disponibles —Decidim, Loomio, Open Collective, diversos ERP cooperatius— i totes cauen en el mateix patró: **estan sobredimensionades per a la majoria d'entitats**.
-
-Requereixen servidors potents, equips tècnics per mantenir-les, mesos per configurar-les i formació intensiva per usar-les. Una associació de veïns o un espai de coworking comunitari no necessita un sistema de votació amb resultats en temps real ni un motor de propostes amb desenes de fases. Necessita que les decisions que s'han pres constin, que tothom sàpiga qui fa què, i que qualsevol pugui fer arribar una proposta.
+Konsento resol exactament aquest problema.
 
 ---
 
-## La solució: just el que cal
+## Què fa Konsento
 
-**Konsento** neix amb un principi clar: cobrir el cicle real de presa de decisions amb el **mínim de complexitat tècnica i de gestió**.
+El sistema segueix un cicle clar: **convocar → assistir → recollir → acordar → publicar**. Tot queda documentat i accessible per a totes les persones membres.
 
-Un únic cicle ben fet: **convocar → assistir → actar → acordar → publicar**. Res més.
+Les funcionalitats principals:
 
-Les funcions actuals cobren les necessitats immediates d'una entitat real:
-
-- **Assemblees** — convocatòria, acta i acords en un sol lloc
-- **Comissions de treball** — membres, objectius, reunions i encàrrecs per comissió
-- **Encàrrecs** — l'equip gestor delega tasques a comissions amb seguiment d'estat i data límit
-- **Tauler d'usuari** — cada membre veu les seves comissions, reunions i encàrrecs pendents
-- **Peticions i propostes** — qualsevol persona pot proposar, preguntar o demanar acció sense registrar-se
-- **Tauler pràctic** — informació operativa del dia a dia sempre accessible
-- **Protocols i documents** — normativa interna, estatuts i FAQ integrats
+- **Assemblees** — Convocatòries, ordres del dia, actes i acords centralitzats. Les persones membres confirmen assistència i fan seguiment dels punts acordats.
+- **Comissions de treball** — Gestió de membres, objectius, reunions i encàrrecs. Cada comissió té el seu espai propi.
+- **Tauler d'usuari** — Vista personalitzada de les comissions, reunions properes i encàrrecs pendents.
+- **Sistema de peticions** — Qualsevol membre pot fer arribar propostes, preguntes o peticions a les comissions sense necessitat de saber qui és la persona responsable en cada moment.
+- **Protocols d'actuació** — Un assistent pas a pas que guia les persones membres davant situacions habituals: emergències, gestió d'espais, recollida de residus, serveis del barri... Evita que cada incident requereixi improvització.
+- **Directori de serveis territorials** — Recursos del barri (farmàcies de guàrdia, CAPs, serveis municipals) accessibles directament des de l'app.
+- **Documentació integrada** — Estatuts, normativa interna, FAQ i manual d'ús en un sol lloc.
 
 {{< gallery 
-"konsentor-screen-01.png"
-"konsentor-screen-02.png"
-"konsentor-screen-03.png"
-"konsentor-screen-04.png"
-"konsentor-screen-05.png"
-"konsentor-screen-06.png"
+"konsento-screen-home.png"
+"konsento-screen-comissions.png"
+"konsento-screen-propostes.png"
+"konsento-screen-protocols.png"
  >}}
 
-Tot el front-end és **públic i accessible sense registre**. La gestió interna és exclusiva per a l'equip gestor, des d'un panell adaptat i sense soroll.
-
-[CAPTURA: Panell d'administració amb seccions organitzades]
-
----
-
-## Creixement progressiu
-
-Konsento no pretén ser complet des del primer dia. El projecte **creixerà amb les necessitats reals** de les entitats que l'usin.
-
-Cada nova funcionalitat s'afegirà quan hi hagi una necessitat concreta i demostrada, no per anticipar casos d'ús hipotètics. Això garanteix que l'eina es mantingui lleugera, mantenible i comprensible per a qui la gestiona.
-
----
-
-## Tecnologia lleugera i provada
-
-Konsento és una aplicació web estàndard construïda amb tecnologia provada i sense dependències propietàries:
-
-| Component | Tecnologia |
-|-----------|-----------|
-| Backend | Python · Django |
-| Base de dades | MariaDB |
-| Frontend | HTML5 · CSS3 · JS mínim |
-| Autenticació | Email + Google OAuth (django-allauth) |
-| Internacionalització | Català i anglès (ampliable) |
-| Allotjament | Qualsevol VPS Linux |
-| Llicència | AGPL-3.0 (programari lliure) |
-
-Funciona en un **VPS bàsic de 2 GB de RAM**. No necessita Kubernetes, ni microserveis, ni cap infraestructura especial. El disseny és responsiu, accessible (WCAG 2.1 AA) i funciona sense JavaScript per a les funcions principals.
+{{< gallery 
+"konsento-screen-backend-01.png"
+"konsento-screen-backend-02.png"
+ >}}
 
 {{< gallery 
-"konsentor-screen-07.png"
+"konsento-screen-mobile.png"
  >}}
 
 ---
 
 ## Per a qui és
 
-Konsento és adequat per a qualsevol entitat que necessiti:
-
-- Gestionar assemblees periòdiques amb acta i seguiment d'acords
-- Coordinar grups de treball o comissions internes
-- Fer seguiment d'encàrrecs entre l'equip gestor i les comissions
-- Recollir propostes i preguntes de la comunitat de forma estructurada
-- Tenir una finestreta pública amb informació operativa i protocols
-
-Exemples d'ús: centres culturals autogestionats, cooperatives de treball, ateneus, associacions de veïns, espais de coworking comunitari.
-
-{{< gallery 
-"konsentor-screen-tel-01.png"
- >}}
-
+Konsento és útil per a qualsevol organització que funcioni de forma assembleària o participativa: centres culturals autogestionats, cooperatives de treball o de consum, ateneus, associacions de veïns, espais de coworking comunitari o qualsevol col·lectiu que necessiti coordinar-se democràticament sense dependre d'eines corporatives.
 
 ---
 
-## Programari lliure
+## Aspectes tècnics
 
-El codi font és públic, auditable i reutilitzable sota llicència **AGPL-3.0**.
+Konsento està construïda sobre tecnologia contrastada i lleugera:
 
-**Repositori:** [codeberg.org/linuxbcn/konsento](https://codeberg.org/linuxbcn/konsento)
+- **Backend:** Python / Django
+- **Base de dades:** MariaDB (o SQLite en entorns de desenvolupament)
+- **Frontend:** HTML5, CSS3 i JavaScript mínim — sense frameworks pesants
+- **Autenticació:** correu electrònic amb verificació obligatòria; protecció contra força bruta (django-axes)
+- **Seguretat:** HTTPS forçat, HSTS, cookies segures, sanitització de markdown, limitació de taxa en APIs
+- **Accessibilitat:** WCAG 2.1 AA — menú hamburguesa mòbil, contrastos AA, targets tàctils 44px, lector de pantalla
+- **Allotjament:** VPS Linux estàndard (2 GB RAM mínims), compatible amb Apache + Gunicorn
+- **Llicència:** AGPL-3.0 — programari lliure
 
-Qualsevol entitat pot desplegar la seva pròpia instància, adaptar-la a les seves necessitats i contribuir millores al projecte.
+El codi font és públic a [codeberg.org/linuxbcn/konsento](https://codeberg.org/linuxbcn/konsento).
 
 ---
 
-## Desplegament i suport
+## Programari lliure, per disseny
 
-LinuxBCN ofereix:
+Konsento no és un producte tancat. És programari lliure (llicència AGPL-3.0), la qual cosa significa que el codi és públic, auditable, modificable i auto-allotjable. Cap dada de la vostra organització no surt del vostre servidor.
 
-- **Desplegament gestionat** en VPS dedicat o compartit
-- **Adaptació** a la identitat i necessitats de l'entitat
-- **Formació** de l'equip gestor
-- **Manteniment** i actualitzacions de seguretat
+Des de LinuxBCN el mantenim activament i l'adaptem a les necessitats de la Nau Bostik, però el disseny és genèric per intenció: qualsevol col·lectiu amb necessitats similars pot adoptar-lo, i oferim serveis d'adaptació, allotjament i suport.
 
-[Contacta'ns](https://linuxbcn.com) per a pressupost sense compromís.
+Si el vostre col·lectiu necessita una eina com aquesta, [poseu-vos en contacte](https://linuxbcn.com/ca/contacte/).
 
 ---
 
 *Desenvolupat per Joan Linux · LinuxBCN.com · Barcelona*
-
-
----
