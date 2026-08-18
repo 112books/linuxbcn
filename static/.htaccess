@@ -42,6 +42,7 @@ ErrorDocument 404 /ca/404.html
   RewriteRule ^machiroku/?$         /ca/projectes/machiroku/ [R=301,L]
   RewriteRule ^favb/?$              /ca/projectes/favb/ [R=301,L]
   RewriteRule ^malditasmaquinas/?$  /ca/malditasmaquinas/ [R=301,L]
+  RewriteRule ^konsento/?$          /en/projectes/konsento/ [R=301,L]
 </IfModule>
 
 # ─── Security Headers ────────────────────────────────────────────────────────
