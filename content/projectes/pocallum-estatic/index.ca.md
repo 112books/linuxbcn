@@ -119,7 +119,7 @@ Cada pas dispara un event a GoatCounter per veure exactament on abandona la gent
 
 ## Migració des de WordPress
 
-La migració va ser gradual: WordPress actiu fins al tall de domini, Hugo construint-se en paral·lel. Els 152 JPEGs es van extreure directament de la biblioteca de mitjans i es van renomenar per convenció. Els articles de blog van continuar a blog.pocallum.cat (WordPress independent, fora d'abast).
+La migració va ser gradual: WordPress actiu fins al tall de domini, Hugo construint-se en paral·lel. Els 152 JPEGs es van extreure directament de la biblioteca de mitjans i es van renomenar per convenció. El blog, servit des de blog.pocallum.cat, va seguir en WordPress durant aquesta primera fase i es va migrar posteriorment a Hugo (vegeu el [projecte de migració del blog](/ca/projectes/blog-pocallum/)).
 
 El resultat: un web que carrega en < 1 segon, no té cap superfície d'atac server-side, costa 0€/mes d'allotjament, i es publica amb un `git push`.
 

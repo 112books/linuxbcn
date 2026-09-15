@@ -119,7 +119,7 @@ Each step fires a GoatCounter event to track exactly where people drop off. Subm
 
 ## Migration from WordPress
 
-The migration was gradual: WordPress stayed live until the domain cutover, while Hugo was built in parallel. The 152 JPEGs were extracted directly from the media library and renamed by convention. Blog articles continued at blog.pocallum.cat (independent WordPress, out of scope).
+The migration was gradual: WordPress stayed live until the domain cutover, while Hugo was built in parallel. The 152 JPEGs were extracted directly from the media library and renamed by convention. The blog, served from blog.pocallum.cat, stayed on WordPress during this first phase and was migrated to Hugo afterwards (see the [blog migration project](/en/projectes/blog-pocallum/)).
 
 The result: a website that loads in under 1 second, has no server-side attack surface, costs €0/month to host, and publishes with a `git push`.
 
