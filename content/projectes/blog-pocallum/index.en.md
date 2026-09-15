@@ -39,6 +39,8 @@ WordPress served well for a decade, but it had accumulated problems that couldn'
 - **Maintenance:** constant updates to core, plugins and themes, and patches with every release.
 - **Historical vulnerability:** with 15 years of history, any forgotten version was a risk.
 
+WordPress keeps getting better and more powerful, but that's exactly what makes it oversized for a blog. It burns server resources that needlessly drive up the cost of maintaining projects that should be simple, in exchange for security and features we'll never use. Moving to a static site is also a small step towards being a bit more sustainable.
+
 ---
 
 ## The migration process

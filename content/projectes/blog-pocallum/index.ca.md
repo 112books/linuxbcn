@@ -39,6 +39,8 @@ WordPress va servir bé durant una dècada, però acumulava problemes que no es 
 - **Manteniment:** actualitzacions constants del nucli, plugins i temes, i pedaços amb cada versió.
 - **Vulnerabilitat històrica:** amb 15 anys d'historial, qualsevol versió oblidada era un risc.
 
+WordPress cada vegada és millor i més potent, però això mateix el fa sobredimensionat per a un blog. Gasta recursos de servidor que encareixen el manteniment innecessàriament en projectes que haurien de ser senzills, per oferir seguretat i funcionalitats que mai farem servir. Passar a un web estàtic també és un petit gra de sorra per ser una mica més sostenibles.
+
 ---
 
 ## El procés de migració
