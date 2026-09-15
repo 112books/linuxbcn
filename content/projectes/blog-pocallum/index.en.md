@@ -16,8 +16,6 @@ image: "blog-pocallum-01.png"
 
 The Blog de Pocallum —a photographic chronicle of concerts, festivals, cameras and neighbourhood life in Barcelona since 2010— has switched engines entirely, and it's not the first time. The result of this latest step: more speed, less attack surface, and the exact same content at the exact same URLs.
 
-{{< gallery "blog-pocallum-01.png" >}}
-
 ---
 
 ## Three eras, one blog
@@ -65,6 +63,7 @@ The migration was done step by step, always with the safety net of being able to
 - **Frictionless editing:** **Sveltia CMS**, adapted to our own taste and needs —visual content editing with no need to touch Markdown by hand.
 
 {{< gallery "blog-pocallum-cms-01.png" >}}
+*Editing a post in Sveltia CMS, with live preview and categories/tags inherited from the original blog.*
 
 ---
 

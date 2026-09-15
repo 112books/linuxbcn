@@ -16,8 +16,6 @@ image: "blog-pocallum-01.png"
 
 El Blog de Pocallum —una crònica fotogràfica de concerts, festivals, càmeres i vida de barri a Barcelona des del 2010— ha canviat el motor per complet, i no és la primera vegada. El resultat d'aquest darrer pas: més velocitat, menys superfície d'atac, i el mateix contingut íntegre amb les mateixes URLs.
 
-{{< gallery "blog-pocallum-01.png" >}}
-
 ---
 
 ## Tres eres, un mateix blog
@@ -65,6 +63,7 @@ La migració es va fer pas a pas, amb la seguretat de poder tornar enrere en tot
 - **Edició sense fricció:** **Sveltia CMS** adaptat al nostre gust i necessitats —edició visual del contingut sense necessitat de tocar Markdown a mà.
 
 {{< gallery "blog-pocallum-cms-01.png" >}}
+*Editant un post des de Sveltia CMS, amb previsualització en directe i categories/tags heretats del blog original.*
 
 ---
 
