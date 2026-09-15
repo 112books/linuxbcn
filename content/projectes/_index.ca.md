@@ -31,9 +31,12 @@ draft: false
 
 ---
 
-## Migració WP → estàtic
+## Pocallum.cat — migració a estàtic
 
 → [Pocallum.cat](/projectes/pocallum-estatic/) — presència digital renovada, de WordPress a Hugo
+
+## Blog de Pocallum — migració a estàtic
+
 → [Blog de Pocallum](/projectes/blog-pocallum/) — 15 anys de blog fotogràfic, de WordPress a Hugo
 
 ---

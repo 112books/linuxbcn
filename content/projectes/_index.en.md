@@ -31,9 +31,12 @@ draft: false
 
 ---
 
-## WordPress → static migrations
+## Pocallum.cat — static migration
 
 → [Pocallum.cat](/projectes/pocallum-estatic/) — renewed digital presence, from WordPress to Hugo
+
+## Blog de Pocallum — static migration
+
 → [Blog de Pocallum](/projectes/blog-pocallum/) — 15 years of a photography blog, from WordPress to Hugo
 
 ---
