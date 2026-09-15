@@ -62,7 +62,7 @@ The migration was done step by step, always with the safety net of being able to
 - **Static search (Pagefind):** full-text search, indexed at build time, no server or cookies.
 - **GDPR-friendly analytics:** GoatCounter, cookie-free, using the same counter already in place.
 - **Simple management:** text and images in files, nothing in a database.
-- **Optimised images:** the 3.4 GB of originals are being compressed and converted to cut file size significantly, with no visible loss of quality.
+- **Frictionless editing:** **Sveltia CMS**, adapted to our own taste and needs —visual content editing with no need to touch Markdown by hand.
 
 ---
 
@@ -70,8 +70,16 @@ The migration was done step by step, always with the safety net of being able to
 
 - **2,353 posts and 137,000 words** of content, migrated in full.
 - **71 legacy comments** preserved as static content within the posts.
-- **Over 3.4 GB of images** (15 years of originals) still served from the same server, untouched.
 - One single Markdown file per post, with complete frontmatter (date, categories, tags, thumbnails).
+
+### Image optimisation — real savings
+
+| | Files | Size |
+|---|---|---|
+| Originals | 19,516 | 3,131 MB |
+| WebP (2500px display + 800px thumbnails) | 25,948 | 1,813 MB |
+
+**Savings: 1,318 MB (−42.1%)**, about 0.07 MB per image on average, with no visible loss of quality.
 
 ---
 

@@ -62,7 +62,7 @@ La migració es va fer pas a pas, amb la seguretat de poder tornar enrere en tot
 - **Cercador estàtic (Pagefind):** cerca a text complet, indexada en el build, sense servidor ni cookies.
 - **Analítica sense cookies:** GoatCounter, complint RGPD, amb el mateix comptador que ja hi havia.
 - **Gestió senzilla:** textos i imatges en fitxers, res a base de dades.
-- **Imatges optimitzades:** els 3,4 GB d'originals s'estan comprimint i convertint per reduir-ne el pes de manera significativa, sense perdre qualitat visible.
+- **Edició sense fricció:** **Sveltia CMS** adaptat al nostre gust i necessitats —edició visual del contingut sense necessitat de tocar Markdown a mà.
 
 ---
 
@@ -70,8 +70,16 @@ La migració es va fer pas a pas, amb la seguretat de poder tornar enrere en tot
 
 - **2.353 posts i 137.000 paraules** de contingut, migrats íntegres.
 - **71 comentaris** llegats conservats com a contingut estàtic dins dels posts.
-- **Més de 3,4 GB d'imatges** (originals de 15 anys) que continuen servides des del mateix servidor.
 - Un sol fitxer Markdown per post, amb el frontmatter complet (data, categories, tags, miniatures).
+
+### Optimització d'imatges — estalvi real
+
+| | Fitxers | Pes |
+|---|---|---|
+| Originals | 19.516 | 3.131 MB |
+| WebP (display 2500px + miniatures 800px) | 25.948 | 1.813 MB |
+
+**Estalvi: 1.318 MB (−42,1%)**, uns 0,07 MB de mitjana per imatge, sense pèrdua de qualitat visible.
 
 ---
 
