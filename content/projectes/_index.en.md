@@ -27,6 +27,7 @@ draft: false
 → [Positivador WebApp](/projectes/app-positivador/) — tool for analogue photography
 → [112Books](/projectes/112books/) — photography publisher
 → [Pocallum](/projectes/pocallum/) — photography agency
+→ [Blog de Pocallum](/projectes/blog-pocallum/) — 15 years of WordPress migrated to Hugo
 → [Llumàtics](/projectes/llumatics/) — analogue and experimental photography
 
 ---
