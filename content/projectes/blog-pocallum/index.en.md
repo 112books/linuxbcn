@@ -1,11 +1,11 @@
 ---
-title: "Blog de Pocallum — Migration from WordPress to Hugo"
+title: "Blog de Pocallum — From Blogger to WordPress, from WordPress to Hugo"
 slug: "blog-pocallum"
 weight: 3
 year: 2026
 client: "Pocallum / Joan Linux Martínez"
 sector: "photography"
-description: "Migration of blog.pocallum.cat: 15 years of WordPress (2,353 posts) to static Hugo, with full URL parity and no database. LinuxBCN."
+description: "Blog.pocallum.cat: from Blogger to WordPress and now to static Hugo. 2,353 posts migrated with full URL parity, no database, no third-party dependencies. LinuxBCN."
 lastmod: "2026-09-15"
 draft: false
 serveis: ["migracio-wordpress"]
@@ -14,9 +14,19 @@ image: "blog-pocallum-01.png"
 
 ## Goodbye WordPress, hello Hugo
 
-After 15 years on WordPress, the Blog de Pocallum —a photographic chronicle of concerts, festivals, cameras and neighbourhood life in Barcelona since 2010— has switched engines entirely. The result: more speed, less attack surface, and the exact same content at the exact same URLs.
+The Blog de Pocallum —a photographic chronicle of concerts, festivals, cameras and neighbourhood life in Barcelona since 2010— has switched engines entirely, and it's not the first time. The result of this latest step: more speed, less attack surface, and the exact same content at the exact same URLs.
 
 {{< gallery "blog-pocallum-01.png" >}}
+
+---
+
+## Three eras, one blog
+
+The blog hasn't always lived on WordPress. It started on **Blogger**, Google's free platform: convenient to get going, but with content, data and design under a third party's control, with neither sovereignty nor long-term predictability.
+
+The move to **WordPress** was already a step towards free software: open source, control over your own content, no longer depending on a single company to keep existing. It served well for 15 years, but over time it accumulated the weight typical of any database-backed CMS: plugins, constant updates, and an attack surface that kept growing.
+
+With **Hugo**, the cycle closes with the final step: a static site, no database, no third-party dependencies, hosted on our own servers. Full data sovereignty, no intermediary, nothing left to exploit. From Google's cloud to free software, and from free software to full sovereignty: each step has made the blog a little cleaner, simpler, purer and more proactive.
 
 ---
 
@@ -52,6 +62,7 @@ The migration was done step by step, always with the safety net of being able to
 - **Static search (Pagefind):** full-text search, indexed at build time, no server or cookies.
 - **GDPR-friendly analytics:** GoatCounter, cookie-free, using the same counter already in place.
 - **Simple management:** text and images in files, nothing in a database.
+- **Optimised images:** the 3.4 GB of originals are being compressed and converted to cut file size significantly, with no visible loss of quality.
 
 ---
 

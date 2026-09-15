@@ -1,11 +1,11 @@
 ---
-title: "Blog de Pocallum — Migració de WordPress a Hugo"
+title: "Blog de Pocallum — De Blogger a WordPress, de WordPress a Hugo"
 slug: "blog-pocallum"
 weight: 3
 year: 2026
 client: "Pocallum / Joan Linux Martínez"
 sector: "fotografia"
-description: "Migració de blog.pocallum.cat: 15 anys de WordPress (2.353 posts) a Hugo estàtic, amb paritat total d'URLs i sense base de dades. LinuxBCN."
+description: "Blog.pocallum.cat: de Blogger a WordPress i, ara, a Hugo estàtic. 2.353 posts migrats amb paritat total d'URLs, sense base de dades ni dependències. LinuxBCN."
 lastmod: "2026-09-15"
 draft: false
 serveis: ["migracio-wordpress"]
@@ -14,9 +14,19 @@ image: "blog-pocallum-01.png"
 
 ## Adéu WordPress, hola Hugo
 
-Després de 15 anys de WordPress, el Blog de Pocallum —una crònica fotogràfica de concerts, festivals, càmeres i vida de barri a Barcelona des del 2010— ha canviat el motor per complet. El resultat: més velocitat, menys superfície d'atac, i el mateix contingut íntegre i amb les mateixes URLs.
+El Blog de Pocallum —una crònica fotogràfica de concerts, festivals, càmeres i vida de barri a Barcelona des del 2010— ha canviat el motor per complet, i no és la primera vegada. El resultat d'aquest darrer pas: més velocitat, menys superfície d'atac, i el mateix contingut íntegre amb les mateixes URLs.
 
 {{< gallery "blog-pocallum-01.png" >}}
+
+---
+
+## Tres eres, un mateix blog
+
+El blog no ha viscut sempre a WordPress. Va començar a **Blogger**, la plataforma gratuïta de Google: còmoda per començar, però amb el contingut, les dades i el disseny sota control d'un tercer que no oferia ni sobirania ni previsibilitat a llarg termini.
+
+El pas a **WordPress** ja va ser un salt cap al programari lliure: codi obert, control del propi contingut, sense dependre d'una única empresa per continuar existint. Va servir bé durant 15 anys, però amb el temps va anar acumulant el pes propi de qualsevol CMS amb base de dades: plugins, actualitzacions constants, i una superfície d'atac que no parava de créixer.
+
+Amb **Hugo**, el cicle es tanca amb el pas definitiu: web estàtic, sense base de dades ni dependències de tercers, allotjat als nostres propis servidors. Sobirania completa de les dades, cap intermediari, cap superfície per explotar. Del núvol de Google al programari lliure, i del programari lliure a la sobirania total: cada pas ha fet el blog una mica més net, més senzill, més pur i més proactiu.
 
 ---
 
@@ -52,6 +62,7 @@ La migració es va fer pas a pas, amb la seguretat de poder tornar enrere en tot
 - **Cercador estàtic (Pagefind):** cerca a text complet, indexada en el build, sense servidor ni cookies.
 - **Analítica sense cookies:** GoatCounter, complint RGPD, amb el mateix comptador que ja hi havia.
 - **Gestió senzilla:** textos i imatges en fitxers, res a base de dades.
+- **Imatges optimitzades:** els 3,4 GB d'originals s'estan comprimint i convertint per reduir-ne el pes de manera significativa, sense perdre qualitat visible.
 
 ---
 
