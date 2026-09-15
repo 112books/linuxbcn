@@ -27,8 +27,14 @@ draft: false
 → [Positivador WebApp](/projectes/app-positivador/) — eina per a fotografia analògica
 → [112Books.eu](/projectes/112books/) — editorial independent de fotografia
 → [Pocallum.cat](/projectes/pocallum/) — serveis fotogràfics
-→ [Blog de Pocallum](/projectes/blog-pocallum/) — migració de 15 anys de WordPress a Hugo
 → [Llumàtics](/projectes/llumatics/) — fotografia analògica i experimental
+
+---
+
+## Migració WP → estàtic
+
+→ [Pocallum.cat](/projectes/pocallum-estatic/) — presència digital renovada, de WordPress a Hugo
+→ [Blog de Pocallum](/projectes/blog-pocallum/) — 15 anys de blog fotogràfic, de WordPress a Hugo
 
 ---
 
