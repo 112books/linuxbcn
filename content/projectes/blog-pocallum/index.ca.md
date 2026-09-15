@@ -64,6 +64,8 @@ La migració es va fer pas a pas, amb la seguretat de poder tornar enrere en tot
 - **Gestió senzilla:** textos i imatges en fitxers, res a base de dades.
 - **Edició sense fricció:** **Sveltia CMS** adaptat al nostre gust i necessitats —edició visual del contingut sense necessitat de tocar Markdown a mà.
 
+{{< gallery "blog-pocallum-cms-01.png" >}}
+
 ---
 
 ## El resultat en xifres

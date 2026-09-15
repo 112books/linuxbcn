@@ -64,6 +64,8 @@ The migration was done step by step, always with the safety net of being able to
 - **Simple management:** text and images in files, nothing in a database.
 - **Frictionless editing:** **Sveltia CMS**, adapted to our own taste and needs —visual content editing with no need to touch Markdown by hand.
 
+{{< gallery "blog-pocallum-cms-01.png" >}}
+
 ---
 
 ## The result, in numbers
