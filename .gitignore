@@ -1,3 +1,5 @@
 public/
 .DS_Store
 .claude/worktrees/
+.taques/
+resources/_gen/

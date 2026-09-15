@@ -659,5 +659,30 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-07-22*
+## 25. Historial de tasques — 2026-09-15
+
+**Nou projecte: Blog de Pocallum — migració a Hugo**
+- `content/projectes/blog-pocallum/`: creat — CA+EN, títol "De Blogger a WordPress, de WordPress a Hugo"
+- Narrativa de tres eres: Blogger (Google) → WordPress → Hugo, presentada com a camí creixent de sobirania (núvol de Google → programari lliure → sobirania total de dades amb servidors propis)
+- Xifres: 2.353 posts, 137.000 paraules, 71 comentaris llegats, paritat total d'URLs (2.360 verificades amb crawler 1:1)
+- Optimització d'imatges documentada amb xifres reals: 19.516 → 25.948 fitxers WebP, −42,1% de pes (1.318 MB estalviats)
+- Documentat l'ús de **Sveltia CMS** adaptat a mida per a l'edició del blog, amb captura d'exemple
+- Afegida nota de contribució: LinuxBCN col·labora amb traduccions i documentació de la versió en català de Hugo
+- Afegida reflexió de sostenibilitat: WordPress cada cop més potent però sobredimensionat per a blogs senzills, gasta recursos de servidor innecessaris
+- Fix: eliminada galeria duplicada de portada (ja mostrada al hero via frontmatter `image:`) que feia veure "dues captures" iguals
+- `content/projectes/pocallum-estatic/index.ca.md` + `.en.md`: actualitzat — ja no descriu el blog com a "fora d'abast" (WordPress), sinó com a projecte migrat a part, amb enllaç encreuat
+- `content/projectes/_index.ca.md` + `.en.md`: el llistat de `/projectes/` és **manual**, no auto-generat des de la secció — calia afegir-hi l'enllaç a mà. Pocallum.cat i Blog de Pocallum tenen capçaleres pròpies i separades (són projectes diferents, dominis diferents), no agrupats sota un únic bloc "Migració WP → estàtic"
+- Redactat text resum per a Instagram (fora del repo)
+
+**Norma establerta**
+- El llistat `/projectes/` (`_index.ca.md`/`_index.en.md`) no es genera automàticament: cada projecte nou cal enllaçar-lo manualment o no apareixerà
+- Quan dos projectes pertanyen a la mateixa marca/client però són dominis i abasts diferents (ex. Pocallum.cat vs blog.pocallum.cat), tractar-los amb capçaleres/seccions pròpies, no fusionar-los en un sol bloc
+
+**Flux de deploy usat**
+- `hugo --minify --environment production` seguit de l'`rsync` de `sync-linuxbcn.sh::deploy_prod` executat manualment (l'script complet interromp per l'`read -p` del commit interactiu en ús no interactiu)
+- Cache CDN de producció observada amb TTL ~15 min (`age` header) — els canvis desplegats poden trigar a reflectir-se sense query-string de cache-bust
+
+---
+
+*Última actualització: 2026-09-15*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
