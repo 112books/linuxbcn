@@ -26,6 +26,8 @@ El pas a **WordPress** ja va ser un salt cap al programari lliure: codi obert, c
 
 Amb **Hugo**, el cicle es tanca amb el pas definitiu: web estàtic, sense base de dades ni dependències de tercers, allotjat als nostres propis servidors. Sobirania completa de les dades, cap intermediari, cap superfície per explotar. Del núvol de Google al programari lliure, i del programari lliure a la sobirania total: cada pas ha fet el blog una mica més net, més senzill, més pur i més proactiu.
 
+Hugo també és programari lliure, i hi seguim fidels a la mateixa filosofia: no ens limitem a fer-lo servir, hi col·laborem. Actualment estem ajudant amb les traduccions i documentant la versió en català del projecte.
+
 ---
 
 ## Per què marxar de WordPress

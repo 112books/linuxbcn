@@ -26,6 +26,8 @@ The move to **WordPress** was already a step towards free software: open source,
 
 With **Hugo**, the cycle closes with the final step: a static site, no database, no third-party dependencies, hosted on our own servers. Full data sovereignty, no intermediary, nothing left to exploit. From Google's cloud to free software, and from free software to full sovereignty: each step has made the blog a little cleaner, simpler, purer and more proactive.
 
+Hugo is free software too, and we stay true to that same philosophy: we don't just use it, we contribute to it. We're currently helping with translations and documenting the Catalan version of the project.
+
 ---
 
 ## Why leave WordPress
