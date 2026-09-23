@@ -27,6 +27,12 @@ Prova-la aquí: [9barrisimatge.org](https://9barrisimatge.org/)
 
 ---
 
+## Per què "Taro"
+
+El nom és un petit homenatge a [Gerda Taro](https://ca.wikipedia.org/wiki/Gerda_Taro), fotoperiodista i companya de Robert Capa. Cada cop sembla més clar que va ser autora d'algunes de les millors fotografies d'aquell duo tan icònic del fotoperiodisme. Va morir en acte de servei durant la Guerra Civil espanyola.
+
+---
+
 ## Abans / després
 
 {{< gallery "9bi-blogger.png" "9bi-taro-photo-app.png" >}}

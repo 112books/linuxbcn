@@ -27,6 +27,12 @@ Try it here: [9barrisimatge.org](https://9barrisimatge.org/)
 
 ---
 
+## Why "Taro"
+
+The name is a small tribute to [Gerda Taro](https://en.wikipedia.org/wiki/Gerda_Taro), photojournalist and partner of Robert Capa. It looks increasingly clear that she was the author of some of that iconic photojournalism duo's best photographs. She died in the line of duty during the Spanish Civil War.
+
+---
+
 ## Before / after
 
 {{< gallery "9bi-blogger.png" "9bi-taro-photo-app.png" >}}
