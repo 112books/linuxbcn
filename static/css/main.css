@@ -748,6 +748,11 @@ li:has(> a:only-child) a:hover {
   cursor: zoom-in;
 }
 
+.hero-image--logo img {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
 .project-content img {
   width: 100%;
   height: auto;

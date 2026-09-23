@@ -10,7 +10,7 @@
       </div>
     {{ end }}
     {{ if .Params.image }}
-      <div class="hero-image">
+      <div class="hero-image{{ if eq .Params.image_style "logo" }} hero-image--logo{{ end }}">
         {{ $img := .Page.Resources.GetMatch .Params.image }}
           {{ if $img }}
             {{ $webp := $img.Process "webp" }}
