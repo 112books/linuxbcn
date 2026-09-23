@@ -1,11 +1,11 @@
 ---
-title: "Taro — album management for photography associations"
+title: "Taro — management tool for photography associations"
 slug: "taro-photo-app"
 weight: 3
 year: 2026
 client: "9 Barris Imatge"
 sector: "photography"
-description: "Taro — free software app built with Hugo and Python to manage and showcase photo albums for associations. Built by LinuxBCN for 9 Barris Imatge."
+description: "Taro — free software app built with Hugo and Python to manage photography associations: posts, contests with electronic voting, auto-publishing and Blogger import. Built by LinuxBCN for 9 Barris Imatge."
 lastmod: "2026-09-23"
 draft: false
 serveis: ["aplicacio-web"]

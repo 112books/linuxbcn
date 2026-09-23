@@ -684,5 +684,31 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-09-15*
+## 26. Historial de tasques — 2026-09-23
+
+**Nou projecte: Taro Photo App**
+- `content/projectes/taro-photo-app/`: creat — CA+EN, títol "Taro — eina de gestió per a associacions fotogràfiques"
+- Client: 9 Barris Imatge. Sector: fotografia. Estat: beta
+- Contingut: origen (fugir de Blogger, sobirania de dades), funcionalitats i mòduls (importació Blogger, concursos amb vot electrònic, autopublicació), stack tècnic (Hugo, PaperMod, Decap CMS, Codeberg Pages, GoatCounter, Python), secció "Per què Taro" (homenatge a Gerda Taro, fotoperiodista, companya de Robert Capa, enllaç Wikipedia)
+- Galeria abans/després (Blogger vs Taro a 9barrisimatge.org) via shortcode `gallery` existent
+- Logotip Taro (SVG convertit a PNG via `qlmanage`) com a hero image
+- `layouts/projectes/single.html` + `assets/css/main.css` + `static/css/main.css`: nova classe `.hero-image--logo` (50% ample, centrat) activable amb `image_style: "logo"` al frontmatter — per a hero amb logotip en lloc de fotografia
+- Enllaçat al llistat manual `/projectes/` (CA+EN), secció "Projectes propis"
+- Repo font: `codeberg.org/linuxbcn/9bi` (mòduls Python a `9barrisimatge.org/modules/taro/`: autopublica, votacio, formularis)
+- URL en viu: `https://9barrisimatge.org/`
+
+**Incident de deploy — `apps/taro/` esborrat per `rsync --delete`**
+- `deploy_prod` amb `--delete` va esborrar `apps/taro/` de producció (linuxbcn.com) perquè no existia a `public/` local — contingut extern a aquest repo, gestionat per l'app Taro (mòduls server-side que Codeberg Pages no pot executar)
+- També es va detectar que `public/.git/` (restes d'un vell `git subtree push` de staging, ~30MB) es pujava a producció a cada deploy — sense exposició real (`.git/config` retorna 403) però mala pràctica
+- **Fix aplicat a `sync-linuxbcn.sh::deploy_prod`**: eliminat `--delete`, afegit `--exclude='.git'`, simplificats els excludes antics (ja no calen sense `--delete`)
+- `public/.git/` esborrat localment
+- Recuperació d'`apps/taro/` gestionada per l'usuari des de l'altra aplicació (Taro)
+
+**Norma establerta**
+- `deploy_prod` mai més esborra res al servidor que no formi part de `public/` local — sync additiu, no mirror destructiu
+- `apps/taro/` a producció és intocable des d'aquest repo: gestionat externament per l'app Taro
+
+---
+
+*Última actualització: 2026-09-23*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
