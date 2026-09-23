@@ -72,15 +72,8 @@ deploy_prod() {
   sync
   build_prod
   print "Pujant a Dinahost via SSH..."
-  rsync -avz --delete --no-times --no-perms --ignore-errors \
-    --exclude='cuinetes' \
-    --exclude='.well-known' \
-    --exclude='ssl' \
-    --exclude='.php.ini' \
-    --exclude='wptest' \
-    --exclude='linuxbcn' \
-    --exclude='/favb' \
-    --exclude='admin/analytics-cache.json' \
+  rsync -avz --no-times --no-perms --ignore-errors \
+    --exclude='.git' \
     $BUILD_DIR/ $SSH_USER@$SSH_HOST:$SSH_PATH
   ok "Deploy producció fet → https://linuxbcn.com/"
 }
