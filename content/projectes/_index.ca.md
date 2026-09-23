@@ -21,6 +21,7 @@ draft: false
 
 ## Projectes propis
 
+→ [Taro](/projectes/taro-photo-app/) — gestió d'àlbums per a associacions fotogràfiques (beta)
 → [Ressona](/projectes/ressona/) — plataforma d'identitat digital per a artistes
 → [MalditasMaquinas.com](/projectes/malditasmaquinas/) — consultoria tecnològica per hores
 → [112 Revelats](/projectes/112revelats/) — fotografia analògica, web lleuger a GitHub Pages

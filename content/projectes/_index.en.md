@@ -21,6 +21,7 @@ draft: false
 
 ## Own projects
 
+→ [Taro](/projectes/taro-photo-app/) — album management for photography associations (beta)
 → [Ressona](/projectes/ressona/) — digital identity platform for artists
 → [MalditasMaquinas.com](/projectes/malditasmaquinas/) — on-demand technical consultancy
 → [112 Revelats](/projectes/112revelats/) — analogue photography, lightweight site on GitHub Pages
