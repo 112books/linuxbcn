@@ -74,6 +74,8 @@ deploy_prod() {
   print "Pujant a Dinahost via SSH..."
   rsync -avz --no-times --no-perms --ignore-errors \
     --exclude='.git' \
+    --exclude='/formularis' \
+    --exclude='/apps/taro' \
     $BUILD_DIR/ $SSH_USER@$SSH_HOST:$SSH_PATH
   ok "Deploy producció fet → https://linuxbcn.com/"
 }

@@ -710,5 +710,13 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-09-23*
+## 27. Directoris intocables al servidor — 2026-09-25
+
+- `www/formularis/` (arrel de producció) **no s'ha d'esborrar ni sobreescriure mai**. No forma part d'aquest repo.
+- `www/apps/taro/` — ídem (vegeu secció 26).
+- `sync-linuxbcn.sh::deploy_prod`: afegits `--exclude='/formularis'` i `--exclude='/apps/taro'` com a doble protecció (a més de no usar `--delete`).
+
+---
+
+*Última actualització: 2026-09-25*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
