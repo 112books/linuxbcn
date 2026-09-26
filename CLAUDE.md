@@ -635,6 +635,8 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ## 24. Pendent — 2026-07-23
 
+**📋 Pla analítica + visites (2026-09-26):** veure [`PLA-VISITES.md`](PLA-VISITES.md) — comptador GoatCounter first-party anti-adblock, projectes que falten al llistat, backlinks i enviaments.
+
 **Tècnic (proper sessió)**
 - Corregir deprecation warnings de Hugo: `_build` → `build` al frontmatter, `.Site.Languages` al template
 - Nau Bostik: no té imatge a la llista de projectes — afegir-ne una o aclarir si és projecte lliurat o proposta
