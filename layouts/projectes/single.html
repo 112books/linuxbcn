@@ -40,6 +40,35 @@
 
 <script src="{{ "js/lightbox.js" | relURL }}" defer></script>
 
+<!-- Projectes relacionats: mateix sector; si n'hi ha menys de 3, es completa amb els
+     següents en l'ordre del portfolio (circular), perquè cada pàgina enllaci projectes diferents -->
+{{ $pages := .CurrentSection.RegularPages }}
+{{ $idx := 0 }}
+{{ range $i, $p := $pages }}{{ if eq $p.Permalink $.Permalink }}{{ $idx = $i }}{{ end }}{{ end }}
+{{ $related := where (where $pages "Permalink" "ne" .Permalink) "Params.sector" .Params.sector }}
+{{ if and (lt (len $related) 3) (gt (len $pages) 1) }}
+  {{ range $n := seq 1 (sub (len $pages) 1) }}
+    {{ $related = $related | append (index $pages (mod (add $idx $n) (len $pages))) }}
+  {{ end }}
+  {{ $related = $related | uniq }}
+{{ end }}
+{{ with first 3 $related }}
+<nav class="project-related" aria-labelledby="project-related-title">
+  <h2 id="project-related-title">{{ i18n "related_projects" | default "Projectes relacionats" }}</h2>
+  <ul>
+    {{ range . }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        {{ with .Params.sector }}<span class="card-sector">{{ . }}</span>{{ end }}
+        <span class="project-related__title">{{ .Title }}</span>
+        {{ with .Params.client }}<span class="project-related__meta">{{ . }}</span>{{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}
+
 <!-- CTA -->
 <div class="project-cta">
   <a href="{{ "contacte/" | relLangURL }}">→ {{ i18n "project_cta" | default "Parlem del teu projecte" }}</a>

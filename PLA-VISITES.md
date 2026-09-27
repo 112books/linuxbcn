@@ -58,12 +58,11 @@ Objectiu: que ni l'script ni l'enviament toquin dominis de GoatCounter.
 La palanca més gran: **cada projecte és un backlink potencial i una pàgina que pot posicionar per cerca de cua llarga.**
 
 ### 2.1 Enllaçat intern (ràpid, dins del repo)
-- El llistat `/projectes/` és **manual**. Aquests slugs no apareixen com a `projectes/<slug>` a `_index.ca.md` (verificar si hi són amb un altre URL o falten de veritat):
-  `112books.eu-theme, 9-barris-acull, app-estenop, awpcp, cuida, family-art-tattoo, gestor-hores, goatcounter-dashboard, konsento, LinuxBCN-Analytics-for-GoatCounter, nau-bostik, terra-i-foc`
-  → els que faltin, afegir-los (CA + EN). Pàgina sense enllaços interns = gairebé invisible per a Google.
-- Bloc "Projectes relacionats" al final de `projectes/single.html` (mateix sector/tecnologia via taxonomies).
+- ✅ Verificat 2026-09-27: `/projectes/` genera targetes automàtiques (`range .Pages` a `list.html`); el text de `_index` és només un complement. Tots els projectes hi surten en CA. **Única falta real: `gestor-hores` no té `index.en.md`** → traduir-lo.
+- ✅ Fet 2026-09-27: bloc "Projectes relacionats" a `projectes/single.html` (3 enllaços per pàgina: mateix `sector` i, si no n'hi ha prou, els següents en l'ordre del portfolio).
+- Valors de `sector` inconsistents en EN (`fotografia`/`photography`, `cultura`/`culture`, `negoci-local`/`local-business`…) → unificar per idioma perquè les pàgines de taxonomia i els relacionats agrupin bé.
 - Des de `/solucions/musics`, `/collectius`, `/microempreses` enllaçar els projectes de cada perfil com a exemples.
-- Slugs amb majúscules (`App-positivador`, `LinuxBCN-Analytics-for-GoatCounter`): passar a minúscules + redirect 301 a `.htaccess`.
+- Slugs amb majúscules: Hugo ja publica els URLs en minúscules → res a fer.
 
 ### 2.2 Backlinks des dels projectes (impacte alt, requereix Joan)
 - Peu de pàgina a cada web client: "Web: LinuxBCN" → `https://linuxbcn.com/ca/projectes/<slug>/`. Llista: Bratia, 112Books, Nau Bostik, Machiroku, FAVB, Carrer, Family Art Tattoo, Llumatics, Pocallum, blog.pocallum.cat, 9barrisimatge.org, Terra i Foc, MalditasMaquinas, Ressona, Cuida…
