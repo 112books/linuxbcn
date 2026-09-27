@@ -6,6 +6,7 @@ year: 2025
 image: "naubostik-actual.png"
 client: "self-managed cultural space"
 sector: "culture"
+perfils: ["collectius"]
 description: "Emergency recovery and digital replanning for Nau Bostik, self-managed sociocultural space in La Sagrera, Barcelona. LinuxBCN."
 lastmod: "2026-06-26"
 draft: false

@@ -5,6 +5,7 @@ weight: 9
 year: 2025
 client: "112Books"
 sector: "fotografia"
+perfils: ["musics"]
 description: "112 Revelats — projecte de fotografia analògica. Web lleuger allotjat a GitHub Pages, sense dependències. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false

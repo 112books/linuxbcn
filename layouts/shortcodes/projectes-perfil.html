@@ -1,0 +1,19 @@
+{{- /* Llista de projectes d'un perfil client (frontmatter `perfils`), per rellevança (weight).
+       Ús: {{< projectes-perfil "musics" >}} */ -}}
+{{ $perfil := .Get 0 }}
+{{ $pages := where (where site.RegularPages "Section" "projectes") "Params.perfils" "intersect" (slice $perfil) }}
+{{ with $pages.ByWeight }}
+<nav class="project-related project-related--perfil" aria-label="{{ i18n "related_projects" | default "Projectes relacionats" }}">
+  <ul>
+    {{ range . }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        {{ with .Params.sector }}<span class="card-sector">{{ . }}</span>{{ end }}
+        <span class="project-related__title">{{ .Title }}</span>
+        {{ with .Params.client }}<span class="project-related__meta">{{ . }}</span>{{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}

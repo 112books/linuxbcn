@@ -5,6 +5,7 @@ weight: 3
 year: 2026
 client: "Pocallum / Joan Linux Martínez"
 sector: "fotografia"
+perfils: ["microempreses"]
 description: "Blog.pocallum.cat: de Blogger a WordPress i, ara, a Hugo estàtic. 2.353 posts migrats amb paritat total d'URLs, sense base de dades ni dependències. LinuxBCN."
 lastmod: "2026-09-15"
 draft: false

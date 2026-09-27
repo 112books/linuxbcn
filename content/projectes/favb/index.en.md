@@ -4,7 +4,8 @@ slug: "favb"
 weight: 12
 year: 2024
 client: "neighbourhood federation"
-sector: "associatiu"
+sector: "community"
+perfils: ["collectius"]
 description: "Website for FAVB, the Federation of Neighbourhood Associations of Barcelona. Digital presence for the city's reference residents' organisation. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false

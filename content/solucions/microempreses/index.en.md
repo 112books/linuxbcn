@@ -55,6 +55,12 @@ Built with free and sustainable tools.
 
 ---
 
+## Example projects
+
+{{< projectes-perfil "microempreses" >}}
+
+---
+
 ## Who this is for
 
 For freelancers, local businesses and micro-enterprises that:

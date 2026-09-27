@@ -5,6 +5,7 @@ weight: 13
 year: 2025
 client: "photography agency"
 sector: "photography"
+perfils: ["microempreses"]
 description: "Website for Pocallum, cultural photography agency. Portfolio and digital presence with free software. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false

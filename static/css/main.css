@@ -2058,3 +2058,9 @@ footer a:hover {
   font-size: 0.85rem;
   color: var(--ink-head);
 }
+
+.project-related--perfil {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border-top: 0;
+}

@@ -5,6 +5,7 @@ weight: 3
 year: 2026
 client: "own project"
 sector: "services"
+perfils: ["musics"]
 featured: true
 description: "Ressona — digital identity platform for artists. Fusion of Pocallum and LinuxBCN: visual identity, press kit, website and communication. LinuxBCN."
 lastmod: "2026-06-24"

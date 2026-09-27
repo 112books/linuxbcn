@@ -6,6 +6,7 @@ year: 2019
 image: "9barrisacull.png"
 client: "entitat social"
 sector: "cultura"
+perfils: ["collectius"]
 description: "Aplicació web amb Drupal per a la gestió de tràmits d'usuaris, compliment RGPD i estadístiques sobre immigració per a 9 Barris Acull, Barcelona. LinuxBCN."
 lastmod: "2026-06-25"
 draft: false

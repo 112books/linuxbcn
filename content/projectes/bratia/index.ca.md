@@ -5,6 +5,7 @@ weight: 5
 year: 2025
 client: "banda musical"
 sector: "musica"
+perfils: ["musics"]
 description: "Web per a Bratia, banda de Balkan Gypsy Jazz de Barcelona. Migrada de WordPress a Hugo: sistema lleuger, multilingüe i autònom. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false

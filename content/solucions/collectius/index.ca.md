@@ -62,6 +62,12 @@ Webs que, a més d'informar, **esdevenen eines de gestió**. Una plataforma digi
 
 ---
 
+## Projectes d'exemple
+
+{{< projectes-perfil "collectius" >}}
+
+---
+
 ## Per a qui és això
 
 Per a col·lectius, associacions i espais autogestionats a Barcelona i Catalunya que:

@@ -5,6 +5,7 @@ weight: 10
 year: 2025
 client: "projecte propi"
 sector: "serveis"
+perfils: ["microempreses"]
 featured: true
 description: "MalditasMaquinas — plataforma de consultoria tecnològica. SPA vanilla JS, backend distribuït, Stripe, Telegram, multidioma, WCAG AA. LinuxBCN."
 lastmod: "2026-06-24"

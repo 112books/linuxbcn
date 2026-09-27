@@ -5,6 +5,7 @@ weight: 11
 year: 2024
 client: "publicació veïnal"
 sector: "comunicació"
+perfils: ["collectius"]
 featured: true
 description: "Web per a Carrer.cat, publicació de referència del moviment veïnal barceloní. Comunicació digital per a la revista del moviment associatiu. LinuxBCN."
 lastmod: "2026-06-24"

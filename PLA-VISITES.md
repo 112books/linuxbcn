@@ -58,10 +58,11 @@ Objectiu: que ni l'script ni l'enviament toquin dominis de GoatCounter.
 La palanca més gran: **cada projecte és un backlink potencial i una pàgina que pot posicionar per cerca de cua llarga.**
 
 ### 2.1 Enllaçat intern (ràpid, dins del repo)
-- ✅ Verificat 2026-09-27: `/projectes/` genera targetes automàtiques (`range .Pages` a `list.html`); el text de `_index` és només un complement. Tots els projectes hi surten en CA. **Única falta real: `gestor-hores` no té `index.en.md`** → traduir-lo.
+- ✅ Verificat 2026-09-27: `/projectes/` genera targetes automàtiques (`range .Pages` a `list.html`); el text de `_index` és només un complement. Tots els projectes hi surten en CA. ✅ `gestor-hores` traduït a EN (2026-09-27).
 - ✅ Fet 2026-09-27: bloc "Projectes relacionats" a `projectes/single.html` (3 enllaços per pàgina: mateix `sector` i, si no n'hi ha prou, els següents en l'ordre del portfolio).
-- Valors de `sector` inconsistents en EN (`fotografia`/`photography`, `cultura`/`culture`, `negoci-local`/`local-business`…) → unificar per idioma perquè les pàgines de taxonomia i els relacionats agrupin bé.
-- Des de `/solucions/musics`, `/collectius`, `/microempreses` enllaçar els projectes de cada perfil com a exemples.
+- ✅ Fet 2026-09-27: `sector` unificat per idioma (CA: fotografia, editorial, cultura, musica, comunicació, associatiu, negoci-local, eines, serveis, artesania · EN: photography, editorial, culture, music, communication, community, local-business, tools, services, crafts).
+- ✅ Fet 2026-09-27: `/projectes/` ordenat per `year` desc i, dins de l'any, per `weight`.
+- ✅ Fet 2026-09-27: camp `perfils` al frontmatter + shortcode `{{< projectes-perfil "…" >}}` a les 3 pàgines de solucions (CA+EN), per `weight`. Projecte nou → afegir-li `perfils: [...]` si encaixa en un perfil.
 - Slugs amb majúscules: Hugo ja publica els URLs en minúscules → res a fer.
 
 ### 2.2 Backlinks des dels projectes (impacte alt, requereix Joan)

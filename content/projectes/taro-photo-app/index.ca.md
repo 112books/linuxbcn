@@ -5,6 +5,7 @@ weight: 3
 year: 2026
 client: "9 Barris Imatge"
 sector: "fotografia"
+perfils: ["collectius"]
 description: "Taro — aplicació de programari lliure amb Hugo i Python per a la gestió d'associacions fotogràfiques: publicacions, concursos amb vot electrònic, autopublicació i importació de Blogger. Desenvolupada per LinuxBCN per a 9 Barris Imatge."
 lastmod: "2026-09-23"
 draft: false

@@ -6,6 +6,7 @@ slug: "cuida"
 weight: 1
 year: 2026
 client: "LinuxBCN"
+sector: "eines"
 featured: true
 draft: false
 serveis: ["aplicacio-web", "cas-propi"]

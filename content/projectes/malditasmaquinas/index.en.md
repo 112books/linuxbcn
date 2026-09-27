@@ -5,6 +5,7 @@ weight: 10
 year: 2025
 client: "own project"
 sector: "services"
+perfils: ["microempreses"]
 featured: true
 description: "MalditasMaquinas — technology consultancy platform. Vanilla JS SPA, distributed backend, Stripe, Telegram, multilingual, WCAG AA. LinuxBCN."
 lastmod: "2026-06-24"

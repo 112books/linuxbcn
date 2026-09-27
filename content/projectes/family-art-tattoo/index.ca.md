@@ -6,6 +6,7 @@ year: 2022
 image: "familyarttatto-01.png"
 client: "estudi de tatuatge"
 sector: "negoci-local"
+perfils: ["microempreses"]
 description: "Tema WordPress a mida, creació de continguts, SEO i integració amb Instagram per a Family Art Tattoo, estudi de tatuatge a Barcelona. LinuxBCN."
 lastmod: "2026-06-25"
 draft: false

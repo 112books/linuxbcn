@@ -4,7 +4,8 @@ slug: "llumatics"
 weight: 8
 year: 2026
 client: "projecte propi"
-sector: "educació / fotografia"
+sector: "fotografia"
+perfils: ["musics"]
 description: "Web per a Llumàtics, projecte d'educació i fotografia. Presència digital amb programari lliure. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false

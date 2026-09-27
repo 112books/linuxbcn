@@ -77,6 +77,10 @@ Amb **Bratia** hem evolucionat d'una web WordPress pesada i difícil de mantenir
 
 → [Veure el projecte Bratia](/projectes/bratia/)
 
+Altres projectes per a artistes:
+
+{{< projectes-perfil "musics" >}}
+
 ---
 
 ## Per a qui és això

@@ -62,6 +62,12 @@ El problema no és la tecnologia. És que ningú va pensar el sistema des del pr
 
 ---
 
+## Projectes d'exemple
+
+{{< projectes-perfil "microempreses" >}}
+
+---
+
 ## Per a qui és això
 
 Per a autònoms, comerços locals i microempreses que:

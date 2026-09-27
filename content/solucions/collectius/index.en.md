@@ -54,6 +54,12 @@ A website that reflects what you do and that you can manage yourselves.
 
 ---
 
+## Example projects
+
+{{< projectes-perfil "collectius" >}}
+
+---
+
 ## Who this is for
 
 For collectives, associations and self-managed spaces that:

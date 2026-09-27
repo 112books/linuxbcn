@@ -5,7 +5,8 @@ weight: 21
 year: 2019
 image: "9barrisacull.png"
 client: "social organisation"
-sector: "cultura"
+sector: "culture"
+perfils: ["collectius"]
 description: "Drupal web application for user case management, GDPR compliance and immigration statistics for 9 Barris Acull, Barcelona. LinuxBCN."
 lastmod: "2026-06-25"
 draft: false

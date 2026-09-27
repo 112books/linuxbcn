@@ -5,6 +5,7 @@ weight: 3
 year: 2026
 client: "Terra i Foc / Joan Martínez Serres"
 sector: "artesania"
+perfils: ["microempreses"]
 featured: true
 description: "Terra i Foc — web estàtic bilingüe per a un obrador de ceràmica artesanal al Penedès. Hugo + GitHub Pages + GoatCounter sense cookies. LinuxBCN."
 lastmod: "2026-07-22"

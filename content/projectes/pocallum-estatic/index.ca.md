@@ -5,6 +5,7 @@ weight: 3
 year: 2026
 client: "Pocallum / Joan Linux Martínez"
 sector: "fotografia"
+perfils: ["microempreses"]
 featured: true
 description: "Pocallum — migració de WordPress a Hugo. Web de fotografia cultural lleuger, sense dependències, càrrega instantània. LinuxBCN."
 lastmod: "2026-06-24"

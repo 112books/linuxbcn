@@ -80,7 +80,11 @@ Always with the same criteria: less dispersion, more control.
 With **Bratia** we evolved from a heavy, hard-to-maintain
 WordPress website to a lightweight, autonomous and coherent system.
 
-→ [See the Bratia project](/projectes/bratia/)
+→ [See the Bratia project](/en/projectes/bratia/)
+
+More projects for artists:
+
+{{< projectes-perfil "musics" >}}
 
 ---
 

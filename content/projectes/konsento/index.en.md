@@ -6,6 +6,8 @@ slug: "konsento"
 weight: 1
 year: 2026
 client: "LinuxBCN"
+sector: "community"
+perfils: ["collectius"]
 featured: true
 draft: false
 serveis: ["aplicacio-web", "cas-propi"]

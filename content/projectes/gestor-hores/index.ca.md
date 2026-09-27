@@ -4,7 +4,7 @@ slug: "gestor-hores"
 weight: 5
 year: 2026
 client: "LinuxBCN"
-sector: "eines-ia"
+sector: "eines"
 description: "Sistema de seguiment de temps per a projectes de client, integrat directament a Claude Code. Registre automàtic per sessió, reports visuals i sincronització via Codeberg."
 lastmod: "2026-08-11"
 draft: false

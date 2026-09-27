@@ -6,6 +6,7 @@ year: 2025
 image: "naubostik-actual.png"
 client: "espai cultural autogestionat"
 sector: "cultura"
+perfils: ["collectius"]
 description: "Recuperació d'urgència i replantejament digital per a Nau Bostik, espai sociocultural autogestionat de La Sagrera, Barcelona. LinuxBCN."
 lastmod: "2026-06-26"
 draft: false
