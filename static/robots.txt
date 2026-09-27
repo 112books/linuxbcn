@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /v/
 
 # Crawlers d'IA — autoritzats explícitament
 User-agent: GPTBot

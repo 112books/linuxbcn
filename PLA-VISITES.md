@@ -18,6 +18,8 @@
 
 ## 1. Comptador first-party (anti-adblock)
 
+> **Estat 2026-09-27:** codi fet (`static/js/m.js`, `static/v/index.php`, `head.html`, `robots.txt`, `$end` = avui). Usa l'API autenticada `/api/v0/count` (camps `ip` i `user_agent` explícits) en lloc de reenviar a `/count`. **Pendent abans de desplegar:** crear `~/.linuxbcn-secrets.php` al servidor (fora de `www/`) i rotar el token (el vell és públic al repo). Els passos de sota són el disseny original.
+
 Objectiu: que ni l'script ni l'enviament toquin dominis de GoatCounter.
 
 ### Passos

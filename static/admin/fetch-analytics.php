@@ -89,7 +89,7 @@ function extract_section(string $path): string {
 
 // ── Paràmetres de cerca ───────────────────────────────────────────────────────
 
-$end   = date('Y-m-d', strtotime('-1 day'));
+$end   = date('Y-m-d');
 $start = date('Y-m-d', strtotime('-365 days'));
 $params = ['start' => $start, 'end' => $end, 'limit' => 50];
 

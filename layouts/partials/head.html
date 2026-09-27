@@ -175,6 +175,7 @@
 
 <!-- Analítica: GoatCounter (sense cookies, GDPR) -->
 {{ if not .Site.Params.noindex }}
-<script data-goatcounter="https://linuxbcn.goatcounter.com/count"
-        async src="https://gc.zgo.at/count.js"></script>
+<!-- First-party: /js/m.js (count.js) → /v/index.php → API GoatCounter (evita adblockers) -->
+<script data-goatcounter="{{ "v/index.php" | absURL }}"
+        async src="{{ "js/m.js" | relURL }}"></script>
 {{ end }}
