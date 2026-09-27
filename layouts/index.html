@@ -2,7 +2,7 @@
 
 <section class="hero">
   <div class="page-label">Consultoria · Identitat digital</div>
-  <h1>{{ .Title }}</h1>
+  <h1>{{ with .Params.heading }}{{ . | safeHTML }}{{ else }}{{ .Title }}{{ end }}</h1>
   <p class="subtitle">{{ .Params.subtitle }}</p>
 </section>
 

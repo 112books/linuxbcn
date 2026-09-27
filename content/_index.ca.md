@@ -1,12 +1,13 @@
 ---
 title: "Identitat digital amb criteri"
+heading: "Identitat digital<br>amb criteri"
 subtitle: "Desenvolupament web, aplicacions a mida i infraestructura digital. Programari lliure, sense complicacions."
 description: "LinuxBCN — assessoria tecnològica a Barcelona per a artistes, col·lectius culturals i microempreses. Programari lliure, sobirania de dades, 25 anys d'experiència."
 lastmod: "2026-06-25"
 draft: false
 ---
 
-## La majoria de problemes digitals no són tècnics
+## La majoria de problemes digitals<br>no són tècnics {#problemes-de-criteri}
 
 Són de criteri.
 
@@ -38,7 +39,7 @@ Escoltem, entenem la situació, i dissenyem el sistema que té sentit per a cada
 
 ---
 
-## El programari lliure no és ideologia. És pràctica.
+## El programari lliure no és ideologia.<br>És pràctica. {#programari-lliure}
 
 Quan uses eines lliures, el codi és públic.
 Algú ha revisat si fa el que diu que fa.
@@ -69,7 +70,7 @@ Treballem des de la **Nau Bostik**, La Sagrera — un espai sociocultural autoge
 
 ---
 
-## Per a qui treballem a Barcelona i Catalunya
+## Per a qui treballem<br>a Barcelona i Catalunya {#per-a-qui-treballem}
 
 {{< perfils >}}
 

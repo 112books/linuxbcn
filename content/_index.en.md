@@ -1,12 +1,13 @@
 ---
 title: "Digital identity with criteria"
+heading: "Digital identity<br>with criteria"
 subtitle: "Web development, custom applications and digital infrastructure. Free software, no complications."
 description: "LinuxBCN — technology consultancy in Barcelona for artists, cultural collectives and small businesses. Free software, data sovereignty, 25 years of experience."
 lastmod: "2026-06-25"
 draft: false
 ---
 
-## Most digital problems aren't technical
+## Most digital problems<br>aren't technical {#judgement-problems}
 
 They're about structure.
 
@@ -39,7 +40,7 @@ We listen, understand the situation, and design the system that makes sense for 
 
 ---
 
-## Free software isn't ideology. It's practice.
+## Free software isn't ideology.<br>It's practice. {#free-software}
 
 When you use free tools, the code is public.
 Someone has checked whether it does what it says it does.
@@ -70,7 +71,7 @@ We work from **Nau Bostik**, La Sagrera — a self-managed sociocultural space t
 
 ---
 
-## Who we work with in Barcelona and Catalonia
+## Who we work with<br>in Barcelona and Catalonia {#who-we-work-with}
 
 {{< perfils-en >}}
 
