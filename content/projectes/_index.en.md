@@ -38,7 +38,7 @@ draft: false
 
 ## 9 Barris Imatge — static migration
 
-→ [9 Barris Imatge](/projectes/migracio-blogger-9barrisimatge/) — 3,006 articles from Blogger to Hugo, zero errors and URLs preserved
+→ [9 Barris Imatge](/projectes/migracio-blogger-9barrisimatge/) — from Blogger to Taro Photo App: 3,006 articles, zero errors and URLs preserved
 
 ## Blog de Pocallum — static migration
 

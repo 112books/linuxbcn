@@ -1,12 +1,12 @@
 ---
-title: "9 Barris Imatge — de Blogger a web estàtic"
+title: "9 Barris Imatge — de Blogger a Taro Photo App"
 slug: "migracio-blogger-9barrisimatge"
 weight: 3
 year: 2026
 client: "9 Barris Imatge"
 sector: "fotografia"
 perfils: ["collectius"]
-description: "Migració del Blogger de 9 Barris Imatge a un web estàtic amb Hugo: 3.006 articles des del 2008, zero errors, URLs conservades, autories i àlbums recuperats. LinuxBCN."
+description: "Com LinuxBCN va portar 9 Barris Imatge de Blogger a Taro Photo App, un sistema de programari lliure fet amb Hugo: 3.006 articles des del 2008, zero errors i URLs conservades."
 lastmod: "2026-09-27"
 draft: false
 serveis: ["migracio-wordpress"]
@@ -19,11 +19,13 @@ El col·lectiu [9 Barris Imatge](https://9barrisimatge.org/) documenta Nou Barri
 
 Blogger es va quedar petit. Cada limitació es convertia en feina manual per a gent que no hauria d'haver de barallar-se amb l'ordinador.
 
+La resposta de LinuxBCN no va ser canviar de plataforma, sinó construir-ne una de pròpia amb programari lliure: **[Taro Photo App](/projectes/taro-photo-app/)**, que combina un web estàtic fet amb Hugo, un gestor de continguts perquè els membres publiquin sense tocar codi i mòduls per a la votació del públic i els formularis. El col·lectiu passa a ser amo de les seves dades i de les eines.
+
 ---
 
-## Què fallava i què hi hem posat
+## Què fallava i què hi posa Taro
 
-| A Blogger | Ara |
+| A Blogger | Amb Taro Photo App |
 |---|---|
 | Publicar un àlbum era fer una entrada i enllaçar-lo a mà | Cada article té un camp per a l'àlbum, allotjat on es vulgui |
 | Poc control de qui edita què | Cada canvi és un commit amb autor i data, que es pot revisar i desfer |
@@ -36,7 +38,7 @@ Blogger es va quedar petit. Cada limitació es convertia en feina manual per a g
 
 ## La migració
 
-Els **3.006 articles** es van migrar tots, amb imatges, àlbums i etiquetes, i l'operació va acabar **amb zero errors**.
+El primer pas per posar Taro en marxa va ser portar-hi tot l'arxiu. Els **3.006 articles** es van migrar tots, amb imatges, àlbums i etiquetes, i l'operació va acabar **amb zero errors**.
 
 - **`migrate_live.py`** llegeix el feed en directe del blog i genera un fitxer per article. Hi ha una variant, `migrate_blogger.py`, que treballa a partir de l'export XML oficial.
 - **Les URLs es conserven.** Cada article manté la mateixa adreça que tenia a Blogger, i els enllaços compartits durant divuit anys continuen funcionant.
@@ -53,30 +55,33 @@ Els **3.006 articles** es van migrar tots, amb imatges, àlbums i etiquetes, i l
 - Més de **8.700 pàgines** generades en menys de mig minut
 - Arxiu per anys, galeria per autor, núvol d'etiquetes i cerca instantània
 - Dades estructurades, sitemap i estadístiques sense galetes (GoatCounter)
-- Web estàtic a GitHub Pages: sense base de dades ni cap servidor que mantenir per al web
+- Web estàtic: sense base de dades ni superfície d'atac en execució
+- Votació del públic per a exposicions i formularis propis, sense serveis de tercers
 
-Els membres ara publiquen des d'un gestor de continguts propi, sense tocar codi. Aquest sistema s'ha convertit en un programari reutilitzable per a altres col·lectius: [Taro Photo App](/projectes/taro-photo-app/).
+Els membres publiquen des del gestor de Taro, sense tocar codi. I el que va començar com la solució per a un col·lectiu és ara programari lliure (AGPL-3.0) que qualsevol altre grup fotogràfic pot instal·lar: **[coneix Taro Photo App](/projectes/taro-photo-app/)**.
 
 ---
 
 ## Abans / després
 
 {{< gallery "9bi-blogger.png" "9bi-taro-photo-app.png" >}}
-*Esquerra: 9 Barris Imatge a Blogger. Dreta: 9barrisimatge.org, avui.*
+*Esquerra: 9 Barris Imatge a Blogger. Dreta: 9barrisimatge.org amb Taro Photo App.*
 
 ---
 
-## Amb què està fet
+## Tot programari lliure
 
-- **Python 3** per als scripts de migració i neteja, sense dependències externes
+Taro Photo App i la seva migració s'han fet íntegrament amb eines lliures:
+
 - **Hugo** i **PaperMod** per al web
-- **Sveltia CMS** per a l'edició
-- **GitHub Actions** i **GitHub Pages** per publicar
+- **Sveltia CMS** perquè els membres editin
+- **Python 3** per als scripts de migració i els mòduls de Taro, sense dependències externes
+- **Git** per guardar cada canvi amb autor, data i historial
 
-Els scripts són oberts, dins del repositori del projecte a [GitHub (112books/9bi)](https://github.com/112books/9bi), amb llicència AGPL-3.0.
+El codi és obert, amb llicència AGPL-3.0, a [GitHub (112books/9bi)](https://github.com/112books/9bi).
 
 ---
 
 ## La vostra entitat encara és a Blogger?
 
-Si el vostre arxiu fa anys que viu a Blogger, WordPress o una altra plataforma i cada cop costa més mantenir-lo, podem fer-ne la migració sense perdre ni un article ni un enllaç. Parlem-ne.
+Si el vostre arxiu fa anys que viu a Blogger, WordPress o una altra plataforma i cada cop costa més mantenir-lo, a LinuxBCN el podem portar a Taro Photo App o a un sistema a mida, amb programari lliure i sense perdre ni un article ni un enllaç. Parlem-ne.

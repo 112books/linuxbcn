@@ -38,7 +38,7 @@ draft: false
 
 ## 9 Barris Imatge — migració a estàtic
 
-→ [9 Barris Imatge](/projectes/migracio-blogger-9barrisimatge/) — 3.006 articles de Blogger a Hugo, zero errors i URLs conservades
+→ [9 Barris Imatge](/projectes/migracio-blogger-9barrisimatge/) — de Blogger a Taro Photo App: 3.006 articles, zero errors i URLs conservades
 
 ## Blog de Pocallum — migració a estàtic
 

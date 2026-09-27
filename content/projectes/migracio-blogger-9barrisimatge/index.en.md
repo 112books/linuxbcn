@@ -1,12 +1,12 @@
 ---
-title: "9 Barris Imatge — from Blogger to a static website"
+title: "9 Barris Imatge — from Blogger to Taro Photo App"
 slug: "migracio-blogger-9barrisimatge"
 weight: 3
 year: 2026
 client: "9 Barris Imatge"
 sector: "photography"
 perfils: ["collectius"]
-description: "Migrating 9 Barris Imatge from Blogger to a static Hugo website: 3,006 articles since 2008, zero errors, URLs preserved, authorship and albums recovered. LinuxBCN."
+description: "How LinuxBCN moved 9 Barris Imatge from Blogger to Taro Photo App, a free software system built with Hugo: 3,006 articles since 2008, zero errors and URLs preserved."
 lastmod: "2026-09-27"
 draft: false
 serveis: ["migracio-wordpress"]
@@ -19,11 +19,13 @@ The [9 Barris Imatge](https://9barrisimatge.org/) collective has been documentin
 
 Blogger was no longer enough. Every limitation turned into manual work for people who shouldn't have to wrestle with a computer.
 
+LinuxBCN's answer wasn't to switch platforms but to build one with free software: **[Taro Photo App](/en/projectes/taro-photo-app/)**, which combines a static website built with Hugo, a content manager so members can publish without touching code, and modules for audience voting and forms. The collective now owns both its data and its tools.
+
 ---
 
-## What wasn't working, and what replaced it
+## What wasn't working, and what Taro does instead
 
-| On Blogger | Now |
+| On Blogger | With Taro Photo App |
 |---|---|
 | Publishing an album meant writing a post and linking it by hand | Each article has an album field, hosted wherever you like |
 | Little control over who edits what | Every change is a commit with author and date, and can be reviewed and undone |
@@ -36,7 +38,7 @@ Blogger was no longer enough. Every limitation turned into manual work for peopl
 
 ## The migration
 
-All **3,006 articles** were migrated, with their images, albums and tags, and the operation finished **with zero errors**.
+The first step in launching Taro was bringing the whole archive across. All **3,006 articles** were migrated, with their images, albums and tags, and the operation finished **with zero errors**.
 
 - **`migrate_live.py`** reads the blog's live feed and generates one file per article. A variant, `migrate_blogger.py`, works from the official XML export.
 - **URLs are preserved.** Every article keeps the address it had on Blogger, so links shared over eighteen years still work.
@@ -53,30 +55,33 @@ All **3,006 articles** were migrated, with their images, albums and tags, and th
 - Over **8,700 pages** generated in under half a minute
 - Archive by year, gallery by author, tag cloud and instant search
 - Structured data, sitemap and cookie-free statistics (GoatCounter)
-- A static site on GitHub Pages: no database and no server to maintain for the website
+- A static site: no database and no running attack surface
+- Audience voting for exhibitions and the collective's own forms, with no third-party services
 
-Members now publish from their own content manager, without touching code. The system has become reusable software for other collectives: [Taro Photo App](/en/projectes/taro-photo-app/).
+Members publish from Taro's content manager, without touching code. And what began as the solution for one collective is now free software (AGPL-3.0) that any other photography group can install: **[discover Taro Photo App](/en/projectes/taro-photo-app/)**.
 
 ---
 
 ## Before / after
 
 {{< gallery "9bi-blogger.png" "9bi-taro-photo-app.png" >}}
-*Left: 9 Barris Imatge on Blogger. Right: 9barrisimatge.org today.*
+*Left: 9 Barris Imatge on Blogger. Right: 9barrisimatge.org with Taro Photo App.*
 
 ---
 
-## What it's built with
+## Free software, end to end
 
-- **Python 3** for the migration and clean-up scripts, with no external dependencies
+Taro Photo App and its migration were built entirely with free tools:
+
 - **Hugo** and **PaperMod** for the website
-- **Sveltia CMS** for editing
-- **GitHub Actions** and **GitHub Pages** for publishing
+- **Sveltia CMS** so members can edit
+- **Python 3** for the migration scripts and Taro's modules, with no external dependencies
+- **Git** to keep every change with author, date and history
 
-The scripts are open, in the project repository on [GitHub (112books/9bi)](https://github.com/112books/9bi), under the AGPL-3.0 licence.
+The code is open, under the AGPL-3.0 licence, on [GitHub (112books/9bi)](https://github.com/112books/9bi).
 
 ---
 
 ## Is your organisation still on Blogger?
 
-If your archive has lived on Blogger, WordPress or another platform for years and it's getting harder to maintain, we can migrate it without losing a single article or link. Let's talk.
+If your archive has lived on Blogger, WordPress or another platform for years and it's getting harder to maintain, LinuxBCN can move it to Taro Photo App or a custom system, with free software and without losing a single article or link. Let's talk.
