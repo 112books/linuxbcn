@@ -49,7 +49,9 @@ sobirania de dades i independència tecnològica.
 ### Analítica
 - **GoatCounter** — `https://linuxbcn.goatcounter.com` (compte: hola@linuxbcn.com)
 - Dashboard privat a `/admin/` (proxy PHP a `static/admin/gc-proxy.php`)
-- Token de la API a `gc-proxy.php` línia 2 — regenerar-lo a goatcounter.com/settings/api si dona error 400 amb HTML
+- **Comptador first-party (des del 2026-09-27):** `static/js/m.js` (còpia de count.js) → `static/v/index.php` → API `/api/v0/count` amb IP i UA reals. Evita adblockers. Diagnosi: `/v/index.php?diag=<DIAG_PASS>&test=1`
+- **Token de l'API:** a `~/.linuxbcn-secrets.php` al servidor (fora de `www/`, permisos 600, `GC_TOKEN` + `DIAG_PASS`). **Mai al repo.** El llegeixen `v/index.php` i `admin/fetch-analytics.php`. Per recrear-lo: `./crear-secrets.sh` (al terminal de Joan)
+- API GoatCounter: `end` és exclusiu (00:00 d'aquell dia) → per incloure avui, `end` = demà
 - GoatCounter té **rate limiting** agressiu: les crides a `/api/v0/stats/*` han de ser **seqüencials amb ~350ms de delay** entre elles (429 si es fan en paral·lel)
 - Endpoints vàlids confirmats: `/stats/total`, `/stats/hits`, `/stats/refs`, `/stats/browsers`, `/stats/systems`, `/stats/sizes`
 - Zero Google Analytics, zero Meta Pixel, zero scripts de tercers no auditables
@@ -635,7 +637,15 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ## 24. Pendent — 2026-07-23
 
-**📋 Pla analítica + visites (2026-09-26):** veure [`PLA-VISITES.md`](PLA-VISITES.md) — comptador GoatCounter first-party anti-adblock, projectes que falten al llistat, backlinks i enviaments.
+**📋 Pla analítica + visites:** veure [`PLA-VISITES.md`](PLA-VISITES.md). Fet: comptador first-party, enllaçat intern. Pendent: backlinks, enviaments (Softcatalà, Hugo themes/showcase, Bing WMT), contingut en forma de pregunta.
+
+**Pendent de la sessió 2026-09-27 (Joan)**
+- **~2026-09-29:** si les visites diàries es mantenen o pugen, esborrar el token vell `webestadistiques` a goatcounter.com → Settings → API (és públic a l'historial del repo)
+- Dates reals (`date:`) dels projectes anteriors al 2026 — ara són `AAAA-01-01`
+- Captura per a `votacio-public` (no té imatge)
+- Decidir si es manté la menció a Google Photos a la migració de 9bi
+- Opcional: IndexNow per a taro-photo-app, migracio-blogger-9barrisimatge, votacio-public
+- Opcional: treure `gc.zgo.at` i `linuxbcn.goatcounter.com` de la CSP a `.htaccess`
 
 **Tècnic (proper sessió)**
 - Corregir deprecation warnings de Hugo: `_build` → `build` al frontmatter, `.Site.Languages` al template
@@ -650,7 +660,7 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 **⚠️ blog.pocallum.cat — SSL resolt temporalment, pendent solució definitiva**
 - Certificat caducat el 2026-06-24. Generat manualment amb certbot (DNS challenge) i instal·lat per Dinahosting
-- **Caduca el 2026-09-22** — cal renovar manualment abans o aconseguir que Dinahosting creï hosting independent per al subdomini (renovació automàtica)
+- Renovat: verificat el 2026-09-27, **caduca el 2026-12-22** — cal renovar manualment abans o aconseguir que Dinahosting creï hosting independent per al subdomini (renovació automàtica)
 - Fitxers de renovació: `Desktop/blog.pocallum.cat-certificat.md` amb instruccions completes
 
 **Accions externes (fora del codi)**
@@ -720,5 +730,43 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-09-25*
+## 28. Historial de tasques — 2026-09-25 → 2026-09-27
+
+**Diagnosi d'estadístiques**
+- GoatCounter registra des del **2026-04-15**; ~1.150 visitants fins al 25/09 (~7/dia). Dashboard coherent amb l'API
+- Causes de xifres baixes: GoatCounter compta visitants únics (no pàgines vistes), adblockers bloquegen `*.goatcounter.com`, trànsit orgànic baix (Google = 23)
+- `PLA-VISITES.md`: pla d'analítica fiable + més visites
+
+**Comptador first-party (en producció)**
+- `static/js/m.js` + `static/v/index.php` (proxy a `/api/v0/count` amb `ip`, `user_agent`, `language`); `head.html` apunta a `/v/index.php`; `robots.txt` Disallow `/v/`
+- Token fora del repo: `~/.linuxbcn-secrets.php` + `crear-secrets.sh`; `fetch-analytics.php` el llegeix d'allà
+- Verificat: GoatCounter 202, IP real via `REMOTE_ADDR`, token carregat
+- Fix dashboard: `end` = demà (abans no es comptava mai el dia d'avui)
+- Fix deploy: tornat a excloure `/admin/analytics-cache.json` (des del 23/09 cada deploy trepitjava les dades amb la mostra del maig)
+
+**Enllaçat intern i ordre de projectes**
+- `projectes/single.html`: bloc "Projectes relacionats" (3 per pàgina: mateix sector, i si no n'hi ha prou, els següents en ordre circular)
+- Camp `perfils: [musics|collectius|microempreses]` + shortcode `{{< projectes-perfil "…" >}}` a les 3 pàgines de solucions (per `weight`)
+- `sector` unificat per idioma (EN: photography, culture, community, local-business, tools, services, crafts…)
+- Camp `date:` a tots els projectes; `/projectes/` ordenat per **data de producció** desc (empats per `weight`)
+- `gestor-hores`: versió EN
+- Fix: CTA de `/projectes/` enllaçava `/contacte/` sense idioma (404)
+- Filtre "Migració WP → estàtic" → "Migració a estàtic"
+- H2: `line-height` 1.35 (abans heretava 1.75)
+
+**Contingut**
+- `taro-photo-app`: text refet (CA+EN) — tres peces, model d'article, web, gestor Sveltia, mòduls, estat real, AGPL-3.0, repo `github.com/112books/9bi` (Codeberg = mirall)
+- Nou `migracio-blogger-9barrisimatge` (CA+EN): "de Blogger a Taro Photo App" — 3.006 articles, zero errors, URLs conservades. Serveis: migració + web nova + laboratori propi
+- Nou `votacio-public` (CA+EN): què és, com vota el públic i decisions de disseny (geofencing sense desar coordenades, identificador aleatori, signatura HMAC, vot en paper). Sense URLs d'admin ni del servidor
+
+**Normes establertes**
+- Tot projecte nou porta `date:` (data de producció) i, si escau, `perfils:`
+- Secrets mai al repo: `~/.linuxbcn-secrets.php` al servidor
+- El CDN de producció fa cache ~15 min també de respostes PHP GET → per verificar, afegir `?v=<aleatori>`
+- `rsync --checksum` des de macOS (openrsync) marca fitxers com a diferents encara que siguin idèntics: verificar amb el hash del fitxer servit
+- Deploy: `hugo --minify --environment production` + rsync de `deploy_prod` (sense `--delete`, amb excludes de formularis, apps/taro i analytics-cache.json)
+
+---
+
+*Última actualització: 2026-09-27*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
