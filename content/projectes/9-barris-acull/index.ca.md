@@ -3,6 +3,7 @@ title: "9 Barris Acull"
 slug: "9-barris-acull"
 weight: 21
 year: 2019
+date: 2019-01-01
 image: "9barrisacull.png"
 client: "entitat social"
 sector: "cultura"

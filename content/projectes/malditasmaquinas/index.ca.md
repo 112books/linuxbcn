@@ -3,6 +3,7 @@ title: "MalditasMaquinas"
 slug: "malditasmaquinas"
 weight: 10
 year: 2025
+date: 2025-01-01
 client: "projecte propi"
 sector: "serveis"
 perfils: ["microempreses"]

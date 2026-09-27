@@ -3,6 +3,7 @@ title: "GoatCounter Dashboard"
 slug: "goatcounter-dashboard"
 weight: 15
 year: 2026
+date: 2026-05-09
 client: "LinuxBCN"
 sector: "tools"
 description: "Cookie-free self-hosted web analytics dashboard built on the GoatCounter API. LinuxBCN's own tool for clients who want privacy by design."

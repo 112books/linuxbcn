@@ -5,6 +5,7 @@ lastmod: "2026-08-17"
 slug: "konsento"
 weight: 1
 year: 2026
+date: 2026-08-16
 client: "LinuxBCN"
 sector: "community"
 perfils: ["collectius"]

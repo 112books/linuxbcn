@@ -3,6 +3,7 @@ title: "A.W.P.C.P."
 slug: "awpcp"
 weight: 10
 year: 2024
+date: 2024-01-01
 client: "Around World Pinhole Crazy People"
 sector: "fotografia"
 perfils: ["collectius"]

@@ -3,6 +3,7 @@ title: "LinuxBCN Analytics for GoatCounter"
 slug: "LinuxBCN-Analytics-for-GoatCounter"
 weight: 3
 year: 2026
+date: 2026-07-13
 client: "LinuxBCN"
 sector: "eines"
 description: "Plugin de WordPress de codi obert per integrar GoatCounter: analítica sense cookies, sense GDPR, amb panell complet d'estadístiques directament al tauler d'administració."

@@ -3,6 +3,7 @@ title: "Time Tracker"
 slug: "gestor-hores"
 weight: 5
 year: 2026
+date: 2026-08-11
 client: "LinuxBCN"
 sector: "tools"
 description: "Time tracking for client projects, built directly into Claude Code. Automatic per-session logging, visual reports and sync through Codeberg."

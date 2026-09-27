@@ -3,6 +3,7 @@ title: "LinuxBCN.com"
 slug: "linuxbcn-arquitectura-sistema-digital"
 weight: 14
 year: 2026
+date: 2026-04-13
 client: "own project"
 sector: "services"
 description: "From accumulated WordPress to custom-built Hugo: lightweight, multilingual, no external dependencies. The system we apply to clients, applied first to ourselves."

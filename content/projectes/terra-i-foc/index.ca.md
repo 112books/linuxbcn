@@ -3,6 +3,7 @@ title: "Terra i Foc: ceràmica artesanal catalana, ara en línia"
 slug: "terra-i-foc"
 weight: 3
 year: 2026
+date: 2026-07-22
 client: "Terra i Foc / Joan Martínez Serres"
 sector: "artesania"
 perfils: ["microempreses"]

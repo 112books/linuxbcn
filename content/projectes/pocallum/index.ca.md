@@ -3,6 +3,7 @@ title: "Pocallum"
 slug: "pocallum"
 weight: 13
 year: 2025
+date: 2025-01-01
 client: "agència fotogràfica"
 sector: "fotografia"
 perfils: ["microempreses"]

@@ -3,6 +3,7 @@ title: "Blog de Pocallum — De Blogger a WordPress, de WordPress a Hugo"
 slug: "blog-pocallum"
 weight: 3
 year: 2026
+date: 2026-09-15
 client: "Pocallum / Joan Linux Martínez"
 sector: "fotografia"
 perfils: ["microempreses"]

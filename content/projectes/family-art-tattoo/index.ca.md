@@ -3,6 +3,7 @@ title: "Family Art Tattoo"
 slug: "family-art-tattoo"
 weight: 20
 year: 2022
+date: 2022-01-01
 image: "familyarttatto-01.png"
 client: "estudi de tatuatge"
 sector: "negoci-local"

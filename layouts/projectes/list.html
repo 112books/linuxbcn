@@ -21,8 +21,8 @@
 </nav>
 
 <div class="projects-grid" id="projects-grid">
-  {{/* Més nou primer (year desc); dins del mateix any, per rellevança (weight). sort és estable */}}
-  {{ range sort .Pages.ByWeight "Params.year" "desc" }}
+  {{/* Ordre de producció: date desc (frontmatter `date`); empats per weight. sort és estable */}}
+  {{ range sort .Pages.ByWeight "Date" "desc" }}
   {{ $serveis := .Params.serveis | default (slice) }}
   <a href="{{ .RelPermalink }}"
      class="project-card{{ if .Params.featured }} project-card--featured{{ end }}"

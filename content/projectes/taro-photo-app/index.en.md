@@ -3,6 +3,7 @@ title: "Taro Photo App — website, CMS and voting for photography collectives"
 slug: "taro-photo-app"
 weight: 3
 year: 2026
+date: 2026-09-23
 client: "9 Barris Imatge"
 sector: "photography"
 perfils: ["collectius"]

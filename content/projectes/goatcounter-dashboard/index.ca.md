@@ -3,6 +3,7 @@ title: "GoatCounter Dashboard"
 slug: "goatcounter-dashboard"
 weight: 15
 year: 2026
+date: 2026-05-09
 client: "LinuxBCN"
 sector: "eines"
 description: "Dashboard d'analítica web self-hosted sense cookies, construït sobre l'API de GoatCounter. Eina pròpia de LinuxBCN per a clients que volen privacitat per disseny."

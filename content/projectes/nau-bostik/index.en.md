@@ -3,6 +3,7 @@ title: "Nau Bostik"
 slug: "nau-bostik"
 weight: 7
 year: 2025
+date: 2025-01-01
 image: "naubostik-actual.png"
 client: "self-managed cultural space"
 sector: "culture"

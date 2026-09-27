@@ -5,6 +5,7 @@ lastmod: "2026-06-24"
 slug: "cuida"
 weight: 1
 year: 2026
+date: 2026-05-10
 client: "LinuxBCN"
 sector: "eines"
 featured: true

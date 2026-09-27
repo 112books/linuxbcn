@@ -3,6 +3,7 @@ title: "Carrer.cat"
 slug: "carrer"
 weight: 11
 year: 2024
+date: 2024-01-01
 client: "publicació veïnal"
 sector: "comunicació"
 perfils: ["collectius"]

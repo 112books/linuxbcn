@@ -3,6 +3,7 @@ title: "LinuxBCN.com"
 slug: "linuxbcn-arquitectura-sistema-digital"
 weight: 14
 year: 2026
+date: 2026-04-13
 client: "projecte propi"
 sector: "serveis"
 description: "De WordPress acumulatiu a Hugo fet a mida: arquitectura lleugera, bilingüe, sense dependències externes. El sistema que apliquem als clients, aplicat primer a nosaltres."

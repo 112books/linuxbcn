@@ -3,6 +3,7 @@ title: "Positivador WebApp"
 slug: "app-positivador"
 weight: 4
 year: 2026
+date: 2026-04-13
 client: "Llumàtics"
 sector: "fotografia"
 featured: true

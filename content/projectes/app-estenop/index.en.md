@@ -3,6 +3,7 @@ title: "Estenop — Pinhole calculator"
 slug: "app-estenop"
 weight: 3
 year: 2026
+date: 2026-04-25
 client: "LinuxBCN"
 sector: "photography"
 description: "Estenop — offline mobile app for pinhole cameras. Exposure calculation, reciprocity corrections for 20+ emulsions, built-in timer. LinuxBCN."

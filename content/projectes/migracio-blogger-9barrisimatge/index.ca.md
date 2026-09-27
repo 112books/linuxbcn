@@ -3,13 +3,14 @@ title: "9 Barris Imatge — de Blogger a Taro Photo App"
 slug: "migracio-blogger-9barrisimatge"
 weight: 3
 year: 2026
+date: 2026-09-27
 client: "9 Barris Imatge"
 sector: "fotografia"
 perfils: ["collectius"]
 description: "Com LinuxBCN va portar 9 Barris Imatge de Blogger a Taro Photo App, un sistema de programari lliure fet amb Hugo: 3.006 articles des del 2008, zero errors i URLs conservades."
 lastmod: "2026-09-27"
 draft: false
-serveis: ["migracio-wordpress"]
+serveis: ["migracio-wordpress", "web-a-mida", "cas-propi"]
 image: "9bi-taro-photo-app.png"
 ---
 

@@ -3,6 +3,7 @@ title: "Positivitzador WebApp"
 slug: "app-positivador"
 weight: 4
 year: 2026
+date: 2026-04-13
 client: "Llumatics"
 sector: "photography"
 featured: true

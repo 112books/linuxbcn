@@ -3,6 +3,7 @@ title: "112 Revelats"
 slug: "112revelats"
 weight: 9
 year: 2025
+date: 2025-01-01
 client: "112Books"
 sector: "fotografia"
 perfils: ["musics"]

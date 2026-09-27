@@ -3,6 +3,7 @@ title: "El nou theme de 112books.eu"
 slug: "112books-theme"
 weight: 2
 year: 2026
+date: 2026-07-13
 client: "112Books"
 sector: "editorial"
 perfils: ["microempreses"]

@@ -3,6 +3,7 @@ title: "Ressona — Digital Identity for Artists"
 slug: "ressona"
 weight: 3
 year: 2026
+date: 2026-06-17
 client: "own project"
 sector: "services"
 perfils: ["musics"]

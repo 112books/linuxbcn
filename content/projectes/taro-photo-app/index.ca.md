@@ -3,6 +3,7 @@ title: "Taro Photo App — web, gestor i votació per a col·lectius fotogràfic
 slug: "taro-photo-app"
 weight: 3
 year: 2026
+date: 2026-09-23
 client: "9 Barris Imatge"
 sector: "fotografia"
 perfils: ["collectius"]

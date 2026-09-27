@@ -3,6 +3,7 @@ title: "Gestor d'hores"
 slug: "gestor-hores"
 weight: 5
 year: 2026
+date: 2026-08-11
 client: "LinuxBCN"
 sector: "eines"
 description: "Sistema de seguiment de temps per a projectes de client, integrat directament a Claude Code. Registre automàtic per sessió, reports visuals i sincronització via Codeberg."

@@ -3,6 +3,7 @@ title: "Machiroku"
 slug: "machiroku"
 weight: 6
 year: 2025
+date: 2025-01-01
 client: "restaurant"
 sector: "local-business"
 perfils: ["microempreses"]
