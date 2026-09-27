@@ -44,19 +44,19 @@ sync() {
 
 build_local() {
   print "Build local..."
-  hugo --minify || exit 1
+  hugo --minify --cleanDestinationDir || exit 1
   ok "Build correcte"
 }
 
 build_staging() {
   print "Build staging..."
-  hugo --minify --environment staging || exit 1
+  hugo --minify --cleanDestinationDir --environment staging || exit 1
   ok "Build staging correcte"
 }
 
 build_prod() {
   print "Build producció..."
-  hugo --minify --environment production || exit 1
+  hugo --minify --cleanDestinationDir --environment production || exit 1
   ok "Build producció correcte"
 }
 

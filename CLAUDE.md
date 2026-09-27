@@ -768,5 +768,31 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-09-27*
+## 29. Historial de tasques — 2026-09-27 (tarda)
+
+**Auditoria SEO/GEO/AEO** (informe a `~/Desktop/seo-audit-linuxbcn-com-2026-09-27.docx`): SEO 5 · GEO 6 · AEO 3. Causa principal de poques visites: URLs del WordPress antic indexades i en 404, redireccions que baixaven a http://, marca "linuxbcn" repartida entre .com i .org.
+
+**`.htaccess` — redireccions reescrites**
+- Totes les destinacions **absolutes amb `https://linuxbcn.com/`**. Darrere del proxy SSL de Dinahosting, Apache veu http i convertia les relatives en `http://…` (l'arrel feia https → http://…/ca/ → https)
+- Regla pròpia de barra final per a directoris (substitueix el 301 de mod_dir, que també sortia en http)
+- 301 de les URLs del WordPress antic (llista de Wayback Machine, ~2.600): projectes (`/slug/`, `/clients/slug/`, `/client/slug/`, `/content/slug/`) → projecte actual; serveis antics → `/ca/solucions/`; `clients|content|corp` → `/ca/projectes/`; `fotos|drupal|linuxbcn|joan|es|index.php…` → `/ca/`; `?p=`/`?page_id=` → `/ca/`; qualsevol slug d'un nivell inexistent → `/ca/`
+- Còpia del `.htaccess` anterior al servidor: `~/htaccess-backup-2026-09-27`
+
+**Pàgines fantasma**: 21 directoris de builds vells de `hugo server` (amb `livereload.js`) moguts fora del docroot a `~/ghost-pages-2026-09-27/`. `sync-linuxbcn.sh`: tots els builds amb `--cleanDestinationDir` perquè `public/` no acumuli restes (el deploy no usa `--delete`)
+
+**linuxbcn.org → integrat a blog.pocallum.cat**
+- 38 posts nous + 82 existents a la categoria `fotografia-estenopeica` de blog.pocallum.cat (repo blog.pocallum.cat, commit `666284a5e9`)
+- linuxbcn.org (compte SSH `linuxbcn`, docroot `/home/linuxbcn/www`): `.htaccess` amb 301 de tot el domini → `https://linuxbcn.com/` (excepte `/.well-known/` per renovar el certificat). WordPress aturat però intacte; `.htaccess` original a `.htaccess.wordpress-2026-09-27`
+- Còpia completa (BD + fitxers): servidor `~/backup-linuxbcn-org-2026-09-27/` i local `blog.pocallum.cat/migration/linuxbcn-org/backup-2026-09-27/`
+
+**Pendent**
+- Canviar la contrasenya SSH del compte `linuxbcn` (es va compartir per xat)
+- Opcional: linuxbcn.org → `https://linuxbcn.com/ca/` directament (ara fa 2 salts https)
+- `www/org_wordpress.sql` (bolcat 2016) dins el docroot de linuxbcn.org: treure'l
+- `apps/taro/` no existeix a producció (esborrat el 2026-09-23, gestionat per l'app Taro)
+- De l'auditoria: FAQ + FAQPage schema, decidir `/serveis/` (orfe), og:image a portada, títols amb servei+lloc, Pam a Pam / GiLUG / Softcatalà, Google Business Profile, schema description amb cometes dobles
+
+---
+
+*Última actualització: 2026-09-27 (tarda)*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*

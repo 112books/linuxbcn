@@ -3,46 +3,74 @@ ErrorDocument 404 /ca/404.html
 # ─── Redirects des de WordPress (301 per preservar SEO) ──────────────────────
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  # Totes les destinacions són absolutes amb https:// — darrere del proxy SSL de
+  # Dinahosting, Apache veu http i convertiria les relatives en http://linuxbcn.com/...
 
   # www → sense www (canonical)
   RewriteCond %{HTTP_HOST} ^www\.linuxbcn\.com [NC]
   RewriteRule ^(.*)$ https://linuxbcn.com/$1 [R=301,L]
 
-  # Arrel → versió catalana (Hugo genera alias però per si de cas)
-  RewriteRule ^$ /ca/ [R=301,L]
+  # Directori sense barra final → amb barra (substitueix el 301 de mod_dir, que sortia en http)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.+)$ https://linuxbcn.com/$1/ [R=301,L]
+
+  # ?p=123, ?page_id=… (permalinks antics de WordPress)
+  RewriteCond %{QUERY_STRING} (^|&)(p|page_id|cat|author)=[0-9]+
+  RewriteRule ^(index\.php)?$ https://linuxbcn.com/ca/ [R=301,L,QSD]
+
+  # Arrel → versió catalana
+  RewriteRule ^$ https://linuxbcn.com/ca/ [R=301,L]
 
   # Bloqueig i redirect d'URLs de WordPress
-  RewriteRule ^wp-admin(.*)$        /ca/ [R=301,L]
-  RewriteRule ^wp-login\.php$       /ca/ [R=301,L]
+  RewriteRule ^wp-admin(.*)$        https://linuxbcn.com/ca/ [R=301,L]
+  RewriteRule ^wp-login\.php$       https://linuxbcn.com/ca/ [R=301,L]
   RewriteRule ^wp-cron\.php$        - [F,L]
   RewriteRule ^xmlrpc\.php$         - [F,L]
-  RewriteRule ^wp-content/(.*)$     /ca/ [R=301,L]
+  RewriteRule ^wp-content/(.*)$     https://linuxbcn.com/ca/ [R=301,L]
   RewriteRule ^wp-includes/(.*)$    - [F,L]
 
-  # Pàgines WordPress genèriques → seccions equivalents Hugo
-  RewriteRule ^category/projectes(/.*)?$  /ca/projectes/ [R=301,L]
-  RewriteRule ^category/(.*)$             /ca/ [R=301,L]
-  RewriteRule ^tag/(.*)$                  /ca/ [R=301,L]
-  RewriteRule ^page/[0-9]+/?$             /ca/ [R=301,L]
-  RewriteRule ^\?p=[0-9]+$               /ca/ [R=301,L]
-  RewriteRule ^feed(/.*)?$                /ca/index.xml [R=301,L]
+  # Projectes del WordPress (/slug/, /clients/slug/, /client/slug/, /content/slug/) → projecte actual
+  RewriteRule ^(?:(?:clients?|content)/)?(?:112books|112-books|112books-eu)/?$            https://linuxbcn.com/ca/projectes/112books/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?9-barris-acull/?$                                https://linuxbcn.com/ca/projectes/9-barris-acull/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?a-w-p-c-p-around-the-worlds-pinhole-crazy-people/?$ https://linuxbcn.com/ca/projectes/awpcp/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?blog-pocallum-cat/?$                             https://linuxbcn.com/ca/projectes/blog-pocallum/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?(?:machiroku|machiroku-com)/?$                   https://linuxbcn.com/ca/projectes/machiroku/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?family-art-tattoo/?$                             https://linuxbcn.com/ca/projectes/family-art-tattoo/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?llumatics/?$                                     https://linuxbcn.com/ca/projectes/llumatics/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?nau-bostik/?$                                    https://linuxbcn.com/ca/projectes/nau-bostik/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?(?:favb|favb-cat)/?$                             https://linuxbcn.com/ca/projectes/favb/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?(?:carrer|revista-carrer)/?$                     https://linuxbcn.com/ca/projectes/carrer/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?bratia/?$                                        https://linuxbcn.com/ca/projectes/bratia/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?malditasmaquinas/?$                              https://linuxbcn.com/ca/malditasmaquinas/ [R=301,L,NC]
+  RewriteRule ^(?:(?:clients?|content)/)?konsento/?$                                      https://linuxbcn.com/en/projectes/konsento/ [R=301,L,NC]
 
   # Pàgines antigues conegudes de WordPress → equivalents Hugo
-  RewriteRule ^qui-som/?$           /ca/qui-som/ [R=301,L]
-  RewriteRule ^about/?$             /en/qui-som/ [R=301,L]
-  RewriteRule ^contacte/?$          /ca/contacte/ [R=301,L]
-  RewriteRule ^contact/?$           /en/contacte/ [R=301,L]
-  RewriteRule ^projectes/?$         /ca/projectes/ [R=301,L]
-  RewriteRule ^projects/?$          /en/projectes/ [R=301,L]
-  RewriteRule ^serveis/?$           /ca/solucions/ [R=301,L]
-  RewriteRule ^services/?$          /en/solucions/ [R=301,L]
+  RewriteRule ^qui-som/?$           https://linuxbcn.com/ca/qui-som/ [R=301,L]
+  RewriteRule ^about/?$             https://linuxbcn.com/en/qui-som/ [R=301,L]
+  RewriteRule ^(?:contacte|contacteu)/?$ https://linuxbcn.com/ca/contacte/ [R=301,L]
+  RewriteRule ^contact(/.*)?$       https://linuxbcn.com/en/contacte/ [R=301,L]
+  RewriteRule ^projectes/?$         https://linuxbcn.com/ca/projectes/ [R=301,L]
+  RewriteRule ^projects/?$          https://linuxbcn.com/en/projectes/ [R=301,L]
+  RewriteRule ^services/?$          https://linuxbcn.com/en/solucions/ [R=301,L]
+  RewriteRule ^(?:serveis|servei-tecnic|assessorament-tecnologic|assessorament-tecnol%C3%B2gic)/?$ https://linuxbcn.com/ca/solucions/ [R=301,L,NC]
+  RewriteRule ^content/(?:serveis|servei-t.*|assessorament-.*|hostatjament-mida|instal.*|maquinari|programari|formaci.*|registre-de-dominis|intranet-extranet|promoci.*)/?$ https://linuxbcn.com/ca/solucions/ [R=301,L,NC]
 
-  # Projectes antics → nous (afegir aquí si es coneixen URLs velles específiques)
-  RewriteRule ^bratia/?$            /ca/projectes/bratia/ [R=301,L]
-  RewriteRule ^machiroku/?$         /ca/projectes/machiroku/ [R=301,L]
-  RewriteRule ^favb/?$              /ca/projectes/favb/ [R=301,L]
-  RewriteRule ^malditasmaquinas/?$  /ca/malditasmaquinas/ [R=301,L]
-  RewriteRule ^konsento/?$          /en/projectes/konsento/ [R=301,L]
+  # Seccions genèriques del WordPress → seccions equivalents Hugo
+  RewriteRule ^category/projectes(/.*)?$  https://linuxbcn.com/ca/projectes/ [R=301,L]
+  RewriteRule ^(?:clients?|content|corp)(/.*)?$ https://linuxbcn.com/ca/projectes/ [R=301,L,NC]
+  RewriteRule ^(?:category|tag|author|blog)(/.*)?$ https://linuxbcn.com/ca/ [R=301,L]
+  RewriteRule ^page/[0-9]+/?$             https://linuxbcn.com/ca/ [R=301,L]
+  RewriteRule ^[0-9]{4}(/.*)?$            https://linuxbcn.com/ca/ [R=301,L]
+  RewriteRule ^feed(/.*)?$                https://linuxbcn.com/ca/index.xml [R=301,L]
+
+  # Instal·lacions antigues (galeria /fotos, Drupal, /linuxbcn/, /es/…) → portada
+  RewriteRule ^(?:fotos?|drupal|linuxbcn|joan|kristina|es|index\.php|bofh|wptest)(/.*)?$ https://linuxbcn.com/ca/ [R=301,L,NC]
+
+  # Qualsevol altre slug d'un sol nivell que no existeix (posts antics del WP) → portada
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([^/.]+)/?$ https://linuxbcn.com/ca/ [R=301,L]
 </IfModule>
 
 # ─── Security Headers ────────────────────────────────────────────────────────
