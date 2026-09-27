@@ -13,7 +13,7 @@
 <nav class="projects-filter" aria-label="{{ i18n "filter_by_service" | default "Filtra per servei" }}">
   <button class="filter-btn active" data-filter="*">{{ i18n "filter_all" | default "Tots" }}</button>
   <button class="filter-btn" data-filter="web-a-mida">{{ i18n "servei_web_a_mida" | default "Web nova i redisseny" }}</button>
-  <button class="filter-btn" data-filter="migracio-wordpress">{{ i18n "servei_migracio" | default "Migració WP → estàtic" }}</button>
+  <button class="filter-btn" data-filter="migracio-wordpress">{{ i18n "servei_migracio" | default "Migració a estàtic" }}</button>
   <button class="filter-btn" data-filter="plataforma-editorial">{{ i18n "servei_editorial" | default "Plataforma editorial" }}</button>
   <button class="filter-btn" data-filter="aplicacio-web">{{ i18n "servei_aplicacio" | default "Aplicació web" }}</button>
   <button class="filter-btn" data-filter="tema-wordpress">{{ i18n "servei_tema" | default "Tema WordPress" }}</button>
@@ -63,7 +63,7 @@
 
 {{ with .Params.cta_url }}
 <div class="projects-cta">
-  <a href="{{ . }}">→ {{ $.Params.cta_label | default "Parlem" }}</a>
+  <a href="{{ strings.TrimPrefix "/" . | relLangURL }}">→ {{ $.Params.cta_label | default "Parlem" }}</a>
 </div>
 {{ end }}
 

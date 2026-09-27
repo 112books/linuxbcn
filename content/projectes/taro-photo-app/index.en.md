@@ -1,36 +1,136 @@
 ---
-title: "Taro — management tool for photography associations"
+title: "Taro Photo App — website, CMS and voting for photography collectives"
 slug: "taro-photo-app"
 weight: 3
 year: 2026
 client: "9 Barris Imatge"
 sector: "photography"
 perfils: ["collectius"]
-description: "Taro — free software app built with Hugo and Python to manage photography associations: posts, contests with electronic voting, auto-publishing and Blogger import. Built by LinuxBCN for 9 Barris Imatge."
-lastmod: "2026-09-23"
+description: "Taro Photo App: static website, content manager and voting and form modules for photography collectives. Free software (AGPL-3.0) running at 9barrisimatge.org with 3,008 articles."
+lastmod: "2026-09-27"
 draft: false
 serveis: ["aplicacio-web"]
 image: "taro-logo.png"
 image_style: "logo"
 ---
 
-## From Blogger to free software
+## What it is
 
-Taro was born from a concrete need of the [9 Barris Imatge](https://9barrisimatge.org/) collective: years publishing its albums on Blogger, with non-technical members struggling with a tool built for blogging, not association photography, and full dependence on a platform they didn't control.
+The [9 Barris Imatge](https://9barrisimatge.org/) collective has been documenting the Nou Barris district of Barcelona since 2002. Since 2018 it has published with its own system: **Taro Photo App**.
 
-The first need was to escape that limitation and gain sovereignty over their own information. Joan Linux, as a member of the collective, saw the chance to solve it with free software — and Taro was born from that.
+Taro has three parts, all free software:
 
-The app is designed to host, very lightly, posts about photography events: a reference image, tags, authorship, and a link to the full album — hosted on each user's own server, or on Google Photos, Amazon or Apple, depending on where their photos live.
+- **A static website** built with Hugo and the PaperMod theme, with a custom design.
+- **A content manager** (Sveltia CMS, hosted on the same site) so members can publish without touching code.
+- **Python modules** for what a static site can't do alone: audience voting, forms that reach an inbox, and automatic publishing.
 
-Taro isn't a closed product: it's in constant evolution, as new needs arise from the collective.
+9barrisimatge.org is the reference installation: **3,008 articles, 24 member profiles and 19 years of archive**. The distributed software is the same system without the collective's data, so any other photography group can install it with its own members, articles and albums.
 
-Try it here: [9barrisimatge.org](https://9barrisimatge.org/)
+The migration of the archive from Blogger is covered in a separate project: [from Blogger to a static website](/en/projectes/migracio-blogger-9barrisimatge/).
 
 ---
 
 ## Why "Taro"
 
-The name is a small tribute to [Gerda Taro](https://en.wikipedia.org/wiki/Gerda_Taro), photojournalist and partner of Robert Capa. It looks increasingly clear that she was the author of some of that iconic photojournalism duo's best photographs. She died in the line of duty during the Spanish Civil War.
+It pays tribute to [Gerda Taro](https://en.wikipedia.org/wiki/Gerda_Taro) (1910–1937), photojournalist and partner of Robert Capa, and the author of a key part of the reportage from the Spanish Civil War.
+
+---
+
+## An article: photo, text and album
+
+The publishing model is deliberately simple. Each article has:
+
+| Field | What goes in it |
+|---|---|
+| Author | A member of the collective, with their own page |
+| Main photo | The image that represents it in the gallery |
+| Text | The body of the article, in Markdown |
+| Album link | Google Photos, Flickr, your own server… The system doesn't depend on it |
+| Keywords | To make it findable |
+
+Everything else in the system exists to publish, find and share this well.
+
+---
+
+## The website
+
+- Mosaic gallery on the home page and on each author's page
+- Archive by year, tag cloud and a page with every post
+- Instant in-browser search, also on the 404 page, with the date of each result
+- "See the full photo album" button on every article
+- Most-visited articles, computed with GoatCounter on each publish (no cookies)
+- RSS, dark mode, fonts served from the site itself and a mobile-first layout
+- Structured data (JSON-LD), social image and sitemap, reviewed in September 2026
+
+---
+
+## The content manager
+
+Sveltia CMS, self-hosted at `/admin/`. Editors log in with their GitHub account and every save is a commit: author, date and history are kept, and any change can be reviewed or undone.
+
+- **32 collections**: 19 for articles (one per year, because 3,008 articles in a single list would be unusable), fixed pages, members, meeting minutes and contest documentation
+- Fixed pages with their technical fields hidden, so nothing breaks on save
+- Member profiles (active or veteran) and minutes with attendees, agenda, decisions and votes
+- A custom sidebar that filters articles by year
+
+The site doesn't depend on the CMS to work: it's a single JavaScript file, and it's the editor's browser that talks to GitHub.
+
+---
+
+## The modules
+
+Python with the standard library only: no `pip install`, no dependencies to keep an eye on. SQLite only where needed.
+
+### Voting — in production
+
+For exhibitions and contests where the people present vote, not someone at home voting a thousand times.
+
+- Mobile page with a numeric keypad, and QR codes on the poster and on each work
+- One vote per work and device, tied to a code computed with a secret key. **No personal data is stored**: no name, no email, no location
+- **Geofencing**: you can only vote within 500 m of the exhibition
+- Test mode for rehearsals, and an admin panel with tally, automatic closing and signed CSV export
+- Counting and audit tools (`tally.py`, `audit.py`), including a paper ballot count
+- Catalan, Spanish and English
+
+It is being rehearsed in autumn 2026 for the audience vote of the photography contest at the December exhibition.
+
+### Forms — in production
+
+A static site has nowhere to send a form. This module receives the contact and "join the collective" forms and sends them by email from our own server, with no intermediary services and no database.
+
+Abuse protection: origin validation, honeypot, per-IP rate limiting, field allow-list and size limits. No internal error ever reaches the browser, and every message carries the legal footer (GDPR and Spain's LOPDGDD).
+
+### Auto-publishing — pending
+
+A component that rebuilds the site when a change arrives. It isn't active: publishing is currently done by GitHub Actions.
+
+---
+
+## Why build it this way
+
+- **A static site is fast and hard to attack**: generated HTML, no database, no exposed running code.
+- **Content is memory**: each article is a readable file with history. 24 years of the collective's documentary heritage don't live inside anyone else's platform.
+- **Autonomy**: publishing, fixing or deleting an article doesn't depend on any company.
+- **Readable and reusable**: HTML, Markdown, Git and Python are tools a lot of people know.
+
+It isn't a prototype. A non-profit collective has used it to publish 3,008 articles and run the audience vote of an exhibition.
+
+---
+
+## Status, no make-up
+
+**Done:**
+
+- **AGPL-3.0** licence, with SPDX headers and the licences of third-party components
+- Distributable package (`modules/taro/`) with the three modules, no 9 Barris Imatge data, and an installation guide for each module. The voting and form tests pass
+- Meeting minutes with decisions and votes
+
+**Doesn't exist yet:**
+
+- **Per-member permissions**: anyone with write access can edit every article. This is the most serious gap for a large collective
+- **Exhibition management from the CMS**: the works in a vote are still configured by hand on the server
+- **Guided installer**: there's a manual and configuration templates, but no wizard
+- **Generic CMS**: the 32 collections are tailored to 9bi, and a new collective has to trim them
 
 ---
 
@@ -41,48 +141,22 @@ The name is a small tribute to [Gerda Taro](https://en.wikipedia.org/wiki/Gerda_
 
 ---
 
-## Features and modules
+## What it's built with
 
-Besides fixed sections for the association's static information, Taro includes several functional modules:
+- **Hugo** 0.164 and **PaperMod** (header and footer rewritten)
+- **Sveltia CMS** 0.217, self-hosted
+- **Python 3** (standard library) and **SQLite**
+- **GitHub Actions** and **GitHub Pages** to publish the site; voting and forms on LinuxBCN's server, with automatic service monitoring
+- **GoatCounter** for cookie-free statistics
 
-- **Blogger import** — migrating historical content without losing it
-- **Photo contest management** — including electronic public voting
-- **Auto-publishing** — automatic publishing of scheduled content
-- ...and other modules added as the collective needs them
-
----
-
-## Built with
-
-- **Hugo** — static site generator, fast and database-free
-- **PaperMod** — Hugo theme
-- **Decap CMS** — content editing for non-technical profiles
-- **Codeberg (Forgejo)** — code hosting
-- **Codeberg Pages** — site publishing
-- **GoatCounter** — cookie-free visit statistics
-- **Python** — the app's modules: forms, voting, auto-publishing
-- Git, Markdown, HTML, CSS and JavaScript
-
-The code stays open at the [linuxbcn/9bi](https://codeberg.org/linuxbcn/9bi) repository on Codeberg.
+Open source on [GitHub (112books/9bi)](https://github.com/112books/9bi), mirrored on [Codeberg](https://codeberg.org/linuxbcn/9bi).
 
 ---
 
-## Status: beta
+## The software is yours
 
-Taro is still in beta. The definitive version — description, license, features and source code — will be presented soon at LinuxBCN.com. Any suggestion is welcome, especially from members of the 9 Barris Imatge collective.
+If you run a collective, association or photography group, you can install Taro and get a website, a content manager and, if you need them, audience voting and forms. Publishing doesn't require programming: just write and upload an image.
 
----
+Adapt it as much as you like. The AGPL-3.0 lets you, and asks you to share your improvements if you publish them. Every module came from a real need of the collective. If you're missing one, tell us about it.
 
-## Free software, with one exception explained
-
-The value of free software is control, transparency, privacy and autonomy — and it's what makes it possible for a small organization like 9 Barris Imatge to maintain a site like this. Free tools are used wherever possible.
-
-There is one exception: photo albums run on Google Photos, for cost and volume reasons. It's stated openly because it deserves to be said, not hidden.
-
----
-
-## You can already see it running
-
-Taro can already be seen live, working, at [9barrisimatge.org](https://9barrisimatge.org/). Being free software, any association or collective can freely enjoy it.
-
-If it's of interest for your organization, LinuxBCN can adapt it — in features or in design — to your needs.
+And if you want Taro but have nobody to host or maintain it, LinuxBCN offers hosting, email and maintenance on terms suited to non-profits, so the site doesn't rely only on the goodwill of volunteers.

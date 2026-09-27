@@ -21,7 +21,7 @@ draft: false
 
 ## Projectes propis
 
-→ [Taro](/projectes/taro-photo-app/) — gestió d'àlbums per a associacions fotogràfiques (beta)
+→ [Taro Photo App](/projectes/taro-photo-app/) — web, gestor i votació per a col·lectius fotogràfics (AGPL-3.0)
 → [Ressona](/projectes/ressona/) — plataforma d'identitat digital per a artistes
 → [MalditasMaquinas.com](/projectes/malditasmaquinas/) — consultoria tecnològica per hores
 → [112 Revelats](/projectes/112revelats/) — fotografia analògica, web lleuger a GitHub Pages
@@ -35,6 +35,10 @@ draft: false
 ## Pocallum.cat — migració a estàtic
 
 → [Pocallum.cat](/projectes/pocallum-estatic/) — presència digital renovada, de WordPress a Hugo
+
+## 9 Barris Imatge — migració a estàtic
+
+→ [9 Barris Imatge](/projectes/migracio-blogger-9barrisimatge/) — 3.006 articles de Blogger a Hugo, zero errors i URLs conservades
 
 ## Blog de Pocallum — migració a estàtic
 
