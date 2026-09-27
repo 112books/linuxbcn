@@ -76,6 +76,7 @@ deploy_prod() {
     --exclude='.git' \
     --exclude='/formularis' \
     --exclude='/apps/taro' \
+    --exclude='/admin/analytics-cache.json' \
     $BUILD_DIR/ $SSH_USER@$SSH_HOST:$SSH_PATH
   ok "Deploy producció fet → https://linuxbcn.com/"
 }
