@@ -51,7 +51,33 @@ if (isset($_GET['diag'])) {
         echo json_encode(['error' => 'Accés denegat']);
         exit;
     }
+    // &test=1 → envia un esdeveniment "diag-proxy" (no compta com a visita) i mostra la resposta
+    $test = null;
+    if (isset($_GET['test']) && defined('GC_TOKEN') && function_exists('curl_init')) {
+        $ch = curl_init(GC_API);
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => json_encode(['hits' => [[
+                'path' => 'diag-proxy', 'title' => 'Prova del proxy', 'event' => true,
+                'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? '', 'ip' => client_ip(),
+            ]]]),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HEADER         => true,
+            CURLOPT_TIMEOUT        => 10,
+            CURLOPT_HTTPHEADER     => ['Authorization: Bearer ' . GC_TOKEN, 'Content-Type: application/json'],
+        ]);
+        $resp = curl_exec($ch);
+        $hsize = (int)curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+        $test = [
+            'http'   => (int)curl_getinfo($ch, CURLINFO_HTTP_CODE),
+            'filter' => preg_match('/^X-Goatcounter-Filter:\s*(.*)$/mi', (string)substr((string)$resp, 0, $hsize), $m) ? trim($m[1]) : null,
+            'body'   => substr((string)substr((string)$resp, $hsize), 0, 500),
+            'error'  => curl_error($ch) ?: null,
+        ];
+        curl_close($ch);
+    }
     echo json_encode([
+        'test_goatcounter'=> $test,
         'remote_addr'     => $_SERVER['REMOTE_ADDR'] ?? null,
         'x_real_ip'       => $_SERVER['HTTP_X_REAL_IP'] ?? null,
         'x_forwarded_for' => $_SERVER['HTTP_X_FORWARDED_FOR'] ?? null,
