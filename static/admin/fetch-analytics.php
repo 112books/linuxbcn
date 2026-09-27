@@ -89,7 +89,7 @@ function extract_section(string $path): string {
 
 // ── Paràmetres de cerca ───────────────────────────────────────────────────────
 
-$end   = date('Y-m-d');
+$end   = date('Y-m-d', strtotime('+1 day'));  // GoatCounter: end = 00:00 d'aquell dia → +1 per incloure avui
 $start = date('Y-m-d', strtotime('-365 days'));
 $params = ['start' => $start, 'end' => $end, 'limit' => 50];
 

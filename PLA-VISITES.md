@@ -18,7 +18,7 @@
 
 ## 1. Comptador first-party (anti-adblock)
 
-> **Estat 2026-09-27:** codi fet (`static/js/m.js`, `static/v/index.php`, `head.html`, `robots.txt`, `$end` = avui). Usa l'API autenticada `/api/v0/count` (camps `ip` i `user_agent` explícits) en lloc de reenviar a `/count`. **Pendent abans de desplegar:** crear `~/.linuxbcn-secrets.php` al servidor (fora de `www/`) i rotar el token (el vell és públic al repo). Els passos de sota són el disseny original.
+> **Estat 2026-09-27: EN PRODUCCIÓ ✅** — `/js/m.js` + `/v/index.php` → API `/api/v0/count`. Verificat amb `?diag=…&test=1`: GoatCounter respon 202, la IP real arriba via `REMOTE_ADDR`/`X-Forwarded-For` i el token es llegeix de `~/.linuxbcn-secrets.php`. Dashboard: `end` = demà (GoatCounter pren `end` com a 00:00 → abans no es comptava mai el dia d'avui). **Pendent:** esborrar el token vell `webestadistiques` a GoatCounter quan s'hagi comprovat 1–2 dies de dades; opcional: treure `gc.zgo.at` i `linuxbcn.goatcounter.com` de la CSP.
 
 Objectiu: que ni l'script ni l'enviament toquin dominis de GoatCounter.
 
