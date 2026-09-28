@@ -2079,6 +2079,35 @@ footer a:hover {
   text-decoration: none;
 }
 
+/* =====================
+   QUÈ HEM RESOLT
+   ===================== */
+
+.project-resolt {
+  margin: 3rem 0;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+.project-resolt h2 {
+  margin-bottom: 1.25rem;
+}
+
+.resolt-item {
+  margin-bottom: 1.5rem;
+}
+
+.resolt-item h3 {
+  font-size: 1.05rem;
+  color: var(--ink-head);
+  margin-bottom: 0.35rem;
+}
+
+.resolt-item p {
+  color: var(--ink2);
+  margin: 0;
+}
+
 .signatura-list a:hover {
   color: var(--accent-text);
 }

@@ -30,6 +30,36 @@
     {{ .Content }}
   </section>
 
+  {{ $lang := .Site.Language.Lang }}
+  {{ $slug := .Params.slug }}
+  {{ with index hugo.Data.resolt $lang }}
+    {{ with index . $slug }}
+    <section class="project-resolt" aria-labelledby="resolt-title">
+      <h2 id="resolt-title">{{ i18n "resolt_title" | default "Què hem resolt" }}</h2>
+      {{ range . }}
+      <div class="resolt-item">
+        <h3>{{ .q }}</h3>
+        <p>{{ .a }}</p>
+      </div>
+      {{ end }}
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {{ range $i, $item := . }}{{ if $i }},{{ end }}
+        {
+          "@type": "Question",
+          "name": {{ $item.q | jsonify }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ $item.a | jsonify }} }
+        }{{ end }}
+      ]
+    }
+    </script>
+    {{ end }}
+  {{ end }}
+
 </article>
 
 <!-- Lightbox -->

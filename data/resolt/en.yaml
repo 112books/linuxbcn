@@ -1,0 +1,145 @@
+112books.eu-theme:
+  - q: "How do you clarify an publisher's information architecture?"
+    a: "We reorganised the site into three clear pillars (catalogue, authors, news) and built a block FSE theme from scratch, with no third-party templates."
+  - q: "Can the site be edited without a developer?"
+    a: "Yes: the FSE theme lets you edit templates and content from within WordPress using native blocks."
+112books:
+  - q: "How do you give a photography publisher its own digital presence?"
+    a: "A website of its own with a structured catalogue and digital identity, without relying on third-party platforms."
+  - q: "Do you lose control of the data?"
+    a: "No: hosting and analytics are our own, with no cookies or external services."
+112revelats:
+  - q: "Can a photography site work without a database?"
+    a: "Yes: a static site on GitHub Pages, with no dependencies and instant loading."
+  - q: "Will it look right on mobile?"
+    a: "Yes: a lightweight, responsive design with optimised images."
+9-barris-acull:
+  - q: "How do you manage case files securely and GDPR-compliantly?"
+    a: "A custom Drupal application with access control and data processing compliant with the GDPR."
+  - q: "How do you get statistics without compromising personal data?"
+    a: "Aggregated, anonymised reports generated from the application itself."
+app-estenop:
+  - q: "Can you calculate a pinhole camera's exposure without tables?"
+    a: "Yes: Estenop uses the phone camera as a light meter and applies reciprocity correction."
+  - q: "Does it work offline and without sending data?"
+    a: "Yes: it is offline and no data leaves the device."
+App-positivador:
+  - q: "Can you see a negative as a positive in real time?"
+    a: "Yes, with the device camera and local processing, with no server."
+  - q: "Do you need to install anything?"
+    a: "No: it runs directly in the browser."
+awpcp:
+  - q: "How do you give visibility to an international photography community?"
+    a: "A lightweight site hosted on GitHub Pages, with no database."
+  - q: "Is it easy to maintain?"
+    a: "Yes: static content and simple deployment."
+blog-pocallum:
+  - q: "How do you migrate 2,353 Blogger posts to Hugo without losing URLs?"
+    a: "We kept every URL with 1:1 parity and removed the database and dependencies."
+  - q: "Is the historical content lost?"
+    a: "No: 137,000 words and 71 imported comments are preserved."
+bratia:
+  - q: "How do you migrate a band's WordPress site to Hugo?"
+    a: "Migration to a static, multilingual and autonomous system, with integrated agenda and discography."
+  - q: "Can the band update the content?"
+    a: "Yes, with a simple content manager."
+carrer:
+  - q: "How do you take a neighbourhood publication online?"
+    a: "Website and digital communication for the magazine, with manageable content."
+  - q: "Can you publish with no dependencies?"
+    a: "Yes, with free software and your own hosting."
+cuida:
+  - q: "How do you coordinate care for a patient at home?"
+    a: "An app with medical contacts, medication, emergency protocols and carer schedules."
+  - q: "Is it accessible and open source?"
+    a: "Yes: WCAG AA and open source."
+family-art-tattoo:
+  - q: "How do you improve a tattoo studio's digital presence?"
+    a: "A custom WordPress theme, content and SEO, with Instagram integration."
+  - q: "Can it be managed from mobile?"
+    a: "Yes: responsive design, easy to edit."
+favb:
+  - q: "How do you give a residents' federation a digital presence?"
+    a: "Website and digital communication for the organisation, with manageable content."
+  - q: "Is data sovereignty respected?"
+    a: "Yes: our own hosting, no third-party services."
+gestor-hores:
+  - q: "How do you know how many hours you spend on each project?"
+    a: "Automatic per-session logging, with visual reports and sync through Codeberg."
+  - q: "Do you have to enter the data by hand?"
+    a: "No: logging is automatic."
+goatcounter-dashboard:
+  - q: "How do you get statistics with no cookies and no Google?"
+    a: "A self-hosted dashboard on top of the GoatCounter API, respectful of privacy."
+  - q: "Can it be audited?"
+    a: "Yes: it is free software."
+konsento:
+  - q: "How do you make collective decisions transparently?"
+    a: "An assembly governance application for cooperatives and self-managed spaces."
+  - q: "Is it accessible?"
+    a: "Yes: designed for collective use and WCAG-compliant."
+LinuxBCN-Analytics-for-GoatCounter:
+  - q: "How do you integrate cookieless analytics into WordPress?"
+    a: "An open-source plugin that connects GoatCounter to the WordPress dashboard."
+  - q: "Do you need Google Analytics?"
+    a: "No: it is never relied upon."
+linuxbcn:
+  - q: "How do you build a consultancy's website with no dependencies?"
+    a: "A custom, bilingual and lightweight Hugo site: the same system we apply for clients."
+  - q: "Can it be maintained without an agency?"
+    a: "Yes: static content and our own deployment."
+llumatics:
+  - q: "How do you give an analogue photography project a digital presence?"
+    a: "A website and content management with free software."
+  - q: "Can the images be shown with no dependencies?"
+    a: "Yes: optimised images and our own hosting."
+machiroku:
+  - q: "How do you modernise a restaurant's website?"
+    a: "A fast, mobile-friendly redesign that is easy to manage, with no external dependencies."
+  - q: "Can the menu be updated easily?"
+    a: "Yes, with a simple content manager."
+malditasmaquinas:
+  - q: "How do you sell hourly consultancy services online?"
+    a: "A SPA web app with Stripe and Telegram notifications, multilingual and WCAG AA."
+  - q: "Can payments be taken securely?"
+    a: "Yes, with Stripe."
+migracio-blogger-9barrisimatge:
+  - q: "How do you migrate 3,006 Blogger posts without errors?"
+    a: "Migration to Taro Photo App with zero errors and URLs preserved."
+  - q: "Is content from 2008 lost?"
+    a: "No: the entire history is preserved."
+nau-bostik:
+  - q: "How do you recover a cultural space's website?"
+    a: "Emergency recovery and digital replanning, with hosting and email."
+  - q: "Can the collective manage it?"
+    a: "Yes: tools the collective can maintain."
+pocallum-estatic:
+  - q: "How do you move a WordPress site to static?"
+    a: "Migration to Hugo: zero dependencies and instant loading."
+  - q: "Are the URLs preserved?"
+    a: "Yes, with full parity."
+pocallum:
+  - q: "How do you create a photography agency's digital portfolio?"
+    a: "A website and digital presence with free software."
+  - q: "Can the galleries be managed?"
+    a: "Yes, with a simple manager."
+ressona:
+  - q: "How do you build an artist's digital identity?"
+    a: "A platform with visual identity, press kit, website and communication."
+  - q: "Can it be updated?"
+    a: "Yes: manageable content and our own hosting."
+taro-photo-app:
+  - q: "How do you manage a photography association without closed platforms?"
+    a: "A static site, Sveltia CMS and voting, forms and self-publishing modules (AGPL-3.0)."
+  - q: "Can old content be migrated?"
+    a: "Yes: Blogger import and 3,008 articles."
+terra-i-foc:
+  - q: "How do you create a bilingual site for an artisan workshop?"
+    a: "A static site with Hugo, GitHub Pages and cookieless GoatCounter."
+  - q: "Is it fast and dependency-free?"
+    a: "Yes: instant loading and zero dependencies."
+votacio-public:
+  - q: "How do you run in-person voting without collecting personal data?"
+    a: "One vote per work and phone, only inside the venue, without storing coordinates or personal data."
+  - q: "Can the count be verified?"
+    a: "Yes: HMAC signature and a verifiable count (on paper too)."

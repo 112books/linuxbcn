@@ -1,0 +1,145 @@
+112books.eu-theme:
+  - q: "Com clarificar l'arquitectura d'informació d'una editorial?"
+    a: "Vam reorganitzar el web en tres pilars clars (catàleg, autors i notícies) i vam construir un tema bloc FSE des de zero, sense plantilles de tercers."
+  - q: "Es pot editar el web sense dependre d'un tècnic?"
+    a: "Sí: el tema FSE permet editar plantilles i continguts des del mateix WordPress, amb blocs natius."
+112books:
+  - q: "Com donar presència digital pròpia a una editorial de fotografia?"
+    a: "Web propi amb catàleg estructurat i identitat digital, sense dependre de plataformes de tercers."
+  - q: "Es perd el control de les dades?"
+    a: "No: allotjament i analítica propis, sense cookies ni serveis externs."
+112revelats:
+  - q: "Es pot tenir un web de fotografia sense base de dades?"
+    a: "Sí: web estàtic a GitHub Pages, sense dependències i amb càrrega immediata."
+  - q: "Es veurà bé en mòbil?"
+    a: "Sí: disseny lleuger i adaptatiu, amb imatges optimitzades."
+9-barris-acull:
+  - q: "Com gestionar expedients de forma segura i compliant amb el RGPD?"
+    a: "Aplicació Drupal a mida amb control d'accés i tractament de dades conforme al RGPD."
+  - q: "Com obtenir estadístiques sense comprometre dades personals?"
+    a: "Informes agregats i anonimitzats generats des de la mateixa aplicació."
+app-estenop:
+  - q: "Es pot calcular l'exposició d'una càmera pinhole sense taules?"
+    a: "Sí: Estenop fa servir la càmera del mòbil com a fotòmetre i aplica la correcció de reciprocitat."
+  - q: "Funciona sense connexió i sense enviar dades?"
+    a: "Sí: és offline i no surt cap dada del dispositiu."
+App-positivador:
+  - q: "Es pot veure un negatiu en positiu en temps real?"
+    a: "Sí, amb la càmera del dispositiu i processament local, sense servidor."
+  - q: "Cal instal·lar res?"
+    a: "No: funciona directament al navegador."
+awpcp:
+  - q: "Com donar visibilitat a una comunitat internacional de fotografia?"
+    a: "Web lleuger allotjat a GitHub Pages, sense base de dades."
+  - q: "Es pot mantenir fàcilment?"
+    a: "Sí: contingut estàtic i desplegament senzill."
+blog-pocallum:
+  - q: "Com migrar 2.353 posts de Blogger a Hugo sense perdre URLs?"
+    a: "Vam conservar totes les URLs amb paritat 1:1 i vam eliminar la base de dades i les dependències."
+  - q: "Es perd el contingut històric?"
+    a: "No: 137.000 paraules i 71 comentaris llegats es conserven."
+bratia:
+  - q: "Com migrar el web d'una banda de WordPress a Hugo?"
+    a: "Migració a un sistema estàtic, multilingüe i autònom, amb agenda i discografia integrades."
+  - q: "La banda pot actualitzar el contingut?"
+    a: "Sí, amb un gestor de continguts senzill."
+carrer:
+  - q: "Com digitalitzar una publicació veïnal?"
+    a: "Web i comunicació digital per a la revista, amb contingut gestionable."
+  - q: "Es pot publicar sense dependències?"
+    a: "Sí, amb programari lliure i allotjament propi."
+cuida:
+  - q: "Com coordinar les cures d'un malalt a casa?"
+    a: "App amb contactes mèdics, medicació, protocols d'urgència i horaris de cuidadors."
+  - q: "És accessible i de codi obert?"
+    a: "Sí: WCAG AA i codi obert."
+family-art-tattoo:
+  - q: "Com millorar la presència digital d'un estudi de tatuatge?"
+    a: "Tema WordPress a mida, continguts i SEO, amb integració a Instagram."
+  - q: "Es pot gestionar des del mòbil?"
+    a: "Sí: disseny adaptatiu i fàcil d'editar."
+favb:
+  - q: "Com dotar de presència digital una federació de veïns?"
+    a: "Web i comunicació digital per a l'organització, amb contingut gestionable."
+  - q: "Es respecta la sobirania de dades?"
+    a: "Sí: allotjament propi i cap servei de tercers."
+gestor-hores:
+  - q: "Com saber quantes hores dediques a cada projecte?"
+    a: "Registre automàtic per sessió, amb reports visuals i sincronització via Codeberg."
+  - q: "Cal introduir les dades a mà?"
+    a: "No: el registre és automàtic."
+goatcounter-dashboard:
+  - q: "Com tenir estadístiques sense cookies ni Google?"
+    a: "Dashboard self-hosted sobre l'API de GoatCounter, respectuós amb la privacitat."
+  - q: "Es pot auditar?"
+    a: "Sí: és programari lliure."
+konsento:
+  - q: "Com prendre decisions col·lectives de forma transparent?"
+    a: "Aplicació de governança assembleària per a cooperatives i espais autogestionats."
+  - q: "És accessible?"
+    a: "Sí: pensada per a ús col·lectiu i conforme a WCAG."
+LinuxBCN-Analytics-for-GoatCounter:
+  - q: "Com integrar analítica sense cookies a WordPress?"
+    a: "Plugin de codi obert que connecta GoatCounter amb el tauler de WordPress."
+  - q: "Cal Google Analytics?"
+    a: "No: no se'n depèn en cap moment."
+linuxbcn:
+  - q: "Com construir el web d'una consultoria sense dependències?"
+    a: "Hugo a mida, bilingüe i lleuger: el mateix sistema que apliquem als clients."
+  - q: "Es pot mantenir sense agència?"
+    a: "Sí: contingut estàtic i desplegament propi."
+llumatics:
+  - q: "Com donar presència digital a un projecte de fotografia analògica?"
+    a: "Web i gestió de continguts amb programari lliure."
+  - q: "Es poden mostrar les imatges sense dependències?"
+    a: "Sí: imatges optimitzades i allotjament propi."
+machiroku:
+  - q: "Com modernitzar el web d'un restaurant?"
+    a: "Redisseny ràpid, mòbil i fàcil de gestionar, sense dependències externes."
+  - q: "Es pot actualitzar la carta fàcilment?"
+    a: "Sí, amb un gestor de continguts senzill."
+malditasmaquinas:
+  - q: "Com vendre serveis de consultoria per hores en línia?"
+    a: "WebApp SPA amb Stripe i notificacions per Telegram, multidioma i WCAG AA."
+  - q: "Es poden cobrar pagaments de forma segura?"
+    a: "Sí, amb Stripe."
+migracio-blogger-9barrisimatge:
+  - q: "Com migrar 3.006 articles de Blogger sense errors?"
+    a: "Migració a Taro Photo App amb zero errors i URLs conservades."
+  - q: "Es perd el contingut des del 2008?"
+    a: "No: tot l'històric es conserva."
+nau-bostik:
+  - q: "Com recuperar el web d'un espai cultural?"
+    a: "Recuperació d'urgència i replantejament digital, amb allotjament i correu."
+  - q: "El col·lectiu pot gestionar-lo?"
+    a: "Sí: eines que el col·lectiu pot mantenir."
+pocallum-estatic:
+  - q: "Com passar un web de WordPress a estàtic?"
+    a: "Migració a Hugo: zero dependències i càrrega instantània."
+  - q: "Es mantenen les URLs?"
+    a: "Sí, amb paritat total."
+pocallum:
+  - q: "Com crear el portfolio digital d'una agència fotogràfica?"
+    a: "Web i presència digital amb programari lliure."
+  - q: "Es poden gestionar les galeries?"
+    a: "Sí, amb un gestor senzill."
+ressona:
+  - q: "Com construir la identitat digital d'un artista?"
+    a: "Plataforma amb identitat visual, press kit, web i comunicació."
+  - q: "Es pot actualitzar?"
+    a: "Sí: contingut gestionable i allotjament propi."
+taro-photo-app:
+  - q: "Com gestionar una associació fotogràfica sense plataformes tancades?"
+    a: "Web estàtic, gestor Sveltia i mòduls de votació, formularis i autopublicació (AGPL-3.0)."
+  - q: "Es poden migrar els continguts antics?"
+    a: "Sí: importació de Blogger i 3.008 articles."
+terra-i-foc:
+  - q: "Com crear un web bilingüe per a un obrador artesà?"
+    a: "Web estàtica amb Hugo, GitHub Pages i GoatCounter sense cookies."
+  - q: "És ràpid i sense dependències?"
+    a: "Sí: càrrega instantània i zero dependències."
+votacio-public:
+  - q: "Com fer una votació presencial sense recollir dades personals?"
+    a: "Un vot per obra i mòbil, només dins de la sala, sense guardar coordenades ni dades personals."
+  - q: "Es pot verificar el recompte?"
+    a: "Sí: signatura HMAC i recompte verificable (també en paper)."
