@@ -74,6 +74,30 @@ purge_cache() {
   ok "Caché purjada"
 }
 
+indexnow() {
+  print "Notificant les URLs a IndexNow (Bing, Yandex, DuckDuckGo...)..."
+  { for lang in ca en; do curl -s "https://linuxbcn.com/$lang/sitemap.xml"; done; } \
+    | grep -o '<loc>[^<]*' | sed 's|<loc>||' | sort -u > /tmp/lbcn-indexnow-urls.txt
+  python3 - <<'PY'
+import json, urllib.request
+key = "ae5b2e9e405343b5b21fa81ad8b4b547"
+urls = [l.strip() for l in open("/tmp/lbcn-indexnow-urls.txt") if l.strip()]
+data = json.dumps({
+    "host": "linuxbcn.com",
+    "key": key,
+    "keyLocation": "https://linuxbcn.com/%s.txt" % key,
+    "urlList": urls,
+}).encode("utf-8")
+req = urllib.request.Request("https://api.indexnow.org/indexnow", data=data,
+                             headers={"Content-Type": "application/json; charset=utf-8"})
+try:
+    print("IndexNow HTTP %s (%d URLs)" % (urllib.request.urlopen(req, timeout=30).status, len(urls)))
+except Exception as e:
+    print("IndexNow error:", e)
+PY
+  ok "IndexNow fet"
+}
+
 deploy_prod() {
   sync
   build_prod
@@ -87,6 +111,7 @@ deploy_prod() {
   # Assegura permisos llegibles per Apache (umask del servidor crea fitxers 600)
   ssh "$SSH_USER@$SSH_HOST" 'find ~/www -mindepth 1 -type f -not -perm -o+r -exec chmod 644 {} + 2>/dev/null; find ~/www -mindepth 1 -type d -not -perm -o+x -exec chmod 755 {} + 2>/dev/null' || true
   purge_cache
+  indexnow
   ok "Deploy producció fet → https://linuxbcn.com/"
 }
 
