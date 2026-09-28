@@ -41,6 +41,8 @@ awpcp:
     a: "Web lleuger allotjat a GitHub Pages, sense base de dades."
   - q: "Es pot mantenir fàcilment?"
     a: "Sí: contingut estàtic i desplegament senzill."
+  - q: "Què fa el web d'A.W.P.C.P.?"
+    a: "Serveix per organitzar el Dia de la Fotografia Estenopeica a Barcelona."
 blog-pocallum:
   - q: "Com migrar 2.353 posts de Blogger a Hugo sense perdre URLs?"
     a: "Vam conservar totes les URLs amb paritat 1:1 i vam eliminar la base de dades i les dependències."

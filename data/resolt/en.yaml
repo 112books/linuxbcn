@@ -41,6 +41,8 @@ awpcp:
     a: "A lightweight site hosted on GitHub Pages, with no database."
   - q: "Is it easy to maintain?"
     a: "Yes: static content and simple deployment."
+  - q: "What does the A.W.P.C.P. website do?"
+    a: "It is used to organise Pinhole Photography Day in Barcelona."
 blog-pocallum:
   - q: "How do you migrate 2,353 Blogger posts to Hugo without losing URLs?"
     a: "We kept every URL with 1:1 parity and removed the database and dependencies."
