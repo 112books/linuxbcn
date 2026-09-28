@@ -1,0 +1,33 @@
+- q: "What exactly does LinuxBCN do?"
+  a: >-
+    We help artists, cultural collectives and small businesses build and maintain their
+    digital presence: websites, custom applications, migrations and their own infrastructure.
+    We don't apply templates: we design the system that fits each project and hand it over
+    to the people who will use it.
+- q: "Who do you work with?"
+  a: >-
+    Musicians and artists, cultural collectives and venues, independent publishers,
+    neighbourhood media and values-driven small businesses. If your project doesn't fit
+    any of these exactly, let's talk anyway.
+- q: "Why free software instead of a closed platform?"
+  a: >-
+    So the code is auditable and the data is yours. With free software you can know what
+    the system does, change it and take it with you if you ever need to; with a closed
+    platform you have to trust it won't change the terms or use your data without permission.
+- q: "Can I update the website myself?"
+  a: >-
+    Yes. Projects include a simple content manager to edit texts, images and pages without
+    touching code. If you'd rather we handle maintenance, that's an option too.
+- q: "How long does a project take?"
+  a: >-
+    It depends on the scope. A simple website can be live in a few weeks; a migration or
+    a custom application takes longer. Before starting we run a diagnosis and agree on
+    realistic deadlines.
+- q: "What happens once the website is live?"
+  a: >-
+    We offer ongoing support and maintenance by the hour. The system is yours and you can
+    maintain it wherever you like, with no mandatory fees or forced dependency.
+- q: "Where are the website and data hosted?"
+  a: >-
+    On your own server or with a European provider, whichever suits you. We prioritise
+    data sovereignty and avoid services that send data to third countries without guarantees.

@@ -94,4 +94,8 @@ El millor que podem mostrar és el que hem fet:
 
 ---
 
+{{< faq >}}
+
+---
+
 → [Veure solucions per perfil](/solucions/)

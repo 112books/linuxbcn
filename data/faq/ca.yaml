@@ -1,0 +1,35 @@
+- q: "Què fa exactament LinuxBCN?"
+  a: >-
+    Acompanyem artistes, col·lectius culturals i microempreses a construir i mantenir
+    la seva presència digital: webs, aplicacions a mida, migracions i infraestructura pròpia.
+    No apliquem plantilles: dissenyem el sistema que encaixa amb cada projecte i el deixem
+    en mans de qui l'ha de fer servir.
+- q: "Per a qui treballeu?"
+  a: >-
+    Per a músics i artistes, col·lectius i espais culturals, editorials independents,
+    mitjans veïnals i microempreses amb valors. Si el teu projecte no encaixa exactament
+    en cap d'aquests perfils, parlem igualment.
+- q: "Per què programari lliure i no una plataforma tancada?"
+  a: >-
+    Perquè el codi sigui auditable i les dades, teves. Amb programari lliure pots saber
+    què fa el sistema, canviar-lo i endur-te'l si algun dia ho necessites; amb una
+    plataforma tancada has de confiar que no canviarà les condicions ni farà servir
+    les teves dades sense permís.
+- q: "Puc actualitzar el web jo mateix?"
+  a: >-
+    Sí. Els projectes inclouen un gestor de continguts senzill per editar textos, imatges
+    i pàgines sense tocar codi. Si prefereixes que ens encarreguem nosaltres del
+    manteniment, també és una opció.
+- q: "Quant dura un projecte?"
+  a: >-
+    Depèn de l'abast. Un web senzill pot estar en marxa en poques setmanes; una migració
+    o una aplicació a mida requereix més temps. Abans de començar fem una diagnosi i
+    acordem terminis reals.
+- q: "Què passa quan el web ja està en marxa?"
+  a: >-
+    Oferim acompanyament i manteniment per hores. El sistema és teu i el pots mantenir
+    on vulguis, sense quotes obligatòries ni dependència forçada.
+- q: "On s'allotgen el web i les dades?"
+  a: >-
+    Al teu servidor o a un proveïdor europeu, segons el que et convingui. Prioritzem la
+    sobirania de dades i evitem serveis que les envien a tercers països sense garanties.

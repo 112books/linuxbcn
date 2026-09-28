@@ -103,6 +103,27 @@
 }
 </script>
 {{ end }}
+{{ if .IsHome }}
+{{ with index hugo.Data.faq .Site.Language.Lang }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $item := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $item.q | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $item.a | jsonify }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
+{{ end }}
 {{ if and (not .IsHome) (not (eq .Kind "taxonomy")) (not (eq .Kind "term")) }}
 <script type="application/ld+json">
 {
@@ -162,7 +183,6 @@
 <!-- Preload fonts above-the-fold -->
 <link rel="preload" href="{{ "fonts/ibm-plex-sans-v23-latin-300.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ "fonts/ibm-plex-mono-v20-latin-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
-<link rel="dns-prefetch" href="//gc.zgo.at">
 
 <!-- CSS -->
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}

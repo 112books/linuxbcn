@@ -95,4 +95,8 @@ The best we can show is what we've done:
 
 ---
 
+{{< faq >}}
+
+---
+
 → [See solutions by profile](/solucions/)

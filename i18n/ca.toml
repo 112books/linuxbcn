@@ -42,3 +42,6 @@ other = "WordPress"
 
 [related_projects]
 other = "Projectes relacionats"
+
+[faq_title]
+other = "Preguntes freqüents"

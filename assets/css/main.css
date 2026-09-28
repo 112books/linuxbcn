@@ -1925,6 +1925,54 @@ footer a:hover {
 }
 
 /* =====================
+   FAQ
+   ===================== */
+
+.faq {
+  margin: 2.5rem 0 0;
+}
+
+.faq details {
+  border-top: 1px solid var(--border);
+  padding: 0.9rem 0;
+}
+
+.faq details:last-of-type {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--ink-head);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: '+';
+  font-family: var(--mono);
+  color: var(--accent);
+  flex: none;
+}
+
+.faq details[open] summary::after {
+  content: '−';
+}
+
+.faq details p {
+  margin: 0.75rem 0 0;
+  color: var(--ink2);
+}
+
+/* =====================
    CONVICCIONS (qui-som)
    ===================== */
 
