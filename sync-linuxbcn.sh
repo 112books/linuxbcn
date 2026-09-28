@@ -78,7 +78,7 @@ deploy_prod() {
   sync
   build_prod
   print "Pujant a Dinahost via SSH..."
-  rsync -avz --no-times --no-perms --ignore-errors \
+  rsync -rlpz --no-times --ignore-errors \
     --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r \
     --exclude='.git' \
     --exclude='/formularis' \
