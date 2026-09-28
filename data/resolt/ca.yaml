@@ -129,6 +129,8 @@ malditasmaquinas:
     a: "WebApp SPA amb Stripe i notificacions per Telegram, multidioma i WCAG AA."
   - q: "Es poden cobrar pagaments de forma segura?"
     a: "Sí, amb Stripe."
+  - q: "Què és MalditasMaquinas?"
+    a: "El teu servei tècnic telemàtic, que pots contractar per hores."
 migracio-blogger-9barrisimatge:
   - q: "Com migrar 3.006 articles de Blogger sense errors?"
     a: "Migració a Taro Photo App amb zero errors i URLs conservades."

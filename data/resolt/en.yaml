@@ -129,6 +129,8 @@ malditasmaquinas:
     a: "A SPA web app with Stripe and Telegram notifications, multilingual and WCAG AA."
   - q: "Can payments be taken securely?"
     a: "Yes, with Stripe."
+  - q: "What is MalditasMaquinas?"
+    a: "Your remote technical service, which you can hire by the hour."
 migracio-blogger-9barrisimatge:
   - q: "How do you migrate 3,006 Blogger posts without errors?"
     a: "Migration to Taro Photo App with zero errors and URLs preserved."
