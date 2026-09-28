@@ -1973,6 +1973,42 @@ footer a:hover {
 }
 
 /* =====================
+   SIGNATURA (Powered by)
+   ===================== */
+
+.signatura-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.signatura-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.signatura-list a {
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.signatura-list a:hover {
+  color: var(--accent);
+}
+
+.signatura-desc {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink2);
+  margin-top: 0.15rem;
+}
+
+/* =====================
    CONVICCIONS (qui-som)
    ===================== */
 

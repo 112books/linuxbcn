@@ -1,0 +1,11 @@
+{{ $lang := .Site.Language.Lang }}
+{{ with index hugo.Data.signatura $lang }}
+<ul class="signatura-list">
+  {{ range . }}
+  <li>
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+    {{ with .desc }}<span class="signatura-desc">{{ . }}</span>{{ end }}
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

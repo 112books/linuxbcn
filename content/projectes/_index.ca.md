@@ -55,4 +55,4 @@ Organitzacions i projectes amb els quals hem treballat al llarg dels anys, en di
 
 ---
 
-Tots els llocs que construïm porten [**Powered by LinuxBCN**](https://duckduckgo.com/?q=%22Powered+by+LinuxBCN%22) al peu — no per marca, sinó perquè responem del que fem. Cercar la frase us mostrarà una trajectòria més llarga que la que apareix aquí.
+Tots els llocs que construïm porten [**Powered by LinuxBCN**](/powered-by-linuxbcn/) al peu — no per marca, sinó perquè responem del que fem. Cercar la frase us mostrarà una trajectòria més llarga que la que apareix aquí.

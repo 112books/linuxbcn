@@ -55,4 +55,4 @@ Organisations we have worked with at different times and in different capacities
 
 ---
 
-Every site we build carries [**Powered by LinuxBCN**](https://duckduckgo.com/?q=%22Powered+by+LinuxBCN%22) in the footer — not for branding, but because we stand behind what we make. Searching the phrase will show you a track record longer than what appears here.
+Every site we build carries [**Powered by LinuxBCN**](/powered-by-linuxbcn/) in the footer — not for branding, but because we stand behind what we make. Searching the phrase will show you a track record longer than what appears here.

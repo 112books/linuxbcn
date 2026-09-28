@@ -38,7 +38,7 @@ Hem desenvolupat i mantenim webs i aplicacions per a:
 - [**App Positivador**](/projectes/app-positivador/) — aplicació web de revelat fotogràfic
 - I una dotzena de músics, artistes i col·lectius més.
 
-Tots els llocs que construïm porten [**Powered by LinuxBCN**](https://duckduckgo.com/?q=%22Powered+by+LinuxBCN%22) al peu. No per marca, sinó perquè responem del que fem.
+Tots els llocs que construïm porten [**Powered by LinuxBCN**](/powered-by-linuxbcn/) al peu. No per marca, sinó perquè responem del que fem.
 
 ---
 
