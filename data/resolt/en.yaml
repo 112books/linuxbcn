@@ -25,6 +25,8 @@ app-estenop:
     a: "Yes: Estenop uses the phone camera as a light meter and applies reciprocity correction."
   - q: "Does it work offline and without sending data?"
     a: "Yes: it is offline and no data leaves the device."
+  - q: "Can you measure light with a phone?"
+    a: "Estenop is an alternative for measuring light from the phone. Still in beta: it needs polishing, because many phones don't let web apps use their full power."
 app-positivador:
   - q: "Can you see a negative as a positive in real time?"
     a: "Yes, with the device camera and local processing, with no server."

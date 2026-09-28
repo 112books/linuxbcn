@@ -25,6 +25,8 @@ app-estenop:
     a: "Sí: Estenop fa servir la càmera del mòbil com a fotòmetre i aplica la correcció de reciprocitat."
   - q: "Funciona sense connexió i sense enviar dades?"
     a: "Sí: és offline i no surt cap dada del dispositiu."
+  - q: "Es pot mesurar la llum amb el mòbil?"
+    a: "Estenop és una alternativa per mesurar la llum des del telèfon. Encara en fase beta: falta polir-la, perquè molts telèfons no permeten a les webapps accedir a tota la seva potència."
 app-positivador:
   - q: "Es pot veure un negatiu en positiu en temps real?"
     a: "Sí, amb la càmera del dispositiu i processament local, sense servidor."
