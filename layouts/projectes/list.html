@@ -69,26 +69,6 @@
 
 <div class="content">{{ .Content }}</div>
 
-<script>
-(function () {
-  var btns = document.querySelectorAll('.filter-btn');
-  var cards = document.querySelectorAll('#projects-grid .project-card');
-
-  btns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var filter = this.dataset.filter;
-
-      btns.forEach(function (b) { b.classList.remove('active'); });
-      this.classList.add('active');
-
-      cards.forEach(function (card) {
-        var serveis = card.dataset.serveis || '';
-        var show = filter === '*' || serveis.split(' ').indexOf(filter) !== -1;
-        card.style.display = show ? '' : 'none';
-      });
-    });
-  });
-}());
-</script>
+<script src="{{ "js/projectes-filter.js" | relURL }}" defer></script>
 
 {{ end }}

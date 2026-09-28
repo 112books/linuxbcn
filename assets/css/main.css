@@ -1835,6 +1835,8 @@ footer a:hover {
   stroke: var(--accent);
   stroke-width: 3;
   stroke-linecap: round;
+  stroke-dasharray: 113.097;
+  stroke-dashoffset: 113.097;
   transition: stroke-dashoffset 0.1s linear;
 }
 
@@ -2222,4 +2224,17 @@ footer a:hover {
     transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+
+/* =====================
+   CSP: estils extrets d'atributs inline
+   ===================== */
+
+.hidden {
+  display: none !important;
+}
+
+.footer-tagline {
+  color: var(--accent-text);
 }
