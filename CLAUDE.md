@@ -792,7 +792,41 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 - `apps/taro/` no existeix a producció (esborrat el 2026-09-23, gestionat per l'app Taro)
 - De l'auditoria: FAQ + FAQPage schema, decidir `/serveis/` (orfe), og:image a portada, títols amb servei+lloc, Pam a Pam / GiLUG / Softcatalà, Google Business Profile, schema description amb cometes dobles
 
+## 30. Historial de tasques — 2026-09-28
+
+**Seguretat — auditoria i correccions**
+- Auditoria completa (headers, TLS, fitxers exposats, PHP, formularis, DNS).
+- **CRÍTIC:** token de l'API de GoatCounter hardcoded a `static/admin/gc-proxy.php` (repo públic) → fitxer eliminat; token **revocat** per Joan (verificat: retorna 401).
+- **CRÍTIC:** contrasenya del dashboard al JS → `/admin/` protegit amb **HTTP Basic Auth** (`static/admin/.htaccess` + `www/admin/.htpasswd`), contrasenya fora del client, `fetch-analytics.php` autenticat pel servidor (no per token al client).
+- CSP estricta: `script-src 'self'; style-src 'self'` (sense `unsafe-inline`), `img-src 'self' data:`, `object-src 'none'`. Scripts i estils en línia externalitzats (`static/js/{cerca,contacte,404,projectes-filter}.js`, `static/css/404.css`, `static/admin/{admin.js,admin.css}`). CSP pròpia del panell (Chart.js).
+- Headers `Cross-Origin-Opener-Policy`, `Cross-Origin-Resource-Policy`, `X-Permitted-Cross-Domain-Policies`.
+- `security.txt` publicat a `/security.txt`.
+- `sync-linuxbcn.sh`: **IndexNow automàtic** al deploy + permisos llegibles (chmod remot de fitxers 600) + purga de caché.
+
+**Formulari self-hosted (substitueix Web3Forms)**
+- `static/formulari/enviar.php`: validació, honeypot, **rate limit** (5/hora i 20s per IP), no desa PII ni IPs.
+- Correu **HTML** (quoted-printable) amb logotip de text CSS, alternativa en text pla, peu legal amb enllaç a la privacitat, i **confirmació al visitant** en el seu idioma (només si el POST ve del web).
+
+**Accessibilitat**
+- Corregit: contrast (`--ink3`, nou `--accent-text`), focus visible, `prefers-reduced-motion`, formulari (validació accessible, `fieldset`, `autocomplete`), lightbox per teclat, etiqueta del cercador, 404, `aria-current`.
+- `/admin/` WCAG 2.2 AA (contrast, focus, tablist teclat, ARIA, KPIs com a llista).
+- Resultat: **Lighthouse 100** i **W3C 0 errors**.
+
+**Contingut i SEO/AEO**
+- Pàgina `/powered-by-linuxbcn/` amb "Llocs que porten la signatura" i "També hem treballat amb".
+- `seo_title` a les 29 pàgines de projecte; blocs **"Què hem resolt"** amb preguntes + schema `FAQPage` als projectes; `og:image` a gestor-hores (falta votacio-public); **imatges responsives** i WebP; `llms.txt`/`llms-full.txt`; 404 útil; **comptador de converses** (event GoatCounter + KPI al dashboard).
+- `backup-linuxbcn.sh`: còpia de seguretat offsite amb rotació.
+
+**Infra**
+- PHP web 8.2; `curl_close` eliminat (compatibilitat PHP 8.5).
+- BBDD: esborrades (eren de projectes vells) → no cal backup de bases de dades.
+
+**Pendent**
+- `votacio-public`: captura (l'app s'obre l'1/12/2026).
+- Monitoratge extern recomanat: UptimeRobot.
+- Extern: TLS 1.0/1.1 (Dinahosting), `security.txt` al `.well-known` (cal root), contrasenya SSH del compte `linuxbcn`.
+
 ---
 
-*Última actualització: 2026-09-27 (tarda)*
+*Última actualització: 2026-09-28*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
