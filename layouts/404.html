@@ -43,6 +43,11 @@
     </div>
     <a id="lbcn-btn-home" class="lbcn-btn lbcn-btn-primary" href="{{ "/" | relLangURL }}"></a>
     <button id="lbcn-btn-back" class="lbcn-btn lbcn-btn-secondary"></button>
+    <nav class="lbcn-404-links" aria-label="{{ if eq .Lang "ca" }}Enllaços útils{{ else }}Useful links{{ end }}">
+      <a href="{{ "/projectes/" | relLangURL }}">{{ if eq .Lang "ca" }}Projectes{{ else }}Projects{{ end }}</a>
+      <a href="{{ "/solucions/" | relLangURL }}">{{ if eq .Lang "ca" }}Solucions{{ else }}Solutions{{ end }}</a>
+      <a href="{{ "/contacte/" | relLangURL }}">{{ if eq .Lang "ca" }}Contacte{{ else }}Contact{{ end }}</a>
+    </nav>
   </div>
 
   <a id="lbcn-logo" href="{{ "/" | relLangURL }}" aria-label="LinuxBCN — inici">LinuxBCN</a>
