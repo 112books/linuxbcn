@@ -1,5 +1,6 @@
 ---
 title: "Positivador WebApp"
+seo_title: "Positivador: invertir negatius en temps real | LinuxBCN"
 slug: "app-positivador"
 weight: 4
 year: 2026

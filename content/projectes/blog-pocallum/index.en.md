@@ -1,5 +1,6 @@
 ---
 title: "Blog de Pocallum — From Blogger to WordPress, from WordPress to Hugo"
+seo_title: "Blog de Pocallum: from Blogger to Hugo, 2,353 posts | LinuxBCN"
 slug: "blog-pocallum"
 weight: 3
 year: 2026

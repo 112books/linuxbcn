@@ -1,5 +1,6 @@
 ---
 title: "MalditasMaquinas"
+seo_title: "MalditasMaquinas: on-demand consultancy web app | LinuxBCN"
 slug: "malditasmaquinas"
 weight: 10
 year: 2025

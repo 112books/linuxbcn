@@ -1,5 +1,6 @@
 ---
 title: "Estenop — Pinhole calculator"
+seo_title: "Estenop: pinhole exposure calculator | LinuxBCN"
 slug: "app-estenop"
 weight: 3
 year: 2026

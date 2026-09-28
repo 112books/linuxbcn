@@ -1,5 +1,6 @@
 ---
 title: "A.W.P.C.P."
+seo_title: "A.W.P.C.P.: pinhole photography community web | LinuxBCN"
 slug: "awpcp"
 weight: 10
 year: 2024

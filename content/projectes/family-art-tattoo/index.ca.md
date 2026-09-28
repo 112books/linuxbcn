@@ -1,5 +1,6 @@
 ---
 title: "Family Art Tattoo"
+seo_title: "Family Art Tattoo: web i SEO a Barcelona | LinuxBCN"
 slug: "family-art-tattoo"
 weight: 20
 year: 2022

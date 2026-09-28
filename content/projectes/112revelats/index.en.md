@@ -1,5 +1,6 @@
 ---
 title: "112 Revelats"
+seo_title: "112 Revelats: lightweight photography website | LinuxBCN"
 slug: "112revelats"
 weight: 9
 year: 2025

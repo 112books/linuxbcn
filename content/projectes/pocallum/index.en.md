@@ -1,5 +1,6 @@
 ---
 title: "Pocallum"
+seo_title: "Pocallum: website for a cultural photography agency | LinuxBCN"
 slug: "pocallum"
 weight: 13
 year: 2025

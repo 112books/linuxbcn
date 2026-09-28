@@ -1,5 +1,6 @@
 ---
 title: "Llumàtics"
+seo_title: "Llumatics: website for analogue photography | LinuxBCN"
 slug: "llumatics"
 weight: 8
 year: 2026

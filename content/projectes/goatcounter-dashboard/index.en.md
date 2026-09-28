@@ -1,5 +1,6 @@
 ---
 title: "GoatCounter Dashboard"
+seo_title: "GoatCounter Dashboard: cookieless analytics | LinuxBCN"
 slug: "goatcounter-dashboard"
 weight: 15
 year: 2026

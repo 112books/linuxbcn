@@ -1,5 +1,6 @@
 ---
 title: "Audience vote — anonymous, in-person voting for exhibitions"
+seo_title: "Audience vote: on-site voting app | LinuxBCN"
 slug: "votacio-public"
 weight: 3
 year: 2026

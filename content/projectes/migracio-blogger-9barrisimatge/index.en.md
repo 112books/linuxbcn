@@ -1,5 +1,6 @@
 ---
 title: "9 Barris Imatge — from Blogger to Taro Photo App"
+seo_title: "9 Barris Imatge: from Blogger to Taro, 3,006 posts | LinuxBCN"
 slug: "migracio-blogger-9barrisimatge"
 weight: 3
 year: 2026

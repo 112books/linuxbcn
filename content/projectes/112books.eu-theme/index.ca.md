@@ -1,5 +1,6 @@
 ---
 title: "El nou theme de 112books.eu"
+seo_title: "Tema WordPress FSE per a 112books.eu | LinuxBCN"
 slug: "112books-theme"
 weight: 2
 year: 2026

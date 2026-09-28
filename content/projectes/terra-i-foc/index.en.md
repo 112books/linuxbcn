@@ -1,5 +1,6 @@
 ---
 title: "Terra i Foc: Catalan artisanal ceramics, now online"
+seo_title: "Terra i Foc: artisan ceramics website, Penedès | LinuxBCN"
 slug: "terra-i-foc"
 weight: 3
 year: 2026

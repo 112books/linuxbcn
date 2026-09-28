@@ -1,5 +1,6 @@
 ---
 title: "Machiroku"
+seo_title: "Machiroku: web per a restaurant japonès | LinuxBCN"
 slug: "machiroku"
 weight: 6
 year: 2025

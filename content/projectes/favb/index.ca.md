@@ -1,5 +1,6 @@
 ---
 title: "FAVB"
+seo_title: "FAVB: web per a les associacions de veïns | LinuxBCN"
 slug: "favb"
 weight: 12
 year: 2024

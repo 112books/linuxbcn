@@ -1,5 +1,6 @@
 ---
 title: "Bratia"
+seo_title: "Bratia: website for a Barcelona rock band | LinuxBCN"
 slug: "bratia"
 weight: 5
 year: 2025

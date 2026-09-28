@@ -1,5 +1,6 @@
 ---
 title: "Terra i Foc: ceràmica artesanal catalana, ara en línia"
+seo_title: "Terra i Foc: web per a ceràmica artesanal | LinuxBCN"
 slug: "terra-i-foc"
 weight: 3
 year: 2026

@@ -1,5 +1,6 @@
 ---
 title: "A.W.P.C.P."
+seo_title: "A.W.P.C.P.: web per a fotografia estenopeica | LinuxBCN"
 slug: "awpcp"
 weight: 10
 year: 2024

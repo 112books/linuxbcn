@@ -1,5 +1,6 @@
 ---
 title: "Taro Photo App — website, CMS and voting for photography collectives"
+seo_title: "Taro Photo App: website and voting for collectives | LinuxBCN"
 slug: "taro-photo-app"
 weight: 3
 year: 2026

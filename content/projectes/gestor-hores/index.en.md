@@ -1,5 +1,6 @@
 ---
 title: "Time Tracker"
+seo_title: "Time Tracker: per-project time tracking | LinuxBCN"
 slug: "gestor-hores"
 weight: 5
 year: 2026

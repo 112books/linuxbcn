@@ -1,5 +1,6 @@
 ---
 title: "Carrer.cat"
+seo_title: "Carrer.cat: web per a la revista veïnal | LinuxBCN"
 slug: "carrer"
 weight: 11
 year: 2024

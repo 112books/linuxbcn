@@ -1,5 +1,6 @@
 ---
 title: "Taro Photo App — web, gestor i votació per a col·lectius fotogràfics"
+seo_title: "Taro Photo App: web i votació per a col·lectius | LinuxBCN"
 slug: "taro-photo-app"
 weight: 3
 year: 2026

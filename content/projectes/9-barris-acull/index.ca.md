@@ -1,5 +1,6 @@
 ---
 title: "9 Barris Acull"
+seo_title: "9 Barris Acull: web de gestió RGPD a Barcelona | LinuxBCN"
 slug: "9-barris-acull"
 weight: 21
 year: 2019

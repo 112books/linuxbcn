@@ -1,5 +1,6 @@
 ---
 title: "Ressona — Digital Identity for Artists"
+seo_title: "Ressona: digital identity for artists | LinuxBCN"
 slug: "ressona"
 weight: 3
 year: 2026

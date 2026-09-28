@@ -1,5 +1,6 @@
 ---
 title: "Gestor d'hores"
+seo_title: "Gestor d'hores: seguiment de temps per projecte | LinuxBCN"
 slug: "gestor-hores"
 weight: 5
 year: 2026

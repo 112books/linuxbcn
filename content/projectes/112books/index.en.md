@@ -1,5 +1,6 @@
 ---
 title: "112Books"
+seo_title: "112Books: website for a photography publisher | LinuxBCN"
 slug: "112books"
 weight: 8
 year: 2025

@@ -1,5 +1,6 @@
 ---
 title: "Pocallum — Cultural Photography with a Renewed Digital Presence"
+seo_title: "Pocallum: WordPress-to-Hugo migration | LinuxBCN"
 slug: "pocallum-estatic"
 weight: 3
 year: 2026

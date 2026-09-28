@@ -1,5 +1,6 @@
 ---
 title: "Konsento — Assembly Governance for Community Spaces"
+seo_title: "Konsento: assembly governance for collectives | LinuxBCN"
 description: "Konsento is a free software web application that helps collectives, cooperatives and self-managed spaces make decisions in a transparent, structured and accessible way."
 lastmod: "2026-08-17"
 slug: "konsento"

@@ -1,5 +1,6 @@
 ---
 title: "LinuxBCN.com"
+seo_title: "LinuxBCN.com: our own site, built with Hugo | LinuxBCN"
 slug: "linuxbcn-arquitectura-sistema-digital"
 weight: 14
 year: 2026

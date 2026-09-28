@@ -1,5 +1,6 @@
 ---
 title: "LinuxBCN Analytics for GoatCounter"
+seo_title: "Analytics per a GoatCounter: plugin WordPress | LinuxBCN"
 slug: "LinuxBCN-Analytics-for-GoatCounter"
 weight: 3
 year: 2026

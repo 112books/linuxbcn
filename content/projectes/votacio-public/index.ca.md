@@ -1,5 +1,6 @@
 ---
 title: "Votació del públic — vot anònim i presencial per a exposicions"
+seo_title: "Votació del públic: app de vot presencial | LinuxBCN"
 slug: "votacio-public"
 weight: 3
 year: 2026

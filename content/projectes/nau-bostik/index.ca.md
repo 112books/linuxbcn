@@ -1,5 +1,6 @@
 ---
 title: "Nau Bostik"
+seo_title: "Nau Bostik: recuperació i web d'un espai cultural | LinuxBCN"
 slug: "nau-bostik"
 weight: 7
 year: 2025

@@ -1,5 +1,6 @@
 ---
 title: "Pocallum — Fotografia cultural amb presència digital renovada"
+seo_title: "Pocallum: migració de WordPress a Hugo | LinuxBCN"
 slug: "pocallum-estatic"
 weight: 3
 year: 2026
