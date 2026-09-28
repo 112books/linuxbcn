@@ -214,7 +214,13 @@
     const data = new FormData(form);
     fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
       .then(r => {
-        if (r.ok) { step2.classList.remove('active'); stepDone.classList.add('active'); }
+        if (r.ok) {
+          step2.classList.remove('active');
+          stepDone.classList.add('active');
+          if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+            window.goatcounter.count({ path: '/formulari-enviat', title: 'Formulari enviat', event: true });
+          }
+        }
         else { formStatus.textContent = MSG.send; }
       })
       .catch(() => { formStatus.textContent = MSG.send; });

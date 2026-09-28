@@ -124,6 +124,7 @@ if (isset($hits_raw['__error'])) {
 // ── Processa hits (lògica equivalent al Python) ───────────────────────────────
 
 $hits_by_day = [];
+$consultes   = 0;
 $by_section  = [];
 $by_lang     = [];
 $hits_pages  = [];
@@ -152,7 +153,11 @@ foreach (($hits_raw['hits'] ?? []) as $path_item) {
     }
 
     if ($path_total > 0) {
-        $hits_pages[$path] = ($hits_pages[$path] ?? 0) + $path_total;
+        if (strpos($path, 'formulari-enviat') !== false) {
+            $consultes += $path_total;
+        } else {
+            $hits_pages[$path] = ($hits_pages[$path] ?? 0) + $path_total;
+        }
     }
 }
 
@@ -197,6 +202,7 @@ $output = [
     'period'      => ['start' => $start, 'end' => $end],
     'total'       => $total_real ?? $total,
     'total_unique'=> 0,
+    'consultes'   => $consultes,
     'hits_by_day' => $hbd_arr,
     'hits'        => $hits_list,
     'by_lang'     => $by_lang,

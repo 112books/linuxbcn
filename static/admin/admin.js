@@ -174,6 +174,7 @@ function _renderAllBase(data) {
 
   const daysWithData = hbd.filter(d => d.count > 0).length;
   setText('kpi-pps', daysWithData > 0 ? (total / daysWithData).toFixed(1) : '—');
+  setText('kpi-consultes', fmt(data.consultes || 0));
 
   setTopbarGen(data.generated);
 
