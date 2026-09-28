@@ -1,5 +1,6 @@
 ---
 title: "Projects"
+seo_title: "Projects: custom websites and applications | LinuxBCN"
 subtitle: "Real work for real projects"
 intro: "The best we can show is what we've done. We have over 25 years of experience working with cultural, artistic and social projects in Barcelona and beyond."
 cta_url: "/contacte/"

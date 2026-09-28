@@ -1,5 +1,6 @@
 ---
 title: "Projectes"
+seo_title: "Projectes: webs i aplicacions a mida | LinuxBCN"
 subtitle: "Feina real per a projectes reals"
 intro: "El millor que podem explicar és el que hem fet. Portem més de 25 anys treballant amb projectes culturals, artístics i socials a Barcelona i més enllà."
 cta_url: "/contacte/"

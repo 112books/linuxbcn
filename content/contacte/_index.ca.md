@@ -1,5 +1,6 @@
 ---
 title: "Parlem"
+seo_title: "Contacte: parlem del teu projecte digital | LinuxBCN"
 subtitle: "Explica'ns on ets i on voldries arribar"
 description: "Contacta amb LinuxBCN per parlar del teu projecte digital. Consultoria d'identitat digital a Barcelona. Resposta en 24 hores."
 lastmod: "2026-06-24"

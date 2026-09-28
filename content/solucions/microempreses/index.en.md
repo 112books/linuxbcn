@@ -1,5 +1,6 @@
 ---
 title: "Solutions for values-driven businesses"
+seo_title: "Websites for small businesses and freelancers | LinuxBCN"
 subtitle: "Your own digital presence, coherent and with fewer unnecessary dependencies"
 slug: "microempreses"
 description: "Custom digital presence for freelancers, local businesses and micro-enterprises in Barcelona. Free software, no unnecessary subscriptions. LinuxBCN."

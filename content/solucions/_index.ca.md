@@ -1,5 +1,6 @@
 ---
 title: "Solucions"
+seo_title: "Solucions digitals a mida a Barcelona | LinuxBCN"
 slug: "solucions"
 description: "Solucions digitals a mida per a músics, col·lectius culturals i negocis amb valors a Barcelona. Programari lliure, sense dependències de tercers."
 lastmod: "2026-06-24"

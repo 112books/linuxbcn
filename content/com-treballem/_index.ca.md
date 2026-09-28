@@ -1,5 +1,6 @@
 ---
 title: "Com treballem"
+seo_title: "Com treballem: metodologia i bossa d'hores | LinuxBCN"
 subtitle: "Acompanyament, no intervenció"
 description: "Metodologia LinuxBCN: escolta, diagnosi i construcció a mida. Bossa d'hores, programari lliure i independència tecnològica per a projectes a Barcelona i Catalunya."
 lastmod: "2026-06-24"

@@ -1,5 +1,6 @@
 ---
 title: "Solucions per a artistes i músics"
+seo_title: "Web per a músics i artistes a Barcelona | LinuxBCN"
 subtitle: "Una web que és teva de debò, dissenyada des de zero"
 slug: "musics"
 description: "Web per a músics i bandes a Barcelona: agenda automàtica, discografia, portfolio a mida. Sense plantilles. LinuxBCN, més de 25 anys d'experiència."

@@ -1,5 +1,6 @@
 ---
 title: "Let's talk"
+seo_title: "Contact: let's talk about your digital project | LinuxBCN"
 subtitle: "Tell us where you are and where you'd like to go"
 description: "Contact LinuxBCN to talk about your digital project. Digital identity consultancy in Barcelona. Response within 24 hours."
 lastmod: "2026-06-24"

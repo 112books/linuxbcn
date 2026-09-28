@@ -1,5 +1,6 @@
 ---
 title: "Solutions for cultural entities and collectives"
+seo_title: "Platforms for cultural entities and collectives | LinuxBCN"
 subtitle: "Free tools, digital sovereignty and coherent communication"
 slug: "collectius"
 description: "Digital platforms for cultural entities and associations in Barcelona. Digital sovereignty, content management, privacy by design. LinuxBCN."

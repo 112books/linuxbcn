@@ -1,5 +1,6 @@
 ---
 title: "How we work"
+seo_title: "How we work: methodology and hour packages | LinuxBCN"
 subtitle: "Accompaniment, not intervention"
 description: "LinuxBCN methodology: listening, diagnosis and custom-built systems. Hours packages, free software and technological independence. Barcelona."
 lastmod: "2026-06-24"

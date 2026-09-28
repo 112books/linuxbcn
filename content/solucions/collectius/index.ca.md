@@ -1,5 +1,6 @@
 ---
 title: "Solucions per a entitats i col·lectius culturals"
+seo_title: "Webs per a col·lectius i entitats culturals | LinuxBCN"
 subtitle: "Una plataforma de gestió, no només un web informatiu"
 slug: "collectius"
 description: "Plataformes digitals per a entitats culturals i associacions a Barcelona. Sobirania digital, gestió de continguts, privacitat per disseny. LinuxBCN."
