@@ -3,6 +3,8 @@
     a: "We reorganised the site into three clear pillars (catalogue, authors, news) and built a block FSE theme from scratch, with no third-party templates."
   - q: "Can the site be edited without a developer?"
     a: "Yes: the FSE theme lets you edit templates and content from within WordPress using native blocks."
+  - q: "Why was WordPress kept in this case?"
+    a: "We gave personality to a WordPress that had the generic 'look' of just another heavy WordPress. We kept it so as not to migrate the whole virtual basket system, but now it stands out and fulfils its purpose far better."
 112books:
   - q: "How do you give a photography publisher its own digital presence?"
     a: "A website of its own with a structured catalogue and digital identity, without relying on third-party platforms."

@@ -3,6 +3,8 @@
     a: "Vam reorganitzar el web en tres pilars clars (catàleg, autors i notícies) i vam construir un tema bloc FSE des de zero, sense plantilles de tercers."
   - q: "Es pot editar el web sense dependre d'un tècnic?"
     a: "Sí: el tema FSE permet editar plantilles i continguts des del mateix WordPress, amb blocs natius."
+  - q: "Per què s'ha mantingut WordPress en aquest cas?"
+    a: "Vam donar personalitat a un WordPress que tenia el 'look' genèric de qualsevol WordPress pesat. El mantenim per no haver de migrar tot el sistema de cistella virtual, però ara crida l'atenció i acompleix molt millor la seva finalitat."
 112books:
   - q: "Com donar presència digital pròpia a una editorial de fotografia?"
     a: "Web propi amb catàleg estructurat i identitat digital, sense dependre de plataformes de tercers."
