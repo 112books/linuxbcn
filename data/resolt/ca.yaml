@@ -139,6 +139,8 @@ pocallum:
     a: "Web i presència digital amb programari lliure."
   - q: "Es poden gestionar les galeries?"
     a: "Sí, amb un gestor senzill."
+  - q: "Què és el més important en un web de fotografia?"
+    a: "A Pocallum la imatge ho és tot, però el web havia de ser igualment lleuger: qualitat visual sense renunciar a la velocitat."
 ressona:
   - q: "Com construir la identitat digital d'un artista?"
     a: "Plataforma amb identitat visual, press kit, web i comunicació."

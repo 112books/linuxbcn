@@ -139,6 +139,8 @@ pocallum:
     a: "A website and digital presence with free software."
   - q: "Can the galleries be managed?"
     a: "Yes, with a simple manager."
+  - q: "What matters most in a photography website?"
+    a: "At Pocallum, the image is everything — but the site had to stay lightweight too: visual quality without giving up speed."
 ressona:
   - q: "How do you build an artist's digital identity?"
     a: "A platform with visual identity, press kit, website and communication."
