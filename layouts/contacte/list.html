@@ -27,6 +27,7 @@
 
       <form id="contacte-form" class="contacte-form" action="{{ "formulari/enviar.php" | relURL }}" method="POST" novalidate data-contacte="{{ dict "lang" .Site.Language.Lang | jsonify }}">
 
+        <input type="hidden" name="lang" value="{{ .Site.Language.Lang }}">
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
 
         <!-- PAS 1 -->
