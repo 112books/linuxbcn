@@ -815,6 +815,7 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 **Contingut i SEO/AEO**
 - Pàgina `/powered-by-linuxbcn/` amb "Llocs que porten la signatura" i "També hem treballat amb".
 - `seo_title` a les 29 pàgines de projecte; blocs **"Què hem resolt"** amb preguntes + schema `FAQPage` als projectes; `og:image` a gestor-hores (falta votacio-public); **imatges responsives** i WebP; `llms.txt`/`llms-full.txt`; 404 útil; **comptador de converses** (event GoatCounter + KPI al dashboard).
+- Blocs **"Què hem resolt"** completats als **29 projectes** amb una **pregunta de benefici final** (sobirania de dades, CMS a mida, "menys és més", referent sectorial…). **13 meta descripcions escurçades** a ≤160 caràcters perquè no es tallin als resultats de cerca.
 - `backup-linuxbcn.sh`: còpia de seguretat offsite amb rotació.
 
 **Infra**
