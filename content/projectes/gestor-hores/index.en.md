@@ -7,6 +7,7 @@ date: 2026-08-11
 client: "LinuxBCN"
 sector: "tools"
 description: "Time tracking for client projects, built directly into Claude Code. Automatic per-session logging, visual reports and sync through Codeberg."
+image: "gestor-hores-central.png"
 lastmod: "2026-09-27"
 draft: false
 serveis: ["cas-propi", "productivitat"]
