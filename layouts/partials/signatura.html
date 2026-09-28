@@ -15,7 +15,7 @@
 <ul class="signatura-list">
   {{ range . }}
   <li>
-    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+    {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>{{ else }}<span class="signatura-name">{{ .name }}</span>{{ end }}
     {{ with .desc }}<span class="signatura-desc">{{ . }}</span>{{ end }}
   </li>
   {{ end }}

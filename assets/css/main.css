@@ -2070,7 +2070,8 @@ footer a:hover {
   border-bottom: 1px solid var(--border);
 }
 
-.signatura-list a {
+.signatura-list a,
+.signatura-name {
   font-weight: 500;
   color: var(--ink);
   text-decoration: none;
