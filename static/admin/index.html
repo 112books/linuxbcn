@@ -385,17 +385,6 @@
 </head>
 <body>
 
-<!-- ═══ LOGIN ════════════════════════════════════════════ -->
-<div id="login" role="main" aria-label="Accés a les estadístiques">
-  <form id="login-form" class="login-box" novalidate>
-    <div class="login-logo" aria-hidden="true">LINUX<em>BCN</em> / STATS</div>
-    <label for="pwd" class="visually-hidden">Contrasenya d'accés</label>
-    <input id="pwd" type="password" placeholder="·····" autocomplete="current-password" autofocus>
-    <button type="submit" class="btn">→ entrar</button>
-    <div id="login-err" role="alert" aria-live="assertive" aria-atomic="true"></div>
-  </form>
-</div>
-
 <!-- ═══ DASHBOARD ════════════════════════════════════════ -->
 <div id="dashboard">
 
@@ -550,7 +539,6 @@
 /* ═══════════════════════════════════════════════════════════
    CONFIG
 ═══════════════════════════════════════════════════════════ */
-const PASSWORD    = 'LinuxBCN2026';
 const CACHE_URL   = 'analytics-cache.json';
 const FETCH_URL   = 'fetch-analytics.php';
 const SECTION_NAMES = {
@@ -575,35 +563,16 @@ let chartGroup = 'day';
 
 /* ═══════════════════════════════════════════════════════════
    AUTH
+   L'accés està protegit pel servidor (HTTP Basic Auth a /admin/).
+   No hi ha cap contrasenya al costat client.
 ═══════════════════════════════════════════════════════════ */
-document.getElementById('login-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const v = document.getElementById('pwd').value;
-  if (v === PASSWORD) {
-    sessionStorage.setItem('gc_ok', '1');
-    showDashboard();
-  } else {
-    const err = document.getElementById('login-err');
-    err.textContent = 'contrasenya incorrecta';
-    document.getElementById('pwd').value = '';
-    document.getElementById('pwd').focus();
-  }
-});
-
 document.getElementById('btn-logout').addEventListener('click', () => {
-  sessionStorage.removeItem('gc_ok');
-  if (visitsChart) { visitsChart.destroy(); visitsChart = null; }
-  globalData = null;
-  document.getElementById('dashboard').style.display = 'none';
-  document.getElementById('login').style.display = 'flex';
-  document.getElementById('pwd').value = '';
-  document.getElementById('pwd').focus();
+  location.reload();
 });
 
-if (sessionStorage.getItem('gc_ok')) showDashboard();
+showDashboard();
 
 function showDashboard() {
-  document.getElementById('login').style.display     = 'none';
   document.getElementById('dashboard').style.display = 'block';
   document.getElementById('dash-main').focus();
   loadCache();
@@ -675,7 +644,7 @@ document.getElementById('btn-refresh').addEventListener('click', async () => {
   clearBanner();
   setBanner('loading', 'Obtenint dades de GoatCounter… (~5 segons)');
   try {
-    const r = await fetch(FETCH_URL + '?token=' + PASSWORD + '&t=' + Date.now());
+    const r = await fetch(FETCH_URL + '?t=' + Date.now());
     const result = await r.json();
     if (!r.ok || result.error) throw new Error(result.error || 'Error al servidor');
     clearBanner();

@@ -3,7 +3,8 @@
  * Genera analytics-cache.json a partir de la API de GoatCounter.
  * Lògica portada de fetch_goatcounter_analytics.py (goatcounter-dashboard).
  *
- * Ús: GET /admin/fetch-analytics.php?token=<PASSWORD>
+ * Ús: GET /admin/fetch-analytics.php
+ *     L'accés està protegit per HTTP Basic Auth (static/admin/.htaccess).
  *     → escriu analytics-cache.json al mateix directori
  *     → retorna JSON {status, total, generated} o {error}
  */
@@ -11,8 +12,9 @@ header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 set_time_limit(90);
 
-$token = trim($_GET['token'] ?? '');
-if ($token !== 'LinuxBCN2026') {
+// Defensa en profunditat: només si el servidor ha autenticat la petició (Basic Auth)
+$user = $_SERVER['PHP_AUTH_USER'] ?? $_SERVER['REMOTE_USER'] ?? '';
+if ($user === '') {
     http_response_code(403);
     echo json_encode(['error' => 'Accés denegat']);
     exit;

@@ -1,0 +1,12 @@
+# Accés restringit al dashboard d'estadístiques.
+# Usuari i contrasenya: www/admin/.htpasswd (fitxer fora del repo, xifrat APR1).
+# Necessari que sigui llegible per Apache (www-data), que no pot travessar /home/linuxbcn0.
+AuthType Basic
+AuthName "LinuxBCN admin"
+AuthUserFile /home/linuxbcn0/www/admin/.htpasswd
+Require valid-user
+
+# El fitxer de credencials no s'ha de poder descarregar mai
+<Files ".htpasswd">
+  Require all denied
+</Files>

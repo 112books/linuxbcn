@@ -1,0 +1,4 @@
+Contact: mailto:hola@linuxbcn.com
+Expires: 2027-09-28T00:00:00.000Z
+Preferred-Languages: ca, en
+Canonical: https://linuxbcn.com/.well-known/security.txt
