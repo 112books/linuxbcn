@@ -122,3 +122,8 @@ Options -Indexes
   Header set Pragma "no-cache"
   Header unset ETag
 </Files>
+
+# ─── HTML sempre fresc (evita que el proxy serveixi versions antigues) ──────
+<FilesMatch "\.html$">
+  Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
