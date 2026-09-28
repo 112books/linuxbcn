@@ -4,8 +4,16 @@
   {{ range $images }}
     {{ $img := $.Page.Resources.GetMatch . }}
     {{ if $img }}
+    {{ $w1 := $img.Resize "400x webp" }}
+    {{ $w2 := $img.Resize "800x webp" }}
+    {{ $w3 := $img.Resize "1400x webp" }}
     <figure class="gallery-item">
-      <img src="{{ $img.RelPermalink }}" alt="{{ $img.Title }}" class="lightbox-trigger" loading="lazy">
+      <img src="{{ $w2.RelPermalink }}"
+           srcset="{{ $w1.RelPermalink }} 400w, {{ $w2.RelPermalink }} 800w, {{ $w3.RelPermalink }} 1400w"
+           sizes="(max-width: 640px) 100vw, 33vw"
+           alt="{{ $img.Title }}"
+           width="{{ $w2.Width }}" height="{{ $w2.Height }}"
+           loading="lazy" class="lightbox-trigger">
     </figure>
     {{ end }}
   {{ end }}

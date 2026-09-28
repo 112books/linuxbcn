@@ -34,7 +34,8 @@
         {{ $img := $proj.Resources.GetMatch . }}
         {{ if $img }}
           {{ $thumb := $img.Resize "600x webp" }}
-          <img src="{{ $thumb.RelPermalink }}" alt="{{ $proj.Title }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy">
+          {{ $thumb2x := $img.Resize "1200x webp" }}
+          <img src="{{ $thumb.RelPermalink }}" srcset="{{ $thumb.RelPermalink }} 600w, {{ $thumb2x.RelPermalink }} 1200w" sizes="(max-width: 540px) 100vw, 40vw" alt="{{ $proj.Title }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy">
         {{ else }}
           {{ $slug := path.Base (path.Dir $proj.File.Path) }}
           {{ $caPath := printf "/ca/projectes/%s/%s" $slug . }}
