@@ -83,6 +83,8 @@ favb:
     a: "Web i comunicació digital per a l'organització, amb contingut gestionable."
   - q: "Es respecta la sobirania de dades?"
     a: "Sí: allotjament propi i cap servei de tercers."
+  - q: "Què hi trobaràs a favb.cat?"
+    a: "Totes les notícies i projectes de la FAVB."
 gestor-hores:
   - q: "Com saber quantes hores dediques a cada projecte?"
     a: "Registre automàtic per sessió, amb reports visuals i sincronització via Codeberg."

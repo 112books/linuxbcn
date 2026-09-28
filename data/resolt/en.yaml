@@ -83,6 +83,8 @@ favb:
     a: "Website and digital communication for the organisation, with manageable content."
   - q: "Is data sovereignty respected?"
     a: "Yes: our own hosting, no third-party services."
+  - q: "What will you find at favb.cat?"
+    a: "All the news and projects of the FAVB."
 gestor-hores:
   - q: "How do you know how many hours you spend on each project?"
     a: "Automatic per-session logging, with visual reports and sync through Codeberg."
