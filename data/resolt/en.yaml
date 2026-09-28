@@ -82,6 +82,8 @@ konsento:
     a: "An assembly governance application for cooperatives and self-managed spaces."
   - q: "Is it accessible?"
     a: "Yes: designed for collective use and WCAG-compliant."
+  - q: "Does it work in a space with very diverse people?"
+    a: "Yes: we have built a decisive, lightweight piece of software that runs on a very modest server and covers the whole governance process in a space shared by a large group of very different people."
 LinuxBCN-Analytics-for-GoatCounter:
   - q: "How do you integrate cookieless analytics into WordPress?"
     a: "An open-source plugin that connects GoatCounter to the WordPress dashboard."
