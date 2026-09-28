@@ -81,8 +81,9 @@ ErrorDocument 404 /ca/404.html
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
-  # CSP: self + GoatCounter + unsafe-inline (necessari per 404 animada i admin dashboard)
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' gc.zgo.at 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' gc.zgo.at linuxbcn.goatcounter.com https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com"
+  # CSP: self + unsafe-inline (necessari per 404 animada i admin dashboard)
+  # GoatCounter s'usa via proxy first-party /v/index.php (mateix origen): no cal gc.zgo.at
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com"
 
   Header always unset X-Powered-By
   Header always unset Server
