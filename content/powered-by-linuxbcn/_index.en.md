@@ -9,7 +9,7 @@ draft: false
 
 Every site we build carries **Powered by LinuxBCN** in the footer. Not for branding, but because we stand behind what we make.
 
-This is the list of sites that currently carry the signature:
+Below are the sites carrying the signature and, after them, other projects we have worked or work with.
 
 {{< signatura >}}
 

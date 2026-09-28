@@ -9,7 +9,7 @@ draft: false
 
 Tots els llocs que construïm porten **Powered by LinuxBCN** al peu. No per marca, sinó perquè responem del que fem.
 
-Aquesta és la llista de llocs que actualment porten la signatura:
+A continuació hi ha els llocs que porten la signatura i, després, altres projectes amb qui hem treballat o amb qui treballem.
 
 {{< signatura >}}
 

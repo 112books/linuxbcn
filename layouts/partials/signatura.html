@@ -1,5 +1,17 @@
 {{ $lang := .Site.Language.Lang }}
 {{ with index hugo.Data.signatura $lang }}
+<h2>{{ i18n "signatura_list_title" }}</h2>
+<ul class="signatura-list">
+  {{ range . }}
+  <li>
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+    {{ with .desc }}<span class="signatura-desc">{{ . }}</span>{{ end }}
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
+{{ with index hugo.Data.colaboracions $lang }}
+<h2>{{ i18n "colaboracions_title" }}</h2>
 <ul class="signatura-list">
   {{ range . }}
   <li>
