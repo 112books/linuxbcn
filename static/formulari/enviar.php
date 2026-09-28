@@ -14,6 +14,38 @@ function out($code, $data) {
     exit;
 }
 
+function client_ip() {
+    $real = trim(isset($_SERVER['HTTP_X_REAL_IP']) ? $_SERVER['HTTP_X_REAL_IP'] : '');
+    if (filter_var($real, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) return $real;
+    $xff = array_reverse(array_map('trim', explode(',', isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : '')));
+    foreach ($xff as $ip) {
+        if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) return $ip;
+    }
+    return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+}
+
+function rate_limited() {
+    $ip = client_ip();
+    if ($ip === '') return false;
+    $dir = sys_get_temp_dir() . '/lbcn-form';
+    if (!is_dir($dir)) @mkdir($dir, 0700, true);
+    if (!is_dir($dir)) return false;
+    $file = $dir . '/' . hash('sha256', $ip);
+    $now  = time();
+    $hits = array();
+    if (is_file($file)) {
+        $data = json_decode((string)@file_get_contents($file), true);
+        if (is_array($data)) {
+            foreach ($data as $t) { if (is_int($t) && $t > $now - 3600) $hits[] = $t; }
+        }
+    }
+    if ($hits && ($now - max($hits)) < 20) return true;   // minim 20s entre enviaments
+    if (count($hits) >= 5) return true;                    // maxim 5 per hora
+    $hits[] = $now;
+    @file_put_contents($file, json_encode($hits), LOCK_EX);
+    return false;
+}
+
 function email_frame($lang, $title, $intro, $rows, $missatge, $legal) {
     $logo = '<span style="font-family:Helvetica,Arial,sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.6px;color:#111110;">Linux<span style="color:#d4600a;">BCN</span></span>';
     $tag  = '<div style="font-family:Menlo,Consolas,monospace;font-size:11px;color:#6f6f6a;margin-top:5px;">' . ($lang === 'en' ? 'Tailored digital solutions' : 'Solucions digitals a mida') . '</div>';
@@ -61,6 +93,11 @@ if ($ref && $ref !== 'linuxbcn.com' && $ref !== 'www.linuxbcn.com') {
 
 if (trim((string)(isset($_POST['botcheck']) ? $_POST['botcheck'] : '')) !== '') {
     out(200, array('ok' => true));
+}
+
+// Limit d'us: 5 enviaments per hora i 20s entre enviaments per IP
+if (rate_limited()) {
+    out(429, array('error' => 'Massa enviaments seguits. Torna-ho a provar mes tard.'));
 }
 
 $nom      = trim((string)(isset($_POST['nom']) ? $_POST['nom'] : ''));
