@@ -12,8 +12,10 @@ Idiomes: Català (principal), Anglès
 
 ## Sobre LinuxBCN
 
-- [Qui som](https://linuxbcn.com/ca/qui-som/) — [EN](https://linuxbcn.com/en/qui-som/): Joan Martínez Serres (Joan Linux), consultor d'identitat digital fundat el 1999. Més de 25 anys treballant amb projectes culturals, artístics i socials a Barcelona. Oficines a la Nau Bostik, La Sagrera.
+- [Qui som](https://linuxbcn.com/ca/qui-som/) — [EN](https://linuxbcn.com/en/qui-som/): Joan Martínez Serres (Joan Linux), consultor d'identitat digital des del 1999. Més de 25 anys treballant amb projectes culturals, artístics i socials a Barcelona. Seu a la Nau Bostik, La Sagrera.
 - [Com treballem](https://linuxbcn.com/ca/com-treballem/) — [EN](https://linuxbcn.com/en/com-treballem/): Metodologia basada en paquets d'hores, transparència i tecnologia lliure. Sense complicacions ni dependències de tercers.
+- [Preguntes freqüents](https://linuxbcn.com/ca/) — [EN](https://linuxbcn.com/en/): A la portada. Què fem, per a qui, per què programari lliure, edició pròpia dels continguts, durada dels projectes, manteniment i on s'allotgen les dades.
+- [Llocs amb la signatura Powered by LinuxBCN](https://linuxbcn.com/ca/powered-by-linuxbcn/) — [EN](https://linuxbcn.com/en/powered-by-linuxbcn/): Llista dels webs que porten la signatura "Powered by LinuxBCN" i d'altres projectes amb qui hem treballat.
 
 ## Serveis
 
@@ -23,17 +25,21 @@ Idiomes: Català (principal), Anglès
 
 ## Projectes destacats
 
+- [Taro Photo App](https://linuxbcn.com/ca/projectes/taro-photo-app/): Web, gestor de continguts i mòduls de votació i formularis per a col·lectius fotogràfics. Programari lliure (AGPL-3.0) en producció a 9barrisimatge.org.
+- [Votació del públic](https://linuxbcn.com/ca/projectes/votacio-public/): Aplicació web de vot anònim i presencial per a exposicions i concursos. Un vot per obra i mòbil, només dins de la sala, sense dades personals.
 - [Bratia](https://linuxbcn.com/ca/projectes/bratia/): Web per a la banda de Balkan Gypsy Jazz Bratia. Hugo, multilingüe, portfolio musical.
 - [Cuida](https://linuxbcn.com/ca/projectes/cuida/): App de coordinació familiar per a malalts a casa. React, backend distribuït, WCAG AA.
 - [FAVB](https://linuxbcn.com/ca/projectes/favb/): Federació d'Associacions de Veïns i Veïnes de Barcelona. Web i comunicació.
 - [Carrer.cat](https://linuxbcn.com/ca/projectes/carrer/): Publicació de referència del moviment veïnal barceloní.
 - [Machiroku](https://linuxbcn.com/ca/projectes/machiroku/): Restaurant japonès al centre de Barcelona. Redisseny web complet.
 - [MalditasMaquinas](https://linuxbcn.com/ca/projectes/malditasmaquinas/): Consultoria tecnològica. WebApp SPA vanilla JS + backend distribuït.
-- [Ressona](https://linuxbcn.com/ca/projectes/ressona/): Plataforma web per a l'escola de música Ressona. Hugo, multilingüe, galeria integrada. — [EN](https://linuxbcn.com/en/projectes/ressona/)
+- [Ressona](https://linuxbcn.com/ca/projectes/ressona/): Plataforma d'identitat digital per a artistes (web, press kit, comunicació). Hugo, multilingüe, galeria integrada. — [EN](https://linuxbcn.com/en/projectes/ressona/)
 - [112Books](https://linuxbcn.com/ca/projectes/112books/): Editorial independent de fotografia.
 - [Estenop](https://linuxbcn.com/ca/projectes/app-estenop/): Calculadora d'exposició per a càmeres estenopeiques (pinhole). App mòbil offline, 20+ emulsions.
 - [Positivador WebApp](https://linuxbcn.com/ca/projectes/app-positivador/): Eina web per a fotografia analògica (invertir negatius en temps real).
 - [Pocallum Estàtic](https://linuxbcn.com/ca/projectes/pocallum-estatic/): Migració de WordPress a Hugo. Resultat: zero dependències, càrrega instantània.
+- [Blog de Pocallum](https://linuxbcn.com/ca/projectes/blog-pocallum/): Migració d'un blog de 15 anys (Blogger → WordPress → Hugo). 2.353 articles, URLs conservades.
+- [Terra i Foc](https://linuxbcn.com/ca/projectes/terra-i-foc/): Web estàtica bilingüe per a un obrador de ceràmica artesanal del Penedès.
 - [GoatCounter Dashboard](https://linuxbcn.com/ca/projectes/goatcounter-dashboard/): Dashboard d'analítica self-hosted sense cookies.
 
 ## Principis tecnològics
@@ -42,7 +48,7 @@ Idiomes: Català (principal), Anglès
 - Cap dependència de Google Analytics, Meta Pixel ni CDNs externs no auditats
 - Analítica amb GoatCounter (privacitat per disseny)
 - Fonts self-hosted, allotjament en VPS propi (Dinahosting, Barcelona)
-- Formularis sense backend propietari de tercers
+- Formularis self-hosted, sense backend propietari de tercers
 - RGPD per disseny, no com a pegot posterior
 - WCAG 2.1 AA com a mínim en tots els projectes
 
@@ -52,5 +58,5 @@ Idiomes: Català (principal), Anglès
 - Email: hola@linuxbcn.com
 - Instagram: https://www.instagram.com/linuxbcn_oficial/
 
-Updated: 2026-06-24
+Updated: 2026-09-28
 Llicència de contingut: CC BY-SA 4.0

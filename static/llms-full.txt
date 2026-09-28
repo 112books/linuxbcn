@@ -4,7 +4,7 @@
 > estructurat per facilitar la comprensió i citació per part de models de llenguatge,
 > cercadors d'IA i agents automatitzats.
 > Índex breu: https://linuxbcn.com/llms.txt
-> Updated: 2026-06-24
+> Updated: 2026-09-28
 
 ---
 
@@ -17,6 +17,8 @@ El responsable és Joan Martínez Serres, conegut professionalment com a Joan Li
 LinuxBCN opera des de la Nau Bostik, un espai sociocultural autogestionat del barri de la Sagrera a Barcelona. Treballa amb una xarxa de col·laboradors especialitzats: periodistes, estrategues de continguts, dissenyadors, fotògrafs, correctors i traductors.
 
 L'idioma principal de treball és el català. El lloc web és disponible en català i anglès.
+
+El lloc recull en una pàgina pròpia els webs que porten la signatura "Powered by LinuxBCN" i altres projectes amb qui LinuxBCN ha treballat: https://linuxbcn.com/ca/powered-by-linuxbcn/
 
 ---
 
@@ -96,9 +98,19 @@ LinuxBCN munta la presència digital completa, coherent amb els valors del proje
 
 **Nau Bostik** — Espai sociocultural autogestionat del barri de la Sagrera a Barcelona.
 
-**Llumàtics** — Projecte de llums i instal·lacions artístiques.
+**Llumàtics** — Escola i comunitat de fotografia analògica i experimental. Web i presència digital.
 
-**9barrisimatge** — Col·lectiu de fotografia del districte de Nou Barris, Barcelona.
+**9barrisimatge** — Col·lectiu de fotografia del districte de Nou Barris, Barcelona. Migració de Blogger a Taro Photo App (3.006 articles, URLs conservades).
+
+**Taro Photo App** — Eina de gestió per a associacions fotogràfiques: web estàtic, gestor de continguts (Sveltia) i mòduls de votació, formularis i autopublicació. Programari lliure (AGPL-3.0), en producció a 9barrisimatge.org.
+
+**Votació del públic** — Aplicació web de vot anònim i presencial per a exposicions i concursos: un vot per obra i mòbil, només dins de la sala (geofencing sense desar coordenades), identificador aleatori i recompte verificable.
+
+**Blog de Pocallum** — Migració d'un blog fotogràfic de 15 anys (Blogger → WordPress → Hugo): 2.353 articles, 137.000 paraules i paritat total d'URLs.
+
+**Terra i Foc** — Web estàtica bilingüe per a un obrador de ceràmica artesanal del Penedès. Hugo + GitHub Pages + GoatCounter sense cookies.
+
+**40 Anys de Blues** — Web de presentació i suport del llibre del mateix nom.
 
 **Family Art Tattoo** — Estudi de tatuatge a Barcelona.
 
@@ -130,4 +142,4 @@ Formulari de contacte i diagnosi inicial: https://linuxbcn.com/ca/contacte/
 ---
 
 Llicència de contingut: CC BY-SA 4.0
-Updated: 2026-06-24
+Updated: 2026-09-28
