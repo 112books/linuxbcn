@@ -139,6 +139,8 @@ nau-bostik:
     a: "Recuperació d'urgència i replantejament digital, amb allotjament i correu."
   - q: "El col·lectiu pot gestionar-lo?"
     a: "Sí: eines que el col·lectiu pot mantenir."
+  - q: "Què permet el web de la Nau Bostik?"
+    a: "Ara mateix permet a aquest equipament autogestionat mostrar al seu públic les instal·lacions i les activitats. I ja treballem en una versió molt més completa."
 pocallum-estatic:
   - q: "Com passar un web de WordPress a estàtic?"
     a: "Migració a Hugo: zero dependències i càrrega instantània."

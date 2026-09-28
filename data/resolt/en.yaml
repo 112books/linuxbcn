@@ -139,6 +139,8 @@ nau-bostik:
     a: "Emergency recovery and digital replanning, with hosting and email."
   - q: "Can the collective manage it?"
     a: "Yes: tools the collective can maintain."
+  - q: "What does the Nau Bostik website allow?"
+    a: "For now it lets this self-managed venue show its spaces and activities to the public. We are already working on a much more complete version."
 pocallum-estatic:
   - q: "How do you move a WordPress site to static?"
     a: "Migration to Hugo: zero dependencies and instant loading."
