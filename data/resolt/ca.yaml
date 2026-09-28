@@ -64,6 +64,8 @@ carrer:
     a: "Web i comunicació digital per a la revista, amb contingut gestionable."
   - q: "Es pot publicar sense dependències?"
     a: "Sí, amb programari lliure i allotjament propi."
+  - q: "Què és Carrer.cat?"
+    a: "És la versió digital de la revista que la Federació d'Associacions Veïnals de Barcelona edita en paper."
 cuida:
   - q: "Com coordinar les cures d'un malalt a casa?"
     a: "App amb contactes mèdics, medicació, protocols d'urgència i horaris de cuidadors."

@@ -64,6 +64,8 @@ carrer:
     a: "Website and digital communication for the magazine, with manageable content."
   - q: "Can you publish with no dependencies?"
     a: "Yes, with free software and your own hosting."
+  - q: "What is Carrer.cat?"
+    a: "It is the digital version of the magazine published in print by the Federation of Barcelona Neighbourhood Associations."
 cuida:
   - q: "How do you coordinate care for a patient at home?"
     a: "An app with medical contacts, medication, emergency protocols and carer schedules."
