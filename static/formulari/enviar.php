@@ -41,8 +41,11 @@ function send_mail($to, $subject, $replyName, $replyEmail, $html, $text) {
     if ($replyEmail !== '') $h .= "Reply-To: {$replyName} <{$replyEmail}>\r\n";
     $h .= "MIME-Version: 1.0\r\n";
     $h .= "Content-Type: multipart/alternative; boundary=\"{$b}\"\r\n";
-    $body  = "--{$b}\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n" . $text . "\r\n\r\n";
-    $body .= "--{$b}\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n" . $html . "\r\n\r\n";
+    // quoted-printable: evita que el transport trenqui les linies llargues dins de l'HTML
+    $t = quoted_printable_encode($text);
+    $p = quoted_printable_encode($html);
+    $body  = "--{$b}\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n" . $t . "\r\n";
+    $body .= "--{$b}\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n" . $p . "\r\n";
     $body .= "--{$b}--\r\n";
     return mail($to, $subject, $body, $h);
 }
