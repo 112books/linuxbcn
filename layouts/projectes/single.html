@@ -33,9 +33,10 @@
 </article>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <span class="lightbox-close">ESC · tancar</span>
-  <img src="" alt="" id="lightbox-img">
+{{ $isCA := eq .Site.Language.Lang "ca" }}
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="{{ cond $isCA "Imatge ampliada" "Enlarged image" }}" tabindex="-1">
+  <button type="button" class="lightbox-close" id="lightbox-close">ESC · {{ cond $isCA "tancar" "close" }}</button>
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" id="lightbox-img">
 </div>
 
 <script src="{{ "js/lightbox.js" | relURL }}" defer></script>

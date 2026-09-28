@@ -1,11 +1,11 @@
 <footer>
   <div class="footer-left">
-    <span style="color: var(--accent)">LinuxBCN · {{ i18n "footer_tagline" }}</span>
+    <span style="color: var(--accent-text)">LinuxBCN · {{ i18n "footer_tagline" }}</span>
     <div class="footer-links">
       {{ $base := printf "%s%s" $.Site.BaseURL $.Site.Language.Lang }}
       <a href="{{ printf "%s/qui-som/" $base }}">{{ i18n "footer_link_about" }}</a> ·
       <a href="{{ printf "%s/contacte/" $base }}">{{ i18n "footer_link_contact" }}</a>
-      <span class="footer-sep">|</span>
+      <span class="footer-sep" aria-hidden="true">|</span>
       <a href="{{ printf "%s/privacitat/" $base }}">{{ i18n "footer_link_privacy" }}</a> ·
       <a href="{{ printf "%s/avis-legal/" $base }}">{{ i18n "footer_link_legal" }}</a> ·
       <a href="{{ printf "%s/cookies/" $base }}">{{ i18n "footer_link_cookies" }}</a>
@@ -17,7 +17,7 @@
       <span>@linuxbcn_oficial</span>
     </a>
     <a href="{{ printf "%s/malditasmaquinas/" $base }}" class="footer-dimoni" title="MalditasMaquinas — consultoria tecnològica">
-      <img src="{{ "img/dimoni-roig-sm.png" | relURL }}" alt="MalditasMaquinas" width="36" height="36">
+      <img src="{{ "img/dimoni-roig-sm.png" | relURL }}" alt="" aria-hidden="true" width="36" height="36">
       <span>MalditasMaquinas</span>
     </a>
   </div>

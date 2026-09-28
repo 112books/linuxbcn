@@ -21,9 +21,12 @@
   window.addEventListener('scroll', update, { passive: true });
   update();
 
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   if (btn) {
     btn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
   }
 })();

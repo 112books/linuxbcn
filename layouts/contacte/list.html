@@ -34,17 +34,19 @@
 
         <!-- PAS 1 -->
         <div class="form-step active" id="step-1">
-          <div class="step-label">
+          <div class="step-label" aria-hidden="true">
             <span class="step-num">01</span>
             <span class="step-text">{{ cond $ca "En que et podem ajudar?" "How can we help you?" }}</span>
           </div>
 
-          <div class="opcions-grid">
+          <fieldset class="opcions-fieldset" id="tipus-fieldset" aria-describedby="tipus-error">
+            <legend class="visually-hidden">{{ cond $ca "En que et podem ajudar?" "How can we help you?" }}</legend>
+            <div class="opcions-grid">
             <label class="opcio">
               <input type="radio" name="tipus" value="artista-music" required>
               <span class="opcio-inner">
                 <span class="opcio-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 </span>
                 <span class="opcio-title">{{ cond $ca "Soc artista o músic" "I'm an artist or musician" }}</span>
                 <span class="opcio-desc">{{ cond $ca "Solista, banda, projecte musical o escènic" "Solo artist, band, musical or performing arts project" }}</span>
@@ -54,7 +56,7 @@
               <input type="radio" name="tipus" value="entitat-collectiu" required>
               <span class="opcio-inner">
                 <span class="opcio-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
                 </span>
                 <span class="opcio-title">{{ cond $ca "Som una entitat o col·lectiu" "We're an organisation or collective" }}</span>
                 <span class="opcio-desc">{{ cond $ca "Associació, espai cultural, col·lectiu autogestionat" "Association, cultural space, self-managed collective" }}</span>
@@ -64,7 +66,7 @@
               <input type="radio" name="tipus" value="negoci" required>
               <span class="opcio-inner">
                 <span class="opcio-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
                 </span>
                 <span class="opcio-title">{{ cond $ca "Tenim un negoci amb valors" "We run a values-led business" }}</span>
                 <span class="opcio-desc">{{ cond $ca "Autònom, comerç, microempresa o projecte propi" "Freelancer, local business, micro-enterprise" }}</span>
@@ -74,19 +76,21 @@
               <input type="radio" name="tipus" value="altres" required>
               <span class="opcio-inner">
                 <span class="opcio-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                 </span>
                 <span class="opcio-title">{{ cond $ca "Altres" "Other" }}</span>
                 <span class="opcio-desc">{{ cond $ca "Una altra situació o simplement tinc una pregunta" "Another situation or just a question" }}</span>
               </span>
             </label>
-          </div>
+            </div>
+          </fieldset>
+          <p class="field-error" id="tipus-error" aria-live="polite"></p>
 
           <div class="tipus-context" id="tipus-context" aria-live="polite"></div>
 
           <button type="button" class="btn-seguent" id="btn-seguent" disabled>
             {{ cond $ca "Continua" "Continue" }}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
 
@@ -94,17 +98,19 @@
         <div class="form-step" id="step-2">
           <div class="step-label">
             <span class="step-num">02</span>
-            <span class="step-text" id="step2-title">{{ cond $ca "Explica'ns la teva situació" "Tell us about your situation" }}</span>
+            <span class="step-text" id="step2-title" tabindex="-1">{{ cond $ca "Explica'ns la teva situació" "Tell us about your situation" }}</span>
           </div>
 
           <div class="form-group">
             <label for="nom" class="form-label">{{ cond $ca "Com et dius?" "Your name" }}</label>
-            <input type="text" id="nom" name="nom" class="form-input" placeholder="{{ cond $ca "Nom o nom del projecte" "Name or project name" }}" required>
+            <input type="text" id="nom" name="nom" class="form-input" placeholder="{{ cond $ca "Nom o nom del projecte" "Name or project name" }}" autocomplete="name" required aria-describedby="nom-error">
+            <p class="field-error" id="nom-error" aria-live="polite"></p>
           </div>
 
           <div class="form-group">
             <label for="email" class="form-label">{{ cond $ca "Correu electrònic" "Email address" }}</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="hola@example.com" required>
+            <input type="email" id="email" name="email" class="form-input" placeholder="hola@example.com" autocomplete="email" required aria-describedby="email-error">
+            <p class="field-error" id="email-error" aria-live="polite"></p>
           </div>
 
           <div class="form-group" id="checks-group" style="display:none">
@@ -114,28 +120,32 @@
 
           <div class="form-group">
             <label for="missatge" class="form-label">{{ cond $ca "Descriu la teva situació" "Describe your situation" }}</label>
-            <textarea id="missatge" name="missatge" class="form-textarea" rows="5" placeholder="{{ cond $ca "Explica'ns on ets i on voldries arribar. No cal que sigui llarg." "Tell us where you are and where you'd like to go. It doesn't need to be long." }}" required></textarea>
+            <textarea id="missatge" name="missatge" class="form-textarea" rows="5" aria-describedby="missatge-error" placeholder="{{ cond $ca "Explica'ns on ets i on voldries arribar. No cal que sigui llarg." "Tell us where you are and where you'd like to go. It doesn't need to be long." }}" required></textarea>
+            <p class="field-error" id="missatge-error" aria-live="polite"></p>
           </div>
 
           <div class="form-check">
             <label class="check-label">
-              <input type="checkbox" id="rgpd" name="rgpd" required>
+              <input type="checkbox" id="rgpd" name="rgpd" required aria-describedby="rgpd-error">
               {{ if $ca }}
                 <span>He llegit i accepto la <a href="{{ $privacitat }}">política de privacitat</a>. Les meves dades s'usaran únicament per respondre a aquesta consulta.</span>
               {{ else }}
                 <span>I have read and accept the <a href="{{ $privacitat }}">privacy policy</a>. My data will be used solely to respond to this enquiry.</span>
               {{ end }}
             </label>
+            <p class="field-error" id="rgpd-error" aria-live="polite"></p>
           </div>
+
+          <p class="form-status" id="form-status" role="alert" aria-live="assertive"></p>
 
           <div class="form-actions">
             <button type="button" class="btn-enrere" id="btn-enrere">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
               {{ cond $ca "Tornar" "Back" }}
             </button>
             <button type="submit" class="btn-enviar">
               {{ cond $ca "Enviar consulta" "Send enquiry" }}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </button>
           </div>
         </div>
@@ -143,8 +153,8 @@
         <!-- ENVIAT -->
         <div class="form-step" id="step-done">
           <div class="form-done">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="52" height="52"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
-            <h3>{{ cond $ca "Rebut." "Got it." }}</h3>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="52" height="52"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+            <h2>{{ cond $ca "Rebut." "Got it." }}</h2>
             <p>{{ cond $ca "Hem rebut la teva consulta. Respondrem per correu, normalment en menys de 48h." "We've received your enquiry. We'll reply by email, usually within 48 hours." }}</p>
           </div>
         </div>
@@ -178,6 +188,22 @@
 <script>
 (function() {
   const isCA = {{ if $ca }}true{{ else }}false{{ end }};
+
+  const MSG = isCA ? {
+    tipus:    'Selecciona una opció per continuar.',
+    nom:      'Escriu el teu nom.',
+    email:    'Escriu un correu electrònic vàlid.',
+    missatge: 'Descriu la teva situació.',
+    rgpd:     'Cal acceptar la política de privacitat.',
+    send:     'No hem pogut enviar la consulta. Escriu-nos a hola@linuxbcn.com.'
+  } : {
+    tipus:    'Select an option to continue.',
+    nom:      'Please enter your name.',
+    email:    'Please enter a valid email address.',
+    missatge: 'Please describe your situation.',
+    rgpd:     'You must accept the privacy policy.',
+    send:     'We could not send your enquiry. Email us at hola@linuxbcn.com.'
+  };
 
   const CONFIG = isCA ? {
     'artista-music': {
@@ -243,8 +269,23 @@
   const checksGrp = document.getElementById('checks-group');
   const checksList= document.getElementById('checks-list');
   const radios    = form.querySelectorAll('input[type="radio"]');
+  const tipusFieldset = document.getElementById('tipus-fieldset');
+  const nom       = document.getElementById('nom');
+  const email     = document.getElementById('email');
+  const rgpd      = document.getElementById('rgpd');
+  const formStatus= document.getElementById('form-status');
 
   let selectedTipus = null;
+
+  function setError(field, errorId, message) {
+    const el = document.getElementById(errorId);
+    if (el) el.textContent = message || '';
+    if (field) field.setAttribute('aria-invalid', message ? 'true' : 'false');
+  }
+
+  function clearError(field, errorId) {
+    setError(field, errorId, '');
+  }
 
   radios.forEach(r => {
     r.addEventListener('change', () => {
@@ -252,13 +293,20 @@
       r.closest('.opcio').classList.add('selected');
       selectedTipus = r.value;
       btnSeg.disabled = false;
+      clearError(tipusFieldset, 'tipus-error');
       const cfg = CONFIG[r.value];
       ctxEl.innerHTML = '<div class="tipus-hint">' + cfg.context + '</div>';
     });
   });
 
   btnSeg.addEventListener('click', () => {
-    if (!selectedTipus) return;
+    if (!selectedTipus) {
+      setError(tipusFieldset, 'tipus-error', MSG.tipus);
+      const firstRadio = form.querySelector('input[name="tipus"]');
+      if (firstRadio) firstRadio.focus();
+      return;
+    }
+    clearError(tipusFieldset, 'tipus-error');
     const cfg = CONFIG[selectedTipus];
     s2title.textContent = cfg.step2title;
     textarea.placeholder = cfg.placeholder;
@@ -273,24 +321,89 @@
     }
     step1.classList.remove('active');
     step2.classList.add('active');
+    s2title.focus();
   });
 
   btnEnr.addEventListener('click', () => {
     step2.classList.remove('active');
     step1.classList.add('active');
+    btnSeg.focus();
+  });
+
+  function validEmail(value) {
+    if (!value) return false;
+    if (email && email.validity) return email.validity.valid;
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function validate() {
+    let firstInvalid = null;
+
+    if (!selectedTipus) {
+      setError(tipusFieldset, 'tipus-error', MSG.tipus);
+      firstInvalid = firstInvalid || form.querySelector('input[name="tipus"]');
+    } else {
+      clearError(tipusFieldset, 'tipus-error');
+    }
+
+    if (!nom.value.trim()) {
+      setError(nom, 'nom-error', MSG.nom);
+      firstInvalid = firstInvalid || nom;
+    } else {
+      clearError(nom, 'nom-error');
+    }
+
+    if (!validEmail(email.value.trim())) {
+      setError(email, 'email-error', MSG.email);
+      firstInvalid = firstInvalid || email;
+    } else {
+      clearError(email, 'email-error');
+    }
+
+    if (!textarea.value.trim()) {
+      setError(textarea, 'missatge-error', MSG.missatge);
+      firstInvalid = firstInvalid || textarea;
+    } else {
+      clearError(textarea, 'missatge-error');
+    }
+
+    if (!rgpd.checked) {
+      setError(rgpd, 'rgpd-error', MSG.rgpd);
+      rgpd.closest('.form-check').classList.add('error');
+      firstInvalid = firstInvalid || rgpd;
+    } else {
+      clearError(rgpd, 'rgpd-error');
+      rgpd.closest('.form-check').classList.remove('error');
+    }
+
+    if (firstInvalid) {
+      firstInvalid.focus();
+      return false;
+    }
+    return true;
+  }
+
+  [nom, email, textarea].forEach(function (input) {
+    input.addEventListener('input', function () {
+      clearError(input, input.id + '-error');
+    });
+  });
+
+  rgpd.addEventListener('change', function () {
+    clearError(rgpd, 'rgpd-error');
   });
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    const rgpd = document.getElementById('rgpd');
-    if (!rgpd.checked) { rgpd.closest('.form-check').classList.add('error'); return; }
+    formStatus.textContent = '';
+    if (!validate()) return;
     const data = new FormData(form);
     fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
       .then(r => {
         if (r.ok) { step2.classList.remove('active'); stepDone.classList.add('active'); }
-        else { alert('Error. Write to hola@linuxbcn.com'); }
+        else { formStatus.textContent = MSG.send; }
       })
-      .catch(() => { alert('Error. Write to hola@linuxbcn.com'); });
+      .catch(() => { formStatus.textContent = MSG.send; });
   });
 })();
 </script>

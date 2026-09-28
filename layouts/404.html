@@ -244,6 +244,14 @@
     @media (max-width: 480px) {
       #lbcn-scare img { width: 200px; }
     }
+
+    /* Accessibilitat: moviment reduït */
+    @media (prefers-reduced-motion: reduce) {
+      .lbcn-cursor { animation: none; }
+      #lbcn-content,
+      #lbcn-scare { transition: none; }
+      .lbcn-btn { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -293,6 +301,8 @@
   'use strict';
 
   var LANG = document.documentElement.lang || 'ca';
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var i18n = {
     ca: {
@@ -328,6 +338,7 @@
   function startTyping(str) {
     clearInterval(typingTimer);
     var el = document.getElementById('lbcn-typed');
+    if (reduceMotion) { el.textContent = str; return; }
     el.textContent = '';
     var i = 0;
     typingTimer = setInterval(function () {
@@ -389,12 +400,20 @@
 
   /* ── Seqüència d'entrada ── */
   applyLang(LANG);
-  setInterval(drawMatrix, 38);
+  if (reduceMotion) {
+    drawMatrix();
+  } else {
+    setInterval(drawMatrix, 38);
+  }
 
   var scare   = document.getElementById('lbcn-scare');
   var glitch  = document.getElementById('lbcn-glitch');
   var content = document.getElementById('lbcn-content');
 
+  if (reduceMotion) {
+    scare.style.display = 'none';
+    content.classList.add('lbcn-visible');
+  } else {
   setTimeout(function () {
     /* glitch flash */
     glitch.style.opacity = '0.65';
@@ -415,6 +434,7 @@
       }, 1900);
     }, 130);
   }, 2500);
+  }
 
 }());
 </script>

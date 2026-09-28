@@ -7,7 +7,7 @@
   position: absolute;
   top: -100%;
   left: 1rem;
-  background: var(--accent, #e63946);
+  background: var(--accent-text, #ad5209);
   color: #fff;
   padding: 0.5rem 1rem;
   font-family: var(--mono, monospace);
@@ -18,6 +18,19 @@
 }
 .skip-link:focus {
   top: 0;
+}
+
+/* Contingut només per a lectors de pantalla */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @font-face {
@@ -59,8 +72,9 @@
   --ink:         #111110;
   --ink-head:    #262626;
   --ink2:        #555550;
-  --ink3:        #999990;
+  --ink3:        #6f6f6a;
   --accent:      #d4600a;
+  --accent-text: #ad5209;
   --accent-faint:#fef0e6;
   --border:      #ddddd8;
   --mono:        'IBM Plex Mono', monospace;
@@ -109,6 +123,25 @@ a {
 
 a:hover {
   text-decoration-color: var(--accent);
+}
+
+/* Accessibilitat: indicador de focus visible i consistent */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
+
+/* Sobre fons foscos cal un contorn clar */
+.mobile-nav :focus-visible,
+.mobile-lang :focus-visible,
+.lightbox :focus-visible {
+  outline-color: #fff;
 }
 
 /* =====================
@@ -249,7 +282,7 @@ a:hover {
 }
 
 .nav-brand-compact .bcn {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .site-header.is-scrolled .nav-brand-compact {
@@ -281,7 +314,7 @@ a:hover {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--accent);
+  background: var(--accent-text);
   transform: scaleX(0) skewX(-8deg);
   transform-origin: left center;
   transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
@@ -371,7 +404,7 @@ hr {
 .page-label {
   font-family: var(--mono);
   font-size: 0.72rem;
-  color: var(--accent);
+  color: var(--accent-text);
   letter-spacing: 0.06em;
   margin-bottom: 1.5rem;
 }
@@ -388,7 +421,7 @@ li:has(> a:only-child) {
 
 p:has(> a:only-child) a,
 li:has(> a:only-child) a {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: none;
   border-bottom: 1px solid currentColor;
   padding-bottom: 1px;
@@ -510,7 +543,7 @@ li:has(> a:only-child) a:hover {
 }
 
 .solucio-taula .solucio-proposem th {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 @media (max-width: 580px) {
@@ -527,7 +560,7 @@ li:has(> a:only-child) a:hover {
     font-size: 0.62rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-text);
     margin-bottom: 0.5rem;
   }
   .solucio-taula tbody tr:first-child td::before {
@@ -566,12 +599,12 @@ li:has(> a:only-child) a:hover {
 
 .filter-btn:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .filter-btn.active {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--accent-text);
+  border-color: var(--accent-text);
   color: var(--bg);
 }
 
@@ -670,7 +703,7 @@ li:has(> a:only-child) a:hover {
 .card-sector {
   font-family: var(--mono);
   font-size: 0.65rem;
-  color: var(--accent);
+  color: var(--accent-text);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -696,7 +729,7 @@ li:has(> a:only-child) a:hover {
 .card-arrow {
   font-family: var(--mono);
   font-size: 0.7rem;
-  color: var(--accent);
+  color: var(--accent-text);
   opacity: 0;
   transform: translateX(-4px);
   transition: opacity 0.2s, transform 0.2s;
@@ -852,6 +885,9 @@ li:has(> a:only-child) a:hover {
   opacity: 0.6;
   cursor: pointer;
   letter-spacing: 0.05em;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /* Gallery shortcode */
@@ -920,7 +956,7 @@ footer {
 }
 
 .footer-sep {
-  color: var(--border);
+  color: var(--ink3);
   margin: 0 0.3rem;
 }
 
@@ -1068,7 +1104,7 @@ footer a:hover {
 .result-section {
   font-family: var(--mono);
   font-size: 0.65rem;
-  color: var(--accent);
+  color: var(--accent-text);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.2rem;
@@ -1090,7 +1126,7 @@ footer a:hover {
 .result-title mark,
 .result-summary mark {
   background: none;
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 700;
 }
 
@@ -1128,7 +1164,7 @@ footer a:hover {
   align-items: center;
   gap: 0.25rem;
   text-decoration: none;
-  color: #666;
+  color: #999990;
   font-family: var(--mono);
   font-size: 0.55rem;
   letter-spacing: 0.02em;
@@ -1282,7 +1318,7 @@ footer a:hover {
 
 .client-tag:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 /* =====================
@@ -1310,6 +1346,13 @@ footer a:hover {
 }
 .form-step.active {
   display: block;
+}
+
+.opcions-fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
 }
 
 .step-label {
@@ -1369,8 +1412,8 @@ footer a:hover {
 }
 
 .opcio.selected .opcio-inner {
-  border-color: var(--accent);
-  background: var(--accent);
+  border-color: var(--accent-text);
+  background: var(--accent-text);
 }
 
 .opcio-icon {
@@ -1410,7 +1453,7 @@ footer a:hover {
 }
 
 .opcio.selected .opcio-desc {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.9);
 }
 
 /* Context dinàmic */
@@ -1491,7 +1534,7 @@ footer a:hover {
 }
 
 .btn-seguent:not(:disabled):hover {
-  background: var(--accent);
+  background: var(--accent-text);
 }
 
 /* Formulari pas 2 */
@@ -1536,6 +1579,42 @@ footer a:hover {
   line-height: 1.6;
 }
 
+/* Errors de validació accessibles */
+.field-error {
+  color: #b3261e;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  margin-top: 0.4rem;
+}
+.field-error:empty {
+  display: none;
+}
+
+.form-status {
+  color: #b3261e;
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+}
+.form-status:empty {
+  display: none;
+}
+
+.form-input[aria-invalid="true"],
+.form-textarea[aria-invalid="true"] {
+  border-color: #b3261e;
+}
+
+.opcions-fieldset[aria-invalid="true"] .opcio-inner {
+  border-color: #b3261e;
+}
+
+/* Focus visible a les targetes d'opció (l'input és visualment ocult) */
+.opcio input[type="radio"]:focus-visible + .opcio-inner {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
+
 /* RGPD check */
 .form-check {
   margin-bottom: 1.8rem;
@@ -1561,7 +1640,7 @@ footer a:hover {
 }
 
 .check-label a {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 /* Botons pas 2 */
@@ -1593,7 +1672,7 @@ footer a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: var(--accent);
+  background: var(--accent-text);
   color: #fff;
   border: none;
   padding: 0.9rem 1.8rem;
@@ -1620,7 +1699,7 @@ footer a:hover {
   margin-bottom: 1rem;
 }
 
-.form-done h3 {
+.form-done h2 {
   font-family: var(--display);
   font-size: 2rem;
   color: var(--ink-head);
@@ -1657,7 +1736,7 @@ footer a:hover {
   font-family: var(--display);
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   margin-bottom: 1.2rem;
@@ -1677,7 +1756,7 @@ footer a:hover {
 }
 
 .contacte-note a {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 /* Legal nota al peu */
@@ -1856,7 +1935,7 @@ footer a:hover {
 .lbcn-pas-num {
   font-family: var(--mono);
   font-size: 0.65rem;
-  color: var(--accent);
+  color: var(--accent-text);
   letter-spacing: 0.1em;
   display: block;
 }
@@ -1959,7 +2038,7 @@ footer a:hover {
 .faq summary::after {
   content: '+';
   font-family: var(--mono);
-  color: var(--accent);
+  color: var(--accent-text);
   flex: none;
 }
 
@@ -1998,7 +2077,7 @@ footer a:hover {
 }
 
 .signatura-list a:hover {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .signatura-desc {
@@ -2126,4 +2205,20 @@ footer a:hover {
   margin: 1.5rem 0 0;
   padding: 0;
   border-top: 0;
+}
+
+/* ─── Accessibilitat: moviment reduït ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
 }
