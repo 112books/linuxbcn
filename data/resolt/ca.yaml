@@ -32,6 +32,8 @@ app-positivador:
     a: "Sí, amb la càmera del dispositiu i processament local, sense servidor."
   - q: "Cal instal·lar res?"
     a: "No: funciona directament al navegador."
+  - q: "Què necessita el laboratori fotogràfic?"
+    a: "El Positivador: la webapp que necessites al laboratori fotogràfic."
 awpcp:
   - q: "Com donar visibilitat a una comunitat internacional de fotografia?"
     a: "Web lleuger allotjat a GitHub Pages, sense base de dades."

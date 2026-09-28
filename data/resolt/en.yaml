@@ -32,6 +32,8 @@ app-positivador:
     a: "Yes, with the device camera and local processing, with no server."
   - q: "Do you need to install anything?"
     a: "No: it runs directly in the browser."
+  - q: "What does the photographic darkroom need?"
+    a: "Positivador: the web app you need in the photographic darkroom."
 awpcp:
   - q: "How do you give visibility to an international photography community?"
     a: "A lightweight site hosted on GitHub Pages, with no database."
