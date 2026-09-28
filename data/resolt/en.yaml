@@ -81,6 +81,8 @@ goatcounter-dashboard:
     a: "A self-hosted dashboard on top of the GoatCounter API, respectful of privacy."
   - q: "Can it be audited?"
     a: "Yes: it is free software."
+  - q: "What does it add over the original GoatCounter?"
+    a: "It uses the data GoatCounter collects —respecting privacy— and presents it in a clearer, more efficient way."
 konsento:
   - q: "How do you make collective decisions transparently?"
     a: "An assembly governance application for cooperatives and self-managed spaces."

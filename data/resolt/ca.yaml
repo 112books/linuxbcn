@@ -81,6 +81,8 @@ goatcounter-dashboard:
     a: "Dashboard self-hosted sobre l'API de GoatCounter, respectuós amb la privacitat."
   - q: "Es pot auditar?"
     a: "Sí: és programari lliure."
+  - q: "Què aporta respecte del GoatCounter original?"
+    a: "Usa les dades que GoatCounter recopila —respectant la privacitat— i les presenta d'una forma més entenedora i eficient."
 konsento:
   - q: "Com prendre decisions col·lectives de forma transparent?"
     a: "Aplicació de governança assembleària per a cooperatives i espais autogestionats."
