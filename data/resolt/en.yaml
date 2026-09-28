@@ -1,4 +1,4 @@
-112books.eu-theme:
+112books-theme:
   - q: "How do you clarify an publisher's information architecture?"
     a: "We reorganised the site into three clear pillars (catalogue, authors, news) and built a block FSE theme from scratch, with no third-party templates."
   - q: "Can the site be edited without a developer?"
@@ -25,7 +25,7 @@ app-estenop:
     a: "Yes: Estenop uses the phone camera as a light meter and applies reciprocity correction."
   - q: "Does it work offline and without sending data?"
     a: "Yes: it is offline and no data leaves the device."
-App-positivador:
+app-positivador:
   - q: "Can you see a negative as a positive in real time?"
     a: "Yes, with the device camera and local processing, with no server."
   - q: "Do you need to install anything?"
@@ -91,7 +91,9 @@ LinuxBCN-Analytics-for-GoatCounter:
     a: "An open-source plugin that connects GoatCounter to the WordPress dashboard."
   - q: "Do you need Google Analytics?"
     a: "No: it is never relied upon."
-linuxbcn:
+  - q: "Do you need 2 GB on your server just to know who visits you?"
+    a: "With Google's bloated system, yes. With LinuxBCN Analytics for GoatCounter, no: your WordPress becomes much lighter and your users' data is not used."
+linuxbcn-arquitectura-sistema-digital:
   - q: "How do you build a consultancy's website with no dependencies?"
     a: "A custom, bilingual and lightweight Hugo site: the same system we apply for clients."
   - q: "Can it be maintained without an agency?"

@@ -1,4 +1,4 @@
-112books.eu-theme:
+112books-theme:
   - q: "Com clarificar l'arquitectura d'informació d'una editorial?"
     a: "Vam reorganitzar el web en tres pilars clars (catàleg, autors i notícies) i vam construir un tema bloc FSE des de zero, sense plantilles de tercers."
   - q: "Es pot editar el web sense dependre d'un tècnic?"
@@ -25,7 +25,7 @@ app-estenop:
     a: "Sí: Estenop fa servir la càmera del mòbil com a fotòmetre i aplica la correcció de reciprocitat."
   - q: "Funciona sense connexió i sense enviar dades?"
     a: "Sí: és offline i no surt cap dada del dispositiu."
-App-positivador:
+app-positivador:
   - q: "Es pot veure un negatiu en positiu en temps real?"
     a: "Sí, amb la càmera del dispositiu i processament local, sense servidor."
   - q: "Cal instal·lar res?"
@@ -91,7 +91,9 @@ LinuxBCN-Analytics-for-GoatCounter:
     a: "Plugin de codi obert que connecta GoatCounter amb el tauler de WordPress."
   - q: "Cal Google Analytics?"
     a: "No: no se'n depèn en cap moment."
-linuxbcn:
+  - q: "Calen 2 GB al servidor per saber qui et visita?"
+    a: "Amb el sistema mastodòntic de Google, sí. Amb LinuxBCN Analytics for GoatCounter no: el WordPress va molt més lleuger i no s'usen les dades dels usuaris."
+linuxbcn-arquitectura-sistema-digital:
   - q: "Com construir el web d'una consultoria sense dependències?"
     a: "Hugo a mida, bilingüe i lleuger: el mateix sistema que apliquem als clients."
   - q: "Es pot mantenir sense agència?"
