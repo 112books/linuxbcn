@@ -794,5 +794,15 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-09-27 (tarda)*
+## 30. Sessió 2026-09-28 — serveis de 9 Barris Imatge al servidor de LinuxBCN
+
+Feina per al client 9 Barris Imatge (repo `112books/9bi`, detall al seu `CLAUDE.md` i `.taques/2026-09-28.md`). Afecta el compte `linuxbcn0@vl28359.dinaserver.com`:
+
+- **`~/apps/telegram/`** (nou): bot que publica les entrades noves de 9barrisimatge.org al canal @NouBarrisImatge. Cron `*/30` a l'usuari `linuxbcn0` (afegit sense tocar els watchdogs de `vots-cordoncillo` i `formularis`). `config.ini` (token) i `state.json` (3.008 entrades marcades com a publicades) **no s'han de tocar ni esborrar**.
+- **`~/apps/formularis/`**: ara també rep els **comentaris** de les entrades (`/envia/comentari`, revisió a `/comentari/<id>`). Secció `[comentaris]` al `config.ini` amb un token fine-grained de GitHub (només `112books/9bi`, Contents RW) — **cal apuntar-ne la caducitat**. Còpies: `app.py.pre-comentaris`, `config.ini.pre-comentaris`.
+- Norma: **mai `crontab -r`** en aquest compte (esborraria els watchdogs). Per afegir: `(crontab -l; echo '…') | crontab -`.
+
+---
+
+*Última actualització: 2026-09-28*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
