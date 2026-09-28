@@ -8,7 +8,7 @@ date: 2026-09-15
 client: "Pocallum / Joan Linux Martínez"
 sector: "photography"
 perfils: ["microempreses"]
-description: "Blog.pocallum.cat: from Blogger to WordPress and now to static Hugo. 2,353 posts migrated with full URL parity, no database, no third-party dependencies. LinuxBCN."
+description: "Blog.pocallum.cat: from Blogger to WordPress and now to static Hugo. 2,353 posts migrated with full URL parity. LinuxBCN."
 lastmod: "2026-09-15"
 draft: false
 serveis: ["migracio-wordpress"]

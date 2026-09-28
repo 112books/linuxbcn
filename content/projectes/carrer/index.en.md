@@ -9,7 +9,7 @@ client: "neighbourhood publication"
 sector: "communication"
 perfils: ["collectius"]
 featured: true
-description: "Website for Carrer.cat, the reference publication of Barcelona's neighbourhood movement. Digital communication for the residents' association magazine. LinuxBCN."
+description: "Website for Carrer.cat, the reference publication of Barcelona's neighbourhood movement. Digital communication for the magazine. LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
 serveis: ["web-a-mida", "plataforma-editorial"]
