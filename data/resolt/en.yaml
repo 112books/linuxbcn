@@ -38,6 +38,8 @@ blog-pocallum:
     a: "We kept every URL with 1:1 parity and removed the database and dependencies."
   - q: "Is the historical content lost?"
     a: "No: 137,000 words and 71 imported comments are preserved."
+  - q: "What else do you gain?"
+    a: "More data sovereignty: the content is your own and lives on your own server. You can publish blog posts without any platform restriction and with tailored SEO."
 bratia:
   - q: "How do you migrate a band's WordPress site to Hugo?"
     a: "Migration to a static, multilingual and autonomous system, with integrated agenda and discography."

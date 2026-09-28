@@ -38,6 +38,8 @@ blog-pocallum:
     a: "Vam conservar totes les URLs amb paritat 1:1 i vam eliminar la base de dades i les dependències."
   - q: "Es perd el contingut històric?"
     a: "No: 137.000 paraules i 71 comentaris llegats es conserven."
+  - q: "Què més s'hi guanya?"
+    a: "Més sobirania de dades: el contingut és propi i viu al nostre servidor. Podem publicar les entrades al blog sense cap restricció i amb una optimització SEO a mida."
 bratia:
   - q: "Com migrar el web d'una banda de WordPress a Hugo?"
     a: "Migració a un sistema estàtic, multilingüe i autònom, amb agenda i discografia integrades."
