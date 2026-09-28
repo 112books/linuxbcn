@@ -40,6 +40,8 @@ blog-pocallum:
     a: "No: 137.000 paraules i 71 comentaris llegats es conserven."
   - q: "Què més s'hi guanya?"
     a: "Més sobirania de dades: el contingut és propi i viu al nostre servidor. Podem publicar les entrades al blog sense cap restricció i amb una optimització SEO a mida."
+  - q: "Quin gestor de continguts hi ha darrere?"
+    a: "Un CMS a mida amb les funcionalitats justes —ni més ni menys—. És més lleuger, més segur i està fet al gust de qui l'ha de fer servir cada dia."
 bratia:
   - q: "Com migrar el web d'una banda de WordPress a Hugo?"
     a: "Migració a un sistema estàtic, multilingüe i autònom, amb agenda i discografia integrades."
@@ -110,6 +112,8 @@ migracio-blogger-9barrisimatge:
     a: "Migració a Taro Photo App amb zero errors i URLs conservades."
   - q: "Es perd el contingut des del 2008?"
     a: "No: tot l'històric es conserva."
+  - q: "Quin gestor de continguts hi ha darrere?"
+    a: "Un CMS a mida amb les funcionalitats justes —ni més ni menys—. És més lleuger, més segur i està fet al gust de qui l'ha de fer servir cada dia."
 nau-bostik:
   - q: "Com recuperar el web d'un espai cultural?"
     a: "Recuperació d'urgència i replantejament digital, amb allotjament i correu."
@@ -120,6 +124,8 @@ pocallum-estatic:
     a: "Migració a Hugo: zero dependències i càrrega instantània."
   - q: "Es mantenen les URLs?"
     a: "Sí, amb paritat total."
+  - q: "Quin gestor de continguts hi ha darrere?"
+    a: "Un CMS a mida amb les funcionalitats justes —ni més ni menys—. És més lleuger, més segur i està fet al gust de qui l'ha de fer servir cada dia."
 pocallum:
   - q: "Com crear el portfolio digital d'una agència fotogràfica?"
     a: "Web i presència digital amb programari lliure."

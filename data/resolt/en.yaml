@@ -40,6 +40,8 @@ blog-pocallum:
     a: "No: 137,000 words and 71 imported comments are preserved."
   - q: "What else do you gain?"
     a: "More data sovereignty: the content is your own and lives on your own server. You can publish blog posts without any platform restriction and with tailored SEO."
+  - q: "What content manager is behind it?"
+    a: "A custom CMS with exactly the right features —no more, no less. It is lighter, more secure and shaped around the person who uses it every day."
 bratia:
   - q: "How do you migrate a band's WordPress site to Hugo?"
     a: "Migration to a static, multilingual and autonomous system, with integrated agenda and discography."
@@ -110,6 +112,8 @@ migracio-blogger-9barrisimatge:
     a: "Migration to Taro Photo App with zero errors and URLs preserved."
   - q: "Is content from 2008 lost?"
     a: "No: the entire history is preserved."
+  - q: "What content manager is behind it?"
+    a: "A custom CMS with exactly the right features —no more, no less. It is lighter, more secure and shaped around the person who uses it every day."
 nau-bostik:
   - q: "How do you recover a cultural space's website?"
     a: "Emergency recovery and digital replanning, with hosting and email."
@@ -120,6 +124,8 @@ pocallum-estatic:
     a: "Migration to Hugo: zero dependencies and instant loading."
   - q: "Are the URLs preserved?"
     a: "Yes, with full parity."
+  - q: "What content manager is behind it?"
+    a: "A custom CMS with exactly the right features —no more, no less. It is lighter, more secure and shaped around the person who uses it every day."
 pocallum:
   - q: "How do you create a photography agency's digital portfolio?"
     a: "A website and digital presence with free software."
