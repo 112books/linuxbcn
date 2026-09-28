@@ -53,6 +53,8 @@ bratia:
     a: "Migration to a static, multilingual and autonomous system, with integrated agenda and discography."
   - q: "Can the band update the content?"
     a: "Yes, with a simple content manager."
+  - q: "What should a band's website do?"
+    a: "It should be practical for managing the band and run almost by itself, so the musicians can focus on rehearsing and touring."
 carrer:
   - q: "How do you take a neighbourhood publication online?"
     a: "Website and digital communication for the magazine, with manageable content."

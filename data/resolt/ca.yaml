@@ -53,6 +53,8 @@ bratia:
     a: "Migració a un sistema estàtic, multilingüe i autònom, amb agenda i discografia integrades."
   - q: "La banda pot actualitzar el contingut?"
     a: "Sí, amb un gestor de continguts senzill."
+  - q: "Què ha de fer el web d'un grup de música?"
+    a: "Ha de ser pràctic per a la gestió del grup i funcionar pràcticament sol, perquè els músics es puguin dedicar a assajar i anar de gira."
 carrer:
   - q: "Com digitalitzar una publicació veïnal?"
     a: "Web i comunicació digital per a la revista, amb contingut gestionable."
