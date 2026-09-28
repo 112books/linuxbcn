@@ -78,13 +78,14 @@ deploy_prod() {
   sync
   build_prod
   print "Pujant a Dinahost via SSH..."
-  rsync -rlpz --no-times --ignore-errors \
-    --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r \
+  rsync -rlz --no-times --no-perms --ignore-errors \
     --exclude='.git' \
     --exclude='/formularis' \
     --exclude='/apps/taro' \
     --exclude='/admin/analytics-cache.json' \
     $BUILD_DIR/ $SSH_USER@$SSH_HOST:$SSH_PATH
+  # Assegura permisos llegibles per Apache (umask del servidor crea fitxers 600)
+  ssh "$SSH_USER@$SSH_HOST" 'find ~/www -mindepth 1 -type f -not -perm -o+r -exec chmod 644 {} + 2>/dev/null; find ~/www -mindepth 1 -type d -not -perm -o+x -exec chmod 755 {} + 2>/dev/null' || true
   purge_cache
   ok "Deploy producció fet → https://linuxbcn.com/"
 }

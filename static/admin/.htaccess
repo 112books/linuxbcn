@@ -10,3 +10,8 @@ Require valid-user
 <Files ".htpasswd">
   Require all denied
 </Files>
+
+# CSP propia del panell: Chart.js aplica estils en linia (style attributes),
+# aixi que style-src necessita 'unsafe-inline' NOMES aqui (panell privat amb Basic Auth).
+# La resta de directives es manten en estrictes.
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
