@@ -109,6 +109,8 @@ llumatics:
     a: "A website and content management with free software."
   - q: "Can the images be shown with no dependencies?"
     a: "Yes: optimised images and our own hosting."
+  - q: "What can a school do with this website?"
+    a: "It is the full management of a school —in this case, a photography school—: running courses and workshops, learning paths, seat booking and online documentation. It can be adapted to any training centre."
 machiroku:
   - q: "How do you modernise a restaurant's website?"
     a: "A fast, mobile-friendly redesign that is easy to manage, with no external dependencies."

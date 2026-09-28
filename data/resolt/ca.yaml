@@ -109,6 +109,8 @@ llumatics:
     a: "Web i gestió de continguts amb programari lliure."
   - q: "Es poden mostrar les imatges sense dependències?"
     a: "Sí: imatges optimitzades i allotjament propi."
+  - q: "Què pot fer una escola amb aquest web?"
+    a: "És la gestió integral d'una escola —en aquest cas, de fotografia—: regular cursos i tallers, recorreguts formatius, reserva de places i documentació en línia. I és adaptable a qualsevol centre formatiu."
 machiroku:
   - q: "Com modernitzar el web d'un restaurant?"
     a: "Redisseny ràpid, mòbil i fàcil de gestionar, sense dependències externes."
