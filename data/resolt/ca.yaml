@@ -15,6 +15,8 @@
     a: "Sí: web estàtic a GitHub Pages, sense dependències i amb càrrega immediata."
   - q: "Es veurà bé en mòbil?"
     a: "Sí: disseny lleuger i adaptatiu, amb imatges optimitzades."
+  - q: "Què és 112 Revelats?"
+    a: "Un projecte de l'editorial 112books per descobrir nous talents del món de la fotografia."
 9-barris-acull:
   - q: "Com gestionar expedients de forma segura i compliant amb el RGPD?"
     a: "Aplicació Drupal a mida amb control d'accés i tractament de dades conforme al RGPD."

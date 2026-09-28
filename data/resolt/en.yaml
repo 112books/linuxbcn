@@ -15,6 +15,8 @@
     a: "Yes: a static site on GitHub Pages, with no dependencies and instant loading."
   - q: "Will it look right on mobile?"
     a: "Yes: a lightweight, responsive design with optimised images."
+  - q: "What is 112 Revelats?"
+    a: "A project by the publisher 112books to discover new talent in photography."
 9-barris-acull:
   - q: "How do you manage case files securely and GDPR-compliantly?"
     a: "A custom Drupal application with access control and data processing compliant with the GDPR."
