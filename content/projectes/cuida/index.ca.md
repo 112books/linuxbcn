@@ -1,7 +1,7 @@
 ---
 title: "Cuida — App de coordinació familiar"
 seo_title: "Cuida: app de coordinació de cures a casa | LinuxBCN"
-description: "Aplicació web gratuïta i de codi obert per a famílies que cuiden d'un familiar malalt a casa. Contactes mèdics, medicació, protocols d'urgències i horaris de cuidadors, a un toc."
+description: "Aplicació web gratuïta i de codi obert per a famílies que cuiden d'un familiar malalt a casa: contactes mèdics, medicació i protocols d'urgència."
 lastmod: "2026-06-24"
 slug: "cuida"
 weight: 1

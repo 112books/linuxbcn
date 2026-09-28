@@ -10,6 +10,8 @@
     a: "Web propi amb catàleg estructurat i identitat digital, sense dependre de plataformes de tercers."
   - q: "Es perd el control de les dades?"
     a: "No: allotjament i analítica propis, sense cookies ni serveis externs."
+  - q: "Què hi guanya una editorial independent?"
+    a: "Una presència digital pròpia i sobirana per mostrar el catàleg i connectar amb els lectors, sense dependre de plataformes de tercers."
 112revelats:
   - q: "Es pot tenir un web de fotografia sense base de dades?"
     a: "Sí: web estàtic a GitHub Pages, sense dependències i amb càrrega immediata."
@@ -22,6 +24,8 @@
     a: "Aplicació Drupal a mida amb control d'accés i tractament de dades conforme al RGPD."
   - q: "Com obtenir estadístiques sense comprometre dades personals?"
     a: "Informes agregats i anonimitzats generats des de la mateixa aplicació."
+  - q: "Què resol per a una entitat social?"
+    a: "Digitalitza la gestió de tràmits amb control d'accés i RGPD, i permet obtenir estadístiques agregades per als informes sense exposar dades personals."
 app-estenop:
   - q: "Es pot calcular l'exposició d'una càmera pinhole sense taules?"
     a: "Sí: Estenop fa servir la càmera del mòbil com a fotòmetre i aplica la correcció de reciprocitat."
@@ -78,6 +82,8 @@ family-art-tattoo:
     a: "Tema WordPress a mida, continguts i SEO, amb integració a Instagram."
   - q: "Es pot gestionar des del mòbil?"
     a: "Sí: disseny adaptatiu i fàcil d'editar."
+  - q: "Què aconsegueix un estudi de tatuatge amb aquest web?"
+    a: "Una presència digital pròpia que atrau clients i mostra els treballs, amb contingut gestionable i integració amb Instagram."
 favb:
   - q: "Com dotar de presència digital una federació de veïns?"
     a: "Web i comunicació digital per a l'organització, amb contingut gestionable."
@@ -90,6 +96,8 @@ gestor-hores:
     a: "Registre automàtic per sessió, amb reports visuals i sincronització via Codeberg."
   - q: "Cal introduir les dades a mà?"
     a: "No: el registre és automàtic."
+  - q: "Què guanyem amb aquest sistema?"
+    a: "Saber quantes hores dediquem a cada projecte sense apuntar-les a mà, poder pressupostar amb dades reals i tenir els informes a punt."
 goatcounter-dashboard:
   - q: "Com tenir estadístiques sense cookies ni Google?"
     a: "Dashboard self-hosted sobre l'API de GoatCounter, respectuós amb la privacitat."
@@ -116,6 +124,8 @@ linuxbcn-arquitectura-sistema-digital:
     a: "Hugo a mida, bilingüe i lleuger: el mateix sistema que apliquem als clients."
   - q: "Es pot mantenir sense agència?"
     a: "Sí: contingut estàtic i desplegament propi."
+  - q: "Què demostra aquest web?"
+    a: "Que allò que proposem als clients ho apliquem primer a nosaltres: lleuger, bilingüe, sense dependències i amb sobirania de dades."
 llumatics:
   - q: "Com donar presència digital a un projecte de fotografia analògica?"
     a: "Web i gestió de continguts amb programari lliure."
@@ -177,6 +187,8 @@ taro-photo-app:
     a: "Web estàtic, gestor Sveltia i mòduls de votació, formularis i autopublicació (AGPL-3.0)."
   - q: "Es poden migrar els continguts antics?"
     a: "Sí: importació de Blogger i 3.008 articles."
+  - q: "Què guanya un col·lectiu fotogràfic amb Taro?"
+    a: "Una eina pròpia per gestionar socis, continguts, concursos i publicacions, sense dependre de cap plataforma tancada i amb el codi obert (AGPL-3.0)."
 terra-i-foc:
   - q: "Com crear un web bilingüe per a un obrador artesà?"
     a: "Web estàtica amb Hugo, GitHub Pages i GoatCounter sense cookies."
@@ -189,3 +201,5 @@ votacio-public:
     a: "Un vot per obra i mòbil, només dins de la sala, sense guardar coordenades ni dades personals."
   - q: "Es pot verificar el recompte?"
     a: "Sí: signatura HMAC i recompte verificable (també en paper)."
+  - q: "Què aporta aquesta app a un concurs?"
+    a: "Votació presencial àgil i fiable sense recollir dades personals: un vot per persona, només dins de la sala, amb recompte verificable."

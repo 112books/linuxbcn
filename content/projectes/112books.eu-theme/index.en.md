@@ -8,7 +8,7 @@ date: 2026-07-13
 client: "112Books"
 sector: "editorial"
 perfils: ["microempreses"]
-description: "Full rebuild of 112books.eu: a new information architecture that clarifies the three pillars of the publisher, and a WordPress FSE block theme built from scratch with GitHub and Claude."
+description: "Full rebuild of 112books.eu: a new information architecture and a WordPress FSE block theme built from scratch."
 lastmod: "2026-07-13"
 draft: false
 serveis: ["tema-wordpress"]

@@ -7,7 +7,7 @@ year: 2026
 date: 2026-05-09
 client: "LinuxBCN"
 sector: "tools"
-description: "Cookie-free self-hosted web analytics dashboard built on the GoatCounter API. LinuxBCN's own tool for clients who want privacy by design."
+description: "Cookieless, self-hosted analytics dashboard on the GoatCounter API: privacy by design, built by LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
 serveis: ["cas-propi", "tema-wordpress"]

@@ -10,6 +10,8 @@
     a: "A website of its own with a structured catalogue and digital identity, without relying on third-party platforms."
   - q: "Do you lose control of the data?"
     a: "No: hosting and analytics are our own, with no cookies or external services."
+  - q: "What does an independent publisher gain?"
+    a: "Its own, sovereign digital presence to showcase its catalogue and connect with readers, without relying on third-party platforms."
 112revelats:
   - q: "Can a photography site work without a database?"
     a: "Yes: a static site on GitHub Pages, with no dependencies and instant loading."
@@ -22,6 +24,8 @@
     a: "A custom Drupal application with access control and data processing compliant with the GDPR."
   - q: "How do you get statistics without compromising personal data?"
     a: "Aggregated, anonymised reports generated from the application itself."
+  - q: "What does it solve for a social organisation?"
+    a: "It digitalises case management with access control and GDPR compliance, and provides aggregated statistics for reports without exposing personal data."
 app-estenop:
   - q: "Can you calculate a pinhole camera's exposure without tables?"
     a: "Yes: Estenop uses the phone camera as a light meter and applies reciprocity correction."
@@ -78,6 +82,8 @@ family-art-tattoo:
     a: "A custom WordPress theme, content and SEO, with Instagram integration."
   - q: "Can it be managed from mobile?"
     a: "Yes: responsive design, easy to edit."
+  - q: "What does a tattoo studio achieve with this website?"
+    a: "Its own digital presence that attracts clients and showcases its work, with manageable content and Instagram integration."
 favb:
   - q: "How do you give a residents' federation a digital presence?"
     a: "Website and digital communication for the organisation, with manageable content."
@@ -90,6 +96,8 @@ gestor-hores:
     a: "Automatic per-session logging, with visual reports and sync through Codeberg."
   - q: "Do you have to enter the data by hand?"
     a: "No: logging is automatic."
+  - q: "What do we gain from this system?"
+    a: "Knowing how many hours go into each project without logging them by hand, budgeting with real data and having reports ready."
 goatcounter-dashboard:
   - q: "How do you get statistics with no cookies and no Google?"
     a: "A self-hosted dashboard on top of the GoatCounter API, respectful of privacy."
@@ -116,6 +124,8 @@ linuxbcn-arquitectura-sistema-digital:
     a: "A custom, bilingual and lightweight Hugo site: the same system we apply for clients."
   - q: "Can it be maintained without an agency?"
     a: "Yes: static content and our own deployment."
+  - q: "What does this website demonstrate?"
+    a: "That what we recommend to clients, we apply to ourselves first: lightweight, bilingual, dependency-free and with data sovereignty."
 llumatics:
   - q: "How do you give an analogue photography project a digital presence?"
     a: "A website and content management with free software."
@@ -177,6 +187,8 @@ taro-photo-app:
     a: "A static site, Sveltia CMS and voting, forms and self-publishing modules (AGPL-3.0)."
   - q: "Can old content be migrated?"
     a: "Yes: Blogger import and 3,008 articles."
+  - q: "What does a photography collective gain with Taro?"
+    a: "Its own tool to manage members, content, contests and publications, with no closed platform dependency and open code (AGPL-3.0)."
 terra-i-foc:
   - q: "How do you create a bilingual site for an artisan workshop?"
     a: "A static site with Hugo, GitHub Pages and cookieless GoatCounter."
@@ -189,3 +201,5 @@ votacio-public:
     a: "One vote per work and phone, only inside the venue, without storing coordinates or personal data."
   - q: "Can the count be verified?"
     a: "Yes: HMAC signature and a verifiable count (on paper too)."
+  - q: "What does this app bring to a contest?"
+    a: "Fast, reliable in-person voting without collecting personal data: one vote per person, only inside the venue, with a verifiable count."

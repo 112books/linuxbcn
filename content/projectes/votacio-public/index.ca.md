@@ -8,7 +8,7 @@ date: 2026-09-27
 client: "9 Barris Imatge"
 sector: "fotografia"
 perfils: ["collectius"]
-description: "Aplicació web de votació del públic per a exposicions i concursos: un vot per obra i mòbil, només dins de la sala, sense dades personals i amb recompte verificable. Programari lliure de LinuxBCN."
+description: "Aplicació web de votació del públic per a exposicions: un vot per obra i mòbil, només dins de la sala, sense dades personals i amb recompte verificable."
 lastmod: "2026-09-27"
 draft: false
 serveis: ["aplicacio-web"]

@@ -7,7 +7,7 @@ year: 2026
 date: 2026-05-09
 client: "LinuxBCN"
 sector: "eines"
-description: "Dashboard d'analítica web self-hosted sense cookies, construït sobre l'API de GoatCounter. Eina pròpia de LinuxBCN per a clients que volen privacitat per disseny."
+description: "Dashboard d'analítica web self-hosted sense cookies, sobre l'API de GoatCounter: privacitat per disseny per a clients de LinuxBCN."
 lastmod: "2026-06-24"
 draft: false
 serveis: ["cas-propi", "tema-wordpress"]

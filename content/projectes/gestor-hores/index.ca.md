@@ -7,7 +7,7 @@ year: 2026
 date: 2026-08-11
 client: "LinuxBCN"
 sector: "eines"
-description: "Sistema de seguiment de temps per a projectes de client, integrat directament a Claude Code. Registre automàtic per sessió, reports visuals i sincronització via Codeberg."
+description: "Sistema de seguiment de temps per a projectes de client, integrat a Claude Code: registre automàtic per sessió i reports visuals."
 image: "gestor-hores-central.png"
 lastmod: "2026-08-11"
 draft: false

@@ -8,7 +8,7 @@ date: 2026-09-27
 client: "9 Barris Imatge"
 sector: "photography"
 perfils: ["collectius"]
-description: "Web app for audience voting at exhibitions and contests: one vote per work and phone, only inside the venue, no personal data and a verifiable count. Free software by LinuxBCN."
+description: "Web app for audience voting at exhibitions: one vote per work and phone, only inside the venue, no personal data and a verifiable count."
 lastmod: "2026-09-27"
 draft: false
 serveis: ["aplicacio-web"]

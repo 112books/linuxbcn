@@ -8,7 +8,7 @@ date: 2026-09-23
 client: "9 Barris Imatge"
 sector: "fotografia"
 perfils: ["collectius"]
-description: "Taro Photo App: web estàtic, gestor de continguts i mòduls de votació i formularis per a col·lectius fotogràfics. Programari lliure (AGPL-3.0) en producció a 9barrisimatge.org amb 3.008 articles."
+description: "Taro Photo App: web estàtic, gestor de continguts i mòduls de votació per a col·lectius fotogràfics. Programari lliure (AGPL-3.0) a 9barrisimatge.org."
 lastmod: "2026-09-27"
 draft: false
 serveis: ["aplicacio-web"]

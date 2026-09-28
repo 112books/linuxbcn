@@ -7,7 +7,7 @@ year: 2026
 date: 2026-08-11
 client: "LinuxBCN"
 sector: "tools"
-description: "Time tracking for client projects, built directly into Claude Code. Automatic per-session logging, visual reports and sync through Codeberg."
+description: "Time tracking for client projects, built into Claude Code: automatic per-session logging and visual reports."
 image: "gestor-hores-central.png"
 lastmod: "2026-09-27"
 draft: false

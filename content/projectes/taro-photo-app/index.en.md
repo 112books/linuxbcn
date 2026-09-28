@@ -8,7 +8,7 @@ date: 2026-09-23
 client: "9 Barris Imatge"
 sector: "photography"
 perfils: ["collectius"]
-description: "Taro Photo App: static website, content manager and voting and form modules for photography collectives. Free software (AGPL-3.0) running at 9barrisimatge.org with 3,008 articles."
+description: "Taro Photo App: static website, content manager and voting modules for photography collectives. Free software (AGPL-3.0) at 9barrisimatge.org."
 lastmod: "2026-09-27"
 draft: false
 serveis: ["aplicacio-web"]

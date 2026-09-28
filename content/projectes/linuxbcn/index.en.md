@@ -7,7 +7,7 @@ year: 2026
 date: 2026-04-13
 client: "own project"
 sector: "services"
-description: "From accumulated WordPress to custom-built Hugo: lightweight, multilingual, no external dependencies. The system we apply to clients, applied first to ourselves."
+description: "From accumulated WordPress to custom Hugo: lightweight, multilingual, no external dependencies. The system we apply to clients."
 lastmod: "2026-06-26"
 draft: false
 serveis: ["cas-propi"]

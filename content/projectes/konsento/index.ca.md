@@ -1,7 +1,7 @@
 ---
 title: "Konsento — Governança assembleària per a espais comunitaris"
 seo_title: "Konsento: governança assembleària per a col·lectius | LinuxBCN"
-description: "Konsento és una aplicació web de programari lliure que ajuda col·lectius, cooperatives i espais autogestionats a prendre decisions de forma transparent, estructurada i accessible."
+description: "Konsento és una aplicació web de programari lliure que ajuda col·lectius, cooperatives i espais autogestionats a prendre decisions transparents."
 lastmod: "2026-08-17"
 slug: "konsento"
 weight: 1

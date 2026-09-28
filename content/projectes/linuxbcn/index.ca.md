@@ -7,7 +7,7 @@ year: 2026
 date: 2026-04-13
 client: "projecte propi"
 sector: "serveis"
-description: "De WordPress acumulatiu a Hugo fet a mida: arquitectura lleugera, bilingüe, sense dependències externes. El sistema que apliquem als clients, aplicat primer a nosaltres."
+description: "De WordPress acumulatiu a Hugo fet a mida: web lleuger, bilingüe i sense dependències. El sistema que apliquem als clients."
 lastmod: "2026-06-26"
 draft: false
 serveis: ["cas-propi"]

@@ -8,7 +8,7 @@ date: 2026-07-13
 client: "112Books"
 sector: "editorial"
 perfils: ["microempreses"]
-description: "Redisseny complet de 112books.eu: nova arquitectura d'informació que clarifica els tres pilars de l'editorial, i tema bloc WordPress FSE construït des de zero amb GitHub i Claude."
+description: "Redisseny complet de 112books.eu: nova arquitectura d'informació i tema bloc WordPress FSE construït des de zero."
 lastmod: "2026-07-13"
 draft: false
 serveis: ["tema-wordpress"]

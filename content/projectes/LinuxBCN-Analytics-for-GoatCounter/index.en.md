@@ -7,7 +7,7 @@ year: 2026
 date: 2026-07-13
 client: "LinuxBCN"
 sector: "tools"
-description: "Open-source WordPress plugin to integrate GoatCounter: cookie-free, GDPR-free analytics with a full stats dashboard directly in the WordPress admin."
+description: "Open-source WordPress plugin to integrate GoatCounter: cookieless analytics with a full stats dashboard in the WordPress admin."
 lastmod: "2026-07-16"
 draft: false
 serveis: ["tema-wordpress", "cas-propi"]

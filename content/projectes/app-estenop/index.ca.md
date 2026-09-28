@@ -7,7 +7,7 @@ year: 2026
 date: 2026-04-25
 client: "LinuxBCN"
 sector: "fotografia"
-description: "Estenop — app mòbil offline per a càmeres estenopeiques (pinhole). Càlcul d'exposició, correccions de reciprocitat per a 20+ emulsions, temporitzador integrat. LinuxBCN."
+description: "Estenop — app mòbil offline per a càmeres estenopeiques (pinhole): càlcul d'exposició i correcció de reciprocitat per a 20+ emulsions."
 lastmod: "2026-06-24"
 draft: false
 serveis: ["aplicacio-web", "cas-propi"]
