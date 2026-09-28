@@ -142,6 +142,8 @@ ressona:
     a: "Plataforma amb identitat visual, press kit, web i comunicació."
   - q: "Es pot actualitzar?"
     a: "Sí: contingut gestionable i allotjament propi."
+  - q: "Què hi troba un músic o professional del sector?"
+    a: "Un fons d'eines pensat per a músics i professionals. Ressona ja és un referent per a la indústria musical catalana."
 taro-photo-app:
   - q: "Com gestionar una associació fotogràfica sense plataformes tancades?"
     a: "Web estàtic, gestor Sveltia i mòduls de votació, formularis i autopublicació (AGPL-3.0)."

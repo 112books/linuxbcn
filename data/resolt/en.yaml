@@ -142,6 +142,8 @@ ressona:
     a: "A platform with visual identity, press kit, website and communication."
   - q: "Can it be updated?"
     a: "Yes: manageable content and our own hosting."
+  - q: "What does a musician or industry professional find there?"
+    a: "A set of tools designed for musicians and professionals. Ressona is already a reference for the Catalan music industry."
 taro-photo-app:
   - q: "How do you manage a photography association without closed platforms?"
     a: "A static site, Sveltia CMS and voting, forms and self-publishing modules (AGPL-3.0)."
