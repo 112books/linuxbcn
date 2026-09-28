@@ -2,7 +2,7 @@
 title: "Projectes"
 seo_title: "Projectes: webs i aplicacions a mida | LinuxBCN"
 subtitle: "Feina real per a projectes reals"
-intro: "El millor que podem explicar és el que hem fet. Portem més de 25 anys treballant amb projectes culturals, artístics i socials a Barcelona i més enllà."
+intro: "El millor que podem explicar és el que hem fet. Aquí hi trobaràs els darrers projectes que hem desenvolupat. Portem més de 25 anys treballant amb projectes culturals, artístics i socials a Barcelona i més enllà."
 cta_url: "/contacte/"
 cta_label: "Parlem"
 description: "Portfolio de projectes de LinuxBCN: webs per a músics, col·lectius culturals, editorials i negocis a Barcelona. Programari lliure, disseny a mida."
@@ -55,4 +55,4 @@ Organitzacions i projectes amb els quals hem treballat al llarg dels anys, en di
 
 ---
 
-Tots els llocs que construïm porten **Powered by LinuxBCN** al peu — no per marca, sinó perquè responem del que fem. Cercar la frase us mostrarà una trajectòria més llarga que la que apareix aquí.
+Tots els llocs que construïm porten [**Powered by LinuxBCN**](https://duckduckgo.com/?q=%22Powered+by+LinuxBCN%22) al peu — no per marca, sinó perquè responem del que fem. Cercar la frase us mostrarà una trajectòria més llarga que la que apareix aquí.

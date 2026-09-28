@@ -38,7 +38,7 @@ We have developed and maintain websites and applications for:
 - [**App Positivador**](/projectes/app-positivador/) — analogue darkroom web application
 - And a dozen more musicians, artists and collectives.
 
-Every site we build carries **Powered by LinuxBCN** in the footer. Not for branding — because we stand behind what we make.
+Every site we build carries [**Powered by LinuxBCN**](https://duckduckgo.com/?q=%22Powered+by+LinuxBCN%22) in the footer. Not for branding — because we stand behind what we make.
 
 ---
 

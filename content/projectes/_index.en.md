@@ -2,7 +2,7 @@
 title: "Projects"
 seo_title: "Projects: custom websites and applications | LinuxBCN"
 subtitle: "Real work for real projects"
-intro: "The best we can show is what we've done. We have over 25 years of experience working with cultural, artistic and social projects in Barcelona and beyond."
+intro: "The best we can show is what we've done. Here you'll find the latest projects we've developed. We have over 25 years of experience working with cultural, artistic and social projects in Barcelona and beyond."
 cta_url: "/contacte/"
 cta_label: "Let's talk"
 description: "LinuxBCN project portfolio: websites for musicians, cultural collectives, publishers and businesses in Barcelona. Free software, custom design."
@@ -55,4 +55,4 @@ Organisations we have worked with at different times and in different capacities
 
 ---
 
-Every site we build carries **Powered by LinuxBCN** in the footer — not for branding, but because we stand behind what we make. Searching the phrase will show you a track record longer than what appears here.
+Every site we build carries [**Powered by LinuxBCN**](https://duckduckgo.com/?q=%22Powered+by+LinuxBCN%22) in the footer — not for branding, but because we stand behind what we make. Searching the phrase will show you a track record longer than what appears here.
