@@ -47,7 +47,6 @@ function gc_fetch(string $path, array $params = []): array {
     $body   = curl_exec($ch);
     $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $err    = curl_error($ch);
-    curl_close($ch);
     if ($body === false || $err) return ['__error' => 0, '__msg' => 'Error de xarxa: ' . $err];
     if ($status >= 400)         return ['__error' => $status];
     $decoded = json_decode($body, true);

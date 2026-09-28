@@ -74,7 +74,6 @@ if (isset($_GET['diag'])) {
             'body'   => substr((string)substr((string)$resp, $hsize), 0, 500),
             'error'  => curl_error($ch) ?: null,
         ];
-        curl_close($ch);
     }
     echo json_encode([
         'test_goatcounter'=> $test,
@@ -140,4 +139,3 @@ curl_setopt_array($ch, [
     ],
 ]);
 curl_exec($ch);
-curl_close($ch);
