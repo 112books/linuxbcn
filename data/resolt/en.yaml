@@ -59,6 +59,8 @@ cuida:
     a: "An app with medical contacts, medication, emergency protocols and carer schedules."
   - q: "Is it accessible and open source?"
     a: "Yes: WCAG AA and open source."
+  - q: "What exactly does Cuida do?"
+    a: "It is an app designed to help carers look after those in their care: a very practical tool, built entirely from scratch."
 family-art-tattoo:
   - q: "How do you improve a tattoo studio's digital presence?"
     a: "A custom WordPress theme, content and SEO, with Instagram integration."

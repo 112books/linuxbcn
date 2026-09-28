@@ -59,6 +59,8 @@ cuida:
     a: "App amb contactes mèdics, medicació, protocols d'urgència i horaris de cuidadors."
   - q: "És accessible i de codi obert?"
     a: "Sí: WCAG AA i codi obert."
+  - q: "Què fa, exactament, Cuida?"
+    a: "És una app pensada per ajudar els cuidadors en la cura dels seus malalts: una eina molt pràctica i feta totalment de zero."
 family-art-tattoo:
   - q: "Com millorar la presència digital d'un estudi de tatuatge?"
     a: "Tema WordPress a mida, continguts i SEO, amb integració a Instagram."
