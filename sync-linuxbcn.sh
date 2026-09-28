@@ -68,6 +68,12 @@ deploy_staging() {
   ok "Deploy staging fet → https://112books.github.io/linuxbcn/"
 }
 
+purge_cache() {
+  print "Purjant la caché del proxy..."
+  ssh "$SSH_USER@$SSH_HOST" 'for lang in ca en; do curl -s "https://linuxbcn.com/$lang/sitemap.xml" | grep -o "<loc>[^<]*" | sed "s|<loc>||" | while read -r u; do curl -s -o /dev/null -X PURGE "$u"; done; done' || true
+  ok "Caché purjada"
+}
+
 deploy_prod() {
   sync
   build_prod
@@ -78,6 +84,7 @@ deploy_prod() {
     --exclude='/apps/taro' \
     --exclude='/admin/analytics-cache.json' \
     $BUILD_DIR/ $SSH_USER@$SSH_HOST:$SSH_PATH
+  purge_cache
   ok "Deploy producció fet → https://linuxbcn.com/"
 }
 
