@@ -120,6 +120,8 @@ machiroku:
     a: "A fast, mobile-friendly redesign that is easy to manage, with no external dependencies."
   - q: "Can the menu be updated easily?"
     a: "Yes, with a simple content manager."
+  - q: "What should a restaurant's website show?"
+    a: "The kitchen, the menu and daily menus with allergen information, the whole gastronomic offer and how to get there."
 malditasmaquinas:
   - q: "How do you sell hourly consultancy services online?"
     a: "A SPA web app with Stripe and Telegram notifications, multilingual and WCAG AA."

@@ -120,6 +120,8 @@ machiroku:
     a: "Redisseny ràpid, mòbil i fàcil de gestionar, sense dependències externes."
   - q: "Es pot actualitzar la carta fàcilment?"
     a: "Sí, amb un gestor de continguts senzill."
+  - q: "Què ha de mostrar el web d'un restaurant?"
+    a: "La cuina, la carta i els menús amb informació d'al·lèrgens, tota l'oferta gastronòmica i com arribar-hi."
 malditasmaquinas:
   - q: "Com vendre serveis de consultoria per hores en línia?"
     a: "WebApp SPA amb Stripe i notificacions per Telegram, multidioma i WCAG AA."
