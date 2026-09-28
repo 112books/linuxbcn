@@ -148,6 +148,8 @@ terra-i-foc:
     a: "Web estàtica amb Hugo, GitHub Pages i GoatCounter sense cookies."
   - q: "És ràpid i sense dependències?"
     a: "Sí: càrrega instantània i zero dependències."
+  - q: "Per què una web tan mínima?"
+    a: "Terra i Foc és un exemple de web mínima: per a un projecte artesà no cal res més. Quan el menys és més!"
 votacio-public:
   - q: "Com fer una votació presencial sense recollir dades personals?"
     a: "Un vot per obra i mòbil, només dins de la sala, sense guardar coordenades ni dades personals."

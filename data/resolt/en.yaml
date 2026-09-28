@@ -148,6 +148,8 @@ terra-i-foc:
     a: "A static site with Hugo, GitHub Pages and cookieless GoatCounter."
   - q: "Is it fast and dependency-free?"
     a: "Yes: instant loading and zero dependencies."
+  - q: "Why such a minimal website?"
+    a: "Terra i Foc is an example of a minimal website: for an artisan project, nothing more is needed. When less is more!"
 votacio-public:
   - q: "How do you run in-person voting without collecting personal data?"
     a: "One vote per work and phone, only inside the venue, without storing coordinates or personal data."
