@@ -181,6 +181,71 @@
 }
 </script>
 {{ end }}
+{{ if eq .Section "com-treballem" }}
+{{ $ca := eq .Site.Language.Lang "ca" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": {{ cond $ca "Com treballem" "How we work" | jsonify }},
+  "description": {{ cond $ca "El procés de treball de LinuxBCN en quatre passos: escoltar, diagnosticar, construir i acompanyar." "LinuxBCN's working process in four steps: listen, diagnose, build and support." | jsonify }},
+  "step": [
+    {
+      "@type": "HowToStep", "position": 1,
+      "name": {{ cond $ca "Escoltem" "We listen" | jsonify }},
+      "text": {{ cond $ca "Entenem d'on ve el projecte i on vol arribar. Sense suposicions, sense solucions precuinades." "We understand where the project comes from and where it wants to go. No assumptions, no pre-cooked solutions." | jsonify }}
+    },
+    {
+      "@type": "HowToStep", "position": 2,
+      "name": {{ cond $ca "Diagnosi" "Diagnosis" | jsonify }},
+      "text": {{ cond $ca "Avaluem el que hi ha, el que cal i el que sobra. El sistema mínim que resoldrà el problema real." "We assess what exists, what's needed and what's surplus. The minimum system that solves the real problem." | jsonify }}
+    },
+    {
+      "@type": "HowToStep", "position": 3,
+      "name": {{ cond $ca "Construcció" "Build" | jsonify }},
+      "text": {{ cond $ca "Dissenyem i implementem amb programari lliure i eines que el client pot mantenir sense nosaltres." "We design and implement with free software and tools the client can maintain without us." | jsonify }}
+    },
+    {
+      "@type": "HowToStep", "position": 4,
+      "name": {{ cond $ca "Acompanyament" "Support" | jsonify }},
+      "text": {{ cond $ca "Formació i suport fins que el sistema és seu. La dependència de nosaltres ha de ser mínima." "Training and support until the system is truly theirs. Dependence on us must be minimal." | jsonify }}
+    }
+  ]
+}
+</script>
+{{ end }}
+{{ if eq .Section "solucions" }}
+{{ if .IsSection }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ .Title | jsonify }},
+  "itemListElement": [
+    {{ range $i, $p := .Pages }}{{ if $i }},{{ end }}
+    { "@type": "ListItem", "position": {{ add $i 1 }}, "name": {{ $p.Title | jsonify }}, "url": {{ $p.Permalink | jsonify }} }
+    {{ end }}
+  ]
+}
+</script>
+{{ else }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ .Title | jsonify }},
+  "serviceType": {{ .Title | jsonify }},
+  "description": {{ (.Description | default .Site.Params.description) | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "provider": { "@type": "ProfessionalService", "@id": "https://linuxbcn.com/#organization" },
+  "areaServed": [
+    { "@type": "City", "name": "Barcelona" },
+    { "@type": "AdministrativeArea", "name": "Catalunya" }
+  ]
+}
+</script>
+{{ end }}
+{{ end }}
 
 <!-- Preload fonts above-the-fold -->
 <link rel="preload" href="{{ "fonts/ibm-plex-sans-v23-latin-300.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
@@ -193,6 +258,7 @@
 <!-- Favicon + Manifest -->
 <link rel="icon" type="image/svg+xml" href="{{ "img/favicon.svg" | relURL }}">
 <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+<link rel="author" href="{{ "humans.txt" | relURL }}">
 <meta name="theme-color" content="#0d0d0d">
 
 <!-- Analítica: GoatCounter (sense cookies, GDPR) -->

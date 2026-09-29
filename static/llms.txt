@@ -58,5 +58,5 @@ Idiomes: Català (principal), Anglès
 - Email: hola@linuxbcn.com
 - Instagram: https://www.instagram.com/linuxbcn_oficial/
 
-Updated: 2026-09-28
+Updated: 2026-09-29
 Llicència de contingut: CC BY-SA 4.0

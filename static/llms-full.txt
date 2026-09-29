@@ -4,7 +4,7 @@
 > estructurat per facilitar la comprensió i citació per part de models de llenguatge,
 > cercadors d'IA i agents automatitzats.
 > Índex breu: https://linuxbcn.com/llms.txt
-> Updated: 2026-09-28
+> Updated: 2026-09-29
 
 ---
 
@@ -142,4 +142,4 @@ Formulari de contacte i diagnosi inicial: https://linuxbcn.com/ca/contacte/
 ---
 
 Llicència de contingut: CC BY-SA 4.0
-Updated: 2026-09-28
+Updated: 2026-09-29
