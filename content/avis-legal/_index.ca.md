@@ -10,7 +10,7 @@ draft: false
 - **NIF:** 38121766W
 - **Adreça fiscal:** Carrer Verger de Montserrat, 17 — 08739 El Pago (Subirats), Barcelona, Catalunya
 - **Oficines:** Nau Bostik, Carrer Ferran Turné, 1-11 — 08027 Barcelona, Catalunya
-- **Correu electrònic:** hola@linuxbcn.com
+- **Correu electrònic:** {{< email >}}
 
 Nom comercial: **LinuxBCN**. No oferim telèfon d'atenció pública; el canal de contacte és el correu electrònic.
 

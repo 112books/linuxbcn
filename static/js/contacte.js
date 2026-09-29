@@ -11,14 +11,14 @@
     email:    'Escriu un correu electrònic vàlid.',
     missatge: 'Descriu la teva situació.',
     rgpd:     'Cal acceptar la política de privacitat.',
-    send:     'No hem pogut enviar la consulta. Escriu-nos a hola@linuxbcn.com.'
+    send:     "No hem pogut enviar la consulta. Torna-ho a provar d'aquí una estona."
   } : {
     tipus:    'Select an option to continue.',
     nom:      'Please enter your name.',
     email:    'Please enter a valid email address.',
     missatge: 'Please describe your situation.',
     rgpd:     'You must accept the privacy policy.',
-    send:     'We could not send your enquiry. Email us at hola@linuxbcn.com.'
+    send:     "We could not send your enquiry. Please try again in a moment."
   };
 
   const CONFIG = isCA ? {

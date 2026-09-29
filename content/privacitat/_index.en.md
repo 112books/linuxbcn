@@ -10,7 +10,7 @@ draft: false
 - **Tax ID (NIF):** 38121766W
 - **Registered address:** Carrer Verger de Montserrat, 17 — 08739 El Pago (Subirats), Barcelona, Catalonia
 - **Office:** Nau Bostik, Carrer Ferran Turné, 1-11 — 08027 Barcelona, Catalonia
-- **Email:** hola@linuxbcn.com
+- **Email:** {{< email >}}
 - **Trade name:** LinuxBCN
 
 We do not have a Data Protection Officer (DPO) because we are not required to appoint one.
@@ -56,7 +56,7 @@ We do not have a Data Protection Officer (DPO) because we are not required to ap
 
 ## Your rights
 
-You may exercise your rights of **access, rectification, erasure, objection, restriction of processing and portability**, as well as **withdraw your consent**, by writing to **hola@linuxbcn.com**. We will reply within one month.
+You may exercise your rights of **access, rectification, erasure, objection, restriction of processing and portability**, as well as **withdraw your consent**, by writing to <strong>{{< email >}}</strong>. We will reply within one month.
 
 If you believe we have not properly handled your rights, you may lodge a complaint with the **Spanish Data Protection Agency (AEPD)**, at [www.aepd.es](https://www.aepd.es).
 

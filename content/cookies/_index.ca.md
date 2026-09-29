@@ -44,6 +44,6 @@ Pots configurar el navegador per bloquejar o eliminar cookies en qualsevol momen
 
 ## Més informació
 
-Per a qualsevol dubte sobre aquesta política, escriu-nos a hola@linuxbcn.com o consulta la [Política de privacitat](https://linuxbcn.com/ca/privacitat/).
+Per a qualsevol dubte sobre aquesta política, escriu-nos a {{< email >}} o consulta la [Política de privacitat](https://linuxbcn.com/ca/privacitat/).
 
 Darrera actualització: setembre de 2026

@@ -10,7 +10,7 @@ draft: false
 - **NIF:** 38121766W
 - **Adreça fiscal:** Carrer Verger de Montserrat, 17 — 08739 El Pago (Subirats), Barcelona, Catalunya
 - **Oficines:** Nau Bostik, Carrer Ferran Turné, 1-11 — 08027 Barcelona, Catalunya
-- **Correu electrònic:** hola@linuxbcn.com
+- **Correu electrònic:** {{< email >}}
 - **Nom comercial:** LinuxBCN
 
 No disposem de delegat de protecció de dades (DPO) perquè no hi estem obligats.
@@ -56,7 +56,7 @@ No disposem de delegat de protecció de dades (DPO) perquè no hi estem obligats
 
 ## Els teus drets
 
-Pots exercir els drets d'**accés, rectificació, supressió, oposició, limitació del tractament i portabilitat**, així com **retirar el consentiment**, escrivint a **hola@linuxbcn.com**. Et respondrem en el termini màxim d'un mes.
+Pots exercir els drets d'**accés, rectificació, supressió, oposició, limitació del tractament i portabilitat**, així com **retirar el consentiment**, escrivint a <strong>{{< email >}}</strong>. Et respondrem en el termini màxim d'un mes.
 
 Si consideres que no hem atès correctament els teus drets, pots presentar una reclamació davant l'**Agència Espanyola de Protecció de Dades (AEPD)**, a [www.aepd.es](https://www.aepd.es).
 

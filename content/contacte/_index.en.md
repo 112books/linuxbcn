@@ -7,4 +7,4 @@ lastmod: "2026-06-24"
 draft: false
 ---
 
-**Data protection**: the information you provide will be used solely to respond to your enquiry. We do not share it with third parties or use it for any other purpose. You may exercise your rights of access, rectification and erasure by writing to hola@linuxbcn.com. Controller: LinuxBCN. Legal basis: consent (Art. 6.1.a GDPR).
+**Data protection**: the information you provide will be used solely to respond to your enquiry. We do not share it with third parties or use it for any other purpose. You may exercise your rights of access, rectification and erasure by writing to {{< email >}}. Controller: LinuxBCN. Legal basis: consent (Art. 6.1.a GDPR).

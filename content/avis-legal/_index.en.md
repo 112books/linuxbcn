@@ -10,7 +10,7 @@ draft: false
 - **Tax ID (NIF):** 38121766W
 - **Registered address:** Carrer Verger de Montserrat, 17 — 08739 El Pago (Subirats), Barcelona, Catalonia
 - **Office:** Nau Bostik, Carrer Ferran Turné, 1-11 — 08027 Barcelona, Catalonia
-- **Email:** hola@linuxbcn.com
+- **Email:** {{< email >}}
 
 Trade name: **LinuxBCN**. We do not offer a public phone line; the contact channel is email.
 

@@ -163,7 +163,7 @@
     <!-- ASIDE -->
     <aside class="contacte-direct">
       <p class="contacte-direct-label">{{ cond $ca "Contacte directe" "Direct contact" }}</p>
-      <a href="mailto:hola@linuxbcn.com" class="contacte-mail">hola@linuxbcn.com</a>
+      <a class="contacte-mail" data-lbcn-email href="#" rel="nofollow">{{ cond $ca "hola (a) linuxbcn (punt) com" "hola (at) linuxbcn (dot) com" }}</a>
       <p class="contacte-note">
         {{ if $ca }}
           Treballem per correu. És asíncron, queda registre i ens permet respondre amb criteri.<br><br>

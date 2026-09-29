@@ -44,6 +44,6 @@ You can configure your browser to block or delete cookies at any time. Since we 
 
 ## More information
 
-If you have any questions about this policy, write to hola@linuxbcn.com or see our [Privacy policy](https://linuxbcn.com/en/privacitat/).
+If you have any questions about this policy, write to {{< email >}} or see our [Privacy policy](https://linuxbcn.com/en/privacitat/).
 
 Last updated: September 2026
