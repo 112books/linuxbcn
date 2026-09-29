@@ -4,70 +4,78 @@ slug: "privacitat"
 draft: false
 ---
 
-## Qui som
+## Responsable del tractament
 
-LinuxBCN és un servei de consultoria en identitat digital
-operat per Juan Martínez i Serres, amb seu a Nau Bostik,
-Carrer Ferran Turné 1-11, 08027 Barcelona.
+- **Responsable:** Juan Martínez i Serres — persona física (autònom)
+- **NIF:** 38121766W
+- **Adreça fiscal:** Carrer Verger de Montserrat, 17 — 08739 El Pago (Subirats), Barcelona, Catalunya
+- **Oficines:** Nau Bostik, Carrer Ferran Turné, 1-11 — 08027 Barcelona, Catalunya
+- **Correu electrònic:** hola@linuxbcn.com
+- **Nom comercial:** LinuxBCN
 
-Contacte: hola@linuxbcn.com
-
----
-
-## Quines dades recollim
-
-**Formulari de contacte**
-Quan ens escriviu, guardem el vostre nom,
-adreça de correu electrònic i el contingut del missatge.
-Únicament per respondre-us. No els compartim amb ningú.
-
-**Analítica web**
-Utilitzem una eina d'analítica lleugera i respectuosa
-amb la privacitat. No recull dades personals,
-no utilitza cookies de seguiment i no comparteix
-informació amb tercers.
-
-No fem servir Google Analytics ni cap eina
-de seguiment invasiva.
+No disposem de delegat de protecció de dades (DPO) perquè no hi estem obligats.
 
 ---
 
-## Quines dades NO recollim
+## Quines dades tractem i per a què
 
-- No instal·lem cookies de seguiment
-- No compartim dades amb plataformes publicitàries
-- No integrem botons de xarxes socials amb seguiment
-- No venem ni cedim dades a tercers
+### 1. Formulari de contacte
+- **Dades:** nom, adreça de correu electrònic, tipus de projecte, interessos i contingut del missatge.
+- **Finalitat:** respondre la teva consulta i, si escau, valorar una possible col·laboració.
+- **Base legal:** el teu consentiment (article 6.1.a del RGPD), que pots retirar en qualsevol moment.
+- **Conservació:** el temps necessari per atendre la consulta i, si no hi ha cap relació posterior, un màxim de **12 mesos**. Després s'elimina.
+- **Destinataris:** cap. Les dades arriben directament al nostre correu; no es cedeixen ni es venen a tercers.
+
+### 2. Correu electrònic
+- **Dades:** les que ens facilitis quan ens escrius.
+- **Finalitat i base legal:** atendre la teva comunicació (consentiment i/o interès legítim a respondre).
+- **Conservació:** 12 mesos, tret que hi hagi una relació contractual o una obligació legal que en requereixi la conservació durant més temps.
+
+### 3. Analítica web
+- Utilitzem un comptador propi i **GoatCounter**, una eina d'analítica **sense cookies** i sense seguiment entre webs.
+- Per mesurar les visites de manera agregada, el nostre servidor envia al processador la **IP i el User-Agent** del visitant. GoatCounter **no emmagatzema** la IP ni el User-Agent: només conserva resultats agregats (pàgina, data, navegador, mida de pantalla i ubicació aproximada) que no permeten identificar persones.
+- **Base legal:** interès legítim (article 6.1.f del RGPD) a conèixer l'ús del web.
+- **Conservació:** dades agregades; es poden eliminar en qualsevol moment des del panell.
+- **Encarregat:** GoatCounter, operat per Martin Tournoij (Irlanda), amb allotjament a Hetzner Online GmbH (Finlàndia i Alemanya), dins de l'Espai Econòmic Europeu.
+
+### 4. Allotjament i correu
+- El web i el correu s'allotgen a **Dinahosting S.L.** (CIF B-15805419, Rúa das Salvadas 41, baixo — 15705 Santiago de Compostela, Espanya), que actua com a encarregat del tractament.
+
+**No hi ha transferències internacionals de dades fora de l'Espai Econòmic Europeu.**
 
 ---
 
-## Google Fonts
+## Quines dades NO tractem
 
-Aquest web carrega tipografies de Google Fonts.
-Això implica una petició al servidor de Google
-que pot registrar la vostra adreça IP.
-
-Si preferiu evitar-ho, podeu bloquejar
-google.com des del vostre navegador o
-utilitzar una extensió de privacitat.
-
-Estem avaluant allotjar les fonts en local
-per eliminar aquesta dependència.
+- No instal·lem cookies de seguiment ni publicitàries.
+- No fem servir Google Analytics, Meta Pixel ni eines equivalents.
+- No fem perfilat ni decisions automatitzades.
+- No venem ni cedim dades a tercers amb finalitats comercials.
 
 ---
 
-## Els vostres drets
+## Els teus drets
 
-Teniu dret a accedir, rectificar i suprimir
-les vostres dades personals en qualsevol moment.
+Pots exercir els drets d'**accés, rectificació, supressió, oposició, limitació del tractament i portabilitat**, així com **retirar el consentiment**, escrivint a **hola@linuxbcn.com**. Et respondrem en el termini màxim d'un mes.
 
-Per exercir-los: hola@linuxbcn.com
+Si consideres que no hem atès correctament els teus drets, pots presentar una reclamació davant l'**Agència Espanyola de Protecció de Dades (AEPD)**, a [www.aepd.es](https://www.aepd.es).
+
+---
+
+## Seguretat
+
+Apliquem mesures tècniques i organitzatives proporcionades: HTTPS, control d'accés, minimització de dades i còpies de seguretat. El formulari **no desa les dades en cap base de dades pròpia**: només les envia per correu.
+
+---
+
+## Menors d'edat
+
+Aquest web no s'adreça a menors de 14 anys i no recollim conscientment dades seves.
 
 ---
 
 ## Canvis a aquesta política
 
-Si modifiquem aquesta política, ho indicarem
-a aquesta mateixa pàgina amb la data d'actualització.
+Si modifiquem aquesta política, ho indicarem en aquesta mateixa pàgina amb la data d'actualització. La versió vigent és la publicada en aquesta URL.
 
-Darrera actualització: abril 2026
+Darrera actualització: setembre de 2026

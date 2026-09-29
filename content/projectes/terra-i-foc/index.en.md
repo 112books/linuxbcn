@@ -44,7 +44,7 @@ At LinuxBCN.com we have a philosophy: modern technology with artisanal simplicit
 - **[Hugo](https://gohugo.io)** — static site generator. The site is built once and served as flat HTML files. Instant loading, zero database, zero server running.
 - **[GitHub Pages](https://pages.github.com)** — free hosting with a global CDN. Each `git push` triggers an automatic build via **GitHub Actions** and the site goes live in minutes.
 - **Custom CSS** — designed from scratch, no frameworks. Earthy color palette (earth `#361712`, fire `#c81111`, ash `#8a7a6e`) drawn from the craft itself: clay, fire, ash.
-- **Jost typography** — preconnected and preloaded from Google Fonts to minimize loading time.
+- **Jost typography** — self-hosted and preloaded to minimize loading time, with no external requests.
 - **Truly bilingual** — each page has a Catalan and English version, with `hreflang` and `x-default` so Google and search engines serve them correctly.
 
 ---

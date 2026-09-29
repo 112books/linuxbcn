@@ -6,49 +6,44 @@ draft: false
 
 ## Aquest web i les cookies
 
-LinuxBCN utilitza les cookies al mínim imprescindible.
+Aquest web **no instal·la cookies de seguiment ni publicitàries**. Per això no mostrem cap banner de consentiment de cookies.
 
 ---
 
-## Cookies que utilitzem
+## Què fem servir
 
 **Cookies tècniques**
-Necessàries per al funcionament bàsic del web.
-No requereixen consentiment.
+No n'utilitzem cap més enllà de les estrictament necessàries per al funcionament del web, que estan exemptes de consentiment segons la normativa.
 
-**Analítica**
-Utilitzem una eina d'analítica que no instal·la cookies
-i no recull dades personals identificables.
-Únicament mesura visites de forma agregada i anònima.
+**Analítica sense cookies**
+Utilitzem un comptador propi i **GoatCounter**, que **no instal·la cookies** i no fa seguiment entre webs. Les visites es mesuren de manera agregada i no s'elabora cap perfil de les persones usuàries.
 
 ---
 
 ## Cookies que NO utilitzem
 
 - Google Analytics
-- Facebook Pixel
+- Meta Pixel / Facebook Pixel
 - Cookies publicitàries
 - Cookies de xarxes socials
 - Eines de seguiment entre webs
 
 ---
 
-## Google Fonts
+## Tipografies i recursos externs
 
-Les tipografies es carreguen des de Google Fonts,
-la qual cosa genera una petició externa que pot
-registrar la vostra IP als servidors de Google.
-
-Podeu bloquejar aquesta petició des del vostre navegador
-si preferiu evitar-ho.
+Les tipografies d'aquest web (**IBM Plex Sans** i **IBM Plex Mono**) estan **allotjades al nostre propi servidor**. No fem cap petició a **Google Fonts** ni a serveis equivalents.
 
 ---
 
-## Els vostres drets
+## Com gestionar les cookies
 
-Podeu configurar el vostre navegador per bloquejar
-o eliminar cookies en qualsevol moment.
+Pots configurar el navegador per bloquejar o eliminar cookies en qualsevol moment. Com que no n'instal·lem de seguiment, no perdràs cap funcionalitat del web per fer-ho.
 
-Per a qualsevol consulta: hola@linuxbcn.com
+---
 
-Darrera actualització: abril 2026
+## Més informació
+
+Per a qualsevol dubte sobre aquesta política, escriu-nos a hola@linuxbcn.com o consulta la [Política de privacitat](https://linuxbcn.com/ca/privacitat/).
+
+Darrera actualització: setembre de 2026

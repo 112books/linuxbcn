@@ -44,7 +44,7 @@ A LinuxBCN.com tenim una filosofia: tecnologia moderna amb senzillesa artesanal.
 - **[Hugo](https://gohugo.io)** — generador de llocs estàtics. El web es construeix una vegada i es serveix com a fitxers HTML plans. Càrrega instantània, zero base de dades, zero servidor en marxa.
 - **[GitHub Pages](https://pages.github.com)** — allotjament gratuït amb CDN global. Cada `git push` dispara un build automàtic via **GitHub Actions** i el lloc queda publicat en minuts.
 - **CSS personalitzat** — dissenyat des de zero, sense frameworks. Paleta de colors terrosa (terra `#361712`, foc `#c81111`, cendra `#8a7a6e`) extreta del mateix ofici: el fang, el foc, la cendra.
-- **Tipografia Jost** — preconnectada i pre-carregada des de Google Fonts per minimitzar temps de càrrega.
+- **Tipografia Jost** — auto-allotjada i pre-carregada per minimitzar temps de càrrega, sense peticions externes.
 - **Bilingüe de veritat** — cada pàgina té versió en català i anglès, amb `hreflang` i `x-default` perquè Google i els cercadors les serveixin correctament.
 
 ---

@@ -4,68 +4,78 @@ slug: "privacitat"
 draft: false
 ---
 
-## Who we are
+## Data controller
 
-LinuxBCN is a digital identity consultancy service
-operated by Juan Martínez i Serres, based at Nau Bostik,
-Carrer Ferran Turné 1-11, 08027 Barcelona.
+- **Controller:** Juan Martínez i Serres — natural person (sole trader)
+- **Tax ID (NIF):** 38121766W
+- **Registered address:** Carrer Verger de Montserrat, 17 — 08739 El Pago (Subirats), Barcelona, Catalonia
+- **Office:** Nau Bostik, Carrer Ferran Turné, 1-11 — 08027 Barcelona, Catalonia
+- **Email:** hola@linuxbcn.com
+- **Trade name:** LinuxBCN
 
-Contact: hola@linuxbcn.com
-
----
-
-## What data we collect
-
-**Contact form**
-When you write to us, we store your name,
-email address and message content.
-Only to reply to you. We don't share it with anyone.
-
-**Web analytics**
-We use a lightweight, privacy-respecting analytics tool.
-It collects no personal data, uses no tracking cookies
-and shares no information with third parties.
-
-We don't use Google Analytics or any invasive
-tracking tool.
+We do not have a Data Protection Officer (DPO) because we are not required to appoint one.
 
 ---
 
-## What data we do NOT collect
+## What data we process and why
 
-- We don't install tracking cookies
-- We don't share data with advertising platforms
-- We don't embed social media buttons with tracking
-- We don't sell or transfer data to third parties
+### 1. Contact form
+- **Data:** name, email address, project type, interests and the content of your message.
+- **Purpose:** to reply to your enquiry and, where relevant, to consider a possible collaboration.
+- **Legal basis:** your consent (Article 6(1)(a) GDPR), which you may withdraw at any time.
+- **Retention:** as long as needed to handle the enquiry and, if there is no further relationship, a maximum of **12 months**. It is then deleted.
+- **Recipients:** none. The data arrives directly in our mailbox; it is not shared with or sold to third parties.
+
+### 2. Email
+- **Data:** whatever you provide when you write to us.
+- **Purpose and legal basis:** to handle your communication (consent and/or legitimate interest in replying).
+- **Retention:** 12 months, unless a contractual relationship or a legal obligation requires longer storage.
+
+### 3. Web analytics
+- We use a first-party counter and **GoatCounter**, a **cookieless** analytics tool with no cross-site tracking.
+- To measure visits in aggregate, our server sends the processor the visitor's **IP and User-Agent**. GoatCounter **does not store** the IP or User-Agent: it only keeps aggregate results (page, date, browser, screen size and approximate location) that cannot identify individuals.
+- **Legal basis:** legitimate interest (Article 6(1)(f) GDPR) in understanding how the site is used.
+- **Retention:** aggregate data; it can be deleted at any time from the dashboard.
+- **Processor:** GoatCounter, operated by Martin Tournoij (Ireland), hosted at Hetzner Online GmbH (Finland and Germany), within the European Economic Area.
+
+### 4. Hosting and email
+- The website and mailbox are hosted by **Dinahosting S.L.** (Tax ID B-15805419, Rúa das Salvadas 41, baixo — 15705 Santiago de Compostela, Spain), acting as data processor.
+
+**There are no international data transfers outside the European Economic Area.**
 
 ---
 
-## Google Fonts
+## What data we do NOT process
 
-This website loads typefaces from Google Fonts.
-This involves a request to Google's servers
-that may log your IP address.
-
-If you prefer to avoid this, you can block
-google.com from your browser or use a privacy extension.
-
-We are evaluating hosting fonts locally
-to eliminate this dependency.
+- We do not set tracking or advertising cookies.
+- We do not use Google Analytics, Meta Pixel or equivalent tools.
+- We do not profile you or make automated decisions.
+- We do not sell or transfer data to third parties for commercial purposes.
 
 ---
 
 ## Your rights
 
-You have the right to access, correct and delete
-your personal data at any time.
+You may exercise your rights of **access, rectification, erasure, objection, restriction of processing and portability**, as well as **withdraw your consent**, by writing to **hola@linuxbcn.com**. We will reply within one month.
 
-To exercise them: hola@linuxbcn.com
+If you believe we have not properly handled your rights, you may lodge a complaint with the **Spanish Data Protection Agency (AEPD)**, at [www.aepd.es](https://www.aepd.es).
+
+---
+
+## Security
+
+We apply proportionate technical and organisational measures: HTTPS, access control, data minimisation and backups. The form **does not store data in any database of our own**: it only sends it by email.
+
+---
+
+## Minors
+
+This website is not aimed at minors under 14 and we do not knowingly collect their data.
 
 ---
 
 ## Changes to this policy
 
-If we modify this policy, we will indicate it
-on this page with the update date.
+If we change this policy, we will note it on this page together with the update date. The version in force is the one published at this URL.
 
-Last updated: April 2026
+Last updated: September 2026
