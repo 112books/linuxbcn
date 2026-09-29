@@ -850,5 +850,39 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 32. Historial de tasques — 2026-09-29 (sessió 2)
+
+**Ofuscació de l'email de contacte**
+- `static/js/email.js` + `layouts/shortcodes/email.html`: l'adreça no apareix en text pla a l'HTML; s'assembla via JS (base64) i es converteix en `mailto:`. Aplicat a `/contacte/`, privacitat, cookies i avís legal (CA+EN).
+- `layouts/partials/head.html`: treta l'adreça del JSON-LD. `static/js/contacte.js`: missatges d'error sense l'adreça.
+- `static/llms.txt`, `static/llms-full.txt` i `static/humans.txt`: passen a l'URL del formulari. `security.txt` manté el `mailto:`.
+- Verificat: 0 aparicions d'email pla a l'HTML servit.
+
+**SEO / AEO**
+- `layouts/partials/head.html`: schema `HowTo` a `/com-treballem` (4 passos), `ItemList` a `/solucions/` i `Service` a cada perfil. **14 blocs JSON-LD validats, 0 errors.**
+- `humans.txt`: enllaçat al `<head>` (`<link rel=author>`) i actualitzat.
+- `llms.txt` i `llms-full.txt`: data 2026-09-29.
+
+**Disseny**
+- Moviment subtil (entrada escalonada + hover) a process, serveis i conviccions.
+- Taules i llistes amb **fons suau** i espai en blanc en lloc de filets; `hr` sense filet visible.
+- Header mòbil: logo, lema en dues línies i cerca a la dreta; selector d'idioma fora del header mòbil.
+- Footer: «Qui som · Contacte» en una fila, legals en una altra línia, més petits i sense punts, amb més aire entre blocs.
+
+**Documents legals interns (vault `legal/`)**
+- `model-encarrec-serveis.md` (full de servei + annex art. 28), `lia-analitica.md` (test de ponderació), `protocol-bretxes.md` (art. 33/34), `registre-tractaments.md` (art. 30), `mail-dinahosting-dpa.md` i `resposta-dinahosting.md`.
+
+**Infra / neteja**
+- Esborrada la còpia antiga `static/css/main.css` (la viva és `assets/css/main.css`).
+- Purga de caché del CDN i **IndexNow** (HTTP 200, 102 URLs).
+- Tots els canvis commitejats, empesos i desplegats a producció (`RSYNC_EXIT=0`).
+
+**Pendent**
+- Test visual responsive (Chrome headless no funciona en l'entorn de l'agent); revisió manual al mòbil.
+- LIA i registre de tractaments: arxivar/signar (ja redactats).
+- Dinahosting: descarregar i arxivar la CGC del servei concret.
+
+---
+
 *Última actualització: 2026-09-29*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
