@@ -829,5 +829,26 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-09-28*
+## 31. Historial de tasques — 2026-09-29
+
+**Compliment legal — avís legal, privacitat i cookies**
+
+- `content/avis-legal/` (CA+EN): reescrit. Titular **Juan Martínez i Serres** (persona física, autònom), NIF 38121766W, adreça fiscal (Carrer Verger de Montserrat 17, 08739 El Pago – Subirats) i oficines (Nau Bostik, Ferran Turné 1-11, Barcelona) **separades i en llista**. Afegits: condicions d'ús, propietat intel·lectual, responsabilitat, enllaços, protecció de dades, cookies, allotjament (Dinahosting S.L., CIF B-15805419), legislació i fur.
+- `content/privacitat/` (CA+EN): reescrita. Responsable, finalitats i base legal, conservació (12 mesos), destinataris, **no transferències fora de l'EEE**, drets complets i reclamació davant l'AEPD, seguretat i menors.
+- `content/cookies/` (CA+EN): reescrita. Sense cookies de seguiment; analítica GoatCounter sense cookies; **eliminada la menció falsa a Google Fonts**; tipografies self-hosted.
+- Analítica documentada amb exactitud: el proxy first-party (`static/v/index.php`) envia IP i User-Agent a GoatCounter, que **no els emmagatzema** (només dades agregades); processador a Hetzner (Finlàndia/Alemanya) dins l'EEE, operat des d'Irlanda.
+- `layouts/partials/head.html`: schema.org `streetAddress` corregit (Ferran Turné 1-11).
+- `content/projectes/terra-i-foc/` (CA+EN): corregit el text que deia que la Jost venia de Google Fonts; ara diu self-hosted.
+
+**Riscos legals detectats i pendents de decisió**
+- **DPA amb GoatCounter (art. 28 RGPD)**: cal verificar que els seus termes incloguin l'encarregat del tractament, o bé truncar/anonymitzar la IP al proxy.
+- Test de ponderació de l'interès legítim de l'analítica: documentar-lo.
+- Condicions de contractació i dret de desistiment per a serveis (si es contracta en línia amb consumidors).
+- Preus amb IVA si es mostren (ex. Estenop Pro 10 €).
+- Retenció efectiva del correu: esborrat a 12 mesos.
+- Registre d'activitats de tractament i procediment de bretxes (recomanats).
+
+---
+
+*Última actualització: 2026-09-29*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
