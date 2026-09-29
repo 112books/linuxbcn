@@ -2240,6 +2240,42 @@ footer a:hover {
   }
 }
 
+/* Moviment subtil — conviccions (qui-som), mateix criteri que procés i serveis */
+
+.lbcn-conviccions > li {
+  animation: lbcnRise 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.lbcn-conviccions > li:nth-child(1) { animation-delay: 0.04s; }
+.lbcn-conviccions > li:nth-child(2) { animation-delay: 0.12s; }
+.lbcn-conviccions > li:nth-child(3) { animation-delay: 0.20s; }
+.lbcn-conviccions > li:nth-child(4) { animation-delay: 0.28s; }
+
+.lbcn-conviccio {
+  transition: border-color 0.25s ease, padding-left 0.25s ease;
+}
+
+.lbcn-conviccio-ico {
+  transition: color 0.25s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lbcn-conviccio:hover {
+  border-color: var(--accent);
+  padding-left: 0.65rem;
+}
+
+.lbcn-conviccio:hover .lbcn-conviccio-ico {
+  transform: translateX(2px) scale(1.04);
+}
+
+.lbcn-conviccio:not(.lbcn-conviccio--positiva):hover .lbcn-conviccio-ico {
+  color: var(--accent-text);
+}
+
+.lbcn-conviccio:hover .lbcn-conviccio-title {
+  color: var(--accent-text);
+}
+
 /* ─── Projectes relacionats (single projecte) ─────────────────────────────── */
 .project-related {
   max-width: var(--max);
