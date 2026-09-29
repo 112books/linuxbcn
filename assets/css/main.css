@@ -211,6 +211,15 @@ summary:focus-visible,
   padding-left: 1.4rem;
 }
 
+.brand-tagline-mobile {
+  display: none;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink3);
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -1208,6 +1217,31 @@ footer a:hover {
 
   .brand-name {
     font-size: 1.5rem;
+  }
+
+  .header-top {
+    align-items: center;
+    max-height: 200px;
+    padding: 1rem 1.4rem 0.8rem;
+  }
+
+  .nav-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .brand-tagline--full {
+    display: none;
+  }
+
+  .brand-tagline-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lang-switcher {
+    display: none;
   }
 
   main {

@@ -2,7 +2,11 @@
   <div class="header-top">
     <a href="{{ printf "%s%s/" $.Site.BaseURL $.Site.Language.Lang }}" class="nav-brand">
       <span class="brand-name">Linux<span class="bcn">BCN</span></span>
-      <span class="brand-tagline">{{ .Site.Params.tagline }}</span>
+      <span class="brand-tagline brand-tagline--full">{{ .Site.Params.tagline }}</span>
+      <span class="brand-tagline-mobile">
+        <span>{{ i18n "header_tagline_1" }}</span>
+        <span>{{ i18n "header_tagline_2" }}</span>
+      </span>
     </a>
     <div class="header-actions">
       <a href="{{ printf "%s%s/cerca/" $.Site.BaseURL $.Site.Language.Lang }}" class="nav-search" aria-label="Cerca">
