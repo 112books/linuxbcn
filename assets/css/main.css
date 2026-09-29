@@ -76,6 +76,7 @@
   --accent:      #d4600a;
   --accent-text: #ad5209;
   --accent-faint:#fef0e6;
+  --accent-faint-2: #fbe3d2;
   --border:      #ddddd8;
   --mono:        'IBM Plex Mono', monospace;
   --sans:        'IBM Plex Sans', sans-serif;
@@ -478,7 +479,8 @@ li:has(> a:only-child) a:hover {
 
 .solucio-taula {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0.4rem;
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -492,7 +494,7 @@ li:has(> a:only-child) a:hover {
   font-size: 1.05rem;
   color: var(--ink-head);
   letter-spacing: -0.01em;
-  border: 1px solid var(--border);
+  border: 0;
 }
 
 .solucio-taula thead th a {
@@ -507,7 +509,7 @@ li:has(> a:only-child) a:hover {
 }
 
 .solucio-taula tbody tr {
-  border: 1px solid var(--border);
+  border: 0;
 }
 
 .solucio-taula tbody th {
@@ -521,14 +523,15 @@ li:has(> a:only-child) a:hover {
   color: var(--ink3);
   vertical-align: top;
   white-space: nowrap;
-  border-right: 1px solid var(--border);
-  background: var(--bg);
+  border-right: 0;
+  background: var(--accent-faint);
 }
 
 .solucio-taula tbody td {
   padding: 1rem 1.2rem;
   color: var(--ink2);
   vertical-align: top;
+  background: var(--accent-faint);
 }
 
 .solucio-taula tbody td ul {
@@ -541,7 +544,7 @@ li:has(> a:only-child) a:hover {
 }
 
 .solucio-taula .solucio-proposem td {
-  background: rgba(212,96,10,0.03);
+  background: var(--accent-faint-2);
 }
 
 .solucio-taula .solucio-proposem th {
@@ -1869,8 +1872,7 @@ footer a:hover {
   margin: 2rem 0 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  border-top: 1px solid var(--border);
+  gap: 0.5rem;
 }
 
 .lbcn-servei {
@@ -1878,8 +1880,8 @@ footer a:hover {
   grid-template-columns: 56px 1fr;
   gap: 1.25rem;
   align-items: start;
-  padding: 1.4rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 1.2rem;
+  background: var(--accent-faint);
 }
 
 .lbcn-servei-ico {
@@ -1922,13 +1924,11 @@ footer a:hover {
   margin: 2rem 0 2.5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  gap: 0.6rem;
 }
 
 .lbcn-pas {
-  background: var(--bg);
+  background: var(--accent-faint);
   padding: 1.4rem 1.2rem;
   display: flex;
   flex-direction: column;
@@ -2006,7 +2006,7 @@ footer a:hover {
 .lbcn-serveis > li:nth-child(6) { animation-delay: 0.44s; }
 
 .lbcn-pas {
-  transition: background 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.25s ease;
 }
 
 .lbcn-pas-ico {
@@ -2014,8 +2014,7 @@ footer a:hover {
 }
 
 .lbcn-pas:hover {
-  background: var(--accent-faint);
-  box-shadow: inset 0 -2px 0 0 var(--accent);
+  background: var(--accent-faint-2);
 }
 
 .lbcn-pas:hover .lbcn-pas-ico {
@@ -2024,7 +2023,7 @@ footer a:hover {
 }
 
 .lbcn-servei {
-  transition: border-color 0.25s ease, padding-left 0.25s ease;
+  transition: background 0.25s ease, padding-left 0.25s ease;
 }
 
 .lbcn-servei-ico {
@@ -2032,7 +2031,7 @@ footer a:hover {
 }
 
 .lbcn-servei:hover {
-  border-color: var(--accent);
+  background: var(--accent-faint-2);
   padding-left: 0.65rem;
 }
 
@@ -2194,7 +2193,7 @@ footer a:hover {
   margin: 2rem 0 2.5rem;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--border);
+  gap: 0.5rem;
 }
 
 .lbcn-conviccio {
@@ -2202,8 +2201,8 @@ footer a:hover {
   grid-template-columns: 52px 1fr;
   gap: 1.25rem;
   align-items: start;
-  padding: 1.3rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 1.2rem;
+  background: var(--accent-faint);
 }
 
 .lbcn-conviccio-ico {
@@ -2254,7 +2253,7 @@ footer a:hover {
 .lbcn-conviccions > li:nth-child(4) { animation-delay: 0.28s; }
 
 .lbcn-conviccio {
-  transition: border-color 0.25s ease, padding-left 0.25s ease;
+  transition: background 0.25s ease, padding-left 0.25s ease;
 }
 
 .lbcn-conviccio-ico {
@@ -2262,7 +2261,7 @@ footer a:hover {
 }
 
 .lbcn-conviccio:hover {
-  border-color: var(--accent);
+  background: var(--accent-faint-2);
   padding-left: 0.65rem;
 }
 
