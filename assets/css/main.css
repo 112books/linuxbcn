@@ -386,10 +386,12 @@ li {
   margin-bottom: 0.35rem;
 }
 
+/* Separador de seccions: es manté per l'espaiat, però sense dibuixar el filet */
 hr {
   border: none;
   border-top: 1px solid var(--border);
   margin: 2.8rem 0;
+  visibility: hidden;
 }
 
 .subtitle {
