@@ -70,9 +70,21 @@ Aquest web no utilitza cookies de seguiment. Ho detallem a la [Política de cook
 
 ---
 
+## Preus
+
+Els preus dels productes i serveis que es mostrin en aquest web inclouen l'IVA aplicable i s'expressen en euros, tret que s'indiqui expressament el contrari.
+
+---
+
+## Contractació
+
+Aquest web no permet contractar serveis en línia. Les condicions de cada encàrrec es concreten per escrit entre les parts abans d'iniciar els treballs. La informació publicada al web és orientativa i no vinculant.
+
+---
+
 ## Allotjament
 
-Aquest web s'allotja en servidors de **Dinahosting S.L.** (CIF B-15805419), amb domicili a Rúa das Salvadas 41, baixo — 15705 Santiago de Compostela (A Coruña), Espanya.
+El servei d'allotjament d'aquest web el gestiona **LinuxBCN**. La infraestructura física s'ubica en centres de dades dins de l'Espai Econòmic Europeu.
 
 ---
 

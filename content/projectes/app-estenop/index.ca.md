@@ -46,7 +46,7 @@ Tot queda al teu dispositiu. Sense connexió a internet. Sense comptes. Sense da
 **Versió gratuïta**
 Inclou el càlcul d'exposició complet, la correcció de reciprocitat per a les emulsions més populars i el temporitzador integrat. Suficient per a la majoria de situacions.
 
-**Versió Pro — 10 €, pagament únic**
+**Versió Pro — 10 € (IVA inclòs), pagament únic**
 Per als qui volen anar més lluny: mode spot per mesurar zones concretes, biblioteca personal de càmeres i diafragmes, historial d'exposicions i accés prioritari a noves emulsions. Sense subscripció. Sense renovacions. Un cop, per sempre.
 
 És programari artesanal. Si t'és útil, el Pro és la manera de dir-ho i de garantir que continuï creixent.

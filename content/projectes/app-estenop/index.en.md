@@ -46,7 +46,7 @@ Everything stays on your device. No internet connection required. No accounts. N
 **Free version**
 Includes full exposure calculation, reciprocity correction for the most popular emulsions, and the built-in timer. Enough for most situations.
 
-**Pro version — €10, one-time payment**
+**Pro version — €10 (VAT included), one-time payment**
 For those who want more: spot metering mode, personal camera and aperture library, exposure history, and priority access to new emulsions. No subscription. No renewals. Once, forever.
 
 It's handcrafted software. If it's useful to you, Pro is the way to say so — and to make sure it keeps growing.

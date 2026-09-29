@@ -39,7 +39,7 @@ No disposem de delegat de protecció de dades (DPO) perquè no hi estem obligats
 - **Encarregat:** GoatCounter, operat per Martin Tournoij (Irlanda), amb allotjament a Hetzner Online GmbH (Finlàndia i Alemanya), dins de l'Espai Econòmic Europeu.
 
 ### 4. Allotjament i correu
-- El web i el correu s'allotgen a **Dinahosting S.L.** (CIF B-15805419, Rúa das Salvadas 41, baixo — 15705 Santiago de Compostela, Espanya), que actua com a encarregat del tractament.
+- El servei d'allotjament i de correu electrònic el presta **LinuxBCN**. La infraestructura física s'ubica en centres de dades dins de l'Espai Econòmic Europeu. El proveïdor tecnològic subjacent és **Dinahosting S.L.** (CIF B-15805419, Santiago de Compostel·la, Espanya), que actua com a encarregat del tractament.
 
 **No hi ha transferències internacionals de dades fora de l'Espai Econòmic Europeu.**
 

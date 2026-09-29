@@ -39,7 +39,7 @@ We do not have a Data Protection Officer (DPO) because we are not required to ap
 - **Processor:** GoatCounter, operated by Martin Tournoij (Ireland), hosted at Hetzner Online GmbH (Finland and Germany), within the European Economic Area.
 
 ### 4. Hosting and email
-- The website and mailbox are hosted by **Dinahosting S.L.** (Tax ID B-15805419, Rúa das Salvadas 41, baixo — 15705 Santiago de Compostela, Spain), acting as data processor.
+- The hosting and email service is provided by **LinuxBCN**. The physical infrastructure is located in data centres within the European Economic Area. The underlying technology provider is **Dinahosting S.L.** (Tax ID B-15805419, Santiago de Compostela, Spain), acting as data processor.
 
 **There are no international data transfers outside the European Economic Area.**
 

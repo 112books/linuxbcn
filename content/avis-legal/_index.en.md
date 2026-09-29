@@ -70,9 +70,21 @@ This website does not use tracking cookies. See our [Cookie policy](https://linu
 
 ---
 
+## Prices
+
+Prices for the products and services shown on this website include the applicable VAT and are expressed in euros, unless expressly stated otherwise.
+
+---
+
+## Contracting
+
+This website does not allow services to be contracted online. The terms of each engagement are agreed in writing between the parties before work begins. The information published on the website is informative and not binding.
+
+---
+
 ## Hosting
 
-This website is hosted on servers of **Dinahosting S.L.** (Tax ID B-15805419), Rúa das Salvadas 41, baixo — 15705 Santiago de Compostela (A Coruña), Spain.
+The hosting service for this website is managed by **LinuxBCN**. The physical infrastructure is located in data centres within the European Economic Area.
 
 ---
 
