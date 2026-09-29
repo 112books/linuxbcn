@@ -33,7 +33,7 @@ No disposem de delegat de protecció de dades (DPO) perquè no hi estem obligats
 
 ### 3. Analítica web
 - Utilitzem un comptador propi i **GoatCounter**, una eina d'analítica **sense cookies** i sense seguiment entre webs.
-- Per mesurar les visites de manera agregada, el nostre servidor envia al processador la **IP i el User-Agent** del visitant. GoatCounter **no emmagatzema** la IP ni el User-Agent: només conserva resultats agregats (pàgina, data, navegador, mida de pantalla i ubicació aproximada) que no permeten identificar persones.
+- Per mesurar les visites de manera agregada, el nostre servidor envia al processador una **versió anonimitzada de la IP** (sense l'últim octet) i el User-Agent del visitant. GoatCounter **no emmagatzema** la IP ni el User-Agent: només conserva resultats agregats (pàgina, data, navegador, mida de pantalla i ubicació aproximada) que no permeten identificar persones.
 - **Base legal:** interès legítim (article 6.1.f del RGPD) a conèixer l'ús del web.
 - **Conservació:** dades agregades; es poden eliminar en qualsevol moment des del panell.
 - **Encarregat:** GoatCounter, operat per Martin Tournoij (Irlanda), amb allotjament a Hetzner Online GmbH (Finlàndia i Alemanya), dins de l'Espai Econòmic Europeu.

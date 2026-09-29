@@ -4,8 +4,9 @@
  *
  * /js/m.js (còpia de count.js) envia cada visita aquí en lloc de
  * *.goatcounter.com, que els adblockers bloquegen. Aquest script la reenvia
- * a l'API autenticada /api/v0/count amb la IP i el User-Agent reals del
- * visitant, perquè GoatCounter calculi bé sessions, ubicació i bots.
+ * a l'API autenticada /api/v0/count amb una IP anonimitzada (últim octet a
+ * zero) i el User-Agent del visitant, perquè GoatCounter calculi sessions,
+ * ubicació aproximada i bots sense rebre dades identificatives.
  *
  * No es desa cap IP ni log en aquest servidor.
  *
@@ -43,6 +44,27 @@ function client_ip(): string {
     return $_SERVER['REMOTE_ADDR'] ?? '';
 }
 
+/**
+ * Anonimitzacio de la IP abans d'enviar-la a GoatCounter (RGPD).
+ * IPv4: l'ultim octet passa a zero (es conserva el /24).
+ * IPv6: es conserven els 48 bits inicials (es conserva el /48).
+ */
+function anon_ip(string $ip): string {
+    if ($ip === '') return '';
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+        $p = explode('.', $ip);
+        if (count($p) === 4) { $p[3] = '0'; return implode('.', $p); }
+        return '';
+    }
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
+        $packed = inet_pton($ip);
+        if ($packed === false) return '';
+        for ($i = 6; $i < 16; $i++) { $packed[$i] = "\0"; }
+        return inet_ntop($packed);
+    }
+    return '';
+}
+
 if (isset($_GET['diag'])) {
     header('Content-Type: application/json; charset=utf-8');
     header('Cache-Control: no-store');
@@ -59,7 +81,7 @@ if (isset($_GET['diag'])) {
             CURLOPT_POST           => true,
             CURLOPT_POSTFIELDS     => json_encode(['hits' => [[
                 'path' => 'diag-proxy', 'title' => 'Prova del proxy', 'event' => true,
-                'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? '', 'ip' => client_ip(),
+                'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? '', 'ip' => anon_ip(client_ip()),
             ]]]),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HEADER         => true,
@@ -81,6 +103,7 @@ if (isset($_GET['diag'])) {
         'x_real_ip'       => $_SERVER['HTTP_X_REAL_IP'] ?? null,
         'x_forwarded_for' => $_SERVER['HTTP_X_FORWARDED_FOR'] ?? null,
         'ip_escollida'    => client_ip(),
+        'ip_enviada'      => anon_ip(client_ip()),
         'curl'            => function_exists('curl_init'),
         'token_carregat'  => defined('GC_TOKEN'),
     ], JSON_PRETTY_PRINT);
@@ -119,7 +142,7 @@ $hit = [
     'size'       => (string)(int)($_GET['s'] ?? 0),
     'bot'        => (int)($_GET['b'] ?? 0),
     'user_agent' => $ua,
-    'ip'         => client_ip(),
+    'ip'         => anon_ip(client_ip()),
 ];
 if ($lang !== '') $hit['language'] = $lang;
 

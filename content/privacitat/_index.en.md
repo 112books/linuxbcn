@@ -33,7 +33,7 @@ We do not have a Data Protection Officer (DPO) because we are not required to ap
 
 ### 3. Web analytics
 - We use a first-party counter and **GoatCounter**, a **cookieless** analytics tool with no cross-site tracking.
-- To measure visits in aggregate, our server sends the processor the visitor's **IP and User-Agent**. GoatCounter **does not store** the IP or User-Agent: it only keeps aggregate results (page, date, browser, screen size and approximate location) that cannot identify individuals.
+- To measure visits in aggregate, our server sends the processor an **anonymised version of the IP** (last octet removed) and the visitor's User-Agent. GoatCounter **stores neither** the IP nor the User-Agent: it only keeps aggregate results (page, date, browser, screen size and approximate location) that cannot identify individuals.
 - **Legal basis:** legitimate interest (Article 6(1)(f) GDPR) in understanding how the site is used.
 - **Retention:** aggregate data; it can be deleted at any time from the dashboard.
 - **Processor:** GoatCounter, operated by Martin Tournoij (Ireland), hosted at Hetzner Online GmbH (Finland and Germany), within the European Economic Area.

@@ -841,7 +841,7 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 - `content/projectes/terra-i-foc/` (CA+EN): corregit el text que deia que la Jost venia de Google Fonts; ara diu self-hosted.
 
 **Riscos legals detectats i pendents de decisió**
-- **DPA amb GoatCounter (art. 28 RGPD)**: cal verificar que els seus termes incloguin l'encarregat del tractament, o bé truncar/anonymitzar la IP al proxy.
+- **DPA amb GoatCounter (art. 28 RGPD)**: resolt per disseny — el proxy (`static/v/index.php`) envia la IP anonimitzada (últim octet d'IPv4 / últims 80 bits d'IPv6 a zero) i GoatCounter no emmagatzema IP ni UA.
 - Test de ponderació de l'interès legítim de l'analítica: documentar-lo.
 - Condicions de contractació i dret de desistiment per a serveis (si es contracta en línia amb consumidors).
 - Preus amb IVA si es mostren (ex. Estenop Pro 10 €).

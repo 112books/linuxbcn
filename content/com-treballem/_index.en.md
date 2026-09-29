@@ -39,7 +39,7 @@ The result must be genuinely yours.
 We don't build websites and disappear.
 
 We offer an **hours package** for clients who want
-real support without complex contracts:
+real support with a simple letter of engagement, no small print:
 consultations, adjustments, system evolution, training.
 
 You pay for the hours you need, when you need them.

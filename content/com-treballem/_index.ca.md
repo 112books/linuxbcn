@@ -41,7 +41,7 @@ El resultat ha de ser vostre de debò.
 No fem webs i desapareixem.
 
 Oferim una **bossa d'hores** per a clients que volen
-suport real sense contractes complexos:
+suport real amb un full de servei senzill, sense lletra petita:
 consultes, ajustos, evolució del sistema, formació.
 
 Pagueu les hores que necessiteu, quan les necessiteu.
