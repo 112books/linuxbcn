@@ -900,8 +900,11 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 - `assets/css/main.css`: classe `.form-trampa` (fora de pantalla, no `display:none`, perquè alguns bots comproven la visibilitat).
 - `static/.htaccess`: `token.php` sense caché.
 
-*Verificació*
-- `hugo --minify --environment production` OK; `node --check` del JS OK; els tres PHP parsejats sense errors. Pendent de prova real al servidor.
+*Verificació i desplegament*
+- `hugo --minify --environment production` OK; `node --check` del JS OK; els tres PHP validats amb `php -l` **al mateix servidor**.
+- Desplegat a producció per rsync i caché purjada de `/ca/contacte/`, `/en/contacte/` i `/js/contacte.js`.
+- Verificat en viu: `GET /formulari/token.php` retorna `{t,s}`; un testimoni emès es torna a validar als ~4 s amb èxit (`valid:true`), amb secret estable privat a `/home/linuxbcn0/.tmp`; `_comu.php` directe → 404.
+- El secret HMAC viu fora del repo. Si es vol fixar, definir `FORM_SECRET` a `~/.linuxbcn-secrets.php`; si no, s'autogenera.
 
 *Nota*
 - Els enllaços llegítims (1–2) no es descarten: només sumen 4 punts i el llindar és 5. Els escurçadors i el ciríl·lic són els senyals decisius.
