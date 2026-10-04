@@ -9,7 +9,7 @@ client: "9 Barris Imatge"
 sector: "fotografia"
 perfils: ["collectius"]
 description: "Taro Photo App: web estàtic, gestor de continguts i mòduls de votació per a col·lectius fotogràfics. Programari lliure (AGPL-3.0) a 9barrisimatge.org."
-lastmod: "2026-09-27"
+lastmod: "2026-10-04"
 draft: false
 serveis: ["aplicacio-web"]
 image: "taro-logo.png"
@@ -125,6 +125,7 @@ No és un prototip. Un col·lectiu sense ànim de lucre l'ha fet servir per publ
 
 - Llicència **AGPL-3.0**, amb capçaleres SPDX i les llicències dels components de tercers
 - Paquet distribuïble (`modules/taro/`) amb els tres mòduls, sense cap dada de 9 Barris Imatge, i un manual d'instal·lació per a cada mòdul. Les proves de votació i de formularis passen
+- **Repositori públic del distribuïble** a Codeberg (`linuxbcn/taro-photo-app`), amb manual d'instal·lació (`INSTALL.md`) i historial de versions
 - Actes de reunions amb decisions i votacions
 
 **Encara no existeix:**
@@ -151,7 +152,7 @@ No és un prototip. Un col·lectiu sense ànim de lucre l'ha fet servir per publ
 - **GitHub Actions** i **GitHub Pages** per publicar el web; votació i formularis al servidor de LinuxBCN, amb vigilància automàtica del servei
 - **GoatCounter** per a les estadístiques, sense galetes
 
-Codi obert a [GitHub (112books/9bi)](https://github.com/112books/9bi), amb mirall a [Codeberg](https://codeberg.org/linuxbcn/9bi).
+El programari distribuïble és a [Codeberg (linuxbcn/taro-photo-app)](https://codeberg.org/linuxbcn/taro-photo-app) (v1.0.1); el web de referència, a [GitHub (112books/9bi)](https://github.com/112books/9bi).
 
 ---
 

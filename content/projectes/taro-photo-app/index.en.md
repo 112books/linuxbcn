@@ -9,7 +9,7 @@ client: "9 Barris Imatge"
 sector: "photography"
 perfils: ["collectius"]
 description: "Taro Photo App: static website, content manager and voting modules for photography collectives. Free software (AGPL-3.0) at 9barrisimatge.org."
-lastmod: "2026-09-27"
+lastmod: "2026-10-04"
 draft: false
 serveis: ["aplicacio-web"]
 image: "taro-logo.png"
@@ -125,6 +125,7 @@ It isn't a prototype. A non-profit collective has used it to publish 3,008 artic
 
 - **AGPL-3.0** licence, with SPDX headers and the licences of third-party components
 - Distributable package (`modules/taro/`) with the three modules, no 9 Barris Imatge data, and an installation guide for each module. The voting and form tests pass
+- **Public repository of the distributable** on Codeberg (`linuxbcn/taro-photo-app`), with an installation guide (`INSTALL.md`) and a version history
 - Meeting minutes with decisions and votes
 
 **Doesn't exist yet:**
@@ -151,7 +152,7 @@ It isn't a prototype. A non-profit collective has used it to publish 3,008 artic
 - **GitHub Actions** and **GitHub Pages** to publish the site; voting and forms on LinuxBCN's server, with automatic service monitoring
 - **GoatCounter** for cookie-free statistics
 
-Open source on [GitHub (112books/9bi)](https://github.com/112books/9bi), mirrored on [Codeberg](https://codeberg.org/linuxbcn/9bi).
+The distributable software is on [Codeberg (linuxbcn/taro-photo-app)](https://codeberg.org/linuxbcn/taro-photo-app) (v1.0.1); the reference site, on [GitHub (112books/9bi)](https://github.com/112books/9bi).
 
 ---
 
