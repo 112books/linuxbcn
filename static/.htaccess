@@ -126,6 +126,13 @@ Options -Indexes
   Header unset ETag
 </Files>
 
+# ─── Testimoni anti-spam: sempre fresc (si el CDN el cacheja, caduca) ───────
+<Files "token.php">
+  Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  Header set Pragma "no-cache"
+  Header unset ETag
+</Files>
+
 # ─── HTML sempre fresc (evita que el proxy serveixi versions antigues) ──────
 <FilesMatch "\.html$">
   Header set Cache-Control "no-cache, must-revalidate"

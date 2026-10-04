@@ -28,7 +28,16 @@
       <form id="contacte-form" class="contacte-form" action="{{ "formulari/enviar.php" | relURL }}" method="POST" novalidate data-contacte="{{ dict "lang" .Site.Language.Lang | jsonify }}">
 
         <input type="hidden" name="lang" value="{{ .Site.Language.Lang }}">
+
+        {{/* Anti-spam: camps trampa i testimoni signat. contacte.js omple
+             form_ts/form_sig en carregar; enviar.php els valida. */}}
+        <div class="form-trampa" aria-hidden="true">
+          <label for="lbcn_extra">Deixa aquest camp buit</label>
+          <input type="text" id="lbcn_extra" name="lbcn_extra" tabindex="-1" autocomplete="off">
+        </div>
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="form_ts" id="form_ts" value="">
+        <input type="hidden" name="form_sig" id="form_sig" value="">
 
         <!-- PAS 1 -->
         <div class="form-step active" id="step-1">
@@ -183,6 +192,8 @@
 
 </article>
 
-<script src="{{ "js/contacte.js" | relURL }}" defer></script>
+{{/* ?v=mtime: el JS canvia de testimoni anti-spam; cal invalidar la
+     caché d'1 any del .htaccess perque el navegador agafi la versio nova. */}}
+<script src="{{ "js/contacte.js" | relURL }}?v={{ (os.Stat "static/js/contacte.js").ModTime.Unix }}" defer></script>
 
 {{ end }}

@@ -8,20 +8,13 @@ header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
 
+// Funcions compartides amb token.php (client_ip, form_secret, valid_form_token, spam_score)
+require_once __DIR__ . '/_comu.php';
+
 function out($code, $data) {
     http_response_code($code);
     echo json_encode($data, JSON_UNESCAPED_UNICODE);
     exit;
-}
-
-function client_ip() {
-    $real = trim(isset($_SERVER['HTTP_X_REAL_IP']) ? $_SERVER['HTTP_X_REAL_IP'] : '');
-    if (filter_var($real, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) return $real;
-    $xff = array_reverse(array_map('trim', explode(',', isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : '')));
-    foreach ($xff as $ip) {
-        if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) return $ip;
-    }
-    return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
 }
 
 function rate_limited() {
@@ -91,8 +84,11 @@ if ($ref && $ref !== 'linuxbcn.com' && $ref !== 'www.linuxbcn.com') {
     out(403, array('error' => 'Origen no permes'));
 }
 
-if (trim((string)(isset($_POST['botcheck']) ? $_POST['botcheck'] : '')) !== '') {
-    out(200, array('ok' => true));
+// Camps trampa (honeypot): cap formulari legitim els ha d'omplir.
+foreach (array('botcheck', 'lbcn_extra', 'empresa', 'website') as $trampa) {
+    if (trim((string)(isset($_POST[$trampa]) ? $_POST[$trampa] : '')) !== '') {
+        out(200, array('ok' => true));
+    }
 }
 
 // Limit d'us: 5 enviaments per hora i 20s entre enviaments per IP
@@ -112,11 +108,29 @@ if (!is_array($interes)) $interes = array();
 $email = str_replace(array("\r", "\n"), '', $email);
 $nom   = str_replace(array("\r", "\n"), ' ', $nom);
 
+// El tipus ha de ser un dels valors del formulari
+$tipus_valids = array('artista-music', 'entitat-collectiu', 'negoci', 'altres');
+if (!in_array($tipus, $tipus_valids, true)) $tipus = '';
+
 if ($nom === '' || $missatge === '' || !$rgpd || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     out(422, array('error' => 'Falten dades o no son valides'));
 }
 if (strlen($nom) > 200 || strlen($email) > 200 || strlen($missatge) > 5000) {
     out(413, array('error' => 'El contingut es massa llarg'));
+}
+
+// Testimoni signat que hi posa contacte.js en carregar la pagina. Un POST
+// directe (sense navegador) no el porta i es descarta en silenci.
+$form_ts  = isset($_POST['form_ts']) ? $_POST['form_ts'] : 0;
+$form_sig = isset($_POST['form_sig']) ? (string)$_POST['form_sig'] : '';
+if (!valid_form_token($form_ts, $form_sig)) {
+    out(200, array('ok' => true));
+}
+
+// Filtre de contingut: els enllacos son el senyal mes fort d'spam en un
+// formulari d'introduccio. Llindar 5 (vegeu spam_score a _comu.php).
+if (spam_score($missatge) >= 5) {
+    out(200, array('ok' => true));
 }
 
 $interes_net = array();

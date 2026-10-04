@@ -91,6 +91,26 @@
   const rgpd      = document.getElementById('rgpd');
   const formStatus= document.getElementById('form-status');
 
+  // Testimoni anti-spam: el servidor firma un timestamp i el JS el desa als
+  // camps ocults. Sense aquest testimoni, enviar.php descarta l'enviament.
+  (function carregaTestimoni() {
+    const ts  = document.getElementById('form_ts');
+    const sig = document.getElementById('form_sig');
+    if (!ts || !sig || !form) return;
+    const action = form.getAttribute('action') || '/formulari/enviar.php';
+    const tokenURL = action.replace(/enviar\.php(?=($|[?#]))/, 'token.php');
+    fetch(tokenURL + '?_=' + Date.now(), {
+      headers: { 'Accept': 'application/json' },
+      cache: 'no-store',
+      credentials: 'same-origin'
+    })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (d && d.t) { ts.value = String(d.t); sig.value = String(d.s || ''); }
+      })
+      .catch(function () {});
+  })();
+
   let selectedTipus = null;
 
   function setError(field, errorId, message) {

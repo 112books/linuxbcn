@@ -2424,6 +2424,18 @@ footer a:hover {
   display: none !important;
 }
 
+/* Camp trampa anti-spam: fora de pantalla. No fem servir display:none
+   perque els bots que comproven la visibilitat tambe l'omplirien; el
+   treiem de la navegacio amb tabindex=-1 i aria-hidden al template. */
+.form-trampa {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .footer-tagline {
   color: var(--accent-text);
 }

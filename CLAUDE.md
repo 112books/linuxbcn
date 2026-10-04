@@ -884,5 +884,29 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-09-29*
+## 33. Historial de tasques — 2026-10-04
+
+**Anti-spam del formulari de contacte**
+
+*Problema*
+- Correus brossa arribats via `enviar.php`: bots que fan POST directe amb nom aleatori, correu yahoo/gmail, `tipus=artista-music` i un missatge amb un enllaç. L'honeypot existent (`botcheck`, una casella `display:none`) no els aturava perquè no s'envia quan està desmarcada.
+
+*Solució — defensa en capes, autohostejada i sense CAPTCHA de tercers*
+- `static/formulari/_comu.php` (nou): funcions compartides `client_ip()`, `form_secret()`, `valid_form_token()` i `spam_score()`.
+- `static/formulari/token.php` (nou): `GET` que retorna `{t, s}` amb `s = HMAC-SHA256(t, secret)`. El secret ve de `FORM_SECRET` a `~/.linuxbcn-secrets.php`; si no hi és, s'autogenera a `sys_get_temp_dir()/lbcn-form/secret` (fora del repo i del web root).
+- `static/js/contacte.js`: en carregar la pàgina demana el testimoni i l'escriu als camps ocults `form_ts`/`form_sig`.
+- `static/formulari/enviar.php`: descarta **en silenci** (HTTP 200) els enviaments sense testimoni vàlid (antiguitat 3 s–12 h), amb camps trampa omplerts (`botcheck`, `lbcn_extra`, `empresa`, `website`) o amb `spam_score >= 5` (enllaços, escurçadors tipus tinyurl/bit.ly, ciríl·lic). `tipus` restringit a la llista blanca. El descart silenciós evita donar pistes als bots i evita el backscatter (no s'envia confirmació als descartats).
+- `layouts/contacte/list.html`: camp trampa `lbcn_extra` fora de pantalla (nom que els autocompletats no reconeixen, per no bloquejar usuaris legítims) + camps ocults `form_ts`/`form_sig`. L'script `js/contacte.js` ara porta `?v=<mtime>` per invalidar la caché d'1 any del `.htaccess`.
+- `assets/css/main.css`: classe `.form-trampa` (fora de pantalla, no `display:none`, perquè alguns bots comproven la visibilitat).
+- `static/.htaccess`: `token.php` sense caché.
+
+*Verificació*
+- `hugo --minify --environment production` OK; `node --check` del JS OK; els tres PHP parsejats sense errors. Pendent de prova real al servidor.
+
+*Nota*
+- Els enllaços llegítims (1–2) no es descarten: només sumen 4 punts i el llindar és 5. Els escurçadors i el ciríl·lic són els senyals decisius.
+
+---
+
+*Última actualització: 2026-10-04*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
