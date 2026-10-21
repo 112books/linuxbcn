@@ -87,9 +87,9 @@ Les dades queden als servidors de GoatCounter (o als teus propis si el fas servi
 
 ---
 
-## Última actualització: v1.2.2
+## Última actualització: v1.2.6
 
-A la versió 1.2.2 s'ha afegit un selector de període (Dia / Setmana / Mes / Trimestre / Any / Totalitat) a la pestanya **Pàgines** i un nou bloc de **Seccions**, amb el filtre aplicat directament a l'API de GoatCounter. També es mostra el rang de dates i el total de visites del període seleccionat.
+A partir de la v1.2.6 els filtres s'han unificat: la pestanya **Pàgines** i el bloc **Seccions** fan servir el mateix selector de període que les mètriques i el gràfic temporal, amb el rang de dates corresponent.
 
 ## Codi obert · Aprovat per WordPress.org
 

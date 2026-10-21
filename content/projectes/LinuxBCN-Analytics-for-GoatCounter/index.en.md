@@ -87,9 +87,9 @@ Data stays on GoatCounter's servers (or your own if you self-host). Nothing goes
 
 ---
 
-## Latest update: v1.2.2
+## Latest update: v1.2.6
 
-Version 1.2.2 adds a period selector (Day / Week / Month / Quarter / Year / All) to the **Pages** tab and a new **Sections** block, with the filter applied directly to the GoatCounter API. The selected date range and total visits are also shown.
+As of v1.2.6, filters are unified: the **Pages** tab and **Sections** block use the same period selector as the metric cards and the timeline chart, with the corresponding date range.
 
 ## Open source · Approved by WordPress.org
 
