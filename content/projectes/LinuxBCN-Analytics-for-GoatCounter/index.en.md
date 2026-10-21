@@ -87,6 +87,10 @@ Data stays on GoatCounter's servers (or your own if you self-host). Nothing goes
 
 ---
 
+## Latest update: v1.2.2
+
+Version 1.2.2 adds a period selector (Day / Week / Month / Quarter / Year / All) to the **Pages** tab and a new **Sections** block, with the filter applied directly to the GoatCounter API. The selected date range and total visits are also shown.
+
 ## Open source · Approved by WordPress.org
 
 <img src="icon-linuxbcn-analytics.png" alt="LinuxBCN Analytics for GoatCounter plugin icon" class="plugin-icon">

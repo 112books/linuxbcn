@@ -87,6 +87,10 @@ Les dades queden als servidors de GoatCounter (o als teus propis si el fas servi
 
 ---
 
+## Última actualització: v1.2.2
+
+A la versió 1.2.2 s'ha afegit un selector de període (Dia / Setmana / Mes / Trimestre / Any / Totalitat) a la pestanya **Pàgines** i un nou bloc de **Seccions**, amb el filtre aplicat directament a l'API de GoatCounter. També es mostra el rang de dates i el total de visites del període seleccionat.
+
 ## Codi obert · Aprovat per WordPress.org
 
 <img src="icon-linuxbcn-analytics.png" alt="Icona del plugin LinuxBCN Analytics for GoatCounter" class="plugin-icon">
