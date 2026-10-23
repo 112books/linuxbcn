@@ -22,6 +22,8 @@ let globalData = null;
 let visitsChart = null;
 let chartPeriodDays = 7;
 let chartGroup = 'day';
+let pagesPeriod = 'all';
+const pieCharts = {};
 const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ═══════════════════════════════════════════════════════════
@@ -94,6 +96,21 @@ document.querySelectorAll('.group-btn').forEach(btn => {
     btn.classList.add('active');
     btn.setAttribute('aria-pressed', 'true');
     if (globalData) renderChart(globalData);
+  });
+});
+document.querySelectorAll('.pg-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.disabled) return;
+    pagesPeriod = btn.dataset.period;
+    document.querySelectorAll('.pg-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (!globalData) return;
+    updatePagesPeriodUI(globalData);
+    renderSections(globalData);
+    renderPages(globalData);
+    renderPaginesInsight(globalData);
+    animateWidths(document.getElementById('sections-wrap'));
+    animateWidths(document.getElementById('pages-wrap'));
   });
 });
 
@@ -191,6 +208,7 @@ function _renderAllBase(data) {
 
   renderChart(data);
   renderLang(data);
+  updatePagesPeriodUI(data);
   renderSections(data);
   renderPages(data);
   renderProjects(data);
@@ -200,8 +218,84 @@ function _renderAllBase(data) {
   renderBrowsersSystems(data);
 
   // Animació de les barres (amb un tick de retard per al transition CSS)
+  animateWidths();
+}
+
+/* ══ FILTRE DE PERÍODE (PÀGINES I SECCIONS) ══════════════════ */
+const PAGES_PERIODS = {
+  day:     { days: 1,    label: 'avui' },
+  week:    { days: 7,    label: 'últims 7 dies' },
+  month:   { days: 30,   label: 'últims 30 dies' },
+  quarter: { days: 90,   label: 'últims 90 dies' },
+  year:    { days: 365,  label: 'últims 365 dies' },
+  all:     { days: null, label: 'tot el període' },
+};
+
+function pagesPeriodRange(key) {
+  const def = PAGES_PERIODS[key] || PAGES_PERIODS.all;
+  if (!def.days) return { from: null, to: null, label: def.label };
+  return { from: daysAgo(def.days - 1), to: isoToday(), label: def.label };
+}
+
+function hasDailyData(data) {
+  const filled = m => !!m && typeof m === 'object' && Object.keys(m).length > 0;
+  return filled(data && data.pages_daily) || filled(data && data.sections_daily);
+}
+
+function sumDaily(daily, range) {
+  const out = {};
+  Object.entries(daily || {}).forEach(([key, series]) => {
+    let n = 0;
+    Object.entries(series || {}).forEach(([date, count]) => {
+      if (!range.from || (date >= range.from && date <= range.to)) n += (count || 0);
+    });
+    if (n > 0) out[key] = n;
+  });
+  return out;
+}
+
+function pagesPeriodData(data) {
+  const range = pagesPeriodRange(pagesPeriod);
+  const daily = hasDailyData(data);
+  let sectionMap, pageMap;
+
+  if (daily) {
+    sectionMap = sumDaily(data.sections_daily, range);
+    pageMap    = sumDaily(data.pages_daily, range);
+  } else {
+    sectionMap = Object.assign({}, data.by_section || {});
+    pageMap = {};
+    (data.hits || []).forEach(h => { pageMap[h.path] = h.count; });
+  }
+  return { range, hasDaily: daily, sectionMap, pageMap };
+}
+
+function updatePagesPeriodUI(data) {
+  const daily = hasDailyData(data);
+  if (!daily) pagesPeriod = 'all';
+  document.querySelectorAll('.pg-btn').forEach(b => {
+    const active = b.dataset.period === pagesPeriod;
+    b.disabled = !daily && b.dataset.period !== 'all';
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+
+  const hint = document.getElementById('pages-period-hint');
+  if (!hint) return;
+  if (!daily) {
+    hint.textContent = "· cache antic: només total (actualitza les dades per filtrar)";
+  } else if (pagesPeriod === 'all') {
+    const p = data.period || {};
+    hint.textContent = p.start && p.end ? '· ' + fmtPeriod(p.start, p.end) : '';
+  } else {
+    const r = pagesPeriodRange(pagesPeriod);
+    hint.textContent = '· ' + fmtPeriod(r.from, r.to);
+  }
+}
+
+function animateWidths(root) {
   requestAnimationFrame(() => {
-    document.querySelectorAll('[data-bar-w]').forEach(el => {
+    (root || document).querySelectorAll('[data-bar-w]').forEach(el => {
       el.style.width = el.dataset.barW + '%';
     });
   });
@@ -363,8 +457,8 @@ function renderLang(data) {
 }
 
 function renderSections(data) {
-  const sections = data.by_section || {};
-  const items = Object.entries(sections)
+  const { sectionMap } = pagesPeriodData(data);
+  const items = Object.entries(sectionMap)
     .filter(([k]) => k !== 'admin')
     .map(([k, v]) => ({ name: SECTION_NAMES[k] || k, count: v }))
     .sort((a, b) => b.count - a.count);
@@ -372,12 +466,11 @@ function renderSections(data) {
 }
 
 function renderPages(data) {
-  const hits = (data.hits || []).slice(0, 10);
-  const items = hits.map(h => ({
-    name: h.path,
-    count: h.count,
-    href: h.path,
-  }));
+  const { pageMap } = pagesPeriodData(data);
+  const items = Object.entries(pageMap)
+    .map(([path, count]) => ({ name: path, count, href: path }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 10);
   renderBars('pages-wrap', items, 'name', true);
 }
 
@@ -446,6 +539,12 @@ function renderDevices(data) {
   setText('dev-tablet-pct', tablet  > 0 ? pct(tablet)  : '');
   setText('dev-desktop',    desktop > 0 ? fmt(desktop) : '—');
   setText('dev-desktop-pct',desktop > 0 ? pct(desktop) : '');
+
+  renderPie('pie-devices', [
+    { name: 'Mòbil',      count: mobile  },
+    { name: 'Tauleta',    count: tablet  },
+    { name: 'Escriptori', count: desktop },
+  ], { maxSlices: 3 });
 }
 
 function renderBrowsersSystems(data) {
@@ -457,8 +556,80 @@ function renderBrowsersSystems(data) {
     name: getIcon(s.name || '', OS_ICON) + ' ' + (s.name || '?'),
     count: s.count,
   }));
-  renderBars('browsers-wrap', browsers, 'name');
-  renderBars('systems-wrap',  systems,  'name');
+  renderPie('pie-browsers', browsers, { maxSlices: 6 });
+  renderPie('pie-systems',  systems,  { maxSlices: 6 });
+}
+
+/* ══ GRÀFICS DE FORMATGE ═════════════════════════════════════ */
+const PIE_COLORS = ['#b04d06', '#1a5c9a', '#2d7a2d', '#8b2500', '#6b6b66', '#b58b2a', '#7a4f9e'];
+
+function pieSlices(items, maxSlices) {
+  const sorted = (items || []).filter(i => (i.count || 0) > 0).sort((a,b) => b.count - a.count);
+  if (sorted.length <= maxSlices) return sorted;
+  const head  = sorted.slice(0, maxSlices - 1);
+  const other = sorted.slice(maxSlices - 1).reduce((s,i) => s + i.count, 0);
+  return other > 0 ? head.concat([{ name: 'Altres', count: other }]) : head;
+}
+
+function renderPie(canvasId, items, opts = {}) {
+  if (typeof Chart === 'undefined') return;
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+
+  const slices = pieSlices(items, opts.maxSlices || 6);
+  if (pieCharts[canvasId]) { pieCharts[canvasId].destroy(); delete pieCharts[canvasId]; }
+  if (!slices.length) return;
+
+  const labels = slices.map(s => s.name);
+  const values = slices.map(s => s.count);
+  const colors = slices.map((s,i) => s.name === 'Altres' ? '#b9b8b2' : PIE_COLORS[i % PIE_COLORS.length]);
+
+  pieCharts[canvasId] = new Chart(canvas.getContext('2d'), {
+    type: 'pie',
+    data: {
+      labels,
+      datasets: [{
+        data: values,
+        backgroundColor: colors,
+        borderColor: '#f5f4f0',
+        borderWidth: 2,
+        hoverOffset: 4,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            boxWidth: 9, boxHeight: 9, padding: 10, color: '#444440',
+            generateLabels(chart) {
+              const ds = chart.data.datasets[0];
+              const t  = ds.data.reduce((s,v) => s + v, 0) || 1;
+              return chart.data.labels.map((label, i) => ({
+                text: label + ' · ' + fmt(ds.data[i]) + ' (' + Math.round(ds.data[i] / t * 100) + '%)',
+                fillStyle: ds.backgroundColor[i],
+                strokeStyle: ds.backgroundColor[i],
+                lineWidth: 0,
+                index: i,
+                hidden: !chart.getDataVisibility(i),
+              }));
+            },
+          },
+        },
+        tooltip: {
+          backgroundColor: '#f5f4f0', borderColor: '#ddddd8', borderWidth: 1,
+          titleColor: '#111110', bodyColor: '#6b6b66', padding: 10,
+          callbacks: {
+            label: c => {
+              const t = c.dataset.data.reduce((s,v) => s + v, 0) || 1;
+              return ' ' + c.label + ': ' + fmt(c.parsed) + ' (' + Math.round(c.parsed / t * 100) + '%)';
+            },
+          },
+        },
+      },
+    },
+  });
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -663,7 +834,7 @@ function renderPaginesInsight(data) {
   }
 
   // Secció més visitada
-  const sections = data.by_section || {};
+  const sections = pagesPeriodData(data).sectionMap;
   const secEntries = Object.entries(sections).filter(([k]) => k !== 'admin').sort((a,b) => b[1]-a[1]);
   const secTotal = secEntries.reduce((s, [,v]) => s + v, 0);
   if (secEntries.length) {

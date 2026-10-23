@@ -100,6 +100,17 @@
       <h2 class="section-title" id="h-lang">visites per idioma</h2>
       <div id="lang-wrap"></div>
 
+      <div class="chart-controls pages-period" id="pages-period-controls" role="group" aria-label="Període de seccions i pàgines">
+        <span class="period-title" aria-hidden="true">període</span>
+        <button type="button" class="pg-btn" data-period="day" aria-pressed="false">dia</button>
+        <button type="button" class="pg-btn" data-period="week" aria-pressed="false">setm.</button>
+        <button type="button" class="pg-btn" data-period="month" aria-pressed="false">mes</button>
+        <button type="button" class="pg-btn" data-period="quarter" aria-pressed="false">trim.</button>
+        <button type="button" class="pg-btn" data-period="year" aria-pressed="false">any</button>
+        <button type="button" class="pg-btn active" data-period="all" aria-pressed="true">tot</button>
+        <span class="period-hint" id="pages-period-hint" role="status" aria-live="polite"></span>
+      </div>
+
       <h2 class="section-title" id="h-sections">seccions més visitades</h2>
       <div id="sections-wrap" class="bars" role="list" aria-labelledby="h-sections"></div>
 
@@ -151,14 +162,18 @@
         </div>
       </div>
 
-      <div class="grid-2">
+      <div class="pie-grid">
+        <div>
+          <h2 class="section-title" id="h-pie-devices">repartiment per dispositiu</h2>
+          <div class="chart-wrap pie-wrap"><canvas id="pie-devices" role="img" aria-label="Repartiment de visites per dispositiu"></canvas></div>
+        </div>
         <div>
           <h2 class="section-title" id="h-browsers">navegadors</h2>
-          <div id="browsers-wrap" class="bars" role="list" aria-labelledby="h-browsers"></div>
+          <div class="chart-wrap pie-wrap"><canvas id="pie-browsers" role="img" aria-label="Repartiment de visites per navegador"></canvas></div>
         </div>
         <div>
           <h2 class="section-title" id="h-systems">sistemes operatius</h2>
-          <div id="systems-wrap" class="bars" role="list" aria-labelledby="h-systems"></div>
+          <div class="chart-wrap pie-wrap"><canvas id="pie-systems" role="img" aria-label="Repartiment de visites per sistema operatiu"></canvas></div>
         </div>
       </div>
 

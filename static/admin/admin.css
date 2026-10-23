@@ -214,7 +214,7 @@
       align-items: center;
     }
     .chart-sep { width: 1px; height: 24px; background: var(--border); margin: 0 .2rem; }
-    .period-btn, .group-btn {
+    .period-btn, .group-btn, .pg-btn {
       background: transparent;
       border: 1px solid var(--border);
       color: var(--ink3);
@@ -226,9 +226,13 @@
       cursor: pointer;
       transition: all .12s;
     }
-    .period-btn:hover, .group-btn:hover { border-color: var(--ink3); color: var(--ink); }
-    .period-btn.active, .group-btn.active { border-color: var(--accent); color: var(--accent); }
-    .period-btn:focus-visible, .group-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    .period-btn:hover, .group-btn:hover, .pg-btn:hover { border-color: var(--ink3); color: var(--ink); }
+    .period-btn.active, .group-btn.active, .pg-btn.active { border-color: var(--accent); color: var(--accent); }
+    .period-btn:focus-visible, .group-btn:focus-visible, .pg-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    .pg-btn:disabled { opacity: .35; cursor: not-allowed; }
+    .pg-btn:disabled:hover { border-color: var(--border); color: var(--ink3); }
+    .period-title { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); margin-right: .2rem; }
+    .period-hint { font-size: 10px; color: var(--ink3); margin-left: .35rem; }
 
     .chart-wrap {
       border: 1px solid var(--border);
@@ -345,6 +349,11 @@
     /* ── GRID ───────────────────────────────────────── */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 
+    /* ── GRÀFICS DE FORMATGE ─────────────────────────── */
+    .pie-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .pie-wrap { height: 300px; }
+    .pie-wrap canvas { width: 100% !important; height: 100% !important; }
+
     /* ── REFS INFO ──────────────────────────────────── */
     .refs-info {
       background: var(--surface);
@@ -366,6 +375,7 @@
     @media (max-width: 860px) {
       .kpis { grid-template-columns: repeat(2, 1fr); }
       .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+      .pie-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .dash-body { padding: 1rem; }
       .topbar { padding: .6rem 1rem; }
       .bar-row { grid-template-columns: 90px 1fr 40px; gap: .5rem; }

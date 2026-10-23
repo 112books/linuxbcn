@@ -128,6 +128,8 @@ $consultes   = 0;
 $by_section  = [];
 $by_lang     = [];
 $hits_pages  = [];
+$pages_daily = [];
+$sections_daily = [];
 $total       = 0;
 
 foreach (($hits_raw['hits'] ?? []) as $path_item) {
@@ -149,6 +151,8 @@ foreach (($hits_raw['hits'] ?? []) as $path_item) {
         $by_lang[$lang]        = ($by_lang[$lang] ?? 0) + $count;
         if (strlen($date) === 10) {
             $hits_by_day[$date] = ($hits_by_day[$date] ?? 0) + $count;
+            $pages_daily[$path][$date]       = ($pages_daily[$path][$date] ?? 0) + $count;
+            $sections_daily[$section][$date] = ($sections_daily[$section][$date] ?? 0) + $count;
         }
     }
 
@@ -169,6 +173,18 @@ $hbd_arr   = array_map(fn($d, $c) => ['date' => $d, 'count' => $c], array_keys($
 $hits_list = [];
 foreach (array_slice($hits_pages, 0, 30, true) as $path => $count) {
     $hits_list[] = ['path' => $path, 'count' => $count];
+}
+
+// Guard: si no hi ha pàgines, conserva la cache anterior (evita buidar-la).
+$prev_has_hits = false;
+if (is_file(CACHE_FILE)) {
+    $prev_cache = json_decode((string)@file_get_contents(CACHE_FILE), true);
+    if (is_array($prev_cache)) $prev_has_hits = !empty($prev_cache['hits']);
+}
+if (empty($hits_pages) && $prev_has_hits) {
+    http_response_code(502);
+    echo json_encode(['error' => 'GoatCounter no ha retornat pàgines; es conserva la cache anterior.']);
+    exit;
 }
 
 // ── Crides secundàries (fallen en silenci, com al Python safe_fetch_stats) ───
@@ -207,6 +223,8 @@ $output = [
     'hits'        => $hits_list,
     'by_lang'     => $by_lang,
     'by_section'  => $by_section,
+    'pages_daily'    => $pages_daily,
+    'sections_daily' => $sections_daily,
     'refs'        => $refs_list,
     'browsers'    => $browsers,
     'systems'     => $systems,
