@@ -911,5 +911,53 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-10-04*
+## 34. Historial de tasques — 2026-11-07
+
+**Projecte nou: 40 anys de blues a Barcelona**
+
+*Context*
+- Encarrec de **112books.eu** (editorial de fotografia de Joan Linux)
+- Web arxiu de l'escena del blues barcelonina: 148 músics, 531 formacions, 296 fotografies
+- URL: `https://40anysblues.112books.eu/` (Hugo + GitHub Pages + GoatCounter)
+- Esborrany de notícia i fitxa de projecte a `/40anysbluesbarcelona/comunicacio/` (fora del repo de LinuxBCN)
+
+*Fitxa de projecte — creada i documentada*
+- `content/projectes/40anysblues/`: directori new amb `index.ca.md`, `index.en.md` + 4 captures PNG
+- Descripció en les dues fitxes: hipervinculació total (músics ↔ bandes ↔ instruments), links a Wikipedia, reutilització de contingut històric com a navegació
+- Característiques destacades:
+  - Portada randomitzada: cada visita mostra un músic aleatori per fer dinàmics
+  - Butlletí i **canal Telegram (@40anysbluesbarcelona)** per a novetats, presentacions, noves incorporacions
+  - Sobirania total de dades, GitHub Pages, GitHub Actions
+  - Imatges WebP responsives (`srcset`), dades estructurades, GoatCounter
+- Afegit al llistat `/projectes/` com a primer de "Projectes propis" (CA+EN)
+
+*Imatges (captures de pantalla)*
+- `40anysblues.png` — portada del web (hero del projecte)
+- `40anysblues-fitxa.png` — fitxa de músic (galeria inline)
+- `40anysblues-bands.png` — grid de formacions (galeria inline)
+- `40anysblues-estadistiques.png` — estadístiques públiques (galeria inline)
+- Totes copades a `/content/projectes/40anysblues/` (organisades, fora de l'arrel del projecte)
+
+*Commits*
+- `content: afegeix projecte 40anysblues — arxiu blues barcelonina`
+- `content: 40anysblues — explicar hipervinculació i reutilització de contingut`
+- `content: 40anysblues — afegir 112books.eu, músic aleatori i Telegram`
+- `content: 40anysblues — portada principal actualitzada`
+- `content: 40anysblues — moure captures d'estadístiques al projecte`
+
+*Deploy*
+- Pushed a main, rebase en conflicte, deploy producció OK
+- IndexNow: 110 URLs notificades (Bing, Yandex, DuckDuckGo, etc.)
+- Caché purjada al CDN
+
+*Artefacte extern (no al repo de LinuxBCN)*
+- Text per a Instagram (copia-enganxa): `/Users/joan/Documents/Obsidian/linuxbcn-2026/40anysblues-instagram-post.txt`
+
+*En viu*
+- https://linuxbcn.com/projectes/40anysblues/
+- https://linuxbcn.com/en/projectes/40anysblues/
+
+---
+
+*Última actualització: 2026-11-07*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
