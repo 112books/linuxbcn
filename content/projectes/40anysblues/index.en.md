@@ -29,7 +29,9 @@ archive of Barcelona's blues scene.
 
 Organize 148 musician profiles, 531 formations, and 296 black-and-white photographs across three languages.
 Without a content management system. Without unnecessary external dependencies.
-So anyone can search for a musician, see their face, and understand why Barcelona is a blues city.
+So anyone can search for a musician, see their face, understand why Barcelona is a blues city,
+and navigate connections: which other musician plays the same instrument, which bands share members,
+which musicians played together over the years.
 
 ---
 
@@ -38,8 +40,9 @@ So anyone can search for a musician, see their face, and understand why Barcelon
 - **Hugo** as a static site generator with a custom theme
 - **GitHub Actions + GitHub Pages** to publish on every `git push`
 - **Images in WebP with `srcset`** — original photographs are large, but each page loads only its size
+- **Total hyperlinking** — each musician links to their bands, fellow musicians, their instruments, and musical references (Wikipedia links and external sources)
 - **Structured data** (Person, BreadcrumbList, Organization) so search engines understand the content
-- **Native search** and navigation by taxonomy: 27 instruments, formations, birth years
+- **Native search** and navigation by taxonomy: 27 instruments, formations, birth years, relational
 - **GoatCounter** for privacy-respecting analytics
 
 ---
@@ -50,8 +53,10 @@ Total data sovereignty: the repository is public, the website is independent, no
 The original cover weighed 3.5 MB; now it weighs 528 KB. Three languages (Catalan, Spanish, English)
 share the same content: names remain original, texts are contextualized, not literally translated.
 
+**Intelligent content reuse:** each musician came with an associated list of external references (reference musicians, living musicians admired, emblematic groups). Instead of discarding it, we converted it into internal and external hyperlinks: from any musician's profile you can reach their mentors, bandmates, collaborators, and influences.
+
 A model that works for cultural projects: multilingual, accessible, fast,
-without extra infrastructure.
+without extra infrastructure, and that transforms historical documentation into navigation.
 
 {{< gallery "40anysblues-fitxa.png" "Musician profile: biography, discography, formations" "40anysblues-bands.png" "Formations grid navigable by taxonomy" >}}
 

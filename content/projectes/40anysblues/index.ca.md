@@ -29,7 +29,9 @@ de l'escena del blues barcelonina.
 
 Organitzar 148 fitxes de músics, 531 formacions i 296 fotografies en blanc i negre en tres idiomes.
 Sense gestor de continguts. Sense dependències externes innecessàries.
-Que qualsevol pugui buscar un músic, veure'n la cara i entendre per què Barcelona és una ciutat de blues.
+Que qualsevol pugui buscar un músic, veure'n la cara, entendre per què Barcelona és una ciutat de blues,
+i navegar per les connexions: quin altre músic toca el mateix instrument, quines bandes comparteixen membres,
+quins músics van tocar amb quins altres al llarg dels anys.
 
 ---
 
@@ -38,8 +40,9 @@ Que qualsevol pugui buscar un músic, veure'n la cara i entendre per què Barcel
 - **Hugo** com a generador estàtic amb tema propi
 - **GitHub Actions + GitHub Pages** per publicar cada `git push`
 - **Imatges en WebP amb `srcset`** — les fotografies originals pesen més, però cada pàgina en carrega la versió que li toca
+- **Hipervinculació total** — cada músic enllaça amb les seves bandes, els seus companyons, els seus instruments i les seves references musicals (links a Wikipedia i fonts externes)
 - **Dades estructurades** (Person, BreadcrumbList, Organization) perquè els cercadors entenguin el contingut
-- **Búsqueda nativa** i navegació per taxonomia: 27 instruments, formacions, anys de naixement
+- **Búsqueda nativa** i navegació per taxonomia: 27 instruments, formacions, anys de naixement, relacionals
 - **GoatCounter** per estadístiques respectuoses amb la privacitat
 
 ---
@@ -50,8 +53,10 @@ Sobirania total de les dades: el repositori és públic, el web és independent,
 La portada original pesava 3,5 MB; ara pesa 528 KB. Els tres idiomes (català, castellà, anglès) comparten
 el mateix contingut: els noms es mantenen, els textos se situen en context local, no en traducció literal.
 
+**Reutilització intelligent del contingut:** cada música portava associada una llista de referències externes (músics de referència, músics vius admirats, grups emblemàtics). En lloc d'esborrar-la, s'ha convertit en hipervincles internos i externs: des de la fitxa de qualsevol músic pots arribar als seus mestres, als seus companys de banda, als seus col·laboradors i als seus influents.
+
 Un model que treballa per a projectes culturals: multillengua, accessible, ràpid,
-sense infraestructura extra.
+sense infraestructura extra, i que transforma la documentació històrica en navegació.
 
 {{< gallery "40anysblues-fitxa.png" "Fitxa de músic: biografia, discografia, formacions" "40anysblues-bands.png" "Grid de formacions navegable per taxonomia" >}}
 
