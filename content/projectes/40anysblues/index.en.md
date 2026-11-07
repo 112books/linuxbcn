@@ -15,12 +15,14 @@ serveis: ["static-web", "multilingual", "seo"]
 image: "40anysblues.png"
 ---
 
-## An archive, not just a book listing
+## A living archive for a paper archive
 
 On November 6, 2026, the book *40 Years of Blues in Barcelona* by Joan Linux
 with texts by Manuel López Poy was presented at Centre Cultural Collblanc – La Torrassa.
 
-The accompanying website is not merely a book listing: it is a photographic and biographical
+**Commissioned by 112books.eu** — the photography publisher that Joan directs.
+
+The accompanying website is not merely a book listing: it is a living photographic and biographical
 archive of Barcelona's blues scene.
 
 ---
@@ -54,6 +56,10 @@ The original cover weighed 3.5 MB; now it weighs 528 KB. Three languages (Catala
 share the same content: names remain original, texts are contextualized, not literally translated.
 
 **Intelligent content reuse:** each musician came with an associated list of external references (reference musicians, living musicians admired, emblematic groups). Instead of discarding it, we converted it into internal and external hyperlinks: from any musician's profile you can reach their mentors, bandmates, collaborators, and influences.
+
+**Dynamism:** every time the homepage loads, a featured musician appears at random so you never see the same face twice in a row. The website isn't static, it's alive.
+
+**Community:** newsletter and **Telegram channel** (@40anysbluesbarcelona) to keep users informed of new incorporations, presentations, discoveries, and news about Barcelona's blues scene.
 
 A model that works for cultural projects: multilingual, accessible, fast,
 without extra infrastructure, and that transforms historical documentation into navigation.

@@ -15,13 +15,15 @@ serveis: ["web-estatica", "multillengua", "seo"]
 image: "40anysblues.png"
 ---
 
-## Un arxiu, no només una fitxa de llibre
+## Un arxiu viu per a un arxiu en paper
 
 El 6 de novembre de 2026 es va presentar al Centre Cultural Collblanc – La Torrassa
 el llibre *40 anys de blues a Barcelona*, de Joan Linux amb textos de Manuel López Poy.
 
+**Encarregat per 112books.eu** — l'editorial de fotografia que Joan dirige.
+
 El web que l'acompanya no és només una fitxa del llibre: és un arxiu fotogràfic i biogràfic
-de l'escena del blues barcelonina.
+viu de l'escena del blues barcelonina.
 
 ---
 
@@ -54,6 +56,10 @@ La portada original pesava 3,5 MB; ara pesa 528 KB. Els tres idiomes (català, c
 el mateix contingut: els noms es mantenen, els textos se situen en context local, no en traducció literal.
 
 **Reutilització intelligent del contingut:** cada música portava associada una llista de referències externes (músics de referència, músics vius admirats, grups emblemàtics). En lloc d'esborrar-la, s'ha convertit en hipervincles internos i externs: des de la fitxa de qualsevol músic pots arribar als seus mestres, als seus companys de banda, als seus col·laboradors i als seus influents.
+
+**Dinamisme:** cada vegada que es carrega la portada, un músic destacat surt de forma aleatòria, perquè mai es vegi la mateixa cara dues vegades seguides. El web no és estàtic, sinó viu.
+
+**Comunitat:** butlletí i **canal de Telegram** (@40anysbluesbarcelona) per mantenir informats els usuaris de noves incorporacions, presentacions, descobriments i novetats del blues barcelonina.
 
 Un model que treballa per a projectes culturals: multillengua, accessible, ràpid,
 sense infraestructura extra, i que transforma la documentació històrica en navegació.
