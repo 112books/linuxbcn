@@ -22,6 +22,7 @@ draft: false
 
 ## Projectes propis
 
+→ [40 anys de blues a Barcelona](/projectes/40anysblues/) — arxiu fotogràfic i biogràfic de l'escena del blues barcelonina (148 músics, 3 idiomes, Hugo + GitHub Pages)
 → [Taro Photo App](/projectes/taro-photo-app/) — web, gestor i votació per a col·lectius fotogràfics (AGPL-3.0)
 → [Ressona](/projectes/ressona/) — plataforma d'identitat digital per a artistes
 → [MalditasMaquinas.com](/projectes/malditasmaquinas/) — consultoria tecnològica per hores
