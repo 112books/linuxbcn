@@ -24,7 +24,7 @@
 | Què | Estat |
 |---|---|
 | Darrer commit | `feat: fase 3 del pla seo — quatre fitxes de servei` |
-| Producció | ✅ fase 2 desplegada i verificada (2026-11-18). ⏳ **fase 3 pendent de desplegar** |
+| Producció | ✅ fases 2 i 3 desplegades i verificades (2026-11-18): 12 URLs de `/serveis/` → 200, IndexNow 200 (102 URLs) |
 | Fases fetes | 0, 1, 1a, 1c, **2, 3** del pla (taula a `PLA-SEO-2026-11.md` §8) |
 | Fase següent | **4** — les 4 guies del clúster WordPress |
 
@@ -116,7 +116,7 @@ I passar 1 URL pel validador: https://validator.schema.org/ (o Rich Results Test
    Cada guia: enllaç al pilar (CTA) + 1 cas. Schema `Article` (o `HowTo` si és un pas a pas).
 2. **Enllaçar-les** des del pilar (`/serveis/migracio-wordpress/`) i des de
    `/solucions/musics/` (la guia «web per a una banda» queda fora d'aquest clúster).
-3. **Deploy** quan Joan ho demani: `echo 5 | ./sync-linuxbcn.sh`, i verificar que
+3. **Deploy** quan Joan ho demani (`echo 5 | ./sync-linuxbcn.sh`), i verificar que
    `/en/serveis/*` i `/ca/guies/*` responen 200 amb `?v=<aleatori>` (el CDN fa caché ~15 min).
 4. **Fase 5 (AEO):** revisar Search Console (queries amb impressions i CTR baix), enviar
    IndexNow i actualitzar `llms.txt` amb les guies.
