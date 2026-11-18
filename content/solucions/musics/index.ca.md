@@ -100,6 +100,12 @@ Per a músics, solistes i bandes a Barcelona i Catalunya que:
 
 ---
 
+## Si el web que tens és un WordPress antic
+
+Molta gent arriba aquí amb un web de fa anys que ja no pot mantenir. No cal començar de zero: mira [quan et convé Hugo i quan et convé WordPress](/guies/hugo-vs-wordpress/) i, si el que vols és marxar, [com migrem un WordPress a una web estàtica](/serveis/migracio-wordpress/).
+
+---
+
 {{< faq >}}
 
 ---

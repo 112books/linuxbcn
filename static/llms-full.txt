@@ -96,6 +96,10 @@ En analítica, la decisió és explícita: es mesuren visites, pàgines, idioma,
 
 El criteri comú a tots els serveis: si una eina existent resol el problema, no es construeix res; si el que cal no és el que es demana, es diu. Més informació: https://linuxbcn.com/ca/serveis/
 
+## Guies per decidir
+
+LinuxBCN publica quatre guies pensades perquè el lector pugui decidir, amb nosaltres o sense. «Com sortir de WordPress sense perdre res» explica què cal inventariar, què es conserva i què es perd, i els quatre errors clàssics: canviar adreces sense redireccions, publicar sense comprovar URL per URL, oblidar les imatges i no formar qui edita. «Hugo o WordPress» compara manteniment, velocitat, superfície d'atac, edició, botiga i extensions, i inclou explícitament els casos en què WordPress és la millor opció (botiga amb estocs, àrea de socis, flux editorial complex). «El teu WordPress va lent o t'han atacat» ordena les causes per freqüència —allotjament compartit saturat, plugins abandonats, base de dades inflada, imatges sense optimitzar, atacs automatitzats, temes pesants— i proposa diagnosticar mesurant abans de canviar res. «Migrar de Blogger a una web pròpia» tracta el cas específic de Blogger: les imatges viuen als servidors de Google i s'han de baixar i allotjar al projecte perquè el web no depengui de la plataforma. El cas real és 9 Barris Imatge, amb 3.006 articles migrats amb zero errors. Índex: https://linuxbcn.com/ca/guies/
+
 ---
 
 ## Projectes realitzats

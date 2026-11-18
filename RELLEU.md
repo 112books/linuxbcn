@@ -23,10 +23,25 @@
 
 | Què | Estat |
 |---|---|
-| Darrer commit | `feat: fase 3 del pla seo — quatre fitxes de servei` |
+| Darrer commit | `feat: fase 4 del pla seo — seccio de guies` |
 | Producció | ✅ fases 2 i 3 desplegades i verificades (2026-11-18): 12 URLs de `/serveis/` → 200, IndexNow 200 (102 URLs) |
-| Fases fetes | 0, 1, 1a, 1c, **2, 3** del pla (taula a `PLA-SEO-2026-11.md` §8) |
-| Fase següent | **4** — les 4 guies del clúster WordPress |
+| Fases fetes | 0, 1, 1a, 1c, 2, 3, **4** del pla (taula a `PLA-SEO-2026-11.md` §8) |
+| Fase següent | **5** (tancar): desplegar les guies, IndexNow, i revisió de Search Console per part de Joan |
+
+### Què es va fer a la fase 4 (2026-11-18, sessió 6)
+
+- **Secció `/guies/`** nova: `layouts/guies/{single,list}.html` (hero amb data, contingut,
+  «Altres guies», CTA al pilar) i `content/guies/_index.{ca,en}.md`.
+- **4 guies CA+EN**, cada una amb FAQ al frontmatter i enllaç de tornada al pilar:
+  `sortir-de-wordpress` (723 w, HowTo), `hugo-vs-wordpress` (657 w, taula comparativa),
+  `wordpress-lent-o-insegur` (592 w), `migrar-de-blogger` (539 w, HowTo + cas 9 Barris).
+- **Schema:** `Article` a les guies (data de publicació i modificació, autor, editor);
+  el `HowTo` s'ha generalitzat (qualsevol pàgina amb `howto:`, no només serveis).
+- **Enllaçat:** «Abans de decidir-ho» al pilar amb les 4 guies; `/solucions/musics/` (CA+EN)
+  amb un bloc per a qui arriba amb un WordPress antic.
+- **Fase 5 (parcial):** `llms.txt` i `llms-full.txt` amb la secció de guies i un apartat en prosa.
+  Pendent: desplegar + IndexNow i la revisió de Search Console (cal accés de Joan).
+- Verificat: 307 blocs JSON-LD (0 errors), 0 enllaços trencats, 5 URLs de guies per idioma.
 
 ### Què es va fer a la fase 3 (2026-11-18, sessió 5)
 
@@ -105,21 +120,15 @@ I passar 1 URL pel validador: https://validator.schema.org/ (o Rich Results Test
 
 ---
 
-## 3. Fase 4 — què toca ara
+## 3. Què queda (fase 5 i següents)
 
-1. **Secció `/guies/`** (`content/guies/_index.{ca,en}.md` + plantilla; pot servir
-   `_default/single.html` si el resultat és prou bo) amb les 4 guies del clúster:
-   - `sortir-de-wordpress` — com fer-ho sense perdre URLs, imatges ni posicionament
-   - `hugo-vs-wordpress` — taula + «quan et convé cada opció»
-   - `wordpress-lent-o-insegur` — diagnòstic: plugins, actualitzacions, pes, atacs
-   - `migrar-de-blogger` — cas literal 9 Barris Imatge
-   Cada guia: enllaç al pilar (CTA) + 1 cas. Schema `Article` (o `HowTo` si és un pas a pas).
-2. **Enllaçar-les** des del pilar (`/serveis/migracio-wordpress/`) i des de
-   `/solucions/musics/` (la guia «web per a una banda» queda fora d'aquest clúster).
-3. **Deploy** quan Joan ho demani (`echo 5 | ./sync-linuxbcn.sh`), i verificar que
-   `/en/serveis/*` i `/ca/guies/*` responen 200 amb `?v=<aleatori>` (el CDN fa caché ~15 min).
-4. **Fase 5 (AEO):** revisar Search Console (queries amb impressions i CTR baix), enviar
-   IndexNow i actualitzar `llms.txt` amb les guies.
+1. **Deploy de les guies** quan Joan ho demani: `echo 5 | ./sync-linuxbcn.sh` (fa IndexNow sol).
+   Verificar `/ca/guies/` i les 4 guies amb `?v=<aleatori>` (el CDN fa caché ~15 min).
+2. **Search Console** (requereix Joan): mirar les queries amb impressions i CTR baix, i confirmar
+   que `/serveis/*` i `/guies/*` s'indexen. Enviar sitemaps si cal.
+3. **Fase 1b pendent:** pàgines primes (`favb`, `pocallum`, `112books`, `carrer`, `/contacte`) — cal dades de Joan.
+4. **Extern:** Google Business Profile i backlinks dels clients migrats (segueixen pendents del pla).
+5. **Opcional:** guia `web-per-a-una-banda` (eix de músics) i enllaç des de `/solucions/musics/`.
 
 ---
 

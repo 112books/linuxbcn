@@ -106,6 +106,13 @@ We do not use generic examples. These come from projects we have handled ourselv
 
 Access to the WordPress dashboard, the domain and the current hosting, plus one person to validate content. The rest is our job.
 
+## Before deciding
+
+- [How to leave WordPress without losing anything](/guies/sortir-de-wordpress/) — order, inventory and URL parity.
+- [Hugo or WordPress: which one fits you](/guies/hugo-vs-wordpress/) — the honest comparison.
+- [Your WordPress is slow or got attacked](/guies/wordpress-lent-o-insegur/) — diagnosis before solution.
+- [Moving from Blogger to your own site](/guies/migrar-de-blogger/) — the 9 Barris Imatge case.
+
 {{< faq >}}
 
 ## Let's talk about your WordPress

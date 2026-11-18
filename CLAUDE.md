@@ -1123,5 +1123,36 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 40. Historial de tasques — 2026-11-18 (sessió 6)
+
+**Fase 4 del pla SEO — secció de guies (i fase 5 parcial)**
+
+*Secció nova `/guies/`*
+- `layouts/guies/single.html`: hero amb data, contingut, «Altres guies» (les altres del clúster) i
+  CTA al pilar de migració. `layouts/guies/list.html`: hub amb la llista per `weight`.
+- `content/guies/_index.{ca,en}.md` + 4 guies CA+EN, totes amb `faq:` al frontmatter:
+  - `sortir-de-wordpress` (723 w): inventari, què es conserva i què es perd, 4 errors clàssics. `howto:`.
+  - `hugo-vs-wordpress` (657 w): taula comparativa i, explícitament, quan WordPress és millor.
+  - `wordpress-lent-o-insegur` (592 w): diagnòstic per causes abans de canviar res.
+  - `migrar-de-blogger` (539 w): imatges allotjades a Google, comentaris i cas 9 Barris. `howto:`.
+
+*Schema*
+- `head.html`: `Article` (headline, datePublished, dateModified, author, publisher, mainEntityOfPage)
+  per a la secció `guies`. El `HowTo` s'ha extret del bloc de `serveis` i ara és genèric:
+  qualsevol pàgina amb `howto:` al frontmatter l'emet.
+
+*Enllaçat*
+- El pilar de migració incorpora «Abans de decidir-ho» amb les 4 guies (CA+EN).
+- `/solucions/musics/` (CA+EN): bloc «Si el web que tens és un WordPress antic» → `hugo-vs-wordpress`
+  i al pilar.
+- `llms.txt` / `llms-full.txt`: secció «Guies» i apartat en prosa amb el resum de les quatre.
+
+*Verificació*
+- 307 blocs JSON-LD (0 errors), 0 enllaços interns trencats, 5 URLs de guies per idioma al sitemap,
+  7 pàgines enllacen a `/guies/`. Títols 43–51 caràcters; descripcions 120–146.
+- **Pendent: desplegar** (fase 5) i la revisió de Search Console, que necessita accés de Joan.
+
+---
+
 *Última actualització: 2026-11-18*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*

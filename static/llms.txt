@@ -32,6 +32,14 @@ Idiomes: Català (principal), Anglès
 - [Allotjament i manteniment](https://linuxbcn.com/ca/serveis/allotjament-i-manteniment/) — [EN](https://linuxbcn.com/en/serveis/allotjament-i-manteniment/): Servidor propi, còpies de seguretat amb rotació, monitoratge, actualitzacions planificades i suport per a canvis petits.
 - [Analítica i RGPD](https://linuxbcn.com/ca/serveis/analitica-i-rgpd/) — [EN](https://linuxbcn.com/en/serveis/analitica-i-rgpd/): Analítica sense cookies ni rastrejadors, auditories de protecció de dades i accessibilitat WCAG 2.1 AA.
 
+## Guies
+
+- [Guies](https://linuxbcn.com/ca/guies/) — [EN](https://linuxbcn.com/en/guies/): Explicacions honestes sobre WordPress, migracions i webs estàtiques, escrites per prendre decisions.
+- [Com sortir de WordPress sense perdre res](https://linuxbcn.com/ca/guies/sortir-de-wordpress/) — [EN](https://linuxbcn.com/en/guies/sortir-de-wordpress/): Inventari, paritat d'URLs i els quatre errors que trenquen el posicionament.
+- [Hugo o WordPress: quan et convé cada opció](https://linuxbcn.com/ca/guies/hugo-vs-wordpress/) — [EN](https://linuxbcn.com/en/guies/hugo-vs-wordpress/): Taula comparativa i criteris, incloent quan WordPress és la millor opció.
+- [El teu WordPress va lent o t'han atacat](https://linuxbcn.com/ca/guies/wordpress-lent-o-insegur/) — [EN](https://linuxbcn.com/en/guies/wordpress-lent-o-insegur/): Diagnòstic per causes: allotjament, plugins, base de dades, imatges, atacs.
+- [Migrar de Blogger a una web pròpia](https://linuxbcn.com/ca/guies/migrar-de-blogger/) — [EN](https://linuxbcn.com/en/guies/migrar-de-blogger/): Per què les imatges s'han de baixar de Google i com conservar adreces i comentaris.
+
 ## Projectes destacats
 
 - [Taro Photo App](https://linuxbcn.com/ca/projectes/taro-photo-app/): Web, gestor de continguts i mòduls de votació i formularis per a col·lectius fotogràfics. Programari lliure (AGPL-3.0) en producció a 9barrisimatge.org.

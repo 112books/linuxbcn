@@ -111,6 +111,12 @@ For musicians, soloists and bands who:
 
 ---
 
+## If your site is an old WordPress
+
+Many people arrive here with a site from years ago they can no longer maintain. You do not have to start from scratch: see [when Hugo fits you and when WordPress does](/guies/hugo-vs-wordpress/) and, if you want to leave, [how we move a WordPress site to static](/serveis/migracio-wordpress/).
+
+---
+
 {{< faq >}}
 
 ---

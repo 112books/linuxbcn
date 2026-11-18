@@ -105,6 +105,13 @@ No fem servir exemples genèrics. Aquestes són dades de projectes que hem porta
 
 Accés al panell del WordPress, el domini i l'allotjament actual, i una persona que validi el contingut. La resta és feina nostra.
 
+## Abans de decidir-ho
+
+- [Com sortir de WordPress sense perdre res](/guies/sortir-de-wordpress/) — ordre, inventari i paritat d'URLs.
+- [Hugo o WordPress: quan et convé cada opció](/guies/hugo-vs-wordpress/) — la comparació honesta.
+- [El teu WordPress va lent o t'han atacat](/guies/wordpress-lent-o-insegur/) — diagnòstic abans de solució.
+- [Migrar de Blogger a una web pròpia](/guies/migrar-de-blogger/) — el cas de 9 Barris Imatge.
+
 {{< faq >}}
 
 ## Parlem del teu WordPress

@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+<article class="project">
+
+  <header class="project-hero">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+    {{ with .Date }}<div class="meta">{{ .Format "2/1/2006" }}</div>{{ end }}
+  </header>
+
+  {{ with .Params.description }}
+    <section class="project-intro">
+      <p>{{ . }}</p>
+    </section>
+  {{ end }}
+
+  <section class="project-content">
+    {{ .Content }}
+  </section>
+
+</article>
+
+{{/* Altres guies del clúster */}}
+{{ $altres := where .CurrentSection.RegularPages "Permalink" "ne" .Permalink }}
+{{ with $altres }}
+<nav class="project-related" aria-labelledby="guies-relacionades-title">
+  <h2 id="guies-relacionades-title">{{ i18n "guies_altres_title" | default "Altres guies" }}</h2>
+  <ul>
+    {{ range . }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <span class="project-related__title">{{ .Title }}</span>
+        {{ with .Params.subtitle }}<span class="project-related__meta">{{ . }}</span>{{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}
+
+<div class="project-cta">
+  <a href="{{ "/serveis/migracio-wordpress/" | relLangURL }}">→ {{ i18n "guia_cta" | default "Com migrem un WordPress a una web estàtica" }}</a>
+</div>
+
+{{ end }}
