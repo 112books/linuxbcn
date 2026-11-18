@@ -24,12 +24,16 @@
 
 {{/* Casos reals: projectes que porten aquest servei al frontmatter */}}
 {{ $casos := slice }}
-{{ range .Site.RegularPages }}
-  {{ if and (eq .Section "projectes") (in (.Params.serveis | default (slice)) $slug) }}
-    {{ $casos = $casos | append . }}
+{{ with .Params.casos }}
+  {{ range . }}{{ with site.GetPage (printf "/projectes/%s" .) }}{{ $casos = $casos | append . }}{{ end }}{{ end }}
+{{ else }}
+  {{ range .Site.RegularPages }}
+    {{ if and (eq .Section "projectes") (in (.Params.serveis | default (slice)) $slug) }}
+      {{ $casos = $casos | append . }}
+    {{ end }}
   {{ end }}
+  {{ $casos = sort $casos "Date" "desc" }}
 {{ end }}
-{{ $casos = sort $casos "Date" "desc" }}
 {{ with first 4 $casos }}
 <nav class="project-related" aria-labelledby="servei-casos-title">
   <h2 id="servei-casos-title">{{ i18n "servei_casos_title" | default "Casos reals" }}</h2>

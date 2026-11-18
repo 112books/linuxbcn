@@ -27,6 +27,10 @@ Idiomes: Català (principal), Anglès
 
 - [Serveis](https://linuxbcn.com/ca/serveis/) — [EN](https://linuxbcn.com/en/serveis/): Què fem i com ho fem: webs a mida, migracions, aplicacions web, allotjament, analítica respectuosa i compliment legal.
 - [Migrar de WordPress a una web estàtica](https://linuxbcn.com/ca/serveis/migracio-wordpress/) — [EN](https://linuxbcn.com/en/serveis/migracio-wordpress/): Procés en quatre passos per passar un WordPress a estàtic sense perdre URLs, imatges ni posicionament. Quan té sentit, quan no, i xifres de migracions reals.
+- [Web a mida](https://linuxbcn.com/ca/serveis/web-a-mida/) — [EN](https://linuxbcn.com/en/serveis/web-a-mida/): Disseny i construcció amb Hugo: estructura de continguts, editor visual, multidioma, accessibilitat WCAG AA i formació.
+- [Aplicacions web](https://linuxbcn.com/ca/serveis/aplicacio-web/) — [EN](https://linuxbcn.com/en/serveis/aplicacio-web/): Quan el web ha de fer coses: socis, votacions, concursos, hores, permisos. Programari lliure i dades a la teva infraestructura.
+- [Allotjament i manteniment](https://linuxbcn.com/ca/serveis/allotjament-i-manteniment/) — [EN](https://linuxbcn.com/en/serveis/allotjament-i-manteniment/): Servidor propi, còpies de seguretat amb rotació, monitoratge, actualitzacions planificades i suport per a canvis petits.
+- [Analítica i RGPD](https://linuxbcn.com/ca/serveis/analitica-i-rgpd/) — [EN](https://linuxbcn.com/en/serveis/analitica-i-rgpd/): Analítica sense cookies ni rastrejadors, auditories de protecció de dades i accessibilitat WCAG 2.1 AA.
 
 ## Projectes destacats
 

@@ -23,10 +23,27 @@
 
 | Què | Estat |
 |---|---|
-| Darrer commit | `feat: fase 2 — pilar /serveis/migracio-wordpress/ i plantilles de servei` |
-| Producció | ⏳ **pendent de desplegar** (fase 2 només al repo; producció continua amb `fd5634b`) |
-| Fases fetes | 0, 1, 1a, 1c, **2** del pla (taula a `PLA-SEO-2026-11.md` §8) |
-| Fase següent | **3** — 4 fitxes de servei restants (`web-a-mida`, `aplicacio-web`, `allotjament-i-manteniment`, `analitica-i-rgpd`) |
+| Darrer commit | `feat: fase 3 del pla seo — quatre fitxes de servei` |
+| Producció | ✅ fase 2 desplegada i verificada (2026-11-18). ⏳ **fase 3 pendent de desplegar** |
+| Fases fetes | 0, 1, 1a, 1c, **2, 3** del pla (taula a `PLA-SEO-2026-11.md` §8) |
+| Fase següent | **4** — les 4 guies del clúster WordPress |
+
+### Què es va fer a la fase 3 (2026-11-18, sessió 5)
+
+- **4 fitxes de servei** CA+EN, mateixa estructura que el pilar (resposta, què inclou, **què NO**,
+  4 passos, FAQ al frontmatter, CTA, enllaços creuats):
+  `web-a-mida` (744 / ~740 w), `aplicacio-web` (772 w), `allotjament-i-manteniment` (590 w),
+  `analitica-i-rgpd` (685 w).
+- **Plantilla** `serveis/single.html`: nou camp opcional `casos: [slug, ...]` per curar a mà els
+  projectes que es mostren (per als serveis que no tenen equivalent al camp `serveis:`).
+- **Casos**: web-a-mida → Bratia, Llumàtics, Machiroku, Nau Bostik · aplicacio-web → Taro, Votació,
+  Konsento, Gestor d'hores · analitica-i-rgpd → GoatCounter Dashboard, 9 Barris Acull ·
+  allotjament → enllaça a `/powered-by-linuxbcn/` (no s'afirma res que no sigui verificable).
+- **Honestedat**: cada fitxa diu quan el servei no convé (botiga complexa, eina que ja existeix,
+  suport 24/7 que no es pot complir, atribució publicitària que no fem).
+- `llms.txt` i `llms-full.txt`: les 4 fitxes + apartat en prosa «Altres serveis».
+- Verificat: 277 blocs JSON-LD (0 errors), 0 enllaços trencats, sitemap 6 URLs de servei per idioma,
+  hub ordenat per `weight` (migració → web a mida → aplicacions → allotjament → analítica).
 
 ### Què es va fer a la fase 2 (2026-11-18, sessió DeepSeek)
 
@@ -88,22 +105,21 @@ I passar 1 URL pel validador: https://validator.schema.org/ (o Rich Results Test
 
 ---
 
-## 3. Fase 3 — què toca ara
+## 3. Fase 4 — què toca ara
 
-1. **4 fitxes de servei** amb la mateixa estructura que el pilar (~700–900 w cadascuna),
-   CA+EN, `faq:` al frontmatter i enllaç al pilar des de cada fitxa:
-   - `content/serveis/web-a-mida/` — «Web a mida a Barcelona» (casos: Bratia, Llumàtics, Machiroku, Nau Bostik)
-   - `content/serveis/aplicacio-web/` — «Aplicacions web a mida» (Taro, Votació, Konsento, Gestor d'hores)
-   - `content/serveis/allotjament-i-manteniment/` — «Allotjament i manteniment» (powered-by, 9 Barris Acull)
-   - `content/serveis/analitica-i-rgpd/` — «Analítica respectuosa i RGPD» (GoatCounter Dashboard, 9 Barris Acull)
-2. **Deploy** quan Joan ho demani: `echo 5 | ./sync-linuxbcn.sh`. Després comprovar que
-   `/ca/serveis/` i `/ca/serveis/migracio-wordpress/` responen 200 i no 302 (la regla
-   d'`.htaccess` només actua si el directori no existeix).
-3. **Revisar el 302 de `.htaccess`** després del deploy: si `/ca/serveis/*` ja no redirigeix,
-   deixar-lo només per a `sectors`.
-4. **Fase 4:** les 4 guies del clúster (`sortir-de-wordpress`, `hugo-vs-wordpress`,
-   `wordpress-lent-o-insegur`, `migrar-de-blogger`) i enllaçar-les des del pilar.
-5. `static/llms.txt` i `llms-full.txt`: les 4 fitxes noves s'hi han d'afegir (el pilar ja hi és).
+1. **Secció `/guies/`** (`content/guies/_index.{ca,en}.md` + plantilla; pot servir
+   `_default/single.html` si el resultat és prou bo) amb les 4 guies del clúster:
+   - `sortir-de-wordpress` — com fer-ho sense perdre URLs, imatges ni posicionament
+   - `hugo-vs-wordpress` — taula + «quan et convé cada opció»
+   - `wordpress-lent-o-insegur` — diagnòstic: plugins, actualitzacions, pes, atacs
+   - `migrar-de-blogger` — cas literal 9 Barris Imatge
+   Cada guia: enllaç al pilar (CTA) + 1 cas. Schema `Article` (o `HowTo` si és un pas a pas).
+2. **Enllaçar-les** des del pilar (`/serveis/migracio-wordpress/`) i des de
+   `/solucions/musics/` (la guia «web per a una banda» queda fora d'aquest clúster).
+3. **Deploy** quan Joan ho demani: `echo 5 | ./sync-linuxbcn.sh`, i verificar que
+   `/en/serveis/*` i `/ca/guies/*` responen 200 amb `?v=<aleatori>` (el CDN fa caché ~15 min).
+4. **Fase 5 (AEO):** revisar Search Console (queries amb impressions i CTR baix), enviar
+   IndexNow i actualitzar `llms.txt` amb les guies.
 
 ---
 

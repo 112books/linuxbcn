@@ -1088,5 +1088,40 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 39. Historial de tasques — 2026-11-18 (sessió 5)
+
+**Deploy de la fase 2 i fase 3 del pla SEO — quatre fitxes de servei**
+
+*Deploy fase 2 (fet i verificat)*
+- `echo 5 | ./sync-linuxbcn.sh` → build producció, rsync, permisos, purga de caché i IndexNow
+  (HTTP 200, 94 URLs).
+- Verificat en viu amb `?v=<aleatori>`: `/ca/serveis/`, `/ca/serveis/migracio-wordpress/`,
+  `/en/serveis/` i `/en/serveis/migracio-wordpress/` → **200** (el 302 temporal d'`.htaccess`
+  s'inhabilita sol gràcies al `!-d`), 5 `<details>`, `HowTo`, «Casos reals» i sitemap actualitzat.
+
+*Fitxes noves (CA+EN, mateixa estructura que el pilar)*
+- `web-a-mida` (744 w): què vol dir a mida, per a qui, què inclou, què no (botiga complexa,
+  àrees de socis, màrqueting), procés, tecnologia. Casos: Bratia, Llumàtics, Machiroku, Nau Bostik.
+- `aplicacio-web` (772 w): quan un web no n'hi ha prou, què construïm, quan no la fem, decisions
+  per defecte (sense comptes de tercers, dades minimitzades, exportació). Casos: Taro, Votació,
+  Konsento, Gestor d'hores.
+- `allotjament-i-manteniment` (590 w): què inclou, per què «instal·lar i oblidar» no n'hi ha prou,
+  límits (sense 24/7, sense xarxes ni publicitat), enllaç a `/powered-by-linuxbcn/`.
+- `analitica-i-rgpd` (685 w): analítica sense cookies, què es mesura i què no, què es revisa
+  d'RGPD, accessibilitat i una advertència honesta sobre l'abast. Casos: GoatCounter Dashboard,
+  9 Barris Acull.
+
+*Plantilla*
+- `layouts/serveis/single.html`: camp opcional `casos: [slug, ...]` al frontmatter per curar
+  els projectes mostrats (per als serveis sense equivalent al camp `serveis:` dels projectes).
+  Si no hi és, s'usa la cerca per `serveis:`.
+
+*Verificació*
+- 277 blocs JSON-LD (0 errors), 0 enllaços interns trencats, sitemap amb 6 URLs de servei per
+  idioma, hub ordenat per `weight`, cap estil ni script en línia.
+- **Pendent: desplegar la fase 3** (`echo 5 | ./sync-linuxbcn.sh`) quan Joan ho demani.
+
+---
+
 *Última actualització: 2026-11-18*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
