@@ -53,7 +53,7 @@
       "@type": "ProfessionalService",
       "@id": "https://linuxbcn.com/#organization",
       "name": "LinuxBCN",
-      "description": {{ .Site.Params.description | jsonify }},
+      "description": {{ .Site.Params.description }},
       "url": "https://linuxbcn.com/",
       "foundingDate": "1999",
       "address": {
@@ -114,10 +114,31 @@
     {{ range $i, $item := . }}{{ if $i }},{{ end }}
     {
       "@type": "Question",
-      "name": {{ $item.q | jsonify }},
+      "name": {{ $item.q }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ $item.a | jsonify }}
+        "text": {{ $item.a }}
+      }
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
+{{ end }}
+{{ if not .IsHome }}
+{{ with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $item := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $item.q }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $item.a | markdownify | plainify | htmlUnescape }}
       }
     }{{ end }}
   ]
@@ -186,28 +207,28 @@
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": {{ cond $ca "Com treballem" "How we work" | jsonify }},
-  "description": {{ cond $ca "El procés de treball de LinuxBCN en quatre passos: escoltar, diagnosticar, construir i acompanyar." "LinuxBCN's working process in four steps: listen, diagnose, build and support." | jsonify }},
+  "name": {{ cond $ca "Com treballem" "How we work" }},
+  "description": {{ cond $ca "El procés de treball de LinuxBCN en quatre passos: escoltar, diagnosticar, construir i acompanyar." "LinuxBCN's working process in four steps: listen, diagnose, build and support." }},
   "step": [
     {
       "@type": "HowToStep", "position": 1,
-      "name": {{ cond $ca "Escoltem" "We listen" | jsonify }},
-      "text": {{ cond $ca "Entenem d'on ve el projecte i on vol arribar. Sense suposicions, sense solucions precuinades." "We understand where the project comes from and where it wants to go. No assumptions, no pre-cooked solutions." | jsonify }}
+      "name": {{ cond $ca "Escoltem" "We listen" }},
+      "text": {{ cond $ca "Entenem d'on ve el projecte i on vol arribar. Sense suposicions, sense solucions precuinades." "We understand where the project comes from and where it wants to go. No assumptions, no pre-cooked solutions." }}
     },
     {
       "@type": "HowToStep", "position": 2,
-      "name": {{ cond $ca "Diagnosi" "Diagnosis" | jsonify }},
-      "text": {{ cond $ca "Avaluem el que hi ha, el que cal i el que sobra. El sistema mínim que resoldrà el problema real." "We assess what exists, what's needed and what's surplus. The minimum system that solves the real problem." | jsonify }}
+      "name": {{ cond $ca "Diagnosi" "Diagnosis" }},
+      "text": {{ cond $ca "Avaluem el que hi ha, el que cal i el que sobra. El sistema mínim que resoldrà el problema real." "We assess what exists, what's needed and what's surplus. The minimum system that solves the real problem." }}
     },
     {
       "@type": "HowToStep", "position": 3,
-      "name": {{ cond $ca "Construcció" "Build" | jsonify }},
-      "text": {{ cond $ca "Dissenyem i implementem amb programari lliure i eines que el client pot mantenir sense nosaltres." "We design and implement with free software and tools the client can maintain without us." | jsonify }}
+      "name": {{ cond $ca "Construcció" "Build" }},
+      "text": {{ cond $ca "Dissenyem i implementem amb programari lliure i eines que el client pot mantenir sense nosaltres." "We design and implement with free software and tools the client can maintain without us." }}
     },
     {
       "@type": "HowToStep", "position": 4,
-      "name": {{ cond $ca "Acompanyament" "Support" | jsonify }},
-      "text": {{ cond $ca "Formació i suport fins que el sistema és seu. La dependència de nosaltres ha de ser mínima." "Training and support until the system is truly theirs. Dependence on us must be minimal." | jsonify }}
+      "name": {{ cond $ca "Acompanyament" "Support" }},
+      "text": {{ cond $ca "Formació i suport fins que el sistema és seu. La dependència de nosaltres ha de ser mínima." "Training and support until the system is truly theirs. Dependence on us must be minimal." }}
     }
   ]
 }
@@ -219,10 +240,10 @@
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": {{ .Title | jsonify }},
+  "name": {{ .Title }},
   "itemListElement": [
     {{ range $i, $p := .Pages }}{{ if $i }},{{ end }}
-    { "@type": "ListItem", "position": {{ add $i 1 }}, "name": {{ $p.Title | jsonify }}, "url": {{ $p.Permalink | jsonify }} }
+    { "@type": "ListItem", "position": {{ add $i 1 }}, "name": {{ $p.Title }}, "url": {{ $p.Permalink }} }
     {{ end }}
   ]
 }
@@ -232,10 +253,10 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": {{ .Title | jsonify }},
-  "serviceType": {{ .Title | jsonify }},
-  "description": {{ (.Description | default .Site.Params.description) | jsonify }},
-  "url": {{ .Permalink | jsonify }},
+  "name": {{ .Title }},
+  "serviceType": {{ .Title }},
+  "description": {{ (.Description | default .Site.Params.description) }},
+  "url": {{ .Permalink }},
   "provider": { "@type": "ProfessionalService", "@id": "https://linuxbcn.com/#organization" },
   "areaServed": [
     { "@type": "City", "name": "Barcelona" },
