@@ -1154,5 +1154,29 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 41. Historial de tasques — 2026-11-18 (sessió 7)
+
+**Navegació, trajectòria i casos per servei**
+
+- **Menú:** «Serveis» amb `weight = 2` a `config/_default/config.toml` (CA: Serveis, EN: Services),
+  i la resta de pesos desplaçats. El menú passa de 5 a 6 ítems.
+- **Peu:** «Qui som · Serveis · Guies · Contacte» amb `footer_link_services` i `footer_link_guides`
+  a `i18n/{ca,en}.toml`. La barra inferior mòbil no s'ha tocat (ja té 6 icones): el peu és la via
+  per entrar a `/serveis/` i `/guies/` des del mòbil.
+- **`/qui-som/` — Trajectòria** (CA+EN): reescrita, agrupada en Migracions i arxius / Aplicacions /
+  Webs i plataformes, amb els projectes recents. Corregit «Bratia — banda de rock» (és Balkan Gypsy
+  Jazz) i «Llumàtics — escola» (és fotografia analògica i experimental). `lastmod` 2026-11-18.
+- **Casos curads** al frontmatter `casos:` de les fitxes de servei (el pilar de migració ara mostra
+  les quatre migracions reals en lloc de l'ordre per data).
+- Verificat en viu després del deploy: menú amb Serveis, peu amb Serveis i Guies, trajectòria nova,
+  casos curads al pilar. IndexNow 200 (112 URLs).
+
+**Pendent de Joan**
+- Confirmar quins llocs «Powered by» allotgem, per posar casos reals a `allotjament-i-manteniment`.
+- Decidir si la llista «Projectes destacats» de `/projectes/` s'actualitza amb els recents.
+- Revisar el to de les 4 guies (sobretot `hugo-vs-wordpress`, la més opinionada).
+
+---
+
 *Última actualització: 2026-11-18*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*

@@ -23,8 +23,8 @@
 
 | Què | Estat |
 |---|---|
-| Darrer commit | `feat: fase 4 del pla seo — seccio de guies` |
-| Producció | ✅ fases 2 i 3 desplegades i verificades (2026-11-18): 12 URLs de `/serveis/` → 200, IndexNow 200 (102 URLs) |
+| Darrer commit | `feat: serveis al menu, guies al peu i trajectoria actualitzada` |
+| Producció | ✅ fases 2, 3 i 4 desplegades i verificades (2026-11-18): 22 URLs de `/serveis/` i `/guies/` → 200, IndexNow 200 (112 URLs) |
 | Fases fetes | 0, 1, 1a, 1c, 2, 3, **4** del pla (taula a `PLA-SEO-2026-11.md` §8) |
 | Fase següent | **5** (tancar): desplegar les guies, IndexNow, i revisió de Search Console per part de Joan |
 
@@ -42,6 +42,24 @@
 - **Fase 5 (parcial):** `llms.txt` i `llms-full.txt` amb la secció de guies i un apartat en prosa.
   Pendent: desplegar + IndexNow i la revisió de Search Console (cal accés de Joan).
 - Verificat: 307 blocs JSON-LD (0 errors), 0 enllaços trencats, 5 URLs de guies per idioma.
+
+### Navegació i trajectòria (2026-11-18, sessió 7)
+
+- **Menú principal:** `Serveis` entra amb `weight = 2` (després de Solucions); la resta de pesos
+  s'han desplaçat. Ara: Inici (mòbil) · Solucions · Serveis · Projectes · Com treballem · Qui som · Contacte.
+- **Peu:** la fila de navegació passa a «Qui som · Serveis · Guies · Contacte»
+  (claus `footer_link_services` i `footer_link_guides` a `i18n/{ca,en}.toml`).
+  És la via per arribar a `/serveis/` i `/guies/` des del mòbil, perquè la barra inferior està plena (6 icones).
+- **Trajectòria de `/qui-som/`** (CA+EN): reescrita i agrupada en **Migracions i arxius**,
+  **Aplicacions** i **Webs i plataformes**, amb els projectes recents que faltaven (Pocallum,
+  9 Barris Imatge, BBBB, Ivan Kovačević, Taro, Votació, Konsento, Cuida, GoatCounter, 40 anys de blues).
+  Corregides descripcions: Bratia és Balkan Gypsy Jazz (deia «rock»), Llumàtics és fotografia analògica.
+- **Casos curads a les fitxes** (`casos:` al frontmatter): pilar de migració → Pocallum, 9 Barris
+  Imatge, Pocallum.cat, BBBB; aplicacions → Taro, Votació, Konsento, Cuida; analítica → GoatCounter,
+  Analytics for GoatCounter, 9 Barris Acull.
+- **Pendent de validar per Joan:** si els llocs «Powered by» estan allotjats per nosaltres
+  (per posar casos reals a `allotjament-i-manteniment`), i si la llista «Projectes destacats»
+  de `/projectes/` s'ha de refrescar amb els projectes recents.
 
 ### Què es va fer a la fase 3 (2026-11-18, sessió 5)
 
