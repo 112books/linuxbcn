@@ -997,5 +997,38 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 36. Historial de tasques — 2026-11-18 (sessió 2)
+
+**Pla SEO v2 — `PLA-SEO-2026-11.md`**
+- Revisat el pla v1 contra el repo: diagnosi correcta, però slugs incoherents, sectors i intents que canibalitzaven `/solucions/`.
+- Dos eixos comercials: **sortir de WordPress** (entitats amb un WP sobredimensionat; 11 migracions reals com a prova) i **webs per a músics i bandes** (senzilles, automantingudes, assumibles per a grups emergents; pilar `/solucions/musics/`).
+- Fora del pla: pàgines de sector, intents genèrics (restaurants, fotògrafs) i pàgina «quant costa».
+- Decidit: LinuxBCN fa la tècnica i **Ressona** la identitat digital (emergents i consolidats). La fitxa de Ressona és **excepció** a la norma de costos d'infraestructura (producte microweb per a bandes emergents).
+
+**Fase 1 — tècnic (en producció)**
+- `config.toml`: `[taxonomies]` buit (fora `servei` i `sector`, 16 URLs `noindex` primes). `sector:` i `serveis:` continuen com a paràmetres dels projectes.
+- `.htaccess`: 302 temporal `/(ca|en)/(serveis|sectors)/*` → `/$1/projectes/` només si no existeix el directori. **Treure'l quan existeixi `/serveis/` real (fase 2).**
+- Konsento EN: alias `/konsento/` (abans generava `/en/en/konsento/`).
+- `qui-som`: description 220 → 153/156 car. · Home: `seo_title` (77 → 55/56 car.), `head.html` el respecta a la home.
+- Bratia: `seo_title` deia «banda de rock» → «banda de Balkan jazz».
+
+**Projectes nous (CA+EN)**
+- `barcelona-big-blues-band` (date 2026-10-18) i `ivan-kovacevic` (date 2026-10-17): migracions de WordPress a Hugo. Dades verificades als webs en viu i al repo local `hugo-websites/barcelonabigbluesband/web`. Hero = captura de la portada (Chrome headless sí que funciona amb `--headless=new` i timeout manual).
+- Blocs «Què hem resolt» a `data/resolt/{ca,en}.yaml`. Afegits al llistat manual `/projectes/`.
+- Llistat «Projectes destacats» ordenat per data, de més nou a més antic.
+
+**Deploy i servidor**
+- ⚠️ El local anava **14 commits per darrere** d'`origin/main` (fets des d'una altra màquina). Rebase abans de desplegar; si no, el deploy hauria revertit producció. **Fer sempre `git pull` a l'inici de sessió.**
+- Directoris vells de taxonomia i `en/en` moguts fora del docroot a `~/old-taxonomies-2026-11-18/` (el deploy no usa `--delete`). Verificat: `/ca/serveis/*` → 302, `/en/en/konsento/` → 404.
+- IndexNow HTTP 200 (90 URLs), caché purgada.
+
+**Pendent**
+- Fase 1c: reforçar `/solucions/musics/` (què inclou un web de banda, FAQ, enllaç a Ressona).
+- Fase 1b: pàgines primes (`favb`, `pocallum`, `112books`, `carrer`, `/contacte`) — cal dades de Joan.
+- Fase 2: pilar `/serveis/migracio-wordpress/`.
+- La llista de destacats CA i EN no és igual (EN té Nau Bostik, CA té Carrer.cat).
+
+---
+
 *Última actualització: 2026-11-18*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
