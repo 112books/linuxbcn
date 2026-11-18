@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Stats · LinuxBCN</title>
+  <script src="/js/chart.umd.min.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<a class="skip-link" href="#dash-main">Salta al contingut principal</a>
+
+<!-- ═══ DASHBOARD ════════════════════════════════════════ -->
+<div id="dashboard">
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-logo" aria-hidden="true">LINUX<em>BCN</em> / STATS</div>
+    <div class="topbar-meta">
+      <div class="topbar-gen" id="topbar-gen">carregant…</div>
+    </div>
+    <nav class="topbar-actions" aria-label="Accions del tauler">
+      <a href="https://linuxbcn.goatcounter.com" class="btn-sm" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span> GoatCounter<span class="visually-hidden"> (s'obre en una pestanya nova)</span></a>
+      <button type="button" class="btn-sm btn-refresh-top" id="btn-refresh"><span aria-hidden="true">↻</span> <span id="btn-refresh-label">actualitzar</span></button>
+      <button type="button" class="btn-sm" id="btn-logout">sortir <span aria-hidden="true">×</span></button>
+    </nav>
+  </header>
+
+  <main class="dash-body" id="dash-main" tabindex="-1">
+    <h1 class="visually-hidden">Estadístiques de linuxbcn.com</h1>
+
+    <div id="state-banner"></div>
+
+    <!-- KPIs -->
+    <ul class="kpis" aria-label="Resum de visites">
+      <li class="kpi" aria-labelledby="kpi-lavui">
+        <span class="kpi-label" id="kpi-lavui">avui</span>
+        <div class="kpi-data"><div class="kpi-value accent" id="kpi-avui">—</div><div class="kpi-sub" id="sub-avui"></div></div>
+      </li>
+      <li class="kpi" aria-labelledby="kpi-l7d">
+        <span class="kpi-label" id="kpi-l7d">7 dies</span>
+        <div class="kpi-data"><div class="kpi-value" id="kpi-7d">—</div><div class="kpi-sub">últims 7 dies</div></div>
+      </li>
+      <li class="kpi" aria-labelledby="kpi-l30d">
+        <span class="kpi-label" id="kpi-l30d">30 dies</span>
+        <div class="kpi-data"><div class="kpi-value" id="kpi-30d">—</div><div class="kpi-sub">últims 30 dies</div></div>
+      </li>
+      <li class="kpi" aria-labelledby="kpi-ltotal">
+        <span class="kpi-label" id="kpi-ltotal">total any</span>
+        <div class="kpi-data"><div class="kpi-value" id="kpi-total">—</div><div class="kpi-sub" id="sub-total"></div></div>
+      </li>
+      <li class="kpi" aria-labelledby="kpi-lpps">
+        <span class="kpi-label" id="kpi-lpps">mitjana/dia</span>
+        <div class="kpi-data"><div class="kpi-value" id="kpi-pps">—</div><div class="kpi-sub">visites diàries (mitjana)</div></div>
+      </li>
+      <li class="kpi" aria-labelledby="kpi-lconsultes">
+        <span class="kpi-label" id="kpi-lconsultes">consultes</span>
+        <div class="kpi-data"><div class="kpi-value accent" id="kpi-consultes">—</div><div class="kpi-sub">formulari de contacte</div></div>
+      </li>
+    </ul>
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist" aria-label="Seccions">
+      <button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-temporal" id="tbtn-temporal" tabindex="0" data-tab="temporal">Temporal</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-pagines" id="tbtn-pagines" tabindex="-1" data-tab="pagines">Pàgines</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-dispositius" id="tbtn-dispositius" tabindex="-1" data-tab="dispositius">Dispositius</button>
+    </div>
+
+    <!-- TAB: Temporal -->
+    <div id="tab-temporal" class="tab-panel active" role="tabpanel" aria-labelledby="tbtn-temporal">
+      <h2 class="visually-hidden">Evolució temporal de les visites</h2>
+      <div class="chart-controls" role="group" aria-label="Controls del gràfic">
+        <button class="period-btn active" data-days="7" type="button" aria-pressed="true">7d</button>
+        <button class="period-btn" data-days="30" type="button" aria-pressed="false">30d</button>
+        <button class="period-btn" data-days="90" type="button" aria-pressed="false">3m</button>
+        <button class="period-btn" data-days="365" type="button" aria-pressed="false">1a</button>
+        <div class="chart-sep" aria-hidden="true"></div>
+        <button class="group-btn active" data-group="day" type="button" aria-pressed="true">dia</button>
+        <button class="group-btn" data-group="week" type="button" aria-pressed="false">setm.</button>
+        <button class="group-btn" data-group="month" type="button" aria-pressed="false">mes</button>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="chart-canvas" role="img" aria-label="Gràfic de visites. Carregant les dades…">Gràfic de línia amb les visites per dia. A sota hi ha el mateix resum en text.</canvas>
+      </div>
+      <div class="chart-summary" id="chart-summary" role="status" aria-live="polite"></div>
+
+      <div class="insight" id="temporal-insight" style="display:none">
+        <span class="label">// observació</span>
+        <div id="temporal-insight-body"></div>
+      </div>
+    </div>
+
+    <!-- TAB: Pàgines -->
+    <div id="tab-pagines" class="tab-panel" role="tabpanel" aria-labelledby="tbtn-pagines">
+
+      <h2 class="section-title" id="h-lang">visites per idioma</h2>
+      <div id="lang-wrap"></div>
+
+      <div class="chart-controls pages-period" id="pages-period-controls" role="group" aria-label="Període de seccions i pàgines">
+        <span class="period-title" aria-hidden="true">període</span>
+        <button type="button" class="pg-btn" data-period="day" aria-pressed="false">dia</button>
+        <button type="button" class="pg-btn" data-period="week" aria-pressed="false">setm.</button>
+        <button type="button" class="pg-btn" data-period="month" aria-pressed="false">mes</button>
+        <button type="button" class="pg-btn" data-period="quarter" aria-pressed="false">trim.</button>
+        <button type="button" class="pg-btn" data-period="year" aria-pressed="false">any</button>
+        <button type="button" class="pg-btn active" data-period="all" aria-pressed="true">tot</button>
+        <span class="period-hint" id="pages-period-hint" role="status" aria-live="polite"></span>
+      </div>
+
+      <h2 class="section-title" id="h-sections">seccions més visitades</h2>
+      <div id="sections-wrap" class="bars" role="list" aria-labelledby="h-sections"></div>
+
+      <h2 class="section-title" id="h-pages">pàgines més visitades</h2>
+      <div id="pages-wrap" class="bars" role="list" aria-labelledby="h-pages"></div>
+
+      <h2 class="section-title" id="h-projects">projectes amb més interès</h2>
+      <div id="projects-wrap" class="bars" role="list" aria-labelledby="h-projects"></div>
+
+      <h2 class="section-title" id="h-refs">d'on venen les visites</h2>
+      <div id="refs-wrap" role="list" aria-labelledby="h-refs"></div>
+
+      <div class="refs-info" id="refs-empty" style="display:none">
+        El trànsit directe (URL escrita, marcadors, navegació privada) no genera referrer. Normal en un lloc web nou.
+        A mesura que creixin els links externs i la indexació orgànica, apareixeran aquí els orígens.
+      </div>
+
+      <h2 class="section-title" id="h-locations">localització de les visites</h2>
+      <div id="locations-wrap" class="bars" role="list" aria-labelledby="h-locations"></div>
+
+      <div class="insight" id="pagines-insight" style="display:none">
+        <span class="label">// observació</span>
+        <div id="pagines-insight-body"></div>
+      </div>
+    </div>
+
+    <!-- TAB: Dispositius -->
+    <div id="tab-dispositius" class="tab-panel" role="tabpanel" aria-labelledby="tbtn-dispositius">
+
+      <h2 class="section-title">tipus de dispositiu</h2>
+      <div class="device-grid" id="device-grid">
+        <div class="device-card" role="group" aria-labelledby="dev-mobile-label">
+          <span class="device-icon" aria-hidden="true">📱</span>
+          <div class="device-label" id="dev-mobile-label">Mòbil</div>
+          <div class="device-count" id="dev-mobile">—</div>
+          <div class="device-pct" id="dev-mobile-pct"></div>
+        </div>
+        <div class="device-card" role="group" aria-labelledby="dev-tablet-label">
+          <span class="device-icon" aria-hidden="true">⬜</span>
+          <div class="device-label" id="dev-tablet-label">Tauleta</div>
+          <div class="device-count" id="dev-tablet">—</div>
+          <div class="device-pct" id="dev-tablet-pct"></div>
+        </div>
+        <div class="device-card" role="group" aria-labelledby="dev-desktop-label">
+          <span class="device-icon" aria-hidden="true">🖥</span>
+          <div class="device-label" id="dev-desktop-label">Escriptori</div>
+          <div class="device-count" id="dev-desktop">—</div>
+          <div class="device-pct" id="dev-desktop-pct"></div>
+        </div>
+      </div>
+
+      <div class="pie-grid">
+        <div>
+          <h2 class="section-title" id="h-pie-devices">repartiment per dispositiu</h2>
+          <div class="chart-wrap pie-wrap"><canvas id="pie-devices" role="img" aria-label="Repartiment de visites per dispositiu"></canvas></div>
+        </div>
+        <div>
+          <h2 class="section-title" id="h-browsers">navegadors</h2>
+          <div class="chart-wrap pie-wrap"><canvas id="pie-browsers" role="img" aria-label="Repartiment de visites per navegador"></canvas></div>
+        </div>
+        <div>
+          <h2 class="section-title" id="h-systems">sistemes operatius</h2>
+          <div class="chart-wrap pie-wrap"><canvas id="pie-systems" role="img" aria-label="Repartiment de visites per sistema operatiu"></canvas></div>
+        </div>
+      </div>
+
+      <div id="dispositius-insight" class="insight" style="display:none">
+        <span class="label">// resum</span>
+        <div id="dispositius-insight-body"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="admin.js" defer></script>
+</body>
+</html>
