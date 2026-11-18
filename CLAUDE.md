@@ -959,5 +959,29 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-11-07*
+## 35. Historial de tasques — 2026-11-18
+
+**`sync-linuxbcn.sh` — deploy staging arreglat i part privada inclosa**
+
+*Opció 4 (deploy staging) trencada*
+- `git subtree push --prefix public` fallava sempre: `public/` és al `.gitignore` i no forma part de l'historial (`fatal: 'public' does not exist; use 'git subtree add'`). La branca `gh-pages` quedava aturada des del 2026-05-08.
+- Nova funció `publish_gh_pages`: construeix l'arbre del build amb un índex temporal (`GIT_INDEX_FILE` + `GIT_WORK_TREE` dins de `public/`), crea el commit amb `git commit-tree` sobre `origin/gh-pages` i el puja com a **fast-forward**. Mai força: si el push no és fast-forward, s'atura i avisa.
+- Comprovació de seguretat: si l'arbre no té `index.html` a l'arrel, no es publica (evita el cas en què un índex mal construït deixa el lloc dins d'un directori `public/`).
+- `.DS_Store` exclòs de la branca.
+
+*Sync de la part privada*
+- Nova funció `sync_private`: sincronitza el repo privat `112books/linuxbcn-clients` (clon a `../privat`, configurable amb `PRIVATE_DIR`) cridant el seu propi `scripts/sync.sh`. L'opció 2 (sync) i els dos deploys l'executen sempre.
+- Si no hi ha clon local, només avisa; no atura res.
+- L'opció 1 (status) mostra l'estat dels dos repositoris.
+
+*Identitat dels commits*
+- `user.name` / `user.email` del repo del web eren els d'exemple (`El teu nom <el-teu-email@example.com>`): corregits a `Joan Martínez Serres` / `joan@linuxbcn.com`. Els commits anteriors mantenen l'autoria antiga.
+
+*Deploy del 2026-11-18*
+- Staging: build `--environment staging` publicat a `gh-pages` i verificat en línia (mateix fingerprint de CSS que el build local).
+- Producció: build `--environment production`, rsync, permisos, purga de caché i IndexNow (HTTP 200, 110 URLs).
+
+---
+
+*Última actualització: 2026-11-18*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
