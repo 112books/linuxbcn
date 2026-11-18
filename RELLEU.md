@@ -24,7 +24,7 @@
 | Què | Estat |
 |---|---|
 | Darrer commit | `fd5634b feat: fase 1c — reforç de /solucions/musics/ i fix JSON-LD` (pujat a `origin/main`) |
-| Producció | ⚠️ **NO desplegat** encara el commit `fd5634b`. Vegeu §2 |
+| Producció | ✅ `fd5634b` desplegat i verificat el 2026-11-18 (FAQ visible, FAQPage, 0 cometes dobles). IndexNow 200 |
 | Fases fetes | 0, 1, 1a, 1c del pla (taula a `PLA-SEO-2026-11.md` §8) |
 | Fase següent | **2** — plantilles `serveis` + pilar `/serveis/migracio-wordpress/` (CA+EN) |
 
@@ -43,12 +43,13 @@
 
 ---
 
-## 2. Pendent immediat: deploy a producció
+## 2. Com desplegar a producció
 
-L'agent no té permís per desplegar. Ho fa **Joan** des del terminal:
+Desplegar només quan Joan ho demani explícitament. Des del terminal de Joan
+(o des de l'agent amb `echo 5 |`, perquè l'script llegeix l'opció de stdin):
 
 ```bash
-./sync-linuxbcn.sh   # opció 5 (Deploy producció)
+echo 5 | ./sync-linuxbcn.sh   # opció 5 (Deploy producció)
 ```
 
 Fa: sync (web + privat) → build `--environment production` → rsync (sense `--delete`, amb

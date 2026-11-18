@@ -1042,7 +1042,7 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 **Traspàs**
 - `RELLEU.md` creat: estat, deploy pendent, fase 2 detallada, normes i script de validació. `AGENTS.md` hi apunta.
-- **Pendent:** deploy de `fd5634b` a producció (`./sync-linuxbcn.sh` opció 5, el fa Joan).
+- Deploy de `fd5634b` a producció fet i verificat (IndexNow 200, 90 URLs).
 - **Norma:** el web de LinuxBCN ha de ser exemplar en tots els aspectes (és el primer que avaluen els clients).
 
 ---
