@@ -981,6 +981,20 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 - Staging: build `--environment staging` publicat a `gh-pages` i verificat en línia (mateix fingerprint de CSS que el build local).
 - Producció: build `--environment production`, rsync, permisos, purga de caché i IndexNow (HTTP 200, 110 URLs).
 
+*Repo privat de clients (linuxbcn-clients)*
+- `112books/linuxbcn-clients` (privat, creat el 2026-11-17) **no tenia còpia local** en aquesta màquina: clonat a `linuxbcn-2026/privat/` seguint `privat/docs/casa.md`.
+- Identitat de commits configurada (`Joan Martínez Serres` / `joan@linuxbcn.com`) i `privat/` afegit a `linuxbcn/.git/info/exclude`, com a doble protecció perquè les dades de clients no arribin mai al repo públic.
+- El vault queda amb dos repos independents: `linuxbcn/` (web públic) i `privat/` (clients).
+
+*Commits*
+- `782a884 fix: deploy staging a gh-pages i sync de la part privada` (web)
+- `97a2bfc Sincronitzar la part privada des del script del web` (privat)
+- `gh-pages`: `7d9c6f9` (primera publicació correcta, arregla l'arbre aniuat dins de `public/`) i `f4996da` (prova de l'opció 4 ja arreglada)
+
+*Sync de tancament*
+- Opció 2 executada al final: cap canvi pendent, els dos repos al dia (`0 darrere / 0 davant` respecte d'`origin/main`).
+- Producció, staging i build local serveixen el mateix CSS (`main.min.fdf624d…css`): els tres entorns són idèntics.
+
 ---
 
 *Última actualització: 2026-11-18*
