@@ -2,7 +2,7 @@
 title: "Qui som"
 seo_title: "Qui som: Joan Linux, consultor digital a Barcelona | LinuxBCN"
 slug: "qui-som"
-description: "LinuxBCN — assessoria tecnològica a Barcelona des del 2001. Desenvolupament web, aplicacions a mida i infraestructura digital amb programari lliure. Sobirania de dades per a artistes, col·lectius i empreses amb valors."
+description: "Assessoria tecnològica a Barcelona des del 2001: webs, aplicacions a mida i infraestructura amb programari lliure per a artistes, col·lectius i empreses."
 lastmod: "2026-06-25"
 draft: false
 ---

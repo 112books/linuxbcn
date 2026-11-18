@@ -15,7 +15,7 @@ draft: false
 serveis: ["aplicacio-web", "cas-propi"]
 image: "konsento-v1-retall.png"
 aliases:
-  - /en/konsento/
+  - /konsento/
 ---
 
 Konsento is a free software web application that helps collectives, cooperatives and self-managed spaces make decisions in a transparent, structured and accessible way.

@@ -12,11 +12,13 @@ draft: false
 
 ## Projectes destacats
 
+→ [Barcelona Big Blues Band](/projectes/barcelona-big-blues-band/) — big band de rhythm & blues, de WordPress a Hugo
+→ [Ivan Kovačević](/projectes/ivan-kovacevic/) — contrabaixista: quatre idiomes i agenda unificada, de WordPress a Hugo
+→ [LinuxBCN.com](/projectes/linuxbcn/) — consultoria digital amb criteri
 → [Bratia](/projectes/bratia/) — banda de Balkan Gypsy Jazz
 → [Machiroku](/projectes/machiroku/) — restaurant japonès al centre de Barcelona
 → [FAVB](/projectes/favb/) — Federació d'Associacions de Veïns i Veïnes de Barcelona
 → [Carrer.cat](/projectes/carrer/) — publicació de referència del moviment veïnal
-→ [LinuxBCN.com](/projectes/linuxbcn/) — consultoria digital amb criteri
 
 ---
 

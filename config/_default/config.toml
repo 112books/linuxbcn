@@ -74,9 +74,9 @@ defaultContentLanguageInSubdir = true
 [languages.en.params]
   description = "Digital identity consultancy for artists, cultural collectives and values-driven micro-businesses. Free software, privacy and data sovereignty."
 
+# Sense taxonomies: sector i serveis són paràmetres simples dels projectes.
+# Les pàgines /serveis/ seran una secció real (PLA-SEO-2026-11, fase 2).
 [taxonomies]
-  sector = "sectors"
-  servei = "serveis"
 
 [markup]
   [markup.goldmark]

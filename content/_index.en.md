@@ -1,5 +1,6 @@
 ---
 title: "Digital identity with criteria"
+seo_title: "LinuxBCN — Custom websites with free software, Barcelona"
 heading: "Digital identity<br>with criteria"
 subtitle: "Web development, custom applications and digital infrastructure. Free software, no complications."
 description: "LinuxBCN — technology consultancy in Barcelona for artists, cultural collectives and small businesses. Free software, data sovereignty, 25 years of experience."

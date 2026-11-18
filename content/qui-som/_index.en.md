@@ -2,7 +2,7 @@
 title: "Who we are"
 seo_title: "About: Joan Linux, digital consultant in Barcelona | LinuxBCN"
 slug: "qui-som"
-description: "LinuxBCN — technology consultancy in Barcelona since 2001. Web development, custom applications and digital infrastructure with free software. Data sovereignty for artists, collectives and values-driven businesses."
+description: "Technology consultancy in Barcelona since 2001: websites, custom applications and infrastructure with free software for artists, collectives and businesses."
 lastmod: "2026-06-25"
 draft: false
 ---
