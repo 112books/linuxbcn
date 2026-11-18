@@ -1,5 +1,7 @@
 # AGENTS.md — linuxbcn.com
 
+> **Abans de res: llegeix [`RELLEU.md`](RELLEU.md)** — estat actual, tasca següent i normes de traspàs entre sessions.
+
 ## Propòsit del document
 
 Aquest document defineix com han de comportar-se els agents (humans o basats en IA) que interactuen amb el lloc web [https://linuxbcn.com](https://linuxbcn.com) i el seu repositori.

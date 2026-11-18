@@ -1030,5 +1030,22 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 37. Historial de tasques — 2026-11-18 (sessió 3)
+
+**Fase 1c del pla SEO — `/solucions/musics/`**
+- CA+EN: «Què inclou un web de banda» (8 peces), base reutilitzable, 3 casos, bloc Ressona, FAQ de 6 preguntes al frontmatter `faq:`. Fusionada la llista duplicada «Les eines». 555 → 963 w.
+- `partials/faq.html` llegeix `.Params.faq` (fallback `data/faq`); `head.html` emet `FAQPage` per a pàgines amb `faq:`.
+
+**Bug global JSON-LD corregit**
+- `| jsonify` dins `<script type="application/ld+json">` codificava dues vegades: textos de FAQPage, HowTo, ItemList, Service i Organization amb cometes literals. Eliminat a `head.html` i `projectes/single.html`. 233 blocs validats, 0 errors.
+- **Norma:** dins JSON-LD, `{{ .Title }}` sense `jsonify`; markdown → `markdownify | plainify | htmlUnescape`.
+
+**Traspàs**
+- `RELLEU.md` creat: estat, deploy pendent, fase 2 detallada, normes i script de validació. `AGENTS.md` hi apunta.
+- **Pendent:** deploy de `fd5634b` a producció (`./sync-linuxbcn.sh` opció 5, el fa Joan).
+- **Norma:** el web de LinuxBCN ha de ser exemplar en tots els aspectes (és el primer que avaluen els clients).
+
+---
+
 *Última actualització: 2026-11-18*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
