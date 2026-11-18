@@ -1047,5 +1047,46 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 38. Historial de tasques — 2026-11-18 (sessió 4)
+
+**Fase 2 del pla SEO — pilar de migració des de WordPress**
+
+*Plantilles (noves)*
+- `layouts/serveis/single.html`: hero, intro, contingut, «Casos reals» (projectes amb aquest servei
+  al camp `serveis:`, resolt amb `site.GetPage`/iteració, no amb `where`) i CTA. Reutilitza les
+  classes de `projectes/single.html`: cap redisseny, cap JS nou.
+- `layouts/serveis/list.html`: hub amb el contingut i la llista de fitxes.
+
+*Contingut*
+- `content/serveis/migracio-wordpress/index.{ca,en}.md`: pilar de 1.019 / 1.011 paraules.
+  Resposta curta, quan té sentit, **quan NO** (botiga complexa, flux editorial, plugin crític,
+  web que funciona), 4 passos, xifres reals (Pocallum 2.353 posts / 2.360 URLs 1:1 / −42,1 %;
+  9 Barris 3.006 articles / zero errors / 8.700 pàgines), FAQ de 5 i CTA.
+- `content/serveis/_index.{ca,en}.md`: hub de 231 / 233 paraules.
+- `.htaccess`: sense canvis (el 302 de `/serveis/*` porta `!-d`, així que s'inhabilita sol
+  quan el directori existeix; revisar després del deploy).
+
+*Schema i enllaçat*
+- `head.html`: `Service` + `HowTo` (des del frontmatter `howto:`) a les fitxes; `ItemList` al hub.
+  `FAQPage` i `BreadcrumbList` ja eren automàtics.
+- `projectes/single.html`: bloc «Aquest projecte és un cas de» → 12 projectes enllacen al pilar.
+- `/solucions/collectius` i `/solucions/microempreses` (CA+EN): secció «Si vens de WordPress».
+- Home: «Webs» → `/serveis/` i nota «Ve de WordPress?» (classe nova `.lbcn-serveis-nota`).
+- `llms.txt` i `llms-full.txt`: clúster de serveis + apartat en prosa.
+
+*Correccions de pas*
+- 3 enllaços interns trencats de feines anteriors: `112books.eu-theme` apuntava a
+  `/projectes/goatcounter-wp/` (inexistent) i MalditasMaquinas (només CA) s'enllaçava des del
+  peu i des de Contacte en anglès. Ara el peu i Contacte resolen la pàgina amb `site.GetPage`
+  i cauen a la versió CA si falta la traducció.
+
+*Verificació*
+- `hugo --minify --environment production`: 0 errors, 0 warnings. 245 blocs JSON-LD, 0 errors.
+  Sitemap 47 CA / 47 EN amb les 4 URLs noves; hreflang en parella; 0 enllaços trencats; cap
+  estil ni script en línia.
+- **Pendent: desplegar** (`echo 5 | ./sync-linuxbcn.sh`) quan Joan ho demani.
+
+---
+
 *Última actualització: 2026-11-18*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*

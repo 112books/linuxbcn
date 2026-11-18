@@ -72,6 +72,12 @@ For collectives, associations and self-managed spaces that:
 
 ---
 
+## Coming from WordPress
+
+Many organisations arrive with a WordPress site nobody can maintain any more: it publishes content but demands updates, plugins and someone who understands it. If that is you, see [how we move a WordPress site to static](/serveis/migracio-wordpress/).
+
+---
+
 ## Let's talk
 
 Tell us about your situation.

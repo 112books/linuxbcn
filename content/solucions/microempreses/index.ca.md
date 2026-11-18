@@ -80,6 +80,12 @@ Per a autònoms, comerços locals i microempreses que:
 
 ---
 
+## Si vens de WordPress
+
+Si el web del negoci publica però no gestiona comandes ni reserves, sovint no cal un CMS amb base de dades. Mira [com migrem un WordPress a una web estàtica](/serveis/migracio-wordpress/).
+
+---
+
 ## Parlem
 
 Expliqueu-nos la vostra situació. Sense compromís, sense formularis llargs.

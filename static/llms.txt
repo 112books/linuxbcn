@@ -23,6 +23,11 @@ Idiomes: Català (principal), Anglès
 - [Solucions per a col·lectius culturals](https://linuxbcn.com/ca/solucions/collectius/) — [EN](https://linuxbcn.com/en/solucions/collectius/): Webs per a espais culturals, associacions i federacions veïnals.
 - [Solucions per a microempreses](https://linuxbcn.com/ca/solucions/microempreses/) — [EN](https://linuxbcn.com/en/solucions/microempreses/): Web professional, manteniment i identitat digital per a petits negocis amb valors.
 
+## Serveis tècnics
+
+- [Serveis](https://linuxbcn.com/ca/serveis/) — [EN](https://linuxbcn.com/en/serveis/): Què fem i com ho fem: webs a mida, migracions, aplicacions web, allotjament, analítica respectuosa i compliment legal.
+- [Migrar de WordPress a una web estàtica](https://linuxbcn.com/ca/serveis/migracio-wordpress/) — [EN](https://linuxbcn.com/en/serveis/migracio-wordpress/): Procés en quatre passos per passar un WordPress a estàtic sense perdre URLs, imatges ni posicionament. Quan té sentit, quan no, i xifres de migracions reals.
+
 ## Projectes destacats
 
 - [Taro Photo App](https://linuxbcn.com/ca/projectes/taro-photo-app/): Web, gestor de continguts i mòduls de votació i formularis per a col·lectius fotogràfics. Programari lliure (AGPL-3.0) en producció a 9barrisimatge.org.

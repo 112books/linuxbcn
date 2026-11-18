@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+{{/* slug del servei: /ca/serveis/<slug>/ → <slug> (per trobar els casos que el duen al camp serveis:) */}}
+{{ $slug := path.Base .File.Dir }}
+
+<article class="project">
+
+  <header class="project-hero">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ with .Params.description }}
+    <section class="project-intro">
+      <p>{{ . }}</p>
+    </section>
+  {{ end }}
+
+  <section class="project-content">
+    {{ .Content }}
+  </section>
+
+</article>
+
+{{/* Casos reals: projectes que porten aquest servei al frontmatter */}}
+{{ $casos := slice }}
+{{ range .Site.RegularPages }}
+  {{ if and (eq .Section "projectes") (in (.Params.serveis | default (slice)) $slug) }}
+    {{ $casos = $casos | append . }}
+  {{ end }}
+{{ end }}
+{{ $casos = sort $casos "Date" "desc" }}
+{{ with first 4 $casos }}
+<nav class="project-related" aria-labelledby="servei-casos-title">
+  <h2 id="servei-casos-title">{{ i18n "servei_casos_title" | default "Casos reals" }}</h2>
+  <ul>
+    {{ range . }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        {{ with .Params.sector }}<span class="card-sector">{{ . }}</span>{{ end }}
+        <span class="project-related__title">{{ .Title }}</span>
+        {{ with .Params.client }}<span class="project-related__meta">{{ . }}</span>{{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}
+
+<div class="project-cta">
+  <a href="{{ "contacte/" | relLangURL }}">→ {{ i18n "servei_cta" | default "Parlem del teu cas" }}</a>
+</div>
+
+{{ end }}

@@ -73,6 +73,12 @@ For freelancers, local businesses and micro-enterprises that:
 
 ---
 
+## Coming from WordPress
+
+If the business site publishes but does not take orders or bookings, a database-backed CMS is often unnecessary. See [how we migrate a WordPress site to static](/serveis/migracio-wordpress/).
+
+---
+
 ## Let's talk
 
 Tell us about your situation.

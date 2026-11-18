@@ -71,6 +71,26 @@
 
 <script src="{{ "js/lightbox.js" | relURL }}" defer></script>
 
+<!-- Serveis del projecte: enllaç al pilar de servei corresponent -->
+{{ $serveisLinks := slice }}
+{{ range (.Params.serveis | default (slice)) }}
+  {{ with site.GetPage (printf "/serveis/%s" .) }}{{ $serveisLinks = $serveisLinks | append . }}{{ end }}
+{{ end }}
+{{ with $serveisLinks }}
+<nav class="project-related" aria-labelledby="project-serveis-title">
+  <h2 id="project-serveis-title">{{ i18n "project_serveis_title" | default "Aquest projecte és un cas de" }}</h2>
+  <ul>
+    {{ range . }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <span class="project-related__title">{{ .Title }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}
+
 <!-- Projectes relacionats: mateix sector; si n'hi ha menys de 3, es completa amb els
      següents en l'ordre del portfolio (circular), perquè cada pàgina enllaci projectes diferents -->
 {{ $pages := .CurrentSection.RegularPages }}

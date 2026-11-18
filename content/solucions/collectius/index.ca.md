@@ -80,6 +80,12 @@ Per a col·lectius, associacions i espais autogestionats a Barcelona i Catalunya
 
 ---
 
+## Si vens de WordPress
+
+Moltes entitats arriben amb un WordPress que ja no pot mantenir ningú: un web que publica contingut però que demana actualitzacions, plugins i algú que hi entengui. Si és el teu cas, mira [com passem un WordPress a una web estàtica](/serveis/migracio-wordpress/).
+
+---
+
 ## Parlem
 
 Expliqueu-nos la vostra situació. Trobarem el sistema que té sentit per al vostre projecte.

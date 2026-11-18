@@ -23,10 +23,31 @@
 
 | Què | Estat |
 |---|---|
-| Darrer commit | `fd5634b feat: fase 1c — reforç de /solucions/musics/ i fix JSON-LD` (pujat a `origin/main`) |
-| Producció | ✅ `fd5634b` desplegat i verificat el 2026-11-18 (FAQ visible, FAQPage, 0 cometes dobles). IndexNow 200 |
-| Fases fetes | 0, 1, 1a, 1c del pla (taula a `PLA-SEO-2026-11.md` §8) |
-| Fase següent | **2** — plantilles `serveis` + pilar `/serveis/migracio-wordpress/` (CA+EN) |
+| Darrer commit | `feat: fase 2 — pilar /serveis/migracio-wordpress/ i plantilles de servei` |
+| Producció | ⏳ **pendent de desplegar** (fase 2 només al repo; producció continua amb `fd5634b`) |
+| Fases fetes | 0, 1, 1a, 1c, **2** del pla (taula a `PLA-SEO-2026-11.md` §8) |
+| Fase següent | **3** — 4 fitxes de servei restants (`web-a-mida`, `aplicacio-web`, `allotjament-i-manteniment`, `analitica-i-rgpd`) |
+
+### Què es va fer a la fase 2 (2026-11-18, sessió DeepSeek)
+
+- **Plantilles noves:** `layouts/serveis/single.html` (hero + intro + content + casos reals + CTA)
+  i `layouts/serveis/list.html` (hub). Cap redisseny: reutilitzen `project`, `project-hero`,
+  `project-intro`, `project-content`, `project-related`, `project-cta`.
+- **Pilar:** `content/serveis/migracio-wordpress/index.{ca,en}.md` (1.019 / 1.011 paraules):
+  resposta curta, quan sí, quan NO, procés en 4 passos, xifres reals (Pocallum 2.353 posts /
+  2.360 URLs 1:1 / −42,1 %; 9 Barris 3.006 articles / zero errors / 8.700 pàgines), FAQ de 5
+  al frontmatter `faq:`, CTA.
+- **Hub:** `content/serveis/_index.{ca,en}.md` + `ItemList`.
+- **Schema:** `head.html` emet `Service` + `HowTo` (des del frontmatter `howto:`) a les fitxes,
+  `ItemList` al hub, `FAQPage` (automàtic via `faq:`) i `BreadcrumbList`. **245 blocs, 0 errors.**
+- **Enllaçat:** `projectes/single.html` resol el camp `serveis:` amb `site.GetPage` i mostra
+  «Aquest projecte és un cas de» (12 projectes amb `migracio-wordpress`); `/solucions/collectius`
+  i `/solucions/microempreses` (CA+EN) enllacen al pilar; la home té «Webs» → `/serveis/` i una
+  nota «Ve de WordPress?».
+- **Correccions de pas:** 3 enllaços interns trencats de feina anterior (112books.eu-theme →
+  `goatcounter-wp`, MalditasMaquinas sense versió EN al peu i a Contacte).
+- **Verificat:** sitemap 47 CA / 47 EN amb les 4 URLs noves, hreflang en parella, 0 enllaços
+  trencats, cap estil ni script en línia.
 
 ### Què es va fer a la fase 1c (2026-11-18)
 - `content/solucions/musics/index.{ca,en}.md`: secció «Què inclou un web de banda» (8 peces),
@@ -67,22 +88,22 @@ I passar 1 URL pel validador: https://validator.schema.org/ (o Rich Results Test
 
 ---
 
-## 3. Fase 2 — què cal fer (detall a `PLA-SEO-2026-11.md` §4–§7)
+## 3. Fase 3 — què toca ara
 
-1. **Plantilles** `layouts/serveis/single.html` i `layouts/serveis/list.html`, copiant
-   l'estructura i les classes de `layouts/projectes/single.html` (cap redisseny, cap JS nou).
-2. **Pilar** `content/serveis/migracio-wordpress/index.ca.md` + `index.en.md` amb l'estructura
-   del pla §5 (resposta 40–60 w, quan sí, quan NO, com ho fem → `HowTo`, xifres reals, casos,
-   FAQ al frontmatter `faq:` + `{{< faq >}}`, CTA).
-   - Xifres reals: només les de `PLA-SEO-2026-11.md` §5 i dels projectes `blog-pocallum` i
-     `migracio-blogger-9barrisimatge`. **No inventis cap xifra ni termini.**
-3. **Schema**: `Service` + `BreadcrumbList` + `FAQPage` (ja automàtic via `faq:`) + `HowTo`.
-4. **`.htaccess`**: hi ha un 302 temporal `/(ca|en)/(serveis|sectors)/*` → `/$1/projectes/`
-   que només actua si el directori no existeix. Quan existeixi `/serveis/` real, revisar-lo
-   (els `sectors` continuen redirigint).
-5. **Enllaçat** (pla §7): cada projecte amb `serveis: [... "migracio-wordpress" ...]` enllaça
-   al pilar des de la plantilla; `/solucions/collectius` i `/solucions/microempreses` → pilar.
-6. `static/llms.txt` i `llms-full.txt`: afegir el pilar.
+1. **4 fitxes de servei** amb la mateixa estructura que el pilar (~700–900 w cadascuna),
+   CA+EN, `faq:` al frontmatter i enllaç al pilar des de cada fitxa:
+   - `content/serveis/web-a-mida/` — «Web a mida a Barcelona» (casos: Bratia, Llumàtics, Machiroku, Nau Bostik)
+   - `content/serveis/aplicacio-web/` — «Aplicacions web a mida» (Taro, Votació, Konsento, Gestor d'hores)
+   - `content/serveis/allotjament-i-manteniment/` — «Allotjament i manteniment» (powered-by, 9 Barris Acull)
+   - `content/serveis/analitica-i-rgpd/` — «Analítica respectuosa i RGPD» (GoatCounter Dashboard, 9 Barris Acull)
+2. **Deploy** quan Joan ho demani: `echo 5 | ./sync-linuxbcn.sh`. Després comprovar que
+   `/ca/serveis/` i `/ca/serveis/migracio-wordpress/` responen 200 i no 302 (la regla
+   d'`.htaccess` només actua si el directori no existeix).
+3. **Revisar el 302 de `.htaccess`** després del deploy: si `/ca/serveis/*` ja no redirigeix,
+   deixar-lo només per a `sectors`.
+4. **Fase 4:** les 4 guies del clúster (`sortir-de-wordpress`, `hugo-vs-wordpress`,
+   `wordpress-lent-o-insegur`, `migrar-de-blogger`) i enllaçar-les des del pilar.
+5. `static/llms.txt` i `llms-full.txt`: les 4 fitxes noves s'hi han d'afegir (el pilar ja hi és).
 
 ---
 

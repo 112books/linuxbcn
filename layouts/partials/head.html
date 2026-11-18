@@ -267,6 +267,55 @@
 {{ end }}
 {{ end }}
 
+{{ if eq .Section "serveis" }}
+{{ if .IsSection }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ .Title }},
+  "itemListElement": [
+    {{ range $i, $p := .Pages }}{{ if $i }},{{ end }}
+    { "@type": "ListItem", "position": {{ add $i 1 }}, "name": {{ $p.Title }}, "url": {{ $p.Permalink }} }
+    {{ end }}
+  ]
+}
+</script>
+{{ else }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "{{ .Permalink }}#service",
+  "name": {{ .Title }},
+  "serviceType": {{ .Title }},
+  "description": {{ .Description | default .Site.Params.description }},
+  "url": "{{ .Permalink }}",
+  "provider": { "@type": "ProfessionalService", "@id": "https://linuxbcn.com/#organization" },
+  "areaServed": [
+    { "@type": "City", "name": "Barcelona" },
+    { "@type": "AdministrativeArea", "name": "Catalunya" }
+  ]
+}
+</script>
+{{ with .Params.howto }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": {{ .name }},
+  "description": {{ .description }},
+  "step": [
+    {{ range $i, $s := .steps }}{{ if $i }},{{ end }}
+    { "@type": "HowToStep", "position": {{ add $i 1 }}, "name": {{ $s.name }}, "text": {{ $s.text }} }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+{{ end }}
+{{ end }}
+
 <!-- Preload fonts above-the-fold -->
 <link rel="preload" href="{{ "fonts/ibm-plex-sans-v23-latin-300.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ "fonts/ibm-plex-mono-v20-latin-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>

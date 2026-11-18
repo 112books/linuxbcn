@@ -78,6 +78,18 @@ LinuxBCN munta la presència digital completa, coherent amb els valors del proje
 
 ---
 
+## Sortir de WordPress: migració a una web estàtica
+
+Molts projectes no necessiten un WordPress: necessiten publicar. Quan el web només informa, la base de dades, el PHP i la pila de plugins es converteixen en una feina de manteniment permanent que algú ha de pagar i vigilar.
+
+LinuxBCN migra aquests webs a un lloc estàtic construït amb Hugo: fitxers HTML ja generats, sense base de dades ni connectors, amb un editor visual (Sveltia o Decap) perquè l'equip publiqui sense tocar codi. El procés té quatre passos: inventari i rastreig complet del web antic; conversió del contingut a Markdown i de les imatges a WebP; paritat d'URLs comprovada amb un crawler 1:1 i redireccions 301 allà on cal; i formació de les persones que han d'editar-lo.
+
+Les xifres són de projectes reals: el Blog de Pocallum va migrar 2.353 posts i 137.000 paraules amb 2.360 URLs verificades 1:1 i un estalvi d'1.318 MB en imatges (−42,1 %); 9 Barris Imatge va traslladar 3.006 articles des del 2008 amb zero errors, conservant les adreces, i el web nou genera més de 8.700 pàgines en menys de mig minut.
+
+És honest dir quan no convé: botigues complexes amb estocs i pagaments, fluxos editorials amb molts rols o projectes que depenen d'un plugin concret es queden —de moment— amb el CMS que els funciona. Més informació: https://linuxbcn.com/ca/serveis/migracio-wordpress/
+
+---
+
 ## Projectes realitzats
 
 **Bratia** — Web per a la banda barcelonina de Balkan Gypsy Jazz. Migrada d'un WordPress pesat i difícil de mantenir cap a un sistema lleuger basat en Hugo. Web multilingüe, portfolio musical, discografia, agenda de concerts.

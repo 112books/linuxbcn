@@ -149,4 +149,4 @@ WordPress FSE · theme.json · WooCommerce · GitHub · Claude · GoatCounter ·
 ---
 
 → [112books.eu](https://112books.eu)
-→ [GoatCounter WordPress plugin — related project](/en/projectes/goatcounter-wp/)
+→ [GoatCounter WordPress plugin — related project](/projectes/linuxbcn-analytics-for-goatcounter/)

@@ -1,7 +1,9 @@
 {{ define "main" }}
 {{ $ca := eq .Site.Language.Lang "ca" }}
 {{ $privacitat := cond $ca (printf "%s%s/privacitat/" $.Site.BaseURL "ca") (printf "%s%s/privacitat/" $.Site.BaseURL "en") }}
-{{ $malditasURL := cond $ca "/ca/malditasmaquinas/" "/en/malditasmaquinas/" }}
+{{/* MalditasMaquinas només té versió en català: si falta la traducció, enllacem a la CA */}}
+{{ $malditasURL := printf "%s%s/malditasmaquinas/" $.Site.BaseURL "ca" }}
+{{ with site.GetPage "/malditasmaquinas" }}{{ $malditasURL = .RelPermalink }}{{ end }}
 
 <article>
   <header class="page-header">
