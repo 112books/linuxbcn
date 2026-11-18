@@ -5,7 +5,7 @@ subtitle: "Measure without spying, comply without useless paperwork"
 description: "Cookie-free, tracker-free web analytics, plus data protection and accessibility audits. Know what happens on your site without selling your visitors."
 weight: 5
 lastmod: "2026-11-18"
-casos: ["goatcounter-dashboard", "9-barris-acull"]
+casos: ["goatcounter-dashboard", "linuxbcn-analytics-for-goatcounter", "9-barris-acull"]
 howto:
   name: "How we deploy respectful analytics and legal compliance"
   description: "LinuxBCN's process for measuring a site without tracking people and for putting data protection compliance in order."

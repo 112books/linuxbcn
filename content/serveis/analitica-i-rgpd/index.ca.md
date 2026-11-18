@@ -5,7 +5,7 @@ subtitle: "Mesurar sense espiar, complir sense omplir formularis inútils"
 description: "Analítica web sense cookies ni rastrejadors, i auditories de protecció de dades i accessibilitat. Saber què passa al web sense vendre els visitants."
 weight: 5
 lastmod: "2026-11-18"
-casos: ["goatcounter-dashboard", "9-barris-acull"]
+casos: ["goatcounter-dashboard", "linuxbcn-analytics-for-goatcounter", "9-barris-acull"]
 howto:
   name: "Com implantem analítica respectuosa i compliment legal"
   description: "El procés de LinuxBCN per mesurar el web sense rastrejar persones i per deixar el compliment de protecció de dades en ordre."

@@ -5,6 +5,8 @@
       {{ $base := printf "%s%s" $.Site.BaseURL $.Site.Language.Lang }}
       <span class="footer-links-nav">
         <a href="{{ printf "%s/qui-som/" $base }}">{{ i18n "footer_link_about" }}</a> ·
+        <a href="{{ printf "%s/serveis/" $base }}">{{ i18n "footer_link_services" }}</a> ·
+        <a href="{{ printf "%s/guies/" $base }}">{{ i18n "footer_link_guides" }}</a> ·
         <a href="{{ printf "%s/contacte/" $base }}">{{ i18n "footer_link_contact" }}</a>
       </span>
       <span class="footer-links-legal">

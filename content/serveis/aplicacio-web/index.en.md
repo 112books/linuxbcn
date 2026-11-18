@@ -5,7 +5,7 @@ subtitle: "When the site has to do things, not just explain them"
 description: "Custom web applications to manage votes, members, hours or content. Free software, data on your own infrastructure."
 weight: 3
 lastmod: "2026-11-18"
-casos: ["taro-photo-app", "votacio-public", "konsento", "gestor-hores"]
+casos: ["taro-photo-app", "votacio-public", "konsento", "cuida"]
 faq:
   - q: "Is a spreadsheet or a cloud tool not enough?"
     a: >-

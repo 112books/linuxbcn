@@ -5,6 +5,7 @@ subtitle: "Same content, far less machinery"
 description: "We move your WordPress site to static without losing URLs, images or rankings, and we leave you an editor you actually understand."
 weight: 1
 lastmod: "2026-11-18"
+casos: ["blog-pocallum", "migracio-blogger-9barrisimatge", "pocallum-estatic", "barcelona-big-blues-band"]
 faq:
   - q: "Will I lose my Google rankings?"
     a: >-

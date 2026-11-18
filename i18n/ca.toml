@@ -69,3 +69,9 @@ other = "Parlem del teu cas"
 
 [project_serveis_title]
 other = "Aquest projecte és un cas de"
+
+[footer_link_services]
+other = "Serveis"
+
+[footer_link_guides]
+other = "Guies"

@@ -5,6 +5,7 @@ subtitle: "Mateix contingut, molta menys maquinària"
 description: "Passem el teu WordPress a una web estàtica sense perdre URLs, imatges ni posicionament, i et deixem un editor que entens."
 weight: 1
 lastmod: "2026-11-18"
+casos: ["blog-pocallum", "migracio-blogger-9barrisimatge", "pocallum-estatic", "barcelona-big-blues-band"]
 faq:
   - q: "Perdré el posicionament que tinc a Google?"
     a: >-

@@ -5,7 +5,7 @@ subtitle: "Quan el web ha de fer coses, no només explicar-les"
 description: "Aplicacions web a mida per gestionar votacions, socis, hores o continguts. Programari lliure, dades a la teva infraestructura."
 weight: 3
 lastmod: "2026-11-18"
-casos: ["taro-photo-app", "votacio-public", "konsento", "gestor-hores"]
+casos: ["taro-photo-app", "votacio-public", "konsento", "cuida"]
 faq:
   - q: "No n'hi ha prou amb un full de càlcul o una eina del núvol?"
     a: >-

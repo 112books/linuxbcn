@@ -69,3 +69,9 @@ other = "Let's talk about your case"
 
 [project_serveis_title]
 other = "This project is a case of"
+
+[footer_link_services]
+other = "Services"
+
+[footer_link_guides]
+other = "Guides"
