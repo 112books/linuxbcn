@@ -6,6 +6,8 @@ description: "Why a WordPress site turns slow or gets attacked, how to diagnose 
 weight: 3
 date: "2026-11-18"
 lastmod: "2026-11-18"
+cta_url: "/serveis/allotjament-i-manteniment/"
+cta_text: "Hosting and maintenance"
 faq:
   - q: "How do I know if the problem is hosting or the site?"
     a: >-

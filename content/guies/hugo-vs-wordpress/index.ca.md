@@ -6,6 +6,8 @@ description: "Comparació entre Hugo i WordPress per a webs culturals, artístic
 weight: 2
 date: "2026-11-18"
 lastmod: "2026-11-18"
+cta_url: "/serveis/"
+cta_text: "Veure què fem i com ho treballem"
 faq:
   - q: "Hugo és difícil d'aprendre?"
     a: >-

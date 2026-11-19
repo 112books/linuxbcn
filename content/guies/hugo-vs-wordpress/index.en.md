@@ -6,6 +6,8 @@ description: "Hugo and WordPress compared for cultural, artistic and small busin
 weight: 2
 date: "2026-11-18"
 lastmod: "2026-11-18"
+cta_url: "/serveis/"
+cta_text: "See what we do and how we work"
 faq:
   - q: "Is Hugo hard to learn?"
     a: >-

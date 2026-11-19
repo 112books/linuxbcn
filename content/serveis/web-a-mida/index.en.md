@@ -92,6 +92,10 @@ We design and code with Hugo, optimised images, semantic HTML and WCAG AA access
 
 Training, written notes and an accompanied launch. The site must end up in the hands of the people who use it, not ours.
 
+## Before deciding
+
+If you are unsure between a custom site and keeping the WordPress you already have, [the honest Hugo vs WordPress comparison](/guies/hugo-vs-wordpress/) can save you the call.
+
 ## Technology
 
 Hugo generates the site; the result is static files that do not depend on a database or a PHP server. For whoever maintains it, that means fewer things that can break. For whoever visits it, less waiting.

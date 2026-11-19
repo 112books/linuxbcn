@@ -1178,7 +1178,7 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-## 39. Historial de tasques — 2026-11-19
+## 42. Historial de tasques — 2026-11-19
 
 **Diagnosi d'espai al VPS + guia 5 de l'eix músics**
 
@@ -1198,6 +1198,27 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 - Fase 1b (pàgines primes) — cal dades de Joan.
 - Search Console — cal accés de Joan.
 - Neteja dels 458 MB de duplicats orfes d'`uploads/` (opció 2 de la diagnosi).
+
+---
+
+## 43. Historial de tasques — 2026-11-19 (sessió 2)
+
+**Tècnic: cerca fora de l'índex, CTA de guies i enllaços creuats**
+
+- `head.html`: nova branca `.Params.noindex` (format `noindex, follow`) entre el `noindex` global
+  i el de taxonomies. Qualsevol pàgina es pot marcar des del frontmatter.
+- `content/cerca/_index.{ca,en}.md`: `noindex: true`. Eren **indexables amb 10 paraules** i no
+  aporten res als cercadors (el sitemap ja les tenia desactivades).
+- `content/guies/hugo-vs-wordpress`: CTA → `/serveis/` («Veure què fem i com ho treballem»).
+  `content/guies/wordpress-lent-o-insegur`: CTA → `/serveis/allotjament-i-manteniment/`.
+  Les altres tres guies continuen cap al pilar de migració.
+- `content/serveis/web-a-mida`: bloc «Abans de decidir» → `/guies/hugo-vs-wordpress/`.
+  `content/serveis/allotjament-i-manteniment`: el paràgraf sobre WordPress enllaça també
+  `/guies/wordpress-lent-o-insegur/`.
+- **W3C** (API validator.w3.org/nu): 0 errors a `/guies/`, les 5 guies, `/serveis/`,
+  `migracio-wordpress` i `web-a-mida`. Únic avís informatiu: «Section lacks heading» a
+  `.project-intro`, el mateix patró que les pàgines de projecte (no és error).
+- Verificat: build 0 errors/warnings, 313 blocs JSON-LD (0 errors), 0 enllaços trencats.
 
 ---
 

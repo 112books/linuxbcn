@@ -76,7 +76,7 @@ Actualitzacions planificades del que en necessiti, amb prova prèvia, i un canal
 - No gestionem xarxes socials ni campanyes de publicitat.
 - No arreglem servidors de tercers on no tenim accés.
 
-Si el web que tens és un WordPress que et demana manteniment cada setmana, potser el que cal no és mantenir-lo sinó [passar-lo a una web estàtica](/serveis/migracio-wordpress/).
+Si el web que tens és un WordPress que et demana manteniment cada setmana, potser el que cal no és mantenir-lo sinó [passar-lo a una web estàtica](/serveis/migracio-wordpress/). I si vols saber què li passa abans de decidir, [diagnostica'l per causes](/guies/wordpress-lent-o-insegur/).
 
 ## Els llocs que mantenim
 

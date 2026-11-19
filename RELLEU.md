@@ -87,6 +87,20 @@
 - Pendent (opcional): netejar els **458 MB de duplicats orfes** d'`uploads/` (287 grups, verificats
   sense referències a la BD). NO executat.
 
+### Tècnic: noindex, CTA i enllaços (2026-11-19)
+
+- **`noindex` per pàgina:** `head.html` respecta ara `.Params.noindex` (branca nova entre el
+  `noindex` global i el de taxonomies). Aplicat a `/ca/cerca/` i `/en/cerca/`, que eren
+  **indexables amb 10 paraules**.
+- **CTA de les guies:** `hugo-vs-wordpress` → `/serveis/` («Veure què fem i com ho treballem»);
+  `wordpress-lent-o-insegur` → `/serveis/allotjament-i-manteniment/`. Les altres tres segueixen
+  al pilar de migració.
+- **Enllaços creuats:** `web-a-mida` → `/guies/hugo-vs-wordpress/`;
+  `allotjament-i-manteniment` → `/guies/wordpress-lent-o-insegur/`.
+- **W3C (validator Nu, API)**: 0 errors a `/guies/`, les 5 guies, `/serveis/` i dues fitxes.
+  L'únic avís és informatiu («Section lacks heading» a `.project-intro`), el mateix patró que
+  les pàgines de projecte; no és un error.
+
 ### Què es va fer a la fase 3 (2026-11-18, sessió 5)
 
 - **4 fitxes de servei** CA+EN, mateixa estructura que el pilar (resposta, què inclou, **què NO**,

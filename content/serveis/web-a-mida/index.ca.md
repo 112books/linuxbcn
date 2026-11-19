@@ -92,6 +92,10 @@ Dissenyem i programem amb Hugo, imatges optimitzades, HTML semàntic i accessibi
 
 Formació, notes escrites i una posada en marxa acompanyada. El web ha de quedar en mans de qui l'ha de fer servir, no a les nostres.
 
+## Abans de decidir
+
+Si dubtes entre fer el web a mida i mantenir el WordPress que ja tens, [la comparació honesta entre Hugo i WordPress](/guies/hugo-vs-wordpress/) et pot estalviar la trucada.
+
 ## Tecnologia
 
 Hugo genera el web; el resultat són fitxers estàtics que no depenen d'una base de dades ni d'un servidor amb PHP. Per a qui l'ha de mantenir, això vol dir menys coses que es poden trencar. Per a qui el visita, menys espera.

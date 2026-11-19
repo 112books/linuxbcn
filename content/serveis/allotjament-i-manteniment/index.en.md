@@ -76,7 +76,7 @@ Planned updates for whatever needs them, tested beforehand, and a direct channel
 - We do not manage social media or advertising campaigns.
 - We do not fix third-party servers we have no access to.
 
-If your site is a WordPress that demands maintenance every week, maybe what it needs is not maintenance but [moving it to a static site](/serveis/migracio-wordpress/).
+If your site is a WordPress that demands maintenance every week, maybe what it needs is not maintenance but [moving it to a static site](/serveis/migracio-wordpress/). And if you want to know what is wrong with it before deciding, [diagnose it by cause](/guies/wordpress-lent-o-insegur/).
 
 ## The sites we maintain
 

@@ -6,6 +6,8 @@ description: "Per què un WordPress es torna lent o rep atacs, com diagnosticar-
 weight: 3
 date: "2026-11-18"
 lastmod: "2026-11-18"
+cta_url: "/serveis/allotjament-i-manteniment/"
+cta_text: "Allotjament i manteniment"
 faq:
   - q: "Com sé si el problema és l'allotjament o el web?"
     a: >-
