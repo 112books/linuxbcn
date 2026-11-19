@@ -6,6 +6,8 @@ description: "Què ha de respondre el web d'una banda, què no cal posar-hi i co
 weight: 5
 date: "2026-11-19"
 lastmod: "2026-11-19"
+cta_url: "/solucions/musics/"
+cta_text: "Webs per a músics i bandes"
 faq:
   - q: "No sóc tècnic. Podré actualitzar el web jo mateix/a?"
     a: >-

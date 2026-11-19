@@ -6,6 +6,8 @@ description: "What a band's website must answer, what to leave out, and how to t
 weight: 5
 date: "2026-11-19"
 lastmod: "2026-11-19"
+cta_url: "/solucions/musics/"
+cta_text: "Websites for musicians and bands"
 faq:
   - q: "I am not technical. Will I be able to update it myself?"
     a: >-

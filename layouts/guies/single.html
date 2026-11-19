@@ -38,8 +38,9 @@
 </nav>
 {{ end }}
 
+{{/* CTA configurable per guia: cta_url / cta_text al frontmatter. Per defecte, el pilar de migració. */}}
 <div class="project-cta">
-  <a href="{{ "/serveis/migracio-wordpress/" | relLangURL }}">→ {{ i18n "guia_cta" | default "Com migrem un WordPress a una web estàtica" }}</a>
+  <a href="{{ (.Params.cta_url | default "/serveis/migracio-wordpress/") | relLangURL }}">→ {{ .Params.cta_text | default (i18n "guia_cta" | default "Com migrem un WordPress a una web estàtica") }}</a>
 </div>
 
 {{ end }}
