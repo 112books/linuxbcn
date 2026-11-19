@@ -23,10 +23,30 @@
 
 | Què | Estat |
 |---|---|
-| Darrer commit | `docs: registra el CTA configurable i el deploy de la guia 5` (`981e3d8`) |
-| Producció | ✅ fases 2, 3, 4, 1c i navegació verificades en línia (2026-11-19): el CSS servit és el d'HEAD i el menú i el peu porten Serveis i Guies. 22 URLs de `/serveis/` i `/guies/` → 200 |
-| Fases fetes | 0, 1, 1a, 1c, 2, 3, 4 i la **guia 5 de l'eix músics** (taula a `PLA-SEO-2026-11.md` §8) |
-| Fase següent | **5** (tancar): només queda la revisió de Search Console (cal Joan) · després, **1b** (cal dades de Joan) |
+| Darrer commit | `content: correccions de fets i icone de serveis al menu mobil` (`337a819`) |
+| Producció | ✅ fases 2, 3, 4, 1b, 1c, navegació i correccions de fets desplegades i verificades en línia (2026-11-19). IndexNow 200 (114 URLs) |
+| Fases fetes | 0, 1, 1a, **1b**, 1c, 2, 3, 4 i la **guia 5 de l'eix músics** (taula a `PLA-SEO-2026-11.md` §8) |
+| Fase següent | **5** (tancar): només la revisió de Search Console (cal Joan) · i després els externs (GBP, backlinks) |
+
+### Tancament de sessió — 2026-11-19
+
+- **Bloc tècnic:** `noindex` per pàgina al `head.html`; `/cerca/` fora de l'índex (era indexable amb 10
+  paraules); CTA propi per a `hugo-vs-wordpress` (/serveis/) i `wordpress-lent-o-insegur`
+  (allotjament); enllaços de `web-a-mida` i `allotjament` cap a les guies.
+- **Fase 1b:** `favb`, `pocallum`, `112books`, `carrer`, `contacte` i `en/solucions` passen de
+  120–304 a 443–571 paraules. 10 descripcions > 160 caràcters escurçades (una era la del lloc,
+  que afectava 5 pàgines).
+- **Correccions de fets** (indicades per Joan): FAVB (anys administrant, redisseny, Carrer separat,
+  tema pendent de refer), Carrer (disseny des de zero adaptat a la revista), Pocallum (dues fases:
+  reestructuració WP i després Hugo), 40anysblues (Joan Linux, data de cada foto, QR al llibre i
+  estadístiques), Estenop (no és 100 % funcional; es replanteja de zero).
+- **Navegació:** icona de Serveis a la barra mòbil; la de Cerca surt de la barra (el capçal ja té la lupa).
+- **W3C:** 0 errors a guies i serveis. **PageSpeed:** 100/100/100/100 a escriptori i mòbil.
+- **Search Console (revisat amb Joan):** els tres sitemaps són correctes i no cal afegir-ne cap;
+  GSC comptava 111 URLs perquè les lectures eren anteriors al desplegament del 19/11 (ara 114).
+- **Pendent de Joan:** revisió de consultes 5–20 (Search Console), Google Business Profile,
+  backlinks, unificar correu, token vell de GoatCounter, certificat de `blog.pocallum.cat` (22/12)
+  i captura de `votacio-public` (1/12).
 
 ### Què es va fer a la fase 4 (2026-11-18, sessió 6)
 
