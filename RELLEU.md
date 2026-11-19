@@ -23,7 +23,7 @@
 
 | Què | Estat |
 |---|---|
-| Darrer commit | `content: guia web per a una banda (CA+EN)` |
+| Darrer commit | `docs: registra el CTA configurable i el deploy de la guia 5` (`981e3d8`) |
 | Producció | ✅ fases 2, 3, 4, 1c i navegació verificades en línia (2026-11-19): el CSS servit és el d'HEAD i el menú i el peu porten Serveis i Guies. 22 URLs de `/serveis/` i `/guies/` → 200 |
 | Fases fetes | 0, 1, 1a, 1c, 2, 3, 4 i la **guia 5 de l'eix músics** (taula a `PLA-SEO-2026-11.md` §8) |
 | Fase següent | **5** (tancar): només queda la revisió de Search Console (cal Joan) · després, **1b** (cal dades de Joan) |
