@@ -1191,7 +1191,8 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 *Guia `web-per-a-una-banda` (tanca l'eix músics)*
 - `content/guies/web-per-a-una-banda/index.{ca,en}.md`: 992 w de cos. Quatre preguntes (qui sou, com sona, quan toqueu, com us contracto), «el que no cal» (6 punts), per què una web si ja ets a Instagram/Spotify, **quan encara et convé una plantilla**, checklist de 7 punts abans de contractar, 3 casos (Bratia, Ivan Kovačević, BBBB), FAQ de 5 al frontmatter, `weight: 5`.
 - Enllaçat: `/solucions/musics/` (CA+EN) → guia; `guies/_index.{ca,en}` («com fer-les servir»); `llms.txt` + `llms-full.txt` (recompte «quatre» → «cinc» guies).
-- Verificat: 313 blocs JSON-LD (0 errors), sitemap 57 URLs per idioma, parella hreflang, 5 `<details>` de FAQ, 0 enllaços trencats, `Article` + `FAQPage`.
+- `layouts/guies/single.html`: **CTA configurable per guia** (`cta_url` / `cta_text` al frontmatter; per defecte, el pilar de migració). La guia de bandes apunta a `/solucions/musics/`, no a la migració de WordPress; les altres quatre no canvien.
+- Verificat: 313 blocs JSON-LD (0 errors), sitemap 57 URLs per idioma, parella hreflang, 5 `<details>` de FAQ, 0 enllaços trencats, `Article` + `FAQPage`. **Desplegat a producció i verificat en viu** (IndexNow 200, 114 URLs).
 
 **Pendent**
 - Fase 1b (pàgines primes) — cal dades de Joan.

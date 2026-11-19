@@ -70,8 +70,12 @@
   Kovačević, BBBB) i FAQ de 5 al frontmatter.
 - Enllaçat: `/solucions/musics/` (CA+EN) → guia · `guies/_index.{ca,en}` («com fer-les servir») ·
   `llms.txt` i `llms-full.txt` (apartat de guies + prosa; recompte «quatre» → «cinc» guies).
+- `layouts/guies/single.html`: **CTA configurable** (`cta_url` / `cta_text` al frontmatter; per defecte
+  el pilar de migració). La guia de bandes envia a `/solucions/musics/`; les altres quatre no canvien.
 - Verificat: 313 blocs JSON-LD (0 errors), sitemap **57 URLs per idioma**, parella hreflang,
   5 `<details>` de FAQ, `Article` + `FAQPage`, 0 enllaços interns trencats.
+- **Desplegat a producció i verificat en viu** (2026-11-19): IndexNow 200 (114 URLs), CSS d'HEAD al
+  servidor, CTA nou a les dues llengües.
 
 ### Servidor — els 3,21 GB de l'arrel (2026-11-19)
 
