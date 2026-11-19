@@ -22,6 +22,12 @@ Carrer és la publicació de la **FAVB** —Federació d'Associacions de Veïns 
 
 El repte era traslladar una publicació impresa consolidada a internet **sense perdre la seva essència editorial**.
 
+## Un web propi, separat de la federació
+
+Abans, la revista vivia dins del web de la FAVB. La vam **separar** perquè són dues coses diferents: una federació que coordina, informa i dona servei a les associacions, i una publicació que té el seu ritme, la seva estructura i la seva imatge.
+
+El disseny es va fer **des de zero, adaptat a la imatge de la revista en paper** —no una plantilla ni una secció del web gran— perquè qui llegeix Carrer reconegui el mateix mitjà quan hi arriba des del mòbil. Del disseny de la FAVB se'n va encarregar la mateixa fase del projecte; aquí el que calia era que la revista tingués cara pròpia.
+
 ## Dos problemes en un
 
 No n'hi havia prou de penjar els números en PDF. Calia resoldre dues coses alhora:

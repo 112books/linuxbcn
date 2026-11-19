@@ -1244,6 +1244,17 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 - Verificat: build 0 errors/warnings, 313 blocs JSON-LD (0 errors), 0 enllaços trencats,
   0 descripcions > 160.
 
+**Correccions de fets (2026-11-19, indicades per Joan)**
+- **FAVB**: anys administrant el web, moltes fases, redisseny final i separació de Carrer;
+  **pendent redissenyar el tema** del web.
+- **Carrer**: disseny des de zero adaptat a la imatge de la revista; web separat de la federació.
+- **Pocallum**: dues fases — reestructuració i redisseny sobre WordPress, i després migració a Hugo (2026).
+- **40anysblues**: «l'editorial que en Joan Linux dirigeix»; cada fotografia amb data, llibre en
+  català i web trilingüe, **codi QR a cada exemplar** que porta al web i alimenta les estadístiques.
+- **Estenop**: secció «Estat actual» — aplicació web sense accés complet a la càmera; no és
+  plenament funcional i es replanteja de zero.
+- **Menú mòbil**: icona de **Serveis** (capes) i sortida de la de Cerca (el capçal ja té la lupa).
+
 ---
 
 *Última actualització: 2026-11-19*

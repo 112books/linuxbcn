@@ -49,6 +49,11 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
       {{ i18n "nav_solutions" }}
     </a>
+    {{ $servPath := printf "/%s/serveis/" $.Site.Language.Lang }}
+    <a href="{{ printf "%s/serveis/" $base }}" class="mobile-nav-item{{ if strings.HasPrefix $rel $servPath }} active{{ end }}"{{ if strings.HasPrefix $rel $servPath }} aria-current="page"{{ end }}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+      {{ i18n "nav_services" }}
+    </a>
     {{ $projPath := printf "/%s/projectes/" $.Site.Language.Lang }}
     <a href="{{ printf "%s/projectes/" $base }}" class="mobile-nav-item{{ if strings.HasPrefix $rel $projPath }} active{{ end }}"{{ if strings.HasPrefix $rel $projPath }} aria-current="page"{{ end }}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
@@ -58,11 +63,6 @@
     <a href="{{ printf "%s/qui-som/" $base }}" class="mobile-nav-item{{ if strings.HasPrefix $rel $aboutPath }} active{{ end }}"{{ if strings.HasPrefix $rel $aboutPath }} aria-current="page"{{ end }}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
       {{ i18n "nav_about" }}
-    </a>
-    {{ $searchPath := printf "/%s/cerca/" $.Site.Language.Lang }}
-    <a href="{{ printf "%s/cerca/" $base }}" class="mobile-nav-item{{ if strings.HasPrefix $rel $searchPath }} active{{ end }}"{{ if strings.HasPrefix $rel $searchPath }} aria-current="page"{{ end }}>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      {{ i18n "nav_search" }}
     </a>
     {{ $contactPath := printf "/%s/contacte/" $.Site.Language.Lang }}
     <a href="{{ printf "%s/contacte/" $base }}" class="mobile-nav-item{{ if strings.HasPrefix $rel $contactPath }} active{{ end }}"{{ if strings.HasPrefix $rel $contactPath }} aria-current="page"{{ end }}>

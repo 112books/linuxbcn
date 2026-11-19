@@ -7,7 +7,7 @@ year: 2026
 date: 2026-04-25
 client: "LinuxBCN"
 sector: "photography"
-description: "Estenop — offline mobile app for pinhole cameras: exposure calculation and reciprocity correction for 20+ emulsions."
+description: "Estenop — pinhole exposure calculator: exposure calculation and reciprocity correction for over 20 emulsions. Still in development."
 lastmod: "2026-06-24"
 draft: false
 serveis: ["aplicacio-web", "cas-propi"]
@@ -22,11 +22,19 @@ The problem is that pinhole physics leaves no room for calculation errors. An ef
 
 **Estenop V2** turns your phone into the light meter you needed: it reads ambient light directly from the camera, you select your aperture and film stock, and it gives you the corrected exposure time —reciprocity included— in seconds.
 
-No charts. No calculator. No mistakes.
+No charts and no calculator.
 
 (V2 fixes a critical bug in the exposure formula and adds EV detection via frame noise analysis, making it work on all browsers including Safari on iOS.)
 
-Try it here: [estenop.linuxbcn.com](https://estenop.linuxbcn.com/)
+Try the current version: [estenop.linuxbcn.com](https://estenop.linuxbcn.com/)
+
+## Current status: not yet 100 %
+
+Estenop calculates and runs, but it is **not fully functional** and we do not consider it finished.
+
+The limit is technical and it matters: it is a **web application**, not a native app, and the browser **does not give access to all the information from the phone's camera**. Without that data, the light measurement cannot be reliable on every device and in every condition.
+
+That is why we have decided to **rethink the program from scratch** instead of patching it. When there is a version we can recommend without caveats, we will say so here. In the meantime, what is online is a working version that can guide you — but not one to trust with a photograph you cannot repeat.
 
 ---
 

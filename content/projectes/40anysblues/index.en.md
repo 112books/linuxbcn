@@ -7,11 +7,11 @@ year: 2026
 date: 2026-11-06
 client: "own project (112books)"
 sector: "culture"
-perfils: ["collectives"]
-description: "Photographic and biographical archive of Barcelona's blues scene: 148 musicians, three languages, Hugo and GitHub Pages."
-lastmod: "2026-11-07"
+perfils: ["collectius"]
+description: "Photographic and biographical archive of Barcelona's blues scene: 148 musicians, three languages, QR code in the book, Hugo and GitHub Pages."
+lastmod: "2026-11-19"
 draft: false
-serveis: ["static-web", "multilingual", "seo"]
+serveis: ["web-a-mida", "multilingual", "seo"]
 image: "40anysblues.png"
 ---
 
@@ -20,22 +20,26 @@ image: "40anysblues.png"
 On November 6, 2026, the book *40 Years of Blues in Barcelona* by Joan Linux
 with texts by Manuel López Poy was presented at Centre Cultural Collblanc – La Torrassa.
 
-**Commissioned by 112books.eu** — the photography publisher that Joan directs.
+**Commissioned by 112books.eu** — the photography publisher that **Joan Linux** runs.
 
 The accompanying website is not merely a book listing: it is a living photographic and biographical
 archive of Barcelona's blues scene.
 
----
-
 ## The challenge
 
-Organize 148 musician profiles, 531 formations, and 296 black-and-white photographs across three languages.
+Organise 148 musician profiles, 531 formations and 296 black-and-white photographs across three languages.
 Without a content management system. Without unnecessary external dependencies.
 So anyone can search for a musician, see their face, understand why Barcelona is a blues city,
 and navigate connections: which other musician plays the same instrument, which bands share members,
 which musicians played together over the years.
 
----
+## The book and the website
+
+The book is published **in Catalan**; the website complements it in **three languages** (Catalan, Spanish and English), because Barcelona's blues scene interests people far beyond the country. Each profile keeps the musicians' original names and places the text in local context instead of translating it literally.
+
+**Every photograph carries its date.** The archive is not a set of loose images: it is a chronology. You can see when each portrait was taken and cross-reference it with the musician's birth year or with the bands they played in.
+
+**Every copy of the book carries a QR code** that leads to this website. Visits arriving through that route are recorded in the project's statistics, and those statistics are public: paper and web can be measured together. How many readers wanted to know more, and what they looked for.
 
 ## The solution
 
@@ -47,13 +51,11 @@ which musicians played together over the years.
 - **Native search** and navigation by taxonomy: 27 instruments, formations, birth years, relational
 - **GoatCounter** for privacy-respecting analytics
 
----
-
 ## The result
 
 Total data sovereignty: the repository is public, the website is independent, no third-party processing.
 The original cover weighed 3.5 MB; now it weighs 528 KB. Three languages (Catalan, Spanish, English)
-share the same content: names remain original, texts are contextualized, not literally translated.
+share the same content: names remain original, texts are contextualised, not literally translated.
 
 **Intelligent content reuse:** each musician came with an associated list of external references (reference musicians, living musicians admired, emblematic groups). Instead of discarding it, we converted it into internal and external hyperlinks: from any musician's profile you can reach their mentors, bandmates, collaborators, and influences.
 

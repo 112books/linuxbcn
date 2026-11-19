@@ -22,6 +22,12 @@ Carrer is the publication of the **FAVB** —Federation of Neighbourhood Associa
 
 The challenge was to bring a consolidated print publication online **without losing its editorial essence**.
 
+## A website of its own, separated from the federation
+
+The magazine used to live inside the FAVB website. We **split it off** because they are two different things: a federation that coordinates, informs and serves its associations, and a publication with its own rhythm, structure and image.
+
+The design was built **from scratch, adapted to the printed magazine's image** — not a template, not a section of the larger site — so that Carrer readers recognise the same publication when they arrive from their phone.
+
 ## Two problems in one
 
 Simply posting PDF issues was not enough. Two things had to be solved at once:

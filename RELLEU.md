@@ -105,6 +105,22 @@
   WordPress (verificat en viu) i la fitxa ho diu tal com és; el discurs aprofita per explicar
   quan **no** cal migrar.
 
+**Correccions de fets (indicades per Joan, 2026-11-19):**
+- **FAVB:** fa anys que l'administrem i hi hem passat per moltes fases; en la darrera es va
+  redissenyar i es va separar Carrer en un web propi. **Pendent: redissenyar el tema del web**
+  en un futur no gaire llunyà (dit a la fitxa).
+- **Carrer:** el disseny es va fer **des de zero, adaptat a la imatge de la revista**, i el web
+  es va separar del de la federació.
+- **Pocallum:** dues fases — primer **reestructuració i redisseny sobre WordPress**, després el
+  **canvi a Hugo (2026)**. La fitxa ho explica en aquest ordre.
+- **40anysblues:** «l'editorial de fotografia que **en Joan Linux** dirigeix»; afegit que **cada
+  fotografia porta la data**, que el llibre surt en català i el web és trilingüe, i que **cada
+  exemplar porta un codi QR** que porta al web i queda registrat a les estadístiques públiques.
+- **Estenop:** secció «Estat actual» — **no és plenament funcional**: és una aplicació web i el
+  navegador no dona accés a tota la informació de la càmera del telèfon; **es replanteja de zero**.
+- **Menú mòbil:** icona nova de **Serveis** (icones de capes). S'ha tret la de Cerca de la barra
+  inferior perquè el capçal ja té la lupa pròpia i així queden 6 icones.
+
 ### Tècnic: noindex, CTA i enllaços (2026-11-19)
 
 - **`noindex` per pàgina:** `head.html` respecta ara `.Params.noindex` (branca nova entre el

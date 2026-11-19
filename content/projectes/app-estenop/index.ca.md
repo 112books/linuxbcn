@@ -7,7 +7,7 @@ year: 2026
 date: 2026-04-25
 client: "LinuxBCN"
 sector: "fotografia"
-description: "Estenop — app mòbil offline per a càmeres estenopeiques (pinhole): càlcul d'exposició i correcció de reciprocitat per a 20+ emulsions."
+description: "Estenop — calculadora d'exposició per a càmeres estenopeiques (pinhole): càlcul i reciprocitat per a més de 20 emulsions. En desenvolupament."
 lastmod: "2026-06-24"
 draft: false
 serveis: ["aplicacio-web", "cas-propi"]
@@ -22,11 +22,19 @@ El problema és que la física de la pinhole no perdona els errors de càlcul. U
 
 **Estenop V2** converteix el teu mòbil en el fotòmetre que necessitaves: llegeix la llum ambient directament des de la càmera, selecciones el teu diafragma i la teva pel·lícula, i obté el temps d'exposició corregit —reciprocitat inclosa— en qüestió de segons.
 
-Sense taules. Sense calculadora. Sense errors.
+Sense taules i sense calculadora.
 
 (La V2 corregeix un error important a la fórmula d'exposició i afegeix detecció d'EV per anàlisi de soroll del fotograma, que fa que funcioni a tots els navegadors, inclòs Safari a iOS.)
 
-Prova-la aquí: [estenop.linuxbcn.com](https://estenop.linuxbcn.com/)
+Prova la versió actual: [estenop.linuxbcn.com](https://estenop.linuxbcn.com/)
+
+## Estat actual: encara no és al 100 %
+
+Estenop calcula i funciona, però **no és plenament funcional** i no el considerem acabat.
+
+El límit és tècnic i és important: és una **aplicació web**, no una aplicació nativa, i el navegador **no dona accés a tota la informació de la càmera del telèfon**. Sense aquestes dades, la mesura de llum no pot ser fiable en tots els dispositius ni en totes les condicions.
+
+Per això hem decidit **replantejar el programa de zero** en lloc d'anar-hi afegint pedaços. Quan hi hagi una versió que puguem recomanar sense matisos, ho direm aquí. Mentrestant, el que hi ha és una versió de treball que et pot orientar, però no per a confiar-hi una fotografia irrepetible.
 
 ---
 

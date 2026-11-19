@@ -8,7 +8,7 @@ date: 2025-01-01
 client: "agència fotogràfica"
 sector: "fotografia"
 perfils: ["microempreses"]
-description: "Web de Pocallum, fotografia cultural de música en directe, teatre i dansa. De WordPress a una web estàtica amb cerca interna, multidioma i analítica pròpia."
+description: "Web de Pocallum, fotografia cultural de música en directe, teatre i dansa: reestructuració i redisseny primer, i migració a Hugo després."
 lastmod: "2026-11-19"
 draft: false
 serveis: ["web-a-mida", "migracio-wordpress"]
@@ -21,24 +21,26 @@ Pocallum és el servei fotogràfic de Joan Linux Martínez: **música en directe
 
 El web havia de fer una cosa molt concreta: que qui busca un fotògraf per a un concert o un espectacle entengui en deu segons quin és l'ull que hi ha darrere.
 
-## El problema
+## Primer: reestructurar i redissenyar
 
-El web vivia a WordPress: pesat, amb més maquinària de la que calia per a un portfolio i un blog que no s'actualitzaven al mateix ritme. Cada foto nova demanava passar per un panell amb vint opcions, i el resultat trigava a carregar justament en el moment en què algú decideix si et truca o no.
+El web havia crescut per acumulació: seccions que s'havien afegit amb els anys, un portfolio sense ordre clar i una portada que no explicava el que Pocallum fa de debò.
 
-## Què hem construït
+En la primera fase vam **reestructurar i redissenyar el web** —sobre WordPress— perquè el contingut tingués jerarquia: el portfolio organitzat per concerts, festivals i espectacles; els serveis explicats; i un disseny que deixés parlar les fotografies, que és el que ven.
 
-L'any **2026** vam migrar tot el web a una base estàtica, conservant les adreces:
+## Després: el canvi a Hugo (2026)
+
+Amb el contingut ja ordenat, el pas següent era treure pes. L'any **2026** vam migrar el web a una base estàtica, conservant les adreces:
 
 - **152 fotografies** organitzades per concerts, festivals i espectacles.
-- **27 festivals** i **11 notícies** d'actualitat.
+- **27 festivals** i **11 notícies**.
 - **Cercador intern** que funciona sense servidor (índex generat al build).
 - **Català i anglès**, amb els dos idiomes sencers.
-- **Dashboard d'analítica propi** al mateix web, sense cookies ni tercers.
-- Tot el pes de la pàgina, el mínim: sense base de dades, sense plugins, sense scripts de tercers.
+- **Dashboard d'analítica propi** dins del mateix web, sense cookies ni tercers.
+- Cap base de dades, cap plugin i cap script de tercers.
 
 ## El resultat
 
-El web carrega a l'instant perquè són fitxers ja construïts, no pàgines muntades a cada visita. I el més important per a qui l'ha de mantenir: publicar una foto nova és pujar un fitxer i fer un commit, no navegar per un panell.
+Dues fases, un web. Primer va canviar el que s'explicava i com; després, la maquinària que ho serveix. L'ordre importa: si haguéssim migrat sense reestructurar, el web estàtic hauria estat igual de confús, només més ràpid.
 
 El detall tècnic de la migració és a [la fitxa del projecte](/projectes/pocallum-estatic/); el blog, que va tenir el seu propi camí de WordPress a Hugo, és a [Blog de Pocallum](/projectes/blog-pocallum/).
 

@@ -8,7 +8,7 @@ date: 2024-01-01
 client: "federació veïnal"
 sector: "associatiu"
 perfils: ["collectius"]
-description: "Web de la Federació d'Associacions de Veïns i Veïnes de Barcelona: continguts ordenats, manteniment i publicació sense friccions."
+description: "Anys administrant el web de la Federació d'Associacions de Veïns i Veïnes de Barcelona: redisseny, separació de la revista Carrer i manteniment continuat."
 lastmod: "2026-11-19"
 draft: false
 serveis: ["web-a-mida", "plataforma-editorial"]
@@ -17,32 +17,34 @@ image: "01-favb.png"
 
 ## Una federació amb dècades d'història
 
-La **FAVB** —Federació d'Associacions de Veïns i Veïnes de Barcelona— és una de les organitzacions veïnals més antigues i representatives de la ciutat. Aplega associacions de barri, coordina campanyes i publica contingut propi, com la revista [Carrer.cat](/projectes/carrer/).
+La **FAVB** —Federació d'Associacions de Veïns i Veïnes de Barcelona— és una de les organitzacions veïnals més antigues i representatives de la ciutat. Aplega associacions de barri, coordina campanyes i publica contingut propi.
 
 Per a una entitat així, el web no és una targeta de visita: és infraestructura. Hi passen publicacions, convocatòries, documents i campanyes que la ciutat llegeix.
 
-## El problema: un web que ha crescut per acumulació
+## Anys administrant aquest web
 
-Quan un web porta anys en marxa i hi publiquen persones que van canviant, passa sempre el mateix: seccions que ningú recorda per a què serveixen, fitxers duplicats, una portada que ja no explica el que fa l'entitat i un equip que té por de tocar res per si es trenca.
+Fa anys que administrem el web de la FAVB. En aquest temps hi hem passat per **moltes fases**: canvis de plantilla, seccions noves, trasllats, pegats d'urgència i neteges. És la mena de web que no es fa un dia: es manté.
 
-El repte no era fer un web nou. Era **mantenir el que ja funcionava** —l'arxiu, les publicacions, les campanyes— i fer-lo més fàcil de mantenir sense perdre res pel camí.
+Aquesta continuïtat és mitat del valor. Un web d'entitat no es jutja pel dia de l'estrena, sinó per com arriba al cap de cinc anys: si l'equip encara hi sap publicar, si l'arxiu encara es troba i si ningú no ha hagut de refer-ho tot.
 
-## Què hem fet
+## La darrera fase: redisseny i separació de Carrer
 
-- **Arquitectura de continguts** ordenada per allò que la federació fa de debò: qui som, què fem, publicacions, campanyes i serveis a les associacions.
-- **Publicació sense friccions** per a un equip que no és tècnic: es publica sense tocar codi i sense por.
-- **Manteniment amb còpia de seguretat** abans de cada canvi, i actualitzacions planificades.
-- **Accessibilitat i rendiment** revisats a les pàgines principals.
-- **Connexió amb la revista Carrer**, que té web propi i comparteix veu.
+En la darrera fase vam **redissenyar el web** i vam **separar la revista Carrer en un web propi**, amb un disseny fet des de zero i adaptat a la imatge de la publicació.
+
+Eren dues coses diferents que demanaven ritmes i estructures diferents: una federació que coordina, informa i dona servei a les associacions, i una revista que publica periodisme de barri. Barrejar-les obligava a fer compromisos que no convenien a cap de les dues.
+
+## Què queda pendent
+
+A la FAVB tenim pendent **redissenyar el tema del web**, en un futur no gaire llunyà. No és urgent, però sí important: quan es faci, serà amb el mateix criteri que la resta — sense trencar l'arxiu, sense perdre el que funciona i deixant-lo fàcil de mantenir per a l'equip.
 
 ## Per què aquí no migrem
 
 No tots els webs han de sortir de WordPress. A la FAVB hi ha diverses persones publicant, campanyes que canvien sovint i una estructura editorial consolidada: aquí el CMS amb base de dades fa la feina, i fer-lo desaparèixer seria empitjorar-ho.
 
-El que calia no era canviar de tecnologia, sinó **endreçar-la, documentar-la i mantenir-la**. Ho diem quan convé: si el teu WordPress funciona i el problema és d'ordre, no de plataforma, no et vendrem una migració.
+El que cal no és canviar de tecnologia, sinó **endreçar-la, documentar-la i mantenir-la**. Ho diem quan convé: si el teu WordPress funciona i el problema és d'ordre, no de plataforma, no et vendrem una migració.
 
 ## Tecnologia
 
-WordPress amb un tema portat amb criteri, allotjament propi, HTTPS i còpies de seguretat. L'objectiu és que el web no doni feina innecessària a l'equip que l'ha de fer servir.
+WordPress amb un tema hereu de moltes fases, allotjament propi, HTTPS i còpies de seguretat. El proper pas ja està decidit: refer el tema i deixar-lo net.
 
 → [favb.cat](https://favb.cat) · [Carrer.cat](/projectes/carrer/) · [Allotjament i manteniment](/serveis/allotjament-i-manteniment/)
