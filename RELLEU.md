@@ -23,8 +23,9 @@
 
 | Què | Estat |
 |---|---|
-| Darrer commit | `content: correccions de fets i icone de serveis al menu mobil` (`337a819`) |
-| Producció | ✅ fases 2, 3, 4, 1b, 1c, navegació i correccions de fets desplegades i verificades en línia (2026-11-19). IndexNow 200 (114 URLs) |
+| Darrer commit | `docs: tanca la sessio del 19 de novembre` (`a068457`) |
+| Producció | ✅ fases 2, 3, 4, 1b, 1c, navegació i correccions de fets desplegades i verificades en línia (2026-11-19, 19:46). IndexNow 200 (114 URLs) |
+| Staging | ✅ `gh-pages` al dia (`59c1f18`, 2026-11-19 19:46), amb `noindex` a totes les pàgines. Ja no està aturat |
 | Fases fetes | 0, 1, 1a, **1b**, 1c, 2, 3, 4 i la **guia 5 de l'eix músics** (taula a `PLA-SEO-2026-11.md` §8) |
 | Fase següent | **5** (tancar): només la revisió de Search Console (cal Joan) · i després els externs (GBP, backlinks) |
 
