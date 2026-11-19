@@ -68,6 +68,12 @@ ErrorDocument 404 /ca/404.html
   RewriteRule ^(?:fotos?|drupal|linuxbcn|joan|kristina|es|index\.php|bofh|wptest)(/.*)?$ https://linuxbcn.com/ca/ [R=301,L,NC]
 
   # Qualsevol altre slug d'un sol nivell que no existeix (posts antics del WP) → portada
+  # Antics termes de taxonomia (serveis/sectors), retirats el 2026-11-18.
+  # 302 temporal: quan existeixin les pàgines reals (fase 2), la condició !-d les deixa passar.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(ca|en)/(?:serveis|sectors)(/.*)?$ https://linuxbcn.com/$1/projectes/ [R=302,L]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^([^/.]+)/?$ https://linuxbcn.com/ca/ [R=301,L]

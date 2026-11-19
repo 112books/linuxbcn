@@ -78,6 +78,30 @@ LinuxBCN munta la presència digital completa, coherent amb els valors del proje
 
 ---
 
+## Sortir de WordPress: migració a una web estàtica
+
+Molts projectes no necessiten un WordPress: necessiten publicar. Quan el web només informa, la base de dades, el PHP i la pila de plugins es converteixen en una feina de manteniment permanent que algú ha de pagar i vigilar.
+
+LinuxBCN migra aquests webs a un lloc estàtic construït amb Hugo: fitxers HTML ja generats, sense base de dades ni connectors, amb un editor visual (Sveltia o Decap) perquè l'equip publiqui sense tocar codi. El procés té quatre passos: inventari i rastreig complet del web antic; conversió del contingut a Markdown i de les imatges a WebP; paritat d'URLs comprovada amb un crawler 1:1 i redireccions 301 allà on cal; i formació de les persones que han d'editar-lo.
+
+Les xifres són de projectes reals: el Blog de Pocallum va migrar 2.353 posts i 137.000 paraules amb 2.360 URLs verificades 1:1 i un estalvi d'1.318 MB en imatges (−42,1 %); 9 Barris Imatge va traslladar 3.006 articles des del 2008 amb zero errors, conservant les adreces, i el web nou genera més de 8.700 pàgines en menys de mig minut.
+
+És honest dir quan no convé: botigues complexes amb estocs i pagaments, fluxos editorials amb molts rols o projectes que depenen d'un plugin concret es queden —de moment— amb el CMS que els funciona. Més informació: https://linuxbcn.com/ca/serveis/migracio-wordpress/
+
+## Altres serveis
+
+A més de les migracions, LinuxBCN fa webs a mida amb Hugo (disseny propi, estructura de continguts, editor visual, multidioma, accessibilitat WCAG AA i formació de l'equip), aplicacions web quan el web ha de fer coses i no només explicar-les (gestió de socis, votacions, concursos, seguiment d'hores, permisos), allotjament i manteniment (servidor propi, HTTPS, còpies de seguretat diàries fora del servidor amfitrió, monitoratge de certificat i disponibilitat, actualitzacions planificades) i analítica respectuosa amb auditories de compliment.
+
+En analítica, la decisió és explícita: es mesuren visites, pàgines, idioma, dispositiu i procedència agregada amb un comptador propi que no instal·la cookies ni identifica persones; no es fan perfils de visitants, ni seguiment entre webs, ni atribució publicitària. Pel que fa al compliment, es revisen les dades que el codi recull de debò, qui les rep, quant temps es conserven i amb quina base legal, i es documenta el registre de tractaments. També s'audita accessibilitat WCAG 2.1 AA.
+
+El criteri comú a tots els serveis: si una eina existent resol el problema, no es construeix res; si el que cal no és el que es demana, es diu. Més informació: https://linuxbcn.com/ca/serveis/
+
+## Guies per decidir
+
+LinuxBCN publica cinc guies pensades perquè el lector pugui decidir, amb nosaltres o sense. «Com sortir de WordPress sense perdre res» explica què cal inventariar, què es conserva i què es perd, i els quatre errors clàssics: canviar adreces sense redireccions, publicar sense comprovar URL per URL, oblidar les imatges i no formar qui edita. «Hugo o WordPress» compara manteniment, velocitat, superfície d'atac, edició, botiga i extensions, i inclou explícitament els casos en què WordPress és la millor opció (botiga amb estocs, àrea de socis, flux editorial complex). «El teu WordPress va lent o t'han atacat» ordena les causes per freqüència —allotjament compartit saturat, plugins abandonats, base de dades inflada, imatges sense optimitzar, atacs automatitzats, temes pesants— i proposa diagnosticar mesurant abans de canviar res. «Migrar de Blogger a una web pròpia» tracta el cas específic de Blogger: les imatges viuen als servidors de Google i s'han de baixar i allotjar al projecte perquè el web no depengui de la plataforma. El cas real és 9 Barris Imatge, amb 3.006 articles migrats amb zero errors. «Què ha de tenir el web d'una banda» trasllada el criteri a l'eix de músics: les quatre preguntes que es fa qui arriba (qui sou, com sona, quan toqueu, com us contracto), què no cal posar-hi (vídeo automàtic, blog aturat, seccions buides de plantilla, comptador de visites), quan una plantilla encara és la resposta correcta i una llista de set punts per repassar abans de contractar res. Índex: https://linuxbcn.com/ca/guies/
+
+---
+
 ## Projectes realitzats
 
 **Bratia** — Web per a la banda barcelonina de Balkan Gypsy Jazz. Migrada d'un WordPress pesat i difícil de mantenir cap a un sistema lleuger basat en Hugo. Web multilingüe, portfolio musical, discografia, agenda de concerts.
