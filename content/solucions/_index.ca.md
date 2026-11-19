@@ -34,4 +34,4 @@ No oferim un catàleg. Oferim solucions pensades per a situacions concretes.
 
 Treballem també a mida per a situacions que no entren en cap d'aquests perfils.
 
-→ [Parlem](/contacte/)
+→ [Parlem](/contacte/) · [Què fem](/serveis/)

@@ -3,7 +3,7 @@ title: "Identitat digital amb criteri"
 seo_title: "LinuxBCN — Webs a mida amb programari lliure, Barcelona"
 heading: "Identitat digital<br>amb criteri"
 subtitle: "Desenvolupament web, aplicacions a mida i infraestructura digital. Programari lliure, sense complicacions."
-description: "LinuxBCN — assessoria tecnològica a Barcelona per a artistes, col·lectius culturals i microempreses. Programari lliure, sobirania de dades, 25 anys d'experiència."
+description: "LinuxBCN — assessoria tecnològica a Barcelona per a artistes, col·lectius culturals i microempreses. Programari lliure i sobirania de dades."
 lastmod: "2026-06-25"
 draft: false
 ---

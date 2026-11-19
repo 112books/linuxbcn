@@ -3,7 +3,7 @@ title: "Solucions per a negocis amb valors"
 seo_title: "Webs per a microempreses i negocis a Barcelona | LinuxBCN"
 subtitle: "Presència digital coherent amb el que sou, sense complicacions innecessàries"
 slug: "microempreses"
-description: "Presència digital a mida per a autònoms, comerços locals i microempreses a Barcelona i Catalunya. Programari lliure, sense subscripcions innecessàries. LinuxBCN."
+description: "Presència digital a mida per a autònoms, comerços locals i microempreses a Barcelona i Catalunya. Programari lliure, sense subscripcions innecessàries."
 lastmod: "2026-06-24"
 draft: false
 ---

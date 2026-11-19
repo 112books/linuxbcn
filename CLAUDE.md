@@ -1222,5 +1222,29 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
+## 44. Historial de tasques — 2026-11-19 (sessió 3)
+
+**Fase 1b — pàgines primes reforçades**
+
+- `projectes/favb` (229 → 541 w CA / 517 EN): context de la FAVB, el problema de l'acumulació,
+  què hi hem fet i **per què aquí no migrem** (WordPress hi fa la feina).
+- `projectes/pocallum` (266 → 560 / 514): el servei fotogràfic des del 2010, el problema del
+  WordPress i la migració del 2026 amb xifres reals (152 fotografies, 27 festivals, 11 notícies).
+- `projectes/112books` (295 → 559 / 571): editorial que acompanya autors, problema estructural
+  i tema FSE del 2026. Enllaç a `112books.eu-theme`.
+- `projectes/carrer` (304 → 508 / 496): memòria + actualitat, model híbrid, què hi guanya.
+  Corregit «decades» → «dècades».
+- `contacte` (251 → 443 / 476): què passa quan escrius, què ens interessa saber, què no fem.
+- `en/solucions` (120 → 314): paràgraf introductori i taula comparativa dels tres perfils.
+- **10 descripcions > 160 caràcters escurçades**, entre elles la descripció per defecte del lloc
+  (`config/_default/config.toml`), que afectava cerca, avís legal, cookies, privacitat i
+  malditasmaquinas.
+- **Criteri:** FAVB i Carrer.cat són WordPress (verificat a favb.cat i carrer.cat, generator
+  WordPress 7.1.4) i les fitxes ho diuen; s'aprofita per explicar quan **no** cal migrar.
+- Verificat: build 0 errors/warnings, 313 blocs JSON-LD (0 errors), 0 enllaços trencats,
+  0 descripcions > 160.
+
+---
+
 *Última actualització: 2026-11-19*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*

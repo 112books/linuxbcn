@@ -87,6 +87,24 @@
 - Pendent (opcional): netejar els **458 MB de duplicats orfes** d'`uploads/` (287 grups, verificats
   sense referències a la BD). NO executat.
 
+### Fase 1b — pàgines primes reforçades (2026-11-19)
+
+| Pàgina | Abans | Ara (CA / EN) | Què s'hi ha afegit |
+|---|---|---|---|
+| `projectes/favb` | 229 w | **541 / 517** | context de la federació, el problema de l'acumulació, què hem fet i **per què aquí no migrem** (WordPress fa la feina) |
+| `projectes/pocallum` | 266 w | **560 / 514** | el client i l'ofici, el problema del WordPress, la migració del 2026 amb xifres reals (152 fotos, 27 festivals, 11 notícies) |
+| `projectes/112books` | 295 w | **559 / 571** | editorial que acompanya autors, el problema estructural i el tema FSE del 2026 |
+| `projectes/carrer` | 304 w | **508 / 496** | dos problemes (memòria i actualitat), model híbrid, què hi guanya la publicació |
+| `contacte` | 251 w | **443 / 476** | què passa quan escrius, què ens interessa saber, què no fem, casos petits |
+| `en/solucions` | 120 w | **314** | paràgraf introductori + **taula comparativa** dels tres perfils |
+
+- **Verificat:** cap descripció > 160 caràcters (se n'han escurçat 10, una de les quals era la
+  descripció per defecte del lloc, que afectava 5 pàgines), 313 blocs JSON-LD (0 errors),
+  0 enllaços trencats.
+- **Criteri:** no s'afirma cap dada tècnica que no es pugui verificar. FAVB i Carrer.cat són
+  WordPress (verificat en viu) i la fitxa ho diu tal com és; el discurs aprofita per explicar
+  quan **no** cal migrar.
+
 ### Tècnic: noindex, CTA i enllaços (2026-11-19)
 
 - **`noindex` per pàgina:** `head.html` respecta ara `.Params.noindex` (branca nova entre el

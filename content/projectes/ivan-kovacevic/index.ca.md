@@ -8,7 +8,7 @@ date: 2026-10-17
 client: "músic"
 sector: "musica"
 perfils: ["musics"]
-description: "Web del contrabaixista Ivan Kovačević, migrada de WordPress a Hugo: quatre idiomes, agenda unificada de tots els seus projectes i discografia de més de cinquanta discos."
+description: "Web del contrabaixista Ivan Kovačević, migrada de WordPress a Hugo: quatre idiomes, agenda unificada de tots els seus projectes i discografia completa."
 lastmod: "2026-11-18"
 draft: false
 serveis: ["web-a-mida", "migracio-wordpress"]
