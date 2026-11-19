@@ -2,7 +2,7 @@
 
 > Fitxer de traspàs entre sessions i agents (Claude, DeepSeek o qui sigui).
 > Llegeix-lo **sencer** abans de tocar res. Actualitza'l en acabar cada sessió.
-> Última actualització: **2026-11-18** (Claude, final de sessió).
+> Última actualització: **2026-11-19** (DeepSeek: guia 5 de l'eix músics i manteniment del servidor).
 
 ---
 
@@ -23,10 +23,10 @@
 
 | Què | Estat |
 |---|---|
-| Darrer commit | `feat: serveis al menu, guies al peu i trajectoria actualitzada` |
-| Producció | ✅ fases 2, 3 i 4 desplegades i verificades (2026-11-18): 22 URLs de `/serveis/` i `/guies/` → 200, IndexNow 200 (112 URLs) |
-| Fases fetes | 0, 1, 1a, 1c, 2, 3, **4** del pla (taula a `PLA-SEO-2026-11.md` §8) |
-| Fase següent | **5** (tancar): desplegar les guies, IndexNow, i revisió de Search Console per part de Joan |
+| Darrer commit | `content: guia web per a una banda (CA+EN)` |
+| Producció | ✅ fases 2, 3, 4, 1c i navegació verificades en línia (2026-11-19): el CSS servit és el d'HEAD i el menú i el peu porten Serveis i Guies. 22 URLs de `/serveis/` i `/guies/` → 200 |
+| Fases fetes | 0, 1, 1a, 1c, 2, 3, 4 i la **guia 5 de l'eix músics** (taula a `PLA-SEO-2026-11.md` §8) |
+| Fase següent | **5** (tancar): només queda la revisió de Search Console (cal Joan) · després, **1b** (cal dades de Joan) |
 
 ### Què es va fer a la fase 4 (2026-11-18, sessió 6)
 
@@ -60,6 +60,28 @@
 - **Pendent de validar per Joan:** si els llocs «Powered by» estan allotjats per nosaltres
   (per posar casos reals a `allotjament-i-manteniment`), i si la llista «Projectes destacats»
   de `/projectes/` s'ha de refrescar amb els projectes recents.
+
+### Guia 5: `web-per-a-una-banda` (2026-11-19, sessió DeepSeek)
+
+- `content/guies/web-per-a-una-banda/index.{ca,en}.md` (992 w de cos, `weight: 5`): les **quatre
+  preguntes** que es fa qui arriba (qui sou · com sona · quan toqueu · com us contracto), «el que
+  no cal» (6 punts), per què una web si ja ets a Instagram/Spotify, **quan encara et convé una
+  plantilla** (honestedat), checklist de 7 punts abans de contractar, 3 casos (Bratia, Ivan
+  Kovačević, BBBB) i FAQ de 5 al frontmatter.
+- Enllaçat: `/solucions/musics/` (CA+EN) → guia · `guies/_index.{ca,en}` («com fer-les servir») ·
+  `llms.txt` i `llms-full.txt` (apartat de guies + prosa; recompte «quatre» → «cinc» guies).
+- Verificat: 313 blocs JSON-LD (0 errors), sitemap **57 URLs per idioma**, parella hreflang,
+  5 `<details>` de FAQ, `Article` + `FAQPage`, 0 enllaços interns trencats.
+
+### Servidor — els 3,21 GB de l'arrel (2026-11-19)
+
+- Els 3,21 GB del panell són `~/www` (3.225.973.245 B) i el **94 % és `www/sbb`**, el WordPress en
+  entorn de proves de la SBB (actiu, no tocar). El lloc de LinuxBCN són ~200 MB.
+- `sbb-copia.sh`: `MANTE_FITXERS` 3 → 1. Els dos tarballs eren idèntics (`md5 971fbac5…`), esborrat
+  el del 9/11; home 9,5 G → 6,8 G. **Criteri de Joan: sempre hi ha d'haver un backup sencer del
+  web fins al tancament del projecte.**
+- Pendent (opcional): netejar els **458 MB de duplicats orfes** d'`uploads/` (287 grups, verificats
+  sense referències a la BD). NO executat.
 
 ### Què es va fer a la fase 3 (2026-11-18, sessió 5)
 
@@ -146,7 +168,7 @@ I passar 1 URL pel validador: https://validator.schema.org/ (o Rich Results Test
    que `/serveis/*` i `/guies/*` s'indexen. Enviar sitemaps si cal.
 3. **Fase 1b pendent:** pàgines primes (`favb`, `pocallum`, `112books`, `carrer`, `/contacte`) — cal dades de Joan.
 4. **Extern:** Google Business Profile i backlinks dels clients migrats (segueixen pendents del pla).
-5. **Opcional:** guia `web-per-a-una-banda` (eix de músics) i enllaç des de `/solucions/musics/`.
+5. ~~Opcional: guia `web-per-a-una-banda`~~ — **FET el 2026-11-19** (vegeu §1).
 
 ---
 

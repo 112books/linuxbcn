@@ -1178,5 +1178,27 @@ Aquestes decisions **no es reconsiderin** ni en future sessions:
 
 ---
 
-*Última actualització: 2026-11-18*
+## 39. Historial de tasques — 2026-11-19
+
+**Diagnosi d'espai al VPS + guia 5 de l'eix músics**
+
+*Servidor (els 3,21 GB de l'arrel)*
+- Els 3,21 GB que mostra el panell són `~/www` (3.225.973.245 B): **el 94 % és `www/sbb`** (WordPress en entorn de proves de la Societat de Blues, actiu; contracte signat el 25/10). El lloc de LinuxBCN en si són ~200 MB.
+- `~/www/sbb/wp-content/uploads`: 2,8 G en 15.680 fitxers; 2,16 G concentrats en només 2.294 fitxers > 200 KB; **458 MB de duplicats exactes** (287 grups — els «Anuario del Blues» pujats 2 i 3 vegades). Pendent: neteja dels orfes (no executada).
+- `sbb-copia.sh`: `MANTE_FITXERS` 3 → 1. Els dos tarballs d'uploads (9 i 16/11) eren idèntics (`md5 971fbac5…`), esborrat el del 9; home 9,5 G → 6,8 G. Còpia del script a `~/backups/sbb/sbb-copia.sh.bak-2026-11-19`.
+- `clon_autoins/wordpressvitaminado_20250515124353.tar.gz` (1,1 G): clon del **linuxbcn.com antic en WordPress** (15/05/2025, multisite). Conservat a decisió de Joan.
+
+*Guia `web-per-a-una-banda` (tanca l'eix músics)*
+- `content/guies/web-per-a-una-banda/index.{ca,en}.md`: 992 w de cos. Quatre preguntes (qui sou, com sona, quan toqueu, com us contracto), «el que no cal» (6 punts), per què una web si ja ets a Instagram/Spotify, **quan encara et convé una plantilla**, checklist de 7 punts abans de contractar, 3 casos (Bratia, Ivan Kovačević, BBBB), FAQ de 5 al frontmatter, `weight: 5`.
+- Enllaçat: `/solucions/musics/` (CA+EN) → guia; `guies/_index.{ca,en}` («com fer-les servir»); `llms.txt` + `llms-full.txt` (recompte «quatre» → «cinc» guies).
+- Verificat: 313 blocs JSON-LD (0 errors), sitemap 57 URLs per idioma, parella hreflang, 5 `<details>` de FAQ, 0 enllaços trencats, `Article` + `FAQPage`.
+
+**Pendent**
+- Fase 1b (pàgines primes) — cal dades de Joan.
+- Search Console — cal accés de Joan.
+- Neteja dels 458 MB de duplicats orfes d'`uploads/` (opció 2 de la diagnosi).
+
+---
+
+*Última actualització: 2026-11-19*
 *Mantenidor: Joan Martínez Serres — joan@linuxbcn.com*
