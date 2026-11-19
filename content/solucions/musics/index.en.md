@@ -65,6 +65,8 @@ The base we use in every music project:
 
 And underneath, what you don't see but matters: a fast, accessible website (WCAG 2.1 AA), structured data for search engines and AI engines, and no plugins to update.
 
+If you first want the list of what matters and what to skip, you have it in [what a band's website needs to cover](/guies/web-per-a-una-banda/): written so you can use it with us or without us.
+
 ---
 
 ## And if the project needs it

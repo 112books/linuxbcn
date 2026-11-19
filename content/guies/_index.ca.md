@@ -11,7 +11,7 @@ No són articles de màrqueting. Són les explicacions que donem als clients aba
 
 ## Com fer-les servir
 
-Si tens un web i no saps si l'has de canviar, comença per **«Hugo o WordPress»**: és la que decideix si val la pena seguir mirant. Si el que vols és marxar de WordPress, **«Com sortir sense perdre res»** explica l'ordre correcte i els errors que costen posicionament. Si el problema és que va lent o t'han atacat, **«El teu WordPress va lent o t'han atacat»** et dona el diagnòstic abans de la solució. I si véns de Blogger, l'última és la que et toca.
+Si tens un web i no saps si l'has de canviar, comença per **«Hugo o WordPress»**: és la que decideix si val la pena seguir mirant. Si el que vols és marxar de WordPress, **«Com sortir sense perdre res»** explica l'ordre correcte i els errors que costen posicionament. Si el problema és que va lent o t'han atacat, **«El teu WordPress va lent o t'han atacat»** et dona el diagnòstic abans de la solució. Si véns de Blogger, la quarta és la que et toca. I si tens una banda i comences de zero, **«Què ha de tenir el web d'una banda»** és la llista del que cal i del que sobra, abans de demanar pressupost a ningú.
 
 ## Per què les escrivim
 

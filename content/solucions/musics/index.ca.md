@@ -56,6 +56,8 @@ La base que fem servir a tots els projectes de música:
 
 I, per sota, el que no es veu però compta: web ràpid, accessible (WCAG 2.1 AA), dades estructurades per als cercadors i per als motors amb IA, i cap plugin per actualitzar.
 
+Si abans de res vols la llista del que ha de tenir i del que sobra, la tens a [què ha de tenir el web d'una banda](/guies/web-per-a-una-banda/): està escrita perquè la puguis fer servir amb nosaltres o sense.
+
 ---
 
 ## I si el projecte ho demana

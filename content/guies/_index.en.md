@@ -11,7 +11,7 @@ These are not marketing articles. They are the explanations we give clients befo
 
 ## How to use them
 
-If you have a site and do not know whether it needs changing, start with **"Hugo or WordPress"**: it decides whether the rest is worth reading. If you want to leave WordPress, **"How to leave without losing anything"** explains the right order and the mistakes that cost rankings. If the problem is that it is slow or got attacked, **"Slow or attacked WordPress"** gives you the diagnosis before the solution. And if you come from Blogger, the last one is yours.
+If you have a site and do not know whether it needs changing, start with **"Hugo or WordPress"**: it decides whether the rest is worth reading. If you want to leave WordPress, **"How to leave without losing anything"** explains the right order and the mistakes that cost rankings. If the problem is that it is slow or got attacked, **"Slow or attacked WordPress"** gives you the diagnosis before the solution. If you come from Blogger, the fourth one is yours. And if you have a band and are starting from scratch, **"What a band's website needs to cover"** is the list of what matters and what to skip, before asking anyone for a quote.
 
 ## Why we write them
 
