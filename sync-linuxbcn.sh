@@ -14,10 +14,11 @@ SSH_USER="linuxbcn0"
 SSH_HOST="vl28359.dinaserver.com"
 SSH_PATH="/home/linuxbcn0/www/"
 
-# Repositori privat de clients (112books/linuxbcn-clients): clon independent, fora
-# d'aquest repo. Es pot sobreescriure amb la variable d'entorn PRIVATE_DIR.
+# Repositori privat de clients (112books/linuxbcn-clients): clon independent, DINS
+# d'aquest repo (privat/), exclòs de git per .git/info/exclude. Es pot sobreescriure
+# amb la variable d'entorn PRIVATE_DIR.
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PRIVATE_DIR="${PRIVATE_DIR:-$SCRIPT_DIR/../privat}"
+PRIVATE_DIR="${PRIVATE_DIR:-$SCRIPT_DIR/privat}"
 
 print() { echo -e "${BLUE}[linuxbcn]${NC} $1"; }
 ok()    { echo -e "${GREEN}[✓]${NC} $1"; }
